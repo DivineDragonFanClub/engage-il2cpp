@@ -8,40 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DefaultControls_Resources {
-        pub standard: crate::unity_engine::sprite::Sprite,
-        pub background: crate::unity_engine::sprite::Sprite,
-        pub input_field: crate::unity_engine::sprite::Sprite,
-        pub knob: crate::unity_engine::sprite::Sprite,
-        pub checkmark: crate::unity_engine::sprite::Sprite,
-        pub dropdown: crate::unity_engine::sprite::Sprite,
-        pub mask: crate::unity_engine::sprite::Sprite,
-    }
-
-    impl ::unity2::ClassIdentity for DefaultControls_Resources {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "DefaultControls.Resources";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DefaultControls_Resources {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.UI",
@@ -97,6 +63,40 @@ mod __types {
         name = "DefaultControls.IFactoryControls"
     )]
     pub struct DefaultControls_IFactoryControls {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DefaultControls_Resources {
+        pub standard: crate::unity_engine::sprite::Sprite,
+        pub background: crate::unity_engine::sprite::Sprite,
+        pub input_field: crate::unity_engine::sprite::Sprite,
+        pub knob: crate::unity_engine::sprite::Sprite,
+        pub checkmark: crate::unity_engine::sprite::Sprite,
+        pub dropdown: crate::unity_engine::sprite::Sprite,
+        pub mask: crate::unity_engine::sprite::Sprite,
+    }
+
+    impl ::unity2::ClassIdentity for DefaultControls_Resources {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "DefaultControls.Resources";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DefaultControls_Resources {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-defaultcontrols-types")]

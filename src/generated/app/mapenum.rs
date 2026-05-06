@@ -8,40 +8,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_RangeEnumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapEnum_RangeEnumerator {
-        pub m_current: crate::app::maprange::MapRange,
-        pub m_pivot_x: i32,
-        pub m_pivot_z: i32,
-        pub m_min_x: i32,
-        pub m_min_z: i32,
-        pub m_max_x: i32,
-        pub m_max_z: i32,
-        pub m_near: i32,
-        pub m_far: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapEnum_RangeEnumerator {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapEnum.RangeEnumerator";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapEnum_RangeEnumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenum/MapEnum.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEnum")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapEnum {
+        #[static_field]
+        #[rename(name = "s_AreaEnumerator")]
+        pub s_area_enumerator: crate::app::mapenum::MapEnum_AreaEnumerator,
+        #[static_field]
+        #[rename(name = "s_RangeEnumerator")]
+        pub s_range_enumerator: crate::app::mapenum::MapEnum_RangeEnumerator,
+        #[static_field]
+        #[rename(name = "s_MoveEnumerator")]
+        pub s_move_enumerator: crate::app::mapenum::MapEnum_MoveEnumerator,
+        #[static_field]
+        #[rename(name = "s_CellEnumerator")]
+        pub s_cell_enumerator: crate::app::mapenum::MapEnum_CellEnumerator,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_AreaEnumerator.md"))]
@@ -74,24 +56,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenum/MapEnum.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEnum")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEnum {
-        #[static_field]
-        #[rename(name = "s_AreaEnumerator")]
-        pub s_area_enumerator: crate::app::mapenum::MapEnum_AreaEnumerator,
-        #[static_field]
-        #[rename(name = "s_RangeEnumerator")]
-        pub s_range_enumerator: crate::app::mapenum::MapEnum_RangeEnumerator,
-        #[static_field]
-        #[rename(name = "s_MoveEnumerator")]
-        pub s_move_enumerator: crate::app::mapenum::MapEnum_MoveEnumerator,
-        #[static_field]
-        #[rename(name = "s_CellEnumerator")]
-        pub s_cell_enumerator: crate::app::mapenum::MapEnum_CellEnumerator,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_MoveEnumerator.md"))]
@@ -156,98 +120,46 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenum/MapEnum_RangeEnumerator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapEnum_RangeEnumerator {
+        pub m_current: crate::app::maprange::MapRange,
+        pub m_pivot_x: i32,
+        pub m_pivot_z: i32,
+        pub m_min_x: i32,
+        pub m_min_z: i32,
+        pub m_max_x: i32,
+        pub m_max_z: i32,
+        pub m_near: i32,
+        pub m_far: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapEnum_RangeEnumerator {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapEnum.RangeEnumerator";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapEnum_RangeEnumerator {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-mapenum-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapenum")]
-#[::unity2::methods(value)]
-impl MapEnum_RangeEnumerator {
-    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
-    #[method(name = "Setup", args = 4)]
-    pub fn setup(
-        self,
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
-    ) -> crate::app::mapenum::MapEnum_RangeEnumerator;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::maprange::MapRange;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_RangeEnumerator;
-}
-
-#[cfg(feature = "app-mapenum")]
-#[::unity2::methods(value)]
-impl MapEnum_AreaEnumerator {
-    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
-    #[method(name = "Setup", args = 4)]
-    pub fn setup(
-        self,
-        x: i32,
-        z: i32,
-        w: i32,
-        h: i32,
-    ) -> crate::app::mapenum::MapEnum_AreaEnumerator;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::mappos::MapPos;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_AreaEnumerator;
-}
 
 #[cfg(feature = "app-mapenum")]
 #[::unity2::methods]
@@ -316,6 +228,50 @@ impl MapEnum {
         <Self as IMapEnumMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-mapenum")]
+#[::unity2::methods(value)]
+impl MapEnum_AreaEnumerator {
+    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
+    #[method(name = "Setup", args = 4)]
+    pub fn setup(
+        self,
+        x: i32,
+        z: i32,
+        w: i32,
+        h: i32,
+    ) -> crate::app::mapenum::MapEnum_AreaEnumerator;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::mappos::MapPos;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_AreaEnumerator;
 }
 
 #[cfg(feature = "app-mapenum")]
@@ -392,4 +348,48 @@ impl MapEnum_CellEnumerator {
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
     pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_CellEnumerator;
+}
+
+#[cfg(feature = "app-mapenum")]
+#[::unity2::methods(value)]
+impl MapEnum_RangeEnumerator {
+    #[doc = "`Setup(i32, i32, i32, i32)` overload"]
+    #[method(name = "Setup", args = 4)]
+    pub fn setup(
+        self,
+        x: i32,
+        z: i32,
+        near: i32,
+        far: i32,
+    ) -> crate::app::mapenum::MapEnum_RangeEnumerator;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::maprange::MapRange;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::app::mapenum::MapEnum_RangeEnumerator;
 }

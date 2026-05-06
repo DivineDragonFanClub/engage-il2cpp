@@ -12,6 +12,66 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PhotographDisposInfo_CharacterType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PhotographDisposInfo_CharacterType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "PhotographDisposInfo.CharacterType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PhotographDisposInfo_CharacterType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PhotographDisposInfo_CharacterType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unit_m() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn unit_f() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn god_m() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn god_f() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn mascot() -> Self {
+            Self { value: 5 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographDisposInfo")]
     #[parent(crate::system::object::Object)]
@@ -73,6 +133,11 @@ mod __types {
         pub m_is_loading_weapon: bool,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
+    pub struct PhotographDisposInfo_FlagField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -130,71 +195,6 @@ mod __types {
 
         pub fn sitting() -> Self {
             Self { value: 32 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
-    pub struct PhotographDisposInfo_FlagField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PhotographDisposInfo_CharacterType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PhotographDisposInfo_CharacterType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "PhotographDisposInfo.CharacterType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PhotographDisposInfo_CharacterType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PhotographDisposInfo_CharacterType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn unit_m() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn unit_f() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn god_m() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn god_f() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 5 }
         }
     }
 }

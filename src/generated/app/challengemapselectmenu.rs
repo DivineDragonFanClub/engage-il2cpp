@@ -11,6 +11,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ChallengeMapSelectMenu {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_RequestCloseEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -28,15 +33,69 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ChallengeMapSelectMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ChallengeMapSelectMenu {}
 }
 
 #[cfg(feature = "app-challengemapselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-challengemapselectmenu")]
+#[::unity2::methods]
+impl ChallengeMapSelectMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::basicmenucontent::BasicMenuContent, crate::app::challengedata::ChallengeData, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_SelectEventHandler, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_DecideEventHandler, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_RequestCloseEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 7)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        default_challenge_data: crate::app::challengedata::ChallengeData,
+        select_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_RequestCloseEventHandler,
+    ) -> crate::app::challengemapselectmenu::ChallengeMapSelectMenu;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnClose()` overload"]
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectmenu")]
+impl ChallengeMapSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
 
 #[cfg(feature = "app-challengemapselectmenu")]
 #[::unity2::methods]
@@ -120,65 +179,6 @@ impl ChallengeMapSelectMenu_DecideEventHandler {
             )
         });
         <Self as IChallengeMapSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-#[::unity2::methods]
-impl ChallengeMapSelectMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::basicmenucontent::BasicMenuContent, crate::app::challengedata::ChallengeData, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_SelectEventHandler, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_DecideEventHandler, crate::app::challengemapselectmenu::ChallengeMapSelectMenu_RequestCloseEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 7)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        default_challenge_data: crate::app::challengedata::ChallengeData,
-        select_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_DecideEventHandler,
-        request_close_event_handler : crate :: app :: challengemapselectmenu :: ChallengeMapSelectMenu_RequestCloseEventHandler,
-    ) -> crate::app::challengemapselectmenu::ChallengeMapSelectMenu;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-impl ChallengeMapSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

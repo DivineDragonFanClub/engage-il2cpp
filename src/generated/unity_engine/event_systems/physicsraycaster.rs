@@ -13,6 +13,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.EventSystems",
+        name = "PhysicsRaycaster.RaycastHitComparer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct PhysicsRaycaster_RaycastHitComparer {
+# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PhysicsRaycaster")]
     #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
@@ -31,20 +41,46 @@ mod __types {
         #[rename(name = "m_Hits")]
         pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "PhysicsRaycaster.RaycastHitComparer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct PhysicsRaycaster_RaycastHitComparer {
-# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
-}
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[::unity2::methods]
+impl PhysicsRaycaster_RaycastHitComparer {
+    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        x: crate::unity_engine::raycasthit::RaycastHit,
+        y: crate::unity_engine::raycasthit::RaycastHit,
+    ) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster_RaycastHitComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhysicsRaycaster_RaycastHitComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysicsRaycaster_RaycastHitComparerMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
 #[::unity2::methods]
@@ -114,42 +150,6 @@ impl PhysicsRaycaster {
             )
         });
         <Self as IPhysicsRaycasterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-#[::unity2::methods]
-impl PhysicsRaycaster_RaycastHitComparer {
-    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(
-        self,
-        x: crate::unity_engine::raycasthit::RaycastHit,
-        y: crate::unity_engine::raycasthit::RaycastHit,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-impl PhysicsRaycaster_RaycastHitComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhysicsRaycaster_RaycastHitComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhysicsRaycaster_RaycastHitComparerMethods>::ctor(this);
         this
     }
 }

@@ -14,33 +14,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: titlesequence :: TitleSequence >)]
-    pub struct TitleSequence {
-        #[static_field]
-        #[rename(name = "MapSceneName")]
-        pub map_scene_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "CameraPrefabPath")]
-        pub camera_prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FadeOutSec")]
-        pub fade_out_sec: f32,
-        #[static_field]
-        #[rename(name = "StartFadeOutElapsedTime")]
-        pub start_fade_out_elapsed_time: f32,
-        #[static_field]
-        #[rename(name = "s_TitleLogoTexturePath")]
-        pub s_title_logo_texture_path: ::unity2::Il2CppString,
-        #[rename(name = "m_ElapsedTime")]
-        pub m_elapsed_time: f32,
-        #[rename(name = "m_TitleLogoAnimator")]
-        pub m_title_logo_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_PressStartAnimator")]
-        pub m_press_start_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_GameVersionText")]
-        pub m_game_version_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence_ProcTitleCall.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleSequence.ProcTitleCall")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: titlesequence :: TitleSequence_ProcTitleCall >)]
+    pub struct TitleSequence_ProcTitleCall {
+        #[rename(name = "m_PidOrGid")]
+        pub m_pid_or_gid: ::unity2::Il2CppString,
+        #[rename(name = "m_IsHeroFemale")]
+        pub m_is_hero_female: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence_ProcTitleCall_TitleCallData.md"))]
@@ -97,14 +78,33 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence_ProcTitleCall.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleSequence.ProcTitleCall")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: titlesequence :: TitleSequence_ProcTitleCall >)]
-    pub struct TitleSequence_ProcTitleCall {
-        #[rename(name = "m_PidOrGid")]
-        pub m_pid_or_gid: ::unity2::Il2CppString,
-        #[rename(name = "m_IsHeroFemale")]
-        pub m_is_hero_female: bool,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: titlesequence :: TitleSequence >)]
+    pub struct TitleSequence {
+        #[static_field]
+        #[rename(name = "MapSceneName")]
+        pub map_scene_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "CameraPrefabPath")]
+        pub camera_prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "FadeOutSec")]
+        pub fade_out_sec: f32,
+        #[static_field]
+        #[rename(name = "StartFadeOutElapsedTime")]
+        pub start_fade_out_elapsed_time: f32,
+        #[static_field]
+        #[rename(name = "s_TitleLogoTexturePath")]
+        pub s_title_logo_texture_path: ::unity2::Il2CppString,
+        #[rename(name = "m_ElapsedTime")]
+        pub m_elapsed_time: f32,
+        #[rename(name = "m_TitleLogoAnimator")]
+        pub m_title_logo_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_PressStartAnimator")]
+        pub m_press_start_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_GameVersionText")]
+        pub m_game_version_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 }
 
@@ -113,88 +113,64 @@ pub use __types::*;
 
 #[cfg(feature = "app-titlesequence")]
 #[::unity2::methods]
-impl TitleSequence {
-    #[doc = "`PostBgmEvent(::unity2::Il2CppString)` overload"]
-    #[method(name = "PostBgmEvent", args = 1)]
-    pub fn post_bgm_event(self, bgm_event_name: ::unity2::Il2CppString) -> ();
+impl TitleSequence_ProcTitleCall {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
 
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
 
-    #[doc = "`FadeIn()` overload"]
-    #[method(name = "FadeIn", args = 0)]
-    pub fn fade_in(self) -> ();
+    #[doc = "`CalcPidOrGid()` overload"]
+    #[method(name = "CalcPidOrGid", args = 0)]
+    pub fn calc_pid_or_gid(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`FadeOut(bool)` overload"]
-    #[method(name = "FadeOut", args = 1)]
-    pub fn fade_out(self, is_bgm_fade_out: bool) -> ();
+    #[doc = "`PlayTitleVoice()` overload"]
+    #[method(name = "PlayTitleVoice", args = 0)]
+    pub fn play_title_voice(self) -> ();
 
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
+    #[doc = "`PlaySubtitleVoice()` overload"]
+    #[method(name = "PlaySubtitleVoice", args = 0)]
+    pub fn play_subtitle_voice(self) -> ();
+
+    #[doc = "`PlayVoiceCommon(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "PlayVoiceCommon", args = 2)]
+    pub fn play_voice_common(
+        self,
+        sound_event_name: ::unity2::Il2CppString,
+        is_hero_female: bool,
+    ) -> ();
+
+    #[doc = "`WaitUntilVoiceEnd()` overload"]
+    #[method(name = "WaitUntilVoiceEnd", args = 0)]
+    pub fn wait_until_voice_end(self) -> ();
 
     #[doc = "`GetDesc()` overload"]
     #[method(name = "GetDesc", args = 0)]
     pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`LoadTitleScene(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "LoadTitleScene", args = 1)]
-    pub fn load_title_scene(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`IsLoadingTitleScene(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "IsLoadingTitleScene", args = 1)]
-    pub fn is_loading_title_scene(super_: crate::app::procinst::ProcInst) -> bool;
-
-    #[doc = "`UnloadTitleScene(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "UnloadTitleScene", args = 1)]
-    pub fn unload_title_scene(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`InitAfterLoadTitleScene()` overload"]
-    #[method(name = "InitAfterLoadTitleScene", args = 0)]
-    pub fn init_after_load_title_scene() -> ();
-
-    #[doc = "`ShowTitleScene()` overload"]
-    #[method(name = "ShowTitleScene", args = 0)]
-    pub fn show_title_scene() -> ();
-
-    #[doc = "`HideTitleScene()` overload"]
-    #[method(name = "HideTitleScene", args = 0)]
-    pub fn hide_title_scene() -> ();
-
-    #[doc = "`SetTitleSceneVisible(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "SetTitleSceneVisible", args = 2)]
-    pub fn set_title_scene_visible(scene_name: ::unity2::Il2CppString, is_show: bool) -> ();
-
-    #[doc = "`GetMovieCanvasPrefab()` overload"]
-    #[method(name = "GetMovieCanvasPrefab", args = 0)]
-    pub fn get_movie_canvas_prefab() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`Create(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Create", args = 1)]
+    pub fn create(super_: crate::app::procinst::ProcInst) -> ();
 }
 
 #[cfg(feature = "app-titlesequence")]
-impl TitleSequence {
+impl TitleSequence_ProcTitleCall {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TitleSequence),
+                ::core::stringify!(TitleSequence_ProcTitleCall),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITitleSequenceMethods>::ctor(this);
+        <Self as ITitleSequence_ProcTitleCallMethods>::ctor(this);
         this
     }
 }
@@ -289,64 +265,88 @@ impl TitleSequence_PedestalData {
 
 #[cfg(feature = "app-titlesequence")]
 #[::unity2::methods]
-impl TitleSequence_ProcTitleCall {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl TitleSequence {
+    #[doc = "`PostBgmEvent(::unity2::Il2CppString)` overload"]
+    #[method(name = "PostBgmEvent", args = 1)]
+    pub fn post_bgm_event(self, bgm_event_name: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
 
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
 
-    #[doc = "`CalcPidOrGid()` overload"]
-    #[method(name = "CalcPidOrGid", args = 0)]
-    pub fn calc_pid_or_gid(self) -> ::unity2::Il2CppString;
+    #[doc = "`FadeIn()` overload"]
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
 
-    #[doc = "`PlayTitleVoice()` overload"]
-    #[method(name = "PlayTitleVoice", args = 0)]
-    pub fn play_title_voice(self) -> ();
+    #[doc = "`FadeOut(bool)` overload"]
+    #[method(name = "FadeOut", args = 1)]
+    pub fn fade_out(self, is_bgm_fade_out: bool) -> ();
 
-    #[doc = "`PlaySubtitleVoice()` overload"]
-    #[method(name = "PlaySubtitleVoice", args = 0)]
-    pub fn play_subtitle_voice(self) -> ();
-
-    #[doc = "`PlayVoiceCommon(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "PlayVoiceCommon", args = 2)]
-    pub fn play_voice_common(
-        self,
-        sound_event_name: ::unity2::Il2CppString,
-        is_hero_female: bool,
-    ) -> ();
-
-    #[doc = "`WaitUntilVoiceEnd()` overload"]
-    #[method(name = "WaitUntilVoiceEnd", args = 0)]
-    pub fn wait_until_voice_end(self) -> ();
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
 
     #[doc = "`GetDesc()` overload"]
     #[method(name = "GetDesc", args = 0)]
     pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
 
-    #[doc = "`Create(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`LoadTitleScene(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "LoadTitleScene", args = 1)]
+    pub fn load_title_scene(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`IsLoadingTitleScene(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "IsLoadingTitleScene", args = 1)]
+    pub fn is_loading_title_scene(super_: crate::app::procinst::ProcInst) -> bool;
+
+    #[doc = "`UnloadTitleScene(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "UnloadTitleScene", args = 1)]
+    pub fn unload_title_scene(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`InitAfterLoadTitleScene()` overload"]
+    #[method(name = "InitAfterLoadTitleScene", args = 0)]
+    pub fn init_after_load_title_scene() -> ();
+
+    #[doc = "`ShowTitleScene()` overload"]
+    #[method(name = "ShowTitleScene", args = 0)]
+    pub fn show_title_scene() -> ();
+
+    #[doc = "`HideTitleScene()` overload"]
+    #[method(name = "HideTitleScene", args = 0)]
+    pub fn hide_title_scene() -> ();
+
+    #[doc = "`SetTitleSceneVisible(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "SetTitleSceneVisible", args = 2)]
+    pub fn set_title_scene_visible(scene_name: ::unity2::Il2CppString, is_show: bool) -> ();
+
+    #[doc = "`GetMovieCanvasPrefab()` overload"]
+    #[method(name = "GetMovieCanvasPrefab", args = 0)]
+    pub fn get_movie_canvas_prefab() -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-titlesequence")]
-impl TitleSequence_ProcTitleCall {
+impl TitleSequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TitleSequence_ProcTitleCall),
+                ::core::stringify!(TitleSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITitleSequence_ProcTitleCallMethods>::ctor(this);
+        <Self as ITitleSequenceMethods>::ctor(this);
         this
     }
 }

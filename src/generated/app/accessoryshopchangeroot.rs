@@ -13,6 +13,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangeroot/AccessoryShopChangeRoot_ReturnEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryShopChangeRoot.ReturnEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AccessoryShopChangeRoot_ReturnEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangeroot/AccessoryShopChangeRoot.md"))]
     #[::unity2::class(namespace = "App", name = "AccessoryShopChangeRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -58,15 +63,38 @@ mod __types {
         #[rename(name = "m_Changed")]
         pub m_changed: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangeroot/AccessoryShopChangeRoot_ReturnEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryShopChangeRoot.ReturnEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryShopChangeRoot_ReturnEventHandler {}
 }
 
 #[cfg(feature = "app-accessoryshopchangeroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-accessoryshopchangeroot")]
+#[::unity2::methods]
+impl AccessoryShopChangeRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit, bool)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, unit: crate::app::unit::Unit, changed: bool) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopchangeroot")]
+impl AccessoryShopChangeRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopChangeRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopChangeRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-accessoryshopchangeroot")]
 #[::unity2::methods]
@@ -167,34 +195,6 @@ impl AccessoryShopChangeRoot {
             )
         });
         <Self as IAccessoryShopChangeRootMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-accessoryshopchangeroot")]
-#[::unity2::methods]
-impl AccessoryShopChangeRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit, bool)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, unit: crate::app::unit::Unit, changed: bool) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopchangeroot")]
-impl AccessoryShopChangeRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopChangeRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopChangeRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

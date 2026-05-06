@@ -11,21 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
-    #[parent(crate::system::object::Object)]
-    pub struct SwitchVideoPlayer {
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[rename(name = "m_MovieEvent")]
-        pub m_movie_event:
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
-        #[static_field]
-        #[rename(name = "OnMovieEvent")]
-        pub on_movie_event:
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
     #[repr(C)]
     #[derive(
@@ -80,6 +65,21 @@ mod __types {
         pub fn first_frame_ready() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
+    #[parent(crate::system::object::Object)]
+    pub struct SwitchVideoPlayer {
+        #[rename(name = "m_Ptr")]
+        pub m_ptr: ::unity2::IntPtr,
+        #[rename(name = "m_MovieEvent")]
+        pub m_movie_event:
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
+        #[static_field]
+        #[rename(name = "OnMovieEvent")]
+        pub on_movie_event:
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]

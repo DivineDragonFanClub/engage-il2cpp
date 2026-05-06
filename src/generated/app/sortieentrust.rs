@@ -7,11 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrust")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrust {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust_Executor.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrust.Executor")]
     #[parent(crate::system::object::Object)]
@@ -25,65 +20,15 @@ mod __types {
         pub m_stock_data_holer:
             crate::app::sortieentruststockdataholder::SortieEntrustStockDataHolder,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieEntrust")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieEntrust {}
 }
 
 #[cfg(feature = "app-sortieentrust-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-sortieentrust")]
-#[::unity2::methods]
-impl SortieEntrust {
-    #[doc = "`Execute(crate::app::unit::Unit)` overload"]
-    #[method(name = "Execute", args = 1)]
-    pub fn execute(
-        unit: crate::app::unit::Unit,
-    ) -> crate::app::sortieentrustresult::SortieEntrustResult;
-
-    #[doc = "`ExecuteAllSortieUnits()` overload"]
-    #[method(name = "ExecuteAllSortieUnits", args = 0)]
-    pub fn execute_all_sortie_units() -> crate::app::sortieentrustresult::SortieEntrustResult;
-
-    #[doc = "`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
-    #[method(name = "ShowWarning", args = 2)]
-    pub fn show_warning(
-        super_: crate::app::procinst::ProcInst,
-        result: crate::app::sortieentrustresult::SortieEntrustResult,
-    ) -> ();
-
-    #[doc = "`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
-    #[method(name = "ShowWarningAllSortieUnits", args = 2)]
-    pub fn show_warning_all_sortie_units(
-        super_: crate::app::procinst::ProcInst,
-        result: crate::app::sortieentrustresult::SortieEntrustResult,
-    ) -> ();
-
-    #[doc = "`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ShowWarningCommon", args = 2)]
-    pub fn show_warning_common(
-        super_: crate::app::procinst::ProcInst,
-        mid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortieentrust")]
-impl SortieEntrust {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrust),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-sortieentrust")]
 #[::unity2::methods]
@@ -143,6 +88,61 @@ impl SortieEntrust_Executor {
             )
         });
         <Self as ISortieEntrust_ExecutorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortieentrust")]
+#[::unity2::methods]
+impl SortieEntrust {
+    #[doc = "`Execute(crate::app::unit::Unit)` overload"]
+    #[method(name = "Execute", args = 1)]
+    pub fn execute(
+        unit: crate::app::unit::Unit,
+    ) -> crate::app::sortieentrustresult::SortieEntrustResult;
+
+    #[doc = "`ExecuteAllSortieUnits()` overload"]
+    #[method(name = "ExecuteAllSortieUnits", args = 0)]
+    pub fn execute_all_sortie_units() -> crate::app::sortieentrustresult::SortieEntrustResult;
+
+    #[doc = "`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
+    #[method(name = "ShowWarning", args = 2)]
+    pub fn show_warning(
+        super_: crate::app::procinst::ProcInst,
+        result: crate::app::sortieentrustresult::SortieEntrustResult,
+    ) -> ();
+
+    #[doc = "`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
+    #[method(name = "ShowWarningAllSortieUnits", args = 2)]
+    pub fn show_warning_all_sortie_units(
+        super_: crate::app::procinst::ProcInst,
+        result: crate::app::sortieentrustresult::SortieEntrustResult,
+    ) -> ();
+
+    #[doc = "`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    #[method(name = "ShowWarningCommon", args = 2)]
+    pub fn show_warning_common(
+        super_: crate::app::procinst::ProcInst,
+        mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortieentrust")]
+impl SortieEntrust {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieEntrust),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieEntrustMethods>::ctor(this);
         this
     }
 }

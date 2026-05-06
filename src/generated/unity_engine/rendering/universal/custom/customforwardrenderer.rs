@@ -10,6 +10,22 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Custom",
+        name = "CustomForwardRenderer.Profiling"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct CustomForwardRenderer_Profiling {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "createCameraRenderTarget")]
+        pub create_camera_render_target:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Custom",
@@ -67,26 +83,18 @@ mod __types {
 # [rename (name = "m_HalfResoCompositeMaterial")] pub m_half_reso_composite_material : crate :: unity_engine :: material :: Material ,
 # [rename (name = "m_LightOcclusionMaterial")] pub m_light_occlusion_material : crate :: unity_engine :: material :: Material ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "CustomForwardRenderer.Profiling"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomForwardRenderer_Profiling {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "createCameraRenderTarget")]
-        pub create_camera_render_target:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
+#[::unity2::methods]
+impl CustomForwardRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
 #[::unity2::methods]
@@ -261,12 +269,4 @@ impl CustomForwardRenderer {
         <Self as ICustomForwardRendererMethods>::ctor(this, data);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
-#[::unity2::methods]
-impl CustomForwardRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

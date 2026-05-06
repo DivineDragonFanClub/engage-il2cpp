@@ -121,33 +121,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitModel_ResourceHandle {
-        #[rename(name = "BodyPrefab")]
-        pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "HeadPrefab")]
-        pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "RidePrefab")]
-        pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "LeftHandPrefab")]
-        pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "RightHandPrefab")]
-        pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "BodyAnim")]
-        pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-        #[rename(name = "RideAnim")]
-        pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-        #[rename(name = "AccPrefabs")]
-        pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcegameobject::ResourceGameObject,
-        >,
-        #[rename(name = "AccLocators")]
-        pub acc_locators:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel.md"))]
     #[::unity2::class(namespace = "App", name = "UnitModel")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -253,6 +226,33 @@ mod __types {
         pub m_sound: crate::app::assettable::AssetTable_Sound,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitModel_ResourceHandle {
+        #[rename(name = "BodyPrefab")]
+        pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "HeadPrefab")]
+        pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "RidePrefab")]
+        pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "LeftHandPrefab")]
+        pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "RightHandPrefab")]
+        pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "BodyAnim")]
+        pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+        #[rename(name = "RideAnim")]
+        pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+        #[rename(name = "AccPrefabs")]
+        pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
+            crate::app::resourcegameobject::ResourceGameObject,
+        >,
+        #[rename(name = "AccLocators")]
+        pub acc_locators:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -312,46 +312,6 @@ mod __types {
 
 #[cfg(feature = "app-unitmodel-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-unitmodel")]
-#[::unity2::methods]
-impl UnitModel_ResourceHandle {
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, result: crate::app::assettable::AssetTable_Result) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitmodel")]
-impl UnitModel_ResourceHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitModel_ResourceHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitModel_ResourceHandleMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-unitmodel")]
 #[::unity2::methods]
@@ -739,6 +699,46 @@ impl UnitModel {
             )
         });
         <Self as IUnitModelMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitmodel")]
+#[::unity2::methods]
+impl UnitModel_ResourceHandle {
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]
+    #[method(name = "LoadAsync", args = 1)]
+    pub fn load_async(self, result: crate::app::assettable::AssetTable_Result) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`Release()` overload"]
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitmodel")]
+impl UnitModel_ResourceHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitModel_ResourceHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitModel_ResourceHandleMethods>::ctor(this);
         this
     }
 }

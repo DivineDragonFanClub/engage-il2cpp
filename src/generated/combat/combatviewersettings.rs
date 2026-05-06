@@ -9,14 +9,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewersettings/CombatViewerSettings_ViewerPhase.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatViewerSettings.ViewerPhase")]
-    #[parent(crate::system::object::Object)]
-    pub struct CombatViewerSettings_ViewerPhase {
-        #[rename(name = "s")]
-        pub s: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewersettings/CombatViewerSettings.md"))]
     #[::unity2::class(namespace = "Combat", name = "CombatViewerSettings")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
@@ -57,46 +49,18 @@ mod __types {
         #[rename(name = "SpeedUp")]
         pub speed_up: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewersettings/CombatViewerSettings_ViewerPhase.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CombatViewerSettings.ViewerPhase")]
+    #[parent(crate::system::object::Object)]
+    pub struct CombatViewerSettings_ViewerPhase {
+        #[rename(name = "s")]
+        pub s: ::unity2::Array<::unity2::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "combat-combatviewersettings-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-combatviewersettings")]
-#[::unity2::methods]
-impl CombatViewerSettings_ViewerPhase {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_IsEnd()` overload"]
-    #[method(name = "get_IsEnd", args = 0)]
-    pub fn get_is_end(self) -> bool;
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Item(i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, i: i32, value: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "combat-combatviewersettings")]
-impl CombatViewerSettings_ViewerPhase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CombatViewerSettings_ViewerPhase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICombatViewerSettings_ViewerPhaseMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "combat-combatviewersettings")]
 #[::unity2::methods]
@@ -138,6 +102,42 @@ impl CombatViewerSettings {
             )
         });
         <Self as ICombatViewerSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+#[::unity2::methods]
+impl CombatViewerSettings_ViewerPhase {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_IsEnd()` overload"]
+    #[method(name = "get_IsEnd", args = 0)]
+    pub fn get_is_end(self) -> bool;
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Item(i32, ::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+impl CombatViewerSettings_ViewerPhase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatViewerSettings_ViewerPhase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatViewerSettings_ViewerPhaseMethods>::ctor(this);
         this
     }
 }

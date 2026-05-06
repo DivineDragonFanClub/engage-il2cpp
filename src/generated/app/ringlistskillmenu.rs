@@ -32,6 +32,28 @@ mod __types {
         pub m_item_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItemContent.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItemContent")]
+    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+    pub struct RingListSkillMenu_MenuItemContent {
+        #[rename(name = "m_Level")]
+        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_LevelText")]
+        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_IconImage")]
+        pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_IconFrameImage")]
+        pub m_icon_frame_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_NameText")]
+        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_GotCheckImage")]
+        pub m_got_check_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_IsDisable")]
+        pub m_is_disable: bool,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill_SkillType.md"))]
     #[repr(C)]
     #[derive(
@@ -84,10 +106,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct RingListSkillMenu_MenuContent {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.CancelEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RingListSkillMenu_CancelEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_WeaponTalent.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_WeaponTalent")]
@@ -115,17 +137,16 @@ mod __types {
         pub m_is_bind_parent: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.CancelEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RingListSkillMenu_CancelEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RingListSkillMenu_MenuItem {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::app::ringlistskillmenu::RingListSkillMenu,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.SkillHelpWindow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSkillMenu_SkillHelpWindow {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RootAnimator")]
+        pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_HelpText")]
+        pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu.md"))]
@@ -138,37 +159,15 @@ mod __types {
         pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct RingListSkillMenu_MenuItemContent {
-        #[rename(name = "m_Level")]
-        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_LevelText")]
-        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_IconImage")]
-        pub m_icon_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_IconFrameImage")]
-        pub m_icon_frame_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GotCheckImage")]
-        pub m_got_check_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_IsDisable")]
-        pub m_is_disable: bool,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_Skill")]
+    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
+    pub struct RingListSkillMenu_MenuItem_Skill {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_EngageItem.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_EngageItem")]
     #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
     pub struct RingListSkillMenu_MenuItem_EngageItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_Skill")]
-    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
-    pub struct RingListSkillMenu_MenuItem_Skill {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_ExtraSkill")]
@@ -185,17 +184,18 @@ mod __types {
         pub help_mid_table: ::unity2::Array<::unity2::Il2CppString>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.SkillHelpWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSkillMenu_SkillHelpWindow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RootAnimator")]
-        pub m_root_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_HelpText")]
-        pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RingListSkillMenu_MenuItem {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::app::ringlistskillmenu::RingListSkillMenu,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuContent.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct RingListSkillMenu_MenuContent {}
 }
 
 #[cfg(feature = "app-ringlistskillmenu-types")]
@@ -239,18 +239,29 @@ impl RingListSkillMenu_ItemHelpWindow {
 
 #[cfg(feature = "app-ringlistskillmenu")]
 #[::unity2::methods]
-impl RingListSkillMenu_MenuContent {
-    #[doc = "`CalcW()` overload"]
-    #[method(name = "CalcW", args = 0)]
-    pub fn calc_w(self) -> f32;
+impl RingListSkillMenu_MenuItemContent {
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
 
-    #[doc = "`CalcH()` overload"]
-    #[method(name = "CalcH", args = 0)]
-    pub fn calc_h(self) -> f32;
+    #[doc = "`SetupByMenuItem(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)` overload"]
+    #[method(name = "SetupByMenuItem", args = 1)]
+    pub fn setup_by_menu_item(
+        self,
+        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
+    ) -> ();
 
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    #[method(name = "CalcCursorMovedPosY", args = 1)]
-    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+    #[doc = "`SetDisable(bool)` overload"]
+    #[method(name = "SetDisable", args = 1)]
+    pub fn set_disable(self, disable: bool) -> ();
+
+    #[doc = "`BuildTextColor()` overload"]
+    #[method(name = "BuildTextColor", args = 0)]
+    pub fn build_text_color(self) -> ();
+
+    #[doc = "`UpdateTextColor()` overload"]
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -258,17 +269,45 @@ impl RingListSkillMenu_MenuContent {
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuContent {
+impl RingListSkillMenu_MenuItemContent {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuContent),
+                ::core::stringify!(RingListSkillMenu_MenuItemContent),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSkillMenu_MenuContentMethods>::ctor(this);
+        <Self as IRingListSkillMenu_MenuItemContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[::unity2::methods]
+impl RingListSkillMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_CancelEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -414,109 +453,53 @@ impl RingListSkillMenu_Menu {
 
 #[cfg(feature = "app-ringlistskillmenu")]
 #[::unity2::methods]
-impl RingListSkillMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+impl RingListSkillMenu_SkillHelpWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[::unity2::methods]
-impl RingListSkillMenu_MenuItem {
-    #[doc = "`get_Level()` overload"]
-    #[method(name = "get_Level", args = 0)]
-    pub fn get_level(self) -> i32;
-
-    #[doc = "`set_Level(i32)` overload"]
-    #[method(name = "set_Level", args = 1)]
-    pub fn set_level(self, value: i32) -> ();
-
-    #[doc = "`get_IsGotSKill()` overload"]
-    #[method(name = "get_IsGotSKill", args = 0)]
-    pub fn get_is_got_s_kill(self) -> bool;
-
-    #[doc = "`set_IsGotSKill(bool)` overload"]
-    #[method(name = "set_IsGotSKill", args = 1)]
-    pub fn set_is_got_s_kill(self, value: bool) -> ();
-
-    #[doc = "`get_IsEnableGotIcon()` overload"]
-    #[method(name = "get_IsEnableGotIcon", args = 0)]
-    pub fn get_is_enable_got_icon(self) -> bool;
-
-    #[doc = "`get_IsEnableUnitGotIcon()` overload"]
-    #[method(name = "get_IsEnableUnitGotIcon", args = 0)]
-    pub fn get_is_enable_unit_got_icon(self) -> bool;
-
-    #[doc = "`get_FromLv()` overload"]
-    #[method(name = "get_FromLv", args = 0)]
-    pub fn get_from_lv(self) -> i32;
-
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
+    #[doc = "`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)` overload"]
+    #[method(name = "SetSkillData", args = 1)]
+    pub fn set_skill_data(
         self,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        is_got_skill: bool,
+        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill,
     ) -> ();
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+    #[doc = "`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)` overload"]
+    #[method(name = "SetSkillData", args = 1)]
+    pub fn set_skill_data_2(
+        self,
+        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill,
+    ) -> ();
 
-    #[doc = "`GetWidth()` overload"]
-    #[method(name = "GetWidth", args = 0)]
-    pub fn get_width(self) -> f32;
+    #[doc = "`SetItemKind(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)` overload"]
+    #[method(name = "SetItemKind", args = 1)]
+    pub fn set_item_kind(
+        self,
+        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent,
+    ) -> ();
 
-    #[doc = "`GetHeight()` overload"]
-    #[method(name = "GetHeight", args = 0)]
-    pub fn get_height(self) -> f32;
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
 
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]
-    pub fn new(
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        is_got_skill: bool,
-    ) -> Self {
+impl RingListSkillMenu_SkillHelpWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem),
+                ::core::stringify!(RingListSkillMenu_SkillHelpWindow),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSkillMenu_MenuItemMethods>::ctor(this, root, level, is_got_skill);
+        <Self as IRingListSkillMenu_SkillHelpWindowMethods>::ctor(this, root_object);
         this
     }
 }
@@ -645,47 +628,53 @@ impl RingListSkillMenu {
 
 #[cfg(feature = "app-ringlistskillmenu")]
 #[::unity2::methods]
-impl RingListSkillMenu_MenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+impl RingListSkillMenu_MenuItem_Skill {
+    #[doc = "`get_Skill()` overload"]
+    #[method(name = "get_Skill", args = 0)]
+    pub fn get_skill(self) -> crate::app::skilldata::SkillData;
 
-    #[doc = "`SetupByMenuItem(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)` overload"]
-    #[method(name = "SetupByMenuItem", args = 1)]
-    pub fn setup_by_menu_item(
+    #[doc = "`set_Skill(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "set_Skill", args = 1)]
+    pub fn set_skill(self, value: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
         self,
-        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_data: crate::app::skilldata::SkillData,
+        is_got_skill: bool,
     ) -> ();
 
-    #[doc = "`SetDisable(bool)` overload"]
-    #[method(name = "SetDisable", args = 1)]
-    pub fn set_disable(self, disable: bool) -> ();
-
-    #[doc = "`BuildTextColor()` overload"]
-    #[method(name = "BuildTextColor", args = 0)]
-    pub fn build_text_color(self) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RingListSkillMenu_MenuItem_Skill {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]
+    pub fn new(
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_data: crate::app::skilldata::SkillData,
+        is_got_skill: bool,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItemContent),
+                ::core::stringify!(RingListSkillMenu_MenuItem_Skill),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSkillMenu_MenuItemContentMethods>::ctor(this);
+        <Self as IRingListSkillMenu_MenuItem_SkillMethods>::ctor(
+            this,
+            root,
+            level,
+            skill_data,
+            is_got_skill,
+        );
         this
     }
 }
@@ -737,59 +726,6 @@ impl RingListSkillMenu_MenuItem_EngageItem {
             root,
             level,
             item_data,
-            is_got_skill,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[::unity2::methods]
-impl RingListSkillMenu_MenuItem_Skill {
-    #[doc = "`get_Skill()` overload"]
-    #[method(name = "get_Skill", args = 0)]
-    pub fn get_skill(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`set_Skill(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "set_Skill", args = 1)]
-    pub fn set_skill(self, value: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_data: crate::app::skilldata::SkillData,
-        is_got_skill: bool,
-    ) -> ();
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_Skill {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]
-    pub fn new(
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_data: crate::app::skilldata::SkillData,
-        is_got_skill: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem_Skill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuItem_SkillMethods>::ctor(
-            this,
-            root,
-            level,
-            skill_data,
             is_got_skill,
         );
         this
@@ -872,53 +808,117 @@ impl RingListSkillMenu_MenuItem_ExtraSkill {
 
 #[cfg(feature = "app-ringlistskillmenu")]
 #[::unity2::methods]
-impl RingListSkillMenu_SkillHelpWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+impl RingListSkillMenu_MenuItem {
+    #[doc = "`get_Level()` overload"]
+    #[method(name = "get_Level", args = 0)]
+    pub fn get_level(self) -> i32;
 
-    #[doc = "`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)` overload"]
-    #[method(name = "SetSkillData", args = 1)]
-    pub fn set_skill_data(
+    #[doc = "`set_Level(i32)` overload"]
+    #[method(name = "set_Level", args = 1)]
+    pub fn set_level(self, value: i32) -> ();
+
+    #[doc = "`get_IsGotSKill()` overload"]
+    #[method(name = "get_IsGotSKill", args = 0)]
+    pub fn get_is_got_s_kill(self) -> bool;
+
+    #[doc = "`set_IsGotSKill(bool)` overload"]
+    #[method(name = "set_IsGotSKill", args = 1)]
+    pub fn set_is_got_s_kill(self, value: bool) -> ();
+
+    #[doc = "`get_IsEnableGotIcon()` overload"]
+    #[method(name = "get_IsEnableGotIcon", args = 0)]
+    pub fn get_is_enable_got_icon(self) -> bool;
+
+    #[doc = "`get_IsEnableUnitGotIcon()` overload"]
+    #[method(name = "get_IsEnableUnitGotIcon", args = 0)]
+    pub fn get_is_enable_unit_got_icon(self) -> bool;
+
+    #[doc = "`get_FromLv()` overload"]
+    #[method(name = "get_FromLv", args = 0)]
+    pub fn get_from_lv(self) -> i32;
+
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
         self,
-        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        is_got_skill: bool,
     ) -> ();
 
-    #[doc = "`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)` overload"]
-    #[method(name = "SetSkillData", args = 1)]
-    pub fn set_skill_data_2(
-        self,
-        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill,
-    ) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`SetItemKind(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)` overload"]
-    #[method(name = "SetItemKind", args = 1)]
-    pub fn set_item_kind(
-        self,
-        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent,
-    ) -> ();
+    #[doc = "`GetWidth()` overload"]
+    #[method(name = "GetWidth", args = 0)]
+    pub fn get_width(self) -> f32;
 
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
+    #[doc = "`GetHeight()` overload"]
+    #[method(name = "GetHeight", args = 0)]
+    pub fn get_height(self) -> f32;
 
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_SkillHelpWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+impl RingListSkillMenu_MenuItem {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]
+    pub fn new(
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        is_got_skill: bool,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_SkillHelpWindow),
+                ::core::stringify!(RingListSkillMenu_MenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSkillMenu_SkillHelpWindowMethods>::ctor(this, root_object);
+        <Self as IRingListSkillMenu_MenuItemMethods>::ctor(this, root, level, is_got_skill);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[::unity2::methods]
+impl RingListSkillMenu_MenuContent {
+    #[doc = "`CalcW()` overload"]
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[doc = "`CalcH()` overload"]
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuContentMethods>::ctor(this);
         this
     }
 }

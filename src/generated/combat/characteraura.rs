@@ -42,6 +42,10 @@ impl CharacterAura {
     #[method(name = "get_CP", args = 0)]
     pub fn get_cp(self) -> crate::combat::character::Character;
 
+    #[doc = "`get_fader()` overload"]
+    #[method(name = "get_fader", args = 0)]
+    pub fn get_fader(self) -> crate::root::iron19characterfader::Iron19CharacterFader;
+
     #[doc = "`get_IsVisible()` overload"]
     #[method(name = "get_IsVisible", args = 0)]
     pub fn get_is_visible(self) -> bool;

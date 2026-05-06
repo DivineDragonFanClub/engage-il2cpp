@@ -11,54 +11,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_RelianceItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu.RelianceItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SystemItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SystemItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_SubFriendMenu_RelianceItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_HubMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.HubMenuItem")]
-    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-    pub struct HubMenu_HubMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct HubMenu_SubFriendMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SaveItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SaveItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_SaveItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextChapterItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.NextChapterItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_NextChapterItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_FriendItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.FriendItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_FriendItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct HubMenu {
-        #[static_field]
-        #[rename(name = "currentMenuSelect")]
-        pub current_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.NextItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_NextItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_InventoryItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.InventoryItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_InventoryItem {}
+    pub struct HubMenu_SystemItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_ResetItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu.ResetItem")]
@@ -75,20 +31,54 @@ mod __types {
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
     pub struct HubMenu_SubFriendMenu_NotebookItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_GodItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.GodItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_RelianceItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu.RelianceItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_GodItem {}
+    pub struct HubMenu_SubFriendMenu_RelianceItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MaterialListItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.MaterialListItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_MaterialListItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_HubMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.HubMenuItem")]
+    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+    pub struct HubMenu_HubMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MapInfoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.MapInfoItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_FriendItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.FriendItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_MapInfoItem {}
+    pub struct HubMenu_FriendItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct HubMenu_SubSystemMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_ConfigItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu.ConfigItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_SubSystemMenu_ConfigItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct HubMenu {
+        #[static_field]
+        #[rename(name = "currentMenuSelect")]
+        pub current_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_KizunaItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu.KizunaItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_SubFriendMenu_KizunaItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct HubMenu_SubFriendMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.NextItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_NextItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_TutorialItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu.TutorialItem")]
@@ -100,30 +90,40 @@ mod __types {
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
     pub struct HubMenu_GmapItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct HubMenu_SubSystemMenu {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextChapterItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.NextChapterItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_NextChapterItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_GodItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.GodItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_GodItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_InventoryItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.InventoryItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_InventoryItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SaveItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.SaveItem")]
+    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
+    pub struct HubMenu_SaveItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_RingListItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu.RingListItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
     pub struct HubMenu_SubFriendMenu_RingListItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SystemItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SystemItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MaterialListItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.MaterialListItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_SystemItem {}
+    pub struct HubMenu_MaterialListItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_ConfigItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SubSystemMenu.ConfigItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MapInfoItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenu.MapInfoItem")]
     #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_SubSystemMenu_ConfigItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_KizunaItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenu.SubFriendMenu.KizunaItem")]
-    #[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]
-    pub struct HubMenu_SubFriendMenu_KizunaItem {}
+    pub struct HubMenu_MapInfoItem {}
 }
 
 #[cfg(feature = "app-hubmenu-types")]
@@ -131,229 +131,7 @@ pub use __types::*;
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SubFriendMenu_RelianceItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_HubMenuItem {
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`SetHelpVisible(bool)` overload"]
-    #[method(name = "SetHelpVisible", args = 1)]
-    pub fn set_help_visible(self, active: bool) -> ();
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_HubMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_HubMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_HubMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SubFriendMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_SaveItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SaveItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SaveItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_SaveItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_NextChapterItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextChapterItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_NextChapterItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_NextChapterItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_FriendItem {
+impl HubMenu_SystemItem {
     #[doc = "`get_FlagID()` overload"]
     #[method(name = "get_FlagID", args = 0)]
     pub fn get_flag_id(self) -> ::unity2::Il2CppString;
@@ -380,160 +158,17 @@ impl HubMenu_FriendItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_FriendItem {
+impl HubMenu_SystemItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_FriendItem),
+                ::core::stringify!(HubMenu_SystemItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_FriendItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init() -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`OnResume()` overload"]
-    #[method(name = "OnResume", args = 0)]
-    pub fn on_resume(self) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy() -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_NextItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_NextItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_NextItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_InventoryItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_InventoryItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_InventoryItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_InventoryItemMethods>::ctor(this);
+        <Self as IHubMenu_SystemItemMethods>::ctor(this);
         this
     }
 }
@@ -660,7 +295,11 @@ impl HubMenu_SubFriendMenu_NotebookItem {
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_GodItem {
+impl HubMenu_SubFriendMenu_RelianceItem {
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -683,39 +322,51 @@ impl HubMenu_GodItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_GodItem {
+impl HubMenu_SubFriendMenu_RelianceItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_GodItem),
+                ::core::stringify!(HubMenu_SubFriendMenu_RelianceItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_GodItemMethods>::ctor(this);
+        <Self as IHubMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_MaterialListItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+impl HubMenu_HubMenuItem {
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`SetHelpVisible(bool)` overload"]
+    #[method(name = "SetHelpVisible", args = 1)]
+    pub fn set_help_visible(self, active: bool) -> ();
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
 
     #[doc = "`GetHelpText()` overload"]
     #[method(name = "GetHelpText", args = 0)]
     pub fn get_help_text(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -723,24 +374,114 @@ impl HubMenu_MaterialListItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_MaterialListItem {
+impl HubMenu_HubMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_MaterialListItem),
+                ::core::stringify!(HubMenu_HubMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_MaterialListItemMethods>::ctor(this);
+        <Self as IHubMenu_HubMenuItemMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_MapInfoItem {
+impl HubMenu_FriendItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_FriendItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_FriendItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_FriendItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_SubSystemMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_SubSystemMenu_ConfigItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -763,17 +504,206 @@ impl HubMenu_MapInfoItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_MapInfoItem {
+impl HubMenu_SubSystemMenu_ConfigItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_MapInfoItem),
+                ::core::stringify!(HubMenu_SubSystemMenu_ConfigItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_MapInfoItemMethods>::ctor(this);
+        <Self as IHubMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnClose()` overload"]
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[doc = "`Init()` overload"]
+    #[method(name = "Init", args = 0)]
+    pub fn init() -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`OnResume()` overload"]
+    #[method(name = "OnResume", args = 0)]
+    pub fn on_resume(self) -> ();
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy() -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_SubFriendMenu_KizunaItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_SubFriendMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_NextItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_NextItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_NextItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_NextItemMethods>::ctor(this);
         this
     }
 }
@@ -860,46 +790,160 @@ impl HubMenu_GmapItem {
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
+impl HubMenu_NextChapterItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
+impl HubMenu_NextChapterItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SubSystemMenu),
+                ::core::stringify!(HubMenu_NextChapterItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
+        <Self as IHubMenu_NextChapterItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_GodItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_GodItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_GodItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_GodItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_InventoryItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_InventoryItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_InventoryItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_InventoryItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmenu")]
+#[::unity2::methods]
+impl HubMenu_SaveItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenu")]
+impl HubMenu_SaveItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenu_SaveItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenu_SaveItemMethods>::ctor(this);
         this
     }
 }
@@ -946,51 +990,7 @@ impl HubMenu_SubFriendMenu_RingListItem {
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_SystemItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SystemItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SystemItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenu_SystemItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmenu")]
-#[::unity2::methods]
-impl HubMenu_SubSystemMenu_ConfigItem {
+impl HubMenu_MaterialListItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -1013,24 +1013,24 @@ impl HubMenu_SubSystemMenu_ConfigItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_ConfigItem {
+impl HubMenu_MaterialListItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SubSystemMenu_ConfigItem),
+                ::core::stringify!(HubMenu_MaterialListItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
+        <Self as IHubMenu_MaterialListItemMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-hubmenu")]
 #[::unity2::methods]
-impl HubMenu_SubFriendMenu_KizunaItem {
+impl HubMenu_MapInfoItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -1053,17 +1053,17 @@ impl HubMenu_SubFriendMenu_KizunaItem {
 }
 
 #[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_KizunaItem {
+impl HubMenu_MapInfoItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenu_SubFriendMenu_KizunaItem),
+                ::core::stringify!(HubMenu_MapInfoItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
+        <Self as IHubMenu_MapInfoItemMethods>::ctor(this);
         this
     }
 }

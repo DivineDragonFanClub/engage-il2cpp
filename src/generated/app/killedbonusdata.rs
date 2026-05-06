@@ -71,16 +71,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData.md"))]
-    #[::unity2::class(namespace = "App", name = "KilledBonusData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: killedbonusdata :: KilledBonusData >)]
-    pub struct KilledBonusData {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "KilledBonusData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)]
-    pub struct KilledBonusData_FlagField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -120,10 +110,65 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "KilledBonusData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)]
+    pub struct KilledBonusData_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData.md"))]
+    #[::unity2::class(namespace = "App", name = "KilledBonusData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: killedbonusdata :: KilledBonusData >)]
+    pub struct KilledBonusData {}
 }
 
 #[cfg(feature = "app-killedbonusdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-killedbonusdata")]
+#[::unity2::methods]
+impl KilledBonusData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::killedbonusdata::KilledBonusData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::killedbonusdata::KilledBonusData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-killedbonusdata")]
+impl KilledBonusData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KilledBonusData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKilledBonusData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::killedbonusdata::KilledBonusData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KilledBonusData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IKilledBonusData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
 
 #[cfg(feature = "app-killedbonusdata")]
 #[::unity2::methods]
@@ -193,51 +238,6 @@ impl KilledBonusData {
             )
         });
         <Self as IKilledBonusDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-killedbonusdata")]
-#[::unity2::methods]
-impl KilledBonusData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::killedbonusdata::KilledBonusData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::killedbonusdata::KilledBonusData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KilledBonusData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKilledBonusData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::killedbonusdata::KilledBonusData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KilledBonusData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IKilledBonusData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

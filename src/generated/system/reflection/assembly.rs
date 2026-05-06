@@ -9,22 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "Assembly.ResolveEventHolder")]
-    #[parent(crate::system::object::Object)]
-    pub struct Assembly_ResolveEventHolder {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))]
-    #[::unity2::class(
-        namespace = "System.Reflection",
-        name = "Assembly.UnmanagedMemoryStreamForModule"
-    )]
-    #[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]
-    pub struct Assembly_UnmanagedMemoryStreamForModule {
-        #[rename(name = "module")]
-        pub module: crate::system::reflection::module::Module,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "Assembly")]
     #[parent(crate::system::object::Object)]
@@ -50,42 +34,26 @@ mod __types {
         #[rename(name = "assemblyName")]
         pub assembly_name: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))]
+    #[::unity2::class(namespace = "System.Reflection", name = "Assembly.ResolveEventHolder")]
+    #[parent(crate::system::object::Object)]
+    pub struct Assembly_ResolveEventHolder {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))]
+    #[::unity2::class(
+        namespace = "System.Reflection",
+        name = "Assembly.UnmanagedMemoryStreamForModule"
+    )]
+    #[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]
+    pub struct Assembly_UnmanagedMemoryStreamForModule {
+        #[rename(name = "module")]
+        pub module: crate::system::reflection::module::Module,
+    }
 }
 
 #[cfg(feature = "system-reflection-assembly-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-reflection-assembly")]
-#[::unity2::methods]
-impl Assembly_ResolveEventHolder {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly_ResolveEventHolder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Assembly_ResolveEventHolder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssembly_ResolveEventHolderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-reflection-assembly")]
-#[::unity2::methods]
-impl Assembly_UnmanagedMemoryStreamForModule {
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose(self, disposing: bool) -> ();
-}
 
 #[cfg(feature = "system-reflection-assembly")]
 #[::unity2::methods]
@@ -299,4 +267,36 @@ impl Assembly {
         <Self as IAssemblyMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "system-reflection-assembly")]
+#[::unity2::methods]
+impl Assembly_ResolveEventHolder {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-reflection-assembly")]
+impl Assembly_ResolveEventHolder {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Assembly_ResolveEventHolder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssembly_ResolveEventHolderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "system-reflection-assembly")]
+#[::unity2::methods]
+impl Assembly_UnmanagedMemoryStreamForModule {
+    #[doc = "`Dispose(bool)` overload"]
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
 }

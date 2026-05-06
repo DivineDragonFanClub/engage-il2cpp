@@ -9,97 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/stick/Stick.md"))]
-    #[::unity2::class(namespace = "App.Squat", name = "Stick")]
-    #[parent(crate::system::object::Object)]
-    pub struct Stick {
-        #[static_field]
-        #[rename(name = "cStickEnablePower")]
-        pub c_stick_enable_power: f32,
-        #[static_field]
-        #[rename(name = "cStickNeutralPower")]
-        pub c_stick_neutral_power: f32,
-        #[static_field]
-        #[rename(name = "cStickRotatePower")]
-        pub c_stick_rotate_power: f32,
-        #[static_field]
-        #[rename(name = "cRotateCountMaxSec")]
-        pub c_rotate_count_max_sec: f32,
-        #[static_field]
-        #[rename(name = "cRotationOKDir")]
-        pub c_rotation_ok_dir: f32,
-        #[rename(name = "m_StickX")]
-        pub m_stick_x: f32,
-        #[rename(name = "m_StickY")]
-        pub m_stick_y: f32,
-        #[rename(name = "m_Power")]
-        pub m_power: f32,
-        #[rename(name = "m_DirNow")]
-        pub m_dir_now: f32,
-        #[rename(name = "m_DirPast")]
-        pub m_dir_past: f32,
-        #[rename(name = "m_TotalRotateDir")]
-        pub m_total_rotate_dir: f32,
-        #[rename(name = "m_RotCount")]
-        pub m_rot_count: i32,
-        #[rename(name = "m_KeepRotCount")]
-        pub m_keep_rot_count: i32,
-        #[rename(name = "m_Rot")]
-        pub m_rot: crate::app::squat::stick::Stick_RotateDir,
-        #[rename(name = "m_DirLogger")]
-        pub m_dir_logger: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_LoggerTimer")]
-        pub m_logger_timer: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_RotateDir.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Stick_RotateDir {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Stick_RotateDir {
-        const NAMESPACE: &'static str = "App.Squat";
-
-        const NAME: &'static str = "Stick.RotateDir";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Stick_RotateDir {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Stick_RotateDir {
-        pub fn stop() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn clock_wise() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn un_clock_wise() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_KeyDirection.md"))]
     #[repr(C)]
     #[derive(
@@ -170,6 +79,97 @@ mod __types {
         pub fn dir_count() -> Self {
             Self { value: 8 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_RotateDir.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Stick_RotateDir {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Stick_RotateDir {
+        const NAMESPACE: &'static str = "App.Squat";
+
+        const NAME: &'static str = "Stick.RotateDir";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Stick_RotateDir {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Stick_RotateDir {
+        pub fn stop() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn clock_wise() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn un_clock_wise() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/stick/Stick.md"))]
+    #[::unity2::class(namespace = "App.Squat", name = "Stick")]
+    #[parent(crate::system::object::Object)]
+    pub struct Stick {
+        #[static_field]
+        #[rename(name = "cStickEnablePower")]
+        pub c_stick_enable_power: f32,
+        #[static_field]
+        #[rename(name = "cStickNeutralPower")]
+        pub c_stick_neutral_power: f32,
+        #[static_field]
+        #[rename(name = "cStickRotatePower")]
+        pub c_stick_rotate_power: f32,
+        #[static_field]
+        #[rename(name = "cRotateCountMaxSec")]
+        pub c_rotate_count_max_sec: f32,
+        #[static_field]
+        #[rename(name = "cRotationOKDir")]
+        pub c_rotation_ok_dir: f32,
+        #[rename(name = "m_StickX")]
+        pub m_stick_x: f32,
+        #[rename(name = "m_StickY")]
+        pub m_stick_y: f32,
+        #[rename(name = "m_Power")]
+        pub m_power: f32,
+        #[rename(name = "m_DirNow")]
+        pub m_dir_now: f32,
+        #[rename(name = "m_DirPast")]
+        pub m_dir_past: f32,
+        #[rename(name = "m_TotalRotateDir")]
+        pub m_total_rotate_dir: f32,
+        #[rename(name = "m_RotCount")]
+        pub m_rot_count: i32,
+        #[rename(name = "m_KeepRotCount")]
+        pub m_keep_rot_count: i32,
+        #[rename(name = "m_Rot")]
+        pub m_rot: crate::app::squat::stick::Stick_RotateDir,
+        #[rename(name = "m_DirLogger")]
+        pub m_dir_logger: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "m_LoggerTimer")]
+        pub m_logger_timer: f32,
     }
 }
 

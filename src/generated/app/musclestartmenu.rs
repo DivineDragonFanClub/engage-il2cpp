@@ -12,6 +12,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MuscleStartMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MuscleStartMenu {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_MuscleStartMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MuscleStartMenu.MuscleStartMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -38,14 +46,6 @@ mod __types {
         pub m_effect: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MuscleStartMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MuscleStartMenu {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "MuscleStartMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -54,49 +54,6 @@ mod __types {
 
 #[cfg(feature = "app-musclestartmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-musclestartmenu")]
-#[::unity2::methods]
-impl MuscleStartMenu_MuscleStartMenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        set_menu: crate::unity_engine::gameobject::GameObject,
-        id: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_MuscleStartMenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        set_menu: crate::unity_engine::gameobject::GameObject,
-        id: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleStartMenu_MuscleStartMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleStartMenu_MuscleStartMenuItemMethods>::ctor(this, set_menu, id);
-        this
-    }
-}
 
 #[cfg(feature = "app-musclestartmenu")]
 #[::unity2::methods]
@@ -164,6 +121,49 @@ impl MuscleStartMenu {
             menu_content,
             decide_event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-musclestartmenu")]
+#[::unity2::methods]
+impl MuscleStartMenu_MuscleStartMenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        set_menu: crate::unity_engine::gameobject::GameObject,
+        id: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-musclestartmenu")]
+impl MuscleStartMenu_MuscleStartMenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        set_menu: crate::unity_engine::gameobject::GameObject,
+        id: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleStartMenu_MuscleStartMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleStartMenu_MuscleStartMenuItemMethods>::ctor(this, set_menu, id);
         this
     }
 }

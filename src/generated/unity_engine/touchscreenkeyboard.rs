@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TouchScreenKeyboard")]
-    #[parent(crate::system::object::Object)]
-    pub struct TouchScreenKeyboard {
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -67,6 +59,14 @@ mod __types {
         pub fn lost_focus() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "TouchScreenKeyboard")]
+    #[parent(crate::system::object::Object)]
+    pub struct TouchScreenKeyboard {
+        #[rename(name = "m_Ptr")]
+        pub m_ptr: ::unity2::IntPtr,
     }
 }
 

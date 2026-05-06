@@ -13,14 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapgroundcollider/GmapGroundCollider.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapGroundCollider")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapGroundCollider {
-        #[rename(name = "m_GroundType")]
-        pub m_ground_type: crate::app::gmapgroundcollider::GmapGroundCollider_Type,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapgroundcollider/GmapGroundCollider_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -59,6 +51,14 @@ mod __types {
         pub fn _unnamed() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapgroundcollider/GmapGroundCollider.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapGroundCollider")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapGroundCollider {
+        #[rename(name = "m_GroundType")]
+        pub m_ground_type: crate::app::gmapgroundcollider::GmapGroundCollider_Type,
     }
 }
 

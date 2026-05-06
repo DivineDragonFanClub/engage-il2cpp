@@ -8,6 +8,53 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AICannon_ChangeEquipScope {
+        pub m_actor: crate::app::unit::Unit,
+        pub m_equipped_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AICannon.ChangeEquipScope";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AICannon_ChangeEquipScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon.md"))]
+    #[::unity2::class(namespace = "App", name = "AICannon")]
+    #[parent(crate::system::object::Object)]
+    pub struct AICannon {
+        #[rename(name = "m_Cannons")]
+        pub m_cannons: crate::system::collections::generic::list_1::List_1<
+            crate::app::aicannon::AICannon_CannonData,
+        >,
+        #[rename(name = "m_Simulator")]
+        pub m_simulator: crate::app::aibattlesimulator::AIBattleSimulator,
+        #[rename(name = "m_EnemiesMoveImage")]
+        pub m_enemies_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_NearEnemies")]
+        pub m_near_enemies: ::unity2::Array<crate::app::unit::Unit>,
+        #[rename(name = "m_EnemyDists")]
+        pub m_enemy_dists: ::unity2::Array<i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_CannonSkillScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -37,57 +84,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon.md"))]
-    #[::unity2::class(namespace = "App", name = "AICannon")]
-    #[parent(crate::system::object::Object)]
-    pub struct AICannon {
-        #[rename(name = "m_Cannons")]
-        pub m_cannons: crate::system::collections::generic::list_1::List_1<
-            crate::app::aicannon::AICannon_CannonData,
-        >,
-        #[rename(name = "m_Simulator")]
-        pub m_simulator: crate::app::aibattlesimulator::AIBattleSimulator,
-        #[rename(name = "m_EnemiesMoveImage")]
-        pub m_enemies_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_NearEnemies")]
-        pub m_near_enemies: ::unity2::Array<crate::app::unit::Unit>,
-        #[rename(name = "m_EnemyDists")]
-        pub m_enemy_dists: ::unity2::Array<i32>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon_CannonData.md"))]
     #[::unity2::class(namespace = "App", name = "AICannon.CannonData")]
     #[parent(crate::system::object::Object)]
     pub struct AICannon_CannonData {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AICannon_ChangeEquipScope {
-        pub m_actor: crate::app::unit::Unit,
-        pub m_equipped_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AICannon.ChangeEquipScope";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AICannon_ChangeEquipScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-aicannon-types")]
@@ -95,14 +95,10 @@ pub use __types::*;
 
 #[cfg(feature = "app-aicannon")]
 #[::unity2::methods(value)]
-impl AICannon_CannonSkillScope {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        actor: crate::app::unit::Unit,
-        cannon_inspector: crate::app::cannoninspector::CannonInspector,
-    ) -> ();
+impl AICannon_ChangeEquipScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, actor: crate::app::unit::Unit) -> ();
 
     #[doc = "`Dispose()` overload"]
     #[method(name = "Dispose", args = 0)]
@@ -179,6 +175,22 @@ impl AICannon {
 }
 
 #[cfg(feature = "app-aicannon")]
+#[::unity2::methods(value)]
+impl AICannon_CannonSkillScope {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        actor: crate::app::unit::Unit,
+        cannon_inspector: crate::app::cannoninspector::CannonInspector,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-aicannon")]
 #[::unity2::methods]
 impl AICannon_CannonData {
     #[doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]
@@ -225,16 +237,4 @@ impl AICannon_CannonData {
         <Self as IAICannon_CannonDataMethods>::ctor(this, x, z, inspector);
         this
     }
-}
-
-#[cfg(feature = "app-aicannon")]
-#[::unity2::methods(value)]
-impl AICannon_ChangeEquipScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, actor: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
 }

@@ -13,16 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))]
-    #[::unity2::class(namespace = "App", name = "Inactivator")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Inactivator {
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::inactivator::Inactivator_Flags,
-        #[rename(name = "m_Variable")]
-        pub m_variable: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -65,6 +55,16 @@ mod __types {
         pub fn gmap() -> Self {
             Self { value: 16 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))]
+    #[::unity2::class(namespace = "App", name = "Inactivator")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct Inactivator {
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::inactivator::Inactivator_Flags,
+        #[rename(name = "m_Variable")]
+        pub m_variable: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Kind.md"))]

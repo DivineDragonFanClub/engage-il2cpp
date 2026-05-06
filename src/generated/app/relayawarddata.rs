@@ -15,6 +15,62 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct RelayAwardData_CompareOp {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RelayAwardData.CompareOp";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RelayAwardData_CompareOp {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl RelayAwardData_CompareOp {
+        pub fn greater() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn less() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn zero() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn mixed_less() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn attack_greater_kill_less() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -155,62 +211,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RelayAwardData_CompareOp {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RelayAwardData.CompareOp";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RelayAwardData_CompareOp {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RelayAwardData_CompareOp {
-        pub fn greater() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn less() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn zero() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn mixed_less() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn attack_greater_kill_less() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
     #[::unity2::class(namespace = "App", name = "RelayAwardData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
@@ -276,6 +276,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
+    pub struct RelayAwardData_FlagField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -305,11 +310,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
-    pub struct RelayAwardData_FlagField {}
 }
 
 #[cfg(feature = "app-relayawarddata-types")]
@@ -427,19 +427,6 @@ impl RelayAwardData {
 }
 
 #[cfg(feature = "app-relayawarddata")]
-#[::unity2::methods(value)]
-impl RelayAwardData_Info {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        raid: ::unity2::Il2CppString,
-        kind: crate::app::unitrecord::UnitRecord_Kinds,
-        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
-    ) -> ();
-}
-
-#[cfg(feature = "app-relayawarddata")]
 #[::unity2::methods]
 impl RelayAwardData_FlagField {
     #[doc = "`.ctor(i32)` overload"]
@@ -482,4 +469,17 @@ impl RelayAwardData_FlagField {
         <Self as IRelayAwardData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
+}
+
+#[cfg(feature = "app-relayawarddata")]
+#[::unity2::methods(value)]
+impl RelayAwardData_Info {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        raid: ::unity2::Il2CppString,
+        kind: crate::app::unitrecord::UnitRecord_Kinds,
+        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
+    ) -> ();
 }

@@ -34,42 +34,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct CoreUnsafeUtils_UintKeyGetter {}
-
-    impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-        const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_IKeyGetter_2.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering",
-        name = "CoreUnsafeUtils.IKeyGetter`2"
-    )]
-    pub struct CoreUnsafeUtils_IKeyGetter_2<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-    > {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CoreUnsafeUtils")]
     #[parent(crate::system::object::Object)]
@@ -108,6 +72,42 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct CoreUnsafeUtils_UintKeyGetter {}
+
+    impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+        const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_IKeyGetter_2.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering",
+        name = "CoreUnsafeUtils.IKeyGetter`2"
+    )]
+    pub struct CoreUnsafeUtils_IKeyGetter_2<
+        T0: ::unity2::ClassIdentity,
+        T1: ::unity2::ClassIdentity,
+    > {}
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils-types")]
@@ -138,24 +138,6 @@ impl CoreUnsafeUtils_FixedBufferStringQueue {
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-#[::unity2::methods(value)]
-impl CoreUnsafeUtils_UintKeyGetter {
-    #[doc = "`Get(u32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, v: u32) -> u32;
-}
-
-#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    CoreUnsafeUtils_IKeyGetter_2<T0, T1>
-{
-    #[doc = "`Get(T0)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, v: T0) -> T1;
-}
-
-#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
 #[::unity2::methods]
 impl CoreUnsafeUtils {
     #[doc = "`QuickSort(::unity2::Array<u32>, i32, i32)` overload"]
@@ -173,4 +155,22 @@ impl<T0: ::unity2::ClassIdentity> CoreUnsafeUtils_DefaultKeyGetter_1<T0> {
     #[doc = "`Get(T0)` overload"]
     #[method(name = "Get", args = 1)]
     pub fn get(self, v: T0) -> T0;
+}
+
+#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
+#[::unity2::methods(value)]
+impl CoreUnsafeUtils_UintKeyGetter {
+    #[doc = "`Get(u32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, v: u32) -> u32;
+}
+
+#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    CoreUnsafeUtils_IKeyGetter_2<T0, T1>
+{
+    #[doc = "`Get(T0)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, v: T0) -> T1;
 }

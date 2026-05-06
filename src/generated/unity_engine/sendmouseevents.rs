@@ -8,30 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
-    #[parent(crate::system::object::Object)]
-    pub struct SendMouseEvents {
-        #[static_field]
-        #[rename(name = "s_MouseUsed")]
-        pub s_mouse_used: bool,
-        #[static_field]
-        #[rename(name = "m_LastHit")]
-        pub m_last_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_MouseDownHit")]
-        pub m_mouse_down_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_CurrentHit")]
-        pub m_current_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_Cameras")]
-        pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -60,10 +36,55 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
+    #[parent(crate::system::object::Object)]
+    pub struct SendMouseEvents {
+        #[static_field]
+        #[rename(name = "s_MouseUsed")]
+        pub s_mouse_used: bool,
+        #[static_field]
+        #[rename(name = "m_LastHit")]
+        pub m_last_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_MouseDownHit")]
+        pub m_mouse_down_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_CurrentHit")]
+        pub m_current_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_Cameras")]
+        pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+    }
 }
 
 #[cfg(feature = "unity_engine-sendmouseevents-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-sendmouseevents")]
+#[::unity2::methods(value)]
+impl SendMouseEvents_HitInfo {
+    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
+    #[method(name = "SendMessage", args = 1)]
+    pub fn send_message(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        exists: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+    ) -> bool;
+
+    #[doc = "`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        lhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+        rhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+    ) -> bool;
+}
 
 #[cfg(feature = "unity_engine-sendmouseevents")]
 #[::unity2::methods]
@@ -86,25 +107,4 @@ impl SendMouseEvents {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-sendmouseevents")]
-#[::unity2::methods(value)]
-impl SendMouseEvents_HitInfo {
-    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SendMessage", args = 1)]
-    pub fn send_message(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        exists: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-    ) -> bool;
-
-    #[doc = "`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(
-        lhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-        rhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-    ) -> bool;
 }

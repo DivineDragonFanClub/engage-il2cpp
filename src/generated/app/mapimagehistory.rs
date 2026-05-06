@@ -7,6 +7,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))]
+    #[::unity2::class(namespace = "App", name = "MapImageHistory.HeatMap")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapImageHistory_HeatMap {
+        #[rename(name = "m_Maps")]
+        pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory.md"))]
     #[::unity2::class(namespace = "App", name = "MapImageHistory")]
     #[parent(crate::system::object::Object)]
@@ -20,18 +28,49 @@ mod __types {
         #[rename(name = "m_Cells")]
         pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageHistory.HeatMap")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapImageHistory_HeatMap {
-        #[rename(name = "m_Maps")]
-        pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte>,
-    }
 }
 
 #[cfg(feature = "app-mapimagehistory-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapimagehistory")]
+#[::unity2::methods]
+impl MapImageHistory_HeatMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Get(i32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> crate::app::mapimagecorebyte::MapImageCoreByte;
+
+    #[doc = "`Get(crate::app::force::Force_Type)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(
+        self,
+        r#type: crate::app::force::Force_Type,
+    ) -> crate::app::mapimagecorebyte::MapImageCoreByte;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-mapimagehistory")]
+impl MapImageHistory_HeatMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapImageHistory_HeatMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageHistory_HeatMapMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapimagehistory")]
 #[::unity2::methods]
@@ -69,45 +108,6 @@ impl MapImageHistory {
             )
         });
         <Self as IMapImageHistoryMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapimagehistory")]
-#[::unity2::methods]
-impl MapImageHistory_HeatMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Get(i32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, index: i32) -> crate::app::mapimagecorebyte::MapImageCoreByte;
-
-    #[doc = "`Get(crate::app::force::Force_Type)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get_2(
-        self,
-        r#type: crate::app::force::Force_Type,
-    ) -> crate::app::mapimagecorebyte::MapImageCoreByte;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg(feature = "app-mapimagehistory")]
-impl MapImageHistory_HeatMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapImageHistory_HeatMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapImageHistory_HeatMapMethods>::ctor(this);
         this
     }
 }

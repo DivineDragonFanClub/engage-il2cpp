@@ -12,14 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MyRoomMovieMenuItem.MyRoomMovieCallSequence"
-    )]
-    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroommoviemenuitem :: MyRoomMovieMenuItem_MyRoomMovieCallSequence >)]
-    pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -79,10 +71,58 @@ mod __types {
         #[rename(name = "m_label")]
         pub m_label: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MyRoomMovieMenuItem.MyRoomMovieCallSequence"
+    )]
+    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroommoviemenuitem :: MyRoomMovieMenuItem_MyRoomMovieCallSequence >)]
+    pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence {}
 }
 
 #[cfg(feature = "app-myroommoviemenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-myroommoviemenuitem")]
+#[::unity2::methods]
+impl MyRoomMovieMenuItem {
+    #[doc = "`.ctor(crate::app::moviedefinedata::MovieDefineData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::moviedefinedata::MovieDefineData) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`SetCurrentMovieInfo()` overload"]
+    #[method(name = "SetCurrentMovieInfo", args = 0)]
+    pub fn set_current_movie_info(self) -> ();
+}
+
+#[cfg(feature = "app-myroommoviemenuitem")]
+impl MyRoomMovieMenuItem {
+    #[doc = "`.ctor(crate::app::moviedefinedata::MovieDefineData)` — overload selector"]
+    pub fn new(data: crate::app::moviedefinedata::MovieDefineData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomMovieMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomMovieMenuItemMethods>::ctor(this, data);
+        this
+    }
+}
 
 #[cfg(feature = "app-myroommoviemenuitem")]
 #[::unity2::methods]
@@ -135,46 +175,6 @@ impl MyRoomMovieMenuItem_MyRoomMovieCallSequence {
             )
         });
         <Self as IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroommoviemenuitem")]
-#[::unity2::methods]
-impl MyRoomMovieMenuItem {
-    #[doc = "`.ctor(crate::app::moviedefinedata::MovieDefineData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::moviedefinedata::MovieDefineData) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`SetCurrentMovieInfo()` overload"]
-    #[method(name = "SetCurrentMovieInfo", args = 0)]
-    pub fn set_current_movie_info(self) -> ();
-}
-
-#[cfg(feature = "app-myroommoviemenuitem")]
-impl MyRoomMovieMenuItem {
-    #[doc = "`.ctor(crate::app::moviedefinedata::MovieDefineData)` — overload selector"]
-    pub fn new(data: crate::app::moviedefinedata::MovieDefineData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomMovieMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomMovieMenuItemMethods>::ctor(this, data);
         this
     }
 }

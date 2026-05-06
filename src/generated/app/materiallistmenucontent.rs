@@ -14,6 +14,21 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenucontent/MaterialListMenuContent.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialListMenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct MaterialListMenuContent {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_ItemHelpText")]
+        pub m_item_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CategoryIconList")]
+        pub m_category_icon_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::image::Image,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenucontent/MaterialListMenuContent_CategoryType.md"))]
     #[repr(C)]
     #[derive(
@@ -80,21 +95,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenucontent/MaterialListMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialListMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct MaterialListMenuContent {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_ItemHelpText")]
-        pub m_item_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CategoryIconList")]
-        pub m_category_icon_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::image::Image,
-        >,
     }
 }
 

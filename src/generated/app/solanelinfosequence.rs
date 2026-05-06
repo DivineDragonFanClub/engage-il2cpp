@@ -12,19 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SolanelInfoSequence {
-        #[rename(name = "m_InfoMenuResult")]
-        pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SolanelInfoSequence_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfosequence/SolanelInfoSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -68,6 +55,19 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct SolanelInfoSequence {
+        #[rename(name = "m_InfoMenuResult")]
+        pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SolanelInfoSequence_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-solanelinfosequence-types")]

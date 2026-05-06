@@ -15,88 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags >)]
-    pub struct RelayCompletionAwardData_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcComparer")]
-    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
-    pub struct RelayCompletionAwardData_CalcComparer {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayCompletionAwardData_CalcResult {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ShowComparer")]
-    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
-    pub struct RelayCompletionAwardData_ShowComparer {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ComparerBase")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayCompletionAwardData_ComparerBase {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcWork.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RelayCompletionAwardData_CalcWork {
-        pub results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-        pub awards: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData,
-        >,
-        pub max_count: i32,
-        pub min_count: i32,
-        pub count: i32,
-        pub is_copied: bool,
-        pub random: crate::app::random_2::Random_2,
-    }
-
-    impl ::unity2::ClassIdentity for RelayCompletionAwardData_CalcWork {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RelayCompletionAwardData.CalcWork";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RelayCompletionAwardData_CalcWork {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData >)]
-    pub struct RelayCompletionAwardData {
-        #[static_field]
-        #[rename(name = "s_ShowComparer")]
-        pub s_show_comparer:
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer,
-        #[static_field]
-        #[rename(name = "s_CalcComparer")]
-        pub s_calc_comparer:
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult.Item")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayCompletionAwardData_CalcResult_Item {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaycompletionawarddata/RelayCompletionAwardData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -136,6 +54,88 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags >)]
+    pub struct RelayCompletionAwardData_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcComparer")]
+    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
+    pub struct RelayCompletionAwardData_CalcComparer {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData >)]
+    pub struct RelayCompletionAwardData {
+        #[static_field]
+        #[rename(name = "s_ShowComparer")]
+        pub s_show_comparer:
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer,
+        #[static_field]
+        #[rename(name = "s_CalcComparer")]
+        pub s_calc_comparer:
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ComparerBase")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayCompletionAwardData_ComparerBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ShowComparer")]
+    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
+    pub struct RelayCompletionAwardData_ShowComparer {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcWork.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct RelayCompletionAwardData_CalcWork {
+        pub results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+        pub awards: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData,
+        >,
+        pub max_count: i32,
+        pub min_count: i32,
+        pub count: i32,
+        pub is_copied: bool,
+        pub random: crate::app::random_2::Random_2,
+    }
+
+    impl ::unity2::ClassIdentity for RelayCompletionAwardData_CalcWork {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RelayCompletionAwardData.CalcWork";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RelayCompletionAwardData_CalcWork {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayCompletionAwardData_CalcResult {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult.Item")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayCompletionAwardData_CalcResult_Item {}
 }
 
 #[cfg(feature = "app-relaycompletionawarddata-types")]
@@ -220,132 +220,6 @@ impl RelayCompletionAwardData_CalcComparer {
             )
         });
         <Self as IRelayCompletionAwardData_CalcComparerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[::unity2::methods]
-impl RelayCompletionAwardData_CalcResult {
-    #[doc = "`get_MainItems()` overload"]
-    #[method(name = "get_MainItems", args = 0)]
-    pub fn get_main_items(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    >;
-
-    #[doc = "`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
-    #[method(name = "set_MainItems", args = 1)]
-    pub fn set_main_items(
-        self,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-    ) -> ();
-
-    #[doc = "`get_SubItems()` overload"]
-    #[method(name = "get_SubItems", args = 0)]
-    pub fn get_sub_items(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    >;
-
-    #[doc = "`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
-    #[method(name = "set_SubItems", args = 1)]
-    pub fn set_sub_items(
-        self,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, main_max_count: i32, sub_max_count: i32) -> ();
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_CalcResult {
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new(main_max_count: i32, sub_max_count: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_CalcResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayCompletionAwardData_CalcResultMethods>::ctor(
-            this,
-            main_max_count,
-            sub_max_count,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[::unity2::methods]
-impl RelayCompletionAwardData_ShowComparer {
-    #[doc = "`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(
-        self,
-        a: crate::app::itemdata::ItemData,
-        b: crate::app::itemdata::ItemData,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_ShowComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_ShowComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayCompletionAwardData_ShowComparerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[::unity2::methods]
-impl RelayCompletionAwardData_ComparerBase {
-    #[doc = "`CompareItemData(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "CompareItemData", args = 2)]
-    pub fn compare_item_data(
-        self,
-        a: crate::app::itemdata::ItemData,
-        b: crate::app::itemdata::ItemData,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_ComparerBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_ComparerBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayCompletionAwardData_ComparerBaseMethods>::ctor(this);
         this
     }
 }
@@ -491,6 +365,132 @@ impl RelayCompletionAwardData {
             )
         });
         <Self as IRelayCompletionAwardDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[::unity2::methods]
+impl RelayCompletionAwardData_ComparerBase {
+    #[doc = "`CompareItemData(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "CompareItemData", args = 2)]
+    pub fn compare_item_data(
+        self,
+        a: crate::app::itemdata::ItemData,
+        b: crate::app::itemdata::ItemData,
+    ) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_ComparerBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_ComparerBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_ComparerBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[::unity2::methods]
+impl RelayCompletionAwardData_ShowComparer {
+    #[doc = "`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        a: crate::app::itemdata::ItemData,
+        b: crate::app::itemdata::ItemData,
+    ) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_ShowComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_ShowComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_ShowComparerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[::unity2::methods]
+impl RelayCompletionAwardData_CalcResult {
+    #[doc = "`get_MainItems()` overload"]
+    #[method(name = "get_MainItems", args = 0)]
+    pub fn get_main_items(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    >;
+
+    #[doc = "`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
+    #[method(name = "set_MainItems", args = 1)]
+    pub fn set_main_items(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+    ) -> ();
+
+    #[doc = "`get_SubItems()` overload"]
+    #[method(name = "get_SubItems", args = 0)]
+    pub fn get_sub_items(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    >;
+
+    #[doc = "`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
+    #[method(name = "set_SubItems", args = 1)]
+    pub fn set_sub_items(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, main_max_count: i32, sub_max_count: i32) -> ();
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_CalcResult {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(main_max_count: i32, sub_max_count: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_CalcResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_CalcResultMethods>::ctor(
+            this,
+            main_max_count,
+            sub_max_count,
+        );
         this
     }
 }

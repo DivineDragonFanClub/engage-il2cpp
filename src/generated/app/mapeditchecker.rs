@@ -8,11 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditChecker")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEditChecker {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapeditchecker/MapEditChecker_CheckRange.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -43,10 +38,39 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEditChecker")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapEditChecker {}
 }
 
 #[cfg(feature = "app-mapeditchecker-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapeditchecker")]
+#[::unity2::methods(value)]
+impl MapEditChecker_CheckRange {
+    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, x1: i32, x2: i32, z1: i32, z2: i32) -> ();
+
+    #[doc = "`IsRange(crate::app::mappos::MapPos)` overload"]
+    #[method(name = "IsRange", args = 1)]
+    pub fn is_range(self, pos: crate::app::mappos::MapPos) -> bool;
+
+    #[doc = "`IsRange(i32, i32)` overload"]
+    #[method(name = "IsRange", args = 2)]
+    pub fn is_range_2(self, x: i32, z: i32) -> bool;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
 
 #[cfg(feature = "app-mapeditchecker")]
 #[::unity2::methods]
@@ -125,28 +149,4 @@ impl MapEditChecker {
         <Self as IMapEditCheckerMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-mapeditchecker")]
-#[::unity2::methods(value)]
-impl MapEditChecker_CheckRange {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(self, x1: i32, x2: i32, z1: i32, z2: i32) -> ();
-
-    #[doc = "`IsRange(crate::app::mappos::MapPos)` overload"]
-    #[method(name = "IsRange", args = 1)]
-    pub fn is_range(self, pos: crate::app::mappos::MapPos) -> bool;
-
-    #[doc = "`IsRange(i32, i32)` overload"]
-    #[method(name = "IsRange", args = 2)]
-    pub fn is_range_2(self, x: i32, z: i32) -> bool;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

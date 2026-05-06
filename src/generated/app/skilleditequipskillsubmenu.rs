@@ -10,6 +10,19 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_RemoveMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.RemoveMenuItem")]
+    #[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
+    pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_TradeMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.TradeMenuItem")]
     #[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
@@ -19,23 +32,78 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct SkillEditEquipSkillSubMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_RemoveMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.RemoveMenuItem")]
-    #[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
-    pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
 }
 
 #[cfg(feature = "app-skilleditequipskillsubmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_RemoveMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-skilleditequipskillsubmenu")]
 #[::unity2::methods]
@@ -116,74 +184,6 @@ impl SkillEditEquipSkillSubMenu {
             )
         });
         <Self as ISkillEditEquipSkillSubMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-#[::unity2::methods]
-impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillEditEquipSkillSubMenu_RemoveMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-#[::unity2::methods]
-impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods>::ctor(this);
         this
     }
 }

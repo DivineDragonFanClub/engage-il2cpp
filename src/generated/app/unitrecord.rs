@@ -9,50 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitRecord_DeadFlags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitRecord_DeadFlags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitRecord.DeadFlags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitRecord_DeadFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitRecord_DeadFlags {
-        pub fn encount() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn exist_dead() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitrecord/UnitRecord.md"))]
     #[::unity2::class(namespace = "App", name = "UnitRecord")]
     #[parent(crate::system::object::Object)]
@@ -296,6 +252,50 @@ mod __types {
 
         pub fn map_end() -> Self {
             Self { value: 42 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnitRecord_DeadFlags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitRecord_DeadFlags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "UnitRecord.DeadFlags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitRecord_DeadFlags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnitRecord_DeadFlags {
+        pub fn encount() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn exist_dead() -> Self {
+            Self { value: 2 }
         }
     }
 }

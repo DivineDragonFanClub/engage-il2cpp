@@ -14,49 +14,13 @@ mod __types {
     use crate::unity_engine::transform::{ITransform, Transform};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine",
+        name = "RectTransform.ReapplyDrivenProperties"
     )]
-    pub struct RectTransform_Axis {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RectTransform_Axis {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "RectTransform.Axis";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RectTransform_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RectTransform_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
-    }
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RectTransform_ReapplyDrivenProperties {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md"))]
     #[repr(C)]
@@ -120,17 +84,81 @@ mod __types {
             crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine",
-        name = "RectTransform.ReapplyDrivenProperties"
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
     )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RectTransform_ReapplyDrivenProperties {}
+    pub struct RectTransform_Axis {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RectTransform_Axis {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "RectTransform.Axis";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RectTransform_Axis {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl RectTransform_Axis {
+        pub fn horizontal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn vertical() -> Self {
+            Self { value: 1 }
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-recttransform-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-recttransform")]
+#[::unity2::methods]
+impl RectTransform_ReapplyDrivenProperties {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, driven: crate::unity_engine::recttransform::RectTransform) -> ();
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform_ReapplyDrivenProperties {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RectTransform_ReapplyDrivenProperties),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRectTransform_ReapplyDrivenPropertiesMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-recttransform")]
 #[::unity2::methods]
@@ -347,34 +375,6 @@ impl RectTransform {
             )
         });
         <Self as IRectTransformMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-#[::unity2::methods]
-impl RectTransform_ReapplyDrivenProperties {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, driven: crate::unity_engine::recttransform::RectTransform) -> ();
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl RectTransform_ReapplyDrivenProperties {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RectTransform_ReapplyDrivenProperties),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRectTransform_ReapplyDrivenPropertiesMethods>::ctor(this, object, method);
         this
     }
 }

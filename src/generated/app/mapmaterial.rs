@@ -9,16 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMaterial")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapMaterial {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapmaterial::MapMaterial_Node,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))]
     #[::unity2::class(namespace = "App", name = "MapMaterial.Node")]
     #[parent(crate::system::object::Object)]
@@ -82,10 +72,44 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMaterial")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapMaterial {
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapmaterial::MapMaterial_Node,
+        >,
+    }
 }
 
 #[cfg(feature = "app-mapmaterial-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapmaterial")]
+#[::unity2::methods]
+impl MapMaterial_Node {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapmaterial")]
+impl MapMaterial_Node {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMaterial_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMaterial_NodeMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapmaterial")]
 #[::unity2::methods]
@@ -141,30 +165,6 @@ impl MapMaterial {
             )
         });
         <Self as IMapMaterialMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapmaterial")]
-#[::unity2::methods]
-impl MapMaterial_Node {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial_Node {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapMaterial_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapMaterial_NodeMethods>::ctor(this);
         this
     }
 }

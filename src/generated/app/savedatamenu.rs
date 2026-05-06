@@ -23,53 +23,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_NoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.NoItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct SaveDataMenu_ConfirmDialog_NoItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_YesItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.YesItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct SaveDataMenu_ConfirmDialog_YesItem {
-        #[rename(name = "m_DestSaveDataHeaderHandle")]
-        pub m_dest_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct SaveDataMenu_MenuContent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.SuspendConfirmDialog.YesDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_SuspendConfirmDialog_YesDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CancelConfirmDialog.YesDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_CancelConfirmDialog_YesDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CopyConfirmDialog.YesDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-        #[rename(name = "m_SrcSaveDataHeaderHandle")]
-        pub m_src_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_NoDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -83,10 +36,24 @@ mod __types {
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
     pub struct SaveDataMenu_DeleteConfirmDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SuspendConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_SuspendConfirmDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.SuspendConfirmDialog.YesDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_SuspendConfirmDialog_YesDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct SaveDataMenu_MenuItem {
+        #[rename(name = "m_SaveDataHeaderHandle")]
+        pub m_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        #[rename(name = "m_IsSelected")]
+        pub m_is_selected: bool,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
@@ -96,54 +63,82 @@ mod __types {
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
     pub struct SaveDataMenu_DeleteConfirmDialog_YesDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.LoadConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_LoadConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.CopyConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_CopyConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct SaveDataMenu_ConfirmDialog {
-        #[rename(name = "m_SaveDataHeaderHandle")]
-        pub m_save_data_header_handle:
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_YesItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.YesItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct SaveDataMenu_ConfirmDialog_YesItem {
+        #[rename(name = "m_DestSaveDataHeaderHandle")]
+        pub m_dest_save_data_header_handle:
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_NoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.SuspendConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_SuspendConfirmDialog_NoDialogItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SuspendConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_SuspendConfirmDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_YesDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.LoadConfirmDialog.YesDialogItem"
+        name = "SaveDataMenu.CancelConfirmDialog.YesDialogItem"
     )]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_LoadConfirmDialog_YesDialogItem {}
+    pub struct SaveDataMenu_CancelConfirmDialog_YesDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_NoDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog_NoItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog.NoItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct SaveDataMenu_ConfirmDialog_NoItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.SaveConfirmDialog.NoDialogItem"
+        name = "SaveDataMenu.SaveConfirmDialog.YesDialogItem"
     )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_SaveConfirmDialog_NoDialogItem {}
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_SaveConfirmDialog_YesDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct SaveDataMenu {
+        #[static_field]
+        #[rename(name = "LayoutPrefabPath")]
+        pub layout_prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "IconSpriteAtlasPath")]
+        pub icon_sprite_atlas_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_IsSaveDataAccessSuccess")]
+        pub s_is_save_data_access_success: bool,
+        #[static_field]
+        #[rename(name = "s_IconSpriteAtlasManager")]
+        pub s_icon_sprite_atlas_manager: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+        #[rename(name = "m_Prefab")]
+        pub m_prefab: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_MenuSequence")]
+        pub m_menu_sequence: crate::app::savedatamenusequence::SaveDataMenuSequence,
+        #[rename(name = "m_SaveDataHeaderReader")]
+        pub m_save_data_header_reader:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::savedatamenu::SaveDataMenu_Mode,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::savedatamenu::SaveDataMenu_Sequence,
+        #[rename(name = "m_SrcSaveDataHeaderHandle")]
+        pub m_src_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        #[rename(name = "m_DestSaveDataHeaderHandle")]
+        pub m_dest_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        #[rename(name = "m_Select1stItemIndex")]
+        pub m_select1st_item_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.LoadConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_LoadConfirmDialog {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenu/SaveDataMenu_Sequence.md"))]
     #[repr(C)]
@@ -188,6 +183,26 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.CopyConfirmDialog.YesDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
+    pub struct SaveDataMenu_CopyConfirmDialog_YesDialogItem {
+        #[rename(name = "m_SrcSaveDataHeaderHandle")]
+        pub m_src_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.SaveConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_SaveConfirmDialog_NoDialogItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItemContent")]
@@ -245,51 +260,39 @@ mod __types {
         pub m_game_mode_classic_frame_color: crate::unity_engine::color::Color,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct SaveDataMenu_MenuItem {
-        #[rename(name = "m_SaveDataHeaderHandle")]
-        pub m_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        #[rename(name = "m_IsSelected")]
-        pub m_is_selected: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CopyConfirmDialog")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SaveConfirmDialog")]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_CopyConfirmDialog {
-        #[rename(name = "m_SrcSaveDataHeaderHandle")]
-        pub m_src_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    }
+    pub struct SaveDataMenu_SaveConfirmDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.LoadConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_LoadConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_NoDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "SaveDataMenu.DeleteConfirmDialog.NoDialogItem"
-    )]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
-    pub struct SaveDataMenu_DeleteConfirmDialog_NoDialogItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SaveDataMenu.SaveConfirmDialog.YesDialogItem"
+        name = "SaveDataMenu.LoadConfirmDialog.YesDialogItem"
     )]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_YesItem)]
-    pub struct SaveDataMenu_SaveConfirmDialog_YesDialogItem {}
+    pub struct SaveDataMenu_LoadConfirmDialog_YesDialogItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CancelConfirmDialog")]
-    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_CancelConfirmDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.CopyConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_CopyConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SuspendConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.SuspendConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_SuspendConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_MenuContent.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.MenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct SaveDataMenu_MenuContent {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenu/SaveDataMenu_Mode.md"))]
     #[repr(C)]
@@ -351,261 +354,48 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SaveDataMenu {
-        #[static_field]
-        #[rename(name = "LayoutPrefabPath")]
-        pub layout_prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "IconSpriteAtlasPath")]
-        pub icon_sprite_atlas_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_IsSaveDataAccessSuccess")]
-        pub s_is_save_data_access_success: bool,
-        #[static_field]
-        #[rename(name = "s_IconSpriteAtlasManager")]
-        pub s_icon_sprite_atlas_manager: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
-        #[rename(name = "m_Prefab")]
-        pub m_prefab: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MenuSequence")]
-        pub m_menu_sequence: crate::app::savedatamenusequence::SaveDataMenuSequence,
-        #[rename(name = "m_SaveDataHeaderReader")]
-        pub m_save_data_header_reader:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::savedatamenu::SaveDataMenu_Mode,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::savedatamenu::SaveDataMenu_Sequence,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SaveDataMenu_ConfirmDialog {
+        #[rename(name = "m_SaveDataHeaderHandle")]
+        pub m_save_data_header_handle:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_DeleteConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.DeleteConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_DeleteConfirmDialog_NoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CopyConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CopyConfirmDialog")]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
+    pub struct SaveDataMenu_CopyConfirmDialog {
         #[rename(name = "m_SrcSaveDataHeaderHandle")]
         pub m_src_save_data_header_handle:
             crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        #[rename(name = "m_DestSaveDataHeaderHandle")]
-        pub m_dest_save_data_header_handle:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        #[rename(name = "m_Select1stItemIndex")]
-        pub m_select1st_item_index: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_SaveConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenu.SaveConfirmDialog")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_CancelConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenu.CancelConfirmDialog")]
     #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog)]
-    pub struct SaveDataMenu_SaveConfirmDialog {}
+    pub struct SaveDataMenu_CancelConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenu/SaveDataMenu_LoadConfirmDialog_NoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SaveDataMenu.LoadConfirmDialog.NoDialogItem"
+    )]
+    #[parent(crate::app::savedatamenu::SaveDataMenu_ConfirmDialog_NoItem)]
+    pub struct SaveDataMenu_LoadConfirmDialog_NoDialogItem {}
 }
 
 #[cfg(feature = "app-savedatamenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog_NoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_ConfirmDialog_NoItemMethods>::ctor(this, text);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog_YesItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        text: ::unity2::Il2CppString,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog_YesItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        text: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog_YesItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_ConfirmDialog_YesItemMethods>::ctor(
-            this,
-            dest_save_data_header_handle,
-            text,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_MenuContent {
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    #[method(name = "GetMenuItemContentMax", args = 0)]
-    pub fn get_menu_item_content_max(self) -> i32;
-
-    #[doc = "`CalcW()` overload"]
-    #[method(name = "CalcW", args = 0)]
-    pub fn calc_w(self) -> f32;
-
-    #[doc = "`CalcH()` overload"]
-    #[method(name = "CalcH", args = 0)]
-    pub fn calc_h(self) -> f32;
-
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    #[method(name = "CalcCursorMovedPosY", args = 1)]
-    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_MenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_MenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_MenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            dest_save_data_header_handle,
-            src_save_data_header_handle,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
@@ -682,56 +472,7 @@ impl SaveDataMenu_DeleteConfirmDialog {
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SuspendConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
+impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
     #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
@@ -745,7 +486,7 @@ impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
+impl SaveDataMenu_SuspendConfirmDialog_YesDialogItem {
     #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
         save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
@@ -753,264 +494,14 @@ impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_YesDialogItem),
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_YesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods>::ctor(
+        <Self as ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods>::ctor(
             this,
             save_data_header_handle,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
-        save_data_hedaer_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_ConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_NoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_MenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
-
-    #[doc = "`Disable()` overload"]
-    #[method(name = "Disable", args = 0)]
-    pub fn disable(self) -> ();
-
-    #[doc = "`BuildTextColor()` overload"]
-    #[method(name = "BuildTextColor", args = 0)]
-    pub fn build_text_color(self) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`SetupByMenuItem(crate::app::savedatamenu::SaveDataMenu_MenuItem)` overload"]
-    #[method(name = "SetupByMenuItem", args = 1)]
-    pub fn setup_by_menu_item(
-        self,
-        menu_item: crate::app::savedatamenu::SaveDataMenu_MenuItem,
-    ) -> ();
-
-    #[doc = "`GetDataTypeName(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "GetDataTypeName", args = 1)]
-    pub fn get_data_type_name(
-        self,
-        save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetPlaceAndSeqenceName(crate::app::gamesavedataheader::GameSaveDataHeader, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPlaceAndSeqenceName", args = 3)]
-    pub fn get_place_and_seqence_name(
-        self,
-        save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
-        place_name: ::unity2::Il2CppString,
-        sequence_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetPlayTimeString(f32)` overload"]
-    #[method(name = "GetPlayTimeString", args = 1)]
-    pub fn get_play_time_string(self, play_time: f32) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_MenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_MenuItemContentMethods>::ctor(this);
         this
     }
 }
@@ -1076,52 +567,35 @@ impl SaveDataMenu_MenuItem {
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
-impl SaveDataMenu_CopyConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 4)]
+impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 1)]
     pub fn ctor(
         self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
     ) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CopyConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+impl SaveDataMenu_DeleteConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CopyConfirmDialog),
+                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_YesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_CopyConfirmDialogMethods>::ctor(
+        <Self as ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods>::ctor(
             this,
-            menu_item_list,
-            dialog_content,
-            dest_save_data_header_handle,
-            src_save_data_header_handle,
+            save_data_header_handle,
         );
         this
     }
@@ -1129,7 +603,42 @@ impl SaveDataMenu_CopyConfirmDialog {
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
-impl SaveDataMenu_LoadConfirmDialog {
+impl SaveDataMenu_ConfirmDialog_YesItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        text: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog_YesItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        text: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_ConfirmDialog_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_ConfirmDialog_YesItemMethods>::ctor(
+            this,
+            dest_save_data_header_handle,
+            text,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_SuspendConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
     #[method(name = ".ctor", args = 3)]
     pub fn ctor(
@@ -1150,7 +659,7 @@ impl SaveDataMenu_LoadConfirmDialog {
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_LoadConfirmDialog {
+impl SaveDataMenu_SuspendConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<
@@ -1162,11 +671,11 @@ impl SaveDataMenu_LoadConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_LoadConfirmDialog),
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_LoadConfirmDialogMethods>::ctor(
+        <Self as ISaveDataMenu_SuspendConfirmDialogMethods>::ctor(
             this,
             menu_item_list,
             dialog_content,
@@ -1178,24 +687,60 @@ impl SaveDataMenu_LoadConfirmDialog {
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
-impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl SaveDataMenu_CancelConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_NoDialogItem),
+                ::core::stringify!(SaveDataMenu_CancelConfirmDialog_YesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods>::ctor(this);
+        <Self as ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_ConfirmDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_ConfirmDialog_NoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_ConfirmDialog_NoItemMethods>::ctor(this, text);
         this
     }
 }
@@ -1230,55 +775,6 @@ impl SaveDataMenu_SaveConfirmDialog_YesDialogItem {
         });
         <Self as ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods>::ctor(
             this,
-            save_data_header_handle,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-savedatamenu")]
-#[::unity2::methods]
-impl SaveDataMenu_CancelConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> ();
-}
-
-#[cfg(feature = "app-savedatamenu")]
-impl SaveDataMenu_CancelConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataMenu_CancelConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataMenu_CancelConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            dialog_content,
             save_data_header_handle,
         );
         this
@@ -1453,6 +949,185 @@ impl SaveDataMenu {
 
 #[cfg(feature = "app-savedatamenu")]
 #[::unity2::methods]
+impl SaveDataMenu_LoadConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_LoadConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_LoadConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CopyConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            dest_save_data_header_handle,
+            src_save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SaveConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_SaveConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_MenuItemContent {
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[doc = "`Disable()` overload"]
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[doc = "`BuildTextColor()` overload"]
+    #[method(name = "BuildTextColor", args = 0)]
+    pub fn build_text_color(self) -> ();
+
+    #[doc = "`UpdateTextColor()` overload"]
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[doc = "`SetupByMenuItem(crate::app::savedatamenu::SaveDataMenu_MenuItem)` overload"]
+    #[method(name = "SetupByMenuItem", args = 1)]
+    pub fn setup_by_menu_item(
+        self,
+        menu_item: crate::app::savedatamenu::SaveDataMenu_MenuItem,
+    ) -> ();
+
+    #[doc = "`GetDataTypeName(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = "GetDataTypeName", args = 1)]
+    pub fn get_data_type_name(
+        self,
+        save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetPlaceAndSeqenceName(crate::app::gamesavedataheader::GameSaveDataHeader, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "GetPlaceAndSeqenceName", args = 3)]
+    pub fn get_place_and_seqence_name(
+        self,
+        save_data_header: crate::app::gamesavedataheader::GameSaveDataHeader,
+        place_name: ::unity2::Il2CppString,
+        sequence_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`GetPlayTimeString(f32)` overload"]
+    #[method(name = "GetPlayTimeString", args = 1)]
+    pub fn get_play_time_string(self, play_time: f32) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_MenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_MenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_MenuItemContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
 impl SaveDataMenu_SaveConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
     #[method(name = ".ctor", args = 3)]
@@ -1497,6 +1172,331 @@ impl SaveDataMenu_SaveConfirmDialog {
             dialog_content,
             save_data_header_handle,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CopyConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CopyConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_SuspendConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_SuspendConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_MenuContent {
+    #[doc = "`GetMenuItemContentMax()` overload"]
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[doc = "`CalcW()` overload"]
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[doc = "`CalcH()` overload"]
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_MenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
+        save_data_hedaer_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_ConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_DeleteConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_DeleteConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_CopyConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CopyConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        dest_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+        src_save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CopyConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CopyConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            dest_save_data_header_handle,
+            src_save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        save_data_header_handle : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_CancelConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_CancelConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            dialog_content,
+            save_data_header_handle,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-savedatamenu")]
+#[::unity2::methods]
+impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-savedatamenu")]
+impl SaveDataMenu_LoadConfirmDialog_NoDialogItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenu_LoadConfirmDialog_NoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods>::ctor(this);
         this
     }
 }

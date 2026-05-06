@@ -51,16 +51,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPrefab")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct MapPrefab {
-        #[rename(name = "m_Entitys")]
-        pub m_entitys: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapprefab::MapPrefab_Entity,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab_Entity.md"))]
     #[::unity2::class(namespace = "App", name = "MapPrefab.Entity")]
     #[parent(crate::system::object::Object)]
@@ -120,10 +110,48 @@ mod __types {
             Self { value: 0 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPrefab")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct MapPrefab {
+        #[rename(name = "m_Entitys")]
+        pub m_entitys: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapprefab::MapPrefab_Entity,
+        >,
+    }
 }
 
 #[cfg(feature = "app-mapprefab-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapprefab")]
+#[::unity2::methods]
+impl MapPrefab_Entity {
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapprefab")]
+impl MapPrefab_Entity {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPrefab_Entity),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPrefab_EntityMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapprefab")]
 #[::unity2::methods]
@@ -157,34 +185,6 @@ impl MapPrefab {
             )
         });
         <Self as IMapPrefabMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapprefab")]
-#[::unity2::methods]
-impl MapPrefab_Entity {
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapprefab")]
-impl MapPrefab_Entity {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPrefab_Entity),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPrefab_EntityMethods>::ctor(this);
         this
     }
 }

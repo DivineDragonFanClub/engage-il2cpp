@@ -9,6 +9,19 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect_ConfirmBattleSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieUnitSelect.ConfirmBattleSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct SortieUnitSelect_ConfirmBattleSequence {
+        #[rename(name = "m_ParentMenu")]
+        pub m_parent_menu: crate::app::basicmenu::BasicMenu,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieUnitSelect")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieUnitSelect {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect_UnitMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieUnitSelect.UnitMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -19,19 +32,6 @@ mod __types {
         pub m_can_sortie_for_relay: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieUnitSelect")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieUnitSelect {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect_ConfirmBattleSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieUnitSelect.ConfirmBattleSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SortieUnitSelect_ConfirmBattleSequence {
-        #[rename(name = "m_ParentMenu")]
-        pub m_parent_menu: crate::app::basicmenu::BasicMenu,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieunitselect/SortieUnitSelect_UnitEmptyMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieUnitSelect.UnitEmptyMenuItem")]
     #[parent(crate::app::sortieunitselect::SortieUnitSelect_UnitMenuItem)]
@@ -40,6 +40,97 @@ mod __types {
 
 #[cfg(feature = "app-sortieunitselect-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-sortieunitselect")]
+#[::unity2::methods]
+impl SortieUnitSelect_ConfirmBattleSequence {
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(parent_menu: crate::app::basicmenu::BasicMenu) -> ();
+
+    #[doc = "`.ctor(crate::app::basicmenu::BasicMenu)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, parent_menu: crate::app::basicmenu::BasicMenu) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`CreateDialog()` overload"]
+    #[method(name = "CreateDialog", args = 0)]
+    pub fn create_dialog(self) -> ();
+}
+
+#[cfg(feature = "app-sortieunitselect")]
+impl SortieUnitSelect_ConfirmBattleSequence {
+    #[doc = "`.ctor(crate::app::basicmenu::BasicMenu)` — overload selector"]
+    pub fn new(parent_menu: crate::app::basicmenu::BasicMenu) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieUnitSelect_ConfirmBattleSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieUnitSelect_ConfirmBattleSequenceMethods>::ctor(this, parent_menu);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortieunitselect")]
+#[::unity2::methods]
+impl SortieUnitSelect {
+    #[doc = "`GetSelectIndexFromUnit(crate::app::basicmenu::BasicMenu, crate::app::unit::Unit)` overload"]
+    #[method(name = "GetSelectIndexFromUnit", args = 2)]
+    pub fn get_select_index_from_unit(
+        menu: crate::app::basicmenu::BasicMenu,
+        unit: crate::app::unit::Unit,
+    ) -> i32;
+
+    #[doc = "`CreateMenuItemListCommon()` overload"]
+    #[method(name = "CreateMenuItemListCommon", args = 0)]
+    pub fn create_menu_item_list_common(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`CreateMenuItemList()` overload"]
+    #[method(name = "CreateMenuItemList", args = 0)]
+    pub fn create_menu_item_list(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`CreateMenuItemListForRelay()` overload"]
+    #[method(name = "CreateMenuItemListForRelay", args = 0)]
+    pub fn create_menu_item_list_for_relay(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`CreateMenuItemListForVersus()` overload"]
+    #[method(name = "CreateMenuItemListForVersus", args = 0)]
+    pub fn create_menu_item_list_for_versus(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`CanTrade(crate::app::unit::Unit)` overload"]
+    #[method(name = "CanTrade", args = 1)]
+    pub fn can_trade(to_unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortieunitselect")]
+impl SortieUnitSelect {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieUnitSelect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieUnitSelectMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-sortieunitselect")]
 #[::unity2::methods]
@@ -129,97 +220,6 @@ impl SortieUnitSelect_UnitMenuItem {
             )
         });
         <Self as ISortieUnitSelect_UnitMenuItemMethods>::ctor_2(this, unit, can_sortie_for_relay);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortieunitselect")]
-#[::unity2::methods]
-impl SortieUnitSelect {
-    #[doc = "`GetSelectIndexFromUnit(crate::app::basicmenu::BasicMenu, crate::app::unit::Unit)` overload"]
-    #[method(name = "GetSelectIndexFromUnit", args = 2)]
-    pub fn get_select_index_from_unit(
-        menu: crate::app::basicmenu::BasicMenu,
-        unit: crate::app::unit::Unit,
-    ) -> i32;
-
-    #[doc = "`CreateMenuItemListCommon()` overload"]
-    #[method(name = "CreateMenuItemListCommon", args = 0)]
-    pub fn create_menu_item_list_common(
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`CreateMenuItemList()` overload"]
-    #[method(name = "CreateMenuItemList", args = 0)]
-    pub fn create_menu_item_list(
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`CreateMenuItemListForRelay()` overload"]
-    #[method(name = "CreateMenuItemListForRelay", args = 0)]
-    pub fn create_menu_item_list_for_relay(
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`CreateMenuItemListForVersus()` overload"]
-    #[method(name = "CreateMenuItemListForVersus", args = 0)]
-    pub fn create_menu_item_list_for_versus(
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`CanTrade(crate::app::unit::Unit)` overload"]
-    #[method(name = "CanTrade", args = 1)]
-    pub fn can_trade(to_unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortieunitselect")]
-impl SortieUnitSelect {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieUnitSelect),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieUnitSelectMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortieunitselect")]
-#[::unity2::methods]
-impl SortieUnitSelect_ConfirmBattleSequence {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(parent_menu: crate::app::basicmenu::BasicMenu) -> ();
-
-    #[doc = "`.ctor(crate::app::basicmenu::BasicMenu)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, parent_menu: crate::app::basicmenu::BasicMenu) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`CreateDialog()` overload"]
-    #[method(name = "CreateDialog", args = 0)]
-    pub fn create_dialog(self) -> ();
-}
-
-#[cfg(feature = "app-sortieunitselect")]
-impl SortieUnitSelect_ConfirmBattleSequence {
-    #[doc = "`.ctor(crate::app::basicmenu::BasicMenu)` — overload selector"]
-    pub fn new(parent_menu: crate::app::basicmenu::BasicMenu) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieUnitSelect_ConfirmBattleSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieUnitSelect_ConfirmBattleSequenceMethods>::ctor(this, parent_menu);
         this
     }
 }

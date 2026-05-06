@@ -9,6 +9,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LogCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "Application.LogCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Application_LogCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Application")]
     #[parent(crate::system::object::Object)]
@@ -44,15 +49,43 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Application.LowMemoryCallback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct Application_LowMemoryCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LogCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Application.LogCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Application_LogCallback {}
 }
 
 #[cfg(feature = "unity_engine-application-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-application")]
+#[::unity2::methods]
+impl Application_LogCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        condition: ::unity2::Il2CppString,
+        stack_trace: ::unity2::Il2CppString,
+        r#type: crate::unity_engine::logtype::LogType,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-application")]
+impl Application_LogCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Application_LogCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IApplication_LogCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-application")]
 #[::unity2::methods]
@@ -165,39 +198,6 @@ impl Application_LowMemoryCallback {
             )
         });
         <Self as IApplication_LowMemoryCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-application")]
-#[::unity2::methods]
-impl Application_LogCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        condition: ::unity2::Il2CppString,
-        stack_trace: ::unity2::Il2CppString,
-        r#type: crate::unity_engine::logtype::LogType,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-application")]
-impl Application_LogCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Application_LogCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IApplication_LogCallbackMethods>::ctor(this, object, method);
         this
     }
 }

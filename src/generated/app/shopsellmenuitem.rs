@@ -36,15 +36,15 @@ mod __types {
             crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenuitem/ShopSellMenuItem_DecideItemEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenuItem.DecideItemEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenuItem_DecideItemEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenuitem/ShopSellMenuItem_CancelItemEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "ShopSellMenuItem.CancelItemEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ShopSellMenuItem_CancelItemEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenuitem/ShopSellMenuItem_DecideItemEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenuItem.DecideItemEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenuItem_DecideItemEventHandler {}
 }
 
 #[cfg(feature = "app-shopsellmenuitem-types")]
@@ -224,34 +224,6 @@ impl ShopSellMenuItem {
 
 #[cfg(feature = "app-shopsellmenuitem")]
 #[::unity2::methods]
-impl ShopSellMenuItem_DecideItemEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, item_index: i32) -> ();
-}
-
-#[cfg(feature = "app-shopsellmenuitem")]
-impl ShopSellMenuItem_DecideItemEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenuItem_DecideItemEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopSellMenuItem_DecideItemEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-shopsellmenuitem")]
-#[::unity2::methods]
 impl ShopSellMenuItem_CancelItemEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -274,6 +246,34 @@ impl ShopSellMenuItem_CancelItemEventHandler {
             )
         });
         <Self as IShopSellMenuItem_CancelItemEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-shopsellmenuitem")]
+#[::unity2::methods]
+impl ShopSellMenuItem_DecideItemEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, item_index: i32) -> ();
+}
+
+#[cfg(feature = "app-shopsellmenuitem")]
+impl ShopSellMenuItem_DecideItemEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellMenuItem_DecideItemEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellMenuItem_DecideItemEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -14,25 +14,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_ParamFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "GameParam.ParamFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GameParam_ParamFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_Holder.md"))]
-    #[::unity2::class(namespace = "App", name = "GameParam.Holder")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameParam_Holder {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Param")]
-        pub m_param: crate::app::gameparam::GameParam,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam.md"))]
     #[::unity2::class(namespace = "App", name = "GameParam")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: gameparam :: GameParam >)]
     pub struct GameParam {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_ParamFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "GameParam.ParamFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GameParam_ParamFunction {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameparam/GameParam_Kind.md"))]
     #[repr(C)]
@@ -85,86 +75,20 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_Holder.md"))]
+    #[::unity2::class(namespace = "App", name = "GameParam.Holder")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameParam_Holder {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Param")]
+        pub m_param: crate::app::gameparam::GameParam,
+    }
 }
 
 #[cfg(feature = "app-gameparam-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gameparam")]
-#[::unity2::methods]
-impl GameParam_ParamFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        param: crate::app::gameparam::GameParam,
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-}
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam_ParamFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameParam_ParamFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameParam_ParamFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameparam")]
-#[::unity2::methods]
-impl GameParam_Holder {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetParam()` overload"]
-    #[method(name = "GetParam", args = 0)]
-    pub fn get_param(self) -> crate::app::gameparam::GameParam;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`GetInt()` overload"]
-    #[method(name = "GetInt", args = 0)]
-    pub fn get_int(self) -> i32;
-
-    #[doc = "`GetFloat()` overload"]
-    #[method(name = "GetFloat", args = 0)]
-    pub fn get_float(self) -> f32;
-
-    #[doc = "`GetBool()` overload"]
-    #[method(name = "GetBool", args = 0)]
-    pub fn get_bool(self) -> bool;
-}
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam_Holder {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameParam_Holder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameParam_HolderMethods>::ctor(this, name);
-        this
-    }
-}
 
 #[cfg(feature = "app-gameparam")]
 #[::unity2::methods]
@@ -327,6 +251,82 @@ impl GameParam {
             )
         });
         <Self as IGameParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameparam")]
+#[::unity2::methods]
+impl GameParam_ParamFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        param: crate::app::gameparam::GameParam,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gameparam")]
+impl GameParam_ParamFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameParam_ParamFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameParam_ParamFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameparam")]
+#[::unity2::methods]
+impl GameParam_Holder {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`GetParam()` overload"]
+    #[method(name = "GetParam", args = 0)]
+    pub fn get_param(self) -> crate::app::gameparam::GameParam;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`GetInt()` overload"]
+    #[method(name = "GetInt", args = 0)]
+    pub fn get_int(self) -> i32;
+
+    #[doc = "`GetFloat()` overload"]
+    #[method(name = "GetFloat", args = 0)]
+    pub fn get_float(self) -> f32;
+
+    #[doc = "`GetBool()` overload"]
+    #[method(name = "GetBool", args = 0)]
+    pub fn get_bool(self) -> bool;
+}
+
+#[cfg(feature = "app-gameparam")]
+impl GameParam_Holder {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameParam_Holder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameParam_HolderMethods>::ctor(this, name);
         this
     }
 }

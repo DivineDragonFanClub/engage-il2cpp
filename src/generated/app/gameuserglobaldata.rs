@@ -13,23 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
-    pub struct GameUserGlobalData_FlagsField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
-    pub struct GameUserGlobalData {
-        #[rename(name = "m_CompletedHash")]
-        pub m_completed_hash:
-            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
-        #[rename(name = "m_CompletedList")]
-        pub m_completed_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -117,38 +100,27 @@ mod __types {
             Self { value: 512 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
+    pub struct GameUserGlobalData {
+        #[rename(name = "m_CompletedHash")]
+        pub m_completed_hash:
+            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        #[rename(name = "m_CompletedList")]
+        pub m_completed_list:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
+    pub struct GameUserGlobalData_FlagsField {}
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gameuserglobaldata")]
-#[::unity2::methods]
-impl GameUserGlobalData_FlagsField {
-    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData_FlagsField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserGlobalData_FlagsField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-gameuserglobaldata")]
 #[::unity2::methods]
@@ -266,6 +238,34 @@ impl GameUserGlobalData {
             )
         });
         <Self as IGameUserGlobalDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+#[::unity2::methods]
+impl GameUserGlobalData_FlagsField {
+    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData_FlagsField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGlobalData_FlagsField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
         this
     }
 }

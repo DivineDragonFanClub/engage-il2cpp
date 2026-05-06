@@ -69,72 +69,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/note/Note.md"))]
-    #[::unity2::class(namespace = "App.Squat", name = "Note")]
-    #[parent(crate::system::object::Object)]
-    pub struct Note {
-        #[static_field]
-        #[rename(name = "cUIRootPath")]
-        pub c_ui_root_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesLeft")]
-        pub c_ui_notes_left: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesRight")]
-        pub c_ui_notes_right: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesUp")]
-        pub c_ui_notes_up: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesDown")]
-        pub c_ui_notes_down: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesClockwise")]
-        pub c_ui_notes_clockwise: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUINotesUnclockwise")]
-        pub c_ui_notes_unclockwise: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DisplayHeight")]
-        pub display_height: f32,
-        #[rename(name = "m_NodeImage")]
-        pub m_node_image: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ImageAnime")]
-        pub m_image_anime: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_ImageTrans")]
-        pub m_image_trans: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_StickImageTrans")]
-        pub m_stick_image_trans: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_BaseTrans")]
-        pub m_base_trans: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_BaseHeightPerFrame")]
-        pub m_base_height_per_frame: f32,
-        #[rename(name = "m_BaseDiffLength")]
-        pub m_base_diff_length: f32,
-        #[rename(name = "m_StickRangeMult")]
-        pub m_stick_range_mult: f32,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[rename(name = "m_ClockwiseTimer")]
-        pub m_clockwise_timer: f32,
-        #[rename(name = "m_TimeMult")]
-        pub m_time_mult: f32,
-        #[rename(name = "m_IsPlayClockwiseInputAnime")]
-        pub m_is_play_clockwise_input_anime: bool,
-        #[rename(name = "m_FirstP")]
-        pub m_first_p: f32,
-        #[rename(name = "m_FirstG")]
-        pub m_first_g: f32,
-        #[rename(name = "m_FirstB")]
-        pub m_first_b: f32,
-        #[rename(name = "m_LatterP")]
-        pub m_latter_p: f32,
-        #[rename(name = "m_LatterG")]
-        pub m_latter_g: f32,
-        #[rename(name = "m_LatterB")]
-        pub m_latter_b: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -209,6 +143,72 @@ mod __types {
         pub fn type_count() -> Self {
             Self { value: 61 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/note/Note.md"))]
+    #[::unity2::class(namespace = "App.Squat", name = "Note")]
+    #[parent(crate::system::object::Object)]
+    pub struct Note {
+        #[static_field]
+        #[rename(name = "cUIRootPath")]
+        pub c_ui_root_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesLeft")]
+        pub c_ui_notes_left: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesRight")]
+        pub c_ui_notes_right: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesUp")]
+        pub c_ui_notes_up: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesDown")]
+        pub c_ui_notes_down: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesClockwise")]
+        pub c_ui_notes_clockwise: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUINotesUnclockwise")]
+        pub c_ui_notes_unclockwise: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "DisplayHeight")]
+        pub display_height: f32,
+        #[rename(name = "m_NodeImage")]
+        pub m_node_image: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ImageAnime")]
+        pub m_image_anime: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_ImageTrans")]
+        pub m_image_trans: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_StickImageTrans")]
+        pub m_stick_image_trans: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_BaseTrans")]
+        pub m_base_trans: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_BaseHeightPerFrame")]
+        pub m_base_height_per_frame: f32,
+        #[rename(name = "m_BaseDiffLength")]
+        pub m_base_diff_length: f32,
+        #[rename(name = "m_StickRangeMult")]
+        pub m_stick_range_mult: f32,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+        #[rename(name = "m_ClockwiseTimer")]
+        pub m_clockwise_timer: f32,
+        #[rename(name = "m_TimeMult")]
+        pub m_time_mult: f32,
+        #[rename(name = "m_IsPlayClockwiseInputAnime")]
+        pub m_is_play_clockwise_input_anime: bool,
+        #[rename(name = "m_FirstP")]
+        pub m_first_p: f32,
+        #[rename(name = "m_FirstG")]
+        pub m_first_g: f32,
+        #[rename(name = "m_FirstB")]
+        pub m_first_b: f32,
+        #[rename(name = "m_LatterP")]
+        pub m_latter_p: f32,
+        #[rename(name = "m_LatterG")]
+        pub m_latter_g: f32,
+        #[rename(name = "m_LatterB")]
+        pub m_latter_b: f32,
     }
 }
 

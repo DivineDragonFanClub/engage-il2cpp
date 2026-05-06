@@ -9,17 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/random_2/Random_2.md"))]
-    #[::unity2::class(namespace = "App", name = "Random")]
-    #[parent(crate::system::object::Object)]
-    pub struct Random_2 {
-        #[static_field]
-        #[rename(name = "s_Rand")]
-        pub s_rand: ::unity2::Array<crate::app::random_2::Random_2>,
-        #[rename(name = "m_Seed")]
-        pub m_seed: crate::app::randomseed::RandomSeed,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/random_2/Random_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -86,6 +75,17 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 7 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/random_2/Random_2.md"))]
+    #[::unity2::class(namespace = "App", name = "Random")]
+    #[parent(crate::system::object::Object)]
+    pub struct Random_2 {
+        #[static_field]
+        #[rename(name = "s_Rand")]
+        pub s_rand: ::unity2::Array<crate::app::random_2::Random_2>,
+        #[rename(name = "m_Seed")]
+        pub m_seed: crate::app::randomseed::RandomSeed,
     }
 }
 

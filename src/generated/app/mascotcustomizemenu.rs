@@ -14,6 +14,25 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_PartsMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.PartsMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MascotCustomizeMenu_PartsMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MascotCustomizeMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MascotCustomizeMenu_DecideEventHandler {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcustomizemenu/MascotCustomizeMenu_MenuResult.md"))]
     #[repr(C)]
     #[derive(
@@ -61,25 +80,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_PartsMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.PartsMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MascotCustomizeMenu_PartsMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MascotCustomizeMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MascotCustomizeMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_ColorMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.ColorMenuItem")]

@@ -35,6 +35,35 @@ mod __types {
             crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_GodParam.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct RingCleaningUnitSelectMenu_GodParam {
+        pub god: crate::app::godunit::GodUnit,
+        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    }
+
+    impl ::unity2::ClassIdentity for RingCleaningUnitSelectMenu_GodParam {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RingCleaningUnitSelectMenu.GodParam";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingCleaningUnitSelectMenu_GodParam {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -67,35 +96,6 @@ mod __types {
         >,
         #[rename(name = "m_GodListIndex")]
         pub m_god_list_index: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_GodParam.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RingCleaningUnitSelectMenu_GodParam {
-        pub god: crate::app::godunit::GodUnit,
-        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-    }
-
-    impl ::unity2::ClassIdentity for RingCleaningUnitSelectMenu_GodParam {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingCleaningUnitSelectMenu.GodParam";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingCleaningUnitSelectMenu_GodParam {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md"))]

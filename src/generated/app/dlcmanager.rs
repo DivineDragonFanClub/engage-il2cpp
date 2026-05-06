@@ -9,6 +9,47 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager.md"))]
+    #[::unity2::class(namespace = "App", name = "DLCManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct DLCManager {
+        #[static_field]
+        #[rename(name = "ApplicationId")]
+        pub application_id: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "StreamingAssetsPath")]
+        pub streaming_assets_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_MountData")]
+        pub s_mount_data: crate::system::collections::generic::list_1::List_1<
+            crate::app::dlcmanager::DLCManager_MountData,
+        >,
+        #[static_field]
+        #[rename(name = "s_AwakeChangedEvent")]
+        pub s_awake_changed_event: bool,
+        #[static_field]
+        #[rename(name = "s_ChangedEventListener")]
+        pub s_changed_event_listener: crate::unity_engine::events::unityevent::UnityEvent,
+        #[static_field]
+        #[rename(name = "s_IsInitialized")]
+        pub s_is_initialized: bool,
+        #[static_field]
+        #[rename(name = "s_HasList")]
+        pub s_has_list: ::unity2::Array<crate::app::dlcmanager::DLCManager_DLCList>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))]
+    #[::unity2::class(namespace = "App", name = "DLCManager.MountData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DLCManager_MountData {
+        #[rename(name = "content")]
+        pub content: crate::app::dlcmanager::DLCManager_Content,
+        #[rename(name = "mountBuffer")]
+        pub mount_buffer: ::unity2::Array<u8>,
+        #[rename(name = "mountName")]
+        pub mount_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
     #[repr(C)]
     #[derive(
@@ -66,75 +107,10 @@ mod __types {
         #[rename(name = "hasContent")]
         pub has_content: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager.md"))]
-    #[::unity2::class(namespace = "App", name = "DLCManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct DLCManager {
-        #[static_field]
-        #[rename(name = "ApplicationId")]
-        pub application_id: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "StreamingAssetsPath")]
-        pub streaming_assets_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_MountData")]
-        pub s_mount_data: crate::system::collections::generic::list_1::List_1<
-            crate::app::dlcmanager::DLCManager_MountData,
-        >,
-        #[static_field]
-        #[rename(name = "s_AwakeChangedEvent")]
-        pub s_awake_changed_event: bool,
-        #[static_field]
-        #[rename(name = "s_ChangedEventListener")]
-        pub s_changed_event_listener: crate::unity_engine::events::unityevent::UnityEvent,
-        #[static_field]
-        #[rename(name = "s_IsInitialized")]
-        pub s_is_initialized: bool,
-        #[static_field]
-        #[rename(name = "s_HasList")]
-        pub s_has_list: ::unity2::Array<crate::app::dlcmanager::DLCManager_DLCList>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))]
-    #[::unity2::class(namespace = "App", name = "DLCManager.MountData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DLCManager_MountData {
-        #[rename(name = "content")]
-        pub content: crate::app::dlcmanager::DLCManager_Content,
-        #[rename(name = "mountBuffer")]
-        pub mount_buffer: ::unity2::Array<u8>,
-        #[rename(name = "mountName")]
-        pub mount_name: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "app-dlcmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-dlcmanager")]
-#[::unity2::methods]
-impl DLCManager_DLCList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DLCManager_DLCList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDLCManager_DLCListMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-dlcmanager")]
 #[::unity2::methods]
@@ -308,6 +284,30 @@ impl DLCManager_MountData {
             )
         });
         <Self as IDLCManager_MountDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dlcmanager")]
+#[::unity2::methods]
+impl DLCManager_DLCList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager_DLCList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DLCManager_DLCList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDLCManager_DLCListMethods>::ctor(this);
         this
     }
 }

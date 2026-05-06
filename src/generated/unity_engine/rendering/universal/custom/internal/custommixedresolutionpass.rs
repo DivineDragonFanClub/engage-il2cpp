@@ -60,6 +60,46 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+        name = "CustomMixedResolutionPass"
+    )]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct CustomMixedResolutionPass {
+        #[static_field]
+        #[rename(name = "m_ProfilerTag")]
+        pub m_profiler_tag: ::unity2::Il2CppString,
+        #[rename(name = "m_ProfilingSampler")]
+        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "m_HalfColorHandle")]
+        pub m_half_color_handle:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_HalfDepthHandle")]
+        pub m_half_depth_handle:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_EffectSoftParticleDepthHandle")]
+        pub m_effect_soft_particle_depth_handle:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_EdgeHandle")]
+        pub m_edge_handle:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_CopyDepthMaterial")]
+        pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_CompositeMaterial")]
+        pub m_composite_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_FullScreenTriangle")]
+        pub m_full_screen_triangle: crate::unity_engine::mesh::Mesh,
+        #[rename(name = "m_FilteringSettings")]
+        pub m_filtering_settings:
+            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[rename(name = "m_EffectTagId")]
+        pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[rename(name = "m_MixedRenderState")]
+        pub m_mixed_render_state:
+            crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
     #[repr(C)]
     #[derive(
@@ -102,46 +142,6 @@ mod __types {
         pub fn min_max() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-        name = "CustomMixedResolutionPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct CustomMixedResolutionPass {
-        #[static_field]
-        #[rename(name = "m_ProfilerTag")]
-        pub m_profiler_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[rename(name = "m_HalfColorHandle")]
-        pub m_half_color_handle:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_HalfDepthHandle")]
-        pub m_half_depth_handle:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_EffectSoftParticleDepthHandle")]
-        pub m_effect_soft_particle_depth_handle:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_EdgeHandle")]
-        pub m_edge_handle:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_CopyDepthMaterial")]
-        pub m_copy_depth_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_CompositeMaterial")]
-        pub m_composite_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_FullScreenTriangle")]
-        pub m_full_screen_triangle: crate::unity_engine::mesh::Mesh,
-        #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings:
-            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        #[rename(name = "m_EffectTagId")]
-        pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        #[rename(name = "m_MixedRenderState")]
-        pub m_mixed_render_state:
-            crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
     }
 }
 

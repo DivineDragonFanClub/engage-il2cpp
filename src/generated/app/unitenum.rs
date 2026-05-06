@@ -8,17 +8,23 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct UnitEnum {
-        pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
+    pub struct UnitEnum_TargetEnumerator {
+        pub m_unit_enum: crate::app::unitenum::UnitEnum_Enumerator,
+        pub m_current: crate::app::unit::Unit,
+        pub m_unit: crate::app::unit::Unit,
+        pub m_x: i32,
+        pub m_z: i32,
+        pub m_near: i32,
+        pub m_far: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitEnum {
+    impl ::unity2::ClassIdentity for UnitEnum_TargetEnumerator {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "UnitEnum";
+        const NAME: &'static str = "UnitEnum.TargetEnumerator";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,7 +33,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitEnum {
+    impl ::unity2::IlType for UnitEnum_TargetEnumerator {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -67,23 +73,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct UnitEnum_TargetEnumerator {
-        pub m_unit_enum: crate::app::unitenum::UnitEnum_Enumerator,
-        pub m_current: crate::app::unit::Unit,
-        pub m_unit: crate::app::unit::Unit,
-        pub m_x: i32,
-        pub m_z: i32,
-        pub m_near: i32,
-        pub m_far: i32,
+    pub struct UnitEnum {
+        pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
     }
 
-    impl ::unity2::ClassIdentity for UnitEnum_TargetEnumerator {
+    impl ::unity2::ClassIdentity for UnitEnum {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "UnitEnum.TargetEnumerator";
+        const NAME: &'static str = "UnitEnum";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -92,7 +92,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitEnum_TargetEnumerator {
+    impl ::unity2::IlType for UnitEnum {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -104,6 +104,79 @@ mod __types {
 
 #[cfg(feature = "app-unitenum-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitenum")]
+#[::unity2::methods(value)]
+impl UnitEnum_TargetEnumerator {
+    #[doc = "`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "Setup", args = 5)]
+    pub fn setup(
+        self,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        near: i32,
+        far: i32,
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::unit::Unit;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+}
+
+#[cfg(feature = "app-unitenum")]
+#[::unity2::methods(value)]
+impl UnitEnum_Enumerator {
+    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, types: ::unity2::Array<crate::app::force::Force_Type>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::unit::Unit;
+}
 
 #[cfg(feature = "app-unitenum")]
 #[::unity2::methods(value)]
@@ -186,77 +259,4 @@ impl UnitEnum {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-unitenum")]
-#[::unity2::methods(value)]
-impl UnitEnum_Enumerator {
-    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, types: ::unity2::Array<crate::app::force::Force_Type>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::unit::Unit;
-}
-
-#[cfg(feature = "app-unitenum")]
-#[::unity2::methods(value)]
-impl UnitEnum_TargetEnumerator {
-    #[doc = "`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "Setup", args = 5)]
-    pub fn setup(
-        self,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::unit::Unit;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
 }

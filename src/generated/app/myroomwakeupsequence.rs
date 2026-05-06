@@ -11,66 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
-    #[parent(crate::system::object::Object)]
-    pub struct MyRoomWakeupSequence_RelianceWakeup {
-        #[rename(name = "m_pid")]
-        pub m_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_level")]
-        pub m_level: crate::app::reliancedata::RelianceData_Level,
-        #[rename(name = "m_pattern")]
-        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MyRoomWakeupSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MyRoomWakeupSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MyRoomWakeupSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MyRoomWakeupSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MyRoomWakeupSequence_Label {
-        pub fn wakeup_main() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn wakeup_exit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn skip_end_fade() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupsequence :: MyRoomWakeupSequence >)]
@@ -153,47 +93,70 @@ mod __types {
         #[rename(name = "message")]
         pub message: crate::app::gamemessage::GameMessage,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MyRoomWakeupSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MyRoomWakeupSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MyRoomWakeupSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MyRoomWakeupSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MyRoomWakeupSequence_Label {
+        pub fn wakeup_main() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn wakeup_exit() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn skip_end_fade() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
+    #[parent(crate::system::object::Object)]
+    pub struct MyRoomWakeupSequence_RelianceWakeup {
+        #[rename(name = "m_pid")]
+        pub m_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_level")]
+        pub m_level: crate::app::reliancedata::RelianceData_Level,
+        #[rename(name = "m_pattern")]
+        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    }
 }
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-#[::unity2::methods]
-impl MyRoomWakeupSequence_RelianceWakeup {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        pid: ::unity2::Il2CppString,
-        level: crate::app::reliancedata::RelianceData_Level,
-        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    ) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-impl MyRoomWakeupSequence_RelianceWakeup {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]
-    pub fn new(
-        pid: ::unity2::Il2CppString,
-        level: crate::app::reliancedata::RelianceData_Level,
-        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomWakeupSequence_RelianceWakeupMethods>::ctor(this, pid, level, pattern);
-        this
-    }
-}
 
 #[cfg(feature = "app-myroomwakeupsequence")]
 #[::unity2::methods]
@@ -535,6 +498,43 @@ impl MyRoomWakeupSequence {
             )
         });
         <Self as IMyRoomWakeupSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+#[::unity2::methods]
+impl MyRoomWakeupSequence_RelianceWakeup {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        pid: ::unity2::Il2CppString,
+        level: crate::app::reliancedata::RelianceData_Level,
+        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    ) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+impl MyRoomWakeupSequence_RelianceWakeup {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]
+    pub fn new(
+        pid: ::unity2::Il2CppString,
+        level: crate::app::reliancedata::RelianceData_Level,
+        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomWakeupSequence_RelianceWakeupMethods>::ctor(this, pid, level, pattern);
         this
     }
 }

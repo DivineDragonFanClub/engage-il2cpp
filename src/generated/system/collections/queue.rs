@@ -7,6 +7,20 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueEnumerator")]
+    #[parent(crate::system::object::Object)]
+    pub struct Queue_QueueEnumerator {
+        #[rename(name = "_q")]
+        pub q: crate::system::collections::queue::Queue,
+        #[rename(name = "_index")]
+        pub index: i32,
+        #[rename(name = "_version")]
+        pub version: i32,
+        #[rename(name = "currentElement")]
+        pub current_element: ::unity2::IlInstance,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueDebugView")]
     #[parent(crate::system::object::Object)]
@@ -31,24 +45,50 @@ mod __types {
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueEnumerator")]
-    #[parent(crate::system::object::Object)]
-    pub struct Queue_QueueEnumerator {
-        #[rename(name = "_q")]
-        pub q: crate::system::collections::queue::Queue,
-        #[rename(name = "_index")]
-        pub index: i32,
-        #[rename(name = "_version")]
-        pub version: i32,
-        #[rename(name = "currentElement")]
-        pub current_element: ::unity2::IlInstance,
-    }
 }
 
 #[cfg(feature = "system-collections-queue-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-queue")]
+#[::unity2::methods]
+impl Queue_QueueEnumerator {
+    #[doc = "`.ctor(crate::system::collections::queue::Queue)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, q: crate::system::collections::queue::Queue) -> ();
+
+    #[doc = "`Clone()` overload"]
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-queue")]
+impl Queue_QueueEnumerator {
+    #[doc = "`.ctor(crate::system::collections::queue::Queue)` — overload selector"]
+    pub fn new(q: crate::system::collections::queue::Queue) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Queue_QueueEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IQueue_QueueEnumeratorMethods>::ctor(this, q);
+        this
+    }
+}
 
 #[cfg(feature = "system-collections-queue")]
 #[::unity2::methods]
@@ -165,46 +205,6 @@ impl Queue {
             )
         });
         <Self as IQueueMethods>::ctor_4(this, col);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-queue")]
-#[::unity2::methods]
-impl Queue_QueueEnumerator {
-    #[doc = "`.ctor(crate::system::collections::queue::Queue)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, q: crate::system::collections::queue::Queue) -> ();
-
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-queue")]
-impl Queue_QueueEnumerator {
-    #[doc = "`.ctor(crate::system::collections::queue::Queue)` — overload selector"]
-    pub fn new(q: crate::system::collections::queue::Queue) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue_QueueEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IQueue_QueueEnumeratorMethods>::ctor(this, q);
         this
     }
 }

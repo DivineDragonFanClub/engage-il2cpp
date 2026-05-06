@@ -8,11 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition_Data.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSortiePosition.Data")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSortiePosition_Data {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition.md"))]
     #[::unity2::class(namespace = "App", name = "MapSortiePosition")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsortieposition :: MapSortiePosition >)]
@@ -25,58 +20,15 @@ mod __types {
         #[rename(name = "m_DataCount")]
         pub m_data_count: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition_Data.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSortiePosition.Data")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapSortiePosition_Data {}
 }
 
 #[cfg(feature = "app-mapsortieposition-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapsortieposition")]
-#[::unity2::methods]
-impl MapSortiePosition_Data {
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Angle()` overload"]
-    #[method(name = "get_Angle", args = 0)]
-    pub fn get_angle(self) -> f32;
-
-    #[doc = "`set_Angle(f32)` overload"]
-    #[method(name = "set_Angle", args = 1)]
-    pub fn set_angle(self, value: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsortieposition")]
-impl MapSortiePosition_Data {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSortiePosition_Data),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSortiePosition_DataMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapsortieposition")]
 #[::unity2::methods]
@@ -138,6 +90,54 @@ impl MapSortiePosition {
             )
         });
         <Self as IMapSortiePositionMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsortieposition")]
+#[::unity2::methods]
+impl MapSortiePosition_Data {
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_Angle()` overload"]
+    #[method(name = "get_Angle", args = 0)]
+    pub fn get_angle(self) -> f32;
+
+    #[doc = "`set_Angle(f32)` overload"]
+    #[method(name = "set_Angle", args = 1)]
+    pub fn set_angle(self, value: f32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsortieposition")]
+impl MapSortiePosition_Data {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSortiePosition_Data),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSortiePosition_DataMethods>::ctor(this);
         this
     }
 }

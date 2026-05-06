@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
-    #[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubUtil_BSpline {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
     #[repr(C)]
     #[derive(
@@ -178,56 +173,15 @@ mod __types {
         #[rename(name = "s_HubParams")]
         pub s_hub_params: crate::app::hubparams::HubParams,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
+    #[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubUtil_BSpline {}
 }
 
 #[cfg(feature = "app-hubutil-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubutil")]
-#[::unity2::methods]
-impl HubUtil_BSpline {
-    #[doc = "`Loop(i32, i32, i32)` overload"]
-    #[method(name = "Loop", args = 3)]
-    pub fn r#loop(n: i32, min: i32, max: i32) -> i32;
-
-    #[doc = "`Coefficient(f32)` overload"]
-    #[method(name = "Coefficient", args = 1)]
-    pub fn coefficient(t: f32) -> f32;
-
-    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    #[method(name = "Calc", args = 2)]
-    pub fn calc(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    #[method(name = "CalcLoop", args = 2)]
-    pub fn calc_loop(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubUtil_BSpline),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubUtil_BSplineMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubutil")]
 #[::unity2::methods]
@@ -957,6 +911,52 @@ impl HubUtil {
             )
         });
         <Self as IHubUtilMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubutil")]
+#[::unity2::methods]
+impl HubUtil_BSpline {
+    #[doc = "`Loop(i32, i32, i32)` overload"]
+    #[method(name = "Loop", args = 3)]
+    pub fn r#loop(n: i32, min: i32, max: i32) -> i32;
+
+    #[doc = "`Coefficient(f32)` overload"]
+    #[method(name = "Coefficient", args = 1)]
+    pub fn coefficient(t: f32) -> f32;
+
+    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    #[method(name = "Calc", args = 2)]
+    pub fn calc(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    #[method(name = "CalcLoop", args = 2)]
+    pub fn calc_loop(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubutil")]
+impl HubUtil_BSpline {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubUtil_BSpline),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubUtil_BSplineMethods>::ctor(this);
         this
     }
 }

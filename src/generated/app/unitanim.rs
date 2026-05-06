@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitanim/UnitAnim.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitAnim")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitAnim {
+        #[static_field]
+        #[rename(name = "s_NullClip")]
+        pub s_null_clip: crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+        #[static_field]
+        #[rename(name = "s_NullState")]
+        pub s_null_state: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Types.md"))]
     #[repr(C)]
     #[derive(
@@ -111,18 +123,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 16 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitanim/UnitAnim.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitAnim")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitAnim {
-        #[static_field]
-        #[rename(name = "s_NullClip")]
-        pub s_null_clip: crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
-        #[static_field]
-        #[rename(name = "s_NullState")]
-        pub s_null_state: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Times.md"))]

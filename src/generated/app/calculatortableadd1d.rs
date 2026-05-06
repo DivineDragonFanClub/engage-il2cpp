@@ -12,6 +12,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortableadd1d/CalculatorTableAdd1D_TableCommand.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorTableAdd1D.TableCommand")]
+    #[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+    pub struct CalculatorTableAdd1D_TableCommand {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortableadd1d/CalculatorTableAdd1D.md"))]
     #[::unity2::class(namespace = "App", name = "CalculatorTableAdd1D")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: calculatortableadd1d :: CalculatorTableAdd1D >)]
@@ -28,18 +36,46 @@ mod __types {
         #[rename(name = "m_Table")]
         pub m_table: crate::app::calculatortable::CalculatorTable,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortableadd1d/CalculatorTableAdd1D_TableCommand.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorTableAdd1D.TableCommand")]
-    #[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-    pub struct CalculatorTableAdd1D_TableCommand {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "app-calculatortableadd1d-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-calculatortableadd1d")]
+#[::unity2::methods]
+impl CalculatorTableAdd1D_TableCommand {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    #[method(name = "FuncImpl", args = 2)]
+    pub fn func_impl(
+        self,
+        unit: crate::app::unit::Unit,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+    ) -> f32;
+}
+
+#[cfg(feature = "app-calculatortableadd1d")]
+impl CalculatorTableAdd1D_TableCommand {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorTableAdd1D_TableCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorTableAdd1D_TableCommandMethods>::ctor(this, name);
+        this
+    }
+}
 
 #[cfg(feature = "app-calculatortableadd1d")]
 #[::unity2::methods]
@@ -417,42 +453,6 @@ impl CalculatorTableAdd1D {
             )
         });
         <Self as ICalculatorTableAdd1DMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-calculatortableadd1d")]
-#[::unity2::methods]
-impl CalculatorTableAdd1D_TableCommand {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl(
-        self,
-        unit: crate::app::unit::Unit,
-        args: crate::system::collections::generic::list_1::List_1<f32>,
-    ) -> f32;
-}
-
-#[cfg(feature = "app-calculatortableadd1d")]
-impl CalculatorTableAdd1D_TableCommand {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorTableAdd1D_TableCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorTableAdd1D_TableCommandMethods>::ctor(this, name);
         this
     }
 }

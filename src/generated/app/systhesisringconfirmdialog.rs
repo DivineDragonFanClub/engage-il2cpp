@@ -12,11 +12,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct SysthesisRingConfirmDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]
     #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog.YesDialogItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -33,42 +28,15 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct SysthesisRingConfirmDialog_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct SysthesisRingConfirmDialog {}
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-#[::unity2::methods]
-impl SysthesisRingConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        proc: crate::app::procinst::ProcInst,
-        text: ::unity2::Il2CppString,
-        decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-impl SysthesisRingConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialogMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 #[::unity2::methods]
@@ -130,6 +98,38 @@ impl SysthesisRingConfirmDialog_DecideEventHandler {
             )
         });
         <Self as ISysthesisRingConfirmDialog_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+#[::unity2::methods]
+impl SysthesisRingConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        proc: crate::app::procinst::ProcInst,
+        text: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SysthesisRingConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISysthesisRingConfirmDialogMethods>::ctor(this);
         this
     }
 }

@@ -9,11 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_ParamItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSequnece.ParamItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct ShopSequnece_ParamItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_StockItem.md"))]
     #[::unity2::class(namespace = "App", name = "ShopSequnece.StockItem")]
     #[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]
@@ -21,6 +16,11 @@ mod __types {
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_ParamItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSequnece.ParamItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct ShopSequnece_ParamItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_GoldItem.md"))]
     #[::unity2::class(namespace = "App", name = "ShopSequnece.GoldItem")]
@@ -54,6 +54,38 @@ mod __types {
 
 #[cfg(feature = "app-shopsequnece-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-shopsequnece")]
+#[::unity2::methods]
+impl ShopSequnece_StockItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetColumnName0()` overload"]
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetColumnName2()` overload"]
+    #[method(name = "GetColumnName2", args = 0)]
+    pub fn get_column_name2(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-shopsequnece")]
+impl ShopSequnece_StockItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSequnece_StockItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSequnece_StockItemMethods>::ctor(this, unit);
+        this
+    }
+}
 
 #[cfg(feature = "app-shopsequnece")]
 #[::unity2::methods]
@@ -107,38 +139,6 @@ impl ShopSequnece_ParamItem {
             )
         });
         <Self as IShopSequnece_ParamItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-shopsequnece")]
-#[::unity2::methods]
-impl ShopSequnece_StockItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetColumnName0()` overload"]
-    #[method(name = "GetColumnName0", args = 0)]
-    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetColumnName2()` overload"]
-    #[method(name = "GetColumnName2", args = 0)]
-    pub fn get_column_name2(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-shopsequnece")]
-impl ShopSequnece_StockItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSequnece_StockItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopSequnece_StockItemMethods>::ctor(this, unit);
         this
     }
 }

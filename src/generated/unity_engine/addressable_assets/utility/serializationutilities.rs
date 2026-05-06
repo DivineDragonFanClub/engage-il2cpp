@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.Utility",
-        name = "SerializationUtilities"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct SerializationUtilities {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]
     #[repr(C)]
     #[derive(
@@ -84,6 +76,14 @@ mod __types {
             Self { value: 7 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.AddressableAssets.Utility",
+        name = "SerializationUtilities"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct SerializationUtilities {}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities-types")]

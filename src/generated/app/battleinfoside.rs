@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
-    pub struct BattleInfoSide_BitFieldStatus {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -231,38 +226,15 @@ mod __types {
         #[rename(name = "ContinueCondition")]
         pub continue_condition: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
+    pub struct BattleInfoSide_BitFieldStatus {}
 }
 
 #[cfg(feature = "app-battleinfoside-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-battleinfoside")]
-#[::unity2::methods]
-impl BattleInfoSide_BitFieldStatus {
-    #[doc = "`ToInt(crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::battleinfoside::BattleInfoSide_Status) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battleinfoside")]
-impl BattleInfoSide_BitFieldStatus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleInfoSide_BitFieldStatus),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleInfoSide_BitFieldStatusMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-battleinfoside")]
 #[::unity2::methods]
@@ -857,6 +829,34 @@ impl BattleInfoSide {
             )
         });
         <Self as IBattleInfoSideMethods>::ctor(this, info, side);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleinfoside")]
+#[::unity2::methods]
+impl BattleInfoSide_BitFieldStatus {
+    #[doc = "`ToInt(crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::battleinfoside::BattleInfoSide_Status) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfoside")]
+impl BattleInfoSide_BitFieldStatus {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfoSide_BitFieldStatus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfoSide_BitFieldStatusMethods>::ctor(this);
         this
     }
 }

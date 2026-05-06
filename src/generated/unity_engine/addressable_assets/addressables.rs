@@ -9,6 +9,31 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md"))]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "Addressables")]
+    #[parent(crate::system::object::Object)]
+    pub struct Addressables {
+        #[static_field]
+        #[rename(name = "reinitializeAddressables")]
+        pub reinitialize_addressables: bool,
+        #[static_field]
+        #[rename(name = "m_AddressablesInstance")]
+        pub m_addressables_instance:
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[static_field]
+        #[rename(name = "kAddressablesRuntimeDataPath")]
+        pub k_addressables_runtime_data_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "k_AddressablesLogConditional")]
+        pub k_addressables_log_conditional: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "kAddressablesRuntimeBuildLogPath")]
+        pub k_addressables_runtime_build_log_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "LibraryPath")]
+        pub library_path: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables_MergeMode.md"))]
     #[repr(C)]
     #[derive(
@@ -59,31 +84,6 @@ mod __types {
         pub fn intersection() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "Addressables")]
-    #[parent(crate::system::object::Object)]
-    pub struct Addressables {
-        #[static_field]
-        #[rename(name = "reinitializeAddressables")]
-        pub reinitialize_addressables: bool,
-        #[static_field]
-        #[rename(name = "m_AddressablesInstance")]
-        pub m_addressables_instance:
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        #[static_field]
-        #[rename(name = "kAddressablesRuntimeDataPath")]
-        pub k_addressables_runtime_data_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_AddressablesLogConditional")]
-        pub k_addressables_log_conditional: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "kAddressablesRuntimeBuildLogPath")]
-        pub k_addressables_runtime_build_log_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "LibraryPath")]
-        pub library_path: ::unity2::Il2CppString,
     }
 }
 

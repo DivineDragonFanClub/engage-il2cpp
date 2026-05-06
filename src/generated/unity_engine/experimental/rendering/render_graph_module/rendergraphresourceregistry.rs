@@ -10,42 +10,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_IRenderGraphResource.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_RenderGraphResource_2.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphResourceRegistry.IRenderGraphResource"
+        name = "RenderGraphResourceRegistry.RenderGraphResource`2"
     )]
+    # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_IRenderGraphResource)]
     #[parent(crate::system::object::Object)]
-    pub struct RenderGraphResourceRegistry_IRenderGraphResource {
-        #[rename(name = "imported")]
-        pub imported: bool,
-        #[rename(name = "cachedHash")]
-        pub cached_hash: i32,
-        #[rename(name = "transientPassIndex")]
-        pub transient_pass_index: i32,
-        #[rename(name = "wasReleased")]
-        pub was_released: bool,
+    pub struct RenderGraphResourceRegistry_RenderGraphResource_2<
+        T0: ::unity2::ClassIdentity,
+        T1: ::unity2::ClassIdentity,
+    > {
+        #[rename(name = "desc")]
+        pub desc: T0,
+        #[rename(name = "resource")]
+        pub resource: T1,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphResourceRegistry"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphResourceRegistry {
-# [static_field] # [rename (name = "s_EmptyName")] pub s_empty_name : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [static_field] # [rename (name = "m_CurrentRegistry")] pub m_current_registry : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry ,
-# [rename (name = "m_Resources")] pub m_resources : :: unity2 :: Array < crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_IRenderGraphResource > > ,
-# [rename (name = "m_TexturePool")] pub m_texture_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturepool :: TexturePool ,
-# [rename (name = "m_TextureCreationIndex")] pub m_texture_creation_index : i32 ,
-# [rename (name = "m_ComputeBufferPool")] pub m_compute_buffer_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferpool :: ComputeBufferPool ,
-# [rename (name = "m_RendererListResources")] pub m_renderer_list_resources : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_RendererListResource > ,
-# [rename (name = "m_RenderGraphDebug")] pub m_render_graph_debug : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugparams :: RenderGraphDebugParams ,
-# [rename (name = "m_Logger")] pub m_logger : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger ,
-# [rename (name = "m_CurrentFrameIndex")] pub m_current_frame_index : i32 ,
-# [rename (name = "m_CurrentBackbuffer")] pub m_current_backbuffer : crate :: unity_engine :: rendering :: rthandle :: RTHandle ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_RendererListResource.md"))]
     #[repr(C)]
@@ -76,21 +56,49 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_RenderGraphResource_2.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphResourceRegistry.RenderGraphResource`2"
+        name = "RenderGraphResourceRegistry"
     )]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_IRenderGraphResource)]
     #[parent(crate::system::object::Object)]
-    pub struct RenderGraphResourceRegistry_RenderGraphResource_2<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-    > {
-        #[rename(name = "desc")]
-        pub desc: T0,
-        #[rename(name = "resource")]
-        pub resource: T1,
+    pub struct RenderGraphResourceRegistry {
+# [static_field] # [rename (name = "s_EmptyName")] pub s_empty_name : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
+# [static_field] # [rename (name = "m_CurrentRegistry")] pub m_current_registry : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry ,
+# [rename (name = "m_Resources")] pub m_resources : :: unity2 :: Array < crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_IRenderGraphResource > > ,
+# [rename (name = "m_TexturePool")] pub m_texture_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturepool :: TexturePool ,
+# [rename (name = "m_TextureCreationIndex")] pub m_texture_creation_index : i32 ,
+# [rename (name = "m_ComputeBufferPool")] pub m_compute_buffer_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferpool :: ComputeBufferPool ,
+# [rename (name = "m_RendererListResources")] pub m_renderer_list_resources : crate :: unity_engine :: rendering :: dynamicarray_1 :: DynamicArray_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_RendererListResource > ,
+# [rename (name = "m_RenderGraphDebug")] pub m_render_graph_debug : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugparams :: RenderGraphDebugParams ,
+# [rename (name = "m_Logger")] pub m_logger : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger ,
+# [rename (name = "m_CurrentFrameIndex")] pub m_current_frame_index : i32 ,
+# [rename (name = "m_CurrentBackbuffer")] pub m_current_backbuffer : crate :: unity_engine :: rendering :: rthandle :: RTHandle ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_TextureResource.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraphResourceRegistry.TextureResource"
+    )]
+    # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_RenderGraphResource_2 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , crate :: unity_engine :: rendering :: rthandle :: RTHandle >)]
+    pub struct RenderGraphResourceRegistry_TextureResource {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_IRenderGraphResource.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraphResourceRegistry.IRenderGraphResource"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderGraphResourceRegistry_IRenderGraphResource {
+        #[rename(name = "imported")]
+        pub imported: bool,
+        #[rename(name = "cachedHash")]
+        pub cached_hash: i32,
+        #[rename(name = "transientPassIndex")]
+        pub transient_pass_index: i32,
+        #[rename(name = "wasReleased")]
+        pub was_released: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_ComputeBufferResource.md"))]
@@ -100,14 +108,6 @@ mod __types {
     )]
     # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_RenderGraphResource_2 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferdesc :: ComputeBufferDesc , crate :: unity_engine :: computebuffer :: ComputeBuffer >)]
     pub struct RenderGraphResourceRegistry_ComputeBufferResource {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourceregistry/RenderGraphResourceRegistry_TextureResource.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphResourceRegistry.TextureResource"
-    )]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourceregistry :: RenderGraphResourceRegistry_RenderGraphResource_2 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , crate :: unity_engine :: rendering :: rthandle :: RTHandle >)]
-    pub struct RenderGraphResourceRegistry_TextureResource {}
 }
 
 #[cfg(
@@ -119,40 +119,53 @@ pub use __types::*;
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
 )]
 #[::unity2::methods]
-impl RenderGraphResourceRegistry_IRenderGraphResource {
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    RenderGraphResourceRegistry_RenderGraphResource_2<T0, T1>
+{
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
     #[doc = "`Reset()` overload"]
     #[method(name = "Reset", args = 0)]
     pub fn reset(self) -> ();
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
     #[doc = "`IsCreated()` overload"]
     #[method(name = "IsCreated", args = 0)]
     pub fn is_created(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
 }
 
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
 )]
-impl RenderGraphResourceRegistry_IRenderGraphResource {
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    RenderGraphResourceRegistry_RenderGraphResource_2<T0, T1>
+{
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphResourceRegistry_IRenderGraphResource),
+                ::core::stringify!(RenderGraphResourceRegistry_RenderGraphResource_2),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderGraphResourceRegistry_IRenderGraphResourceMethods>::ctor(this);
+        <Self as IRenderGraphResourceRegistry_RenderGraphResource_2Methods<T0, T1>>::ctor(this);
         this
     }
+}
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
+)]
+#[::unity2::methods(value)]
+impl RenderGraphResourceRegistry_RendererListResource {
+    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        desc: crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
+    ) -> ();
 }
 
 #[cfg(
@@ -474,52 +487,71 @@ impl RenderGraphResourceRegistry {
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
 )]
-#[::unity2::methods(value)]
-impl RenderGraphResourceRegistry_RendererListResource {
-    #[doc = "`.ctor(crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        desc: crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
-    ) -> ();
+#[::unity2::methods]
+impl RenderGraphResourceRegistry_TextureResource {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(
+    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
+)]
+impl RenderGraphResourceRegistry_TextureResource {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderGraphResourceRegistry_TextureResource),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderGraphResourceRegistry_TextureResourceMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
 )]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    RenderGraphResourceRegistry_RenderGraphResource_2<T0, T1>
-{
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
+impl RenderGraphResourceRegistry_IRenderGraphResource {
     #[doc = "`Reset()` overload"]
     #[method(name = "Reset", args = 0)]
     pub fn reset(self) -> ();
 
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
     #[doc = "`IsCreated()` overload"]
     #[method(name = "IsCreated", args = 0)]
     pub fn is_created(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
 )]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    RenderGraphResourceRegistry_RenderGraphResource_2<T0, T1>
-{
+impl RenderGraphResourceRegistry_IRenderGraphResource {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphResourceRegistry_RenderGraphResource_2),
+                ::core::stringify!(RenderGraphResourceRegistry_IRenderGraphResource),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderGraphResourceRegistry_RenderGraphResource_2Methods<T0, T1>>::ctor(this);
+        <Self as IRenderGraphResourceRegistry_IRenderGraphResourceMethods>::ctor(this);
         this
     }
 }
@@ -552,38 +584,6 @@ impl RenderGraphResourceRegistry_ComputeBufferResource {
             )
         });
         <Self as IRenderGraphResourceRegistry_ComputeBufferResourceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(
-    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
-)]
-#[::unity2::methods]
-impl RenderGraphResourceRegistry_TextureResource {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(
-    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry"
-)]
-impl RenderGraphResourceRegistry_TextureResource {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphResourceRegistry_TextureResource),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphResourceRegistry_TextureResourceMethods>::ctor(this);
         this
     }
 }

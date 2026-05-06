@@ -10,6 +10,34 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapPlayerUnit")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)]
+    pub struct GmapPlayerUnit {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "ShipPrefabPath")]
+        pub ship_prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Ship")]
+        pub m_ship: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "ColliderPrefabPath")]
+        pub collider_prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "TeleportInEffect")]
+        pub teleport_in_effect: ::unity2::Il2CppString,
+        #[rename(name = "TeleportOutEffect")]
+        pub teleport_out_effect: ::unity2::Il2CppString,
+        #[rename(name = "m_Rotation")]
+        pub m_rotation: crate::app::interpolatorrotation::InterpolatorRotation,
+        #[rename(name = "m_GroundObjectNames")]
+        pub m_ground_object_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "SeaObjectNames")]
+        pub sea_object_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "IgnoreObjectNames")]
+        pub ignore_object_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "PositionDelta")]
+        pub position_delta: crate::unity_engine::vector3::Vector3,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]
     #[repr(C)]
     #[derive(
@@ -52,34 +80,6 @@ mod __types {
         pub fn ship() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapPlayerUnit")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)]
-    pub struct GmapPlayerUnit {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "ShipPrefabPath")]
-        pub ship_prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Ship")]
-        pub m_ship: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "ColliderPrefabPath")]
-        pub collider_prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "TeleportInEffect")]
-        pub teleport_in_effect: ::unity2::Il2CppString,
-        #[rename(name = "TeleportOutEffect")]
-        pub teleport_out_effect: ::unity2::Il2CppString,
-        #[rename(name = "m_Rotation")]
-        pub m_rotation: crate::app::interpolatorrotation::InterpolatorRotation,
-        #[rename(name = "m_GroundObjectNames")]
-        pub m_ground_object_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "SeaObjectNames")]
-        pub sea_object_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "IgnoreObjectNames")]
-        pub ignore_object_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "PositionDelta")]
-        pub position_delta: crate::unity_engine::vector3::Vector3,
     }
 }
 

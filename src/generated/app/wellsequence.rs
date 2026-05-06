@@ -65,79 +65,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct WellSequence {
-        #[static_field]
-        #[rename(name = "UseFlagName")]
-        pub use_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ExchangeLevelName")]
-        pub exchange_level_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SeedName")]
-        pub seed_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EvilWeaponState")]
-        pub evil_weapon_state: ::unity2::Il2CppString,
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
-        #[static_field]
-        #[rename(name = "m_WellEffectManager")]
-        pub m_well_effect_manager: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "EFF_NAME_TABLE")]
-        pub eff_name_table: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct WellSequence_UseFlags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for WellSequence_UseFlags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "WellSequence.UseFlags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for WellSequence_UseFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl WellSequence_UseFlags {
-        pub fn not_use() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn used() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn item_return() -> Self {
-            Self { value: 2 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]
+    #[::unity2::class(namespace = "App", name = "WellSequence.DialogItemGotoEvilFirst")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct WellSequence_DialogItemGotoEvilFirst {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
     #[repr(C)]
@@ -223,6 +154,32 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "WellSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct WellSequence {
+        #[static_field]
+        #[rename(name = "UseFlagName")]
+        pub use_flag_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "ExchangeLevelName")]
+        pub exchange_level_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "SeedName")]
+        pub seed_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "EvilWeaponState")]
+        pub evil_weapon_state: ::unity2::Il2CppString,
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
+        #[static_field]
+        #[rename(name = "m_WellEffectManager")]
+        pub m_well_effect_manager: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "EFF_NAME_TABLE")]
+        pub eff_name_table: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "WellSequence.ChangeDifficultyMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -231,14 +188,85 @@ mod __types {
         pub yes_event_handler: crate::system::action::Action,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence.DialogItemGotoEvilFirst")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct WellSequence_DialogItemGotoEvilFirst {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct WellSequence_UseFlags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for WellSequence_UseFlags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "WellSequence.UseFlags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for WellSequence_UseFlags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl WellSequence_UseFlags {
+        pub fn not_use() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn used() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn item_return() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-wellsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-wellsequence")]
+#[::unity2::methods]
+impl WellSequence_DialogItemGotoEvilFirst {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, label: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence_DialogItemGotoEvilFirst {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(label: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellSequence_DialogItemGotoEvilFirst),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellSequence_DialogItemGotoEvilFirstMethods>::ctor(this, label);
+        this
+    }
+}
 
 #[cfg(feature = "app-wellsequence")]
 #[::unity2::methods]
@@ -490,34 +518,6 @@ impl WellSequence_ChangeDifficultyMenuItem {
             yes_event_handler,
             text,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-#[::unity2::methods]
-impl WellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, label: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(label: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellSequence_DialogItemGotoEvilFirst),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellSequence_DialogItemGotoEvilFirstMethods>::ctor(this, label);
         this
     }
 }

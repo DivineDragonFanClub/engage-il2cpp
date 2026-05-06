@@ -11,6 +11,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelConfirmDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct GoToSolanelConfirmDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes.md"))]
     #[::unity2::class(
         namespace = "App.Gmap",
@@ -23,11 +28,6 @@ mod __types {
         #[rename(name = "m_CancelCallback")]
         pub m_cancel_callback: crate::system::action::Action,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct GoToSolanelConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))]
     #[::unity2::class(
@@ -43,6 +43,38 @@ mod __types {
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+#[::unity2::methods]
+impl GoToSolanelConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        yes_callback: crate::system::action::Action,
+        no_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+impl GoToSolanelConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoToSolanelConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoToSolanelConfirmDialogMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
 #[::unity2::methods]
@@ -86,38 +118,6 @@ impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes {
             cancel_callback,
             text,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-#[::unity2::methods]
-impl GoToSolanelConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        yes_callback: crate::system::action::Action,
-        no_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GoToSolanelConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGoToSolanelConfirmDialogMethods>::ctor(this);
         this
     }
 }

@@ -11,18 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuItem")]
-    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
-    pub struct InventoryPoolItemMenuItem {
-        #[rename(name = "m_OwnerItemIndex")]
-        pub m_owner_item_index: i32,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_SortIndex")]
-        pub m_sort_index: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem_PoolItemKind.md"))]
     #[repr(C)]
     #[derive(
@@ -69,6 +57,18 @@ mod __types {
         pub fn blank() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuItem")]
+    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
+    pub struct InventoryPoolItemMenuItem {
+        #[rename(name = "m_OwnerItemIndex")]
+        pub m_owner_item_index: i32,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_SortIndex")]
+        pub m_sort_index: i32,
     }
 }
 

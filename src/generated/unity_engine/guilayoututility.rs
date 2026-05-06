@@ -7,16 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility.LayoutCache")]
-    #[parent(crate::system::object::Object)]
-    pub struct GUILayoutUtility_LayoutCache {
-        #[rename(name = "topLevel")]
-        pub top_level: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
-        #[rename(name = "windows")]
-        pub windows: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility")]
     #[parent(crate::system::object::Object)]
@@ -40,38 +30,20 @@ mod __types {
         #[rename(name = "kDummyRect")]
         pub k_dummy_rect: crate::unity_engine::rect::Rect,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility.LayoutCache")]
+    #[parent(crate::system::object::Object)]
+    pub struct GUILayoutUtility_LayoutCache {
+        #[rename(name = "topLevel")]
+        pub top_level: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
+        #[rename(name = "windows")]
+        pub windows: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
+    }
 }
 
 #[cfg(feature = "unity_engine-guilayoututility-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-guilayoututility")]
-#[::unity2::methods]
-impl GUILayoutUtility_LayoutCache {
-    #[doc = "`set_id(i32)` overload"]
-    #[method(name = "set_id", args = 1)]
-    pub fn set_id(self, value: i32) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, instance_id: i32) -> ();
-}
-
-#[cfg(feature = "unity_engine-guilayoututility")]
-impl GUILayoutUtility_LayoutCache {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(instance_id: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayoutUtility_LayoutCache),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayoutUtility_LayoutCacheMethods>::ctor(this, instance_id);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-guilayoututility")]
 #[::unity2::methods]
@@ -174,4 +146,32 @@ impl GUILayoutUtility {
     #[doc = "`Internal_MoveWindow_Injected(i32, crate::unity_engine::rect::Rect)` overload"]
     #[method(name = "Internal_MoveWindow_Injected", args = 2)]
     pub fn internal_move_window_injected(window_id: i32, r: crate::unity_engine::rect::Rect) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayoututility")]
+#[::unity2::methods]
+impl GUILayoutUtility_LayoutCache {
+    #[doc = "`set_id(i32)` overload"]
+    #[method(name = "set_id", args = 1)]
+    pub fn set_id(self, value: i32) -> ();
+
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, instance_id: i32) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayoututility")]
+impl GUILayoutUtility_LayoutCache {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(instance_id: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayoutUtility_LayoutCache),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayoutUtility_LayoutCacheMethods>::ctor(this, instance_id);
+        this
+    }
 }

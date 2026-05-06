@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaResultFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "Account.SetupNsaResultFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Account_SetupNsaResultFunction {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +72,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaResultFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "Account.SetupNsaResultFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Account_SetupNsaResultFunction {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaResult.md"))]
     #[repr(C)]
     #[derive(
@@ -125,6 +125,16 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "Account.SetupNsaSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct Account_SetupNsaSequence {
+        #[rename(name = "m_IsShowError")]
+        pub m_is_show_error: bool,
+        #[rename(name = "m_ResultFunc")]
+        pub m_result_func: crate::app::account::Account_SetupNsaResultFunction,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account.md"))]
     #[::unity2::class(namespace = "App", name = "Account")]
     #[parent(crate::system::object::Object)]
@@ -135,16 +145,6 @@ mod __types {
         #[static_field]
         #[rename(name = "s_NsaIdTokenCache")]
         pub s_nsa_id_token_cache: ::unity2::Array<u8>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "Account.SetupNsaSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct Account_SetupNsaSequence {
-        #[rename(name = "m_IsShowError")]
-        pub m_is_show_error: bool,
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::account::Account_SetupNsaResultFunction,
     }
 }
 
@@ -177,42 +177,6 @@ impl Account_SetupNsaResultFunction {
         <Self as IAccount_SetupNsaResultFunctionMethods>::ctor(this, object, method);
         this
     }
-}
-
-#[cfg(feature = "app-account")]
-#[::unity2::methods]
-impl Account {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-
-    #[doc = "`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
-    #[method(name = "SetupNsa", args = 3)]
-    pub fn setup_nsa(
-        super_: crate::app::procinst::ProcInst,
-        is_show_error: bool,
-        result_func: crate::app::account::Account_SetupNsaResultFunction,
-    ) -> ();
-
-    #[doc = "`IsUserValid()` overload"]
-    #[method(name = "IsUserValid", args = 0)]
-    pub fn is_user_valid() -> bool;
-
-    #[doc = "`IsNsaValid()` overload"]
-    #[method(name = "IsNsaValid", args = 0)]
-    pub fn is_nsa_valid() -> bool;
-
-    #[doc = "`GetNickname()` overload"]
-    #[method(name = "GetNickname", args = 0)]
-    pub fn get_nickname() -> ::unity2::Il2CppString;
-
-    #[doc = "`get_NsaIdTokenCache()` overload"]
-    #[method(name = "get_NsaIdTokenCache", args = 0)]
-    pub fn get_nsa_id_token_cache() -> ::unity2::Array<u8>;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "app-account")]
@@ -280,4 +244,40 @@ impl Account_SetupNsaSequence {
         <Self as IAccount_SetupNsaSequenceMethods>::ctor(this, is_show_error, result_func);
         this
     }
+}
+
+#[cfg(feature = "app-account")]
+#[::unity2::methods]
+impl Account {
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[doc = "`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
+    #[method(name = "SetupNsa", args = 3)]
+    pub fn setup_nsa(
+        super_: crate::app::procinst::ProcInst,
+        is_show_error: bool,
+        result_func: crate::app::account::Account_SetupNsaResultFunction,
+    ) -> ();
+
+    #[doc = "`IsUserValid()` overload"]
+    #[method(name = "IsUserValid", args = 0)]
+    pub fn is_user_valid() -> bool;
+
+    #[doc = "`IsNsaValid()` overload"]
+    #[method(name = "IsNsaValid", args = 0)]
+    pub fn is_nsa_valid() -> bool;
+
+    #[doc = "`GetNickname()` overload"]
+    #[method(name = "GetNickname", args = 0)]
+    pub fn get_nickname() -> ::unity2::Il2CppString;
+
+    #[doc = "`get_NsaIdTokenCache()` overload"]
+    #[method(name = "get_NsaIdTokenCache", args = 0)]
+    pub fn get_nsa_id_token_cache() -> ::unity2::Array<u8>;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

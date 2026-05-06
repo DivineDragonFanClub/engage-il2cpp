@@ -11,6 +11,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_WeaponShopMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SortieTopMenuShopSubMenu.WeaponShopMenuItem"
+    )]
+    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+    pub struct SortieTopMenuShopSubMenu_WeaponShopMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_ItemShopMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTopMenuShopSubMenu.ItemShopMenuItem")]
     #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
@@ -20,18 +28,66 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieTopMenuShopSubMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct SortieTopMenuShopSubMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_WeaponShopMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SortieTopMenuShopSubMenu.WeaponShopMenuItem"
-    )]
-    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-    pub struct SortieTopMenuShopSubMenu_WeaponShopMenuItem {}
 }
 
 #[cfg(feature = "app-sortietopmenushopsubmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-sortietopmenushopsubmenu")]
+#[::unity2::methods]
+impl SortieTopMenuShopSubMenu_WeaponShopMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenushopsubmenu")]
+impl SortieTopMenuShopSubMenu_WeaponShopMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenuShopSubMenu_WeaponShopMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-sortietopmenushopsubmenu")]
 #[::unity2::methods]
@@ -139,62 +195,6 @@ impl SortieTopMenuShopSubMenu {
             )
         });
         <Self as ISortieTopMenuShopSubMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-#[::unity2::methods]
-impl SortieTopMenuShopSubMenu_WeaponShopMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu_WeaponShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenuShopSubMenu_WeaponShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods>::ctor(this);
         this
     }
 }

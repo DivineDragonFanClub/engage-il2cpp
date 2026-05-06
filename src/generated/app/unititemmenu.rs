@@ -11,15 +11,15 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitItemMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct UnitItemMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_SelectEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "UnitItemMenu.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct UnitItemMenu_SelectEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitItemMenu.RequestCloseEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitItemMenu_RequestCloseEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu.md"))]
     #[::unity2::class(namespace = "App", name = "UnitItemMenu")]
@@ -34,14 +34,42 @@ mod __types {
             crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitItemMenu.DecideEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitItemMenu.RequestCloseEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitItemMenu_DecideEventHandler {}
+    pub struct UnitItemMenu_RequestCloseEventHandler {}
 }
 
 #[cfg(feature = "app-unititemmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unititemmenu")]
+#[::unity2::methods]
+impl UnitItemMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-unititemmenu")]
+impl UnitItemMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitItemMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitItemMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-unititemmenu")]
 #[::unity2::methods]
@@ -67,34 +95,6 @@ impl UnitItemMenu_SelectEventHandler {
             )
         });
         <Self as IUnitItemMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-unititemmenu")]
-#[::unity2::methods]
-impl UnitItemMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-unititemmenu")]
-impl UnitItemMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitItemMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitItemMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -204,28 +204,28 @@ impl UnitItemMenu {
 
 #[cfg(feature = "app-unititemmenu")]
 #[::unity2::methods]
-impl UnitItemMenu_DecideEventHandler {
+impl UnitItemMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }
 
 #[cfg(feature = "app-unititemmenu")]
-impl UnitItemMenu_DecideEventHandler {
+impl UnitItemMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitItemMenu_DecideEventHandler),
+                ::core::stringify!(UnitItemMenu_RequestCloseEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitItemMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IUnitItemMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

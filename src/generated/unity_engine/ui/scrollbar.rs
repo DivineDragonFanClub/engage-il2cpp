@@ -17,6 +17,36 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Scrollbar {
+        #[rename(name = "m_HandleRect")]
+        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Direction")]
+        pub m_direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[rename(name = "m_Size")]
+        pub m_size: f32,
+        #[rename(name = "m_NumberOfSteps")]
+        pub m_number_of_steps: i32,
+        #[rename(name = "m_OnValueChanged")]
+        pub m_on_value_changed: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
+        #[rename(name = "m_ContainerRect")]
+        pub m_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Tracker")]
+        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[rename(name = "m_PointerDownRepeat")]
+        pub m_pointer_down_repeat: crate::unity_engine::coroutine::Coroutine,
+        #[rename(name = "isPointerDownAndNotDragging")]
+        pub is_pointer_down_and_not_dragging: bool,
+        #[rename(name = "m_DelayedUpdateVisuals")]
+        pub m_delayed_update_visuals: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
     #[repr(C)]
     #[derive(
@@ -111,36 +141,6 @@ mod __types {
         pub fn vertical() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Scrollbar {
-        #[rename(name = "m_HandleRect")]
-        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_Size")]
-        pub m_size: f32,
-        #[rename(name = "m_NumberOfSteps")]
-        pub m_number_of_steps: i32,
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
-        #[rename(name = "m_ContainerRect")]
-        pub m_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
-        #[rename(name = "m_PointerDownRepeat")]
-        pub m_pointer_down_repeat: crate::unity_engine::coroutine::Coroutine,
-        #[rename(name = "isPointerDownAndNotDragging")]
-        pub is_pointer_down_and_not_dragging: bool,
-        #[rename(name = "m_DelayedUpdateVisuals")]
-        pub m_delayed_update_visuals: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]

@@ -11,20 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
-    #[parent(crate::system::object::Object)]
-    pub struct SynthesisRingInfoWindow_RingEnhance {
-        #[rename(name = "m_ParentObject")]
-        pub m_parent_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ValueText")]
-        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ArrowImage")]
-        pub m_arrow_image: crate::unity_engine::ui::image::Image,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]
     #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.CharaPhoto")]
     #[parent(crate::system::object::Object)]
@@ -112,34 +98,24 @@ mod __types {
         #[rename(name = "m_MaterialAfter")]
         pub m_material_after: crate::unity_engine::material::Material,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]
+    #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
+    #[parent(crate::system::object::Object)]
+    pub struct SynthesisRingInfoWindow_RingEnhance {
+        #[rename(name = "m_ParentObject")]
+        pub m_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ValueText")]
+        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ArrowImage")]
+        pub m_arrow_image: crate::unity_engine::ui::image::Image,
+    }
 }
 
 #[cfg(feature = "app-synthesisringinfowindow-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-#[::unity2::methods]
-impl SynthesisRingInfoWindow_RingEnhance {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-impl SynthesisRingInfoWindow_RingEnhance {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingInfoWindow_RingEnhance),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingInfoWindow_RingEnhanceMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-synthesisringinfowindow")]
 #[::unity2::methods]
@@ -228,6 +204,30 @@ impl SynthesisRingInfoWindow {
             )
         });
         <Self as ISynthesisRingInfoWindowMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[::unity2::methods]
+impl SynthesisRingInfoWindow_RingEnhance {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow_RingEnhance {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow_RingEnhance),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindow_RingEnhanceMethods>::ctor(this);
         this
     }
 }

@@ -9,6 +9,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]
+    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSMallocPtr")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Libms_LMSMallocPtr {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms.md"))]
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms")]
     #[parent(crate::system::object::Object)]
@@ -22,15 +27,38 @@ mod __types {
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSFreePtr")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct Libms_LMSFreePtr {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSMallocPtr")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Libms_LMSMallocPtr {}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-libms-types")]
 pub use __types::*;
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+#[::unity2::methods]
+impl Libms_LMSMallocPtr {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, size: i32) -> ::unity2::IntPtr;
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+impl Libms_LMSMallocPtr {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Libms_LMSMallocPtr),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILibms_LMSMallocPtrMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 #[::unity2::methods]
@@ -415,34 +443,6 @@ impl Libms_LMSFreePtr {
             )
         });
         <Self as ILibms_LMSFreePtrMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-#[::unity2::methods]
-impl Libms_LMSMallocPtr {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, size: i32) -> ::unity2::IntPtr;
-}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-impl Libms_LMSMallocPtr {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Libms_LMSMallocPtr),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILibms_LMSMallocPtrMethods>::ctor(this, object, method);
         this
     }
 }

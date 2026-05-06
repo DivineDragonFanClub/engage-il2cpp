@@ -8,6 +8,32 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/gesturestate/GestureState.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct GestureState {}
+
+    impl ::unity2::ClassIdentity for GestureState {
+        const NAMESPACE: &'static str = "nn.hid";
+
+        const NAME: &'static str = "GestureState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GestureState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/gesturestate/GestureState_GesturePointArray4.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -38,36 +64,34 @@ mod __types {
                 .byval_arg
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/gesturestate/GestureState.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct GestureState {}
-
-    impl ::unity2::ClassIdentity for GestureState {
-        const NAMESPACE: &'static str = "nn.hid";
-
-        const NAME: &'static str = "GestureState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GestureState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "nn-hid-gesturestate-types")]
 pub use __types::*;
+
+#[cfg(feature = "nn-hid-gesturestate")]
+#[::unity2::methods(value)]
+impl GestureState {
+    #[doc = "`SetDefault()` overload"]
+    #[method(name = "SetDefault", args = 0)]
+    pub fn set_default(self) -> ();
+
+    #[doc = "`get_type()` overload"]
+    #[method(name = "get_type", args = 0)]
+    pub fn get_type(self) -> crate::nn::hid::gesturetype::GestureType;
+
+    #[doc = "`get_direction()` overload"]
+    #[method(name = "get_direction", args = 0)]
+    pub fn get_direction(self) -> crate::nn::hid::gesturedirection::GestureDirection;
+
+    #[doc = "`get_isDoubleTap()` overload"]
+    #[method(name = "get_isDoubleTap", args = 0)]
+    pub fn get_is_double_tap(self) -> bool;
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
 
 #[cfg(feature = "nn-hid-gesturestate")]
 #[::unity2::methods(value)]
@@ -145,28 +169,4 @@ impl GestureState_GesturePointArray4 {
     #[doc = "`RemoveAt(i32)` overload"]
     #[method(name = "RemoveAt", args = 1)]
     pub fn remove_at(self, index: i32) -> ();
-}
-
-#[cfg(feature = "nn-hid-gesturestate")]
-#[::unity2::methods(value)]
-impl GestureState {
-    #[doc = "`SetDefault()` overload"]
-    #[method(name = "SetDefault", args = 0)]
-    pub fn set_default(self) -> ();
-
-    #[doc = "`get_type()` overload"]
-    #[method(name = "get_type", args = 0)]
-    pub fn get_type(self) -> crate::nn::hid::gesturetype::GestureType;
-
-    #[doc = "`get_direction()` overload"]
-    #[method(name = "get_direction", args = 0)]
-    pub fn get_direction(self) -> crate::nn::hid::gesturedirection::GestureDirection;
-
-    #[doc = "`get_isDoubleTap()` overload"]
-    #[method(name = "get_isDoubleTap", args = 0)]
-    pub fn get_is_double_tap(self) -> bool;
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

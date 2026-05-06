@@ -15,11 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MinigameAssistDialog_AssistItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
     #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
     #[parent(crate::app::basicdialog::BasicDialog)]
@@ -36,6 +31,54 @@ mod __types {
         #[static_field]
         #[rename(name = "CancelLabels")]
         pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MinigameAssistDialog_AssistResult {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MinigameAssistDialog_AssistResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MinigameAssistDialog.AssistResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MinigameAssistDialog_AssistResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MinigameAssistDialog_AssistResult {
+        pub fn yes() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn no() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn cancel() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
@@ -86,90 +129,19 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MinigameAssistDialog_AssistItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MinigameAssistDialog_DecideEventHandler {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MinigameAssistDialog_AssistResult {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MinigameAssistDialog_AssistResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MinigameAssistDialog.AssistResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MinigameAssistDialog_AssistResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MinigameAssistDialog_AssistResult {
-        pub fn yes() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn no() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn cancel() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-minigameassistdialog-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-minigameassistdialog")]
-#[::unity2::methods]
-impl MinigameAssistDialog_AssistItem {
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl MinigameAssistDialog_AssistItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MinigameAssistDialog_AssistItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMinigameAssistDialog_AssistItemMethods>::ctor(this, name);
-        this
-    }
-}
 
 #[cfg(feature = "app-minigameassistdialog")]
 #[::unity2::methods]
@@ -250,6 +222,34 @@ impl MinigameAssistDialog {
             menu_content,
             event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
+#[::unity2::methods]
+impl MinigameAssistDialog_AssistItem {
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl MinigameAssistDialog_AssistItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MinigameAssistDialog_AssistItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMinigameAssistDialog_AssistItemMethods>::ctor(this, name);
         this
     }
 }

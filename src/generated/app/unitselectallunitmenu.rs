@@ -19,6 +19,35 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct UnitSelectAllUnitMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "UnitSelectAllUnitMenu.ConfirmDialog.ConfirmNoDialogItem"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_StoreAllMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu.StoreAllMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct UnitSelectAllUnitMenu_StoreAllMenuItem {
+        #[rename(name = "m_IsSuccess")]
+        pub m_is_success: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "UnitSelectAllUnitMenu.ConfirmDialog.CloseEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_EntrustMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu.EntrustMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -32,14 +61,6 @@ mod __types {
     #[parent(crate::app::procinst::ProcInst)]
     pub struct UnitSelectAllUnitMenu_ConfirmSequence {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmDialog.ConfirmNoDialogItem"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -48,31 +69,23 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmDialog.DecideEventHandler"
+        name = "UnitSelectAllUnitMenu.ConfirmSequence.CheckEventHandler"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {}
+    pub struct UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmSequence.EndEventHandler"
+        name = "UnitSelectAllUnitMenu.ConfirmDialog.ConfirmYesDialogItem"
     )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct UnitSelectAllUnitMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct UnitSelectAllUnitMenu_ConfirmDialog {}
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem {
+# [rename (name = "m_DecideEventHander")] pub m_decide_event_hander : crate :: app :: unitselectallunitmenu :: UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler ,
+}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_Label.md"))]
     #[repr(C)]
@@ -114,6 +127,14 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "UnitSelectAllUnitMenu.ConfirmSequence.EndEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -122,43 +143,165 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmDialog.ConfirmYesDialogItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem {
-# [rename (name = "m_DecideEventHander")] pub m_decide_event_hander : crate :: app :: unitselectallunitmenu :: UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_StoreAllMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu.StoreAllMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct UnitSelectAllUnitMenu_StoreAllMenuItem {
-        #[rename(name = "m_IsSuccess")]
-        pub m_is_success: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmSequence.CheckEventHandler"
+        name = "UnitSelectAllUnitMenu.ConfirmDialog.DecideEventHandler"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {}
+    pub struct UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "UnitSelectAllUnitMenu.ConfirmDialog.CloseEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectAllUnitMenu.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct UnitSelectAllUnitMenu_ConfirmDialog {}
 }
 
 #[cfg(feature = "app-unitselectallunitmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenuMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods>::ctor(this, text);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_StoreAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`IsTarget(crate::app::unit::Unit)` overload"]
+    #[method(name = "IsTarget", args = 1)]
+    pub fn is_target(unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`Decide()` overload"]
+    #[method(name = "Decide", args = 0)]
+    pub fn decide(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_StoreAllMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_StoreAllMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_StoreAllMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-unitselectallunitmenu")]
 #[::unity2::methods]
@@ -240,34 +383,6 @@ impl UnitSelectAllUnitMenu_ConfirmSequence {
 
 #[cfg(feature = "app-unitselectallunitmenu")]
 #[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods>::ctor(this, text);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
 impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -298,167 +413,28 @@ impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler {
 
 #[cfg(feature = "app-unitselectallunitmenu")]
 #[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {
+impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
     #[doc = "`Invoke()` overload"]
     #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    pub fn invoke(self) -> bool;
 }
 
 #[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {
+impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler),
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenuMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        msg: ::unity2::Il2CppString,
-        yes: ::unity2::Il2CppString,
-        decide : crate :: app :: unitselectallunitmenu :: UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods>::ctor(
+        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods>::ctor(
             this, object, method,
         );
         this
@@ -508,85 +484,7 @@ impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem {
 
 #[cfg(feature = "app-unitselectallunitmenu")]
 #[::unity2::methods]
-impl UnitSelectAllUnitMenu_StoreAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`IsTarget(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsTarget", args = 1)]
-    pub fn is_target(unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`Decide()` overload"]
-    #[method(name = "Decide", args = 0)]
-    pub fn decide(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_StoreAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_StoreAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_StoreAllMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> bool;
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectallunitmenu")]
-#[::unity2::methods]
-impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {
+impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -597,19 +495,121 @@ impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {
 }
 
 #[cfg(feature = "app-unitselectallunitmenu")]
-impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler {
+impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler),
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods>::ctor(
+        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+#[::unity2::methods]
+impl UnitSelectAllUnitMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        msg: ::unity2::Il2CppString,
+        yes: ::unity2::Il2CppString,
+        decide : crate :: app :: unitselectallunitmenu :: UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-unitselectallunitmenu")]
+impl UnitSelectAllUnitMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectAllUnitMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }

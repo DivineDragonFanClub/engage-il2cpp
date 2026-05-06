@@ -37,11 +37,6 @@ mod __types {
             crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenu.CloseEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampListMenu_CloseEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DisposeEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -49,6 +44,11 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardStampListMenu_DisposeEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenu.CloseEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardStampListMenu_CloseEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DecideEventHandler.md"))]
     #[::unity2::class(
@@ -182,34 +182,6 @@ impl ProfileCardStampListMenu {
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
 #[::unity2::methods]
-impl ProfileCardStampListMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampListMenu_CloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampListMenu_CloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-#[::unity2::methods]
 impl ProfileCardStampListMenu_DisposeEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -232,6 +204,34 @@ impl ProfileCardStampListMenu_DisposeEventHandler {
             )
         });
         <Self as IProfileCardStampListMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardstamplistmenu")]
+#[::unity2::methods]
+impl ProfileCardStampListMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardstamplistmenu")]
+impl ProfileCardStampListMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardStampListMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardStampListMenu_CloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

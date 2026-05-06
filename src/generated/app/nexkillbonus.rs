@@ -11,6 +11,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexKillBonus.ServerSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexKillBonus_ServerSequence {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
+        #[rename(name = "m_Cid")]
+        pub m_cid: ::unity2::Il2CppString,
+        #[rename(name = "m_KillCountImage")]
+        pub m_kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        #[rename(name = "m_KilledCountImage")]
+        pub m_killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -53,55 +69,6 @@ mod __types {
         pub fn upload() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))]
-    #[::unity2::class(namespace = "App", name = "NexKillBonus")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)]
-    pub struct NexKillBonus {
-        #[static_field]
-        #[rename(name = "MaxWidth")]
-        pub max_width: i32,
-        #[static_field]
-        #[rename(name = "MaxHeight")]
-        pub max_height: i32,
-        #[static_field]
-        #[rename(name = "MaxPostData")]
-        pub max_post_data: i32,
-        #[static_field]
-        #[rename(name = "Period")]
-        pub period: i32,
-        #[static_field]
-        #[rename(name = "MaxCount")]
-        pub max_count: i32,
-        #[static_field]
-        #[rename(name = "StreamBufferSize")]
-        pub stream_buffer_size: i32,
-        #[static_field]
-        #[rename(name = "GetBufferSize")]
-        pub get_buffer_size: i32,
-        #[rename(name = "m_IsSucceeded")]
-        pub m_is_succeeded: bool,
-        #[rename(name = "m_SerializeStream")]
-        pub m_serialize_stream: crate::app::stream_2::Stream_2,
-        #[rename(name = "m_SerializeStreamBuffer")]
-        pub m_serialize_stream_buffer: ::unity2::Array<u8>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexKillBonus.ServerSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexKillBonus_ServerSequence {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,
-        #[rename(name = "m_Cid")]
-        pub m_cid: ::unity2::Il2CppString,
-        #[rename(name = "m_KillCountImage")]
-        pub m_kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        #[rename(name = "m_KilledCountImage")]
-        pub m_killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
@@ -223,102 +190,43 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))]
+    #[::unity2::class(namespace = "App", name = "NexKillBonus")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)]
+    pub struct NexKillBonus {
+        #[static_field]
+        #[rename(name = "MaxWidth")]
+        pub max_width: i32,
+        #[static_field]
+        #[rename(name = "MaxHeight")]
+        pub max_height: i32,
+        #[static_field]
+        #[rename(name = "MaxPostData")]
+        pub max_post_data: i32,
+        #[static_field]
+        #[rename(name = "Period")]
+        pub period: i32,
+        #[static_field]
+        #[rename(name = "MaxCount")]
+        pub max_count: i32,
+        #[static_field]
+        #[rename(name = "StreamBufferSize")]
+        pub stream_buffer_size: i32,
+        #[static_field]
+        #[rename(name = "GetBufferSize")]
+        pub get_buffer_size: i32,
+        #[rename(name = "m_IsSucceeded")]
+        pub m_is_succeeded: bool,
+        #[rename(name = "m_SerializeStream")]
+        pub m_serialize_stream: crate::app::stream_2::Stream_2,
+        #[rename(name = "m_SerializeStreamBuffer")]
+        pub m_serialize_stream_buffer: ::unity2::Array<u8>,
+    }
 }
 
 #[cfg(feature = "app-nexkillbonus-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-nexkillbonus")]
-#[::unity2::methods]
-impl NexKillBonus {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Download", args = 2)]
-    pub fn download(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "Upload", args = 4)]
-    pub fn upload(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> bool;
-
-    #[doc = "`ClearSucceeded()` overload"]
-    #[method(name = "ClearSucceeded", args = 0)]
-    pub fn clear_succeeded(self) -> ();
-
-    #[doc = "`get_IsSucceeded()` overload"]
-    #[method(name = "get_IsSucceeded", args = 0)]
-    pub fn get_is_succeeded(self) -> bool;
-
-    #[doc = "`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
-    #[method(name = "SetData", args = 2)]
-    pub fn set_data(self, cid: ::unity2::Il2CppString, data: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, ::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "CreateData", args = 4)]
-    pub fn create_data(
-        self,
-        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-        data: ::unity2::Array<u8>,
-        data_size: u32,
-    ) -> ();
-
-    #[doc = "`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
-    #[method(name = "AddCounts", args = 2)]
-    pub fn add_counts(
-        self,
-        kind: crate::app::nexkillbonus::NexKillBonus_Kinds,
-        count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
-    ) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`Serialize(::unity2::Array<u8>, u32)` overload"]
-    #[method(name = "Serialize", args = 2)]
-    pub fn serialize(self, data: ::unity2::Array<u8>, data_size: u32) -> ();
-
-    #[doc = "`Deserialize(::unity2::Array<u8>)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, data: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ClearData()` overload"]
-    #[method(name = "ClearData", args = 0)]
-    pub fn clear_data(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexKillBonus),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexKillBonusMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-nexkillbonus")]
 #[::unity2::methods]
@@ -439,6 +347,98 @@ impl NexKillBonus_ServerSequence {
             kill_count_image,
             killed_count_image,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+#[::unity2::methods]
+impl NexKillBonus {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Download", args = 2)]
+    pub fn download(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    #[method(name = "Upload", args = 4)]
+    pub fn upload(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+    ) -> bool;
+
+    #[doc = "`ClearSucceeded()` overload"]
+    #[method(name = "ClearSucceeded", args = 0)]
+    pub fn clear_succeeded(self) -> ();
+
+    #[doc = "`get_IsSucceeded()` overload"]
+    #[method(name = "get_IsSucceeded", args = 0)]
+    pub fn get_is_succeeded(self) -> bool;
+
+    #[doc = "`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
+    #[method(name = "SetData", args = 2)]
+    pub fn set_data(self, cid: ::unity2::Il2CppString, data: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, ::unity2::Array<u8>, u32)` overload"]
+    #[method(name = "CreateData", args = 4)]
+    pub fn create_data(
+        self,
+        kill_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        killed_count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+        data: ::unity2::Array<u8>,
+        data_size: u32,
+    ) -> ();
+
+    #[doc = "`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]
+    #[method(name = "AddCounts", args = 2)]
+    pub fn add_counts(
+        self,
+        kind: crate::app::nexkillbonus::NexKillBonus_Kinds,
+        count_image: crate::app::mapkillbonus::MapKillBonus_CountImage,
+    ) -> ();
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`Serialize(::unity2::Array<u8>, u32)` overload"]
+    #[method(name = "Serialize", args = 2)]
+    pub fn serialize(self, data: ::unity2::Array<u8>, data_size: u32) -> ();
+
+    #[doc = "`Deserialize(::unity2::Array<u8>)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, data: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`ClearData()` overload"]
+    #[method(name = "ClearData", args = 0)]
+    pub fn clear_data(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-nexkillbonus")]
+impl NexKillBonus {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexKillBonus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexKillBonusMethods>::ctor(this);
         this
     }
 }

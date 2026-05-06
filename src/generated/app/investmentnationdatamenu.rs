@@ -11,6 +11,34 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_AnimalInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.AnimalInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct InvestmentNationDataMenu_AnimalInfo {
+        #[rename(name = "m_root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_name")]
+        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_checkEnable")]
+        pub m_check_enable: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_ItemInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.ItemInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct InvestmentNationDataMenu_ItemInfo {
+        #[rename(name = "m_root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_itemName")]
+        pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_itemNum")]
+        pub m_item_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu.md"))]
     #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -57,34 +85,6 @@ mod __types {
         #[rename(name = "m_isClose")]
         pub m_is_close: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_ItemInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.ItemInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct InvestmentNationDataMenu_ItemInfo {
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_itemName")]
-        pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_itemNum")]
-        pub m_item_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_AnimalInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.AnimalInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct InvestmentNationDataMenu_AnimalInfo {
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_checkEnable")]
-        pub m_check_enable: crate::unity_engine::gameobject::GameObject,
-    }
 }
 
 #[cfg(feature = "app-investmentnationdatamenu-types")]
@@ -92,26 +92,18 @@ pub use __types::*;
 
 #[cfg(feature = "app-investmentnationdatamenu")]
 #[::unity2::methods]
-impl InvestmentNationDataMenu {
-    #[doc = "`Setup(i32)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(self, index: i32) -> ();
+impl InvestmentNationDataMenu_AnimalInfo {
+    #[doc = "`Setup(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(self, animal_id: ::unity2::Il2CppString, b_capture: bool) -> ();
 
-    #[doc = "`SetupNation()` overload"]
-    #[method(name = "SetupNation", args = 0)]
-    pub fn setup_nation(self) -> ();
+    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetIcon", args = 1)]
+    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`GetNationIndex()` overload"]
-    #[method(name = "GetNationIndex", args = 0)]
-    pub fn get_nation_index(self) -> i32;
-
-    #[doc = "`IsClosed()` overload"]
-    #[method(name = "IsClosed", args = 0)]
-    pub fn is_closed(self) -> bool;
+    #[doc = "`SetVisible(bool)` overload"]
+    #[method(name = "SetVisible", args = 1)]
+    pub fn set_visible(self, is_visible: bool) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -119,17 +111,17 @@ impl InvestmentNationDataMenu {
 }
 
 #[cfg(feature = "app-investmentnationdatamenu")]
-impl InvestmentNationDataMenu {
+impl InvestmentNationDataMenu_AnimalInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentNationDataMenu),
+                ::core::stringify!(InvestmentNationDataMenu_AnimalInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInvestmentNationDataMenuMethods>::ctor(this);
+        <Self as IInvestmentNationDataMenu_AnimalInfoMethods>::ctor(this);
         this
     }
 }
@@ -184,18 +176,26 @@ impl InvestmentNationDataMenu_ItemInfo {
 
 #[cfg(feature = "app-investmentnationdatamenu")]
 #[::unity2::methods]
-impl InvestmentNationDataMenu_AnimalInfo {
-    #[doc = "`Setup(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "Setup", args = 2)]
-    pub fn setup(self, animal_id: ::unity2::Il2CppString, b_capture: bool) -> ();
+impl InvestmentNationDataMenu {
+    #[doc = "`Setup(i32)` overload"]
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(self, index: i32) -> ();
 
-    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetIcon", args = 1)]
-    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
+    #[doc = "`SetupNation()` overload"]
+    #[method(name = "SetupNation", args = 0)]
+    pub fn setup_nation(self) -> ();
 
-    #[doc = "`SetVisible(bool)` overload"]
-    #[method(name = "SetVisible", args = 1)]
-    pub fn set_visible(self, is_visible: bool) -> ();
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`GetNationIndex()` overload"]
+    #[method(name = "GetNationIndex", args = 0)]
+    pub fn get_nation_index(self) -> i32;
+
+    #[doc = "`IsClosed()` overload"]
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -203,17 +203,17 @@ impl InvestmentNationDataMenu_AnimalInfo {
 }
 
 #[cfg(feature = "app-investmentnationdatamenu")]
-impl InvestmentNationDataMenu_AnimalInfo {
+impl InvestmentNationDataMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentNationDataMenu_AnimalInfo),
+                ::core::stringify!(InvestmentNationDataMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInvestmentNationDataMenu_AnimalInfoMethods>::ctor(this);
+        <Self as IInvestmentNationDataMenuMethods>::ctor(this);
         this
     }
 }

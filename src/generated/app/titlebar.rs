@@ -14,28 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Title.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.Title")]
-    #[parent(crate::system::object::Object)]
-    pub struct TitleBar_Title {
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "Animator")]
-        pub animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "TitleText")]
-        pub title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "HelpText")]
-        pub help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "UnitObj")]
-        pub unit_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "UnitValue")]
-        pub unit_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "UnitMaxValue")]
-        pub unit_max_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "KeyHelp")]
-        pub key_help: crate::app::keyhelptitlebarcontroller::KeyHelpTitleBarController,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar.md"))]
     #[::unity2::class(namespace = "App", name = "TitleBar")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -93,32 +71,26 @@ mod __types {
         >,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Num.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.Num")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Title.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.Title")]
     #[parent(crate::system::object::Object)]
-    pub struct TitleBar_Num {
-        #[rename(name = "Gold")]
-        pub gold: i32,
-        #[rename(name = "PieceOfBond")]
-        pub piece_of_bond: i32,
-        #[rename(name = "RefineSilver")]
-        pub refine_silver: i32,
-        #[rename(name = "RefineSteel")]
-        pub refine_steel: i32,
-        #[rename(name = "RefineIron")]
-        pub refine_iron: i32,
-        #[rename(name = "RefineGodList")]
-        pub refine_god_list: ::unity2::Array<i32>,
-        #[rename(name = "ProofMaster")]
-        pub proof_master: i32,
-        #[rename(name = "ProofChange")]
-        pub proof_change: i32,
-        #[rename(name = "ProofEnchant")]
-        pub proof_enchant: i32,
-        #[rename(name = "ProofGunner")]
-        pub proof_gunner: i32,
-        #[rename(name = "RelayTicket")]
-        pub relay_ticket: i32,
+    pub struct TitleBar_Title {
+        #[rename(name = "Root")]
+        pub root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "Animator")]
+        pub animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "TitleText")]
+        pub title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "HelpText")]
+        pub help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "UnitObj")]
+        pub unit_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "UnitValue")]
+        pub unit_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "UnitMaxValue")]
+        pub unit_max_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "KeyHelp")]
+        pub key_help: crate::app::keyhelptitlebarcontroller::KeyHelpTitleBarController,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Values.md"))]
@@ -147,6 +119,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TitleBar.TitleBarProc")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct TitleBar_TitleBarProc {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Num.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.Num")]
+    #[parent(crate::system::object::Object)]
+    pub struct TitleBar_Num {
+        #[rename(name = "Gold")]
+        pub gold: i32,
+        #[rename(name = "PieceOfBond")]
+        pub piece_of_bond: i32,
+        #[rename(name = "RefineSilver")]
+        pub refine_silver: i32,
+        #[rename(name = "RefineSteel")]
+        pub refine_steel: i32,
+        #[rename(name = "RefineIron")]
+        pub refine_iron: i32,
+        #[rename(name = "RefineGodList")]
+        pub refine_god_list: ::unity2::Array<i32>,
+        #[rename(name = "ProofMaster")]
+        pub proof_master: i32,
+        #[rename(name = "ProofChange")]
+        pub proof_change: i32,
+        #[rename(name = "ProofEnchant")]
+        pub proof_enchant: i32,
+        #[rename(name = "ProofGunner")]
+        pub proof_gunner: i32,
+        #[rename(name = "RelayTicket")]
+        pub relay_ticket: i32,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titlebar/TitleBar_FooterType.md"))]
     #[repr(C)]
@@ -283,30 +283,6 @@ mod __types {
 
 #[cfg(feature = "app-titlebar-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-titlebar")]
-#[::unity2::methods]
-impl TitleBar_Title {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-titlebar")]
-impl TitleBar_Title {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TitleBar_Title),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITitleBar_TitleMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-titlebar")]
 #[::unity2::methods]
@@ -574,36 +550,24 @@ impl TitleBar {
 
 #[cfg(feature = "app-titlebar")]
 #[::unity2::methods]
-impl TitleBar_Num {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`SetValue(crate::app::titlebar::TitleBar_Num)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: crate::app::titlebar::TitleBar_Num) -> ();
-
-    #[doc = "`SetValueCurrent()` overload"]
-    #[method(name = "SetValueCurrent", args = 0)]
-    pub fn set_value_current(self) -> ();
-
+impl TitleBar_Title {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-titlebar")]
-impl TitleBar_Num {
+impl TitleBar_Title {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TitleBar_Num),
+                ::core::stringify!(TitleBar_Title),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITitleBar_NumMethods>::ctor(this);
+        <Self as ITitleBar_TitleMethods>::ctor(this);
         this
     }
 }
@@ -652,6 +616,42 @@ impl TitleBar_TitleBarProc {
             )
         });
         <Self as ITitleBar_TitleBarProcMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-titlebar")]
+#[::unity2::methods]
+impl TitleBar_Num {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`SetValue(crate::app::titlebar::TitleBar_Num)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: crate::app::titlebar::TitleBar_Num) -> ();
+
+    #[doc = "`SetValueCurrent()` overload"]
+    #[method(name = "SetValueCurrent", args = 0)]
+    pub fn set_value_current(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-titlebar")]
+impl TitleBar_Num {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TitleBar_Num),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITitleBar_NumMethods>::ctor(this);
         this
     }
 }

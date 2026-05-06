@@ -9,6 +9,21 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadingmanager/LoadingManager.md"))]
+    #[::unity2::class(namespace = "App", name = "LoadingManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct LoadingManager {
+        #[static_field]
+        #[rename(name = "s_Binder")]
+        pub s_binder: crate::app::bindholder::BindHolder,
+        #[static_field]
+        #[rename(name = "s_Timer")]
+        pub s_timer: crate::app::timer::Timer,
+        #[static_field]
+        #[rename(name = "s_FadeBind")]
+        pub s_fade_bind: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadingmanager/LoadingManager_Modes.md"))]
     #[repr(C)]
     #[derive(
@@ -63,21 +78,6 @@ mod __types {
         pub fn cook() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadingmanager/LoadingManager.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct LoadingManager {
-        #[static_field]
-        #[rename(name = "s_Binder")]
-        pub s_binder: crate::app::bindholder::BindHolder,
-        #[static_field]
-        #[rename(name = "s_Timer")]
-        pub s_timer: crate::app::timer::Timer,
-        #[static_field]
-        #[rename(name = "s_FadeBind")]
-        pub s_fade_bind: bool,
     }
 }
 

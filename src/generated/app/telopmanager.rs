@@ -17,6 +17,74 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Label2.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TelopManager_ProcBondLevelUp_Label2 {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TelopManager_ProcBondLevelUp_Label2 {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TelopManager.ProcBondLevelUp.Label2";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TelopManager_ProcBondLevelUp_Label2 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TelopManager_ProcBondLevelUp_Label2 {
+        pub fn entry() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngagePair.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngagePair")]
+    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
+    pub struct TelopManager_ProcBondEngagePair {
+        #[rename(name = "m_MainGod")]
+        pub m_main_god: crate::app::goddata::GodData,
+        #[rename(name = "m_SubGod")]
+        pub m_sub_god: crate::app::goddata::GodData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageQuartette.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageQuartette")]
+    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
+    pub struct TelopManager_ProcBondEngageQuartette {
+        #[rename(name = "m_1stMainGod")]
+        pub m_1st_main_god: crate::app::goddata::GodData,
+        #[rename(name = "m_2ndMainGod")]
+        pub m_2nd_main_god: crate::app::goddata::GodData,
+        #[rename(name = "m_3rdMainGod")]
+        pub m_3rd_main_god: crate::app::goddata::GodData,
+        #[rename(name = "m_SubGod")]
+        pub m_sub_god: crate::app::goddata::GodData,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageBase.md"))]
     #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageBase")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -35,64 +103,6 @@ mod __types {
         pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondEngageBase_Sequence,
         #[rename(name = "m_WaitFrame")]
         pub m_wait_frame: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcRelayResult_Label2.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TelopManager_ProcRelayResult_Label2 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TelopManager_ProcRelayResult_Label2 {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TelopManager.ProcRelayResult.Label2";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TelopManager_ProcRelayResult_Label2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TelopManager_ProcRelayResult_Label2 {
-        pub fn play_telop() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageQuartette.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageQuartette")]
-    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
-    pub struct TelopManager_ProcBondEngageQuartette {
-        #[rename(name = "m_1stMainGod")]
-        pub m_1st_main_god: crate::app::goddata::GodData,
-        #[rename(name = "m_2ndMainGod")]
-        pub m_2nd_main_god: crate::app::goddata::GodData,
-        #[rename(name = "m_3rdMainGod")]
-        pub m_3rd_main_god: crate::app::goddata::GodData,
-        #[rename(name = "m_SubGod")]
-        pub m_sub_god: crate::app::goddata::GodData,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Sequence.md"))]
@@ -139,14 +149,27 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngagePair.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngagePair")]
-    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
-    pub struct TelopManager_ProcBondEngagePair {
-        #[rename(name = "m_MainGod")]
-        pub m_main_god: crate::app::goddata::GodData,
-        #[rename(name = "m_SubGod")]
-        pub m_sub_god: crate::app::goddata::GodData,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcRelayResult.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcRelayResult")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TelopManager_ProcRelayResult {
+        #[rename(name = "m_Raids")]
+        pub m_raids: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_AwardeeIndex")]
+        pub m_awardee_index: i32,
+        #[rename(name = "m_IsAwarded")]
+        pub m_is_awarded: bool,
+        #[rename(name = "m_IsLookAtIKSet")]
+        pub m_is_look_at_ik_set: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: telopmanager :: TelopManager >)]
+    pub struct TelopManager {
+        #[static_field]
+        #[rename(name = "CanvasSize")]
+        pub canvas_size: crate::unity_engine::vector2::Vector2,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondLevelUp.md"))]
@@ -181,7 +204,7 @@ mod __types {
         pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondLevelUp_Sequence,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Label2.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondEngageBase_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -190,14 +213,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TelopManager_ProcBondLevelUp_Label2 {
+    pub struct TelopManager_ProcBondEngageBase_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TelopManager_ProcBondLevelUp_Label2 {
+    impl ::unity2::ClassIdentity for TelopManager_ProcBondEngageBase_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TelopManager.ProcBondLevelUp.Label2";
+        const NAME: &'static str = "TelopManager.ProcBondEngageBase.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -206,7 +229,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TelopManager_ProcBondLevelUp_Label2 {
+    impl ::unity2::IlType for TelopManager_ProcBondEngageBase_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -215,7 +238,7 @@ mod __types {
         }
     }
 
-    impl TelopManager_ProcBondLevelUp_Label2 {
+    impl TelopManager_ProcBondEngageBase_Label {
         pub fn entry() -> Self {
             Self { value: 0 }
         }
@@ -289,7 +312,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondEngageBase_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcRelayResult_Label2.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -298,14 +321,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TelopManager_ProcBondEngageBase_Label {
+    pub struct TelopManager_ProcRelayResult_Label2 {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TelopManager_ProcBondEngageBase_Label {
+    impl ::unity2::ClassIdentity for TelopManager_ProcRelayResult_Label2 {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TelopManager.ProcBondEngageBase.Label";
+        const NAME: &'static str = "TelopManager.ProcRelayResult.Label2";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -314,7 +337,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TelopManager_ProcBondEngageBase_Label {
+    impl ::unity2::IlType for TelopManager_ProcRelayResult_Label2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -323,37 +346,14 @@ mod __types {
         }
     }
 
-    impl TelopManager_ProcBondEngageBase_Label {
-        pub fn entry() -> Self {
+    impl TelopManager_ProcRelayResult_Label2 {
+        pub fn play_telop() -> Self {
             Self { value: 0 }
         }
 
         pub fn end() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcRelayResult.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcRelayResult")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TelopManager_ProcRelayResult {
-        #[rename(name = "m_Raids")]
-        pub m_raids: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_AwardeeIndex")]
-        pub m_awardee_index: i32,
-        #[rename(name = "m_IsAwarded")]
-        pub m_is_awarded: bool,
-        #[rename(name = "m_IsLookAtIKSet")]
-        pub m_is_look_at_ik_set: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: telopmanager :: TelopManager >)]
-    pub struct TelopManager {
-        #[static_field]
-        #[rename(name = "CanvasSize")]
-        pub canvas_size: crate::unity_engine::vector2::Vector2,
     }
 }
 
@@ -362,37 +362,51 @@ pub use __types::*;
 
 #[cfg(feature = "app-telopmanager")]
 #[::unity2::methods]
-impl TelopManager_ProcBondEngageBase {
-    #[doc = "`ExecuteAudioPlaybackSequence(crate::app::goddata::GodData, crate::app::goddata::GodData, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "ExecuteAudioPlaybackSequence", args = 3)]
-    pub fn execute_audio_playback_sequence(
+impl TelopManager_ProcBondEngagePair {
+    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
         self,
-        main_data: crate::app::goddata::GodData,
-        sub_data: crate::app::goddata::GodData,
-        game_object: crate::unity_engine::gameobject::GameObject,
+        main_god: crate::app::goddata::GodData,
+        sub_god: crate::app::goddata::GodData,
     ) -> ();
 
-    #[doc = "`PlayVoice(crate::app::goddata::GodData)` overload"]
-    #[method(name = "PlayVoice", args = 1)]
-    pub fn play_voice(self, god_data: crate::app::goddata::GodData) -> ();
+    #[doc = "`LoadFace()` overload"]
+    #[method(name = "LoadFace", args = 0)]
+    pub fn load_face(self) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`PlayTelop()` overload"]
+    #[method(name = "PlayTelop", args = 0)]
+    pub fn play_telop(self) -> ();
+
+    #[doc = "`ReleaseFace()` overload"]
+    #[method(name = "ReleaseFace", args = 0)]
+    pub fn release_face(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        main_god: crate::app::goddata::GodData,
+        sub_god: crate::app::goddata::GodData,
+    ) -> ();
 }
 
 #[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcBondEngageBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl TelopManager_ProcBondEngagePair {
+    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` — overload selector"]
+    pub fn new(
+        main_god: crate::app::goddata::GodData,
+        sub_god: crate::app::goddata::GodData,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager_ProcBondEngageBase),
+                ::core::stringify!(TelopManager_ProcBondEngagePair),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITelopManager_ProcBondEngageBaseMethods>::ctor(this);
+        <Self as ITelopManager_ProcBondEngagePairMethods>::ctor(this, main_god, sub_god);
         this
     }
 }
@@ -462,121 +476,37 @@ impl TelopManager_ProcBondEngageQuartette {
 
 #[cfg(feature = "app-telopmanager")]
 #[::unity2::methods]
-impl TelopManager_ProcBondEngagePair {
-    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
+impl TelopManager_ProcBondEngageBase {
+    #[doc = "`ExecuteAudioPlaybackSequence(crate::app::goddata::GodData, crate::app::goddata::GodData, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "ExecuteAudioPlaybackSequence", args = 3)]
+    pub fn execute_audio_playback_sequence(
         self,
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
+        main_data: crate::app::goddata::GodData,
+        sub_data: crate::app::goddata::GodData,
+        game_object: crate::unity_engine::gameobject::GameObject,
     ) -> ();
 
-    #[doc = "`LoadFace()` overload"]
-    #[method(name = "LoadFace", args = 0)]
-    pub fn load_face(self) -> ();
+    #[doc = "`PlayVoice(crate::app::goddata::GodData)` overload"]
+    #[method(name = "PlayVoice", args = 1)]
+    pub fn play_voice(self, god_data: crate::app::goddata::GodData) -> ();
 
-    #[doc = "`PlayTelop()` overload"]
-    #[method(name = "PlayTelop", args = 0)]
-    pub fn play_telop(self) -> ();
-
-    #[doc = "`ReleaseFace()` overload"]
-    #[method(name = "ReleaseFace", args = 0)]
-    pub fn release_face(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
-    ) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcBondEngagePair {
-    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` — overload selector"]
-    pub fn new(
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
-    ) -> Self {
+impl TelopManager_ProcBondEngageBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager_ProcBondEngagePair),
+                ::core::stringify!(TelopManager_ProcBondEngageBase),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITelopManager_ProcBondEngagePairMethods>::ctor(this, main_god, sub_god);
-        this
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-#[::unity2::methods]
-impl TelopManager_ProcBondLevelUp {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        level: i32,
-        next_level: i32,
-        god_data: crate::app::goddata::GodData,
-    ) -> ();
-
-    #[doc = "`LoadFace()` overload"]
-    #[method(name = "LoadFace", args = 0)]
-    pub fn load_face(self) -> ();
-
-    #[doc = "`PlayTelop()` overload"]
-    #[method(name = "PlayTelop", args = 0)]
-    pub fn play_telop(self) -> ();
-
-    #[doc = "`ReleaseFace()` overload"]
-    #[method(name = "ReleaseFace", args = 0)]
-    pub fn release_face(self) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`CrateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
-    #[method(name = "CrateBind", args = 6)]
-    pub fn crate_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        level: i32,
-        next_level: i32,
-        god_data: crate::app::goddata::GodData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcBondLevelUp {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        level: i32,
-        next_level: i32,
-        god_data: crate::app::goddata::GodData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager_ProcBondLevelUp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITelopManager_ProcBondLevelUpMethods>::ctor(
-            this, unit, god, level, next_level, god_data,
-        );
+        <Self as ITelopManager_ProcBondEngageBaseMethods>::ctor(this);
         this
     }
 }
@@ -826,6 +756,76 @@ impl TelopManager {
             )
         });
         <Self as ITelopManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+#[::unity2::methods]
+impl TelopManager_ProcBondLevelUp {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        level: i32,
+        next_level: i32,
+        god_data: crate::app::goddata::GodData,
+    ) -> ();
+
+    #[doc = "`LoadFace()` overload"]
+    #[method(name = "LoadFace", args = 0)]
+    pub fn load_face(self) -> ();
+
+    #[doc = "`PlayTelop()` overload"]
+    #[method(name = "PlayTelop", args = 0)]
+    pub fn play_telop(self) -> ();
+
+    #[doc = "`ReleaseFace()` overload"]
+    #[method(name = "ReleaseFace", args = 0)]
+    pub fn release_face(self) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`CrateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
+    #[method(name = "CrateBind", args = 6)]
+    pub fn crate_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        level: i32,
+        next_level: i32,
+        god_data: crate::app::goddata::GodData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager_ProcBondLevelUp {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` — overload selector"]
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        level: i32,
+        next_level: i32,
+        god_data: crate::app::goddata::GodData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TelopManager_ProcBondLevelUp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITelopManager_ProcBondLevelUpMethods>::ctor(
+            this, unit, god, level, next_level, god_data,
+        );
         this
     }
 }

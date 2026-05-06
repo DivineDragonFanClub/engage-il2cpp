@@ -13,37 +13,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        pub display_subsystem_instance: ::unity2::IntPtr,
-        pub native_blit_available: bool,
-        pub native_blit_invalid_states: bool,
-        pub blit_params_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        const NAMESPACE: &'static str = "UnityEngine.XR";
-
-        const NAME: &'static str = "XRDisplaySubsystem.XRMirrorViewBlitDesc";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]
     #[repr(C)]
     #[derive(
@@ -92,12 +61,35 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRDisplaySubsystem")]
-    # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrdisplaysubsystemdescriptor :: XRDisplaySubsystemDescriptor >)]
-    pub struct XRDisplaySubsystem {
-        #[rename(name = "displayFocusChanged")]
-        pub display_focus_changed: crate::system::action_1::Action_1<bool>,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc {
+        pub display_subsystem_instance: ::unity2::IntPtr,
+        pub native_blit_available: bool,
+        pub native_blit_invalid_states: bool,
+        pub blit_params_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc {
+        const NAMESPACE: &'static str = "UnityEngine.XR";
+
+        const NAME: &'static str = "XRDisplaySubsystem.XRMirrorViewBlitDesc";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]
@@ -124,37 +116,6 @@ mod __types {
     }
 
     impl ::unity2::IlType for XRDisplaySubsystem_XRRenderParameter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct XRDisplaySubsystem_XRBlitParams {
-        pub src_tex: crate::unity_engine::rendertexture::RenderTexture,
-        pub src_tex_array_slice: i32,
-        pub src_rect: crate::unity_engine::rect::Rect,
-        pub dest_rect: crate::unity_engine::rect::Rect,
-    }
-
-    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams {
-        const NAMESPACE: &'static str = "UnityEngine.XR";
-
-        const NAME: &'static str = "XRDisplaySubsystem.XRBlitParams";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for XRDisplaySubsystem_XRBlitParams {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -197,6 +158,45 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRDisplaySubsystem")]
+    # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrdisplaysubsystemdescriptor :: XRDisplaySubsystemDescriptor >)]
+    pub struct XRDisplaySubsystem {
+        #[rename(name = "displayFocusChanged")]
+        pub display_focus_changed: crate::system::action_1::Action_1<bool>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct XRDisplaySubsystem_XRBlitParams {
+        pub src_tex: crate::unity_engine::rendertexture::RenderTexture,
+        pub src_tex_array_slice: i32,
+        pub src_rect: crate::unity_engine::rect::Rect,
+        pub dest_rect: crate::unity_engine::rect::Rect,
+    }
+
+    impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams {
+        const NAMESPACE: &'static str = "UnityEngine.XR";
+
+        const NAME: &'static str = "XRDisplaySubsystem.XRBlitParams";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for XRDisplaySubsystem_XRBlitParams {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem-types")]
@@ -220,6 +220,38 @@ impl XRDisplaySubsystem_XRMirrorViewBlitDesc {
         blit_parameter_index: i32,
         blit_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams,
     ) -> ();
+}
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
+#[::unity2::methods(value)]
+impl XRDisplaySubsystem_XRRenderPass {
+    #[doc = "`GetRenderParameter(crate::unity_engine::camera::Camera, i32, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
+    #[method(name = "GetRenderParameter", args = 3)]
+    pub fn get_render_parameter(
+        self,
+        camera: crate::unity_engine::camera::Camera,
+        render_parameter_index: i32,
+        render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter,
+    ) -> ();
+
+    #[doc = "`GetRenderParameterCount()` overload"]
+    #[method(name = "GetRenderParameterCount", args = 0)]
+    pub fn get_render_parameter_count(self) -> i32;
+
+    #[doc = "`GetRenderParameter_Injected(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
+    #[method(name = "GetRenderParameter_Injected", args = 4)]
+    pub fn get_render_parameter_injected(
+        unity_self: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
+        camera: crate::unity_engine::camera::Camera,
+        render_parameter_index: i32,
+        render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter,
+    ) -> ();
+
+    #[doc = "`GetRenderParameterCount_Injected(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]
+    #[method(name = "GetRenderParameterCount_Injected", args = 1)]
+    pub fn get_render_parameter_count_injected(
+        unity_self: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
+    ) -> i32;
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
@@ -339,36 +371,4 @@ impl XRDisplaySubsystem {
         <Self as IXRDisplaySubsystemMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-#[::unity2::methods(value)]
-impl XRDisplaySubsystem_XRRenderPass {
-    #[doc = "`GetRenderParameter(crate::unity_engine::camera::Camera, i32, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
-    #[method(name = "GetRenderParameter", args = 3)]
-    pub fn get_render_parameter(
-        self,
-        camera: crate::unity_engine::camera::Camera,
-        render_parameter_index: i32,
-        render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter,
-    ) -> ();
-
-    #[doc = "`GetRenderParameterCount()` overload"]
-    #[method(name = "GetRenderParameterCount", args = 0)]
-    pub fn get_render_parameter_count(self) -> i32;
-
-    #[doc = "`GetRenderParameter_Injected(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]
-    #[method(name = "GetRenderParameter_Injected", args = 4)]
-    pub fn get_render_parameter_injected(
-        unity_self: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-        camera: crate::unity_engine::camera::Camera,
-        render_parameter_index: i32,
-        render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter,
-    ) -> ();
-
-    #[doc = "`GetRenderParameterCount_Injected(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]
-    #[method(name = "GetRenderParameterCount_Injected", args = 1)]
-    pub fn get_render_parameter_count_injected(
-        unity_self: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
-    ) -> i32;
 }

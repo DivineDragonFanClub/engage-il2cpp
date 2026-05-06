@@ -4,10 +4,64 @@
 mod __types {
     use super::*;
 
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDanger")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldanger :: MapPanelDanger >)]
+    pub struct MapPanelDanger {
+        #[rename(name = "m_ImageList")]
+        pub m_image_list: ::unity2::Array<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
+            >,
+        >,
+        #[rename(name = "m_AttackDanger_0")]
+        pub m_attack_danger_0: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_1")]
+        pub m_attack_danger_1: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_2")]
+        pub m_attack_danger_2: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_3")]
+        pub m_attack_danger_3: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_0")]
+        pub m_rod_danger_0: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_1")]
+        pub m_rod_danger_1: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_2")]
+        pub m_rod_danger_2: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_3")]
+        pub m_rod_danger_3: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mappaneldanger::MapPanelDanger_Mode,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_RodColor")]
+        pub m_rod_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_SwitchCurve")]
+        pub m_switch_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_IsLoopAnime")]
+        pub m_is_loop_anime: bool,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_MeshIndex.md"))]
     #[repr(C)]
@@ -81,49 +135,48 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDanger")]
-    pub struct MapPanelDanger {
-        #[rename(name = "m_ImageList")]
-        pub m_image_list: ::unity2::Array<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
-            >,
-        >,
-        #[rename(name = "m_AttackDanger_0")]
-        pub m_attack_danger_0: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_1")]
-        pub m_attack_danger_1: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_2")]
-        pub m_attack_danger_2: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_3")]
-        pub m_attack_danger_3: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_0")]
-        pub m_rod_danger_0: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_1")]
-        pub m_rod_danger_1: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_2")]
-        pub m_rod_danger_2: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_3")]
-        pub m_rod_danger_3: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mappaneldanger::MapPanelDanger_Mode,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_RodColor")]
-        pub m_rod_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SwitchCurve")]
-        pub m_switch_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_IsLoopAnime")]
-        pub m_is_loop_anime: bool,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelDanger_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapPanelDanger.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelDanger_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelDanger_Mode {
+        pub fn hide() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 1 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
@@ -171,50 +224,6 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelDanger_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapPanelDanger.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelDanger_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelDanger_Mode {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 1 }
         }
     }
 }
@@ -286,9 +295,21 @@ impl MapPanelDanger {
     #[method(name = "SetVertex", args = 0)]
     pub fn set_vertex(self) -> ();
 
-    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::system::collections::generic::list_1::List_1<crate::app::mapimagecorebit::MapImageCoreBit>)` overload"]
+    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldanger::MapPanelDanger>)` overload"]
     #[method(name = "SetMesh", args = 4)]
     pub fn set_mesh(
+        self,
+        index: crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
+        color: crate::unity_engine::color::Color,
+        r#type: crate::app::mappaneldanger::MapPanelDanger_DangerType,
+        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldanger::MapPanelDanger,
+        >,
+    ) -> ();
+
+    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::system::collections::generic::list_1::List_1<crate::app::mapimagecorebit::MapImageCoreBit>)` overload"]
+    #[method(name = "SetMesh", args = 4)]
+    pub fn set_mesh_2(
         self,
         index: crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
         color: crate::unity_engine::color::Color,

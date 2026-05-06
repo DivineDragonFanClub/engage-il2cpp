@@ -7,22 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_Caption.md"))]
-    #[::unity2::class(namespace = "App", name = "MoviePlayerBase.Caption")]
-    #[parent(crate::system::object::Object)]
-    pub struct MoviePlayerBase_Caption {
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Duration")]
-        pub m_duration: f32,
-        #[rename(name = "m_IsShow")]
-        pub m_is_show: bool,
-        #[rename(name = "m_IsShowOld")]
-        pub m_is_show_old: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_TitleLogo.md"))]
     #[::unity2::class(namespace = "App", name = "MoviePlayerBase.TitleLogo")]
     #[parent(crate::system::object::Object)]
@@ -38,6 +22,22 @@ mod __types {
         #[rename(name = "m_TextureResourceHandle")]
         pub m_texture_resource_handle:
             crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::sprite::Sprite>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_Caption.md"))]
+    #[::unity2::class(namespace = "App", name = "MoviePlayerBase.Caption")]
+    #[parent(crate::system::object::Object)]
+    pub struct MoviePlayerBase_Caption {
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_Duration")]
+        pub m_duration: f32,
+        #[rename(name = "m_IsShow")]
+        pub m_is_show: bool,
+        #[rename(name = "m_IsShowOld")]
+        pub m_is_show_old: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase.md"))]
@@ -103,6 +103,61 @@ pub use __types::*;
 
 #[cfg(feature = "app-movieplayerbase")]
 #[::unity2::methods]
+impl MoviePlayerBase_TitleLogo {
+    #[doc = "`.ctor(crate::unity_engine::ui::image::Image, crate::unity_engine::animator::Animator)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        image: crate::unity_engine::ui::image::Image,
+        animator: crate::unity_engine::animator::Animator,
+    ) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Show(i32)` overload"]
+    #[method(name = "Show", args = 1)]
+    pub fn show(self, msec: i32) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+}
+
+#[cfg(feature = "app-movieplayerbase")]
+impl MoviePlayerBase_TitleLogo {
+    #[doc = "`.ctor(crate::unity_engine::ui::image::Image, crate::unity_engine::animator::Animator)` — overload selector"]
+    pub fn new(
+        image: crate::unity_engine::ui::image::Image,
+        animator: crate::unity_engine::animator::Animator,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MoviePlayerBase_TitleLogo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMoviePlayerBase_TitleLogoMethods>::ctor(this, image, animator);
+        this
+    }
+}
+
+#[cfg(feature = "app-movieplayerbase")]
+#[::unity2::methods]
 impl MoviePlayerBase_Caption {
     #[doc = "`.ctor(crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -157,61 +212,6 @@ impl MoviePlayerBase_Caption {
             )
         });
         <Self as IMoviePlayerBase_CaptionMethods>::ctor(this, text);
-        this
-    }
-}
-
-#[cfg(feature = "app-movieplayerbase")]
-#[::unity2::methods]
-impl MoviePlayerBase_TitleLogo {
-    #[doc = "`.ctor(crate::unity_engine::ui::image::Image, crate::unity_engine::animator::Animator)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        image: crate::unity_engine::ui::image::Image,
-        animator: crate::unity_engine::animator::Animator,
-    ) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Show(i32)` overload"]
-    #[method(name = "Show", args = 1)]
-    pub fn show(self, msec: i32) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-}
-
-#[cfg(feature = "app-movieplayerbase")]
-impl MoviePlayerBase_TitleLogo {
-    #[doc = "`.ctor(crate::unity_engine::ui::image::Image, crate::unity_engine::animator::Animator)` — overload selector"]
-    pub fn new(
-        image: crate::unity_engine::ui::image::Image,
-        animator: crate::unity_engine::animator::Animator,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MoviePlayerBase_TitleLogo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMoviePlayerBase_TitleLogoMethods>::ctor(this, image, animator);
         this
     }
 }

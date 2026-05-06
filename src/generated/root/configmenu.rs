@@ -21,6 +21,16 @@ pub use __types::*;
 #[cfg(feature = "root-configmenu")]
 #[::unity2::methods]
 impl ConfigMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::root::configmenucontent::ConfigMenuContent,
+    ) -> ();
+
     #[doc = "`BCall()` overload"]
     #[method(name = "BCall", args = 0)]
     pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
@@ -42,4 +52,25 @@ impl ConfigMenu {
     pub fn create_bind(
         super_: crate::app::procinst::ProcInst,
     ) -> crate::unity_engine::gameobject::GameObject;
+}
+
+#[cfg(feature = "root-configmenu")]
+impl ConfigMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::root::configmenucontent::ConfigMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfigMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfigMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
 }

@@ -10,24 +10,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "GameMessage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GameMessage {
-        #[rename(name = "m_content")]
-        pub m_content: crate::app::gamemessagecontent::GameMessageContent,
-        #[rename(name = "m_status")]
-        pub m_status: crate::app::gamemessage::GameMessage_Status,
-        #[rename(name = "m_mess")]
-        pub m_mess: ::unity2::Il2CppString,
-        #[rename(name = "m_expandedMess")]
-        pub m_expanded_mess: ::unity2::Il2CppString,
-        #[rename(name = "m_tickCount")]
-        pub m_tick_count: i32,
-        #[rename(name = "m_endFrame")]
-        pub m_end_frame: i32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage_Status.md"))]
     #[::unity2::class(namespace = "App", name = "GameMessage.Status")]
     #[parent(crate::app::bitfield32::BitField32)]
@@ -54,10 +36,52 @@ mod __types {
         #[rename(name = "WindowOpened")]
         pub window_opened: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "GameMessage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GameMessage {
+        #[rename(name = "m_content")]
+        pub m_content: crate::app::gamemessagecontent::GameMessageContent,
+        #[rename(name = "m_status")]
+        pub m_status: crate::app::gamemessage::GameMessage_Status,
+        #[rename(name = "m_mess")]
+        pub m_mess: ::unity2::Il2CppString,
+        #[rename(name = "m_expandedMess")]
+        pub m_expanded_mess: ::unity2::Il2CppString,
+        #[rename(name = "m_tickCount")]
+        pub m_tick_count: i32,
+        #[rename(name = "m_endFrame")]
+        pub m_end_frame: i32,
+    }
 }
 
 #[cfg(feature = "app-gamemessage-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gamemessage")]
+#[::unity2::methods]
+impl GameMessage_Status {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gamemessage")]
+impl GameMessage_Status {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameMessage_Status),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameMessage_StatusMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-gamemessage")]
 #[::unity2::methods]
@@ -240,30 +264,6 @@ impl GameMessage {
             )
         });
         <Self as IGameMessageMethods>::ctor(this, mess, content, status);
-        this
-    }
-}
-
-#[cfg(feature = "app-gamemessage")]
-#[::unity2::methods]
-impl GameMessage_Status {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gamemessage")]
-impl GameMessage_Status {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameMessage_Status),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameMessage_StatusMethods>::ctor(this);
         this
     }
 }

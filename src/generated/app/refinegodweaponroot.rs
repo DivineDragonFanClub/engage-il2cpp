@@ -11,6 +11,26 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatusEfficacy.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponRoot.RefineStatusEfficacy")]
+    #[parent(crate::system::object::Object)]
+    pub struct RefineGodWeaponRoot_RefineStatusEfficacy {
+        #[rename(name = "m_CaptionText")]
+        pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BeforeParentObject")]
+        pub m_before_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BeforeValueImage")]
+        pub m_before_value_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_BeforeNothingText")]
+        pub m_before_nothing_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_AfterParentObject")]
+        pub m_after_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_AfterValueImage")]
+        pub m_after_value_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AfterNothingText")]
+        pub m_after_nothing_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatus.md"))]
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponRoot.RefineStatus")]
     #[parent(crate::system::object::Object)]
@@ -37,24 +57,20 @@ mod __types {
         pub m_after_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatusEfficacy.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponRoot.RefineStatusEfficacy")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_WeaponInfoLabel.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponRoot.WeaponInfoLabel")]
     #[parent(crate::system::object::Object)]
-    pub struct RefineGodWeaponRoot_RefineStatusEfficacy {
-        #[rename(name = "m_CaptionText")]
-        pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BeforeParentObject")]
-        pub m_before_parent_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BeforeValueImage")]
-        pub m_before_value_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BeforeNothingText")]
-        pub m_before_nothing_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_AfterParentObject")]
-        pub m_after_parent_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_AfterValueImage")]
-        pub m_after_value_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AfterNothingText")]
-        pub m_after_nothing_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    pub struct RefineGodWeaponRoot_WeaponInfoLabel {
+        #[rename(name = "m_KindFrameObject")]
+        pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_WeaponNameText")]
+        pub m_weapon_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CapacityCaptionText")]
+        pub m_capacity_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CapacityValueText")]
+        pub m_capacity_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CapacityMaxText")]
+        pub m_capacity_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot.md"))]
@@ -108,26 +124,34 @@ mod __types {
         #[rename(name = "m_UnitItemBase")]
         pub m_unit_item_base: crate::app::unititem::UnitItem,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_WeaponInfoLabel.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponRoot.WeaponInfoLabel")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefineGodWeaponRoot_WeaponInfoLabel {
-        #[rename(name = "m_KindFrameObject")]
-        pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_WeaponNameText")]
-        pub m_weapon_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CapacityCaptionText")]
-        pub m_capacity_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CapacityValueText")]
-        pub m_capacity_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CapacityMaxText")]
-        pub m_capacity_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
 }
 
 #[cfg(feature = "app-refinegodweaponroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refinegodweaponroot")]
+#[::unity2::methods]
+impl RefineGodWeaponRoot_RefineStatusEfficacy {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponroot")]
+impl RefineGodWeaponRoot_RefineStatusEfficacy {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponRoot_RefineStatusEfficacy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponRoot_RefineStatusEfficacyMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-refinegodweaponroot")]
 #[::unity2::methods]
@@ -155,24 +179,24 @@ impl RefineGodWeaponRoot_RefineStatus {
 
 #[cfg(feature = "app-refinegodweaponroot")]
 #[::unity2::methods]
-impl RefineGodWeaponRoot_RefineStatusEfficacy {
+impl RefineGodWeaponRoot_WeaponInfoLabel {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-refinegodweaponroot")]
-impl RefineGodWeaponRoot_RefineStatusEfficacy {
+impl RefineGodWeaponRoot_WeaponInfoLabel {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponRoot_RefineStatusEfficacy),
+                ::core::stringify!(RefineGodWeaponRoot_WeaponInfoLabel),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineGodWeaponRoot_RefineStatusEfficacyMethods>::ctor(this);
+        <Self as IRefineGodWeaponRoot_WeaponInfoLabelMethods>::ctor(this);
         this
     }
 }
@@ -317,30 +341,6 @@ impl RefineGodWeaponRoot {
             )
         });
         <Self as IRefineGodWeaponRootMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-refinegodweaponroot")]
-#[::unity2::methods]
-impl RefineGodWeaponRoot_WeaponInfoLabel {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-refinegodweaponroot")]
-impl RefineGodWeaponRoot_WeaponInfoLabel {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponRoot_WeaponInfoLabel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineGodWeaponRoot_WeaponInfoLabelMethods>::ctor(this);
         this
     }
 }

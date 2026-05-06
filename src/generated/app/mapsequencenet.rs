@@ -10,10 +10,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcUpload")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcDownload")]
     #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcUpload {}
+    pub struct MapSequenceNet_ProcDownload {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError_ProcDelayedHideError.md"))]
     #[::unity2::class(
@@ -22,28 +22,6 @@ mod __types {
     )]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MapSequenceNet_ProcShowError_ProcDelayedHideError {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSequenceNet {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcDownload")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcDownload {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcShowError")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceNet_ProcShowError {
-        #[static_field]
-        #[rename(name = "WaitSec")]
-        pub wait_sec: f32,
-        #[static_field]
-        #[rename(name = "WaitDelayedSec")]
-        pub wait_delayed_sec: f32,
-    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcDownload_Label.md"))]
     #[repr(C)]
@@ -128,10 +106,132 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcShowError")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceNet_ProcShowError {
+        #[static_field]
+        #[rename(name = "WaitSec")]
+        pub wait_sec: f32,
+        #[static_field]
+        #[rename(name = "WaitDelayedSec")]
+        pub wait_delayed_sec: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceNet.ProcUpload")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceNet_ProcUpload {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceNet")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapSequenceNet {}
 }
 
 #[cfg(feature = "app-mapsequencenet-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapsequencenet")]
+#[::unity2::methods]
+impl MapSequenceNet_ProcDownload {
+    #[doc = "`Download()` overload"]
+    #[method(name = "Download", args = 0)]
+    pub fn download(self) -> ();
+
+    #[doc = "`Postdownload()` overload"]
+    #[method(name = "Postdownload", args = 0)]
+    pub fn postdownload(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcDownload {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceNet_ProcDownload),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceNet_ProcDownloadMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencenet")]
+#[::unity2::methods]
+impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceNet_ProcShowError_ProcDelayedHideError),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencenet")]
+#[::unity2::methods]
+impl MapSequenceNet_ProcShowError {
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencenet")]
+impl MapSequenceNet_ProcShowError {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceNet_ProcShowError),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceNet_ProcShowErrorMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapsequencenet")]
 #[::unity2::methods]
@@ -179,38 +279,6 @@ impl MapSequenceNet_ProcUpload {
 
 #[cfg(feature = "app-mapsequencenet")]
 #[::unity2::methods]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create() -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcShowError_ProcDelayedHideError),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[::unity2::methods]
 impl MapSequenceNet {
     #[doc = "`Download(crate::app::procinst::ProcInst, bool)` overload"]
     #[method(name = "Download", args = 2)]
@@ -219,72 +287,4 @@ impl MapSequenceNet {
     #[doc = "`Upload(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "Upload", args = 1)]
     pub fn upload(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[::unity2::methods]
-impl MapSequenceNet_ProcDownload {
-    #[doc = "`Download()` overload"]
-    #[method(name = "Download", args = 0)]
-    pub fn download(self) -> ();
-
-    #[doc = "`Postdownload()` overload"]
-    #[method(name = "Postdownload", args = 0)]
-    pub fn postdownload(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcDownload {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcDownload),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcDownloadMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-#[::unity2::methods]
-impl MapSequenceNet_ProcShowError {
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceNet_ProcShowError),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceNet_ProcShowErrorMethods>::ctor(this);
-        this
-    }
 }

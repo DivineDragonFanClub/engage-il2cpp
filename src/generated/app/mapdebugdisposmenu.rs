@@ -19,16 +19,10 @@ mod __types {
         pub m_position_group: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct MapDebugDisposMenu_DisposMenuItem {
-        #[rename(name = "m_Group")]
-        pub m_group: ::unity2::Il2CppString,
-        #[rename(name = "m_PositionGroup")]
-        pub m_position_group:
-            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDebugDisposMenu {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DeleteForceMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DeleteForceMenuItem")]
@@ -42,10 +36,16 @@ mod __types {
         pub m_force_unit_count: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDebugDisposMenu {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct MapDebugDisposMenu_DisposMenuItem {
+        #[rename(name = "m_Group")]
+        pub m_group: ::unity2::Il2CppString,
+        #[rename(name = "m_PositionGroup")]
+        pub m_position_group:
+            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu-types")]
@@ -89,51 +89,28 @@ impl MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[::unity2::methods]
-impl MapDebugDisposMenu_DisposMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        group: ::unity2::Il2CppString,
-        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-    ) -> ();
+impl MapDebugDisposMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "DrawCell", args = 2)]
-    pub fn draw_cell(group: ::unity2::Il2CppString, position: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl MapDebugDisposMenu_DisposMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]
-    pub fn new(
-        group: ::unity2::Il2CppString,
-        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-    ) -> Self {
+impl MapDebugDisposMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem),
+                ::core::stringify!(MapDebugDisposMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDebugDisposMenu_DisposMenuItemMethods>::ctor(this, group, position_group);
+        <Self as IMapDebugDisposMenuMethods>::ctor(this);
         this
     }
 }
@@ -200,28 +177,51 @@ impl MapDebugDisposMenu_DeleteForceMenuItem {
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[::unity2::methods]
-impl MapDebugDisposMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+impl MapDebugDisposMenu_DisposMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        group: ::unity2::Il2CppString,
+        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    ) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "DrawCell", args = 2)]
+    pub fn draw_cell(group: ::unity2::Il2CppString, position: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl MapDebugDisposMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl MapDebugDisposMenu_DisposMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]
+    pub fn new(
+        group: ::unity2::Il2CppString,
+        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDebugDisposMenu),
+                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDebugDisposMenuMethods>::ctor(this);
+        <Self as IMapDebugDisposMenu_DisposMenuItemMethods>::ctor(this, group, position_group);
         this
     }
 }

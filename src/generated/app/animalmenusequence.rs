@@ -15,75 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct AnimalMenuSequence_ConfirmNo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)]
-    pub struct AnimalMenuSequence {
-        #[rename(name = "AnimalPID")]
-        pub animal_pid: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_RootAnim")]
-        pub m_root_anim: crate::unity_engine::animator::Animator,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct AnimalMenuSequence_ConfirmYes {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AnimalMenuSequence_From {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AnimalMenuSequence_From {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AnimalMenuSequence.From";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AnimalMenuSequence_From {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AnimalMenuSequence_From {
-        pub fn outside() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn inside() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -143,6 +74,75 @@ mod __types {
             Self { value: 5 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct AnimalMenuSequence_ConfirmYes {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AnimalMenuSequence_From {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AnimalMenuSequence_From {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AnimalMenuSequence.From";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AnimalMenuSequence_From {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AnimalMenuSequence_From {
+        pub fn outside() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn inside() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)]
+    pub struct AnimalMenuSequence {
+        #[rename(name = "AnimalPID")]
+        pub animal_pid: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[rename(name = "m_RootAnim")]
+        pub m_root_anim: crate::unity_engine::animator::Animator,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct AnimalMenuSequence_ConfirmNo {}
 }
 
 #[cfg(feature = "app-animalmenusequence-types")]
@@ -150,7 +150,7 @@ pub use __types::*;
 
 #[cfg(feature = "app-animalmenusequence")]
 #[::unity2::methods]
-impl AnimalMenuSequence_ConfirmNo {
+impl AnimalMenuSequence_ConfirmYes {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -161,17 +161,17 @@ impl AnimalMenuSequence_ConfirmNo {
 }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmNo {
+impl AnimalMenuSequence_ConfirmYes {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AnimalMenuSequence_ConfirmNo),
+                ::core::stringify!(AnimalMenuSequence_ConfirmYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAnimalMenuSequence_ConfirmNoMethods>::ctor(this);
+        <Self as IAnimalMenuSequence_ConfirmYesMethods>::ctor(this);
         this
     }
 }
@@ -470,7 +470,7 @@ impl AnimalMenuSequence {
 
 #[cfg(feature = "app-animalmenusequence")]
 #[::unity2::methods]
-impl AnimalMenuSequence_ConfirmYes {
+impl AnimalMenuSequence_ConfirmNo {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -481,17 +481,17 @@ impl AnimalMenuSequence_ConfirmYes {
 }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmYes {
+impl AnimalMenuSequence_ConfirmNo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AnimalMenuSequence_ConfirmYes),
+                ::core::stringify!(AnimalMenuSequence_ConfirmNo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAnimalMenuSequence_ConfirmYesMethods>::ctor(this);
+        <Self as IAnimalMenuSequence_ConfirmNoMethods>::ctor(this);
         this
     }
 }

@@ -14,37 +14,256 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_FuncUnitItem.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.FuncUnitItem")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Unit_FuncUnitItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit")]
     #[parent(crate::system::object::Object)]
-    pub struct Unit_CalcInfo {
-        #[rename(name = "Count")]
-        pub count: i32,
-        #[rename(name = "Attack")]
-        pub attack: i32,
-        #[rename(name = "Hit")]
-        pub hit: i32,
-        #[rename(name = "Avoid")]
-        pub avoid: i32,
-        #[rename(name = "Critical")]
-        pub critical: i32,
-        #[rename(name = "Secure")]
-        pub secure: i32,
-        #[rename(name = "Continuous")]
-        pub continuous: i32,
-        #[rename(name = "PhysicalAttack")]
-        pub physical_attack: i32,
-        #[rename(name = "MagicAttack")]
-        pub magic_attack: i32,
-        #[rename(name = "PhysicalDefense")]
-        pub physical_defense: i32,
-        #[rename(name = "MagicDefense")]
-        pub magic_defense: i32,
+    pub struct Unit {
+        #[static_field]
+        #[rename(name = "ItemMax")]
+        pub item_max: i32,
+        #[static_field]
+        #[rename(name = "ExpMax")]
+        pub exp_max: i32,
+        #[static_field]
+        #[rename(name = "EnhanceMoveMax")]
+        pub enhance_move_max: i32,
+        #[static_field]
+        #[rename(name = "StunMax")]
+        pub stun_max: i32,
+        #[static_field]
+        #[rename(name = "EquipSkillMax")]
+        pub equip_skill_max: i32,
+        #[static_field]
+        #[rename(name = "InternalLevelMin")]
+        pub internal_level_min: i32,
+        #[static_field]
+        #[rename(name = "InternalLevelMax")]
+        pub internal_level_max: i32,
+        #[static_field]
+        #[rename(name = "SkillPointMax")]
+        pub skill_point_max: i32,
+        #[static_field]
+        #[rename(name = "CellCountMax")]
+        pub cell_count_max: i32,
+        #[static_field]
+        #[rename(name = "LevelUpRetryMax")]
+        pub level_up_retry_max: i32,
+        #[static_field]
+        #[rename(name = "DefaultGodStates")]
+        pub default_god_states: ::unity2::Array<crate::app::godstate::GodState>,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::unit::Unit_StatusField,
+        #[rename(name = "m_Prev")]
+        pub m_prev: crate::app::unit::Unit,
+        #[rename(name = "m_Next")]
+        pub m_next: crate::app::unit::Unit,
+        #[rename(name = "m_Ai")]
+        pub m_ai: crate::app::unitai::UnitAI,
+        #[rename(name = "m_Edit")]
+        pub m_edit: crate::app::unitedit::UnitEdit,
+        #[rename(name = "m_Ident")]
+        pub m_ident: i32,
+        #[rename(name = "m_Person")]
+        pub m_person: crate::app::persondata::PersonData,
+        #[rename(name = "m_Job")]
+        pub m_job: crate::app::jobdata::JobData,
+        #[rename(name = "m_Force")]
+        pub m_force: crate::app::force::Force,
+        #[rename(name = "m_BaseCapability")]
+        pub m_base_capability: crate::app::unitbasecapability::UnitBaseCapability,
+        #[rename(name = "m_GrowCapability")]
+        pub m_grow_capability: crate::app::capability::Capability,
+        #[rename(name = "m_LevelCapability")]
+        pub m_level_capability: crate::app::unitbasecapability::UnitBaseCapability,
+        #[rename(name = "m_GrowSeed")]
+        pub m_grow_seed: u32,
+        #[rename(name = "m_DropSeed")]
+        pub m_drop_seed: u32,
+        #[rename(name = "m_Actor")]
+        pub m_actor: crate::app::unitactor::UnitActor,
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::mapinforoot::MapInfoRoot,
+        #[rename(name = "m_Index")]
+        pub m_index: u8,
+        #[rename(name = "m_Level")]
+        pub m_level: u8,
+        #[rename(name = "m_Exp")]
+        pub m_exp: u8,
+        #[rename(name = "m_Hp")]
+        pub m_hp: crate::app::unit::Unit_ChangeValue,
+        #[rename(name = "m_HpStockCount")]
+        pub m_hp_stock_count: u8,
+        #[rename(name = "m_HpStockCountMax")]
+        pub m_hp_stock_count_max: u8,
+        #[rename(name = "m_ExtraHpStockCount")]
+        pub m_extra_hp_stock_count: u8,
+        #[rename(name = "m_ExtraHpStockCountMax")]
+        pub m_extra_hp_stock_count_max: u8,
+        #[rename(name = "m_EngageCount")]
+        pub m_engage_count: u8,
+        #[rename(name = "m_EngageTurn")]
+        pub m_engage_turn: u8,
+        #[rename(name = "m_EngageCountView")]
+        pub m_engage_count_view: u8,
+        #[rename(name = "m_GodStates")]
+        pub m_god_states: ::unity2::Array<crate::app::godstate::GodState>,
+        #[rename(name = "m_X")]
+        pub m_x: i8,
+        #[rename(name = "m_Z")]
+        pub m_z: i8,
+        #[rename(name = "m_DisposX")]
+        pub m_dispos_x: i8,
+        #[rename(name = "m_DisposZ")]
+        pub m_dispos_z: i8,
+        #[rename(name = "m_Angle")]
+        pub m_angle: f32,
+        #[rename(name = "m_DontAttackPerson")]
+        pub m_dont_attack_person: crate::app::persondata::PersonData,
+        #[rename(name = "m_DontAttackForceMask")]
+        pub m_dont_attack_force_mask: u32,
+        #[rename(name = "m_ItemList")]
+        pub m_item_list: crate::app::unititemlist::UnitItemList,
+        #[rename(name = "m_ItemSelected")]
+        pub m_item_selected: crate::app::unititem::UnitItem,
+        #[rename(name = "m_AccessoryList")]
+        pub m_accessory_list: crate::app::unitaccessorylist::UnitAccessoryList,
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_GodLink")]
+        pub m_god_link: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Ring")]
+        pub m_ring: crate::app::unitring::UnitRing,
+        #[rename(name = "m_ExtraSight")]
+        pub m_extra_sight: i32,
+        #[rename(name = "m_MoveDistance")]
+        pub m_move_distance: i32,
+        #[rename(name = "m_MaskSkill")]
+        pub m_mask_skill: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_EquipSkill")]
+        pub m_equip_skill: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_PrivateSkill")]
+        pub m_private_skill: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_ReceiveSkill")]
+        pub m_receive_skill: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_SupportedSkill")]
+        pub m_supported_skill: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_EquipSkillPool")]
+        pub m_equip_skill_pool: crate::app::skillarray::SkillArray,
+        #[rename(name = "m_LearnedJobSkill")]
+        pub m_learned_job_skill: crate::app::skilldata::SkillData,
+        #[rename(name = "m_OriginalAptitude")]
+        pub m_original_aptitude: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_Aptitude")]
+        pub m_aptitude: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_WeaponMask")]
+        pub m_weapon_mask: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_SelectedWeaponMask")]
+        pub m_selected_weapon_mask: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_EnhanceFactors")]
+        pub m_enhance_factors: crate::app::unitenhancefactors::UnitEnhanceFactors,
+        #[rename(name = "m_EnhanceCalculator")]
+        pub m_enhance_calculator: crate::app::unitenhancecalculator::UnitEnhanceCalculator,
+        #[rename(name = "m_InternalLevel")]
+        pub m_internal_level: i8,
+        #[rename(name = "m_LastPickVoice")]
+        pub m_last_pick_voice: i8,
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_RodImage")]
+        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image:
+            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[rename(name = "m_EngageImage")]
+        pub m_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_Record")]
+        pub m_record: crate::app::unitrecord::UnitRecord,
+        #[rename(name = "m_MapHistoryIndex")]
+        pub m_map_history_index: u8,
+        #[rename(name = "m_MaskSkillLock")]
+        pub m_mask_skill_lock: ::unity2::IlInstance,
+        #[rename(name = "m_FortuneTarget")]
+        pub m_fortune_target: crate::app::persondata::PersonData,
+        #[rename(name = "m_FortuneSeed")]
+        pub m_fortune_seed: u32,
+        #[rename(name = "m_RelayPlayerIndex")]
+        pub m_relay_player_index: u8,
+        #[rename(name = "m_SkillPoint")]
+        pub m_skill_point: i16,
+        #[rename(name = "m_OwnerUnit")]
+        pub m_owner_unit: i32,
+        #[rename(name = "m_LockTargetX")]
+        pub m_lock_target_x: i8,
+        #[rename(name = "m_LockTargetZ")]
+        pub m_lock_target_z: i8,
+        #[static_field]
+        #[rename(name = "s_AttackImage")]
+        pub s_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[static_field]
+        #[rename(name = "s_RodImage")]
+        pub s_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[static_field]
+        #[rename(name = "s_HealImage")]
+        pub s_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[static_field]
+        #[rename(name = "s_SupportImage")]
+        pub s_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[static_field]
+        #[rename(name = "s_InterferenceImage")]
+        pub s_interference_image:
+            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[static_field]
+        #[rename(name = "s_EngageImage")]
+        pub s_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
+        #[static_field]
+        #[rename(name = "s_MoveImage")]
+        pub s_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[static_field]
+        #[rename(name = "LeaderAddLevel")]
+        pub leader_add_level: i32,
+        #[static_field]
+        #[rename(name = "s_Engaging")]
+        pub s_engaging: bool,
+        #[static_field]
+        #[rename(name = "s_Mind")]
+        pub s_mind: crate::app::mapmind::MapMind_Type,
+        #[static_field]
+        #[rename(name = "s_CanEngageStart")]
+        pub s_can_engage_start: bool,
+        #[static_field]
+        #[rename(name = "s_UnitList")]
+        pub s_unit_list: crate::app::unititemlist::UnitItemList,
+        #[static_field]
+        #[rename(name = "s_TempList")]
+        pub s_temp_list: crate::app::unititemlist::UnitItemList,
+        #[static_field]
+        #[rename(name = "s_TempTarget")]
+        pub s_temp_target: crate::app::maptarget::MapTarget_DataSet,
+        #[static_field]
+        #[rename(name = "Disorder")]
+        pub disorder: crate::app::skilldata::SkillData_States,
+        #[static_field]
+        #[rename(name = "GrowAbortCount")]
+        pub grow_abort_count: i32,
+        #[static_field]
+        #[rename(name = "InvalidEngageCount")]
+        pub invalid_engage_count: u8,
+        #[static_field]
+        #[rename(name = "EnemyEngageMask")]
+        pub enemy_engage_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdnagerdeploy::MapDnagerDeploy,
+        >,
+        #[rename(name = "m_CalcInfo")]
+        pub m_calc_info: crate::app::unit::Unit_CalcInfo,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_Status.md"))]
@@ -339,41 +558,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_ChangeValue.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Unit_ChangeValue {
-        pub m_value: u8,
-        pub m_display: u8,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_FuncUnitItem.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.FuncUnitItem")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Unit_FuncUnitItem {}
 
-    impl ::unity2::ClassIdentity for Unit_ChangeValue {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Unit.ChangeValue";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Unit_ChangeValue {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
-    #[parent(crate::system::object::Object)]
-    pub struct Unit_ItemsForSelectedWeapon {
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
+    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
+    pub struct Unit_ChartItemsForSelectedWeapon {
+        #[rename(name = "m_ChartItems")]
+        pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_GuardType.md"))]
@@ -428,20 +623,41 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
-    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-    pub struct Unit_DisposItemsForSelectedWeapon {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::disposdata::DisposData,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_ChangeValue.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Unit_ChangeValue {
+        pub m_value: u8,
+        pub m_display: u8,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
-    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-    pub struct Unit_ChartItemsForSelectedWeapon {
-        #[rename(name = "m_ChartItems")]
-        pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
+    impl ::unity2::ClassIdentity for Unit_ChangeValue {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Unit.ChangeValue";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Unit_ChangeValue {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
+    #[parent(crate::system::object::Object)]
+    pub struct Unit_ItemsForSelectedWeapon {
+        #[rename(name = "m_Items")]
+        pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_StatusField.md"))]
@@ -449,481 +665,45 @@ mod __types {
     # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: unit :: Unit_Status >)]
     pub struct Unit_StatusField {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct Unit {
-        #[static_field]
-        #[rename(name = "ItemMax")]
-        pub item_max: i32,
-        #[static_field]
-        #[rename(name = "ExpMax")]
-        pub exp_max: i32,
-        #[static_field]
-        #[rename(name = "EnhanceMoveMax")]
-        pub enhance_move_max: i32,
-        #[static_field]
-        #[rename(name = "StunMax")]
-        pub stun_max: i32,
-        #[static_field]
-        #[rename(name = "EquipSkillMax")]
-        pub equip_skill_max: i32,
-        #[static_field]
-        #[rename(name = "InternalLevelMin")]
-        pub internal_level_min: i32,
-        #[static_field]
-        #[rename(name = "InternalLevelMax")]
-        pub internal_level_max: i32,
-        #[static_field]
-        #[rename(name = "SkillPointMax")]
-        pub skill_point_max: i32,
-        #[static_field]
-        #[rename(name = "CellCountMax")]
-        pub cell_count_max: i32,
-        #[static_field]
-        #[rename(name = "LevelUpRetryMax")]
-        pub level_up_retry_max: i32,
-        #[static_field]
-        #[rename(name = "DefaultGodStates")]
-        pub default_god_states: ::unity2::Array<crate::app::godstate::GodState>,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::unit::Unit_StatusField,
-        #[rename(name = "m_Prev")]
-        pub m_prev: crate::app::unit::Unit,
-        #[rename(name = "m_Next")]
-        pub m_next: crate::app::unit::Unit,
-        #[rename(name = "m_Ai")]
-        pub m_ai: crate::app::unitai::UnitAI,
-        #[rename(name = "m_Edit")]
-        pub m_edit: crate::app::unitedit::UnitEdit,
-        #[rename(name = "m_Ident")]
-        pub m_ident: i32,
-        #[rename(name = "m_Person")]
-        pub m_person: crate::app::persondata::PersonData,
-        #[rename(name = "m_Job")]
-        pub m_job: crate::app::jobdata::JobData,
-        #[rename(name = "m_Force")]
-        pub m_force: crate::app::force::Force,
-        #[rename(name = "m_BaseCapability")]
-        pub m_base_capability: crate::app::unitbasecapability::UnitBaseCapability,
-        #[rename(name = "m_GrowCapability")]
-        pub m_grow_capability: crate::app::capability::Capability,
-        #[rename(name = "m_LevelCapability")]
-        pub m_level_capability: crate::app::unitbasecapability::UnitBaseCapability,
-        #[rename(name = "m_GrowSeed")]
-        pub m_grow_seed: u32,
-        #[rename(name = "m_DropSeed")]
-        pub m_drop_seed: u32,
-        #[rename(name = "m_Actor")]
-        pub m_actor: crate::app::unitactor::UnitActor,
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::mapinforoot::MapInfoRoot,
-        #[rename(name = "m_Index")]
-        pub m_index: u8,
-        #[rename(name = "m_Level")]
-        pub m_level: u8,
-        #[rename(name = "m_Exp")]
-        pub m_exp: u8,
-        #[rename(name = "m_Hp")]
-        pub m_hp: crate::app::unit::Unit_ChangeValue,
-        #[rename(name = "m_HpStockCount")]
-        pub m_hp_stock_count: u8,
-        #[rename(name = "m_HpStockCountMax")]
-        pub m_hp_stock_count_max: u8,
-        #[rename(name = "m_ExtraHpStockCount")]
-        pub m_extra_hp_stock_count: u8,
-        #[rename(name = "m_ExtraHpStockCountMax")]
-        pub m_extra_hp_stock_count_max: u8,
-        #[rename(name = "m_EngageCount")]
-        pub m_engage_count: u8,
-        #[rename(name = "m_EngageTurn")]
-        pub m_engage_turn: u8,
-        #[rename(name = "m_EngageCountView")]
-        pub m_engage_count_view: u8,
-        #[rename(name = "m_GodStates")]
-        pub m_god_states: ::unity2::Array<crate::app::godstate::GodState>,
-        #[rename(name = "m_X")]
-        pub m_x: i8,
-        #[rename(name = "m_Z")]
-        pub m_z: i8,
-        #[rename(name = "m_DisposX")]
-        pub m_dispos_x: i8,
-        #[rename(name = "m_DisposZ")]
-        pub m_dispos_z: i8,
-        #[rename(name = "m_Angle")]
-        pub m_angle: f32,
-        #[rename(name = "m_DontAttackPerson")]
-        pub m_dont_attack_person: crate::app::persondata::PersonData,
-        #[rename(name = "m_DontAttackForceMask")]
-        pub m_dont_attack_force_mask: u32,
-        #[rename(name = "m_ItemList")]
-        pub m_item_list: crate::app::unititemlist::UnitItemList,
-        #[rename(name = "m_ItemSelected")]
-        pub m_item_selected: crate::app::unititem::UnitItem,
-        #[rename(name = "m_AccessoryList")]
-        pub m_accessory_list: crate::app::unitaccessorylist::UnitAccessoryList,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_GodLink")]
-        pub m_god_link: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Ring")]
-        pub m_ring: crate::app::unitring::UnitRing,
-        #[rename(name = "m_ExtraSight")]
-        pub m_extra_sight: i32,
-        #[rename(name = "m_MoveDistance")]
-        pub m_move_distance: i32,
-        #[rename(name = "m_MaskSkill")]
-        pub m_mask_skill: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_EquipSkill")]
-        pub m_equip_skill: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_PrivateSkill")]
-        pub m_private_skill: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_ReceiveSkill")]
-        pub m_receive_skill: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_SupportedSkill")]
-        pub m_supported_skill: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_EquipSkillPool")]
-        pub m_equip_skill_pool: crate::app::skillarray::SkillArray,
-        #[rename(name = "m_LearnedJobSkill")]
-        pub m_learned_job_skill: crate::app::skilldata::SkillData,
-        #[rename(name = "m_OriginalAptitude")]
-        pub m_original_aptitude: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_Aptitude")]
-        pub m_aptitude: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_WeaponMask")]
-        pub m_weapon_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_SelectedWeaponMask")]
-        pub m_selected_weapon_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_EnhanceFactors")]
-        pub m_enhance_factors: crate::app::unitenhancefactors::UnitEnhanceFactors,
-        #[rename(name = "m_EnhanceCalculator")]
-        pub m_enhance_calculator: crate::app::unitenhancecalculator::UnitEnhanceCalculator,
-        #[rename(name = "m_InternalLevel")]
-        pub m_internal_level: i8,
-        #[rename(name = "m_LastPickVoice")]
-        pub m_last_pick_voice: i8,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_RodImage")]
-        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[rename(name = "m_EngageImage")]
-        pub m_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_Record")]
-        pub m_record: crate::app::unitrecord::UnitRecord,
-        #[rename(name = "m_MapHistoryIndex")]
-        pub m_map_history_index: u8,
-        #[rename(name = "m_MaskSkillLock")]
-        pub m_mask_skill_lock: ::unity2::IlInstance,
-        #[rename(name = "m_FortuneTarget")]
-        pub m_fortune_target: crate::app::persondata::PersonData,
-        #[rename(name = "m_FortuneSeed")]
-        pub m_fortune_seed: u32,
-        #[rename(name = "m_RelayPlayerIndex")]
-        pub m_relay_player_index: u8,
-        #[rename(name = "m_SkillPoint")]
-        pub m_skill_point: i16,
-        #[rename(name = "m_OwnerUnit")]
-        pub m_owner_unit: i32,
-        #[rename(name = "m_LockTargetX")]
-        pub m_lock_target_x: i8,
-        #[rename(name = "m_LockTargetZ")]
-        pub m_lock_target_z: i8,
-        #[static_field]
-        #[rename(name = "s_AttackImage")]
-        pub s_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[static_field]
-        #[rename(name = "s_RodImage")]
-        pub s_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[static_field]
-        #[rename(name = "s_HealImage")]
-        pub s_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[static_field]
-        #[rename(name = "s_SupportImage")]
-        pub s_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[static_field]
-        #[rename(name = "s_InterferenceImage")]
-        pub s_interference_image:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[static_field]
-        #[rename(name = "s_EngageImage")]
-        pub s_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
-        #[static_field]
-        #[rename(name = "s_MoveImage")]
-        pub s_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[static_field]
-        #[rename(name = "LeaderAddLevel")]
-        pub leader_add_level: i32,
-        #[static_field]
-        #[rename(name = "s_Engaging")]
-        pub s_engaging: bool,
-        #[static_field]
-        #[rename(name = "s_Mind")]
-        pub s_mind: crate::app::mapmind::MapMind_Type,
-        #[static_field]
-        #[rename(name = "s_CanEngageStart")]
-        pub s_can_engage_start: bool,
-        #[static_field]
-        #[rename(name = "s_UnitList")]
-        pub s_unit_list: crate::app::unititemlist::UnitItemList,
-        #[static_field]
-        #[rename(name = "s_TempList")]
-        pub s_temp_list: crate::app::unititemlist::UnitItemList,
-        #[static_field]
-        #[rename(name = "s_TempTarget")]
-        pub s_temp_target: crate::app::maptarget::MapTarget_DataSet,
-        #[static_field]
-        #[rename(name = "Disorder")]
-        pub disorder: crate::app::skilldata::SkillData_States,
-        #[static_field]
-        #[rename(name = "GrowAbortCount")]
-        pub grow_abort_count: i32,
-        #[static_field]
-        #[rename(name = "InvalidEngageCount")]
-        pub invalid_engage_count: u8,
-        #[static_field]
-        #[rename(name = "EnemyEngageMask")]
-        pub enemy_engage_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdnagerdeploy::MapDnagerDeploy,
-        >,
-        #[rename(name = "m_CalcInfo")]
-        pub m_calc_info: crate::app::unit::Unit_CalcInfo,
+    pub struct Unit_CalcInfo {
+        #[rename(name = "Count")]
+        pub count: i32,
+        #[rename(name = "Attack")]
+        pub attack: i32,
+        #[rename(name = "Hit")]
+        pub hit: i32,
+        #[rename(name = "Avoid")]
+        pub avoid: i32,
+        #[rename(name = "Critical")]
+        pub critical: i32,
+        #[rename(name = "Secure")]
+        pub secure: i32,
+        #[rename(name = "Continuous")]
+        pub continuous: i32,
+        #[rename(name = "PhysicalAttack")]
+        pub physical_attack: i32,
+        #[rename(name = "MagicAttack")]
+        pub magic_attack: i32,
+        #[rename(name = "PhysicalDefense")]
+        pub physical_defense: i32,
+        #[rename(name = "MagicDefense")]
+        pub magic_defense: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
+    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
+    pub struct Unit_DisposItemsForSelectedWeapon {
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::disposdata::DisposData,
     }
 }
 
 #[cfg(feature = "app-unit-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_FuncUnitItem {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_FuncUnitItem {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_FuncUnitItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_FuncUnitItemMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_CalcInfo {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Update(crate::app::unit::Unit)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(self, unit: crate::app::unit::Unit) -> crate::app::unit::Unit_CalcInfo;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_CalcInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_CalcInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_CalcInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods(value)]
-impl Unit_ChangeValue {
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> u8;
-
-    #[doc = "`set_Value(u8)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: u8) -> ();
-
-    #[doc = "`get_Display()` overload"]
-    #[method(name = "get_Display", args = 0)]
-    pub fn get_display(self) -> u8;
-
-    #[doc = "`Change(i32)` overload"]
-    #[method(name = "Change", args = 1)]
-    pub fn change(self, value: i32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`IsChanging()` overload"]
-    #[method(name = "IsChanging", args = 0)]
-    pub fn is_changing(self) -> bool;
-
-    #[doc = "`Instant()` overload"]
-    #[method(name = "Instant", args = 0)]
-    pub fn instant(self) -> ();
-
-    #[doc = "`op_Implicit(crate::app::unit::Unit_ChangeValue)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(v: crate::app::unit::Unit_ChangeValue) -> u8;
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_ItemsForSelectedWeapon {
-    #[doc = "`Sort()` overload"]
-    #[method(name = "Sort", args = 0)]
-    pub fn sort(self) -> ();
-
-    #[doc = "`GetCount()` overload"]
-    #[method(name = "GetCount", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`Get(i32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, index: i32) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_ItemsForSelectedWeapon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::disposdata::DisposData) -> ();
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
-    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> ();
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
-    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_StatusField {
-    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
-    #[method(name = "ToLong", args = 1)]
-    pub fn to_long(self, value: crate::app::unit::Unit_Status) -> i64;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-unit")]
 #[::unity2::methods]
@@ -4035,6 +3815,226 @@ impl Unit {
             )
         });
         <Self as IUnitMethods>::ctor(this, use_image);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_FuncUnitItem {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_FuncUnitItem {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_FuncUnitItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_FuncUnitItemMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> ();
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
+    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods(value)]
+impl Unit_ChangeValue {
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> u8;
+
+    #[doc = "`set_Value(u8)` overload"]
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: u8) -> ();
+
+    #[doc = "`get_Display()` overload"]
+    #[method(name = "get_Display", args = 0)]
+    pub fn get_display(self) -> u8;
+
+    #[doc = "`Change(i32)` overload"]
+    #[method(name = "Change", args = 1)]
+    pub fn change(self, value: i32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`IsChanging()` overload"]
+    #[method(name = "IsChanging", args = 0)]
+    pub fn is_changing(self) -> bool;
+
+    #[doc = "`Instant()` overload"]
+    #[method(name = "Instant", args = 0)]
+    pub fn instant(self) -> ();
+
+    #[doc = "`op_Implicit(crate::app::unit::Unit_ChangeValue)` overload"]
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(v: crate::app::unit::Unit_ChangeValue) -> u8;
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_ItemsForSelectedWeapon {
+    #[doc = "`Sort()` overload"]
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[doc = "`GetCount()` overload"]
+    #[method(name = "GetCount", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`Get(i32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> crate::app::itemdata::ItemData;
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_ItemsForSelectedWeapon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_ItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_StatusField {
+    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(self, value: crate::app::unit::Unit_Status) -> i64;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_CalcInfo {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Update(crate::app::unit::Unit)` overload"]
+    #[method(name = "Update", args = 1)]
+    pub fn update(self, unit: crate::app::unit::Unit) -> crate::app::unit::Unit_CalcInfo;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_CalcInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_CalcInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_CalcInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::disposdata::DisposData) -> ();
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
+    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
         this
     }
 }

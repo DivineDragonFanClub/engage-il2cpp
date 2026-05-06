@@ -10,10 +10,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestream/FileStream_WriteDelegate.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "FileStream.WriteDelegate")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestream/FileStream_ReadDelegate.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "FileStream.ReadDelegate")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct FileStream_WriteDelegate {}
+    pub struct FileStream_ReadDelegate {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestream/FileStream.md"))]
     #[::unity2::class(namespace = "System.IO", name = "FileStream")]
@@ -55,10 +55,10 @@ mod __types {
         pub buf_start: i64,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestream/FileStream_ReadDelegate.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "FileStream.ReadDelegate")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestream/FileStream_WriteDelegate.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "FileStream.WriteDelegate")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct FileStream_ReadDelegate {}
+    pub struct FileStream_WriteDelegate {}
 }
 
 #[cfg(feature = "system-io-filestream-types")]
@@ -66,28 +66,28 @@ pub use __types::*;
 
 #[cfg(feature = "system-io-filestream")]
 #[::unity2::methods]
-impl FileStream_WriteDelegate {
+impl FileStream_ReadDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
     #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
     #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, buffer: ::unity2::Array<u8>, offset: i32, count: i32) -> ();
+    pub fn invoke(self, buffer: ::unity2::Array<u8>, offset: i32, count: i32) -> i32;
 }
 
 #[cfg(feature = "system-io-filestream")]
-impl FileStream_WriteDelegate {
+impl FileStream_ReadDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FileStream_WriteDelegate),
+                ::core::stringify!(FileStream_ReadDelegate),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFileStream_WriteDelegateMethods>::ctor(this, object, method);
+        <Self as IFileStream_ReadDelegateMethods>::ctor(this, object, method);
         this
     }
 }
@@ -575,28 +575,28 @@ impl FileStream {
 
 #[cfg(feature = "system-io-filestream")]
 #[::unity2::methods]
-impl FileStream_ReadDelegate {
+impl FileStream_WriteDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
     #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
     #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, buffer: ::unity2::Array<u8>, offset: i32, count: i32) -> i32;
+    pub fn invoke(self, buffer: ::unity2::Array<u8>, offset: i32, count: i32) -> ();
 }
 
 #[cfg(feature = "system-io-filestream")]
-impl FileStream_ReadDelegate {
+impl FileStream_WriteDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FileStream_ReadDelegate),
+                ::core::stringify!(FileStream_WriteDelegate),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFileStream_ReadDelegateMethods>::ctor(this, object, method);
+        <Self as IFileStream_WriteDelegateMethods>::ctor(this, object, method);
         this
     }
 }

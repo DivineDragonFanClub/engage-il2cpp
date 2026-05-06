@@ -24,6 +24,11 @@ mod __types {
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct NetEnableSequence_ConfirmDialog_YesMenuItem {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct NetEnableSequence_ConfirmDialog_NoMenuItem {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -86,20 +91,15 @@ mod __types {
         pub m_is_login_succeeded: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetEnableSequence_ConfirmDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]
     #[::unity2::class(namespace = "App", name = "NetEnableSequence.ResultFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct NetEnableSequence_ResultFunction {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog.NoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct NetEnableSequence_ConfirmDialog_NoMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetEnableSequence_ConfirmDialog {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Arg.md"))]
     #[repr(C)]
@@ -165,6 +165,34 @@ impl NetEnableSequence_ConfirmDialog_YesMenuItem {
             )
         });
         <Self as INetEnableSequence_ConfirmDialog_YesMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-netenablesequence")]
+#[::unity2::methods]
+impl NetEnableSequence_ConfirmDialog_NoMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ConfirmDialog_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence_ConfirmDialog_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequence_ConfirmDialog_NoMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -256,34 +284,6 @@ impl NetEnableSequence {
 
 #[cfg(feature = "app-netenablesequence")]
 #[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
 impl NetEnableSequence_ResultFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -312,10 +312,10 @@ impl NetEnableSequence_ResultFunction {
 
 #[cfg(feature = "app-netenablesequence")]
 #[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog_NoMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+impl NetEnableSequence_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -323,17 +323,17 @@ impl NetEnableSequence_ConfirmDialog_NoMenuItem {
 }
 
 #[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ConfirmDialog_NoMenuItem {
+impl NetEnableSequence_ConfirmDialog {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ConfirmDialog_NoMenuItem),
+                ::core::stringify!(NetEnableSequence_ConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as INetEnableSequence_ConfirmDialog_NoMenuItemMethods>::ctor(this);
+        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
         this
     }
 }

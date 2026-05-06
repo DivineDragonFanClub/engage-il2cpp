@@ -7,6 +7,35 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_MaterialManager {
+        #[static_field]
+        #[rename(name = "m_materialList")]
+        pub m_material_list: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial,
+        >,
+        #[static_field]
+        #[rename(name = "m_fallbackMaterials")]
+        pub m_fallback_materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            i64,
+            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial,
+        >,
+        #[static_field]
+        #[rename(name = "m_fallbackMaterialLookup")]
+        pub m_fallback_material_lookup:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i64>,
+        #[static_field]
+        #[rename(name = "m_fallbackCleanupList")]
+        pub m_fallback_cleanup_list: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial,
+        >,
+        #[static_field]
+        #[rename(name = "isFallbackListDirty")]
+        pub is_fallback_list_dirty: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.FallbackMaterial")]
     #[parent(crate::system::object::Object)]
@@ -36,87 +65,10 @@ mod __types {
         #[rename(name = "stencilID")]
         pub stencil_id: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_MaterialManager {
-        #[static_field]
-        #[rename(name = "m_materialList")]
-        pub m_material_list: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial,
-        >,
-        #[static_field]
-        #[rename(name = "m_fallbackMaterials")]
-        pub m_fallback_materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i64,
-            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial,
-        >,
-        #[static_field]
-        #[rename(name = "m_fallbackMaterialLookup")]
-        pub m_fallback_material_lookup:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i64>,
-        #[static_field]
-        #[rename(name = "m_fallbackCleanupList")]
-        pub m_fallback_cleanup_list: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial,
-        >,
-        #[static_field]
-        #[rename(name = "isFallbackListDirty")]
-        pub is_fallback_list_dirty: bool,
-    }
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-#[::unity2::methods]
-impl TMP_MaterialManager_FallbackMaterial {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_FallbackMaterial {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_MaterialManager_FallbackMaterial),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_MaterialManager_FallbackMaterialMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-#[::unity2::methods]
-impl TMP_MaterialManager_MaskingMaterial {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[::unity2::methods]
@@ -236,4 +188,52 @@ impl TMP_MaterialManager {
         source: crate::unity_engine::material::Material,
         destination: crate::unity_engine::material::Material,
     ) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+#[::unity2::methods]
+impl TMP_MaterialManager_FallbackMaterial {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_FallbackMaterial {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_MaterialManager_FallbackMaterial),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_MaterialManager_FallbackMaterialMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+#[::unity2::methods]
+impl TMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
+        this
+    }
 }

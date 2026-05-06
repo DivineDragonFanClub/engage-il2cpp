@@ -25,6 +25,8 @@ mod __types {
         pub m_font: crate::unity_engine::font::Font,
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::root::debugmesh::DebugMesh,
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::debugmenu::DebugMenu,
         #[rename(name = "m_FontMaterial")]
@@ -59,6 +61,10 @@ impl DebugWindow {
     #[doc = "`SetMenu(crate::app::debugmenu::DebugMenu)` overload"]
     #[method(name = "SetMenu", args = 1)]
     pub fn set_menu(self, menu: crate::app::debugmenu::DebugMenu) -> ();
+
+    #[doc = "`get_Mesh()` overload"]
+    #[method(name = "get_Mesh", args = 0)]
+    pub fn get_mesh(self) -> crate::root::debugmesh::DebugMesh;
 
     #[doc = "`GetTextWidth(::unity2::Il2CppString)` overload"]
     #[method(name = "GetTextWidth", args = 1)]

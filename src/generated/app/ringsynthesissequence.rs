@@ -22,6 +22,11 @@ mod __types {
         pub m_ring_data: crate::app::ringdata::RingData,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
+    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingSynthesisSequence_SkipListenerProc {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingSynthesisSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringsynthesissequence :: RingSynthesisSequence >)]
@@ -78,11 +83,6 @@ mod __types {
         #[rename(name = "EmitEffect")]
         pub emit_effect: ::unity2::Il2CppString,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingSynthesisSequence_SkipListenerProc {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
     #[repr(C)]
@@ -175,6 +175,48 @@ impl RingSynthesisSequence_Result1Proc {
             )
         });
         <Self as IRingSynthesisSequence_Result1ProcMethods>::ctor(this, ring_data);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`get_m_Pause()` overload"]
+    #[method(name = "get_m_Pause", args = 0)]
+    pub fn get_m_pause(self) -> bool;
+
+    #[doc = "`set_m_Pause(bool)` overload"]
+    #[method(name = "set_m_Pause", args = 1)]
+    pub fn set_m_pause(self, value: bool) -> ();
+
+    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
         this
     }
 }
@@ -300,48 +342,6 @@ impl RingSynthesisSequence {
             )
         });
         <Self as IRingSynthesisSequenceMethods>::ctor(this, result, end_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-#[::unity2::methods]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`get_m_Pause()` overload"]
-    #[method(name = "get_m_Pause", args = 0)]
-    pub fn get_m_pause(self) -> bool;
-
-    #[doc = "`set_m_Pause(bool)` overload"]
-    #[method(name = "set_m_Pause", args = 1)]
-    pub fn set_m_pause(self, value: bool) -> ();
-
-    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(
-        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
-    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
         this
     }
 }

@@ -10,6 +10,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserglobaldata/RelayUserGlobalData_Ticket.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayUserGlobalData.Ticket")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayUserGlobalData_Ticket {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserglobaldata/RelayUserGlobalData.md"))]
     #[::unity2::class(namespace = "App", name = "RelayUserGlobalData")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: relayuserglobaldata :: RelayUserGlobalData >)]
@@ -32,14 +37,6 @@ mod __types {
         >,
         #[rename(name = "m_Uncommitted")]
         pub m_uncommitted: crate::app::relayuserglobaldata::RelayUserGlobalData_Uncommitted,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserglobaldata/RelayUserGlobalData_ProcCleanupUnused.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayUserGlobalData.ProcCleanupUnused")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayUserGlobalData_ProcCleanupUnused {
-        #[rename(name = "m_HeaderReader")]
-        pub m_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayuserglobaldata/RelayUserGlobalData_Uncommitted.md"))]
@@ -72,14 +69,65 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserglobaldata/RelayUserGlobalData_Ticket.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayUserGlobalData.Ticket")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayUserGlobalData_Ticket {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserglobaldata/RelayUserGlobalData_ProcCleanupUnused.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayUserGlobalData.ProcCleanupUnused")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RelayUserGlobalData_ProcCleanupUnused {
+        #[rename(name = "m_HeaderReader")]
+        pub m_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+    }
 }
 
 #[cfg(feature = "app-relayuserglobaldata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relayuserglobaldata")]
+#[::unity2::methods]
+impl RelayUserGlobalData_Ticket {
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> u32;
+
+    #[doc = "`set_Count(u32)` overload"]
+    #[method(name = "set_Count", args = 1)]
+    pub fn set_count(self, value: u32) -> ();
+
+    #[doc = "`get_LastTime()` overload"]
+    #[method(name = "get_LastTime", args = 0)]
+    pub fn get_last_time(self) -> i64;
+
+    #[doc = "`set_LastTime(i64)` overload"]
+    #[method(name = "set_LastTime", args = 1)]
+    pub fn set_last_time(self, value: i64) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "Deserialize", args = 2)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayuserglobaldata")]
+impl RelayUserGlobalData_Ticket {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayUserGlobalData_Ticket),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayUserGlobalData_TicketMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-relayuserglobaldata")]
 #[::unity2::methods]
@@ -190,6 +238,26 @@ impl RelayUserGlobalData {
 }
 
 #[cfg(feature = "app-relayuserglobaldata")]
+#[::unity2::methods(value)]
+impl RelayUserGlobalData_Uncommitted {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`IsDirty()` overload"]
+    #[method(name = "IsDirty", args = 0)]
+    pub fn is_dirty(self) -> bool;
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+}
+
+#[cfg(feature = "app-relayuserglobaldata")]
 #[::unity2::methods]
 impl RelayUserGlobalData_ProcCleanupUnused {
     #[doc = "`OnDispose()` overload"]
@@ -229,74 +297,6 @@ impl RelayUserGlobalData_ProcCleanupUnused {
             )
         });
         <Self as IRelayUserGlobalData_ProcCleanupUnusedMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relayuserglobaldata")]
-#[::unity2::methods(value)]
-impl RelayUserGlobalData_Uncommitted {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`IsDirty()` overload"]
-    #[method(name = "IsDirty", args = 0)]
-    pub fn is_dirty(self) -> bool;
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-}
-
-#[cfg(feature = "app-relayuserglobaldata")]
-#[::unity2::methods]
-impl RelayUserGlobalData_Ticket {
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> u32;
-
-    #[doc = "`set_Count(u32)` overload"]
-    #[method(name = "set_Count", args = 1)]
-    pub fn set_count(self, value: u32) -> ();
-
-    #[doc = "`get_LastTime()` overload"]
-    #[method(name = "get_LastTime", args = 0)]
-    pub fn get_last_time(self) -> i64;
-
-    #[doc = "`set_LastTime(i64)` overload"]
-    #[method(name = "set_LastTime", args = 1)]
-    pub fn set_last_time(self, value: i64) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "Deserialize", args = 2)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayuserglobaldata")]
-impl RelayUserGlobalData_Ticket {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayUserGlobalData_Ticket),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayUserGlobalData_TicketMethods>::ctor(this);
         this
     }
 }

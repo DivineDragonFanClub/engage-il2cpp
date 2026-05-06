@@ -8,30 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/queue_1/Queue_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "Queue`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct Queue_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "_array")]
-        pub array: ::unity2::Array<T0>,
-        #[rename(name = "_head")]
-        pub head: i32,
-        #[rename(name = "_tail")]
-        pub tail: i32,
-        #[rename(name = "_size")]
-        pub size: i32,
-        #[rename(name = "_version")]
-        pub version: i32,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-        #[static_field]
-        #[rename(name = "MinimumGrow")]
-        pub minimum_grow: i32,
-        #[static_field]
-        #[rename(name = "GrowFactor")]
-        pub grow_factor: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/queue_1/Queue_1_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -63,10 +39,66 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/queue_1/Queue_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "Queue`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct Queue_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "_array")]
+        pub array: ::unity2::Array<T0>,
+        #[rename(name = "_head")]
+        pub head: i32,
+        #[rename(name = "_tail")]
+        pub tail: i32,
+        #[rename(name = "_size")]
+        pub size: i32,
+        #[rename(name = "_version")]
+        pub version: i32,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+        #[static_field]
+        #[rename(name = "MinimumGrow")]
+        pub minimum_grow: i32,
+        #[static_field]
+        #[rename(name = "GrowFactor")]
+        pub grow_factor: i32,
+    }
 }
 
 #[cfg(feature = "system-collections-generic-queue_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-queue_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> Queue_1_Enumerator<T0> {
+    #[doc = "`.ctor(crate::system::collections::generic::queue_1::Queue_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, q: crate::system::collections::generic::queue_1::Queue_1<T0>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[doc = "`ThrowEnumerationNotStartedOrEnded()` overload"]
+    #[method(name = "ThrowEnumerationNotStartedOrEnded", args = 0)]
+    pub fn throw_enumeration_not_started_or_ended(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+}
 
 #[cfg(feature = "system-collections-generic-queue_1")]
 #[::unity2::methods]
@@ -193,36 +225,4 @@ impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
         <Self as IQueue_1Methods<T0>>::ctor_3(this, collection);
         this
     }
-}
-
-#[cfg(feature = "system-collections-generic-queue_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> Queue_1_Enumerator<T0> {
-    #[doc = "`.ctor(crate::system::collections::generic::queue_1::Queue_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, q: crate::system::collections::generic::queue_1::Queue_1<T0>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
-
-    #[doc = "`ThrowEnumerationNotStartedOrEnded()` overload"]
-    #[method(name = "ThrowEnumerationNotStartedOrEnded", args = 0)]
-    pub fn throw_enumeration_not_started_or_ended(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
 }

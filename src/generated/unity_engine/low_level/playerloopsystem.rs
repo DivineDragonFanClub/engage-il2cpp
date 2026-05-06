@@ -10,14 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.LowLevel",
-        name = "PlayerLoopSystem.UpdateFunction"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PlayerLoopSystem_UpdateFunction {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -51,10 +43,26 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.LowLevel",
+        name = "PlayerLoopSystem.UpdateFunction"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PlayerLoopSystem_UpdateFunction {}
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[::unity2::methods(value)]
+impl PlayerLoopSystem {
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 #[::unity2::methods]
@@ -82,12 +90,4 @@ impl PlayerLoopSystem_UpdateFunction {
         <Self as IPlayerLoopSystem_UpdateFunctionMethods>::ctor(this, object, method);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-#[::unity2::methods(value)]
-impl PlayerLoopSystem {
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

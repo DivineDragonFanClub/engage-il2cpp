@@ -11,16 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleWindow")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleWindow {
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_MoveParam")]
-        pub m_move_param: ::unity2::Array<crate::app::mapbattlewindow::MapBattleWindow_MoveParam>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow_MoveParam.md"))]
     #[::unity2::class(namespace = "App", name = "MapBattleWindow.MoveParam")]
     #[parent(crate::system::object::Object)]
@@ -33,10 +23,60 @@ mod __types {
         #[rename(name = "m_TempHP")]
         pub m_temp_hp: crate::app::interpolatorfloat::InterpolatorFloat,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleWindow")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapBattleWindow {
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_MoveParam")]
+        pub m_move_param: ::unity2::Array<crate::app::mapbattlewindow::MapBattleWindow_MoveParam>,
+    }
 }
 
 #[cfg(feature = "app-mapbattlewindow-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapbattlewindow")]
+#[::unity2::methods]
+impl MapBattleWindow_MoveParam {
+    #[doc = "`GetHP()` overload"]
+    #[method(name = "GetHP", args = 0)]
+    pub fn get_hp(self) -> f32;
+
+    #[doc = "`GetTemp()` overload"]
+    #[method(name = "GetTemp", args = 0)]
+    pub fn get_temp(self) -> f32;
+
+    #[doc = "`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapbattlewindow")]
+impl MapBattleWindow_MoveParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleWindow_MoveParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleWindow_MoveParamMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapbattlewindow")]
 #[::unity2::methods]
@@ -104,46 +144,6 @@ impl MapBattleWindow {
             )
         });
         <Self as IMapBattleWindowMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapbattlewindow")]
-#[::unity2::methods]
-impl MapBattleWindow_MoveParam {
-    #[doc = "`GetHP()` overload"]
-    #[method(name = "GetHP", args = 0)]
-    pub fn get_hp(self) -> f32;
-
-    #[doc = "`GetTemp()` overload"]
-    #[method(name = "GetTemp", args = 0)]
-    pub fn get_temp(self) -> f32;
-
-    #[doc = "`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Tick", args = 1)]
-    pub fn tick(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapbattlewindow")]
-impl MapBattleWindow_MoveParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapBattleWindow_MoveParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapBattleWindow_MoveParamMethods>::ctor(this);
         this
     }
 }

@@ -11,6 +11,127 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitAI.FlagField")]
+    #[parent(crate::app::bitfield32::BitField32)]
+    pub struct UnitAI_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_BattleRate.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnitAI_BattleRate {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitAI_BattleRate {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "UnitAI.BattleRate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitAI_BattleRate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnitAI_BattleRate {
+        pub fn rush() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn chariness() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_VersusTypes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnitAI_VersusTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitAI_VersusTypes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "UnitAI.VersusTypes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitAI_VersusTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnitAI_VersusTypes {
+        pub fn not_move() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn defense() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn rush() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn response_a() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn response_b() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn response_c() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 6 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_MoveLimitRange_LimitType.md"))]
     #[repr(C)]
     #[derive(
@@ -71,7 +192,12 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_BattleRate.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_RandomFlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitAI.RandomFlagField")]
+    #[parent(crate::app::bitfield32::BitField32)]
+    pub struct UnitAI_RandomFlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_RandomFlag.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -80,14 +206,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct UnitAI_BattleRate {
+    pub struct UnitAI_RandomFlag {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitAI_BattleRate {
+    impl ::unity2::ClassIdentity for UnitAI_RandomFlag {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "UnitAI.BattleRate";
+        const NAME: &'static str = "UnitAI.RandomFlag";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -96,7 +222,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitAI_BattleRate {
+    impl ::unity2::IlType for UnitAI_RandomFlag {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -105,22 +231,29 @@ mod __types {
         }
     }
 
-    impl UnitAI_BattleRate {
-        pub fn rush() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack() -> Self {
+    impl UnitAI_RandomFlag {
+        pub fn clear_ask_heal_b() -> Self {
             Self { value: 1 }
         }
+    }
 
-        pub fn chariness() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_MoveLimitRange.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitAI.MoveLimitRange")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitAI_MoveLimitRange {
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[rename(name = "m_Type")]
+        pub m_type: u8,
+        #[rename(name = "m_X")]
+        pub m_x: i8,
+        #[rename(name = "m_Z")]
+        pub m_z: i8,
+        #[rename(name = "m_W")]
+        pub m_w: i8,
+        #[rename(name = "m_H")]
+        pub m_h: i8,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_Flag.md"))]
@@ -349,143 +482,166 @@ mod __types {
         #[rename(name = "m_VsThink")]
         pub m_vs_think: crate::app::aithink::AIThink_Think,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_VersusTypes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitAI_VersusTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitAI_VersusTypes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitAI.VersusTypes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitAI_VersusTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitAI_VersusTypes {
-        pub fn not_move() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn defense() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn rush() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn response_a() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn response_b() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn response_c() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 6 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_MoveLimitRange.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitAI.MoveLimitRange")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitAI_MoveLimitRange {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_Type")]
-        pub m_type: u8,
-        #[rename(name = "m_X")]
-        pub m_x: i8,
-        #[rename(name = "m_Z")]
-        pub m_z: i8,
-        #[rename(name = "m_W")]
-        pub m_w: i8,
-        #[rename(name = "m_H")]
-        pub m_h: i8,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitAI.FlagField")]
-    #[parent(crate::app::bitfield32::BitField32)]
-    pub struct UnitAI_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_RandomFlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitAI.RandomFlagField")]
-    #[parent(crate::app::bitfield32::BitField32)]
-    pub struct UnitAI_RandomFlagField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_RandomFlag.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitAI_RandomFlag {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitAI_RandomFlag {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitAI.RandomFlag";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitAI_RandomFlag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitAI_RandomFlag {
-        pub fn clear_ask_heal_b() -> Self {
-            Self { value: 1 }
-        }
-    }
 }
 
 #[cfg(feature = "app-unitai-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_FlagField {
+    #[doc = "`Set(crate::app::unitai::UnitAI_Flag)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, f: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[doc = "`Test(crate::app::unitai::UnitAI_Flag)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[doc = "`Not(crate::app::unitai::UnitAI_Flag)` overload"]
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[doc = "`Clear(crate::app::unitai::UnitAI_Flag)` overload"]
+    #[method(name = "Clear", args = 1)]
+    pub fn clear(self, f: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[doc = "`Mask(crate::app::unitai::UnitAI_Flag)` overload"]
+    #[method(name = "Mask", args = 1)]
+    pub fn mask(self, f: crate::app::unitai::UnitAI_Flag) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_RandomFlagField {
+    #[doc = "`Set(crate::app::unitai::UnitAI_RandomFlag)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, f: crate::app::unitai::UnitAI_RandomFlag) -> ();
+
+    #[doc = "`Test(crate::app::unitai::UnitAI_RandomFlag)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
+
+    #[doc = "`Not(crate::app::unitai::UnitAI_RandomFlag)` overload"]
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_RandomFlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_RandomFlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_RandomFlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_MoveLimitRange {
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::unitai::UnitAI_MoveLimitRange_LimitType;
+
+    #[doc = "`set_Type(crate::app::unitai::UnitAI_MoveLimitRange_LimitType)` overload"]
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: crate::app::unitai::UnitAI_MoveLimitRange_LimitType) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_W()` overload"]
+    #[method(name = "get_W", args = 0)]
+    pub fn get_w(self) -> i32;
+
+    #[doc = "`set_W(i32)` overload"]
+    #[method(name = "set_W", args = 1)]
+    pub fn set_w(self, value: i32) -> ();
+
+    #[doc = "`get_H()` overload"]
+    #[method(name = "get_H", args = 0)]
+    pub fn get_h(self) -> i32;
+
+    #[doc = "`set_H(i32)` overload"]
+    #[method(name = "set_H", args = 1)]
+    pub fn set_h(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_MoveLimitRange {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_MoveLimitRange),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_MoveLimitRangeMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-unitai")]
 #[::unity2::methods]
@@ -782,162 +938,6 @@ impl UnitAI {
             )
         });
         <Self as IUnitAIMethods>::ctor(this, unit);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitai")]
-#[::unity2::methods]
-impl UnitAI_MoveLimitRange {
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> crate::app::unitai::UnitAI_MoveLimitRange_LimitType;
-
-    #[doc = "`set_Type(crate::app::unitai::UnitAI_MoveLimitRange_LimitType)` overload"]
-    #[method(name = "set_Type", args = 1)]
-    pub fn set_type(self, value: crate::app::unitai::UnitAI_MoveLimitRange_LimitType) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_W()` overload"]
-    #[method(name = "get_W", args = 0)]
-    pub fn get_w(self) -> i32;
-
-    #[doc = "`set_W(i32)` overload"]
-    #[method(name = "set_W", args = 1)]
-    pub fn set_w(self, value: i32) -> ();
-
-    #[doc = "`get_H()` overload"]
-    #[method(name = "get_H", args = 0)]
-    pub fn get_h(self) -> i32;
-
-    #[doc = "`set_H(i32)` overload"]
-    #[method(name = "set_H", args = 1)]
-    pub fn set_h(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitai")]
-impl UnitAI_MoveLimitRange {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitAI_MoveLimitRange),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitAI_MoveLimitRangeMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitai")]
-#[::unity2::methods]
-impl UnitAI_FlagField {
-    #[doc = "`Set(crate::app::unitai::UnitAI_Flag)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, f: crate::app::unitai::UnitAI_Flag) -> ();
-
-    #[doc = "`Test(crate::app::unitai::UnitAI_Flag)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
-
-    #[doc = "`Not(crate::app::unitai::UnitAI_Flag)` overload"]
-    #[method(name = "Not", args = 1)]
-    pub fn not(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
-
-    #[doc = "`Clear(crate::app::unitai::UnitAI_Flag)` overload"]
-    #[method(name = "Clear", args = 1)]
-    pub fn clear(self, f: crate::app::unitai::UnitAI_Flag) -> ();
-
-    #[doc = "`Mask(crate::app::unitai::UnitAI_Flag)` overload"]
-    #[method(name = "Mask", args = 1)]
-    pub fn mask(self, f: crate::app::unitai::UnitAI_Flag) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitai")]
-impl UnitAI_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitAI_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitAI_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitai")]
-#[::unity2::methods]
-impl UnitAI_RandomFlagField {
-    #[doc = "`Set(crate::app::unitai::UnitAI_RandomFlag)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, f: crate::app::unitai::UnitAI_RandomFlag) -> ();
-
-    #[doc = "`Test(crate::app::unitai::UnitAI_RandomFlag)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
-
-    #[doc = "`Not(crate::app::unitai::UnitAI_RandomFlag)` overload"]
-    #[method(name = "Not", args = 1)]
-    pub fn not(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitai")]
-impl UnitAI_RandomFlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitAI_RandomFlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitAI_RandomFlagFieldMethods>::ctor(this);
         this
     }
 }

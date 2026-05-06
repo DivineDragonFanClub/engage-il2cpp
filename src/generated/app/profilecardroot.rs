@@ -14,20 +14,35 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_SortieCountInfo {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_SortieCount")]
-        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BgImage")]
-        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ProfileCardRoot_RectInfo {
+        pub pos: crate::unity_engine::vector2::Vector2,
+        pub harf_size: crate::unity_engine::vector2::Vector2,
+        pub x_axis: crate::unity_engine::vector2::Vector2,
+        pub y_axis: crate::unity_engine::vector2::Vector2,
+    }
+
+    impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ProfileCardRoot.RectInfo";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ProfileCardRoot_RectInfo {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
@@ -44,10 +59,21 @@ mod __types {
         pub m_bg_image: crate::unity_engine::ui::image::Image,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardRoot_StartHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardRoot_SortieCountInfo {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_SortieCount")]
+        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BgImage")]
+        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardRoot")]
@@ -233,63 +259,48 @@ mod __types {
         pub m_start_handler: crate::app::profilecardroot::ProfileCardRoot_StartHandler,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ProfileCardRoot_RectInfo {
-        pub pos: crate::unity_engine::vector2::Vector2,
-        pub harf_size: crate::unity_engine::vector2::Vector2,
-        pub x_axis: crate::unity_engine::vector2::Vector2,
-        pub y_axis: crate::unity_engine::vector2::Vector2,
-    }
-
-    impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ProfileCardRoot.RectInfo";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ProfileCardRoot_RectInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardRoot_StartHandler {}
 }
 
 #[cfg(feature = "app-profilecardroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot_SortieCountInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
+#[::unity2::methods(value)]
+impl ProfileCardRoot_RectInfo {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        pos: crate::unity_engine::vector2::Vector2,
+        harf_size: crate::unity_engine::vector2::Vector2,
+        x_axis: crate::unity_engine::vector2::Vector2,
+        y_axis: crate::unity_engine::vector2::Vector2,
+    ) -> ();
 
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_SortieCountInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
-        this
-    }
+    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    #[method(name = "GetAbsDot", args = 2)]
+    pub fn get_abs_dot(
+        v1: crate::unity_engine::vector2::Vector2,
+        v2: crate::unity_engine::vector2::Vector2,
+    ) -> f32;
+
+    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    #[method(name = "IsOverlap", args = 2)]
+    pub fn is_overlap(
+        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+    ) -> bool;
+
+    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    #[method(name = "GetDistance", args = 2)]
+    pub fn get_distance(
+        pos: crate::unity_engine::vector2::Vector2,
+        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+    ) -> f32;
 }
 
 #[cfg(feature = "app-profilecardroot")]
@@ -318,28 +329,24 @@ impl ProfileCardRoot_AchievementInfo {
 
 #[cfg(feature = "app-profilecardroot")]
 #[::unity2::methods]
-impl ProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+impl ProfileCardRoot_SortieCountInfo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl ProfileCardRoot_SortieCountInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_StartHandler),
+                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
         this
     }
 }
@@ -681,36 +688,29 @@ impl ProfileCardRoot {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods(value)]
-impl ProfileCardRoot_RectInfo {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        pos: crate::unity_engine::vector2::Vector2,
-        harf_size: crate::unity_engine::vector2::Vector2,
-        x_axis: crate::unity_engine::vector2::Vector2,
-        y_axis: crate::unity_engine::vector2::Vector2,
-    ) -> ();
+#[::unity2::methods]
+impl ProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "GetAbsDot", args = 2)]
-    pub fn get_abs_dot(
-        v1: crate::unity_engine::vector2::Vector2,
-        v2: crate::unity_engine::vector2::Vector2,
-    ) -> f32;
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
 
-    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "IsOverlap", args = 2)]
-    pub fn is_overlap(
-        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> bool;
-
-    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    #[method(name = "GetDistance", args = 2)]
-    pub fn get_distance(
-        pos: crate::unity_engine::vector2::Vector2,
-        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-    ) -> f32;
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardRoot_StartHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
+        this
+    }
 }

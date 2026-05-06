@@ -13,30 +13,88 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ResetItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ResetItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ReportItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ReportItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubSystemMenu_ResetItem {}
+    pub struct SortieTopMenu_SubSystemMenu_ReportItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_ShopMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.ShopMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RelianceItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.RelianceItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_ShopMenuItem {}
+    pub struct SortieTopMenu_SubFriendMenu_RelianceItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SelectionUnitMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTopMenu.SelectionUnitMenuItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
     pub struct SortieTopMenu_SelectionUnitMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_KizunaItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.KizunaItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_NotebookItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.NotebookItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubFriendMenu_KizunaItem {}
+    pub struct SortieTopMenu_SubFriendMenu_NotebookItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct SortieTopMenu_SubFriendMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_FriendMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.FriendMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_FriendMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SortieTopMenuItemBase.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SortieTopMenuItemBase")]
+    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+    pub struct SortieTopMenu_SortieTopMenuItemBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_StartMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.StartMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_StartMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ResetItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ResetItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SubSystemMenu_ResetItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SaveMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SaveMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SaveMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RingListItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.RingListItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
     pub struct SortieTopMenu_SubFriendMenu_RingListItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_ResetMapMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.ResetMapMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_ResetMapMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ConfigItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ConfigItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SubSystemMenu_ConfigItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_InventoryMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.InventoryMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_InventoryMenuItem {
+        #[rename(name = "m_SortieTopMenuContent")]
+        pub m_sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_KizunaItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.KizunaItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SubFriendMenu_KizunaItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_BackMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.BackMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_BackMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_RelianceMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTopMenu.RelianceMenuItem")]
@@ -46,53 +104,40 @@ mod __types {
         pub m_can_talk: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_StartMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.StartMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_TutorialItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.TutorialItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_StartMenuItem {}
+    pub struct SortieTopMenu_SubSystemMenu_TutorialItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ReportItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ReportItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubSystemMenu_ReportItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ConfigItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.ConfigItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubSystemMenu_ConfigItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SaveMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SaveMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SaveMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_NotebookItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.NotebookItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubFriendMenu_NotebookItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_BackMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.BackMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_BackMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SortieTopMenu_SubFriendMenu {}
+    pub struct SortieTopMenu_SubSystemMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RelianceItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubFriendMenu.RelianceItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_GodMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.GodMenuItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubFriendMenu_RelianceItem {}
+    pub struct SortieTopMenu_GodMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_InventoryMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.InventoryMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_ShopMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.ShopMenuItem")]
     #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_InventoryMenuItem {
-        #[rename(name = "m_SortieTopMenuContent")]
-        pub m_sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
-    }
+    pub struct SortieTopMenu_ShopMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_PositionChangeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.PositionChangeMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_PositionChangeMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SaveMapMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SaveMapMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SaveMapMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SystemMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SystemMenuItem")]
+    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
+    pub struct SortieTopMenu_SystemMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTopMenu")]
@@ -114,387 +159,10 @@ mod __types {
         #[rename(name = "ENGAGE_PLUS_ATTENTION_NETWORK")]
         pub engage_plus_attention_network: ::unity2::Il2CppString,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SystemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SystemMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SystemMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SortieTopMenuItemBase.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SortieTopMenuItemBase")]
-    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-    pub struct SortieTopMenu_SortieTopMenuItemBase {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_PositionChangeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.PositionChangeMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_PositionChangeMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_GodMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.GodMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_GodMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_ResetMapMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.ResetMapMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_ResetMapMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_TutorialItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu.TutorialItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SubSystemMenu_TutorialItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SaveMapMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SaveMapMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_SaveMapMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_FriendMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.FriendMenuItem")]
-    #[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]
-    pub struct SortieTopMenu_FriendMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTopMenu.SubSystemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SortieTopMenu_SubSystemMenu {}
 }
 
 #[cfg(feature = "app-sortietopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubSystemMenu_ResetItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubSystemMenu_ResetItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubSystemMenu_ResetItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubSystemMenu_ResetItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_ShopMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_ShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_ShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_ShopMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SelectionUnitMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SelectionUnitMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SelectionUnitMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SelectionUnitMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubFriendMenu_KizunaItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubFriendMenu_RingListItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubFriendMenu_RingListItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubFriendMenu_RingListItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubFriendMenu_RingListItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_RelianceMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_RelianceMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_RelianceMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_RelianceMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_StartMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_StartMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_StartMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_StartMenuItemMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-sortietopmenu")]
 #[::unity2::methods]
@@ -544,248 +212,6 @@ impl SortieTopMenu_SubSystemMenu_ReportItem {
             )
         });
         <Self as ISortieTopMenu_SubSystemMenu_ReportItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubSystemMenu_ConfigItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SaveMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SaveMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SaveMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SaveMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubFriendMenu_NotebookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_BackMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_BackMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_BackMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_BackMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubFriendMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }
@@ -844,6 +270,544 @@ impl SortieTopMenu_SubFriendMenu_RelianceItem {
 
 #[cfg(feature = "app-sortietopmenu")]
 #[::unity2::methods]
+impl SortieTopMenu_SelectionUnitMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SelectionUnitMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SelectionUnitMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SelectionUnitMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubFriendMenu_NotebookItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubFriendMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_FriendMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_FriendMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_FriendMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_FriendMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SortieTopMenuItemBase {
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`PlusCall()` overload"]
+    #[method(name = "PlusCall", args = 0)]
+    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`HelpOn()` overload"]
+    #[method(name = "HelpOn", args = 0)]
+    pub fn help_on(self) -> ();
+
+    #[doc = "`GoToBattle()` overload"]
+    #[method(name = "GoToBattle", args = 0)]
+    pub fn go_to_battle(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BackTo(bool)` overload"]
+    #[method(name = "BackTo", args = 1)]
+    pub fn back_to(self, is_cancel: bool) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`SaveMenuSelect()` overload"]
+    #[method(name = "SaveMenuSelect", args = 0)]
+    pub fn save_menu_select(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SortieTopMenuItemBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SortieTopMenuItemBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SortieTopMenuItemBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_StartMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_StartMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_StartMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_StartMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubSystemMenu_ResetItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubSystemMenu_ResetItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubSystemMenu_ResetItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubSystemMenu_ResetItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SaveMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SaveMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SaveMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SaveMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubFriendMenu_RingListItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubFriendMenu_RingListItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubFriendMenu_RingListItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubFriendMenu_RingListItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_ResetMapMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_ResetMapMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_ResetMapMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_ResetMapMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubSystemMenu_ConfigItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubSystemMenu_ConfigItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubSystemMenu_ConfigItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
 impl SortieTopMenu_InventoryMenuItem {
     #[doc = "`get_FlagID()` overload"]
     #[method(name = "get_FlagID", args = 0)]
@@ -887,6 +851,464 @@ impl SortieTopMenu_InventoryMenuItem {
             )
         });
         <Self as ISortieTopMenu_InventoryMenuItemMethods>::ctor(this, sortie_top_menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubFriendMenu_KizunaItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_BackMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_BackMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_BackMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_BackMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_RelianceMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_RelianceMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_RelianceMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_RelianceMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubSystemMenu_TutorialItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SubSystemMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_GodMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_GodMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_GodMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_GodMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_ShopMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_ShopMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_ShopMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_ShopMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_PositionChangeMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_PositionChangeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_PositionChangeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_PositionChangeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SaveMapMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SaveMapMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SaveMapMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SaveMapMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+#[::unity2::methods]
+impl SortieTopMenu_SystemMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortietopmenu")]
+impl SortieTopMenu_SystemMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenu_SystemMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenu_SystemMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -950,428 +1372,6 @@ impl SortieTopMenu {
             )
         });
         <Self as ISortieTopMenuMethods>::ctor(this, menu_item_list, sortie_top_menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SystemMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SystemMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SystemMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SystemMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SortieTopMenuItemBase {
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`PlusCall()` overload"]
-    #[method(name = "PlusCall", args = 0)]
-    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`HelpOn()` overload"]
-    #[method(name = "HelpOn", args = 0)]
-    pub fn help_on(self) -> ();
-
-    #[doc = "`GoToBattle()` overload"]
-    #[method(name = "GoToBattle", args = 0)]
-    pub fn go_to_battle(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BackTo(bool)` overload"]
-    #[method(name = "BackTo", args = 1)]
-    pub fn back_to(self, is_cancel: bool) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`SaveMenuSelect()` overload"]
-    #[method(name = "SaveMenuSelect", args = 0)]
-    pub fn save_menu_select(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SortieTopMenuItemBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SortieTopMenuItemBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SortieTopMenuItemBaseMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_PositionChangeMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_PositionChangeMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_PositionChangeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_PositionChangeMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_GodMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_GodMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_GodMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_GodMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_ResetMapMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_ResetMapMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_ResetMapMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_ResetMapMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubSystemMenu_TutorialItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SaveMapMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SaveMapMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SaveMapMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SaveMapMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_FriendMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_FriendMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_FriendMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_FriendMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-#[::unity2::methods]
-impl SortieTopMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortietopmenu")]
-impl SortieTopMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTopMenu_SubSystemMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTopMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

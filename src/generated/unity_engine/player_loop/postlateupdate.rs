@@ -8,266 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPostLateUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_XRPostLateUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_XRPostLateUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.XRPostLateUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_XRPostLateUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_SortingGroupsUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_SortingGroupsUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_SortingGroupsUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.SortingGroupsUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_SortingGroupsUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCaptureScreenshot.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateCaptureScreenshot {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCaptureScreenshot {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateCaptureScreenshot";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateCaptureScreenshot {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_EnlightenRuntimeUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_EnlightenRuntimeUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_EnlightenRuntimeUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.EnlightenRuntimeUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_EnlightenRuntimeUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAllRenderers.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateAllRenderers {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAllRenderers {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateAllRenderers";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateAllRenderers {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_VFXUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_VFXUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_VFXUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.VFXUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_VFXUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ProfilerSynchronizeStats.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ProfilerSynchronizeStats {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ProfilerSynchronizeStats {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ProfilerSynchronizeStats";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ProfilerSynchronizeStats {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFrameComplete.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PlayerSendFrameComplete {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFrameComplete {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PlayerSendFrameComplete";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PlayerSendFrameComplete {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_GUIClearEvents.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_GUIClearEvents {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_GUIClearEvents {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.GUIClearEvents";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_GUIClearEvents {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPostPresent.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_XRPostPresent {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_XRPostPresent {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.XRPostPresent";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_XRPostPresent {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ProfilerEndFrame.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -286,84 +26,6 @@ mod __types {
     }
 
     impl ::unity2::IlType for PostLateUpdate_ProfilerEndFrame {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_TriggerEndOfFrameCallbacks.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_TriggerEndOfFrameCallbacks {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_TriggerEndOfFrameCallbacks {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.TriggerEndOfFrameCallbacks";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_TriggerEndOfFrameCallbacks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_MemoryFrameMaintenance.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_MemoryFrameMaintenance {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_MemoryFrameMaintenance {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.MemoryFrameMaintenance";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_MemoryFrameMaintenance {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerUpdateCanvases.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PlayerUpdateCanvases {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerUpdateCanvases {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PlayerUpdateCanvases";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PlayerUpdateCanvases {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -398,15 +60,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFramePostPresent.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateVideo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PlayerSendFramePostPresent {}
+    pub struct PostLateUpdate_UpdateVideo {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFramePostPresent {
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateVideo {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.PlayerSendFramePostPresent";
+        const NAME: &'static str = "PostLateUpdate.UpdateVideo";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -415,7 +77,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_PlayerSendFramePostPresent {
+    impl ::unity2::IlType for PostLateUpdate_UpdateVideo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -424,15 +86,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PhysicsSkinnedClothBeginUpdate.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_GUIClearEvents.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PhysicsSkinnedClothBeginUpdate {}
+    pub struct PostLateUpdate_GUIClearEvents {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_PhysicsSkinnedClothBeginUpdate {
+    impl ::unity2::ClassIdentity for PostLateUpdate_GUIClearEvents {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.PhysicsSkinnedClothBeginUpdate";
+        const NAME: &'static str = "PostLateUpdate.GUIClearEvents";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -441,553 +103,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_PhysicsSkinnedClothBeginUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ProcessWebSendMessages.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ProcessWebSendMessages {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ProcessWebSendMessages {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ProcessWebSendMessages";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ProcessWebSendMessages {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.EndGraphicsJobsAfterScriptLateUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateSubstance.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateSubstance {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateSubstance {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateSubstance";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateSubstance {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_DirectorLateUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_DirectorLateUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_DirectorLateUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.DirectorLateUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_DirectorLateUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ShaderHandleErrors.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ShaderHandleErrors {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ShaderHandleErrors {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ShaderHandleErrors";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ShaderHandleErrors {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PresentAfterDraw.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PresentAfterDraw {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PresentAfterDraw {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PresentAfterDraw";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PresentAfterDraw {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_FinishFrameRendering.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_FinishFrameRendering {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_FinishFrameRendering {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.FinishFrameRendering";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_FinishFrameRendering {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ResetInputAxis.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ResetInputAxis {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ResetInputAxis {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ResetInputAxis";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ResetInputAxis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ParticleSystemEndUpdateAll.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ParticleSystemEndUpdateAll {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ParticleSystemEndUpdateAll {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ParticleSystemEndUpdateAll";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ParticleSystemEndUpdateAll {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_InputEndFrame.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_InputEndFrame {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_InputEndFrame {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.InputEndFrame";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_InputEndFrame {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateResolution.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateResolution {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateResolution {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateResolution";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateResolution {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerEmitCanvasGeometry.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PlayerEmitCanvasGeometry {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerEmitCanvasGeometry {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PlayerEmitCanvasGeometry";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PlayerEmitCanvasGeometry {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFrameStarted.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PlayerSendFrameStarted {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFrameStarted {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PlayerSendFrameStarted";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PlayerSendFrameStarted {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateRectTransform.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateRectTransform {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateRectTransform {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateRectTransform";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateRectTransform {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PhysicsSkinnedClothFinishUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_PhysicsSkinnedClothFinishUpdate {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_PhysicsSkinnedClothFinishUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.PhysicsSkinnedClothFinishUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_PhysicsSkinnedClothFinishUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPreEndFrame.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_XRPreEndFrame {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_XRPreEndFrame {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.XRPreEndFrame";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_XRPreEndFrame {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateVideoTextures.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateVideoTextures {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateVideoTextures {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateVideoTextures";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateVideoTextures {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAudio.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateAudio {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAudio {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateAudio";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateAudio {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ThreadedLoadingDebug.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ThreadedLoadingDebug {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_ThreadedLoadingDebug {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.ThreadedLoadingDebug";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_ThreadedLoadingDebug {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAllSkinnedMeshes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateAllSkinnedMeshes {}
-
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAllSkinnedMeshes {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "PostLateUpdate.UpdateAllSkinnedMeshes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostLateUpdate_UpdateAllSkinnedMeshes {
+    impl ::unity2::IlType for PostLateUpdate_GUIClearEvents {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1022,15 +138,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateVideo.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ResetInputAxis.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateVideo {}
+    pub struct PostLateUpdate_ResetInputAxis {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateVideo {
+    impl ::unity2::ClassIdentity for PostLateUpdate_ResetInputAxis {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.UpdateVideo";
+        const NAME: &'static str = "PostLateUpdate.ResetInputAxis";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1039,7 +155,709 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_UpdateVideo {
+    impl ::unity2::IlType for PostLateUpdate_ResetInputAxis {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_MemoryFrameMaintenance.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_MemoryFrameMaintenance {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_MemoryFrameMaintenance {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.MemoryFrameMaintenance";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_MemoryFrameMaintenance {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFrameComplete.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PlayerSendFrameComplete {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFrameComplete {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PlayerSendFrameComplete";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PlayerSendFrameComplete {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateSubstance.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateSubstance {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateSubstance {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateSubstance";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateSubstance {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ShaderHandleErrors.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_ShaderHandleErrors {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_ShaderHandleErrors {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.ShaderHandleErrors";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_ShaderHandleErrors {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerUpdateCanvases.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PlayerUpdateCanvases {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerUpdateCanvases {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PlayerUpdateCanvases";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PlayerUpdateCanvases {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPostPresent.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_XRPostPresent {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_XRPostPresent {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.XRPostPresent";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_XRPostPresent {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ClearImmediateRenderers.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_ClearImmediateRenderers {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_ClearImmediateRenderers {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.ClearImmediateRenderers";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_ClearImmediateRenderers {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateResolution.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateResolution {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateResolution {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateResolution";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateResolution {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_VFXUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_VFXUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_VFXUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.VFXUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_VFXUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_EnlightenRuntimeUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_EnlightenRuntimeUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_EnlightenRuntimeUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.EnlightenRuntimeUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_EnlightenRuntimeUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateVideoTextures.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateVideoTextures {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateVideoTextures {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateVideoTextures";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateVideoTextures {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.EndGraphicsJobsAfterScriptLateUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_EndGraphicsJobsAfterScriptLateUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAllSkinnedMeshes.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateAllSkinnedMeshes {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAllSkinnedMeshes {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateAllSkinnedMeshes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateAllSkinnedMeshes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFrameStarted.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PlayerSendFrameStarted {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFrameStarted {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PlayerSendFrameStarted";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PlayerSendFrameStarted {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_SortingGroupsUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_SortingGroupsUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_SortingGroupsUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.SortingGroupsUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_SortingGroupsUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAllRenderers.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateAllRenderers {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAllRenderers {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateAllRenderers";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateAllRenderers {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCustomRenderTextures.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateCustomRenderTextures {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCustomRenderTextures {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateCustomRenderTextures";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateCustomRenderTextures {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerSendFramePostPresent.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PlayerSendFramePostPresent {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerSendFramePostPresent {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PlayerSendFramePostPresent";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PlayerSendFramePostPresent {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PlayerEmitCanvasGeometry.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PlayerEmitCanvasGeometry {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PlayerEmitCanvasGeometry {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PlayerEmitCanvasGeometry";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PlayerEmitCanvasGeometry {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateRectTransform.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateRectTransform {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateRectTransform {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateRectTransform";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateRectTransform {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateAudio.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateAudio {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateAudio {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateAudio";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateAudio {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCanvasRectTransform.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateCanvasRectTransform {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCanvasRectTransform {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateCanvasRectTransform";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateCanvasRectTransform {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PhysicsSkinnedClothFinishUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PhysicsSkinnedClothFinishUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PhysicsSkinnedClothFinishUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PhysicsSkinnedClothFinishUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PhysicsSkinnedClothFinishUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPostLateUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_XRPostLateUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_XRPostLateUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.XRPostLateUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_XRPostLateUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ThreadedLoadingDebug.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_ThreadedLoadingDebug {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_ThreadedLoadingDebug {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.ThreadedLoadingDebug";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_ThreadedLoadingDebug {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCaptureScreenshot.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_UpdateCaptureScreenshot {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCaptureScreenshot {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.UpdateCaptureScreenshot";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_UpdateCaptureScreenshot {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1100,6 +918,136 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PresentAfterDraw.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PresentAfterDraw {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PresentAfterDraw {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PresentAfterDraw";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PresentAfterDraw {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ProfilerSynchronizeStats.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_ProfilerSynchronizeStats {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_ProfilerSynchronizeStats {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.ProfilerSynchronizeStats";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_ProfilerSynchronizeStats {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_DirectorLateUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_DirectorLateUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_DirectorLateUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.DirectorLateUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_DirectorLateUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_FinishFrameRendering.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_FinishFrameRendering {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_FinishFrameRendering {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.FinishFrameRendering";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_FinishFrameRendering {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ProcessWebSendMessages.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_ProcessWebSendMessages {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_ProcessWebSendMessages {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.ProcessWebSendMessages";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_ProcessWebSendMessages {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_BatchModeUpdate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -1126,15 +1074,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCanvasRectTransform.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ParticleSystemEndUpdateAll.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateCanvasRectTransform {}
+    pub struct PostLateUpdate_ParticleSystemEndUpdateAll {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCanvasRectTransform {
+    impl ::unity2::ClassIdentity for PostLateUpdate_ParticleSystemEndUpdateAll {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.UpdateCanvasRectTransform";
+        const NAME: &'static str = "PostLateUpdate.ParticleSystemEndUpdateAll";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1143,7 +1091,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_UpdateCanvasRectTransform {
+    impl ::unity2::IlType for PostLateUpdate_ParticleSystemEndUpdateAll {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1152,15 +1100,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_UpdateCustomRenderTextures.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_TriggerEndOfFrameCallbacks.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_UpdateCustomRenderTextures {}
+    pub struct PostLateUpdate_TriggerEndOfFrameCallbacks {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_UpdateCustomRenderTextures {
+    impl ::unity2::ClassIdentity for PostLateUpdate_TriggerEndOfFrameCallbacks {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.UpdateCustomRenderTextures";
+        const NAME: &'static str = "PostLateUpdate.TriggerEndOfFrameCallbacks";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1169,7 +1117,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_UpdateCustomRenderTextures {
+    impl ::unity2::IlType for PostLateUpdate_TriggerEndOfFrameCallbacks {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1178,15 +1126,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_ClearImmediateRenderers.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_XRPreEndFrame.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PostLateUpdate_ClearImmediateRenderers {}
+    pub struct PostLateUpdate_XRPreEndFrame {}
 
-    impl ::unity2::ClassIdentity for PostLateUpdate_ClearImmediateRenderers {
+    impl ::unity2::ClassIdentity for PostLateUpdate_XRPreEndFrame {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "PostLateUpdate.ClearImmediateRenderers";
+        const NAME: &'static str = "PostLateUpdate.XRPreEndFrame";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1195,7 +1143,59 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PostLateUpdate_ClearImmediateRenderers {
+    impl ::unity2::IlType for PostLateUpdate_XRPreEndFrame {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_InputEndFrame.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_InputEndFrame {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_InputEndFrame {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.InputEndFrame";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_InputEndFrame {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/postlateupdate/PostLateUpdate_PhysicsSkinnedClothBeginUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PostLateUpdate_PhysicsSkinnedClothBeginUpdate {}
+
+    impl ::unity2::ClassIdentity for PostLateUpdate_PhysicsSkinnedClothBeginUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "PostLateUpdate.PhysicsSkinnedClothBeginUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostLateUpdate_PhysicsSkinnedClothBeginUpdate {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()

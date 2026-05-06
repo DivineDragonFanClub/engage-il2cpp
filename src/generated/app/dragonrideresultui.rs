@@ -9,75 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideResultUI")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideResultUI {
-        #[static_field]
-        #[rename(name = "cFanfareExcellentIndex")]
-        pub c_fanfare_excellent_index: i32,
-        #[static_field]
-        #[rename(name = "cFanfareGoodIndex")]
-        pub c_fanfare_good_index: i32,
-        #[rename(name = "cRankNodeList")]
-        pub c_rank_node_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "cTargetNodeList")]
-        pub c_target_node_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "cTargetMessageList")]
-        pub c_target_message_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_data")]
-        pub m_data: crate::app::dragonrideresultui::DragonRideResultUI_DataSet,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f64,
-        #[rename(name = "m_Phase")]
-        pub m_phase: crate::app::dragonrideresultui::DragonRideResultUI_ResultPhase,
-        #[rename(name = "m_LevelText")]
-        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BrokenTargetNode")]
-        pub m_broken_target_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_AssistNode")]
-        pub m_assist_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_ScoreNode")]
-        pub m_score_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_ScoreText")]
-        pub m_score_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_RankRoot")]
-        pub m_rank_root: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RankNode")]
-        pub m_rank_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_BestScoreNode")]
-        pub m_best_score_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_BestScoreText")]
-        pub m_best_score_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_NewRecordNode")]
-        pub m_new_record_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Config")]
-        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "DragonRideResultUI.DragonRideResultUITarget"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideResultUI_DragonRideResultUITarget {
-        #[rename(name = "m_Node")]
-        pub m_node: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideResultUI.DataSet")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideResultUI_DataSet {
-        #[rename(name = "Level")]
-        pub level: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideresultui/DragonRideResultUI_ResultPhase.md"))]
     #[repr(C)]
     #[derive(
@@ -153,6 +84,75 @@ mod __types {
             Self { value: 9 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideResultUI")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideResultUI {
+        #[static_field]
+        #[rename(name = "cFanfareExcellentIndex")]
+        pub c_fanfare_excellent_index: i32,
+        #[static_field]
+        #[rename(name = "cFanfareGoodIndex")]
+        pub c_fanfare_good_index: i32,
+        #[rename(name = "cRankNodeList")]
+        pub c_rank_node_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "cTargetNodeList")]
+        pub c_target_node_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "cTargetMessageList")]
+        pub c_target_message_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_data")]
+        pub m_data: crate::app::dragonrideresultui::DragonRideResultUI_DataSet,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f64,
+        #[rename(name = "m_Phase")]
+        pub m_phase: crate::app::dragonrideresultui::DragonRideResultUI_ResultPhase,
+        #[rename(name = "m_LevelText")]
+        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BrokenTargetNode")]
+        pub m_broken_target_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_AssistNode")]
+        pub m_assist_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_ScoreNode")]
+        pub m_score_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_ScoreText")]
+        pub m_score_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_RankRoot")]
+        pub m_rank_root: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RankNode")]
+        pub m_rank_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_BestScoreNode")]
+        pub m_best_score_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_BestScoreText")]
+        pub m_best_score_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_NewRecordNode")]
+        pub m_new_record_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_Config")]
+        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideResultUI.DataSet")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideResultUI_DataSet {
+        #[rename(name = "Level")]
+        pub level: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "DragonRideResultUI.DragonRideResultUITarget"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideResultUI_DragonRideResultUITarget {
+        #[rename(name = "m_Node")]
+        pub m_node: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
 }
 
 #[cfg(feature = "app-dragonrideresultui-types")]
@@ -222,46 +222,6 @@ impl DragonRideResultUI {
             )
         });
         <Self as IDragonRideResultUIMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-dragonrideresultui")]
-#[::unity2::methods]
-impl DragonRideResultUI_DragonRideResultUITarget {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(self, base_obj: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetText", args = 1)]
-    pub fn set_text(self, str: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-dragonrideresultui")]
-impl DragonRideResultUI_DragonRideResultUITarget {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideResultUI_DragonRideResultUITargetMethods>::ctor(this);
         this
     }
 }
@@ -382,6 +342,46 @@ impl DragonRideResultUI_DataSet {
             )
         });
         <Self as IDragonRideResultUI_DataSetMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dragonrideresultui")]
+#[::unity2::methods]
+impl DragonRideResultUI_DragonRideResultUITarget {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, base_obj: crate::unity_engine::transform::Transform) -> ();
+
+    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text(self, str: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideresultui")]
+impl DragonRideResultUI_DragonRideResultUITarget {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideResultUI_DragonRideResultUITargetMethods>::ctor(this);
         this
     }
 }

@@ -13,62 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RingGachaSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RingGachaSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingGachaSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingGachaSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RingGachaSequence_Label {
-        pub fn start_effect() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn skip_one() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn result_one() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn skip_all() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -89,21 +33,6 @@ mod __types {
             crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
         #[rename(name = "m_NewList")]
         pub m_new_list: crate::system::collections::generic::list_1::List_1<bool>,
-        #[rename(name = "m_TitleBar")]
-        pub m_title_bar: crate::app::titlebar::TitleBar,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]
-    #[::unity2::class(namespace = "App", name = "RingGachaSequence.Result1Proc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingGachaSequence_Result1Proc {
-        #[rename(name = "m_RefineRingResult1Window")]
-        pub m_refine_ring_result1_window:
-            crate::app::refineringresult1window::RefineRingResult1Window,
-        #[rename(name = "m_UnitRing")]
-        pub m_unit_ring: crate::app::unitring::UnitRing,
-        #[rename(name = "m_New")]
-        pub m_new: bool,
         #[rename(name = "m_TitleBar")]
         pub m_title_bar: crate::app::titlebar::TitleBar,
     }
@@ -165,6 +94,21 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]
+    #[::unity2::class(namespace = "App", name = "RingGachaSequence.Result1Proc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingGachaSequence_Result1Proc {
+        #[rename(name = "m_RefineRingResult1Window")]
+        pub m_refine_ring_result1_window:
+            crate::app::refineringresult1window::RefineRingResult1Window,
+        #[rename(name = "m_UnitRing")]
+        pub m_unit_ring: crate::app::unitring::UnitRing,
+        #[rename(name = "m_New")]
+        pub m_new: bool,
+        #[rename(name = "m_TitleBar")]
+        pub m_title_bar: crate::app::titlebar::TitleBar,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingGachaSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringgachasequence :: RingGachaSequence >)]
@@ -224,6 +168,62 @@ mod __types {
         pub m_loop_effect: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_RingObject")]
         pub m_ring_object: crate::unity_engine::gameobject::GameObject,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct RingGachaSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingGachaSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RingGachaSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingGachaSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl RingGachaSequence_Label {
+        pub fn start_effect() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn skip_one() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn result_one() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn skip_all() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 4 }
+        }
     }
 }
 
@@ -330,58 +330,6 @@ impl RingGachaSequence_Result10Proc {
 
 #[cfg(feature = "app-ringgachasequence")]
 #[::unity2::methods]
-impl RingGachaSequence_Result1Proc {
-    #[doc = "`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::ringgachasequence::RingGachaSequence,
-        ring_data: crate::app::unitring::UnitRing,
-        new_ring: bool,
-    ) -> crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
-
-    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`IsOpening()` overload"]
-    #[method(name = "IsOpening", args = 0)]
-    pub fn is_opening(self) -> bool;
-
-    #[doc = "`IsKeyInputted()` overload"]
-    #[method(name = "IsKeyInputted", args = 0)]
-    pub fn is_key_inputted(self) -> bool;
-
-    #[doc = "`IsClosing()` overload"]
-    #[method(name = "IsClosing", args = 0)]
-    pub fn is_closing(self) -> bool;
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_Result1Proc {
-    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]
-    pub fn new(ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_Result1Proc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_Result1ProcMethods>::ctor(this, ring_data, new_ring);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[::unity2::methods]
 impl RingGachaSequence_SkipListenerProc {
     #[doc = "`get_m_Pause()` overload"]
     #[method(name = "get_m_Pause", args = 0)]
@@ -432,6 +380,58 @@ impl RingGachaSequence_SkipListenerProc {
             )
         });
         <Self as IRingGachaSequence_SkipListenerProcMethods>::ctor(this, skip_callback);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[::unity2::methods]
+impl RingGachaSequence_Result1Proc {
+    #[doc = "`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::ringgachasequence::RingGachaSequence,
+        ring_data: crate::app::unitring::UnitRing,
+        new_ring: bool,
+    ) -> crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
+
+    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`IsOpening()` overload"]
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[doc = "`IsKeyInputted()` overload"]
+    #[method(name = "IsKeyInputted", args = 0)]
+    pub fn is_key_inputted(self) -> bool;
+
+    #[doc = "`IsClosing()` overload"]
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_Result1Proc {
+    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]
+    pub fn new(ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_Result1Proc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_Result1ProcMethods>::ctor(this, ring_data, new_ring);
         this
     }
 }

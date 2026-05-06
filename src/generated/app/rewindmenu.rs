@@ -15,6 +15,55 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct RewindMenu_ExecuteConfirmDialog_ItemNo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RewindMenu_CancelConfirmDialog_ItemYes {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct RewindMenu_CancelConfirmDialog_ItemNo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RewindMenu_ExecuteConfirmDialog_ItemYes {
+        #[rename(name = "m_IsToPhaseBegin")]
+        pub m_is_to_phase_begin: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct RewindMenu_CancelConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RewindMenu {
+        #[rename(name = "m_scrollNow")]
+        pub m_scroll_now: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RewindMenu.CancelConfirmDialog.ItemYesForChallengeMap"
+    )]
+    #[parent(crate::app::rewindmenu::RewindMenu_CancelConfirmDialog_ItemYes)]
+    pub struct RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem_UnitIconInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem.UnitIconInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RewindMenu_MenuItem_UnitIconInfo {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -43,59 +92,10 @@ mod __types {
         pub m_next: crate::app::rewindmenu::RewindMenu_MenuItem,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct RewindMenu_CancelConfirmDialog_ItemNo {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct RewindMenu_ExecuteConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RewindMenu_CancelConfirmDialog_ItemYes {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RewindMenu {
-        #[rename(name = "m_scrollNow")]
-        pub m_scroll_now: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct RewindMenu_ExecuteConfirmDialog_ItemNo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem_UnitIconInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem.UnitIconInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RewindMenu_MenuItem_UnitIconInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct RewindMenu_CancelConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RewindMenu.CancelConfirmDialog.ItemYesForChallengeMap"
-    )]
-    #[parent(crate::app::rewindmenu::RewindMenu_CancelConfirmDialog_ItemYes)]
-    pub struct RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RewindMenu_ExecuteConfirmDialog_ItemYes {
-        #[rename(name = "m_IsToPhaseBegin")]
-        pub m_is_to_phase_begin: bool,
-    }
 }
 
 #[cfg(feature = "app-rewindmenu-types")]
@@ -103,82 +103,34 @@ pub use __types::*;
 
 #[cfg(feature = "app-rewindmenu")]
 #[::unity2::methods]
-impl RewindMenu_MenuItem {
-    #[doc = "`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor(
-        self,
-        log_index: i32,
-        log_text: ::unity2::Il2CppString,
-        cursor_x: i32,
-        cursor_z: i32,
-        actor_map_history_index: i32,
-        unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
-        die_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
-        force_type: crate::app::force::Force_Type,
-        is_player_phase_begin: bool,
-    ) -> ();
+impl RewindMenu_ExecuteConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
 
-    #[doc = "`SetLink(crate::app::rewindmenu::RewindMenu_MenuItem, crate::app::rewindmenu::RewindMenu_MenuItem)` overload"]
-    #[method(name = "SetLink", args = 2)]
-    pub fn set_link(
-        self,
-        prev: crate::app::rewindmenu::RewindMenu_MenuItem,
-        next: crate::app::rewindmenu::RewindMenu_MenuItem,
-    ) -> ();
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_ExecuteConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods>::ctor(this);
+        this
+    }
+}
 
-    #[doc = "`GetPrev()` overload"]
-    #[method(name = "GetPrev", args = 0)]
-    pub fn get_prev(self) -> crate::app::rewindmenu::RewindMenu_MenuItem;
-
-    #[doc = "`GetNext()` overload"]
-    #[method(name = "GetNext", args = 0)]
-    pub fn get_next(self) -> crate::app::rewindmenu::RewindMenu_MenuItem;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetWidth()` overload"]
-    #[method(name = "GetWidth", args = 0)]
-    pub fn get_width(self) -> f32;
-
-    #[doc = "`GetHeight()` overload"]
-    #[method(name = "GetHeight", args = 0)]
-    pub fn get_height(self) -> f32;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetUnitIconInfo()` overload"]
-    #[method(name = "GetUnitIconInfo", args = 0)]
-    pub fn get_unit_icon_info(self) -> crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
-
-    #[doc = "`GetDieUnitIconInfo()` overload"]
-    #[method(name = "GetDieUnitIconInfo", args = 0)]
-    pub fn get_die_unit_icon_info(self)
-        -> crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
-
-    #[doc = "`GetForceType()` overload"]
-    #[method(name = "GetForceType", args = 0)]
-    pub fn get_force_type(self) -> crate::app::force::Force_Type;
-
-    #[doc = "`IsPlayerPhaseBegin()` overload"]
-    #[method(name = "IsPlayerPhaseBegin", args = 0)]
-    pub fn is_player_phase_begin(self) -> bool;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    #[method(name = "OnCursorMoveEnd", args = 0)]
-    pub fn on_cursor_move_end(self) -> ();
+#[cfg(feature = "app-rewindmenu")]
+#[::unity2::methods]
+impl RewindMenu_CancelConfirmDialog_ItemYes {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
@@ -186,38 +138,17 @@ impl RewindMenu_MenuItem {
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_MenuItem {
-    #[doc = "`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` — overload selector"]
-    pub fn new(
-        log_index: i32,
-        log_text: ::unity2::Il2CppString,
-        cursor_x: i32,
-        cursor_z: i32,
-        actor_map_history_index: i32,
-        unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
-        die_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
-        force_type: crate::app::force::Force_Type,
-        is_player_phase_begin: bool,
-    ) -> Self {
+impl RewindMenu_CancelConfirmDialog_ItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_MenuItem),
+                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_MenuItemMethods>::ctor(
-            this,
-            log_index,
-            log_text,
-            cursor_x,
-            cursor_z,
-            actor_map_history_index,
-            unit_icon_info,
-            die_unit_icon_info,
-            force_type,
-            is_player_phase_begin,
-        );
+        <Self as IRewindMenu_CancelConfirmDialog_ItemYesMethods>::ctor(this);
         this
     }
 }
@@ -248,7 +179,35 @@ impl RewindMenu_CancelConfirmDialog_ItemNo {
 
 #[cfg(feature = "app-rewindmenu")]
 #[::unity2::methods]
-impl RewindMenu_ExecuteConfirmDialog {
+impl RewindMenu_ExecuteConfirmDialog_ItemYes {
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_to_phase_begin: bool) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_ExecuteConfirmDialog_ItemYes {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_to_phase_begin: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods>::ctor(this, is_to_phase_begin);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[::unity2::methods]
+impl RewindMenu_CancelConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(
@@ -259,13 +218,13 @@ impl RewindMenu_ExecuteConfirmDialog {
         menu_content: crate::app::basicdialogcontent::BasicDialogContent,
     ) -> ();
 
-    #[doc = "`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CreateDialog", args = 2)]
-    pub fn create_dialog(super_: crate::app::procinst::ProcInst, is_to_phase_begin: bool) -> ();
+    #[doc = "`CreateDialog(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateDialog", args = 1)]
+    pub fn create_dialog(super_: crate::app::procinst::ProcInst) -> ();
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog {
+impl RewindMenu_CancelConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<
@@ -276,39 +235,11 @@ impl RewindMenu_ExecuteConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog),
+                ::core::stringify!(RewindMenu_CancelConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_ExecuteConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[::unity2::methods]
-impl RewindMenu_CancelConfirmDialog_ItemYes {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog_ItemYes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_CancelConfirmDialog_ItemYesMethods>::ctor(this);
+        <Self as IRewindMenu_CancelConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }
@@ -433,24 +364,24 @@ impl RewindMenu {
 
 #[cfg(feature = "app-rewindmenu")]
 #[::unity2::methods]
-impl RewindMenu_ExecuteConfirmDialog_ItemNo {
+impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog_ItemNo {
+impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo),
+                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods>::ctor(this);
+        <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods>::ctor(this);
         this
     }
 }
@@ -534,7 +465,128 @@ impl RewindMenu_MenuItem_UnitIconInfo {
 
 #[cfg(feature = "app-rewindmenu")]
 #[::unity2::methods]
-impl RewindMenu_CancelConfirmDialog {
+impl RewindMenu_MenuItem {
+    #[doc = "`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` overload"]
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        log_index: i32,
+        log_text: ::unity2::Il2CppString,
+        cursor_x: i32,
+        cursor_z: i32,
+        actor_map_history_index: i32,
+        unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        die_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        force_type: crate::app::force::Force_Type,
+        is_player_phase_begin: bool,
+    ) -> ();
+
+    #[doc = "`SetLink(crate::app::rewindmenu::RewindMenu_MenuItem, crate::app::rewindmenu::RewindMenu_MenuItem)` overload"]
+    #[method(name = "SetLink", args = 2)]
+    pub fn set_link(
+        self,
+        prev: crate::app::rewindmenu::RewindMenu_MenuItem,
+        next: crate::app::rewindmenu::RewindMenu_MenuItem,
+    ) -> ();
+
+    #[doc = "`GetPrev()` overload"]
+    #[method(name = "GetPrev", args = 0)]
+    pub fn get_prev(self) -> crate::app::rewindmenu::RewindMenu_MenuItem;
+
+    #[doc = "`GetNext()` overload"]
+    #[method(name = "GetNext", args = 0)]
+    pub fn get_next(self) -> crate::app::rewindmenu::RewindMenu_MenuItem;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetWidth()` overload"]
+    #[method(name = "GetWidth", args = 0)]
+    pub fn get_width(self) -> f32;
+
+    #[doc = "`GetHeight()` overload"]
+    #[method(name = "GetHeight", args = 0)]
+    pub fn get_height(self) -> f32;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetUnitIconInfo()` overload"]
+    #[method(name = "GetUnitIconInfo", args = 0)]
+    pub fn get_unit_icon_info(self) -> crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
+
+    #[doc = "`GetDieUnitIconInfo()` overload"]
+    #[method(name = "GetDieUnitIconInfo", args = 0)]
+    pub fn get_die_unit_icon_info(self)
+        -> crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
+
+    #[doc = "`GetForceType()` overload"]
+    #[method(name = "GetForceType", args = 0)]
+    pub fn get_force_type(self) -> crate::app::force::Force_Type;
+
+    #[doc = "`IsPlayerPhaseBegin()` overload"]
+    #[method(name = "IsPlayerPhaseBegin", args = 0)]
+    pub fn is_player_phase_begin(self) -> bool;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_MenuItem {
+    #[doc = "`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` — overload selector"]
+    pub fn new(
+        log_index: i32,
+        log_text: ::unity2::Il2CppString,
+        cursor_x: i32,
+        cursor_z: i32,
+        actor_map_history_index: i32,
+        unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        die_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        force_type: crate::app::force::Force_Type,
+        is_player_phase_begin: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_MenuItemMethods>::ctor(
+            this,
+            log_index,
+            log_text,
+            cursor_x,
+            cursor_z,
+            actor_map_history_index,
+            unit_icon_info,
+            die_unit_icon_info,
+            force_type,
+            is_player_phase_begin,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[::unity2::methods]
+impl RewindMenu_ExecuteConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(
@@ -545,13 +597,13 @@ impl RewindMenu_CancelConfirmDialog {
         menu_content: crate::app::basicdialogcontent::BasicDialogContent,
     ) -> ();
 
-    #[doc = "`CreateDialog(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateDialog", args = 1)]
-    pub fn create_dialog(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CreateDialog", args = 2)]
+    pub fn create_dialog(super_: crate::app::procinst::ProcInst, is_to_phase_begin: bool) -> ();
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog {
+impl RewindMenu_ExecuteConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<
@@ -562,63 +614,11 @@ impl RewindMenu_CancelConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog),
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_CancelConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[::unity2::methods]
-impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[::unity2::methods]
-impl RewindMenu_ExecuteConfirmDialog_ItemYes {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_to_phase_begin: bool) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog_ItemYes {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_to_phase_begin: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods>::ctor(this, is_to_phase_begin);
+        <Self as IRewindMenu_ExecuteConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

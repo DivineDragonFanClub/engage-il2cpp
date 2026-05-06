@@ -11,6 +11,23 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]
+    #[::unity2::class(namespace = "App", name = "EventCharacterLookAtController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventCharacterLookAtController {
+# [static_field] # [rename (name = "CurrentTargetNameOfEye")] pub current_target_name_of_eye : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CurrentTargetNameOfHead")] pub current_target_name_of_head : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "WeightMin")] pub weight_min : f32 ,
+# [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
+# [rename (name = "m_characterJoint")] pub m_character_joint : crate :: combat :: characterjoint :: CharacterJoint ,
+# [rename (name = "m_currentTargetOfEye")] pub m_current_target_of_eye : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_currentTargetOfHead")] pub m_current_target_of_head : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_currentTargetPosOfEye")] pub m_current_target_pos_of_eye : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
+# [rename (name = "m_currentTargetPosOfHead")] pub m_current_target_pos_of_head : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
+# [rename (name = "m_weightOfEye")] pub m_weight_of_eye : crate :: app :: weightfader :: WeightFader ,
+# [rename (name = "m_weightOfHead")] pub m_weight_of_head : crate :: app :: weightfader :: WeightFader ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController_PositionFader.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -29,67 +46,10 @@ mod __types {
         #[rename(name = "m_duration")]
         pub m_duration: f32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]
-    #[::unity2::class(namespace = "App", name = "EventCharacterLookAtController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventCharacterLookAtController {
-# [static_field] # [rename (name = "CurrentTargetNameOfEye")] pub current_target_name_of_eye : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CurrentTargetNameOfHead")] pub current_target_name_of_head : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "WeightMin")] pub weight_min : f32 ,
-# [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
-# [rename (name = "m_characterJoint")] pub m_character_joint : crate :: combat :: characterjoint :: CharacterJoint ,
-# [rename (name = "m_currentTargetOfEye")] pub m_current_target_of_eye : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_currentTargetOfHead")] pub m_current_target_of_head : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_currentTargetPosOfEye")] pub m_current_target_pos_of_eye : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
-# [rename (name = "m_currentTargetPosOfHead")] pub m_current_target_pos_of_head : crate :: app :: eventcharacterlookatcontroller :: EventCharacterLookAtController_PositionFader ,
-# [rename (name = "m_weightOfEye")] pub m_weight_of_eye : crate :: app :: weightfader :: WeightFader ,
-# [rename (name = "m_weightOfHead")] pub m_weight_of_head : crate :: app :: weightfader :: WeightFader ,
-}
 }
 
 #[cfg(feature = "app-eventcharacterlookatcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-eventcharacterlookatcontroller")]
-#[::unity2::methods]
-impl EventCharacterLookAtController_PositionFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, pos: crate::unity_engine::vector3::Vector3, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> crate::unity_engine::vector3::Vector3;
-}
-
-#[cfg(feature = "app-eventcharacterlookatcontroller")]
-impl EventCharacterLookAtController_PositionFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventCharacterLookAtController_PositionFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventCharacterLookAtController_PositionFaderMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
 #[::unity2::methods]
@@ -155,6 +115,46 @@ impl EventCharacterLookAtController {
             )
         });
         <Self as IEventCharacterLookAtControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+#[::unity2::methods]
+impl EventCharacterLookAtController_PositionFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, pos: crate::unity_engine::vector3::Vector3, msec: f32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> crate::unity_engine::vector3::Vector3;
+}
+
+#[cfg(feature = "app-eventcharacterlookatcontroller")]
+impl EventCharacterLookAtController_PositionFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventCharacterLookAtController_PositionFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventCharacterLookAtController_PositionFaderMethods>::ctor(this);
         this
     }
 }

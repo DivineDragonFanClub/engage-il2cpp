@@ -12,6 +12,26 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResultWithHeader")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GameSaveDataUtil_ProcessResultWithHeader {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameSaveDataUtil {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll_Data.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll.Data")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameSaveDataUtil_ProcDeleteAll_Data {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResult")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GameSaveDataUtil_ProcessResult {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -21,21 +41,6 @@ mod __types {
             crate::app::gamesavedatautil::GameSaveDataUtil_ProcDeleteAll_Data,
         >,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResultWithHeader")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GameSaveDataUtil_ProcessResultWithHeader {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResult")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GameSaveDataUtil_ProcessResult {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameSaveDataUtil {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess_Modes.md"))]
     #[repr(C)]
@@ -89,11 +94,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll_Data.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll.Data")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameSaveDataUtil_ProcDeleteAll_Data {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcProcess")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -112,58 +112,6 @@ mod __types {
 
 #[cfg(feature = "app-gamesavedatautil-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gamesavedatautil")]
-#[::unity2::methods]
-impl GameSaveDataUtil_ProcDeleteAll {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`PauseExitApp()` overload"]
-    #[method(name = "PauseExitApp", args = 0)]
-    pub fn pause_exit_app(self) -> ();
-
-    #[doc = "`ResumeExitApp()` overload"]
-    #[method(name = "ResumeExitApp", args = 0)]
-    pub fn resume_exit_app(self) -> ();
-
-    #[doc = "`DeleteAll()` overload"]
-    #[method(name = "DeleteAll", args = 0)]
-    pub fn delete_all(self) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`WriteGlobal()` overload"]
-    #[method(name = "WriteGlobal", args = 0)]
-    pub fn write_global(self) -> ();
-
-    #[doc = "`Result()` overload"]
-    #[method(name = "Result", args = 0)]
-    pub fn result(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcDeleteAll),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveDataUtil_ProcDeleteAllMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-gamesavedatautil")]
 #[::unity2::methods]
@@ -193,34 +141,6 @@ impl GameSaveDataUtil_ProcessResultWithHeader {
             )
         });
         <Self as IGameSaveDataUtil_ProcessResultWithHeaderMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-#[::unity2::methods]
-impl GameSaveDataUtil_ProcessResult {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_success: bool) -> ();
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResult {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcessResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveDataUtil_ProcessResultMethods>::ctor(this, object, method);
         this
     }
 }
@@ -331,6 +251,86 @@ impl GameSaveDataUtil_ProcDeleteAll_Data {
             )
         });
         <Self as IGameSaveDataUtil_ProcDeleteAll_DataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+#[::unity2::methods]
+impl GameSaveDataUtil_ProcessResult {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_success: bool) -> ();
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+impl GameSaveDataUtil_ProcessResult {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataUtil_ProcessResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataUtil_ProcessResultMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+#[::unity2::methods]
+impl GameSaveDataUtil_ProcDeleteAll {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`PauseExitApp()` overload"]
+    #[method(name = "PauseExitApp", args = 0)]
+    pub fn pause_exit_app(self) -> ();
+
+    #[doc = "`ResumeExitApp()` overload"]
+    #[method(name = "ResumeExitApp", args = 0)]
+    pub fn resume_exit_app(self) -> ();
+
+    #[doc = "`DeleteAll()` overload"]
+    #[method(name = "DeleteAll", args = 0)]
+    pub fn delete_all(self) -> ();
+
+    #[doc = "`IsRunning()` overload"]
+    #[method(name = "IsRunning", args = 0)]
+    pub fn is_running(self) -> bool;
+
+    #[doc = "`WriteGlobal()` overload"]
+    #[method(name = "WriteGlobal", args = 0)]
+    pub fn write_global(self) -> ();
+
+    #[doc = "`Result()` overload"]
+    #[method(name = "Result", args = 0)]
+    pub fn result(self) -> ();
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+impl GameSaveDataUtil_ProcDeleteAll {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataUtil_ProcDeleteAll),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataUtil_ProcDeleteAllMethods>::ctor(this);
         this
     }
 }

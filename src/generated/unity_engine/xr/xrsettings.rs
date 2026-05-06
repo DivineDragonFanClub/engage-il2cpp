@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))]
+    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct XRSettings {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
     #[repr(C)]
     #[derive(
@@ -60,11 +65,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct XRSettings {}
 }
 
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]

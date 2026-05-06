@@ -15,83 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TasteData_TasteGrade {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TasteData_TasteGrade {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TasteData.TasteGrade";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TasteData_TasteGrade {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TasteData_TasteGrade {
-        pub fn ss() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn s() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn a() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn b() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn c() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn d() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn e() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn f() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn g() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "TasteData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)]
-    pub struct TasteData_FlagField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_ConditionType.md"))]
     #[repr(C)]
     #[derive(
@@ -224,55 +147,87 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "TasteData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)]
+    pub struct TasteData_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TasteData_TasteGrade {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TasteData_TasteGrade {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TasteData.TasteGrade";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TasteData_TasteGrade {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TasteData_TasteGrade {
+        pub fn ss() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn s() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn a() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn b() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn c() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn d() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn e() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn f() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn g() -> Self {
+            Self { value: 8 }
+        }
+    }
 }
 
 #[cfg(feature = "app-tastedata-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-tastedata")]
-#[::unity2::methods]
-impl TasteData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::tastedata::TasteData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::tastedata::TasteData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::tastedata::TasteData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-tastedata")]
-impl TasteData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TasteData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITasteData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::tastedata::TasteData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TasteData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ITasteData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
 
 #[cfg(feature = "app-tastedata")]
 #[::unity2::methods]
@@ -412,6 +367,51 @@ impl TasteData {
             )
         });
         <Self as ITasteDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-tastedata")]
+#[::unity2::methods]
+impl TasteData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::tastedata::TasteData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::tastedata::TasteData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::tastedata::TasteData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-tastedata")]
+impl TasteData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TasteData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITasteData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::tastedata::TasteData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TasteData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITasteData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

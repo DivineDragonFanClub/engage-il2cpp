@@ -12,6 +12,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))]
+    #[::unity2::class(namespace = "Combat", name = "FieldGrid")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct FieldGrid {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -40,23 +45,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FieldGrid")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FieldGrid {}
 }
 
 #[cfg(feature = "combat-fieldgrid-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-fieldgrid")]
-#[::unity2::methods(value)]
-impl FieldGrid_PlayFieldRect {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, rect: crate::unity_engine::rect::Rect, size: f32) -> ();
-}
 
 #[cfg(feature = "combat-fieldgrid")]
 #[::unity2::methods]
@@ -113,4 +105,12 @@ impl FieldGrid {
         <Self as IFieldGridMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-fieldgrid")]
+#[::unity2::methods(value)]
+impl FieldGrid_PlayFieldRect {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, rect: crate::unity_engine::rect::Rect, size: f32) -> ();
 }

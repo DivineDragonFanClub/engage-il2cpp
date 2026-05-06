@@ -13,6 +13,102 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapCursor_DistanceMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapCursor_DistanceMode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapCursor.DistanceMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapCursor_DistanceMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapCursor_DistanceMode {
+        pub fn near() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn middle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn far() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_AnimType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapCursor_AnimType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapCursor_AnimType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapCursor.AnimType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapCursor_AnimType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapCursor_AnimType {
+        pub fn none() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn r#in() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn out() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))]
     #[::unity2::class(namespace = "App", name = "MapCursor")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)]
@@ -69,6 +165,16 @@ mod __types {
         pub m_cursor_top_obj: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_CursorBottomObj")]
         pub m_cursor_bottom_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CursorTopMgr")]
+        pub m_cursor_top_mgr: crate::root::mappointeranimmanager::MapPointerAnimManager,
+        #[rename(name = "m_CursorBottomMgr")]
+        pub m_cursor_bottom_mgr: crate::root::mapcursoranimmanager::MapCursorAnimManager,
+        #[static_field]
+        #[rename(name = "m_MapPointerLocatorRoot")]
+        pub m_map_pointer_locator_root: crate::root::mappointerlocatorroot::MapPointerLocatorRoot,
+        #[static_field]
+        #[rename(name = "m_MapCursorLocatorRoot")]
+        pub m_map_cursor_locator_root: crate::root::mapcursorlocatorroot::MapCursorLocatorRoot,
         #[rename(name = "m_PositionTop")]
         pub m_position_top: crate::app::interpolatorvector3::InterpolatorVector3,
         #[rename(name = "m_PositionBottom")]
@@ -79,107 +185,6 @@ mod __types {
         pub m_color: crate::unity_engine::color::Color,
         #[rename(name = "m_Flags")]
         pub m_flags: crate::app::mapcursor::MapCursor_FlagField,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapCursor.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)]
-    pub struct MapCursor_FlagField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_AnimType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapCursor_AnimType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapCursor_AnimType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapCursor.AnimType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapCursor_AnimType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapCursor_AnimType {
-        pub fn none() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn r#in() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn out() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapCursor_DistanceMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapCursor_DistanceMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapCursor.DistanceMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapCursor_DistanceMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapCursor_DistanceMode {
-        pub fn near() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn middle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn far() -> Self {
-            Self { value: 2 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_CursorTopType.md"))]
@@ -289,6 +294,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapCursor.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)]
+    pub struct MapCursor_FlagField {}
 }
 
 #[cfg(feature = "app-mapcursor-types")]

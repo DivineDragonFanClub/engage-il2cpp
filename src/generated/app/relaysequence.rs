@@ -11,45 +11,9 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceBase`1")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct RelaySequence_RelaySequenceBase_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_SearchResults")]
-        pub m_search_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        #[rename(name = "m_DownloadMetaResult")]
-        pub m_download_meta_result: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_DataCode")]
-        pub m_data_code: ::unity2::Il2CppString,
-        #[rename(name = "m_ReplayCache")]
-        pub m_replay_cache: crate::app::relayreplaycache::RelayReplayCache,
-        #[rename(name = "m_IsPublic")]
-        pub m_is_public: bool,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relay::Relay_Modes,
-        #[rename(name = "m_TakeOverMode")]
-        pub m_take_over_mode: crate::app::relay::Relay_TakeOverModes,
-        #[rename(name = "m_Cid")]
-        pub m_cid: ::unity2::Il2CppString,
-        #[rename(name = "m_IsAwarded")]
-        pub m_is_awarded: bool,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelaySequence {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
-    pub struct RelaySequence_RelaySequenceNet {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
+    pub struct RelaySequence_IRelaySequenceBase {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
@@ -59,9 +23,10 @@ mod __types {
         pub m_root_path: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
-    pub struct RelaySequence_IRelaySequenceBase {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelaySequence {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysequence/RelaySequence_Label.md"))]
     #[repr(C)]
@@ -274,10 +239,333 @@ mod __types {
             Self { value: 43 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
+    pub struct RelaySequence_RelaySequenceNet {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceBase`1")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct RelaySequence_RelaySequenceBase_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_SearchResults")]
+        pub m_search_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        #[rename(name = "m_DownloadMetaResult")]
+        pub m_download_meta_result: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_DataCode")]
+        pub m_data_code: ::unity2::Il2CppString,
+        #[rename(name = "m_ReplayCache")]
+        pub m_replay_cache: crate::app::relayreplaycache::RelayReplayCache,
+        #[rename(name = "m_IsPublic")]
+        pub m_is_public: bool,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relay::Relay_Modes,
+        #[rename(name = "m_TakeOverMode")]
+        pub m_take_over_mode: crate::app::relay::Relay_TakeOverModes,
+        #[rename(name = "m_Cid")]
+        pub m_cid: ::unity2::Il2CppString,
+        #[rename(name = "m_IsAwarded")]
+        pub m_is_awarded: bool,
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::menubg::MenuBg,
+    }
 }
 
 #[cfg(feature = "app-relaysequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaysequence")]
+#[::unity2::methods]
+impl RelaySequence_IRelaySequenceBase {
+    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
+    #[method(name = "JumpTo", args = 1)]
+    pub fn jump_to(self, label: crate::app::relaysequence::RelaySequence_Label) -> ();
+
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    #[method(name = "SelectMode", args = 1)]
+    pub fn select_mode(self, mode: crate::app::relay::Relay_Modes) -> ();
+
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    #[method(name = "SelectMap", args = 1)]
+    pub fn select_map(self, cid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    #[method(name = "SelectTakeOverMode", args = 1)]
+    pub fn select_take_over_mode(self, mode: crate::app::relay::Relay_TakeOverModes) -> ();
+
+    #[doc = "`SetPublic(bool)` overload"]
+    #[method(name = "SetPublic", args = 1)]
+    pub fn set_public(self, enable: bool) -> ();
+}
+
+#[cfg(feature = "app-relaysequence")]
+#[::unity2::methods]
+impl RelaySequence_RelaySequenceLocal {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`InitializeLanRootPath()` overload"]
+    #[method(name = "InitializeLanRootPath", args = 0)]
+    pub fn initialize_lan_root_path(self) -> ();
+
+    #[doc = "`TakeOverSearchImpl()` overload"]
+    #[method(name = "TakeOverSearchImpl", args = 0)]
+    pub fn take_over_search_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsearchImpl()` overload"]
+    #[method(name = "TakeOverPostsearchImpl", args = 0)]
+    pub fn take_over_postsearch_impl(self) -> ();
+
+    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverSetPlayingImpl()` overload"]
+    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
+    pub fn take_over_set_playing_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
+    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
+    pub fn take_over_postset_playing_impl(self) -> ();
+
+    #[doc = "`ReplaySearchEnteredImpl()` overload"]
+    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
+    pub fn replay_search_entered_impl(self) -> ();
+
+    #[doc = "`ReplaySearchAnyImpl()` overload"]
+    #[method(name = "ReplaySearchAnyImpl", args = 0)]
+    pub fn replay_search_any_impl(self) -> ();
+
+    #[doc = "`ReplayPostsearchImpl()` overload"]
+    #[method(name = "ReplayPostsearchImpl", args = 0)]
+    pub fn replay_postsearch_impl(self) -> ();
+
+    #[doc = "`DownloadImpl(bool)` overload"]
+    #[method(name = "DownloadImpl", args = 1)]
+    pub fn download_impl(self, with_meta_data: bool) -> ();
+
+    #[doc = "`PostdownloadTakeOverImpl()` overload"]
+    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
+    pub fn postdownload_take_over_impl(self) -> ();
+
+    #[doc = "`PostdownloadReplayImpl()` overload"]
+    #[method(name = "PostdownloadReplayImpl", args = 0)]
+    pub fn postdownload_replay_impl(self) -> ();
+
+    #[doc = "`UploadImpl()` overload"]
+    #[method(name = "UploadImpl", args = 0)]
+    pub fn upload_impl(self) -> ();
+
+    #[doc = "`PostuploadImpl()` overload"]
+    #[method(name = "PostuploadImpl", args = 0)]
+    pub fn postupload_impl(self) -> ();
+
+    #[doc = "`GetDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "GetDataFileName", args = 1)]
+    pub fn get_data_file_name(
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMetaDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "GetMetaDataFileName", args = 1)]
+    pub fn get_meta_data_file_name(
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetPseudoPrincipalId(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetPseudoPrincipalId", args = 1)]
+    pub fn get_pseudo_principal_id(player_name: ::unity2::Il2CppString) -> u64;
+
+    #[doc = "`GetPseudoDataId(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetPseudoDataId", args = 1)]
+    pub fn get_pseudo_data_id(meta_path: ::unity2::Il2CppString) -> u64;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence_RelaySequenceLocal {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySequence_RelaySequenceLocal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySequence_RelaySequenceLocalMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+#[::unity2::methods]
+impl RelaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    #[method(name = "SelectMode", args = 1)]
+    pub fn select_mode(mode: crate::app::relay::Relay_Modes) -> ();
+
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    #[method(name = "SelectTakeOverMode", args = 1)]
+    pub fn select_take_over_mode(mode: crate::app::relay::Relay_TakeOverModes) -> ();
+
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    #[method(name = "SelectMap", args = 1)]
+    pub fn select_map(cid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`NoSelectableMap()` overload"]
+    #[method(name = "NoSelectableMap", args = 0)]
+    pub fn no_selectable_map() -> ();
+
+    #[doc = "`JumpToTakeOverModeSelect()` overload"]
+    #[method(name = "JumpToTakeOverModeSelect", args = 0)]
+    pub fn jump_to_take_over_mode_select() -> ();
+
+    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
+    #[method(name = "JumpToTakeOverPredownloadMetaWithDataCode", args = 0)]
+    pub fn jump_to_take_over_predownload_meta_with_data_code() -> ();
+
+    #[doc = "`JumpToReplayDownload()` overload"]
+    #[method(name = "JumpToReplayDownload", args = 0)]
+    pub fn jump_to_replay_download() -> ();
+
+    #[doc = "`JumpToAward()` overload"]
+    #[method(name = "JumpToAward", args = 0)]
+    pub fn jump_to_award() -> ();
+
+    #[doc = "`SetPublic(bool)` overload"]
+    #[method(name = "SetPublic", args = 1)]
+    pub fn set_public(is_public: bool) -> ();
+
+    #[doc = "`GetSequence()` overload"]
+    #[method(name = "GetSequence", args = 0)]
+    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase;
+}
+
+#[cfg(feature = "app-relaysequence")]
+#[::unity2::methods]
+impl RelaySequence_RelaySequenceNet {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`TakeOverSearchImpl()` overload"]
+    #[method(name = "TakeOverSearchImpl", args = 0)]
+    pub fn take_over_search_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsearchImpl()` overload"]
+    #[method(name = "TakeOverPostsearchImpl", args = 0)]
+    pub fn take_over_postsearch_impl(self) -> ();
+
+    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverSetPlayingImpl()` overload"]
+    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
+    pub fn take_over_set_playing_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
+    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
+    pub fn take_over_postset_playing_impl(self) -> ();
+
+    #[doc = "`ReplaySearchEnteredImpl()` overload"]
+    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
+    pub fn replay_search_entered_impl(self) -> ();
+
+    #[doc = "`ReplaySearchAnyImpl()` overload"]
+    #[method(name = "ReplaySearchAnyImpl", args = 0)]
+    pub fn replay_search_any_impl(self) -> ();
+
+    #[doc = "`ReplayPostsearchImpl()` overload"]
+    #[method(name = "ReplayPostsearchImpl", args = 0)]
+    pub fn replay_postsearch_impl(self) -> ();
+
+    #[doc = "`DownloadImpl(bool)` overload"]
+    #[method(name = "DownloadImpl", args = 1)]
+    pub fn download_impl(self, with_meta_data: bool) -> ();
+
+    #[doc = "`PostdownloadTakeOverImpl()` overload"]
+    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
+    pub fn postdownload_take_over_impl(self) -> ();
+
+    #[doc = "`PostdownloadReplayImpl()` overload"]
+    #[method(name = "PostdownloadReplayImpl", args = 0)]
+    pub fn postdownload_replay_impl(self) -> ();
+
+    #[doc = "`UploadImpl()` overload"]
+    #[method(name = "UploadImpl", args = 0)]
+    pub fn upload_impl(self) -> ();
+
+    #[doc = "`PostuploadImpl()` overload"]
+    #[method(name = "PostuploadImpl", args = 0)]
+    pub fn postupload_impl(self) -> ();
+
+    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CloseWaitMessageImpl", args = 2)]
+    pub fn close_wait_message_impl(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        is_success: bool,
+    ) -> ();
+
+    #[doc = "`DeleteSelectedFromSearchResults()` overload"]
+    #[method(name = "DeleteSelectedFromSearchResults", args = 0)]
+    pub fn delete_selected_from_search_results(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence_RelaySequenceNet {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySequence_RelaySequenceNet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySequence_RelaySequenceNetMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-relaysequence")]
 #[::unity2::methods]
@@ -688,292 +976,4 @@ impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
         <Self as IRelaySequence_RelaySequenceBase_1Methods<T0>>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[::unity2::methods]
-impl RelaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    #[method(name = "SelectMode", args = 1)]
-    pub fn select_mode(mode: crate::app::relay::Relay_Modes) -> ();
-
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    #[method(name = "SelectTakeOverMode", args = 1)]
-    pub fn select_take_over_mode(mode: crate::app::relay::Relay_TakeOverModes) -> ();
-
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    #[method(name = "SelectMap", args = 1)]
-    pub fn select_map(cid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`NoSelectableMap()` overload"]
-    #[method(name = "NoSelectableMap", args = 0)]
-    pub fn no_selectable_map() -> ();
-
-    #[doc = "`JumpToTakeOverModeSelect()` overload"]
-    #[method(name = "JumpToTakeOverModeSelect", args = 0)]
-    pub fn jump_to_take_over_mode_select() -> ();
-
-    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
-    #[method(name = "JumpToTakeOverPredownloadMetaWithDataCode", args = 0)]
-    pub fn jump_to_take_over_predownload_meta_with_data_code() -> ();
-
-    #[doc = "`JumpToReplayDownload()` overload"]
-    #[method(name = "JumpToReplayDownload", args = 0)]
-    pub fn jump_to_replay_download() -> ();
-
-    #[doc = "`JumpToAward()` overload"]
-    #[method(name = "JumpToAward", args = 0)]
-    pub fn jump_to_award() -> ();
-
-    #[doc = "`SetPublic(bool)` overload"]
-    #[method(name = "SetPublic", args = 1)]
-    pub fn set_public(is_public: bool) -> ();
-
-    #[doc = "`GetSequence()` overload"]
-    #[method(name = "GetSequence", args = 0)]
-    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase;
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[::unity2::methods]
-impl RelaySequence_RelaySequenceNet {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`TakeOverSearchImpl()` overload"]
-    #[method(name = "TakeOverSearchImpl", args = 0)]
-    pub fn take_over_search_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsearchImpl()` overload"]
-    #[method(name = "TakeOverPostsearchImpl", args = 0)]
-    pub fn take_over_postsearch_impl(self) -> ();
-
-    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverSetPlayingImpl()` overload"]
-    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
-    pub fn take_over_set_playing_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
-    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
-    pub fn take_over_postset_playing_impl(self) -> ();
-
-    #[doc = "`ReplaySearchEnteredImpl()` overload"]
-    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
-    pub fn replay_search_entered_impl(self) -> ();
-
-    #[doc = "`ReplaySearchAnyImpl()` overload"]
-    #[method(name = "ReplaySearchAnyImpl", args = 0)]
-    pub fn replay_search_any_impl(self) -> ();
-
-    #[doc = "`ReplayPostsearchImpl()` overload"]
-    #[method(name = "ReplayPostsearchImpl", args = 0)]
-    pub fn replay_postsearch_impl(self) -> ();
-
-    #[doc = "`DownloadImpl(bool)` overload"]
-    #[method(name = "DownloadImpl", args = 1)]
-    pub fn download_impl(self, with_meta_data: bool) -> ();
-
-    #[doc = "`PostdownloadTakeOverImpl()` overload"]
-    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
-    pub fn postdownload_take_over_impl(self) -> ();
-
-    #[doc = "`PostdownloadReplayImpl()` overload"]
-    #[method(name = "PostdownloadReplayImpl", args = 0)]
-    pub fn postdownload_replay_impl(self) -> ();
-
-    #[doc = "`UploadImpl()` overload"]
-    #[method(name = "UploadImpl", args = 0)]
-    pub fn upload_impl(self) -> ();
-
-    #[doc = "`PostuploadImpl()` overload"]
-    #[method(name = "PostuploadImpl", args = 0)]
-    pub fn postupload_impl(self) -> ();
-
-    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CloseWaitMessageImpl", args = 2)]
-    pub fn close_wait_message_impl(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        is_success: bool,
-    ) -> ();
-
-    #[doc = "`DeleteSelectedFromSearchResults()` overload"]
-    #[method(name = "DeleteSelectedFromSearchResults", args = 0)]
-    pub fn delete_selected_from_search_results(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence_RelaySequenceNet {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelaySequence_RelaySequenceNet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelaySequence_RelaySequenceNetMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[::unity2::methods]
-impl RelaySequence_RelaySequenceLocal {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`InitializeLanRootPath()` overload"]
-    #[method(name = "InitializeLanRootPath", args = 0)]
-    pub fn initialize_lan_root_path(self) -> ();
-
-    #[doc = "`TakeOverSearchImpl()` overload"]
-    #[method(name = "TakeOverSearchImpl", args = 0)]
-    pub fn take_over_search_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsearchImpl()` overload"]
-    #[method(name = "TakeOverPostsearchImpl", args = 0)]
-    pub fn take_over_postsearch_impl(self) -> ();
-
-    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverSetPlayingImpl()` overload"]
-    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
-    pub fn take_over_set_playing_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
-    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
-    pub fn take_over_postset_playing_impl(self) -> ();
-
-    #[doc = "`ReplaySearchEnteredImpl()` overload"]
-    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
-    pub fn replay_search_entered_impl(self) -> ();
-
-    #[doc = "`ReplaySearchAnyImpl()` overload"]
-    #[method(name = "ReplaySearchAnyImpl", args = 0)]
-    pub fn replay_search_any_impl(self) -> ();
-
-    #[doc = "`ReplayPostsearchImpl()` overload"]
-    #[method(name = "ReplayPostsearchImpl", args = 0)]
-    pub fn replay_postsearch_impl(self) -> ();
-
-    #[doc = "`DownloadImpl(bool)` overload"]
-    #[method(name = "DownloadImpl", args = 1)]
-    pub fn download_impl(self, with_meta_data: bool) -> ();
-
-    #[doc = "`PostdownloadTakeOverImpl()` overload"]
-    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
-    pub fn postdownload_take_over_impl(self) -> ();
-
-    #[doc = "`PostdownloadReplayImpl()` overload"]
-    #[method(name = "PostdownloadReplayImpl", args = 0)]
-    pub fn postdownload_replay_impl(self) -> ();
-
-    #[doc = "`UploadImpl()` overload"]
-    #[method(name = "UploadImpl", args = 0)]
-    pub fn upload_impl(self) -> ();
-
-    #[doc = "`PostuploadImpl()` overload"]
-    #[method(name = "PostuploadImpl", args = 0)]
-    pub fn postupload_impl(self) -> ();
-
-    #[doc = "`GetDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "GetDataFileName", args = 1)]
-    pub fn get_data_file_name(
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMetaDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "GetMetaDataFileName", args = 1)]
-    pub fn get_meta_data_file_name(
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetPseudoPrincipalId(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPseudoPrincipalId", args = 1)]
-    pub fn get_pseudo_principal_id(player_name: ::unity2::Il2CppString) -> u64;
-
-    #[doc = "`GetPseudoDataId(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPseudoDataId", args = 1)]
-    pub fn get_pseudo_data_id(meta_path: ::unity2::Il2CppString) -> u64;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence_RelaySequenceLocal {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelaySequence_RelaySequenceLocal),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelaySequence_RelaySequenceLocalMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[::unity2::methods]
-impl RelaySequence_IRelaySequenceBase {
-    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
-    #[method(name = "JumpTo", args = 1)]
-    pub fn jump_to(self, label: crate::app::relaysequence::RelaySequence_Label) -> ();
-
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    #[method(name = "SelectMode", args = 1)]
-    pub fn select_mode(self, mode: crate::app::relay::Relay_Modes) -> ();
-
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    #[method(name = "SelectMap", args = 1)]
-    pub fn select_map(self, cid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    #[method(name = "SelectTakeOverMode", args = 1)]
-    pub fn select_take_over_mode(self, mode: crate::app::relay::Relay_TakeOverModes) -> ();
-
-    #[doc = "`SetPublic(bool)` overload"]
-    #[method(name = "SetPublic", args = 1)]
-    pub fn set_public(self, enable: bool) -> ();
 }

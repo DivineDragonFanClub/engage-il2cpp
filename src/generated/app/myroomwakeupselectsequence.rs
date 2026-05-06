@@ -11,24 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupselectsequence :: MyRoomWakeupSelectSequence >)]
-    pub struct MyRoomWakeupSelectSequence {
-        #[rename(name = "m_mainContent")]
-        pub m_main_content: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ReservePID")]
-        pub m_reserve_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservePattern")]
-        pub m_reserve_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-        #[rename(name = "m_ReserveLevel")]
-        pub m_reserve_level: crate::app::reliancedata::RelianceData_Level,
-        #[rename(name = "m_TmpSelect")]
-        pub m_tmp_select: i32,
-        #[rename(name = "m_TmpScroll")]
-        pub m_tmp_scroll: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -79,6 +61,24 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupselectsequence :: MyRoomWakeupSelectSequence >)]
+    pub struct MyRoomWakeupSelectSequence {
+        #[rename(name = "m_mainContent")]
+        pub m_main_content: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ReservePID")]
+        pub m_reserve_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservePattern")]
+        pub m_reserve_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+        #[rename(name = "m_ReserveLevel")]
+        pub m_reserve_level: crate::app::reliancedata::RelianceData_Level,
+        #[rename(name = "m_TmpSelect")]
+        pub m_tmp_select: i32,
+        #[rename(name = "m_TmpScroll")]
+        pub m_tmp_scroll: i32,
     }
 }
 

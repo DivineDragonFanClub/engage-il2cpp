@@ -12,37 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
-    #[::unity2::class(namespace = "App", name = "RangeData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
-    pub struct RangeData {
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i8>,
-        #[static_field]
-        #[rename(name = "s_DirOffsets")]
-        pub s_dir_offsets: crate::app::rangedata::RangeData_DirOffsets,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
-    #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
-    #[parent(crate::system::object::Object)]
-    pub struct RangeData_DirOffsets {
-        #[rename(name = "m_Offsets")]
-        pub m_offsets: ::unity2::Array<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::system::collections::generic::list_1::List_1<
-                    crate::app::rangedata::RangeData_Offset,
-                >,
-            >,
-        >,
-        #[rename(name = "m_Centers")]
-        pub m_centers: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::rangedata::RangeData_Targets,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md"))]
     #[repr(C)]
     #[derive(
@@ -97,6 +66,37 @@ mod __types {
         pub fn both() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
+    #[::unity2::class(namespace = "App", name = "RangeData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
+    pub struct RangeData {
+        #[rename(name = "m_Values")]
+        pub m_values: ::unity2::Array<i8>,
+        #[static_field]
+        #[rename(name = "s_DirOffsets")]
+        pub s_dir_offsets: crate::app::rangedata::RangeData_DirOffsets,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
+    #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
+    #[parent(crate::system::object::Object)]
+    pub struct RangeData_DirOffsets {
+        #[rename(name = "m_Offsets")]
+        pub m_offsets: ::unity2::Array<
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                crate::system::collections::generic::list_1::List_1<
+                    crate::app::rangedata::RangeData_Offset,
+                >,
+            >,
+        >,
+        #[rename(name = "m_Centers")]
+        pub m_centers: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::rangedata::RangeData_Targets,
+        >,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md"))]

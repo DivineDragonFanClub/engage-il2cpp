@@ -13,54 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct CharacterMove_StartMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for CharacterMove_StartMode {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "CharacterMove.StartMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CharacterMove_StartMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl CharacterMove_StartMode {
-        pub fn from_start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn from_loop() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn from_max_speed() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -138,6 +90,54 @@ mod __types {
 
         pub fn jumping() -> Self {
             Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct CharacterMove_StartMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for CharacterMove_StartMode {
+        const NAMESPACE: &'static str = "Combat";
+
+        const NAME: &'static str = "CharacterMove.StartMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CharacterMove_StartMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl CharacterMove_StartMode {
+        pub fn from_start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn from_loop() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn from_max_speed() -> Self {
+            Self { value: 2 }
         }
     }
 }

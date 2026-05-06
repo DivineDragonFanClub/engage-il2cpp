@@ -9,11 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugshopmenu/DebugShopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugShopMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugShopMenu {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugshopmenu/DebugShopMenu_ShopCallItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugShopMenu.ShopCallItem")]
     #[parent(crate::app::stringitem::StringItem)]
@@ -21,38 +16,15 @@ mod __types {
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugshopmenu/DebugShopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugShopMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugShopMenu {}
 }
 
 #[cfg(feature = "app-debugshopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-debugshopmenu")]
-#[::unity2::methods]
-impl DebugShopMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugShopMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugShopMenuMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-debugshopmenu")]
 #[::unity2::methods]
@@ -78,6 +50,34 @@ impl DebugShopMenu_ShopCallItem {
             )
         });
         <Self as IDebugShopMenu_ShopCallItemMethods>::ctor(this, name, unit);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugshopmenu")]
+#[::unity2::methods]
+impl DebugShopMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugshopmenu")]
+impl DebugShopMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugShopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugShopMenuMethods>::ctor(this);
         this
     }
 }

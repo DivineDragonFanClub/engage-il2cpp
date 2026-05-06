@@ -11,6 +11,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct ItemListYesNoDialog_MoneyParam {
+        #[rename(name = "num")]
+        pub num: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
     #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
@@ -27,18 +35,34 @@ mod __types {
         #[rename(name = "num")]
         pub num: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct ItemListYesNoDialog_MoneyParam {
-        #[rename(name = "num")]
-        pub num: i32,
-    }
 }
 
 #[cfg(feature = "app-itemlistyesnodialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+#[::unity2::methods]
+impl ItemListYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl ItemListYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-itemlistyesnodialog")]
 #[::unity2::methods]
@@ -153,30 +177,6 @@ impl ItemListYesNoDialog_ItemParam {
             )
         });
         <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-#[::unity2::methods]
-impl ItemListYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }

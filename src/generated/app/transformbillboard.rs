@@ -13,24 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformbillboard/TransformBillboard.md"))]
-    #[::unity2::class(namespace = "App", name = "TransformBillboard")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TransformBillboard {
-        #[rename(name = "m_Axis")]
-        pub m_axis: crate::app::transformbillboard::TransformBillboard_Axis,
-        #[rename(name = "m_IsScaling")]
-        pub m_is_scaling: bool,
-        #[rename(name = "m_BaseScale")]
-        pub m_base_scale: f32,
-        #[static_field]
-        #[rename(name = "BaseDistance")]
-        pub base_distance: f32,
-        #[static_field]
-        #[rename(name = "BaseFov")]
-        pub base_fov: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformbillboard/TransformBillboard_Axis.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +59,24 @@ mod __types {
         pub fn y() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformbillboard/TransformBillboard.md"))]
+    #[::unity2::class(namespace = "App", name = "TransformBillboard")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TransformBillboard {
+        #[rename(name = "m_Axis")]
+        pub m_axis: crate::app::transformbillboard::TransformBillboard_Axis,
+        #[rename(name = "m_IsScaling")]
+        pub m_is_scaling: bool,
+        #[rename(name = "m_BaseScale")]
+        pub m_base_scale: f32,
+        #[static_field]
+        #[rename(name = "BaseDistance")]
+        pub base_distance: f32,
+        #[static_field]
+        #[rename(name = "BaseFov")]
+        pub base_fov: f32,
     }
 }
 

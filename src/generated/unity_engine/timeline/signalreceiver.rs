@@ -11,6 +11,14 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct SignalReceiver {
+        #[rename(name = "m_Events")]
+        pub m_events: crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver_EventKeyValue.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Timeline",
@@ -27,82 +35,10 @@ mod __types {
             crate::unity_engine::events::unityevent::UnityEvent,
         >,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalreceiver/SignalReceiver.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct SignalReceiver {
-        #[rename(name = "m_Events")]
-        pub m_events: crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,
-    }
 }
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-timeline-signalreceiver")]
-#[::unity2::methods]
-impl SignalReceiver_EventKeyValue {
-    #[doc = "`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "TryGetValue", args = 2)]
-    pub fn try_get_value(
-        self,
-        key: crate::unity_engine::timeline::signalasset::SignalAsset,
-        value: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> bool;
-
-    #[doc = "`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
-    #[method(name = "Append", args = 2)]
-    pub fn append(
-        self,
-        key: crate::unity_engine::timeline::signalasset::SignalAsset,
-        value: crate::unity_engine::events::unityevent::UnityEvent,
-    ) -> ();
-
-    #[doc = "`Remove(i32)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, idx: i32) -> ();
-
-    #[doc = "`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove_2(self, key: crate::unity_engine::timeline::signalasset::SignalAsset) -> ();
-
-    #[doc = "`get_signals()` overload"]
-    #[method(name = "get_signals", args = 0)]
-    pub fn get_signals(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::timeline::signalasset::SignalAsset,
-    >;
-
-    #[doc = "`get_events()` overload"]
-    #[method(name = "get_events", args = 0)]
-    pub fn get_events(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::events::unityevent::UnityEvent,
-    >;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-timeline-signalreceiver")]
-impl SignalReceiver_EventKeyValue {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SignalReceiver_EventKeyValue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISignalReceiver_EventKeyValueMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
 #[::unity2::methods]
@@ -209,6 +145,70 @@ impl SignalReceiver {
             )
         });
         <Self as ISignalReceiverMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+#[::unity2::methods]
+impl SignalReceiver_EventKeyValue {
+    #[doc = "`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    #[method(name = "TryGetValue", args = 2)]
+    pub fn try_get_value(
+        self,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: crate::unity_engine::events::unityevent::UnityEvent,
+    ) -> bool;
+
+    #[doc = "`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]
+    #[method(name = "Append", args = 2)]
+    pub fn append(
+        self,
+        key: crate::unity_engine::timeline::signalasset::SignalAsset,
+        value: crate::unity_engine::events::unityevent::UnityEvent,
+    ) -> ();
+
+    #[doc = "`Remove(i32)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, idx: i32) -> ();
+
+    #[doc = "`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_2(self, key: crate::unity_engine::timeline::signalasset::SignalAsset) -> ();
+
+    #[doc = "`get_signals()` overload"]
+    #[method(name = "get_signals", args = 0)]
+    pub fn get_signals(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::timeline::signalasset::SignalAsset,
+    >;
+
+    #[doc = "`get_events()` overload"]
+    #[method(name = "get_events", args = 0)]
+    pub fn get_events(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::events::unityevent::UnityEvent,
+    >;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-signalreceiver")]
+impl SignalReceiver_EventKeyValue {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SignalReceiver_EventKeyValue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISignalReceiver_EventKeyValueMethods>::ctor(this);
         this
     }
 }

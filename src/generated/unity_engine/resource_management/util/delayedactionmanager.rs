@@ -15,6 +15,20 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement.Util",
+        name = "DelayedActionManager"
+    )]
+    # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager >)]
+    pub struct DelayedActionManager {
+# [rename (name = "m_Actions")] pub m_actions : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
+# [rename (name = "m_DelayedActions")] pub m_delayed_actions : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > ,
+# [rename (name = "m_NodeCache")] pub m_node_cache : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
+# [rename (name = "m_CollectionIndex")] pub m_collection_index : i32 ,
+# [rename (name = "m_DestroyOnCompletion")] pub m_destroy_on_completion : bool ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -44,53 +58,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "DelayedActionManager"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager >)]
-    pub struct DelayedActionManager {
-# [rename (name = "m_Actions")] pub m_actions : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
-# [rename (name = "m_DelayedActions")] pub m_delayed_actions : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > ,
-# [rename (name = "m_NodeCache")] pub m_node_cache : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: unity_engine :: resource_management :: util :: delayedactionmanager :: DelayedActionManager_DelegateInfo > > ,
-# [rename (name = "m_CollectionIndex")] pub m_collection_index : i32 ,
-# [rename (name = "m_DestroyOnCompletion")] pub m_destroy_on_completion : bool ,
-}
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-#[::unity2::methods(value)]
-impl DelayedActionManager_DelegateInfo {
-    #[doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        d: crate::system::delegate::Delegate,
-        invocation_time: f32,
-        p: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`get_InvocationTime()` overload"]
-    #[method(name = "get_InvocationTime", args = 0)]
-    pub fn get_invocation_time(self) -> f32;
-
-    #[doc = "`set_InvocationTime(f32)` overload"]
-    #[method(name = "set_InvocationTime", args = 1)]
-    pub fn set_invocation_time(self, value: f32) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
 #[::unity2::methods]
@@ -163,4 +134,33 @@ impl DelayedActionManager {
         <Self as IDelayedActionManagerMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
+#[::unity2::methods(value)]
+impl DelayedActionManager_DelegateInfo {
+    #[doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        d: crate::system::delegate::Delegate,
+        invocation_time: f32,
+        p: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[doc = "`get_InvocationTime()` overload"]
+    #[method(name = "get_InvocationTime", args = 0)]
+    pub fn get_invocation_time(self) -> f32;
+
+    #[doc = "`set_InvocationTime(f32)` overload"]
+    #[method(name = "set_InvocationTime", args = 1)]
+    pub fn set_invocation_time(self, value: f32) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }

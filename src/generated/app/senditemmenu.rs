@@ -22,6 +22,11 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct SendItemMenu_CancelCallback {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.DecideCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SendItemMenu_DecideCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu.md"))]
     #[::unity2::class(namespace = "App", name = "SendItemMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -40,6 +45,11 @@ mod __types {
         pub m_cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SendItemMenu_ConfirmDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -56,16 +66,6 @@ mod __types {
         #[rename(name = "m_DecideCallback")]
         pub m_decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SendItemMenu.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct SendItemMenu_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "SendItemMenu.DecideCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SendItemMenu_DecideCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_SendItemMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SendItemMenu.SendItemMenuItem")]
@@ -100,6 +100,34 @@ impl SendItemMenu_CancelCallback {
             )
         });
         <Self as ISendItemMenu_CancelCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+#[::unity2::methods]
+impl SendItemMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, select_unit_item: bool, unit_item_index: i32) -> ();
+}
+
+#[cfg(feature = "app-senditemmenu")]
+impl SendItemMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SendItemMenu_DecideCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISendItemMenu_DecideCallbackMethods>::ctor(this, object, method);
         this
     }
 }
@@ -206,51 +234,6 @@ impl SendItemMenu {
 
 #[cfg(feature = "app-senditemmenu")]
 #[::unity2::methods]
-impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu_ConfirmDialog_ConfirmYesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods>::ctor(
-            this,
-            unit,
-            unit_item_index,
-            gain_unit_item,
-            decide_callback,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-#[::unity2::methods]
 impl SendItemMenu_ConfirmDialog {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
     #[method(name = "CreateBind", args = 5)]
@@ -294,28 +277,45 @@ impl SendItemMenu_ConfirmDialog {
 
 #[cfg(feature = "app-senditemmenu")]
 #[::unity2::methods]
-impl SendItemMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+    ) -> ();
 
-    #[doc = "`Invoke(bool, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, select_unit_item: bool, unit_item_index: i32) -> ();
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` — overload selector"]
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu_DecideCallback),
+                ::core::stringify!(SendItemMenu_ConfirmDialog_ConfirmYesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISendItemMenu_DecideCallbackMethods>::ctor(this, object, method);
+        <Self as ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods>::ctor(
+            this,
+            unit,
+            unit_item_index,
+            gain_unit_item,
+            decide_callback,
+        );
         this
     }
 }

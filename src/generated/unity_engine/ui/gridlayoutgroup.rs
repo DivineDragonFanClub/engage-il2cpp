@@ -67,68 +67,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "GridLayoutGroup")]
-    #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
-    pub struct GridLayoutGroup {
-        #[rename(name = "m_StartCorner")]
-        pub m_start_corner: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
-        #[rename(name = "m_StartAxis")]
-        pub m_start_axis: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
-        #[rename(name = "m_CellSize")]
-        pub m_cell_size: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Spacing")]
-        pub m_spacing: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Constraint")]
-        pub m_constraint: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
-        #[rename(name = "m_ConstraintCount")]
-        pub m_constraint_count: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GridLayoutGroup_Axis {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GridLayoutGroup_Axis {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "GridLayoutGroup.Axis";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GridLayoutGroup_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GridLayoutGroup_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
     #[repr(C)]
     #[derive(
@@ -175,6 +113,68 @@ mod __types {
         pub fn fixed_row_count() -> Self {
             Self { value: 2 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GridLayoutGroup_Axis {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GridLayoutGroup_Axis {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "GridLayoutGroup.Axis";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GridLayoutGroup_Axis {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GridLayoutGroup_Axis {
+        pub fn horizontal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn vertical() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "GridLayoutGroup")]
+    #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
+    pub struct GridLayoutGroup {
+        #[rename(name = "m_StartCorner")]
+        pub m_start_corner: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
+        #[rename(name = "m_StartAxis")]
+        pub m_start_axis: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
+        #[rename(name = "m_CellSize")]
+        pub m_cell_size: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Spacing")]
+        pub m_spacing: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Constraint")]
+        pub m_constraint: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
+        #[rename(name = "m_ConstraintCount")]
+        pub m_constraint_count: i32,
     }
 }
 

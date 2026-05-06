@@ -11,6 +11,37 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindsequence/RewindSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)]
+    pub struct RewindSequence {
+        #[static_field]
+        #[rename(name = "EffectForStartPath")]
+        pub effect_for_start_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "EffectForStart_Sec")]
+        pub effect_for_start_sec: f32,
+        #[static_field]
+        #[rename(name = "EffectUnitForStart_Sec")]
+        pub effect_unit_for_start_sec: f32,
+        #[static_field]
+        #[rename(name = "EffectForExecuteRewind_Sec")]
+        pub effect_for_execute_rewind_sec: f32,
+        #[static_field]
+        #[rename(name = "EffectForCancelRewind_Sec")]
+        pub effect_for_cancel_rewind_sec: f32,
+        #[rename(name = "m_IsRewindToPhaseBegin")]
+        pub m_is_rewind_to_phase_begin: bool,
+        #[rename(name = "m_WaitTime")]
+        pub m_wait_time: f32,
+        #[rename(name = "m_EffectForStartObject")]
+        pub m_effect_for_start_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CursorInitX")]
+        pub m_cursor_init_x: i32,
+        #[rename(name = "m_CursorInitZ")]
+        pub m_cursor_init_z: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -65,37 +96,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindsequence/RewindSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)]
-    pub struct RewindSequence {
-        #[static_field]
-        #[rename(name = "EffectForStartPath")]
-        pub effect_for_start_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EffectForStart_Sec")]
-        pub effect_for_start_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectUnitForStart_Sec")]
-        pub effect_unit_for_start_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectForExecuteRewind_Sec")]
-        pub effect_for_execute_rewind_sec: f32,
-        #[static_field]
-        #[rename(name = "EffectForCancelRewind_Sec")]
-        pub effect_for_cancel_rewind_sec: f32,
-        #[rename(name = "m_IsRewindToPhaseBegin")]
-        pub m_is_rewind_to_phase_begin: bool,
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
-        #[rename(name = "m_EffectForStartObject")]
-        pub m_effect_for_start_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CursorInitX")]
-        pub m_cursor_init_x: i32,
-        #[rename(name = "m_CursorInitZ")]
-        pub m_cursor_init_z: i32,
     }
 }
 

@@ -9,6 +9,102 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_Ch.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameTime_Ch {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameTime_Ch {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameTime.Ch";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameTime_Ch {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameTime_Ch {
+        pub fn game() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn combat() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn scene() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn pause() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn debug() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gametime/GameTime.md"))]
+    #[::unity2::class(namespace = "App", name = "GameTime")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameTime {
+        #[static_field]
+        #[rename(name = "DefaultFixedDeltaTime")]
+        pub default_fixed_delta_time: f32,
+        #[static_field]
+        #[rename(name = "LocalTimeScale")]
+        pub local_time_scale: ::unity2::Array<f32>,
+        #[static_field]
+        #[rename(name = "s_VsyncStack")]
+        pub s_vsync_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[static_field]
+        #[rename(name = "s_PlayTime")]
+        pub s_play_time: i32,
+        #[static_field]
+        #[rename(name = "s_WatchTime")]
+        pub s_watch_time: i32,
+        #[static_field]
+        #[rename(name = "MaxTime")]
+        pub max_time: i32,
+        #[static_field]
+        #[rename(name = "TimeUnit")]
+        pub time_unit: i32,
+        #[static_field]
+        #[rename(name = "TimeInv")]
+        pub time_inv: f32,
+        #[static_field]
+        #[rename(name = "MaxTimeFloat")]
+        pub max_time_float: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_VsycMode.md"))]
     #[repr(C)]
     #[derive(
@@ -86,102 +182,6 @@ mod __types {
 
         pub fn ending() -> Self {
             Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gametime/GameTime.md"))]
-    #[::unity2::class(namespace = "App", name = "GameTime")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameTime {
-        #[static_field]
-        #[rename(name = "DefaultFixedDeltaTime")]
-        pub default_fixed_delta_time: f32,
-        #[static_field]
-        #[rename(name = "LocalTimeScale")]
-        pub local_time_scale: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "s_VsyncStack")]
-        pub s_vsync_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[static_field]
-        #[rename(name = "s_PlayTime")]
-        pub s_play_time: i32,
-        #[static_field]
-        #[rename(name = "s_WatchTime")]
-        pub s_watch_time: i32,
-        #[static_field]
-        #[rename(name = "MaxTime")]
-        pub max_time: i32,
-        #[static_field]
-        #[rename(name = "TimeUnit")]
-        pub time_unit: i32,
-        #[static_field]
-        #[rename(name = "TimeInv")]
-        pub time_inv: f32,
-        #[static_field]
-        #[rename(name = "MaxTimeFloat")]
-        pub max_time_float: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_Ch.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameTime_Ch {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameTime_Ch {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameTime.Ch";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameTime_Ch {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameTime_Ch {
-        pub fn game() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn combat() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn scene() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn pause() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn debug() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
         }
     }
 }

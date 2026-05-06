@@ -12,6 +12,33 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposunit/DisposUnit.md"))]
+    #[::unity2::class(namespace = "App", name = "DisposUnit")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct DisposUnit {
+        #[static_field]
+        #[rename(name = "LevelMax")]
+        pub level_max: i32,
+        #[rename(name = "m_Person")]
+        pub m_person: ::unity2::Il2CppString,
+        #[rename(name = "m_Job")]
+        pub m_job: ::unity2::Il2CppString,
+        #[rename(name = "m_Force")]
+        pub m_force: ::unity2::Il2CppString,
+        #[rename(name = "m_Level")]
+        pub m_level: i32,
+        #[rename(name = "m_Normal")]
+        pub m_normal: bool,
+        #[rename(name = "m_Hard")]
+        pub m_hard: bool,
+        #[rename(name = "m_Lunatic")]
+        pub m_lunatic: bool,
+        #[rename(name = "新規生成")]
+        pub _unnamed: bool,
+        #[rename(name = "m_Items")]
+        pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit_Item.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,33 +66,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposunit/DisposUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "DisposUnit")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DisposUnit {
-        #[static_field]
-        #[rename(name = "LevelMax")]
-        pub level_max: i32,
-        #[rename(name = "m_Person")]
-        pub m_person: ::unity2::Il2CppString,
-        #[rename(name = "m_Job")]
-        pub m_job: ::unity2::Il2CppString,
-        #[rename(name = "m_Force")]
-        pub m_force: ::unity2::Il2CppString,
-        #[rename(name = "m_Level")]
-        pub m_level: i32,
-        #[rename(name = "m_Normal")]
-        pub m_normal: bool,
-        #[rename(name = "m_Hard")]
-        pub m_hard: bool,
-        #[rename(name = "m_Lunatic")]
-        pub m_lunatic: bool,
-        #[rename(name = "新規生成")]
-        pub _unnamed: bool,
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item>,
     }
 }
 

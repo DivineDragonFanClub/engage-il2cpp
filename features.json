@@ -5986,6 +5986,7 @@
     "app-debugwindow-types": [
       "app-debugmenu-types",
       "app-gx-types",
+      "root-debugmesh-types",
       "system-boolean-types",
       "system-char-types",
       "system-single-types",
@@ -7083,6 +7084,7 @@
     ],
     "app-eventcamera-types": [
       "app-viewmode-types",
+      "root-simpleanimation-types",
       "system-void-types",
       "unity_engine-camera-types",
       "unity_engine-monobehaviour-types"
@@ -7141,6 +7143,7 @@
       "app-eventcharactersimpleanimation-types"
     ],
     "app-eventcharactersimpleanimation-types": [
+      "root-simpleanimation-types",
       "system-void-types"
     ],
     "app-eventdata": [
@@ -8543,6 +8546,10 @@
       "app-stream_2-types",
       "app-unit-types",
       "combat-character-types",
+      "root-akactiononeventtype-types",
+      "root-akcallbackmanager-types",
+      "root-akcurveinterpolation-types",
+      "root-akresult-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -9094,6 +9101,7 @@
       "app-procscenesequence_1-types",
       "app-stream_2-types",
       "app-tresourcehandle_1-types",
+      "root-encounticonroot-types",
       "system-action-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
@@ -9120,6 +9128,7 @@
       "app-jobdata-types",
       "app-persondata-types",
       "app-random_2-types",
+      "root-encounticon-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -10177,6 +10186,7 @@
     "app-hubaccesscursor-types": [
       "app-hubaccess-types",
       "app-hubplayercontroller-types",
+      "root-iron19characterfader-types",
       "system-boolean-types",
       "system-single-types",
       "system-void-types",
@@ -10312,6 +10322,7 @@
     "app-hubballoon-types": [
       "app-hubaccess-types",
       "app-hubplayercontroller-types",
+      "root-iron19characterfader-types",
       "system-boolean-types",
       "system-enum-types",
       "system-single-types",
@@ -12528,6 +12539,7 @@
       "app-procinst-types",
       "app-unit-types",
       "app-unitactor-types",
+      "root-skycastle-types",
       "system-boolean-types",
       "system-enum-types",
       "system-int32-types",
@@ -12860,6 +12872,10 @@
       "app-stream_2-types",
       "app-unit-types",
       "nn-hid-npadbutton-types",
+      "root-mapcursoranimmanager-types",
+      "root-mapcursorlocatorroot-types",
+      "root-mappointeranimmanager-types",
+      "root-mappointerlocatorroot-types",
       "system-boolean-types",
       "system-enum-types",
       "system-int32-types",
@@ -13610,6 +13626,7 @@
     "app-mapinfogaugemainlocatorroot-types": [
       "app-mapinfobase-types",
       "app-unit-types",
+      "root-mapinfogaugesublocatorroot-types",
       "system-boolean-types",
       "system-enum-types",
       "system-int32-types",
@@ -13888,6 +13905,7 @@
       "app-stream_2-types",
       "app-terraindata_2-types",
       "app-unititem-types",
+      "root-mapsoundlabel-types",
       "system-boolean-types",
       "system-collections-generic-dictionary_2-types",
       "system-collections-generic-list_1-types",
@@ -13944,6 +13962,7 @@
       "app-rangedata-types",
       "app-skilldata-types",
       "app-unit-types",
+      "root-mappanelbase_1-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -13962,6 +13981,7 @@
     "app-mappaneldanger-types": [
       "app-interpolatorfloat-types",
       "app-mapimagecorebit-types",
+      "root-mappanelbase_1-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
       "system-int32-types",
@@ -13977,6 +13997,7 @@
     "app-mappaneldangerall-types": [
       "app-gameconfig-types",
       "app-interpolatorfloat-types",
+      "root-mappanelbase_1-types",
       "system-boolean-types",
       "system-enum-types",
       "system-int32-types",
@@ -13988,6 +14009,7 @@
       "app-mappaneldebug-types"
     ],
     "app-mappaneldebug-types": [
+      "root-mappanelbase_1-types",
       "system-collections-generic-list_1-types",
       "system-int32-types",
       "system-valuetype-types",
@@ -14000,6 +14022,7 @@
     "app-mappaneldeploy-types": [
       "app-interpolatorfloat-types",
       "app-mapimagecorebit-types",
+      "root-mappanelbase_1-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -14015,6 +14038,7 @@
     ],
     "app-mappanelgimmick-types": [
       "app-interpolatorfloat-types",
+      "root-mappanelbase_1-types",
       "system-enum-types",
       "system-int32-types",
       "system-void-types",
@@ -14027,6 +14051,7 @@
     "app-mappanelhistory-types": [
       "app-force-types",
       "app-mapimagehistory-types",
+      "root-mappanelbase_1-types",
       "system-int32-types",
       "system-void-types",
       "unity_engine-color-types"
@@ -14036,6 +14061,7 @@
     ],
     "app-mappanelroute-types": [
       "app-dir_2-types",
+      "root-mappanelbase_1-types",
       "system-boolean-types",
       "system-int32-types",
       "system-void-types",
@@ -14048,6 +14074,7 @@
     ],
     "app-mappanelsortie-types": [
       "app-unit-types",
+      "root-mappanelbase_1-types",
       "system-boolean-types",
       "system-collections-bitarray-types",
       "system-int32-types",
@@ -14561,6 +14588,7 @@
       "app-battleinfo-types",
       "app-singletonclass_1-types",
       "app-tresourcehandle_1-types",
+      "root-combatgaugecontroller-types",
       "system-boolean-types",
       "system-void-types",
       "unity_engine-gameobject-types"
@@ -23622,6 +23650,10 @@
       "app-soundsystem-types",
       "app-stream_2-types",
       "combat-character-types",
+      "root-akactiononeventtype-types",
+      "root-akcallbackmanager-types",
+      "root-akcurveinterpolation-types",
+      "root-akresult-types",
       "system-boolean-types",
       "system-collections-generic-dictionary_2-types",
       "system-collections-generic-list_1-types",
@@ -23643,6 +23675,9 @@
       "app-language-types",
       "app-rawfilehandle-types",
       "combat-character-types",
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "root-akresult-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -23676,6 +23711,13 @@
       "app-singletonprocinst_1-types",
       "app-soundsystem-types",
       "combat-character-types",
+      "root-akactiononeventtype-types",
+      "root-akcallbackinfo-types",
+      "root-akcallbackmanager-types",
+      "root-akcallbacktype-types",
+      "root-akcurveinterpolation-types",
+      "root-akgrouptype-types",
+      "root-akresult-types",
       "system-boolean-types",
       "system-collections-generic-dictionary_2-types",
       "system-collections-generic-list_1-types",
@@ -24738,6 +24780,7 @@
       "app-telopinstance-types"
     ],
     "app-telopinstance-types": [
+      "root-mvproot-types",
       "system-void-types",
       "unity_engine-animator-types",
       "unity_engine-canvasgroup-types",
@@ -25328,6 +25371,7 @@
       "app-singletonprocinst_1-types",
       "app-tresourcehandle_1-types",
       "app-tutorialdata-types",
+      "root-wdwtutoriallocatorroot-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -28722,6 +28766,8 @@
       "combat-prefetchedsignalstore-types",
       "combat-throwing-types",
       "combat-weaponstyle-types",
+      "root-iron19characterfader-types",
+      "root-iron19charactersuperengage-types",
       "system-action-types",
       "system-boolean-types",
       "system-int32-types",
@@ -28823,6 +28869,7 @@
     "combat-characteraura-types": [
       "combat-character-types",
       "combat-fxz-types",
+      "root-iron19characterfader-types",
       "system-boolean-types",
       "system-single-types",
       "system-void-types",
@@ -28934,6 +28981,7 @@
     "combat-characterhud-types": [
       "app-skilldata-types",
       "combat-character-types",
+      "root-combatgaugecontroller-types",
       "system-int32-types",
       "system-void-types",
       "unity_engine-monobehaviour-types"
@@ -30169,6 +30217,7 @@
     "combat-kaneko-types": [
       "app-random_2-types",
       "combat-character-types",
+      "root-simpleanimation-types",
       "system-action-types",
       "system-boolean-types",
       "system-char-types",
@@ -35327,10 +35376,2539 @@
       "system-valuetype-types"
     ],
     "root": [
+      "root-aiskipmenuitem",
+      "root-ak3dpositiontype",
+      "root-ak3dspatializationmode",
+      "root-akacousticsurface",
+      "root-akacousticsurfacearray",
+      "root-akactiononeventtype",
+      "root-akambient",
+      "root-akambient_bridge",
+      "root-akambientlargemodepositioner",
+      "root-akambientlargemodepositioner_bridge",
+      "root-akaudiodevicestate",
+      "root-akaudioformat",
+      "root-akaudioinputmanager",
+      "root-akaudiointerruptioncallbackinfo",
+      "root-akaudiolistener",
+      "root-akaudiosettings",
+      "root-akaudiosourcechangecallbackinfo",
+      "root-akauxsendarray",
+      "root-akauxsendvalue",
+      "root-akbank",
+      "root-akbank_bridge",
+      "root-akbankcallbackinfo",
+      "root-akbankcontent",
+      "root-akbankmanager",
+      "root-akbasearray_1",
+      "root-akbasepathgetter",
+      "root-akbaseplatformsettings",
+      "root-akbushierarchyflags",
+      "root-akcallbackinfo",
+      "root-akcallbackmanager",
+      "root-akcallbackserializer",
+      "root-akcallbacktype",
+      "root-akchannelconfig",
+      "root-akchannelconfigtype",
+      "root-akchannelemitter",
+      "root-akchannelemitterarray",
+      "root-akchannelordering",
+      "root-akcommonadvancedsettings",
+      "root-akcommoncommsettings",
+      "root-akcommonoutputsettings",
+      "root-akcommonplatformsettings",
+      "root-akcommonusersettings",
+      "root-akcommunicationsettings",
+      "root-akconnectiontype",
+      "root-akcurveinterpolation",
+      "root-akdevicedescription",
+      "root-akdevicedescriptionarray",
+      "root-akdevicesettings",
+      "root-akdiffractionflags",
+      "root-akdiffractionpathinfo",
+      "root-akdiffractionpathinfoarray",
+      "root-akdragdroptriggerhandler",
+      "root-akdurationcallbackinfo",
+      "root-akdynamicsequenceitemcallbackinfo",
+      "root-akdynamicsequencetype",
+      "root-akearlyreflections",
+      "root-akemitterobstructionocclusion",
+      "root-akenumflagattribute",
+      "root-akenvironment",
+      "root-akenvironmentportal",
+      "root-akevent",
+      "root-akevent_bridge",
+      "root-akeventcallbackdata",
+      "root-akeventcallbackinfo",
+      "root-akeventcallbackmsg",
+      "root-akeventplayable",
+      "root-akeventplayablebehavior",
+      "root-akeventtrack",
+      "root-akexternalsourceinfo",
+      "root-akexternalsourceinfoarray",
+      "root-akfloorplane",
+      "root-akgameobj",
+      "root-akgameobj_bridge",
+      "root-akgameobjenvironmentdata",
+      "root-akgameobjlistenerlist",
+      "root-akgameobjpositiondata",
+      "root-akgameobjpositionoffsetdata",
+      "root-akgameobjposoffsetdata",
+      "root-akglobalcallbacklocation",
+      "root-akgrouptype",
+      "root-akimagesourceparams",
+      "root-akimagesourcesettings",
+      "root-akinitializationsettings",
+      "root-akinitializer",
+      "root-akinitsettings",
+      "root-akiterator",
+      "root-aklogger",
+      "root-akmacsettings",
+      "root-akmarkercallbackinfo",
+      "root-akmembankloader",
+      "root-akmeteringflags",
+      "root-akmidicctypes",
+      "root-akmidievent",
+      "root-akmidieventcallbackinfo",
+      "root-akmidieventtypes",
+      "root-akmidipost",
+      "root-akmidipostarray",
+      "root-akmonitorerrorcode",
+      "root-akmonitorerrorlevel",
+      "root-akmonitoringcallbackinfo",
+      "root-akmultiposevent",
+      "root-akmultipositiontype",
+      "root-akmusicplaylistcallbackinfo",
+      "root-akmusicsettings",
+      "root-akmusicsynccallbackinfo",
+      "root-akobjectinfo",
+      "root-akobjectinfoarray",
+      "root-akobstructionocclusion",
+      "root-akobstructionocclusionvalues",
+      "root-akobstructionocclusionvaluesarray",
+      "root-akoutputsettings",
+      "root-akpanningrule",
+      "root-akplatforminitsettings",
+      "root-akplaylist",
+      "root-akplaylistarray",
+      "root-akplaylistitem",
+      "root-akplugintype",
+      "root-akpositionarray",
+      "root-akpositioninginfo",
+      "root-akpreparationtype",
+      "root-akqueryrtpcvalue",
+      "root-akramp",
+      "root-akreflectionpathinfo",
+      "root-akreflectionpathinfoarray",
+      "root-akresourcemonitordatasummary",
+      "root-akresult",
+      "root-akroom",
+      "root-akroomawaremanager",
+      "root-akroomawareobject",
+      "root-akroommanager",
+      "root-akroomparams",
+      "root-akroomportal",
+      "root-akroomportalobstruction",
+      "root-akrtpcplayable",
+      "root-akrtpcplayablebehaviour",
+      "root-akrtpctrack",
+      "root-aksegmentinfo",
+      "root-akserializedcallbackheader",
+      "root-akshowonlyattribute",
+      "root-aksoundengine",
+      "root-aksoundenginecontroller",
+      "root-aksoundenginepinvoke",
+      "root-aksourcechannelordering",
+      "root-aksourcesettings",
+      "root-aksourcesettingsarray",
+      "root-akspatialaudiodebugdraw",
+      "root-akspatialaudioemitter",
+      "root-akspatialaudioinitsettings",
+      "root-akspatialaudiolistener",
+      "root-akspeakerpanningtype",
+      "root-akstate",
+      "root-akstreammgrsettings",
+      "root-aksurfacereflector",
+      "root-akswitch",
+      "root-akswitchsettings",
+      "root-aktaskcontext",
+      "root-akterminator",
+      "root-akthreadproperties",
+      "root-aktimelineeventplayable",
+      "root-aktimelineeventplayablebehavior",
+      "root-aktimelineeventtrack",
+      "root-aktimelinertpcplayable",
+      "root-aktimelinertpcplayablebehaviour",
+      "root-aktimelinertpctrack",
+      "root-aktransform",
+      "root-aktriangle",
+      "root-aktrianglearray",
+      "root-aktriggerbase",
+      "root-aktriggercollisionenter",
+      "root-aktriggercollisionexit",
+      "root-aktriggerdisable",
+      "root-aktriggerenable",
+      "root-aktriggerenter",
+      "root-aktriggerexit",
+      "root-aktriggerhandler",
+      "root-aktriggermousedown",
+      "root-aktriggermouseenter",
+      "root-aktriggermouseexit",
+      "root-aktriggermouseup",
+      "root-akunityplatformspecificsettings",
+      "root-akutilities",
+      "root-akvector",
+      "root-akvertex",
+      "root-akvertexarray",
+      "root-akwindowssettings",
+      "root-akwwiseinitializationsettings",
+      "root-allinfoswitchtypemenuitem",
+      "root-animatorineditor_bridge",
+      "root-audienceanime",
+      "root-audiencecontroller",
+      "root-basicmenuclose",
+      "root-basicmenuclosed",
+      "root-basicmenuopen",
+      "root-battleanimetypemenuitem",
+      "root-battlecamerareversehorizontalmenuitem",
+      "root-battlecamerareverseverticalmenuitem",
+      "root-battlemenuitem",
+      "root-bgmchangemenuitem",
+      "root-billboardsample",
+      "root-blinkmonobehaviour",
+      "root-categoryselectroot",
+      "root-challengemenuitem",
+      "root-cinemachinecameraoffset",
+      "root-cinemachinemixer",
+      "root-cinemachinerecomposer",
+      "root-cinemachineshot",
+      "root-cinemachineshotplayable",
+      "root-cinemachinetouchinputmapper",
+      "root-cinemachinetrack",
+      "root-combatgaugecontroller",
       "root-configbasicmenuitem",
       "root-configmenu",
+      "root-configmenucontent",
+      "root-configmenuitemcontent",
+      "root-configroot",
       "root-configsequence",
-      "root-mapuigauge"
+      "root-configyesnodialog",
+      "root-configyesnodialognomenuitem",
+      "root-configyesnodialogyesmenuitem",
+      "root-customplayableextensions",
+      "root-debug_2",
+      "root-debugcollisionrenderer",
+      "root-debugcollisionrenderermanager",
+      "root-debugconsole",
+      "root-debugmenurender",
+      "root-debugmesh",
+      "root-debugshader",
+      "root-debugtimer",
+      "root-delegatelist_1",
+      "root-dynamicbone_bridge",
+      "root-dynamicbonecollider_bridge",
+      "root-dynamicboneplanecollider_bridge",
+      "root-emittersconstraint_bridge",
+      "root-encounticon",
+      "root-encounticonroot",
+      "root-engageanimetypemenuitem",
+      "root-engageparameters",
+      "root-enumflagsattribute",
+      "root-faderender",
+      "root-gamemessageclose",
+      "root-gamemessageclosed",
+      "root-gamemessageopen",
+      "root-gamespeedmenuitem",
+      "root-gmappathadjuster",
+      "root-godmenuitem",
+      "root-hubcamerareversehorizontalmenuitem",
+      "root-hubcamerareverseverticalmenuitem",
+      "root-hubcamerarotatespeedmenuitem",
+      "root-hubmenuitem",
+      "root-instancestate",
+      "root-iron19characterfader",
+      "root-iron19charactersuperengage",
+      "root-iron19materialcolorchanger",
+      "root-isenablenetworkmenuitem",
+      "root-isminimaprotatemenuitem",
+      "root-keyhelprenderer",
+      "root-kizunagmapmenuitem",
+      "root-lightprobegenerator",
+      "root-listwithevents_1",
+      "root-locale",
+      "root-magic_bridge",
+      "root-maparrow",
+      "root-mapcursoranim",
+      "root-mapcursoranimmanager",
+      "root-mapcursorcolor",
+      "root-mapcursorlocatorroot",
+      "root-mapgridalphamenuitem",
+      "root-mapgridrender",
+      "root-mapinfodebug",
+      "root-mapinfoevent",
+      "root-mapinfogaugesublocatorroot",
+      "root-mapinfoiconlocatorroot",
+      "root-mapinfoiconpool",
+      "root-mapinfosight",
+      "root-mapinfounitpagemenuitem",
+      "root-mapnavigationminimapbasicmenuitem",
+      "root-mapnavigationminimapmenu",
+      "root-mapnavigationminimapmenucontent",
+      "root-mapnavigationminimapmenuitemcontent",
+      "root-mapnavigationroot",
+      "root-mapnavigationsequence",
+      "root-mapnavigationstatusbasicmenuitem",
+      "root-mapnavigationstatusmenu",
+      "root-mapnavigationstatusmenucontent",
+      "root-mapnavigationstatusmenuitemcontent",
+      "root-mappanelbase_1",
+      "root-mappanelimpact",
+      "root-mappaneltarget",
+      "root-mappointeranimmanager",
+      "root-mappointerlocatorroot",
+      "root-mapsequenceresume",
+      "root-mapsoundlabel",
+      "root-mapstatemachine",
+      "root-mapui",
+      "root-mapuigauge",
+      "root-mapuiicon",
+      "root-mapunitgaugemenuitem",
+      "root-mapunitoperationmenuitem",
+      "root-maputility",
+      "root-materialbehaviour",
+      "root-materialinstance",
+      "root-materialreplacer",
+      "root-meshcombine",
+      "root-meshdeliver",
+      "root-minimapbigmenuitem",
+      "root-minimaphidemenuitem",
+      "root-minimapmenuitem",
+      "root-minimapsmallmenuitem",
+      "root-monobehaviourcallbackhooks",
+      "root-multipositiontypelabel",
+      "root-mvproot",
+      "root-packedplaymodebuildlogs",
+      "root-pickupmenuitem",
+      "root-placematadummy",
+      "root-ppradialblurplayableasset",
+      "root-ppradialblurplayablebehaviour",
+      "root-prefetchedcurve_bridge",
+      "root-privateeffectcatalog_bridge",
+      "root-profilecardchangelarge",
+      "root-profilecardchangesmall",
+      "root-profilecardstampcursorpush",
+      "root-reinscontroller_bridge",
+      "root-runtimememorychecker",
+      "root-samplewave",
+      "root-sandbox",
+      "root-scenerenderpipeline",
+      "root-setskinnedmeshasemitter_bridge",
+      "root-simpleanimation",
+      "root-simpleanimationplayable",
+      "root-skycastle",
+      "root-softnormalstovertexcolor",
+      "root-sr",
+      "root-strope",
+      "root-structscriptabledata_1",
+      "root-structscriptableobject_1",
+      "root-supportanimetypemenuitem",
+      "root-talkplaymodemenuitem",
+      "root-testmove",
+      "root-testsampledata",
+      "root-testsampleobject",
+      "root-testsequence",
+      "root-testsequence2",
+      "root-textsizelimiter",
+      "root-throwing_bridge",
+      "root-timelinemonitor",
+      "root-trailmesh_bridge",
+      "root-tutoriallistroot",
+      "root-tutoriallistselectmenu",
+      "root-tutoriallistselectmenucontent",
+      "root-tutoriallistselectmenuitem",
+      "root-tutoriallistselectmenuitemcontent",
+      "root-tutoriallistsequence",
+      "root-tutoriallisttopbasicmenuitem",
+      "root-tutoriallisttopmenu",
+      "root-tutoriallisttopmenucontent",
+      "root-tutoriallisttopmenuitemcontent",
+      "root-tutorialshowmenuitem",
+      "root-unitinfo0menuitem",
+      "root-unitinfo1menuitem",
+      "root-unitinfo2menuitem",
+      "root-unitinfo3menuitem",
+      "root-unitinfo4menuitem",
+      "root-unitinfo5menuitem",
+      "root-unitinfo6menuitem",
+      "root-unitinfowindowstatemachine",
+      "root-uvflag",
+      "root-uvscroll",
+      "root-volumebgmmenuitem",
+      "root-volumesemenuitem",
+      "root-volumevoicemenuitem",
+      "root-wdwtutoriallocatorroot",
+      "root-windactor",
+      "root-windmanager",
+      "root-windsampler",
+      "root-wireframe",
+      "root-wwiseacoustictexturereference",
+      "root-wwiseauxbusreference",
+      "root-wwisebankreference",
+      "root-wwiseeventreference",
+      "root-wwisegroupvalueobjectreference",
+      "root-wwiseobjectreference",
+      "root-wwiseobjecttype",
+      "root-wwisertpcreference",
+      "root-wwisestategroupreference",
+      "root-wwisestatereference",
+      "root-wwiseswitchgroupreference",
+      "root-wwiseswitchreference",
+      "root-wwisetriggerreference"
+    ],
+    "root-aiskipmenuitem": [
+      "root-aiskipmenuitem-types"
+    ],
+    "root-aiskipmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-ak3dpositiontype": [
+      "root-ak3dpositiontype-types"
+    ],
+    "root-ak3dpositiontype-types": [
+      "system-enum-types"
+    ],
+    "root-ak3dspatializationmode": [
+      "root-ak3dspatializationmode-types"
+    ],
+    "root-ak3dspatializationmode-types": [
+      "system-enum-types"
+    ],
+    "root-akacousticsurface": [
+      "root-akacousticsurface-types"
+    ],
+    "root-akacousticsurface-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akacousticsurfacearray": [
+      "root-akacousticsurfacearray-types"
+    ],
+    "root-akacousticsurfacearray-types": [
+      "root-akacousticsurface-types",
+      "root-akbasearray_1-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akactiononeventtype": [
+      "root-akactiononeventtype-types"
+    ],
+    "root-akactiononeventtype-types": [
+      "system-enum-types"
+    ],
+    "root-akambient": [
+      "root-akambient-types"
+    ],
+    "root-akambient-types": [
+      "root-akambientlargemodepositioner-types",
+      "root-akevent-types",
+      "root-akmultiposevent-types",
+      "root-akmultipositiontype-types",
+      "root-akpositionarray-types",
+      "root-multipositiontypelabel-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akambient_bridge": [
+      "root-akambient_bridge-types"
+    ],
+    "root-akambient_bridge-types": [
+      "root-akambient-types",
+      "system-void-types"
+    ],
+    "root-akambientlargemodepositioner": [
+      "root-akambientlargemodepositioner-types"
+    ],
+    "root-akambientlargemodepositioner-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akambientlargemodepositioner_bridge": [
+      "root-akambientlargemodepositioner_bridge-types"
+    ],
+    "root-akambientlargemodepositioner_bridge-types": [
+      "root-akambientlargemodepositioner-types",
+      "system-void-types"
+    ],
+    "root-akaudiodevicestate": [
+      "root-akaudiodevicestate-types"
+    ],
+    "root-akaudiodevicestate-types": [
+      "system-enum-types"
+    ],
+    "root-akaudioformat": [
+      "root-akaudioformat-types"
+    ],
+    "root-akaudioformat-types": [
+      "root-akchannelconfig-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akaudioinputmanager": [
+      "root-akaudioinputmanager-types"
+    ],
+    "root-akaudioinputmanager-types": [
+      "root-akaudioformat-types",
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akaudiointerruptioncallbackinfo": [
+      "root-akaudiointerruptioncallbackinfo-types"
+    ],
+    "root-akaudiointerruptioncallbackinfo-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akaudiolistener": [
+      "root-akaudiolistener-types"
+    ],
+    "root-akaudiolistener-types": [
+      "root-akgameobj-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akaudiosettings": [
+      "root-akaudiosettings-types"
+    ],
+    "root-akaudiosettings-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akaudiosourcechangecallbackinfo": [
+      "root-akaudiosourcechangecallbackinfo-types"
+    ],
+    "root-akaudiosourcechangecallbackinfo-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akauxsendarray": [
+      "root-akauxsendarray-types"
+    ],
+    "root-akauxsendarray-types": [
+      "root-akauxsendvalue-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akauxsendvalue": [
+      "root-akauxsendvalue-types"
+    ],
+    "root-akauxsendvalue-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akbank": [
+      "root-akbank-types"
+    ],
+    "root-akbank-types": [
+      "root-aktriggerhandler-types",
+      "system-byte-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akbank_bridge": [
+      "root-akbank_bridge-types"
+    ],
+    "root-akbank_bridge-types": [
+      "root-akbank-types",
+      "system-void-types"
+    ],
+    "root-akbankcallbackinfo": [
+      "root-akbankcallbackinfo-types"
+    ],
+    "root-akbankcallbackinfo-types": [
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akbankcontent": [
+      "root-akbankcontent-types"
+    ],
+    "root-akbankcontent-types": [
+      "system-enum-types"
+    ],
+    "root-akbankmanager": [
+      "root-akbankmanager-types"
+    ],
+    "root-akbankmanager-types": [
+      "root-akcallbackmanager-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akbasearray_1": [
+      "root-akbasearray_1-types"
+    ],
+    "root-akbasearray_1-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akbasepathgetter": [
+      "root-akbasepathgetter-types"
+    ],
+    "root-akbasepathgetter-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akbaseplatformsettings": [
+      "root-akbaseplatformsettings-types"
+    ],
+    "root-akbaseplatformsettings-types": [
+      "root-akcallbackmanager-types",
+      "root-akcommunicationsettings-types",
+      "root-akinitializationsettings-types",
+      "root-akspatialaudioinitsettings-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-scriptableobject-types"
+    ],
+    "root-akbushierarchyflags": [
+      "root-akbushierarchyflags-types"
+    ],
+    "root-akbushierarchyflags-types": [
+      "system-enum-types"
+    ],
+    "root-akcallbackinfo": [
+      "root-akcallbackinfo-types"
+    ],
+    "root-akcallbackinfo-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint64-types",
+      "system-void-types"
+    ],
+    "root-akcallbackmanager": [
+      "root-akcallbackmanager-types"
+    ],
+    "root-akcallbackmanager-types": [
+      "root-akaudiosourcechangecallbackinfo-types",
+      "root-akbankcallbackinfo-types",
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "root-akdurationcallbackinfo-types",
+      "root-akdynamicsequenceitemcallbackinfo-types",
+      "root-akeventcallbackinfo-types",
+      "root-akmarkercallbackinfo-types",
+      "root-akmidieventcallbackinfo-types",
+      "root-akmonitorerrorcode-types",
+      "root-akmonitorerrorlevel-types",
+      "root-akmonitoringcallbackinfo-types",
+      "root-akmusicplaylistcallbackinfo-types",
+      "root-akmusicsynccallbackinfo-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types"
+    ],
+    "root-akcallbackserializer": [
+      "root-akcallbackserializer-types"
+    ],
+    "root-akcallbackserializer-types": [
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akcallbacktype": [
+      "root-akcallbacktype-types"
+    ],
+    "root-akcallbacktype-types": [
+      "system-enum-types"
+    ],
+    "root-akchannelconfig": [
+      "root-akchannelconfig-types"
+    ],
+    "root-akchannelconfig-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akchannelconfigtype": [
+      "root-akchannelconfigtype-types"
+    ],
+    "root-akchannelconfigtype-types": [
+      "system-enum-types"
+    ],
+    "root-akchannelemitter": [
+      "root-akchannelemitter-types"
+    ],
+    "root-akchannelemitter-types": [
+      "root-aktransform-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akchannelemitterarray": [
+      "root-akchannelemitterarray-types"
+    ],
+    "root-akchannelemitterarray-types": [
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akchannelordering": [
+      "root-akchannelordering-types"
+    ],
+    "root-akchannelordering-types": [
+      "system-enum-types"
+    ],
+    "root-akcommonadvancedsettings": [
+      "root-akcommonadvancedsettings-types"
+    ],
+    "root-akcommonadvancedsettings-types": [
+      "root-akdevicesettings-types",
+      "root-akinitsettings-types",
+      "root-akplatforminitsettings-types",
+      "root-akspatialaudioinitsettings-types",
+      "root-akunityplatformspecificsettings-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akcommoncommsettings": [
+      "root-akcommoncommsettings-types"
+    ],
+    "root-akcommoncommsettings-types": [
+      "root-akcommunicationsettings-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akcommonoutputsettings": [
+      "root-akcommonoutputsettings-types"
+    ],
+    "root-akcommonoutputsettings-types": [
+      "root-akchannelconfig-types",
+      "root-akoutputsettings-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akcommonplatformsettings": [
+      "root-akcommonplatformsettings-types"
+    ],
+    "root-akcommonplatformsettings-types": [
+      "root-akbaseplatformsettings-types",
+      "root-akcallbackmanager-types",
+      "root-akcommonadvancedsettings-types",
+      "root-akcommoncommsettings-types",
+      "root-akcommonusersettings-types",
+      "root-akcommunicationsettings-types",
+      "root-akinitializationsettings-types",
+      "root-akspatialaudioinitsettings-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-akcommonusersettings": [
+      "root-akcommonusersettings-types"
+    ],
+    "root-akcommonusersettings-types": [
+      "root-akcommonoutputsettings-types",
+      "root-akdevicesettings-types",
+      "root-akinitsettings-types",
+      "root-akmusicsettings-types",
+      "root-akplatforminitsettings-types",
+      "root-akspatialaudioinitsettings-types",
+      "root-akstreammgrsettings-types",
+      "root-akunityplatformspecificsettings-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akcommunicationsettings": [
+      "root-akcommunicationsettings-types"
+    ],
+    "root-akcommunicationsettings-types": [
+      "root-akthreadproperties-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-uint16-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akconnectiontype": [
+      "root-akconnectiontype-types"
+    ],
+    "root-akconnectiontype-types": [
+      "system-enum-types"
+    ],
+    "root-akcurveinterpolation": [
+      "root-akcurveinterpolation-types"
+    ],
+    "root-akcurveinterpolation-types": [
+      "system-enum-types"
+    ],
+    "root-akdevicedescription": [
+      "root-akdevicedescription-types"
+    ],
+    "root-akdevicedescription-types": [
+      "root-akaudiodevicestate-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akdevicedescriptionarray": [
+      "root-akdevicedescriptionarray-types"
+    ],
+    "root-akdevicedescriptionarray-types": [
+      "root-akbasearray_1-types",
+      "root-akdevicedescription-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akdevicesettings": [
+      "root-akdevicesettings-types"
+    ],
+    "root-akdevicesettings-types": [
+      "root-akthreadproperties-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akdiffractionflags": [
+      "root-akdiffractionflags-types"
+    ],
+    "root-akdiffractionflags-types": [
+      "system-enum-types"
+    ],
+    "root-akdiffractionpathinfo": [
+      "root-akdiffractionpathinfo-types"
+    ],
+    "root-akdiffractionpathinfo-types": [
+      "root-aktransform-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akdiffractionpathinfoarray": [
+      "root-akdiffractionpathinfoarray-types"
+    ],
+    "root-akdiffractionpathinfoarray-types": [
+      "root-akbasearray_1-types",
+      "root-akdiffractionpathinfo-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akdragdroptriggerhandler": [
+      "root-akdragdroptriggerhandler-types"
+    ],
+    "root-akdragdroptriggerhandler-types": [
+      "root-aktriggerhandler-types",
+      "system-void-types"
+    ],
+    "root-akdurationcallbackinfo": [
+      "root-akdurationcallbackinfo-types"
+    ],
+    "root-akdurationcallbackinfo-types": [
+      "root-akeventcallbackinfo-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akdynamicsequenceitemcallbackinfo": [
+      "root-akdynamicsequenceitemcallbackinfo-types"
+    ],
+    "root-akdynamicsequenceitemcallbackinfo-types": [
+      "root-akcallbackinfo-types",
+      "system-boolean-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akdynamicsequencetype": [
+      "root-akdynamicsequencetype-types"
+    ],
+    "root-akdynamicsequencetype-types": [
+      "system-enum-types"
+    ],
+    "root-akearlyreflections": [
+      "root-akearlyreflections-types"
+    ],
+    "root-akearlyreflections-types": [
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akemitterobstructionocclusion": [
+      "root-akemitterobstructionocclusion-types"
+    ],
+    "root-akemitterobstructionocclusion-types": [
+      "root-akaudiolistener-types",
+      "root-akgameobj-types",
+      "root-akobstructionocclusion-types",
+      "system-collections-generic-keyvaluepair_2-types",
+      "system-void-types"
+    ],
+    "root-akenumflagattribute": [
+      "root-akenumflagattribute-types"
+    ],
+    "root-akenumflagattribute-types": [
+      "system-void-types",
+      "unity_engine-propertyattribute-types"
+    ],
+    "root-akenvironment": [
+      "root-akenvironment-types"
+    ],
+    "root-akenvironment-types": [
+      "system-byte-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akenvironmentportal": [
+      "root-akenvironmentportal-types"
+    ],
+    "root-akenvironmentportal-types": [
+      "root-akenvironment-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-boxcollider-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akevent": [
+      "root-akevent-types"
+    ],
+    "root-akevent-types": [
+      "root-akactiononeventtype-types",
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "root-akcurveinterpolation-types",
+      "root-akdragdroptriggerhandler-types",
+      "root-akeventcallbackdata-types",
+      "root-akeventcallbackmsg-types",
+      "system-byte-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akevent_bridge": [
+      "root-akevent_bridge-types"
+    ],
+    "root-akevent_bridge-types": [
+      "root-akevent-types",
+      "system-void-types"
+    ],
+    "root-akeventcallbackdata": [
+      "root-akeventcallbackdata-types"
+    ],
+    "root-akeventcallbackdata-types": [
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-scriptableobject-types"
+    ],
+    "root-akeventcallbackinfo": [
+      "root-akeventcallbackinfo-types"
+    ],
+    "root-akeventcallbackinfo-types": [
+      "root-akcallbackinfo-types",
+      "system-boolean-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akeventcallbackmsg": [
+      "root-akeventcallbackmsg-types"
+    ],
+    "root-akeventcallbackmsg-types": [
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akeventplayable": [
+      "root-akeventplayable-types"
+    ],
+    "root-akeventplayable-types": [
+      "root-akcurveinterpolation-types",
+      "system-void-types",
+      "unity_engine-exposedreference_1-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-clipcaps-types",
+      "unity_engine-timeline-timelineclip-types"
+    ],
+    "root-akeventplayablebehavior": [
+      "root-akeventplayablebehavior-types"
+    ],
+    "root-akeventplayablebehavior-types": [
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "root-akcurveinterpolation-types",
+      "system-boolean-types",
+      "system-double-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types"
+    ],
+    "root-akeventtrack": [
+      "root-akeventtrack-types"
+    ],
+    "root-akeventtrack-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-trackasset-types"
+    ],
+    "root-akexternalsourceinfo": [
+      "root-akexternalsourceinfo-types"
+    ],
+    "root-akexternalsourceinfo-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akexternalsourceinfoarray": [
+      "root-akexternalsourceinfoarray-types"
+    ],
+    "root-akexternalsourceinfoarray-types": [
+      "root-akbasearray_1-types",
+      "root-akexternalsourceinfo-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akfloorplane": [
+      "root-akfloorplane-types"
+    ],
+    "root-akfloorplane-types": [
+      "system-enum-types"
+    ],
+    "root-akgameobj": [
+      "root-akgameobj-types"
+    ],
+    "root-akgameobj-types": [
+      "root-akaudiolistener-types",
+      "root-akgameobjenvironmentdata-types",
+      "root-akgameobjlistenerlist-types",
+      "root-akgameobjpositiondata-types",
+      "root-akgameobjpositionoffsetdata-types",
+      "root-akgameobjposoffsetdata-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akgameobj_bridge": [
+      "root-akgameobj_bridge-types"
+    ],
+    "root-akgameobj_bridge-types": [
+      "root-akgameobj-types",
+      "system-void-types"
+    ],
+    "root-akgameobjenvironmentdata": [
+      "root-akgameobjenvironmentdata-types"
+    ],
+    "root-akgameobjenvironmentdata-types": [
+      "root-akauxsendarray-types",
+      "root-akenvironment-types",
+      "root-akenvironmentportal-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akgameobjlistenerlist": [
+      "root-akgameobjlistenerlist-types"
+    ],
+    "root-akgameobjlistenerlist-types": [
+      "root-akaudiolistener-types",
+      "root-akgameobj-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types"
+    ],
+    "root-akgameobjpositiondata": [
+      "root-akgameobjpositiondata-types"
+    ],
+    "root-akgameobjpositiondata-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akgameobjpositionoffsetdata": [
+      "root-akgameobjpositionoffsetdata-types"
+    ],
+    "root-akgameobjpositionoffsetdata-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akgameobjposoffsetdata": [
+      "root-akgameobjposoffsetdata-types"
+    ],
+    "root-akgameobjposoffsetdata-types": [
+      "system-void-types",
+      "unity_engine-scriptableobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akglobalcallbacklocation": [
+      "root-akglobalcallbacklocation-types"
+    ],
+    "root-akglobalcallbacklocation-types": [
+      "system-enum-types"
+    ],
+    "root-akgrouptype": [
+      "root-akgrouptype-types"
+    ],
+    "root-akgrouptype-types": [
+      "system-enum-types"
+    ],
+    "root-akimagesourceparams": [
+      "root-akimagesourceparams-types"
+    ],
+    "root-akimagesourceparams-types": [
+      "system-boolean-types",
+      "system-byte-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akimagesourcesettings": [
+      "root-akimagesourcesettings-types"
+    ],
+    "root-akimagesourcesettings-types": [
+      "root-akimagesourceparams-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akinitializationsettings": [
+      "root-akinitializationsettings-types"
+    ],
+    "root-akinitializationsettings-types": [
+      "root-akdevicesettings-types",
+      "root-akinitsettings-types",
+      "root-akmusicsettings-types",
+      "root-akplatforminitsettings-types",
+      "root-akstreammgrsettings-types",
+      "root-akunityplatformspecificsettings-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akinitializer": [
+      "root-akinitializer-types"
+    ],
+    "root-akinitializer-types": [
+      "root-akwwiseinitializationsettings-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akinitsettings": [
+      "root-akinitsettings-types"
+    ],
+    "root-akinitsettings-types": [
+      "root-akfloorplane-types",
+      "root-akoutputsettings-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akiterator": [
+      "root-akiterator-types"
+    ],
+    "root-akiterator-types": [
+      "root-akplaylistitem-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-aklogger": [
+      "root-aklogger-types"
+    ],
+    "root-aklogger-types": [
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akmacsettings": [
+      "root-akmacsettings-types"
+    ],
+    "root-akmacsettings-types": [
+      "root-akwwiseinitializationsettings-types",
+      "system-void-types"
+    ],
+    "root-akmarkercallbackinfo": [
+      "root-akmarkercallbackinfo-types"
+    ],
+    "root-akmarkercallbackinfo-types": [
+      "root-akeventcallbackinfo-types",
+      "system-boolean-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akmembankloader": [
+      "root-akmembankloader-types"
+    ],
+    "root-akmembankloader-types": [
+      "system-byte-types",
+      "system-collections-ienumerator-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-networking-unitywebrequest-types"
+    ],
+    "root-akmeteringflags": [
+      "root-akmeteringflags-types"
+    ],
+    "root-akmeteringflags-types": [
+      "system-enum-types"
+    ],
+    "root-akmidicctypes": [
+      "root-akmidicctypes-types"
+    ],
+    "root-akmidicctypes-types": [
+      "system-enum-types"
+    ],
+    "root-akmidievent": [
+      "root-akmidievent-types"
+    ],
+    "root-akmidievent-types": [
+      "root-akmidicctypes-types",
+      "root-akmidieventtypes-types",
+      "system-boolean-types",
+      "system-byte-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akmidieventcallbackinfo": [
+      "root-akmidieventcallbackinfo-types"
+    ],
+    "root-akmidieventcallbackinfo-types": [
+      "root-akeventcallbackinfo-types",
+      "root-akmidicctypes-types",
+      "root-akmidieventtypes-types",
+      "system-boolean-types",
+      "system-byte-types",
+      "system-void-types"
+    ],
+    "root-akmidieventtypes": [
+      "root-akmidieventtypes-types"
+    ],
+    "root-akmidieventtypes-types": [
+      "system-enum-types"
+    ],
+    "root-akmidipost": [
+      "root-akmidipost-types"
+    ],
+    "root-akmidipost-types": [
+      "root-akmidievent-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akmidipostarray": [
+      "root-akmidipostarray-types"
+    ],
+    "root-akmidipostarray-types": [
+      "root-akmidipost-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akmonitorerrorcode": [
+      "root-akmonitorerrorcode-types"
+    ],
+    "root-akmonitorerrorcode-types": [
+      "system-enum-types"
+    ],
+    "root-akmonitorerrorlevel": [
+      "root-akmonitorerrorlevel-types"
+    ],
+    "root-akmonitorerrorlevel-types": [
+      "system-enum-types"
+    ],
+    "root-akmonitoringcallbackinfo": [
+      "root-akmonitoringcallbackinfo-types"
+    ],
+    "root-akmonitoringcallbackinfo-types": [
+      "root-akmonitorerrorcode-types",
+      "root-akmonitorerrorlevel-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types"
+    ],
+    "root-akmultiposevent": [
+      "root-akmultiposevent-types"
+    ],
+    "root-akmultiposevent-types": [
+      "root-akambient-types",
+      "root-akcallbacktype-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akmultipositiontype": [
+      "root-akmultipositiontype-types"
+    ],
+    "root-akmultipositiontype-types": [
+      "system-enum-types"
+    ],
+    "root-akmusicplaylistcallbackinfo": [
+      "root-akmusicplaylistcallbackinfo-types"
+    ],
+    "root-akmusicplaylistcallbackinfo-types": [
+      "root-akeventcallbackinfo-types",
+      "system-boolean-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akmusicsettings": [
+      "root-akmusicsettings-types"
+    ],
+    "root-akmusicsettings-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-akmusicsynccallbackinfo": [
+      "root-akmusicsynccallbackinfo-types"
+    ],
+    "root-akmusicsynccallbackinfo-types": [
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akobjectinfo": [
+      "root-akobjectinfo-types"
+    ],
+    "root-akobjectinfo-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akobjectinfoarray": [
+      "root-akobjectinfoarray-types"
+    ],
+    "root-akobjectinfoarray-types": [
+      "root-akbasearray_1-types",
+      "root-akobjectinfo-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akobstructionocclusion": [
+      "root-akobstructionocclusion-types"
+    ],
+    "root-akobstructionocclusion-types": [
+      "root-akaudiolistener-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-keyvaluepair_2-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-layermask-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akobstructionocclusionvalues": [
+      "root-akobstructionocclusionvalues-types"
+    ],
+    "root-akobstructionocclusionvalues-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-akobstructionocclusionvaluesarray": [
+      "root-akobstructionocclusionvaluesarray-types"
+    ],
+    "root-akobstructionocclusionvaluesarray-types": [
+      "root-akbasearray_1-types",
+      "root-akobstructionocclusionvalues-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akoutputsettings": [
+      "root-akoutputsettings-types"
+    ],
+    "root-akoutputsettings-types": [
+      "root-akchannelconfig-types",
+      "root-akpanningrule-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akpanningrule": [
+      "root-akpanningrule-types"
+    ],
+    "root-akpanningrule-types": [
+      "system-enum-types"
+    ],
+    "root-akplatforminitsettings": [
+      "root-akplatforminitsettings-types"
+    ],
+    "root-akplatforminitsettings-types": [
+      "root-akthreadproperties-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint16-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akplaylist": [
+      "root-akplaylist-types"
+    ],
+    "root-akplaylist-types": [
+      "root-akexternalsourceinfoarray-types",
+      "root-akplaylistarray-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akplaylistarray": [
+      "root-akplaylistarray-types"
+    ],
+    "root-akplaylistarray-types": [
+      "root-akiterator-types",
+      "root-akplaylistitem-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akplaylistitem": [
+      "root-akplaylistitem-types"
+    ],
+    "root-akplaylistitem-types": [
+      "root-akexternalsourceinfoarray-types",
+      "root-akresult-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akplugintype": [
+      "root-akplugintype-types"
+    ],
+    "root-akplugintype-types": [
+      "system-enum-types"
+    ],
+    "root-akpositionarray": [
+      "root-akpositionarray-types"
+    ],
+    "root-akpositionarray-types": [
+      "system-object-types",
+      "system-uint32-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akpositioninginfo": [
+      "root-akpositioninginfo-types"
+    ],
+    "root-akpositioninginfo-types": [
+      "root-ak3dpositiontype-types",
+      "root-ak3dspatializationmode-types",
+      "root-akspeakerpanningtype-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-akpreparationtype": [
+      "root-akpreparationtype-types"
+    ],
+    "root-akpreparationtype-types": [
+      "system-enum-types"
+    ],
+    "root-akqueryrtpcvalue": [
+      "root-akqueryrtpcvalue-types"
+    ],
+    "root-akqueryrtpcvalue-types": [
+      "system-enum-types"
+    ],
+    "root-akramp": [
+      "root-akramp-types"
+    ],
+    "root-akramp-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-akreflectionpathinfo": [
+      "root-akreflectionpathinfo-types"
+    ],
+    "root-akreflectionpathinfo-types": [
+      "root-akacousticsurface-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akreflectionpathinfoarray": [
+      "root-akreflectionpathinfoarray-types"
+    ],
+    "root-akreflectionpathinfoarray-types": [
+      "root-akbasearray_1-types",
+      "root-akreflectionpathinfo-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akresourcemonitordatasummary": [
+      "root-akresourcemonitordatasummary-types"
+    ],
+    "root-akresourcemonitordatasummary-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akresult": [
+      "root-akresult-types"
+    ],
+    "root-akresult-types": [
+      "system-enum-types"
+    ],
+    "root-akroom": [
+      "root-akroom-types"
+    ],
+    "root-akroom-types": [
+      "root-akroomawareobject-types",
+      "root-aktriggerhandler-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akroomawaremanager": [
+      "root-akroomawaremanager-types"
+    ],
+    "root-akroomawaremanager-types": [
+      "root-akroom-types",
+      "root-akroomawareobject-types",
+      "system-collections-generic-hashset_1-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-collider-types"
+    ],
+    "root-akroomawareobject": [
+      "root-akroomawareobject-types"
+    ],
+    "root-akroomawareobject-types": [
+      "root-akroom-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akroommanager": [
+      "root-akroommanager-types"
+    ],
+    "root-akroommanager-types": [
+      "root-akroom-types",
+      "root-akroomportal-types",
+      "root-aksurfacereflector-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akroomparams": [
+      "root-akroomparams-types"
+    ],
+    "root-akroomparams-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akroomportal": [
+      "root-akroomportal-types"
+    ],
+    "root-akroomportal-types": [
+      "root-akroom-types",
+      "root-aktransform-types",
+      "root-aktriggerhandler-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-boxcollider-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akroomportalobstruction": [
+      "root-akroomportalobstruction-types"
+    ],
+    "root-akroomportalobstruction-types": [
+      "root-akaudiolistener-types",
+      "root-akobstructionocclusion-types",
+      "root-akroomportal-types",
+      "system-collections-generic-keyvaluepair_2-types",
+      "system-void-types"
+    ],
+    "root-akrtpcplayable": [
+      "root-akrtpcplayable-types"
+    ],
+    "root-akrtpcplayable-types": [
+      "root-akrtpcplayablebehaviour-types",
+      "system-void-types",
+      "unity_engine-exposedreference_1-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-clipcaps-types",
+      "unity_engine-timeline-timelineclip-types"
+    ],
+    "root-akrtpcplayablebehaviour": [
+      "root-akrtpcplayablebehaviour-types"
+    ],
+    "root-akrtpcplayablebehaviour-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types"
+    ],
+    "root-akrtpctrack": [
+      "root-akrtpctrack-types"
+    ],
+    "root-akrtpctrack-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-trackasset-types"
+    ],
+    "root-aksegmentinfo": [
+      "root-aksegmentinfo-types"
+    ],
+    "root-aksegmentinfo-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-akserializedcallbackheader": [
+      "root-akserializedcallbackheader-types"
+    ],
+    "root-akserializedcallbackheader-types": [
+      "root-akcallbacktype-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akshowonlyattribute": [
+      "root-akshowonlyattribute-types"
+    ],
+    "root-akshowonlyattribute-types": [
+      "system-void-types",
+      "unity_engine-propertyattribute-types"
+    ],
+    "root-aksoundengine": [
+      "root-aksoundengine-types"
+    ],
+    "root-aksoundengine-types": [
+      "root-akacousticsurfacearray-types",
+      "root-akactiononeventtype-types",
+      "root-akaudioinputmanager-types",
+      "root-akaudiosettings-types",
+      "root-akauxsendarray-types",
+      "root-akbankcontent-types",
+      "root-akcallbackmanager-types",
+      "root-akchannelconfig-types",
+      "root-akchannelemitterarray-types",
+      "root-akchannelordering-types",
+      "root-akcommunicationsettings-types",
+      "root-akcurveinterpolation-types",
+      "root-akdevicedescriptionarray-types",
+      "root-akdevicesettings-types",
+      "root-akdiffractionpathinfoarray-types",
+      "root-akdynamicsequencetype-types",
+      "root-akexternalsourceinfoarray-types",
+      "root-akgrouptype-types",
+      "root-akimagesourcesettings-types",
+      "root-akinitializationsettings-types",
+      "root-akinitsettings-types",
+      "root-aklogger-types",
+      "root-akmidipostarray-types",
+      "root-akmonitorerrorcode-types",
+      "root-akmonitorerrorlevel-types",
+      "root-akmultipositiontype-types",
+      "root-akmusicsettings-types",
+      "root-akobjectinfoarray-types",
+      "root-akobstructionocclusionvaluesarray-types",
+      "root-akoutputsettings-types",
+      "root-akpanningrule-types",
+      "root-akplatforminitsettings-types",
+      "root-akplaylist-types",
+      "root-akplugintype-types",
+      "root-akpositionarray-types",
+      "root-akpositioninginfo-types",
+      "root-akpreparationtype-types",
+      "root-akreflectionpathinfoarray-types",
+      "root-akresourcemonitordatasummary-types",
+      "root-akresult-types",
+      "root-akroomparams-types",
+      "root-aksegmentinfo-types",
+      "root-aksourcesettingsarray-types",
+      "root-akspatialaudioinitsettings-types",
+      "root-akstreammgrsettings-types",
+      "root-akthreadproperties-types",
+      "root-aktransform-types",
+      "root-aktrianglearray-types",
+      "system-boolean-types",
+      "system-byte-types",
+      "system-collections-generic-hashset_1-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-sbyte-types",
+      "system-single-types",
+      "system-uint16-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-aksoundenginecontroller": [
+      "root-aksoundenginecontroller-types"
+    ],
+    "root-aksoundenginecontroller-types": [
+      "root-akinitializer-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-aksoundenginepinvoke": [
+      "root-aksoundenginepinvoke-types"
+    ],
+    "root-aksoundenginepinvoke-types": [
+      "root-akaudioinputmanager-types",
+      "root-aklogger-types",
+      "system-boolean-types",
+      "system-byte-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-sbyte-types",
+      "system-single-types",
+      "system-uint16-types",
+      "system-uint32-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-aksourcechannelordering": [
+      "root-aksourcechannelordering-types"
+    ],
+    "root-aksourcechannelordering-types": [
+      "system-enum-types"
+    ],
+    "root-aksourcesettings": [
+      "root-aksourcesettings-types"
+    ],
+    "root-aksourcesettings-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-aksourcesettingsarray": [
+      "root-aksourcesettingsarray-types"
+    ],
+    "root-aksourcesettingsarray-types": [
+      "root-akbasearray_1-types",
+      "root-aksourcesettings-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akspatialaudiodebugdraw": [
+      "root-akspatialaudiodebugdraw-types"
+    ],
+    "root-akspatialaudiodebugdraw-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akspatialaudioemitter": [
+      "root-akspatialaudioemitter-types"
+    ],
+    "root-akspatialaudioemitter-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akspatialaudioinitsettings": [
+      "root-akspatialaudioinitsettings-types"
+    ],
+    "root-akspatialaudioinitsettings-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akspatialaudiolistener": [
+      "root-akspatialaudiolistener-types"
+    ],
+    "root-akspatialaudiolistener-types": [
+      "root-akaudiolistener-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akspeakerpanningtype": [
+      "root-akspeakerpanningtype-types"
+    ],
+    "root-akspeakerpanningtype-types": [
+      "system-enum-types"
+    ],
+    "root-akstate": [
+      "root-akstate-types"
+    ],
+    "root-akstate-types": [
+      "root-akdragdroptriggerhandler-types",
+      "system-byte-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akstreammgrsettings": [
+      "root-akstreammgrsettings-types"
+    ],
+    "root-akstreammgrsettings-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-aksurfacereflector": [
+      "root-aksurfacereflector-types"
+    ],
+    "root-aksurfacereflector-types": [
+      "root-akroom-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-uint64-types",
+      "system-void-types",
+      "unity_engine-mesh-types",
+      "unity_engine-meshfilter-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root-akswitch": [
+      "root-akswitch-types"
+    ],
+    "root-akswitch-types": [
+      "root-akdragdroptriggerhandler-types",
+      "system-byte-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-akswitchsettings": [
+      "root-akswitchsettings-types"
+    ],
+    "root-akswitchsettings-types": [
+      "root-akwwiseinitializationsettings-types",
+      "system-void-types"
+    ],
+    "root-aktaskcontext": [
+      "root-aktaskcontext-types"
+    ],
+    "root-aktaskcontext-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akterminator": [
+      "root-akterminator-types"
+    ],
+    "root-akterminator-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-akthreadproperties": [
+      "root-akthreadproperties-types"
+    ],
+    "root-akthreadproperties-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-aktimelineeventplayable": [
+      "root-aktimelineeventplayable-types"
+    ],
+    "root-aktimelineeventplayable-types": [
+      "root-akcurveinterpolation-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-clipcaps-types",
+      "unity_engine-timeline-timelineclip-types"
+    ],
+    "root-aktimelineeventplayablebehavior": [
+      "root-aktimelineeventplayablebehavior-types"
+    ],
+    "root-aktimelineeventplayablebehavior-types": [
+      "root-akcallbackinfo-types",
+      "root-akcallbacktype-types",
+      "root-akcurveinterpolation-types",
+      "system-boolean-types",
+      "system-double-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types"
+    ],
+    "root-aktimelineeventtrack": [
+      "root-aktimelineeventtrack-types"
+    ],
+    "root-aktimelineeventtrack-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-trackasset-types"
+    ],
+    "root-aktimelinertpcplayable": [
+      "root-aktimelinertpcplayable-types"
+    ],
+    "root-aktimelinertpcplayable-types": [
+      "root-aktimelinertpcplayablebehaviour-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-clipcaps-types",
+      "unity_engine-timeline-timelineclip-types"
+    ],
+    "root-aktimelinertpcplayablebehaviour": [
+      "root-aktimelinertpcplayablebehaviour-types"
+    ],
+    "root-aktimelinertpcplayablebehaviour-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types"
+    ],
+    "root-aktimelinertpctrack": [
+      "root-aktimelinertpctrack-types"
+    ],
+    "root-aktimelinertpctrack-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-trackasset-types"
+    ],
+    "root-aktransform": [
+      "root-aktransform-types"
+    ],
+    "root-aktransform-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-aktriangle": [
+      "root-aktriangle-types"
+    ],
+    "root-aktriangle-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-uint16-types",
+      "system-void-types"
+    ],
+    "root-aktrianglearray": [
+      "root-aktrianglearray-types"
+    ],
+    "root-aktrianglearray-types": [
+      "root-akbasearray_1-types",
+      "root-aktriangle-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-aktriggerbase": [
+      "root-aktriggerbase-types"
+    ],
+    "root-aktriggerbase-types": [
+      "system-collections-generic-dictionary_2-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-aktriggercollisionenter": [
+      "root-aktriggercollisionenter-types"
+    ],
+    "root-aktriggercollisionenter-types": [
+      "root-aktriggerbase-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-collision-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-aktriggercollisionexit": [
+      "root-aktriggercollisionexit-types"
+    ],
+    "root-aktriggercollisionexit-types": [
+      "root-aktriggerbase-types",
+      "system-void-types",
+      "unity_engine-collision-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-aktriggerdisable": [
+      "root-aktriggerdisable-types"
+    ],
+    "root-aktriggerdisable-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-aktriggerenable": [
+      "root-aktriggerenable-types"
+    ],
+    "root-aktriggerenable-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-aktriggerenter": [
+      "root-aktriggerenter-types"
+    ],
+    "root-aktriggerenter-types": [
+      "root-aktriggerbase-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-aktriggerexit": [
+      "root-aktriggerexit-types"
+    ],
+    "root-aktriggerexit-types": [
+      "root-aktriggerbase-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-aktriggerhandler": [
+      "root-aktriggerhandler-types"
+    ],
+    "root-aktriggerhandler-types": [
+      "root-aktriggerbase-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-aktriggermousedown": [
+      "root-aktriggermousedown-types"
+    ],
+    "root-aktriggermousedown-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-aktriggermouseenter": [
+      "root-aktriggermouseenter-types"
+    ],
+    "root-aktriggermouseenter-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-aktriggermouseexit": [
+      "root-aktriggermouseexit-types"
+    ],
+    "root-aktriggermouseexit-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-aktriggermouseup": [
+      "root-aktriggermouseup-types"
+    ],
+    "root-aktriggermouseup-types": [
+      "root-aktriggerbase-types",
+      "system-void-types"
+    ],
+    "root-akunityplatformspecificsettings": [
+      "root-akunityplatformspecificsettings-types"
+    ],
+    "root-akunityplatformspecificsettings-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-akutilities": [
+      "root-akutilities-types"
+    ],
+    "root-akutilities-types": [
+      "system-boolean-types",
+      "system-byte-types",
+      "system-char-types",
+      "system-object-types",
+      "system-uint32-types",
+      "system-void-types"
+    ],
+    "root-akvector": [
+      "root-akvector-types"
+    ],
+    "root-akvector-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akvertex": [
+      "root-akvertex-types"
+    ],
+    "root-akvertex-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-akvertexarray": [
+      "root-akvertexarray-types"
+    ],
+    "root-akvertexarray-types": [
+      "root-akbasearray_1-types",
+      "root-akvertex-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-akwindowssettings": [
+      "root-akwindowssettings-types"
+    ],
+    "root-akwindowssettings-types": [
+      "root-akcommonadvancedsettings-types",
+      "root-akcommoncommsettings-types",
+      "root-akcommonusersettings-types",
+      "root-akplatforminitsettings-types",
+      "root-akwwiseinitializationsettings-types",
+      "system-enum-types",
+      "system-void-types"
+    ],
+    "root-akwwiseinitializationsettings": [
+      "root-akwwiseinitializationsettings-types"
+    ],
+    "root-akwwiseinitializationsettings-types": [
+      "root-akbaseplatformsettings-types",
+      "root-akcommonadvancedsettings-types",
+      "root-akcommoncommsettings-types",
+      "root-akcommonplatformsettings-types",
+      "root-akcommonusersettings-types",
+      "system-boolean-types",
+      "system-collections-generic-hashset_1-types",
+      "system-collections-generic-list_1-types",
+      "system-collections-ienumerable-types",
+      "system-double-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-allinfoswitchtypemenuitem": [
+      "root-allinfoswitchtypemenuitem-types"
+    ],
+    "root-allinfoswitchtypemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-animatorineditor_bridge": [
+      "root-animatorineditor_bridge-types"
+    ],
+    "root-animatorineditor_bridge-types": [
+      "combat-animatorineditor-types",
+      "system-void-types"
+    ],
+    "root-audienceanime": [
+      "root-audienceanime-types"
+    ],
+    "root-audienceanime-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-material-types"
+    ],
+    "root-audiencecontroller": [
+      "root-audiencecontroller-types"
+    ],
+    "root-audiencecontroller-types": [
+      "root-audienceanime-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-texture2d-types"
+    ],
+    "root-basicmenuclose": [
+      "root-basicmenuclose-types"
+    ],
+    "root-basicmenuclose-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-basicmenuclosed": [
+      "root-basicmenuclosed-types"
+    ],
+    "root-basicmenuclosed-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-basicmenuopen": [
+      "root-basicmenuopen-types"
+    ],
+    "root-basicmenuopen-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-battleanimetypemenuitem": [
+      "root-battleanimetypemenuitem-types"
+    ],
+    "root-battleanimetypemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-battlecamerareversehorizontalmenuitem": [
+      "root-battlecamerareversehorizontalmenuitem-types"
+    ],
+    "root-battlecamerareversehorizontalmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-battlecamerareverseverticalmenuitem": [
+      "root-battlecamerareverseverticalmenuitem-types"
+    ],
+    "root-battlecamerareverseverticalmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-battlemenuitem": [
+      "root-battlemenuitem-types"
+    ],
+    "root-battlemenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-bgmchangemenuitem": [
+      "root-bgmchangemenuitem-types"
+    ],
+    "root-bgmchangemenuitem-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-billboardsample": [
+      "root-billboardsample-types"
+    ],
+    "root-billboardsample-types": [
+      "system-void-types",
+      "unity_engine-mesh-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-blinkmonobehaviour": [
+      "root-blinkmonobehaviour-types"
+    ],
+    "root-blinkmonobehaviour-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-categoryselectroot": [
+      "root-categoryselectroot-types"
+    ],
+    "root-categoryselectroot-types": [
+      "root-tutoriallisttopmenucontent-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-challengemenuitem": [
+      "root-challengemenuitem-types"
+    ],
+    "root-challengemenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-cinemachinecameraoffset": [
+      "root-cinemachinecameraoffset-types"
+    ],
+    "root-cinemachinecameraoffset-types": [
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-cinemachinemixer": [
+      "root-cinemachinemixer-types"
+    ],
+    "root-cinemachinemixer-types": [
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types",
+      "unity_engine-playables-playabledirector-types"
+    ],
+    "root-cinemachinerecomposer": [
+      "root-cinemachinerecomposer-types"
+    ],
+    "root-cinemachinerecomposer-types": [
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-cinemachineshot": [
+      "root-cinemachineshot-types"
+    ],
+    "root-cinemachineshot-types": [
+      "system-void-types",
+      "unity_engine-exposedreference_1-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playabledirector-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-ipropertycollector-types"
+    ],
+    "root-cinemachineshotplayable": [
+      "root-cinemachineshotplayable-types"
+    ],
+    "root-cinemachineshotplayable-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-playables-playablebehaviour-types"
+    ],
+    "root-cinemachinetouchinputmapper": [
+      "root-cinemachinetouchinputmapper-types"
+    ],
+    "root-cinemachinetouchinputmapper-types": [
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-cinemachinetrack": [
+      "root-cinemachinetrack-types"
+    ],
+    "root-cinemachinetrack-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-timeline-trackasset-types"
+    ],
+    "root-combatgaugecontroller": [
+      "root-combatgaugecontroller-types"
+    ],
+    "root-combatgaugecontroller-types": [
+      "app-battlecalculator-types",
+      "app-battleinfo-types",
+      "app-battleinfoside-types",
+      "app-battlescenelist-types",
+      "app-battleside-types",
+      "app-force-types",
+      "app-forcetexturesetter-types",
+      "app-skilldata-types",
+      "app-triggeredskilllistsetter-types",
+      "app-unit-types",
+      "app-unititem-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-animator-types",
+      "unity_engine-color-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-sprite-types",
+      "unity_engine-ui-image-types"
     ],
     "root-configbasicmenuitem": [
       "root-configbasicmenuitem-types"
@@ -35351,10 +37929,43 @@
       "app-basicmenu-types",
       "app-basicmenuitem-types",
       "app-procinst-types",
+      "root-configmenucontent-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-void-types",
       "unity_engine-gameobject-types"
+    ],
+    "root-configmenucontent": [
+      "root-configmenucontent-types"
+    ],
+    "root-configmenucontent-types": [
+      "app-basicmenucontent-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-configmenuitemcontent": [
+      "root-configmenuitemcontent-types"
+    ],
+    "root-configmenuitemcontent-types": [
+      "app-basicmenuitemcontent-types",
+      "system-boolean-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-recttransform-types"
+    ],
+    "root-configroot": [
+      "root-configroot-types"
+    ],
+    "root-configroot-types": [
+      "root-configmenucontent-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
     ],
     "root-configsequence": [
       "root-configsequence-types"
@@ -35362,8 +37973,810 @@
     "root-configsequence-types": [
       "app-procinst-types",
       "system-boolean-types",
+      "system-enum-types",
       "system-void-types",
       "unity_engine-gameobject-types"
+    ],
+    "root-configyesnodialog": [
+      "root-configyesnodialog-types"
+    ],
+    "root-configyesnodialog-types": [
+      "app-basicdialogcontent-types",
+      "app-basicmenuitem-types",
+      "app-procinst-types",
+      "app-yesnodialog-types",
+      "system-collections-generic-list_1-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-configyesnodialognomenuitem": [
+      "root-configyesnodialognomenuitem-types"
+    ],
+    "root-configyesnodialognomenuitem-types": [
+      "app-basicdialogitemno-types",
+      "app-basicmenu-types",
+      "system-void-types"
+    ],
+    "root-configyesnodialogyesmenuitem": [
+      "root-configyesnodialogyesmenuitem-types"
+    ],
+    "root-configyesnodialogyesmenuitem-types": [
+      "app-basicdialogitemyes-types",
+      "app-basicmenu-types",
+      "root-configyesnodialog-types",
+      "system-void-types"
+    ],
+    "root-customplayableextensions": [
+      "root-customplayableextensions-types"
+    ],
+    "root-customplayableextensions-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-playables-playable-types"
+    ],
+    "root-debug_2": [
+      "root-debug_2-types"
+    ],
+    "root-debug_2-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-ilogger_interface-types",
+      "unity_engine-object_2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-debugcollisionrenderer": [
+      "root-debugcollisionrenderer-types"
+    ],
+    "root-debugcollisionrenderer-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-debugcollisionrenderermanager": [
+      "root-debugcollisionrenderermanager-types"
+    ],
+    "root-debugcollisionrenderermanager-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-debugconsole": [
+      "root-debugconsole-types"
+    ],
+    "root-debugconsole-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-debugmenurender": [
+      "root-debugmenurender-types"
+    ],
+    "root-debugmenurender-types": [
+      "app-debugmenu-types",
+      "app-gx-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-rect-types"
+    ],
+    "root-debugmesh": [
+      "root-debugmesh-types"
+    ],
+    "root-debugmesh-types": [
+      "app-dynamicmesh-types",
+      "system-char-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-color32-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rect-types",
+      "unity_engine-vector2-types"
+    ],
+    "root-debugshader": [
+      "root-debugshader-types"
+    ],
+    "root-debugshader-types": [
+      "system-void-types",
+      "unity_engine-scriptableobject-types",
+      "unity_engine-shader-types"
+    ],
+    "root-debugtimer": [
+      "root-debugtimer-types"
+    ],
+    "root-debugtimer-types": [
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-delegatelist_1": [
+      "root-delegatelist_1-types"
+    ],
+    "root-delegatelist_1-types": [
+      "system-action_1-types",
+      "system-collections-generic-linkedlist_1-types",
+      "system-collections-generic-linkedlistnode_1-types",
+      "system-func_2-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-dynamicbone_bridge": [
+      "root-dynamicbone_bridge-types"
+    ],
+    "root-dynamicbone_bridge-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-dynamicbonecollider_bridge": [
+      "root-dynamicbonecollider_bridge-types"
+    ],
+    "root-dynamicbonecollider_bridge-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-dynamicboneplanecollider_bridge": [
+      "root-dynamicboneplanecollider_bridge-types"
+    ],
+    "root-dynamicboneplanecollider_bridge-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-emittersconstraint_bridge": [
+      "root-emittersconstraint_bridge-types"
+    ],
+    "root-emittersconstraint_bridge-types": [
+      "combat-emittersconstraint-types",
+      "system-void-types"
+    ],
+    "root-encounticon": [
+      "root-encounticon-types"
+    ],
+    "root-encounticon-types": [
+      "app-gmapcamera-types",
+      "app-gmapspot-types",
+      "app-uniticon-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-recttransform-types"
+    ],
+    "root-encounticonroot": [
+      "root-encounticonroot-types"
+    ],
+    "root-encounticonroot-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-engageanimetypemenuitem": [
+      "root-engageanimetypemenuitem-types"
+    ],
+    "root-engageanimetypemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-engageparameters": [
+      "root-engageparameters-types"
+    ],
+    "root-engageparameters-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-enumflagsattribute": [
+      "root-enumflagsattribute-types"
+    ],
+    "root-enumflagsattribute-types": [
+      "system-void-types",
+      "unity_engine-propertyattribute-types"
+    ],
+    "root-faderender": [
+      "root-faderender-types"
+    ],
+    "root-faderender-types": [
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-gamemessageclose": [
+      "root-gamemessageclose-types"
+    ],
+    "root-gamemessageclose-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-gamemessageclosed": [
+      "root-gamemessageclosed-types"
+    ],
+    "root-gamemessageclosed-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-gamemessageopen": [
+      "root-gamemessageopen-types"
+    ],
+    "root-gamemessageopen-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-gamespeedmenuitem": [
+      "root-gamespeedmenuitem-types"
+    ],
+    "root-gamespeedmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-gmappathadjuster": [
+      "root-gmappathadjuster-types"
+    ],
+    "root-gmappathadjuster-types": [
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-raycasthit-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-godmenuitem": [
+      "root-godmenuitem-types"
+    ],
+    "root-godmenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-hubcamerareversehorizontalmenuitem": [
+      "root-hubcamerareversehorizontalmenuitem-types"
+    ],
+    "root-hubcamerareversehorizontalmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-hubcamerareverseverticalmenuitem": [
+      "root-hubcamerareverseverticalmenuitem-types"
+    ],
+    "root-hubcamerareverseverticalmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-hubcamerarotatespeedmenuitem": [
+      "root-hubcamerarotatespeedmenuitem-types"
+    ],
+    "root-hubcamerarotatespeedmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-hubmenuitem": [
+      "root-hubmenuitem-types"
+    ],
+    "root-hubmenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-instancestate": [
+      "root-instancestate-types"
+    ],
+    "root-instancestate-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-materialpropertyblock-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-renderer-types"
+    ],
+    "root-iron19characterfader": [
+      "root-iron19characterfader-types"
+    ],
+    "root-iron19characterfader-types": [
+      "app-eventcharactermouthcontroller-types",
+      "app-skinqualitylodadjuster-types",
+      "combat-character-types",
+      "combat-characterproportion-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-camera-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-renderer-types",
+      "unity_engine-skinnedmeshrenderer-types",
+      "unity_engine-skinquality-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-iron19charactersuperengage": [
+      "root-iron19charactersuperengage-types"
+    ],
+    "root-iron19charactersuperengage-types": [
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-iron19materialcolorchanger": [
+      "root-iron19materialcolorchanger-types"
+    ],
+    "root-iron19materialcolorchanger-types": [
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-isenablenetworkmenuitem": [
+      "root-isenablenetworkmenuitem-types"
+    ],
+    "root-isenablenetworkmenuitem-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "root-configbasicmenuitem-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-isminimaprotatemenuitem": [
+      "root-isminimaprotatemenuitem-types"
+    ],
+    "root-isminimaprotatemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-keyhelprenderer": [
+      "root-keyhelprenderer-types"
+    ],
+    "root-keyhelprenderer-types": [
+      "system-void-types",
+      "unity_engine-rectoffset-types",
+      "unity_engine-ui-graphic-types",
+      "unity_engine-ui-horizontallayoutgroup-types",
+      "unity_engine-ui-vertexhelper-types"
+    ],
+    "root-kizunagmapmenuitem": [
+      "root-kizunagmapmenuitem-types"
+    ],
+    "root-kizunagmapmenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-lightprobegenerator": [
+      "root-lightprobegenerator-types"
+    ],
+    "root-lightprobegenerator-types": [
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-bounds-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-listwithevents_1": [
+      "root-listwithevents_1-types"
+    ],
+    "root-listwithevents_1-types": [
+      "system-action_1-types",
+      "system-boolean-types",
+      "system-collections-generic-ienumerator_1-types",
+      "system-collections-generic-list_1-types",
+      "system-collections-ienumerator-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-locale": [
+      "root-locale-types"
+    ],
+    "root-locale-types": [
+      "system-object-types"
+    ],
+    "root-magic_bridge": [
+      "root-magic_bridge-types"
+    ],
+    "root-magic_bridge-types": [
+      "combat-magic-types",
+      "system-void-types"
+    ],
+    "root-maparrow": [
+      "root-maparrow-types"
+    ],
+    "root-maparrow-types": [
+      "app-dynamicmesh-types",
+      "app-unit-types",
+      "system-collections-generic-list_1-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-mapcursoranim": [
+      "root-mapcursoranim-types"
+    ],
+    "root-mapcursoranim-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-mapcursoranimmanager": [
+      "root-mapcursoranimmanager-types"
+    ],
+    "root-mapcursoranimmanager-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-mapcursorcolor": [
+      "root-mapcursorcolor-types"
+    ],
+    "root-mapcursorcolor-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-mapcursorlocatorroot": [
+      "root-mapcursorlocatorroot-types"
+    ],
+    "root-mapcursorlocatorroot-types": [
+      "root-mapcursorcolor-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-mapgridalphamenuitem": [
+      "root-mapgridalphamenuitem-types"
+    ],
+    "root-mapgridalphamenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-mapgridrender": [
+      "root-mapgridrender-types"
+    ],
+    "root-mapgridrender-types": [
+      "app-map-types",
+      "app-singletonmonobehaviour_1-types",
+      "system-void-types",
+      "unity_engine-vector2-types"
+    ],
+    "root-mapinfodebug": [
+      "root-mapinfodebug-types"
+    ],
+    "root-mapinfodebug-types": [
+      "app-singletonmonobehaviour_1-types",
+      "system-void-types"
+    ],
+    "root-mapinfoevent": [
+      "root-mapinfoevent-types"
+    ],
+    "root-mapinfoevent-types": [
+      "app-map-types",
+      "app-mapinspector-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector2-types"
+    ],
+    "root-mapinfogaugesublocatorroot": [
+      "root-mapinfogaugesublocatorroot-types"
+    ],
+    "root-mapinfogaugesublocatorroot-types": [
+      "app-flipbook-types",
+      "app-unit-types",
+      "app-unititem-types",
+      "root-mapuigauge-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-component-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-recttransform-types",
+      "unity_engine-transform-types",
+      "unity_engine-ui-image-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-mapinfoiconlocatorroot": [
+      "root-mapinfoiconlocatorroot-types"
+    ],
+    "root-mapinfoiconlocatorroot-types": [
+      "app-mapinspector-types",
+      "system-boolean-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-ui-image-types",
+      "unity_engine-vector2-types"
+    ],
+    "root-mapinfoiconpool": [
+      "root-mapinfoiconpool-types"
+    ],
+    "root-mapinfoiconpool-types": [
+      "root-mapinfoiconlocatorroot-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root-mapinfosight": [
+      "root-mapinfosight-types"
+    ],
+    "root-mapinfosight-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-mapinfounitpagemenuitem": [
+      "root-mapinfounitpagemenuitem-types"
+    ],
+    "root-mapinfounitpagemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-mapnavigationminimapbasicmenuitem": [
+      "root-mapnavigationminimapbasicmenuitem-types"
+    ],
+    "root-mapnavigationminimapbasicmenuitem-types": [
+      "app-basicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-mapnavigationminimapmenu": [
+      "root-mapnavigationminimapmenu-types"
+    ],
+    "root-mapnavigationminimapmenu-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "app-procinst-types",
+      "root-mapnavigationminimapmenucontent-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-mapnavigationminimapmenucontent": [
+      "root-mapnavigationminimapmenucontent-types"
+    ],
+    "root-mapnavigationminimapmenucontent-types": [
+      "app-basicmenucontent-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-mapnavigationminimapmenuitemcontent": [
+      "root-mapnavigationminimapmenuitemcontent-types"
+    ],
+    "root-mapnavigationminimapmenuitemcontent-types": [
+      "app-basicmenuitemcontent-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types"
+    ],
+    "root-mapnavigationroot": [
+      "root-mapnavigationroot-types"
+    ],
+    "root-mapnavigationroot-types": [
+      "root-mapnavigationminimapmenucontent-types",
+      "root-mapnavigationstatusmenucontent-types",
+      "system-boolean-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-mapnavigationsequence": [
+      "root-mapnavigationsequence-types"
+    ],
+    "root-mapnavigationsequence-types": [
+      "app-procinst-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-mapnavigationstatusbasicmenuitem": [
+      "root-mapnavigationstatusbasicmenuitem-types"
+    ],
+    "root-mapnavigationstatusbasicmenuitem-types": [
+      "app-basicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-mapnavigationstatusmenu": [
+      "root-mapnavigationstatusmenu-types"
+    ],
+    "root-mapnavigationstatusmenu-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "app-procinst-types",
+      "root-mapnavigationminimapmenu-types",
+      "root-mapnavigationstatusmenucontent-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-mapnavigationstatusmenucontent": [
+      "root-mapnavigationstatusmenucontent-types"
+    ],
+    "root-mapnavigationstatusmenucontent-types": [
+      "app-basicmenucontent-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-mapnavigationstatusmenuitemcontent": [
+      "root-mapnavigationstatusmenuitemcontent-types"
+    ],
+    "root-mapnavigationstatusmenuitemcontent-types": [
+      "app-basicmenuitemcontent-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types"
+    ],
+    "root-mappanelbase_1": [
+      "root-mappanelbase_1-types"
+    ],
+    "root-mappanelbase_1-types": [
+      "app-dynamicmesh-types",
+      "app-map-types",
+      "app-singletonmonobehaviour_1-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-single-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-mesh-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-mappanelimpact": [
+      "root-mappanelimpact-types"
+    ],
+    "root-mappanelimpact-types": [
+      "app-interpolatorfloat-types",
+      "app-mapfor-types",
+      "app-mapimagecorebit-types",
+      "app-mapskill-types",
+      "app-unit-types",
+      "root-mappanelbase_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types"
+    ],
+    "root-mappaneltarget": [
+      "root-mappaneltarget-types"
+    ],
+    "root-mappaneltarget-types": [
+      "app-gamecurve-types",
+      "app-unit-types",
+      "root-maparrow-types",
+      "root-mappanelbase_1-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-mappointeranimmanager": [
+      "root-mappointeranimmanager-types"
+    ],
+    "root-mappointeranimmanager-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root-mappointerlocatorroot": [
+      "root-mappointerlocatorroot-types"
+    ],
+    "root-mappointerlocatorroot-types": [
+      "root-mapcursorcolor-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root-mapsequenceresume": [
+      "root-mapsequenceresume-types"
+    ],
+    "root-mapsequenceresume-types": [
+      "app-procinst-types",
+      "app-unit-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-mapsoundlabel": [
+      "root-mapsoundlabel-types"
+    ],
+    "root-mapsoundlabel-types": [
+      "system-void-types",
+      "unity_engine-scriptableobject-types"
+    ],
+    "root-mapstatemachine": [
+      "root-mapstatemachine-types"
+    ],
+    "root-mapstatemachine-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animations-animatorcontrollerplayable-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-mapui": [
+      "root-mapui-types"
+    ],
+    "root-mapui-types": [
+      "app-singletonmonobehaviour_1-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-camera-types"
     ],
     "root-mapuigauge": [
       "root-mapuigauge-types"
@@ -35383,12 +38796,903 @@
       "system-collections-generic-dictionary_2-types",
       "system-collections-generic-list_1-types",
       "system-collections-ienumerator-types",
+      "system-enum-types",
       "system-int32-types",
       "system-single-types",
       "system-void-types",
       "unity_engine-animationcurve-types",
       "unity_engine-sprite-types",
       "unity_engine-u2d-spriteatlas-types"
+    ],
+    "root-mapuiicon": [
+      "root-mapuiicon-types"
+    ],
+    "root-mapuiicon-types": [
+      "app-mapinspector-types",
+      "app-singletonmonobehaviour_1-types",
+      "root-mapinfoiconlocatorroot-types",
+      "root-mapinfoiconpool-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-sprite-types",
+      "unity_engine-u2d-spriteatlas-types"
+    ],
+    "root-mapunitgaugemenuitem": [
+      "root-mapunitgaugemenuitem-types"
+    ],
+    "root-mapunitgaugemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-mapunitoperationmenuitem": [
+      "root-mapunitoperationmenuitem-types"
+    ],
+    "root-mapunitoperationmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-maputility": [
+      "root-maputility-types"
+    ],
+    "root-maputility-types": [
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-materialbehaviour": [
+      "root-materialbehaviour-types"
+    ],
+    "root-materialbehaviour-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-material-types",
+      "unity_engine-materialpropertyblock-types",
+      "unity_engine-meshrenderer-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-materialinstance": [
+      "root-materialinstance-types"
+    ],
+    "root-materialinstance-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-texture2d-types"
+    ],
+    "root-materialreplacer": [
+      "root-materialreplacer-types"
+    ],
+    "root-materialreplacer-types": [
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-meshcombine": [
+      "root-meshcombine-types"
+    ],
+    "root-meshcombine-types": [
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-meshdeliver": [
+      "root-meshdeliver-types"
+    ],
+    "root-meshdeliver-types": [
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-material-types",
+      "unity_engine-mesh-types",
+      "unity_engine-meshfilter-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-skinnedmeshrenderer-types"
+    ],
+    "root-minimapbigmenuitem": [
+      "root-minimapbigmenuitem-types"
+    ],
+    "root-minimapbigmenuitem-types": [
+      "root-mapnavigationminimapbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-minimaphidemenuitem": [
+      "root-minimaphidemenuitem-types"
+    ],
+    "root-minimaphidemenuitem-types": [
+      "root-mapnavigationminimapbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-minimapmenuitem": [
+      "root-minimapmenuitem-types"
+    ],
+    "root-minimapmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-minimapsmallmenuitem": [
+      "root-minimapsmallmenuitem-types"
+    ],
+    "root-minimapsmallmenuitem-types": [
+      "root-mapnavigationminimapbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-monobehaviourcallbackhooks": [
+      "root-monobehaviourcallbackhooks-types"
+    ],
+    "root-monobehaviourcallbackhooks-types": [
+      "system-action_1-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-resource_management-util-componentsingleton_1_2-types"
+    ],
+    "root-multipositiontypelabel": [
+      "root-multipositiontypelabel-types"
+    ],
+    "root-multipositiontypelabel-types": [
+      "system-enum-types"
+    ],
+    "root-mvproot": [
+      "root-mvproot-types"
+    ],
+    "root-mvproot-types": [
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-packedplaymodebuildlogs": [
+      "root-packedplaymodebuildlogs-types"
+    ],
+    "root-packedplaymodebuildlogs-types": [
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-logtype-types"
+    ],
+    "root-pickupmenuitem": [
+      "root-pickupmenuitem-types"
+    ],
+    "root-pickupmenuitem-types": [
+      "app-basicmenu-types",
+      "root-tutoriallisttopbasicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-void-types"
+    ],
+    "root-placematadummy": [
+      "root-placematadummy-types"
+    ],
+    "root-placematadummy-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-ppradialblurplayableasset": [
+      "root-ppradialblurplayableasset-types"
+    ],
+    "root-ppradialblurplayableasset-types": [
+      "system-void-types",
+      "unity_engine-exposedreference_1-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playableasset-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-rendering-volume-types"
+    ],
+    "root-ppradialblurplayablebehaviour": [
+      "root-ppradialblurplayablebehaviour-types"
+    ],
+    "root-ppradialblurplayablebehaviour-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types",
+      "unity_engine-rendering-volume-types"
+    ],
+    "root-prefetchedcurve_bridge": [
+      "root-prefetchedcurve_bridge-types"
+    ],
+    "root-prefetchedcurve_bridge-types": [
+      "combat-prefetchedcurve-types",
+      "system-void-types"
+    ],
+    "root-privateeffectcatalog_bridge": [
+      "root-privateeffectcatalog_bridge-types"
+    ],
+    "root-privateeffectcatalog_bridge-types": [
+      "combat-privateeffectcatalog-types",
+      "system-void-types"
+    ],
+    "root-profilecardchangelarge": [
+      "root-profilecardchangelarge-types"
+    ],
+    "root-profilecardchangelarge-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-profilecardchangesmall": [
+      "root-profilecardchangesmall-types"
+    ],
+    "root-profilecardchangesmall-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-profilecardstampcursorpush": [
+      "root-profilecardstampcursorpush-types"
+    ],
+    "root-profilecardstampcursorpush-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-reinscontroller_bridge": [
+      "root-reinscontroller_bridge-types"
+    ],
+    "root-reinscontroller_bridge-types": [
+      "combat-reinscontroller-types",
+      "system-void-types"
+    ],
+    "root-runtimememorychecker": [
+      "root-runtimememorychecker-types"
+    ],
+    "root-runtimememorychecker-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-samplewave": [
+      "root-samplewave-types"
+    ],
+    "root-samplewave-types": [
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-material-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-texture2d-types"
+    ],
+    "root-sandbox": [
+      "root-sandbox-types"
+    ],
+    "root-sandbox-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-materialpropertyblock-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-scenerenderpipeline": [
+      "root-scenerenderpipeline-types"
+    ],
+    "root-scenerenderpipeline-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-rendering-renderpipelineasset-types"
+    ],
+    "root-setskinnedmeshasemitter_bridge": [
+      "root-setskinnedmeshasemitter_bridge-types"
+    ],
+    "root-setskinnedmeshasemitter_bridge-types": [
+      "combat-setskinnedmeshasemitter-types",
+      "system-void-types"
+    ],
+    "root-simpleanimation": [
+      "root-simpleanimation-types"
+    ],
+    "root-simpleanimation-types": [
+      "root-simpleanimationplayable-types",
+      "system-boolean-types",
+      "system-collections-generic-ienumerable_1-types",
+      "system-collections-generic-ienumerator_1-types",
+      "system-collections-generic-list_1-types",
+      "system-collections-ienumerator-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorcullingmode-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-playables-playablehandle-types",
+      "unity_engine-queuemode-types",
+      "unity_engine-wrapmode-types"
+    ],
+    "root-simpleanimationplayable": [
+      "root-simpleanimationplayable-types"
+    ],
+    "root-simpleanimationplayable-types": [
+      "system-action-types",
+      "system-boolean-types",
+      "system-collections-generic-ienumerable_1-types",
+      "system-collections-generic-ienumerator_1-types",
+      "system-collections-generic-linkedlist_1-types",
+      "system-collections-generic-list_1-types",
+      "system-collections-ienumerator-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animations-animationmixerplayable-types",
+      "unity_engine-playables-framedata-types",
+      "unity_engine-playables-playable-types",
+      "unity_engine-playables-playablebehaviour-types",
+      "unity_engine-playables-playablegraph-types",
+      "unity_engine-queuemode-types",
+      "unity_engine-wrapmode-types"
+    ],
+    "root-skycastle": [
+      "root-skycastle-types"
+    ],
+    "root-skycastle-types": [
+      "app-singletonmonobehaviour_1-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-softnormalstovertexcolor": [
+      "root-softnormalstovertexcolor-types"
+    ],
+    "root-softnormalstovertexcolor-types": [
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-mesh-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-sr": [
+      "root-sr-types"
+    ],
+    "root-sr-types": [
+      "system-object-types"
+    ],
+    "root-strope": [
+      "root-strope-types"
+    ],
+    "root-strope-types": [
+      "system-boolean-types",
+      "system-byte-types",
+      "system-char-types",
+      "system-double-types",
+      "system-int16-types",
+      "system-int32-types",
+      "system-int64-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-structscriptabledata_1": [
+      "root-structscriptabledata_1-types"
+    ],
+    "root-structscriptabledata_1-types": [
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-structscriptableobject_1": [
+      "root-structscriptableobject_1-types"
+    ],
+    "root-structscriptableobject_1-types": [
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-scriptableobject-types"
+    ],
+    "root-supportanimetypemenuitem": [
+      "root-supportanimetypemenuitem-types"
+    ],
+    "root-supportanimetypemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-talkplaymodemenuitem": [
+      "root-talkplaymodemenuitem-types"
+    ],
+    "root-talkplaymodemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-testmove": [
+      "root-testmove-types"
+    ],
+    "root-testmove-types": [
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-testsampledata": [
+      "root-testsampledata-types"
+    ],
+    "root-testsampledata-types": [
+      "root-structscriptabledata_1-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root-testsampleobject": [
+      "root-testsampleobject-types"
+    ],
+    "root-testsampleobject-types": [
+      "root-structscriptableobject_1-types",
+      "root-testsampledata-types",
+      "system-void-types"
+    ],
+    "root-testsequence": [
+      "root-testsequence-types"
+    ],
+    "root-testsequence-types": [
+      "app-procinst-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-void-types"
+    ],
+    "root-testsequence2": [
+      "root-testsequence2-types"
+    ],
+    "root-testsequence2-types": [
+      "app-procinst-types",
+      "system-enum-types",
+      "system-void-types"
+    ],
+    "root-textsizelimiter": [
+      "root-textsizelimiter-types"
+    ],
+    "root-textsizelimiter-types": [
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-ui-layoutelement-types"
+    ],
+    "root-throwing_bridge": [
+      "root-throwing_bridge-types"
+    ],
+    "root-throwing_bridge-types": [
+      "combat-throwing-types",
+      "system-void-types"
+    ],
+    "root-timelinemonitor": [
+      "root-timelinemonitor-types"
+    ],
+    "root-timelinemonitor-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-trailmesh_bridge": [
+      "root-trailmesh_bridge-types"
+    ],
+    "root-trailmesh_bridge-types": [
+      "combat-trailmesh-types",
+      "system-void-types"
+    ],
+    "root-tutoriallistroot": [
+      "root-tutoriallistroot-types"
+    ],
+    "root-tutoriallistroot-types": [
+      "app-tresourcehandle_1-types",
+      "root-tutoriallistselectmenucontent-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-sprite-types",
+      "unity_engine-u2d-spriteatlas-types",
+      "unity_engine-ui-image-types"
+    ],
+    "root-tutoriallistselectmenu": [
+      "root-tutoriallistselectmenu-types"
+    ],
+    "root-tutoriallistselectmenu-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "app-basicmenuselect-types",
+      "app-procinst-types",
+      "root-tutoriallistroot-types",
+      "root-tutoriallistselectmenucontent-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-tutoriallistselectmenucontent": [
+      "root-tutoriallistselectmenucontent-types"
+    ],
+    "root-tutoriallistselectmenucontent-types": [
+      "app-basicmenucontent-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types"
+    ],
+    "root-tutoriallistselectmenuitem": [
+      "root-tutoriallistselectmenuitem-types"
+    ],
+    "root-tutoriallistselectmenuitem-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "app-tutorialdata-types",
+      "root-tutoriallistroot-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-u2d-spriteatlas-types"
+    ],
+    "root-tutoriallistselectmenuitemcontent": [
+      "root-tutoriallistselectmenuitemcontent-types"
+    ],
+    "root-tutoriallistselectmenuitemcontent-types": [
+      "app-basicmenuitemcontent-types",
+      "system-boolean-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-tutoriallistsequence": [
+      "root-tutoriallistsequence-types"
+    ],
+    "root-tutoriallistsequence-types": [
+      "app-procdesc-types",
+      "app-procinst-types",
+      "root-tutoriallisttopmenu-types",
+      "system-boolean-types",
+      "system-collections-generic-dictionary_2-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-tutoriallisttopbasicmenuitem": [
+      "root-tutoriallisttopbasicmenuitem-types"
+    ],
+    "root-tutoriallisttopbasicmenuitem-types": [
+      "app-basicmenuitem-types",
+      "root-tutoriallisttopmenu-types",
+      "system-void-types"
+    ],
+    "root-tutoriallisttopmenu": [
+      "root-tutoriallisttopmenu-types"
+    ],
+    "root-tutoriallisttopmenu-types": [
+      "app-basicmenu-types",
+      "app-basicmenuitem-types",
+      "app-procinst-types",
+      "app-tutorialdata-types",
+      "root-tutoriallisttopmenucontent-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-tutoriallisttopmenucontent": [
+      "root-tutoriallisttopmenucontent-types"
+    ],
+    "root-tutoriallisttopmenucontent-types": [
+      "app-basicmenucontent-types",
+      "system-int32-types",
+      "system-void-types"
+    ],
+    "root-tutoriallisttopmenuitemcontent": [
+      "root-tutoriallisttopmenuitemcontent-types"
+    ],
+    "root-tutoriallisttopmenuitemcontent-types": [
+      "app-basicmenuitem-types",
+      "app-basicmenuitemcontent-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-gameobject-types"
+    ],
+    "root-tutorialshowmenuitem": [
+      "root-tutorialshowmenuitem-types"
+    ],
+    "root-tutorialshowmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo0menuitem": [
+      "root-unitinfo0menuitem-types"
+    ],
+    "root-unitinfo0menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo1menuitem": [
+      "root-unitinfo1menuitem-types"
+    ],
+    "root-unitinfo1menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo2menuitem": [
+      "root-unitinfo2menuitem-types"
+    ],
+    "root-unitinfo2menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo3menuitem": [
+      "root-unitinfo3menuitem-types"
+    ],
+    "root-unitinfo3menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo4menuitem": [
+      "root-unitinfo4menuitem-types"
+    ],
+    "root-unitinfo4menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo5menuitem": [
+      "root-unitinfo5menuitem-types"
+    ],
+    "root-unitinfo5menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfo6menuitem": [
+      "root-unitinfo6menuitem-types"
+    ],
+    "root-unitinfo6menuitem-types": [
+      "root-mapnavigationstatusbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-unitinfowindowstatemachine": [
+      "root-unitinfowindowstatemachine-types"
+    ],
+    "root-unitinfowindowstatemachine-types": [
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorstateinfo-types",
+      "unity_engine-statemachinebehaviour-types"
+    ],
+    "root-uvflag": [
+      "root-uvflag-types"
+    ],
+    "root-uvflag-types": [
+      "root-materialbehaviour-types",
+      "system-void-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-uvscroll": [
+      "root-uvscroll-types"
+    ],
+    "root-uvscroll-types": [
+      "root-materialbehaviour-types",
+      "system-void-types",
+      "unity_engine-vector2-types"
+    ],
+    "root-volumebgmmenuitem": [
+      "root-volumebgmmenuitem-types"
+    ],
+    "root-volumebgmmenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-volumesemenuitem": [
+      "root-volumesemenuitem-types"
+    ],
+    "root-volumesemenuitem-types": [
+      "app-basicmenu-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-volumevoicemenuitem": [
+      "root-volumevoicemenuitem-types"
+    ],
+    "root-volumevoicemenuitem-types": [
+      "app-basicmenu-types",
+      "app-unit-types",
+      "root-configbasicmenuitem-types",
+      "system-void-types"
+    ],
+    "root-wdwtutoriallocatorroot": [
+      "root-wdwtutoriallocatorroot-types"
+    ],
+    "root-wdwtutoriallocatorroot-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "tm_pro-textmeshprougui-types",
+      "unity_engine-animator-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-sprite-types",
+      "unity_engine-ui-image-types"
+    ],
+    "root-windactor": [
+      "root-windactor-types"
+    ],
+    "root-windactor-types": [
+      "system-enum-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-windmanager": [
+      "root-windmanager-types"
+    ],
+    "root-windmanager-types": [
+      "app-singletonmonobehaviour_1-types",
+      "root-windactor-types",
+      "root-windsampler-types",
+      "system-collections-generic-list_1-types",
+      "system-void-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-vector3-types"
+    ],
+    "root-windsampler": [
+      "root-windsampler-types"
+    ],
+    "root-windsampler-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-wireframe": [
+      "root-wireframe-types"
+    ],
+    "root-wireframe-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root-wwiseacoustictexturereference": [
+      "root-wwiseacoustictexturereference-types"
+    ],
+    "root-wwiseacoustictexturereference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwiseauxbusreference": [
+      "root-wwiseauxbusreference-types"
+    ],
+    "root-wwiseauxbusreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwisebankreference": [
+      "root-wwisebankreference-types"
+    ],
+    "root-wwisebankreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwiseeventreference": [
+      "root-wwiseeventreference-types"
+    ],
+    "root-wwiseeventreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwisegroupvalueobjectreference": [
+      "root-wwisegroupvalueobjectreference-types"
+    ],
+    "root-wwisegroupvalueobjectreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwiseobjectreference": [
+      "root-wwiseobjectreference-types"
+    ],
+    "root-wwiseobjectreference-types": [
+      "root-wwiseobjecttype-types",
+      "system-uint32-types",
+      "system-void-types",
+      "unity_engine-scriptableobject-types"
+    ],
+    "root-wwiseobjecttype": [
+      "root-wwiseobjecttype-types"
+    ],
+    "root-wwiseobjecttype-types": [
+      "system-enum-types"
+    ],
+    "root-wwisertpcreference": [
+      "root-wwisertpcreference-types"
+    ],
+    "root-wwisertpcreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwisestategroupreference": [
+      "root-wwisestategroupreference-types"
+    ],
+    "root-wwisestategroupreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwisestatereference": [
+      "root-wwisestatereference-types"
+    ],
+    "root-wwisestatereference-types": [
+      "root-wwisegroupvalueobjectreference-types",
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "root-wwisestategroupreference-types",
+      "system-void-types"
+    ],
+    "root-wwiseswitchgroupreference": [
+      "root-wwiseswitchgroupreference-types"
+    ],
+    "root-wwiseswitchgroupreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
+    ],
+    "root-wwiseswitchreference": [
+      "root-wwiseswitchreference-types"
+    ],
+    "root-wwiseswitchreference-types": [
+      "root-wwisegroupvalueobjectreference-types",
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "root-wwiseswitchgroupreference-types",
+      "system-void-types"
+    ],
+    "root-wwisetriggerreference": [
+      "root-wwisetriggerreference-types"
+    ],
+    "root-wwisetriggerreference-types": [
+      "root-wwiseobjectreference-types",
+      "root-wwiseobjecttype-types",
+      "system-void-types"
     ],
     "system": [
       "system-action",
@@ -52693,6 +56997,7 @@
       "unity_engine-resource_management-async_operations-asyncoperationbase_1-types"
     ],
     "unity_engine-resource_management-async_operations-asyncoperationbase_1-types": [
+      "root-delegatelist_1-types",
       "system-action_1-types",
       "system-boolean-types",
       "system-collections-generic-hashset_1-types",
@@ -52779,6 +57084,7 @@
       "unity_engine-resource_management-async_operations-iasyncoperation-types"
     ],
     "unity_engine-resource_management-async_operations-iasyncoperation-types": [
+      "root-delegatelist_1-types",
       "system-action_1-types",
       "system-boolean-types",
       "system-collections-generic-hashset_1-types",
@@ -52911,6 +57217,7 @@
       "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton-types"
     ],
     "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton-types": [
+      "root-delegatelist_1-types",
       "system-action_1-types",
       "system-boolean-types",
       "system-collections-generic-dictionary_2-types",
@@ -53285,6 +57592,8 @@
       "unity_engine-resource_management-resourcemanager-types"
     ],
     "unity_engine-resource_management-resourcemanager-types": [
+      "root-delegatelist_1-types",
+      "root-listwithevents_1-types",
       "system-action_1-types",
       "system-action_2-types",
       "system-action_4-types",
@@ -62690,11 +66999,500 @@
     "engage_il2cpp::nn::hid::vibrationfileparsercontext::VibrationFileParserContext_IntPtrArray10": "nn-hid-vibrationfileparsercontext",
     "engage_il2cpp::nn::hid::vibrationvalue::VibrationValue": "nn-hid-vibrationvalue",
     "engage_il2cpp::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo": "nn-hid-vibrationvaluearrayinfo",
+    "engage_il2cpp::root::aiskipmenuitem::AISkipMenuItem": "root-aiskipmenuitem",
+    "engage_il2cpp::root::ak3dpositiontype::Ak3DPositionType": "root-ak3dpositiontype",
+    "engage_il2cpp::root::ak3dspatializationmode::Ak3DSpatializationMode": "root-ak3dspatializationmode",
+    "engage_il2cpp::root::akacousticsurface::AkAcousticSurface": "root-akacousticsurface",
+    "engage_il2cpp::root::akacousticsurfacearray::AkAcousticSurfaceArray": "root-akacousticsurfacearray",
+    "engage_il2cpp::root::akactiononeventtype::AkActionOnEventType": "root-akactiononeventtype",
+    "engage_il2cpp::root::akambient::AkAmbient": "root-akambient",
+    "engage_il2cpp::root::akambient_bridge::AkAmbient_Bridge": "root-akambient_bridge",
+    "engage_il2cpp::root::akambientlargemodepositioner::AkAmbientLargeModePositioner": "root-akambientlargemodepositioner",
+    "engage_il2cpp::root::akambientlargemodepositioner_bridge::AkAmbientLargeModePositioner_Bridge": "root-akambientlargemodepositioner_bridge",
+    "engage_il2cpp::root::akaudiodevicestate::AkAudioDeviceState": "root-akaudiodevicestate",
+    "engage_il2cpp::root::akaudioformat::AkAudioFormat": "root-akaudioformat",
+    "engage_il2cpp::root::akaudioinputmanager::AkAudioInputManager": "root-akaudioinputmanager",
+    "engage_il2cpp::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate": "root-akaudioinputmanager",
+    "engage_il2cpp::root::akaudioinputmanager::AkAudioInputManager_AudioFormatInteropDelegate": "root-akaudioinputmanager",
+    "engage_il2cpp::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate": "root-akaudioinputmanager",
+    "engage_il2cpp::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesInteropDelegate": "root-akaudioinputmanager",
+    "engage_il2cpp::root::akaudiointerruptioncallbackinfo::AkAudioInterruptionCallbackInfo": "root-akaudiointerruptioncallbackinfo",
+    "engage_il2cpp::root::akaudiolistener::AkAudioListener": "root-akaudiolistener",
+    "engage_il2cpp::root::akaudiolistener::AkAudioListener_BaseListenerList": "root-akaudiolistener",
+    "engage_il2cpp::root::akaudiolistener::AkAudioListener_DefaultListenerList": "root-akaudiolistener",
+    "engage_il2cpp::root::akaudiosettings::AkAudioSettings": "root-akaudiosettings",
+    "engage_il2cpp::root::akaudiosourcechangecallbackinfo::AkAudioSourceChangeCallbackInfo": "root-akaudiosourcechangecallbackinfo",
+    "engage_il2cpp::root::akauxsendarray::AkAuxSendArray": "root-akauxsendarray",
+    "engage_il2cpp::root::akauxsendvalue::AkAuxSendValue": "root-akauxsendvalue",
+    "engage_il2cpp::root::akbank::AkBank": "root-akbank",
+    "engage_il2cpp::root::akbank_bridge::AkBank_Bridge": "root-akbank_bridge",
+    "engage_il2cpp::root::akbankcallbackinfo::AkBankCallbackInfo": "root-akbankcallbackinfo",
+    "engage_il2cpp::root::akbankcontent::AkBankContent": "root-akbankcontent",
+    "engage_il2cpp::root::akbankmanager::AkBankManager": "root-akbankmanager",
+    "engage_il2cpp::root::akbankmanager::AkBankManager_AsyncBankHandle": "root-akbankmanager",
+    "engage_il2cpp::root::akbankmanager::AkBankManager_BankHandle": "root-akbankmanager",
+    "engage_il2cpp::root::akbankmanager::AkBankManager_DecodableBankHandle": "root-akbankmanager",
+    "engage_il2cpp::root::akbasearray_1::AkBaseArray_1": "root-akbasearray_1",
+    "engage_il2cpp::root::akbasepathgetter::AkBasePathGetter": "root-akbasepathgetter",
+    "engage_il2cpp::root::akbaseplatformsettings::AkBasePlatformSettings": "root-akbaseplatformsettings",
+    "engage_il2cpp::root::akbushierarchyflags::AkBusHierarchyFlags": "root-akbushierarchyflags",
+    "engage_il2cpp::root::akcallbackinfo::AkCallbackInfo": "root-akcallbackinfo",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_BGMCallback": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_BGMCallbackPackage": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_BankCallback": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_BankCallbackPackage": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_EventCallback": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_InitializationSettings": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackmanager::AkCallbackManager_MonitoringCallback": "root-akcallbackmanager",
+    "engage_il2cpp::root::akcallbackserializer::AkCallbackSerializer": "root-akcallbackserializer",
+    "engage_il2cpp::root::akcallbacktype::AkCallbackType": "root-akcallbacktype",
+    "engage_il2cpp::root::akchannelconfig::AkChannelConfig": "root-akchannelconfig",
+    "engage_il2cpp::root::akchannelconfigtype::AkChannelConfigType": "root-akchannelconfigtype",
+    "engage_il2cpp::root::akchannelemitter::AkChannelEmitter": "root-akchannelemitter",
+    "engage_il2cpp::root::akchannelemitterarray::AkChannelEmitterArray": "root-akchannelemitterarray",
+    "engage_il2cpp::root::akchannelordering::AkChannelOrdering": "root-akchannelordering",
+    "engage_il2cpp::root::akcommonadvancedsettings::AkCommonAdvancedSettings": "root-akcommonadvancedsettings",
+    "engage_il2cpp::root::akcommonadvancedsettings::AkCommonAdvancedSettings_SpatialAudioSettings": "root-akcommonadvancedsettings",
+    "engage_il2cpp::root::akcommoncommsettings::AkCommonCommSettings": "root-akcommoncommsettings",
+    "engage_il2cpp::root::akcommonoutputsettings::AkCommonOutputSettings": "root-akcommonoutputsettings",
+    "engage_il2cpp::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration": "root-akcommonoutputsettings",
+    "engage_il2cpp::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType": "root-akcommonoutputsettings",
+    "engage_il2cpp::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelMask": "root-akcommonoutputsettings",
+    "engage_il2cpp::root::akcommonoutputsettings::AkCommonOutputSettings_PanningRule": "root-akcommonoutputsettings",
+    "engage_il2cpp::root::akcommonplatformsettings::AkCommonPlatformSettings": "root-akcommonplatformsettings",
+    "engage_il2cpp::root::akcommonusersettings::AkCommonUserSettings": "root-akcommonusersettings",
+    "engage_il2cpp::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings": "root-akcommonusersettings",
+    "engage_il2cpp::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags": "root-akcommonusersettings",
+    "engage_il2cpp::root::akcommunicationsettings::AkCommunicationSettings": "root-akcommunicationsettings",
+    "engage_il2cpp::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem": "root-akcommunicationsettings",
+    "engage_il2cpp::root::akconnectiontype::AkConnectionType": "root-akconnectiontype",
+    "engage_il2cpp::root::akcurveinterpolation::AkCurveInterpolation": "root-akcurveinterpolation",
+    "engage_il2cpp::root::akdevicedescription::AkDeviceDescription": "root-akdevicedescription",
+    "engage_il2cpp::root::akdevicedescriptionarray::AkDeviceDescriptionArray": "root-akdevicedescriptionarray",
+    "engage_il2cpp::root::akdevicesettings::AkDeviceSettings": "root-akdevicesettings",
+    "engage_il2cpp::root::akdiffractionflags::AkDiffractionFlags": "root-akdiffractionflags",
+    "engage_il2cpp::root::akdiffractionpathinfo::AkDiffractionPathInfo": "root-akdiffractionpathinfo",
+    "engage_il2cpp::root::akdiffractionpathinfoarray::AkDiffractionPathInfoArray": "root-akdiffractionpathinfoarray",
+    "engage_il2cpp::root::akdragdroptriggerhandler::AkDragDropTriggerHandler": "root-akdragdroptriggerhandler",
+    "engage_il2cpp::root::akdurationcallbackinfo::AkDurationCallbackInfo": "root-akdurationcallbackinfo",
+    "engage_il2cpp::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo": "root-akdynamicsequenceitemcallbackinfo",
+    "engage_il2cpp::root::akdynamicsequencetype::AkDynamicSequenceType": "root-akdynamicsequencetype",
+    "engage_il2cpp::root::akearlyreflections::AkEarlyReflections": "root-akearlyreflections",
+    "engage_il2cpp::root::akemitterobstructionocclusion::AkEmitterObstructionOcclusion": "root-akemitterobstructionocclusion",
+    "engage_il2cpp::root::akenumflagattribute::AkEnumFlagAttribute": "root-akenumflagattribute",
+    "engage_il2cpp::root::akenvironment::AkEnvironment": "root-akenvironment",
+    "engage_il2cpp::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority": "root-akenvironment",
+    "engage_il2cpp::root::akenvironment::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm": "root-akenvironment",
+    "engage_il2cpp::root::akenvironmentportal::AkEnvironmentPortal": "root-akenvironmentportal",
+    "engage_il2cpp::root::akevent::AkEvent": "root-akevent",
+    "engage_il2cpp::root::akevent::AkEvent_CallbackData": "root-akevent",
+    "engage_il2cpp::root::akevent_bridge::AkEvent_Bridge": "root-akevent_bridge",
+    "engage_il2cpp::root::akeventcallbackdata::AkEventCallbackData": "root-akeventcallbackdata",
+    "engage_il2cpp::root::akeventcallbackinfo::AkEventCallbackInfo": "root-akeventcallbackinfo",
+    "engage_il2cpp::root::akeventcallbackmsg::AkEventCallbackMsg": "root-akeventcallbackmsg",
+    "engage_il2cpp::root::akeventplayable::AkEventPlayable": "root-akeventplayable",
+    "engage_il2cpp::root::akeventplayablebehavior::AkEventPlayableBehavior": "root-akeventplayablebehavior",
+    "engage_il2cpp::root::akeventplayablebehavior::AkEventPlayableBehavior_Actions": "root-akeventplayablebehavior",
+    "engage_il2cpp::root::akeventtrack::AkEventTrack": "root-akeventtrack",
+    "engage_il2cpp::root::akexternalsourceinfo::AkExternalSourceInfo": "root-akexternalsourceinfo",
+    "engage_il2cpp::root::akexternalsourceinfoarray::AkExternalSourceInfoArray": "root-akexternalsourceinfoarray",
+    "engage_il2cpp::root::akfloorplane::AkFloorPlane": "root-akfloorplane",
+    "engage_il2cpp::root::akgameobj::AkGameObj": "root-akgameobj",
+    "engage_il2cpp::root::akgameobj_bridge::AkGameObj_Bridge": "root-akgameobj_bridge",
+    "engage_il2cpp::root::akgameobjenvironmentdata::AkGameObjEnvironmentData": "root-akgameobjenvironmentdata",
+    "engage_il2cpp::root::akgameobjlistenerlist::AkGameObjListenerList": "root-akgameobjlistenerlist",
+    "engage_il2cpp::root::akgameobjpositiondata::AkGameObjPositionData": "root-akgameobjpositiondata",
+    "engage_il2cpp::root::akgameobjpositionoffsetdata::AkGameObjPositionOffsetData": "root-akgameobjpositionoffsetdata",
+    "engage_il2cpp::root::akgameobjposoffsetdata::AkGameObjPosOffsetData": "root-akgameobjposoffsetdata",
+    "engage_il2cpp::root::akglobalcallbacklocation::AkGlobalCallbackLocation": "root-akglobalcallbacklocation",
+    "engage_il2cpp::root::akgrouptype::AkGroupType": "root-akgrouptype",
+    "engage_il2cpp::root::akimagesourceparams::AkImageSourceParams": "root-akimagesourceparams",
+    "engage_il2cpp::root::akimagesourcesettings::AkImageSourceSettings": "root-akimagesourcesettings",
+    "engage_il2cpp::root::akinitializationsettings::AkInitializationSettings": "root-akinitializationsettings",
+    "engage_il2cpp::root::akinitializer::AkInitializer": "root-akinitializer",
+    "engage_il2cpp::root::akinitsettings::AkInitSettings": "root-akinitsettings",
+    "engage_il2cpp::root::akiterator::AkIterator": "root-akiterator",
+    "engage_il2cpp::root::aklogger::AkLogger": "root-aklogger",
+    "engage_il2cpp::root::aklogger::AkLogger_ErrorLoggerInteropDelegate": "root-aklogger",
+    "engage_il2cpp::root::akmacsettings::AkMacSettings": "root-akmacsettings",
+    "engage_il2cpp::root::akmarkercallbackinfo::AkMarkerCallbackInfo": "root-akmarkercallbackinfo",
+    "engage_il2cpp::root::akmembankloader::AkMemBankLoader": "root-akmembankloader",
+    "engage_il2cpp::root::akmeteringflags::AkMeteringFlags": "root-akmeteringflags",
+    "engage_il2cpp::root::akmidicctypes::AkMIDICcTypes": "root-akmidicctypes",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tCc": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tChanAftertouch": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tGen": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tNoteAftertouch": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tNoteOnOff": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tPitchBend": "root-akmidievent",
+    "engage_il2cpp::root::akmidievent::AkMIDIEvent_tProgramChange": "root-akmidievent",
+    "engage_il2cpp::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo": "root-akmidieventcallbackinfo",
+    "engage_il2cpp::root::akmidieventtypes::AkMIDIEventTypes": "root-akmidieventtypes",
+    "engage_il2cpp::root::akmidipost::AkMIDIPost": "root-akmidipost",
+    "engage_il2cpp::root::akmidipostarray::AkMIDIPostArray": "root-akmidipostarray",
+    "engage_il2cpp::root::akmonitorerrorcode::AkMonitorErrorCode": "root-akmonitorerrorcode",
+    "engage_il2cpp::root::akmonitorerrorlevel::AkMonitorErrorLevel": "root-akmonitorerrorlevel",
+    "engage_il2cpp::root::akmonitoringcallbackinfo::AkMonitoringCallbackInfo": "root-akmonitoringcallbackinfo",
+    "engage_il2cpp::root::akmultiposevent::AkMultiPosEvent": "root-akmultiposevent",
+    "engage_il2cpp::root::akmultipositiontype::AkMultiPositionType": "root-akmultipositiontype",
+    "engage_il2cpp::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo": "root-akmusicplaylistcallbackinfo",
+    "engage_il2cpp::root::akmusicsettings::AkMusicSettings": "root-akmusicsettings",
+    "engage_il2cpp::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo": "root-akmusicsynccallbackinfo",
+    "engage_il2cpp::root::akobjectinfo::AkObjectInfo": "root-akobjectinfo",
+    "engage_il2cpp::root::akobjectinfoarray::AkObjectInfoArray": "root-akobjectinfoarray",
+    "engage_il2cpp::root::akobstructionocclusion::AkObstructionOcclusion": "root-akobstructionocclusion",
+    "engage_il2cpp::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue": "root-akobstructionocclusion",
+    "engage_il2cpp::root::akobstructionocclusionvalues::AkObstructionOcclusionValues": "root-akobstructionocclusionvalues",
+    "engage_il2cpp::root::akobstructionocclusionvaluesarray::AkObstructionOcclusionValuesArray": "root-akobstructionocclusionvaluesarray",
+    "engage_il2cpp::root::akoutputsettings::AkOutputSettings": "root-akoutputsettings",
+    "engage_il2cpp::root::akpanningrule::AkPanningRule": "root-akpanningrule",
+    "engage_il2cpp::root::akplatforminitsettings::AkPlatformInitSettings": "root-akplatforminitsettings",
+    "engage_il2cpp::root::akplaylist::AkPlaylist": "root-akplaylist",
+    "engage_il2cpp::root::akplaylistarray::AkPlaylistArray": "root-akplaylistarray",
+    "engage_il2cpp::root::akplaylistitem::AkPlaylistItem": "root-akplaylistitem",
+    "engage_il2cpp::root::akplugintype::AkPluginType": "root-akplugintype",
+    "engage_il2cpp::root::akpositionarray::AkPositionArray": "root-akpositionarray",
+    "engage_il2cpp::root::akpositionarray::AkPositionArray_FloatInt32Union": "root-akpositionarray",
+    "engage_il2cpp::root::akpositioninginfo::AkPositioningInfo": "root-akpositioninginfo",
+    "engage_il2cpp::root::akpreparationtype::AkPreparationType": "root-akpreparationtype",
+    "engage_il2cpp::root::akqueryrtpcvalue::AkQueryRTPCValue": "root-akqueryrtpcvalue",
+    "engage_il2cpp::root::akramp::AkRamp": "root-akramp",
+    "engage_il2cpp::root::akreflectionpathinfo::AkReflectionPathInfo": "root-akreflectionpathinfo",
+    "engage_il2cpp::root::akreflectionpathinfoarray::AkReflectionPathInfoArray": "root-akreflectionpathinfoarray",
+    "engage_il2cpp::root::akresourcemonitordatasummary::AkResourceMonitorDataSummary": "root-akresourcemonitordatasummary",
+    "engage_il2cpp::root::akresult::AKRESULT": "root-akresult",
+    "engage_il2cpp::root::akroom::AkRoom": "root-akroom",
+    "engage_il2cpp::root::akroom::AkRoom_PriorityList": "root-akroom",
+    "engage_il2cpp::root::akroom::AkRoom_PriorityList_CompareByPriority": "root-akroom",
+    "engage_il2cpp::root::akroomawaremanager::AkRoomAwareManager": "root-akroomawaremanager",
+    "engage_il2cpp::root::akroomawareobject::AkRoomAwareObject": "root-akroomawareobject",
+    "engage_il2cpp::root::akroommanager::AkRoomManager": "root-akroommanager",
+    "engage_il2cpp::root::akroomparams::AkRoomParams": "root-akroomparams",
+    "engage_il2cpp::root::akroomportal::AkRoomPortal": "root-akroomportal",
+    "engage_il2cpp::root::akroomportal::AkRoomPortal_State": "root-akroomportal",
+    "engage_il2cpp::root::akroomportalobstruction::AkRoomPortalObstruction": "root-akroomportalobstruction",
+    "engage_il2cpp::root::akrtpcplayable::AkRTPCPlayable": "root-akrtpcplayable",
+    "engage_il2cpp::root::akrtpcplayablebehaviour::AkRTPCPlayableBehaviour": "root-akrtpcplayablebehaviour",
+    "engage_il2cpp::root::akrtpctrack::AkRTPCTrack": "root-akrtpctrack",
+    "engage_il2cpp::root::aksegmentinfo::AkSegmentInfo": "root-aksegmentinfo",
+    "engage_il2cpp::root::akserializedcallbackheader::AkSerializedCallbackHeader": "root-akserializedcallbackheader",
+    "engage_il2cpp::root::akshowonlyattribute::AkShowOnlyAttribute": "root-akshowonlyattribute",
+    "engage_il2cpp::root::aksoundengine::AkSoundEngine": "root-aksoundengine",
+    "engage_il2cpp::root::aksoundengine::AkSoundEngine_AutoObject": "root-aksoundengine",
+    "engage_il2cpp::root::aksoundengine::AkSoundEngine_GameObjectHashFunction": "root-aksoundengine",
+    "engage_il2cpp::root::aksoundenginecontroller::AkSoundEngineController": "root-aksoundenginecontroller",
+    "engage_il2cpp::root::aksoundenginepinvoke::AkSoundEnginePINVOKE": "root-aksoundenginepinvoke",
+    "engage_il2cpp::root::aksourcechannelordering::AkSourceChannelOrdering": "root-aksourcechannelordering",
+    "engage_il2cpp::root::aksourcesettings::AkSourceSettings": "root-aksourcesettings",
+    "engage_il2cpp::root::aksourcesettingsarray::AkSourceSettingsArray": "root-aksourcesettingsarray",
+    "engage_il2cpp::root::akspatialaudiodebugdraw::AkSpatialAudioDebugDraw": "root-akspatialaudiodebugdraw",
+    "engage_il2cpp::root::akspatialaudioemitter::AkSpatialAudioEmitter": "root-akspatialaudioemitter",
+    "engage_il2cpp::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings": "root-akspatialaudioinitsettings",
+    "engage_il2cpp::root::akspatialaudiolistener::AkSpatialAudioListener": "root-akspatialaudiolistener",
+    "engage_il2cpp::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList": "root-akspatialaudiolistener",
+    "engage_il2cpp::root::akspeakerpanningtype::AkSpeakerPanningType": "root-akspeakerpanningtype",
+    "engage_il2cpp::root::akstate::AkState": "root-akstate",
+    "engage_il2cpp::root::akstreammgrsettings::AkStreamMgrSettings": "root-akstreammgrsettings",
+    "engage_il2cpp::root::aksurfacereflector::AkSurfaceReflector": "root-aksurfacereflector",
+    "engage_il2cpp::root::akswitch::AkSwitch": "root-akswitch",
+    "engage_il2cpp::root::akswitchsettings::AkSwitchSettings": "root-akswitchsettings",
+    "engage_il2cpp::root::aktaskcontext::AkTaskContext": "root-aktaskcontext",
+    "engage_il2cpp::root::akterminator::AkTerminator": "root-akterminator",
+    "engage_il2cpp::root::akthreadproperties::AkThreadProperties": "root-akthreadproperties",
+    "engage_il2cpp::root::aktimelineeventplayable::AkTimelineEventPlayable": "root-aktimelineeventplayable",
+    "engage_il2cpp::root::aktimelineeventplayablebehavior::AkTimelineEventPlayableBehavior": "root-aktimelineeventplayablebehavior",
+    "engage_il2cpp::root::aktimelineeventplayablebehavior::AkTimelineEventPlayableBehavior_Actions": "root-aktimelineeventplayablebehavior",
+    "engage_il2cpp::root::aktimelineeventtrack::AkTimelineEventTrack": "root-aktimelineeventtrack",
+    "engage_il2cpp::root::aktimelinertpcplayable::AkTimelineRtpcPlayable": "root-aktimelinertpcplayable",
+    "engage_il2cpp::root::aktimelinertpcplayablebehaviour::AkTimelineRtpcPlayableBehaviour": "root-aktimelinertpcplayablebehaviour",
+    "engage_il2cpp::root::aktimelinertpctrack::AkTimelineRtpcTrack": "root-aktimelinertpctrack",
+    "engage_il2cpp::root::aktransform::AkTransform": "root-aktransform",
+    "engage_il2cpp::root::aktriangle::AkTriangle": "root-aktriangle",
+    "engage_il2cpp::root::aktrianglearray::AkTriangleArray": "root-aktrianglearray",
+    "engage_il2cpp::root::aktriggerbase::AkTriggerBase": "root-aktriggerbase",
+    "engage_il2cpp::root::aktriggerbase::AkTriggerBase_Trigger": "root-aktriggerbase",
+    "engage_il2cpp::root::aktriggercollisionenter::AkTriggerCollisionEnter": "root-aktriggercollisionenter",
+    "engage_il2cpp::root::aktriggercollisionexit::AkTriggerCollisionExit": "root-aktriggercollisionexit",
+    "engage_il2cpp::root::aktriggerdisable::AkTriggerDisable": "root-aktriggerdisable",
+    "engage_il2cpp::root::aktriggerenable::AkTriggerEnable": "root-aktriggerenable",
+    "engage_il2cpp::root::aktriggerenter::AkTriggerEnter": "root-aktriggerenter",
+    "engage_il2cpp::root::aktriggerexit::AkTriggerExit": "root-aktriggerexit",
+    "engage_il2cpp::root::aktriggerhandler::AkTriggerHandler": "root-aktriggerhandler",
+    "engage_il2cpp::root::aktriggermousedown::AkTriggerMouseDown": "root-aktriggermousedown",
+    "engage_il2cpp::root::aktriggermouseenter::AkTriggerMouseEnter": "root-aktriggermouseenter",
+    "engage_il2cpp::root::aktriggermouseexit::AkTriggerMouseExit": "root-aktriggermouseexit",
+    "engage_il2cpp::root::aktriggermouseup::AkTriggerMouseUp": "root-aktriggermouseup",
+    "engage_il2cpp::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings": "root-akunityplatformspecificsettings",
+    "engage_il2cpp::root::akutilities::AkUtilities": "root-akutilities",
+    "engage_il2cpp::root::akutilities::AkUtilities_ShortIDGenerator": "root-akutilities",
+    "engage_il2cpp::root::akvector::AkVector": "root-akvector",
+    "engage_il2cpp::root::akvertex::AkVertex": "root-akvertex",
+    "engage_il2cpp::root::akvertexarray::AkVertexArray": "root-akvertexarray",
+    "engage_il2cpp::root::akwindowssettings::AkWindowsSettings": "root-akwindowssettings",
+    "engage_il2cpp::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings": "root-akwindowssettings",
+    "engage_il2cpp::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI": "root-akwindowssettings",
+    "engage_il2cpp::root::akwwiseinitializationsettings::AkWwiseInitializationSettings": "root-akwwiseinitializationsettings",
+    "engage_il2cpp::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_CommonPlatformSettings": "root-akwwiseinitializationsettings",
+    "engage_il2cpp::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings": "root-akwwiseinitializationsettings",
+    "engage_il2cpp::root::allinfoswitchtypemenuitem::AllInfoSwitchTypeMenuItem": "root-allinfoswitchtypemenuitem",
+    "engage_il2cpp::root::animatorineditor_bridge::AnimatorInEditor_Bridge": "root-animatorineditor_bridge",
+    "engage_il2cpp::root::audienceanime::AudienceAnime": "root-audienceanime",
+    "engage_il2cpp::root::audiencecontroller::AudienceController": "root-audiencecontroller",
+    "engage_il2cpp::root::basicmenuclose::BasicMenuClose": "root-basicmenuclose",
+    "engage_il2cpp::root::basicmenuclosed::BasicMenuClosed": "root-basicmenuclosed",
+    "engage_il2cpp::root::basicmenuopen::BasicMenuOpen": "root-basicmenuopen",
+    "engage_il2cpp::root::battleanimetypemenuitem::BattleAnimeTypeMenuItem": "root-battleanimetypemenuitem",
+    "engage_il2cpp::root::battlecamerareversehorizontalmenuitem::BattleCameraReverseHorizontalMenuItem": "root-battlecamerareversehorizontalmenuitem",
+    "engage_il2cpp::root::battlecamerareverseverticalmenuitem::BattleCameraReverseVerticalMenuItem": "root-battlecamerareverseverticalmenuitem",
+    "engage_il2cpp::root::battlemenuitem::BattleMenuItem": "root-battlemenuitem",
+    "engage_il2cpp::root::bgmchangemenuitem::BGMChangeMenuItem": "root-bgmchangemenuitem",
+    "engage_il2cpp::root::billboardsample::BillboardSample": "root-billboardsample",
+    "engage_il2cpp::root::blinkmonobehaviour::BlinkMonoBehaviour": "root-blinkmonobehaviour",
+    "engage_il2cpp::root::categoryselectroot::CategorySelectRoot": "root-categoryselectroot",
+    "engage_il2cpp::root::challengemenuitem::ChallengeMenuItem": "root-challengemenuitem",
+    "engage_il2cpp::root::cinemachinecameraoffset::CinemachineCameraOffset": "root-cinemachinecameraoffset",
+    "engage_il2cpp::root::cinemachinemixer::CinemachineMixer": "root-cinemachinemixer",
+    "engage_il2cpp::root::cinemachinemixer::CinemachineMixer_MasterDirectorDelegate": "root-cinemachinemixer",
+    "engage_il2cpp::root::cinemachinerecomposer::CinemachineRecomposer": "root-cinemachinerecomposer",
+    "engage_il2cpp::root::cinemachineshot::CinemachineShot": "root-cinemachineshot",
+    "engage_il2cpp::root::cinemachineshotplayable::CinemachineShotPlayable": "root-cinemachineshotplayable",
+    "engage_il2cpp::root::cinemachinetouchinputmapper::CinemachineTouchInputMapper": "root-cinemachinetouchinputmapper",
+    "engage_il2cpp::root::cinemachinetrack::CinemachineTrack": "root-cinemachinetrack",
+    "engage_il2cpp::root::combatgaugecontroller::CombatGaugeController": "root-combatgaugecontroller",
+    "engage_il2cpp::root::combatgaugecontroller::CombatGaugeController_Value": "root-combatgaugecontroller",
     "engage_il2cpp::root::configbasicmenuitem::ConfigBasicMenuItem": "root-configbasicmenuitem",
     "engage_il2cpp::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind": "root-configbasicmenuitem",
     "engage_il2cpp::root::configmenu::ConfigMenu": "root-configmenu",
+    "engage_il2cpp::root::configmenucontent::ConfigMenuContent": "root-configmenucontent",
+    "engage_il2cpp::root::configmenuitemcontent::ConfigMenuItemContent": "root-configmenuitemcontent",
+    "engage_il2cpp::root::configroot::ConfigRoot": "root-configroot",
     "engage_il2cpp::root::configsequence::ConfigSequence": "root-configsequence",
+    "engage_il2cpp::root::configsequence::ConfigSequence_Label": "root-configsequence",
+    "engage_il2cpp::root::configyesnodialog::ConfigYesNoDialog": "root-configyesnodialog",
+    "engage_il2cpp::root::configyesnodialog::ConfigYesNoDialog_YesEventHandler": "root-configyesnodialog",
+    "engage_il2cpp::root::configyesnodialognomenuitem::ConfigYesNoDialogNoMenuItem": "root-configyesnodialognomenuitem",
+    "engage_il2cpp::root::configyesnodialogyesmenuitem::ConfigYesNoDialogYesMenuItem": "root-configyesnodialogyesmenuitem",
+    "engage_il2cpp::root::customplayableextensions::CustomPlayableExtensions": "root-customplayableextensions",
+    "engage_il2cpp::root::debug_2::Debug_2": "root-debug_2",
+    "engage_il2cpp::root::debugcollisionrenderer::DebugCollisionRenderer": "root-debugcollisionrenderer",
+    "engage_il2cpp::root::debugcollisionrenderermanager::DebugCollisionRendererManager": "root-debugcollisionrenderermanager",
+    "engage_il2cpp::root::debugconsole::DebugConsole": "root-debugconsole",
+    "engage_il2cpp::root::debugmenurender::DebugMenuRender": "root-debugmenurender",
+    "engage_il2cpp::root::debugmesh::DebugMesh": "root-debugmesh",
+    "engage_il2cpp::root::debugshader::DebugShader": "root-debugshader",
+    "engage_il2cpp::root::debugtimer::DebugTimer": "root-debugtimer",
+    "engage_il2cpp::root::delegatelist_1::DelegateList_1": "root-delegatelist_1",
+    "engage_il2cpp::root::dynamicbone_bridge::DynamicBone_Bridge": "root-dynamicbone_bridge",
+    "engage_il2cpp::root::dynamicbonecollider_bridge::DynamicBoneCollider_Bridge": "root-dynamicbonecollider_bridge",
+    "engage_il2cpp::root::dynamicboneplanecollider_bridge::DynamicBonePlaneCollider_Bridge": "root-dynamicboneplanecollider_bridge",
+    "engage_il2cpp::root::emittersconstraint_bridge::EmittersConstraint_Bridge": "root-emittersconstraint_bridge",
+    "engage_il2cpp::root::encounticon::EncountIcon": "root-encounticon",
+    "engage_il2cpp::root::encounticonroot::EncountIconRoot": "root-encounticonroot",
+    "engage_il2cpp::root::engageanimetypemenuitem::EngageAnimeTypeMenuItem": "root-engageanimetypemenuitem",
+    "engage_il2cpp::root::engageparameters::EngageParameters": "root-engageparameters",
+    "engage_il2cpp::root::enumflagsattribute::EnumFlagsAttribute": "root-enumflagsattribute",
+    "engage_il2cpp::root::faderender::FadeRender": "root-faderender",
+    "engage_il2cpp::root::gamemessageclose::GameMessageClose": "root-gamemessageclose",
+    "engage_il2cpp::root::gamemessageclosed::GameMessageClosed": "root-gamemessageclosed",
+    "engage_il2cpp::root::gamemessageopen::GameMessageOpen": "root-gamemessageopen",
+    "engage_il2cpp::root::gamespeedmenuitem::GameSpeedMenuItem": "root-gamespeedmenuitem",
+    "engage_il2cpp::root::gmappathadjuster::GmapPathAdjuster": "root-gmappathadjuster",
+    "engage_il2cpp::root::gmappathadjuster::GmapPathAdjuster_TargetModel": "root-gmappathadjuster",
+    "engage_il2cpp::root::godmenuitem::GodMenuItem": "root-godmenuitem",
+    "engage_il2cpp::root::hubcamerareversehorizontalmenuitem::HubCameraReverseHorizontalMenuItem": "root-hubcamerareversehorizontalmenuitem",
+    "engage_il2cpp::root::hubcamerareverseverticalmenuitem::HubCameraReverseVerticalMenuItem": "root-hubcamerareverseverticalmenuitem",
+    "engage_il2cpp::root::hubcamerarotatespeedmenuitem::HubCameraRotateSpeedMenuItem": "root-hubcamerarotatespeedmenuitem",
+    "engage_il2cpp::root::hubmenuitem::HubMenuItem": "root-hubmenuitem",
+    "engage_il2cpp::root::instancestate::InstanceState": "root-instancestate",
+    "engage_il2cpp::root::iron19characterfader::Iron19CharacterFader": "root-iron19characterfader",
+    "engage_il2cpp::root::iron19charactersuperengage::Iron19CharacterSuperEngage": "root-iron19charactersuperengage",
+    "engage_il2cpp::root::iron19materialcolorchanger::Iron19MaterialColorChanger": "root-iron19materialcolorchanger",
+    "engage_il2cpp::root::isenablenetworkmenuitem::IsEnableNetworkMenuItem": "root-isenablenetworkmenuitem",
+    "engage_il2cpp::root::isminimaprotatemenuitem::IsMinimapRotateMenuItem": "root-isminimaprotatemenuitem",
+    "engage_il2cpp::root::keyhelprenderer::KeyHelpRenderer": "root-keyhelprenderer",
+    "engage_il2cpp::root::kizunagmapmenuitem::KizunaGmapMenuItem": "root-kizunagmapmenuitem",
+    "engage_il2cpp::root::lightprobegenerator::LightProbeGenerator": "root-lightprobegenerator",
+    "engage_il2cpp::root::lightprobegenerator::LightProbeGenerator_LightProbeArea": "root-lightprobegenerator",
+    "engage_il2cpp::root::lightprobegenerator::LightProbeGenerator_LightProbePlacementType": "root-lightprobegenerator",
+    "engage_il2cpp::root::listwithevents_1::ListWithEvents_1": "root-listwithevents_1",
+    "engage_il2cpp::root::locale::Locale": "root-locale",
+    "engage_il2cpp::root::magic_bridge::Magic_Bridge": "root-magic_bridge",
+    "engage_il2cpp::root::maparrow::MapArrow": "root-maparrow",
+    "engage_il2cpp::root::mapcursoranim::MapCursorAnim": "root-mapcursoranim",
+    "engage_il2cpp::root::mapcursoranimmanager::MapCursorAnimManager": "root-mapcursoranimmanager",
+    "engage_il2cpp::root::mapcursorcolor::MapCursorColor": "root-mapcursorcolor",
+    "engage_il2cpp::root::mapcursorlocatorroot::MapCursorLocatorRoot": "root-mapcursorlocatorroot",
+    "engage_il2cpp::root::mapcursorlocatorroot::MapCursorLocatorRoot_PartType": "root-mapcursorlocatorroot",
+    "engage_il2cpp::root::mapgridalphamenuitem::MapGridAlphaMenuItem": "root-mapgridalphamenuitem",
+    "engage_il2cpp::root::mapgridrender::MapGridRender": "root-mapgridrender",
+    "engage_il2cpp::root::mapinfodebug::MapInfoDebug": "root-mapinfodebug",
+    "engage_il2cpp::root::mapinfoevent::MapInfoEvent": "root-mapinfoevent",
+    "engage_il2cpp::root::mapinfoevent::MapInfoEvent_MeshIndex": "root-mapinfoevent",
+    "engage_il2cpp::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot": "root-mapinfogaugesublocatorroot",
+    "engage_il2cpp::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_BreakEffectKind": "root-mapinfogaugesublocatorroot",
+    "engage_il2cpp::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts": "root-mapinfogaugesublocatorroot",
+    "engage_il2cpp::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot": "root-mapinfoiconlocatorroot",
+    "engage_il2cpp::root::mapinfoiconpool::MapInfoIconPool": "root-mapinfoiconpool",
+    "engage_il2cpp::root::mapinfosight::MapInfoSight": "root-mapinfosight",
+    "engage_il2cpp::root::mapinfounitpagemenuitem::MapInfoUnitPageMenuItem": "root-mapinfounitpagemenuitem",
+    "engage_il2cpp::root::mapnavigationminimapbasicmenuitem::MapNavigationMiniMapBasicMenuItem": "root-mapnavigationminimapbasicmenuitem",
+    "engage_il2cpp::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu": "root-mapnavigationminimapmenu",
+    "engage_il2cpp::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent": "root-mapnavigationminimapmenucontent",
+    "engage_il2cpp::root::mapnavigationminimapmenuitemcontent::MapNavigationMiniMapMenuItemContent": "root-mapnavigationminimapmenuitemcontent",
+    "engage_il2cpp::root::mapnavigationroot::MapNavigationRoot": "root-mapnavigationroot",
+    "engage_il2cpp::root::mapnavigationsequence::MapNavigationSequence": "root-mapnavigationsequence",
+    "engage_il2cpp::root::mapnavigationsequence::MapNavigationSequence_Label": "root-mapnavigationsequence",
+    "engage_il2cpp::root::mapnavigationstatusbasicmenuitem::MapNavigationStatusBasicMenuItem": "root-mapnavigationstatusbasicmenuitem",
+    "engage_il2cpp::root::mapnavigationstatusmenu::MapNavigationStatusMenu": "root-mapnavigationstatusmenu",
+    "engage_il2cpp::root::mapnavigationstatusmenucontent::MapNavigationStatusMenuContent": "root-mapnavigationstatusmenucontent",
+    "engage_il2cpp::root::mapnavigationstatusmenuitemcontent::MapNavigationStatusMenuItemContent": "root-mapnavigationstatusmenuitemcontent",
+    "engage_il2cpp::root::mappanelbase_1::MapPanelBase_1": "root-mappanelbase_1",
+    "engage_il2cpp::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction": "root-mappanelbase_1",
+    "engage_il2cpp::root::mappanelbase_1::MapPanelBase_1_PanelType": "root-mappanelbase_1",
+    "engage_il2cpp::root::mappanelimpact::MapPanelImpact": "root-mappanelimpact",
+    "engage_il2cpp::root::mappanelimpact::MapPanelImpact_MeshIndex": "root-mappanelimpact",
+    "engage_il2cpp::root::mappaneltarget::MapPanelTarget": "root-mappaneltarget",
+    "engage_il2cpp::root::mappaneltarget::MapPanelTarget_DangerType": "root-mappaneltarget",
+    "engage_il2cpp::root::mappaneltarget::MapPanelTarget_DirtyType": "root-mappaneltarget",
+    "engage_il2cpp::root::mappaneltarget::MapPanelTarget_MeshIndex": "root-mappaneltarget",
+    "engage_il2cpp::root::mappointeranimmanager::MapPointerAnimManager": "root-mappointeranimmanager",
+    "engage_il2cpp::root::mappointerlocatorroot::MapPointerLocatorRoot": "root-mappointerlocatorroot",
+    "engage_il2cpp::root::mapsequenceresume::MapSequenceResume": "root-mapsequenceresume",
+    "engage_il2cpp::root::mapsoundlabel::MapSoundLabel": "root-mapsoundlabel",
+    "engage_il2cpp::root::mapstatemachine::MapStateMachine": "root-mapstatemachine",
+    "engage_il2cpp::root::mapui::MapUI": "root-mapui",
     "engage_il2cpp::root::mapuigauge::MapUIGauge": "root-mapuigauge",
+    "engage_il2cpp::root::mapuigauge::MapUIGauge_IconIndex": "root-mapuigauge",
+    "engage_il2cpp::root::mapuigauge::MapUIGauge_SuppressType": "root-mapuigauge",
+    "engage_il2cpp::root::mapuiicon::MapUIIcon": "root-mapuiicon",
+    "engage_il2cpp::root::mapuiicon::MapUIIcon_IconIndex": "root-mapuiicon",
+    "engage_il2cpp::root::mapunitgaugemenuitem::MapUnitGaugeMenuItem": "root-mapunitgaugemenuitem",
+    "engage_il2cpp::root::mapunitoperationmenuitem::MapUnitOperationMenuItem": "root-mapunitoperationmenuitem",
+    "engage_il2cpp::root::maputility::MapUtility": "root-maputility",
+    "engage_il2cpp::root::materialbehaviour::MaterialBehaviour": "root-materialbehaviour",
+    "engage_il2cpp::root::materialbehaviour::MaterialBehaviour_TextureInfo": "root-materialbehaviour",
+    "engage_il2cpp::root::materialinstance::MaterialInstance": "root-materialinstance",
+    "engage_il2cpp::root::materialreplacer::MaterialReplacer": "root-materialreplacer",
+    "engage_il2cpp::root::materialreplacer::MaterialReplacer_Mode": "root-materialreplacer",
+    "engage_il2cpp::root::meshcombine::MeshCombine": "root-meshcombine",
+    "engage_il2cpp::root::meshdeliver::MeshDeliver": "root-meshdeliver",
+    "engage_il2cpp::root::minimapbigmenuitem::MiniMapBigMenuItem": "root-minimapbigmenuitem",
+    "engage_il2cpp::root::minimaphidemenuitem::MiniMapHideMenuItem": "root-minimaphidemenuitem",
+    "engage_il2cpp::root::minimapmenuitem::MiniMapMenuItem": "root-minimapmenuitem",
+    "engage_il2cpp::root::minimapsmallmenuitem::MiniMapSmallMenuItem": "root-minimapsmallmenuitem",
+    "engage_il2cpp::root::monobehaviourcallbackhooks::MonoBehaviourCallbackHooks": "root-monobehaviourcallbackhooks",
+    "engage_il2cpp::root::multipositiontypelabel::MultiPositionTypeLabel": "root-multipositiontypelabel",
+    "engage_il2cpp::root::mvproot::MVPRoot": "root-mvproot",
+    "engage_il2cpp::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs": "root-packedplaymodebuildlogs",
+    "engage_il2cpp::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog": "root-packedplaymodebuildlogs",
+    "engage_il2cpp::root::pickupmenuitem::PickUpMenuItem": "root-pickupmenuitem",
+    "engage_il2cpp::root::placematadummy::PlaceMatADummy": "root-placematadummy",
+    "engage_il2cpp::root::ppradialblurplayableasset::PPRadialBlurPlayableAsset": "root-ppradialblurplayableasset",
+    "engage_il2cpp::root::ppradialblurplayablebehaviour::PPRadialBlurPlayableBehaviour": "root-ppradialblurplayablebehaviour",
+    "engage_il2cpp::root::prefetchedcurve_bridge::PrefetchedCurve_Bridge": "root-prefetchedcurve_bridge",
+    "engage_il2cpp::root::privateeffectcatalog_bridge::PrivateEffectCatalog_Bridge": "root-privateeffectcatalog_bridge",
+    "engage_il2cpp::root::profilecardchangelarge::ProfileCardChangeLarge": "root-profilecardchangelarge",
+    "engage_il2cpp::root::profilecardchangesmall::ProfileCardChangeSmall": "root-profilecardchangesmall",
+    "engage_il2cpp::root::profilecardstampcursorpush::ProfileCardStampCursorPush": "root-profilecardstampcursorpush",
+    "engage_il2cpp::root::reinscontroller_bridge::ReinsController_Bridge": "root-reinscontroller_bridge",
+    "engage_il2cpp::root::runtimememorychecker::RuntimeMemoryChecker": "root-runtimememorychecker",
+    "engage_il2cpp::root::samplewave::SampleWave": "root-samplewave",
+    "engage_il2cpp::root::samplewave::SampleWave_Data": "root-samplewave",
+    "engage_il2cpp::root::samplewave::SampleWave_Temp": "root-samplewave",
+    "engage_il2cpp::root::sandbox::SandBox": "root-sandbox",
+    "engage_il2cpp::root::scenerenderpipeline::SceneRenderPipeline": "root-scenerenderpipeline",
+    "engage_il2cpp::root::setskinnedmeshasemitter_bridge::SetSkinnedMeshAsEmitter_Bridge": "root-setskinnedmeshasemitter_bridge",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation_EditorState": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation_State": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation_StateEnumerable": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation_StateEnumerable_StateEnumerator": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimation::SimpleAnimation_StateImpl": "root-simpleanimation",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_IState": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_QueuedState": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_StateEnumerable": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_StateEnumerable_StateEnumerator": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo": "root-simpleanimationplayable",
+    "engage_il2cpp::root::simpleanimationplayable::SimpleAnimationPlayable_StateManagement": "root-simpleanimationplayable",
+    "engage_il2cpp::root::skycastle::SkyCastle": "root-skycastle",
+    "engage_il2cpp::root::skycastle::SkyCastle_MovingSkyCastle": "root-skycastle",
+    "engage_il2cpp::root::softnormalstovertexcolor::SoftNormalsToVertexColor": "root-softnormalstovertexcolor",
+    "engage_il2cpp::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method": "root-softnormalstovertexcolor",
+    "engage_il2cpp::root::sr::SR": "root-sr",
+    "engage_il2cpp::root::strope::StrOpe": "root-strope",
+    "engage_il2cpp::root::structscriptabledata_1::StructScriptableData_1": "root-structscriptabledata_1",
+    "engage_il2cpp::root::structscriptableobject_1::StructScriptableObject_1": "root-structscriptableobject_1",
+    "engage_il2cpp::root::supportanimetypemenuitem::SupportAnimeTypeMenuItem": "root-supportanimetypemenuitem",
+    "engage_il2cpp::root::talkplaymodemenuitem::TalkPlayModeMenuItem": "root-talkplaymodemenuitem",
+    "engage_il2cpp::root::testmove::TestMove": "root-testmove",
+    "engage_il2cpp::root::testsampledata::TestSampleData": "root-testsampledata",
+    "engage_il2cpp::root::testsampledata::TestSampleData_Flags": "root-testsampledata",
+    "engage_il2cpp::root::testsampledata::TestSampleData_Item": "root-testsampledata",
+    "engage_il2cpp::root::testsampleobject::TestSampleObject": "root-testsampleobject",
+    "engage_il2cpp::root::testsequence2::TestSequence2": "root-testsequence2",
+    "engage_il2cpp::root::testsequence2::TestSequence2_Label": "root-testsequence2",
+    "engage_il2cpp::root::testsequence::TestSequence": "root-testsequence",
+    "engage_il2cpp::root::testsequence::TestSequence_Label": "root-testsequence",
+    "engage_il2cpp::root::textsizelimiter::TextSizeLimiter": "root-textsizelimiter",
+    "engage_il2cpp::root::throwing_bridge::Throwing_Bridge": "root-throwing_bridge",
+    "engage_il2cpp::root::timelinemonitor::TimelineMonitor": "root-timelinemonitor",
+    "engage_il2cpp::root::trailmesh_bridge::TrailMesh_Bridge": "root-trailmesh_bridge",
+    "engage_il2cpp::root::tutoriallistroot::TutorialListRoot": "root-tutoriallistroot",
+    "engage_il2cpp::root::tutoriallistroot::TutorialListRoot_FadeType": "root-tutoriallistroot",
+    "engage_il2cpp::root::tutoriallistroot::TutorialListRoot_SequenceType": "root-tutoriallistroot",
+    "engage_il2cpp::root::tutoriallistselectmenu::TutorialListSelectMenu": "root-tutoriallistselectmenu",
+    "engage_il2cpp::root::tutoriallistselectmenu::TutorialListSelectMenu_DecideEventHandler": "root-tutoriallistselectmenu",
+    "engage_il2cpp::root::tutoriallistselectmenu::TutorialListSelectMenu_Page": "root-tutoriallistselectmenu",
+    "engage_il2cpp::root::tutoriallistselectmenucontent::TutorialListSelectMenuContent": "root-tutoriallistselectmenucontent",
+    "engage_il2cpp::root::tutoriallistselectmenuitem::TutorialListSelectMenuItem": "root-tutoriallistselectmenuitem",
+    "engage_il2cpp::root::tutoriallistselectmenuitemcontent::TutorialListSelectMenuItemContent": "root-tutoriallistselectmenuitemcontent",
+    "engage_il2cpp::root::tutoriallistsequence::TutorialListSequence": "root-tutoriallistsequence",
+    "engage_il2cpp::root::tutoriallistsequence::TutorialListSequence_Label": "root-tutoriallistsequence",
+    "engage_il2cpp::root::tutoriallisttopbasicmenuitem::TutorialListTopBasicMenuItem": "root-tutoriallisttopbasicmenuitem",
+    "engage_il2cpp::root::tutoriallisttopmenu::TutorialListTopMenu": "root-tutoriallisttopmenu",
+    "engage_il2cpp::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler": "root-tutoriallisttopmenu",
+    "engage_il2cpp::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType": "root-tutoriallisttopmenu",
+    "engage_il2cpp::root::tutoriallisttopmenucontent::TutorialListTopMenuContent": "root-tutoriallisttopmenucontent",
+    "engage_il2cpp::root::tutoriallisttopmenuitemcontent::TutorialListTopMenuItemContent": "root-tutoriallisttopmenuitemcontent",
+    "engage_il2cpp::root::tutorialshowmenuitem::TutorialShowMenuItem": "root-tutorialshowmenuitem",
+    "engage_il2cpp::root::unitinfo0menuitem::UnitInfo0MenuItem": "root-unitinfo0menuitem",
+    "engage_il2cpp::root::unitinfo1menuitem::UnitInfo1MenuItem": "root-unitinfo1menuitem",
+    "engage_il2cpp::root::unitinfo2menuitem::UnitInfo2MenuItem": "root-unitinfo2menuitem",
+    "engage_il2cpp::root::unitinfo3menuitem::UnitInfo3MenuItem": "root-unitinfo3menuitem",
+    "engage_il2cpp::root::unitinfo4menuitem::UnitInfo4MenuItem": "root-unitinfo4menuitem",
+    "engage_il2cpp::root::unitinfo5menuitem::UnitInfo5MenuItem": "root-unitinfo5menuitem",
+    "engage_il2cpp::root::unitinfo6menuitem::UnitInfo6MenuItem": "root-unitinfo6menuitem",
+    "engage_il2cpp::root::unitinfowindowstatemachine::UnitInfoWindowStateMachine": "root-unitinfowindowstatemachine",
+    "engage_il2cpp::root::uvflag::UVFlag": "root-uvflag",
+    "engage_il2cpp::root::uvscroll::UVScroll": "root-uvscroll",
+    "engage_il2cpp::root::volumebgmmenuitem::VolumeBgmMenuItem": "root-volumebgmmenuitem",
+    "engage_il2cpp::root::volumesemenuitem::VolumeSeMenuItem": "root-volumesemenuitem",
+    "engage_il2cpp::root::volumevoicemenuitem::VolumeVoiceMenuItem": "root-volumevoicemenuitem",
+    "engage_il2cpp::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot": "root-wdwtutoriallocatorroot",
+    "engage_il2cpp::root::windactor::WindActor": "root-windactor",
+    "engage_il2cpp::root::windactor::WindActor_Func": "root-windactor",
+    "engage_il2cpp::root::windactor::WindActor_Kind": "root-windactor",
+    "engage_il2cpp::root::windmanager::WindManager": "root-windmanager",
+    "engage_il2cpp::root::windsampler::WindSampler": "root-windsampler",
+    "engage_il2cpp::root::wireframe::Wireframe": "root-wireframe",
+    "engage_il2cpp::root::wwiseacoustictexturereference::WwiseAcousticTextureReference": "root-wwiseacoustictexturereference",
+    "engage_il2cpp::root::wwiseauxbusreference::WwiseAuxBusReference": "root-wwiseauxbusreference",
+    "engage_il2cpp::root::wwisebankreference::WwiseBankReference": "root-wwisebankreference",
+    "engage_il2cpp::root::wwiseeventreference::WwiseEventReference": "root-wwiseeventreference",
+    "engage_il2cpp::root::wwisegroupvalueobjectreference::WwiseGroupValueObjectReference": "root-wwisegroupvalueobjectreference",
+    "engage_il2cpp::root::wwiseobjectreference::WwiseObjectReference": "root-wwiseobjectreference",
+    "engage_il2cpp::root::wwiseobjecttype::WwiseObjectType": "root-wwiseobjecttype",
+    "engage_il2cpp::root::wwisertpcreference::WwiseRtpcReference": "root-wwisertpcreference",
+    "engage_il2cpp::root::wwisestategroupreference::WwiseStateGroupReference": "root-wwisestategroupreference",
+    "engage_il2cpp::root::wwisestatereference::WwiseStateReference": "root-wwisestatereference",
+    "engage_il2cpp::root::wwiseswitchgroupreference::WwiseSwitchGroupReference": "root-wwiseswitchgroupreference",
+    "engage_il2cpp::root::wwiseswitchreference::WwiseSwitchReference": "root-wwiseswitchreference",
+    "engage_il2cpp::root::wwisetriggerreference::WwiseTriggerReference": "root-wwisetriggerreference",
     "engage_il2cpp::system::action::Action": "system-action",
     "engage_il2cpp::system::action_10::Action_10": "system-action_10",
     "engage_il2cpp::system::action_11::Action_11": "system-action_11",

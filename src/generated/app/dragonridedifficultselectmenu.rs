@@ -14,21 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "DragonRideDifficultSelectMenu.DifficultyItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
-        #[rename(name = "m_DifficultID")]
-        pub m_difficult_id: ::unity2::Il2CppString,
-        #[rename(name = "m_IsEnable")]
-        pub m_is_enable: bool,
-        #[rename(name = "m_IsExpert")]
-        pub m_is_expert: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -36,6 +21,14 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DragonRideDifficultSelectMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct DragonRideDifficultSelectMenu {
+        #[rename(name = "m_EnableChecker")]
+        pub m_enable_checker: ::unity2::Array<bool>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]
     #[repr(C)]
@@ -89,54 +82,24 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct DragonRideDifficultSelectMenu {
-        #[rename(name = "m_EnableChecker")]
-        pub m_enable_checker: ::unity2::Array<bool>,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "DragonRideDifficultSelectMenu.DifficultyItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
+        #[rename(name = "m_DifficultID")]
+        pub m_difficult_id: ::unity2::Il2CppString,
+        #[rename(name = "m_IsEnable")]
+        pub m_is_enable: bool,
+        #[rename(name = "m_IsExpert")]
+        pub m_is_expert: bool,
     }
 }
 
 #[cfg(feature = "app-dragonridedifficultselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-#[::unity2::methods]
-impl DragonRideDifficultSelectMenu_DifficultyItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-}
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-impl DragonRideDifficultSelectMenu_DifficultyItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` — overload selector"]
-    pub fn new(difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideDifficultSelectMenu_DifficultyItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideDifficultSelectMenu_DifficultyItemMethods>::ctor(
-            this,
-            difficult_id,
-            enable,
-            is_expert,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-dragonridedifficultselectmenu")]
 #[::unity2::methods]
@@ -259,6 +222,43 @@ impl DragonRideDifficultSelectMenu {
             initial_selected,
             event_handler,
             set_array,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+#[::unity2::methods]
+impl DragonRideDifficultSelectMenu_DifficultyItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+impl DragonRideDifficultSelectMenu_DifficultyItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` — overload selector"]
+    pub fn new(difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideDifficultSelectMenu_DifficultyItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideDifficultSelectMenu_DifficultyItemMethods>::ctor(
+            this,
+            difficult_id,
+            enable,
+            is_expert,
         );
         this
     }

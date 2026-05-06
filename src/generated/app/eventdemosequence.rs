@@ -18,58 +18,10 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CharacterWork")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_CharacterWork {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct EventDemoSequence_EventCmdSeq {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdSeq {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "EventDemoSequence.EventCmdSeq";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EventDemoSequence_EventCmdSeq {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl EventDemoSequence_EventCmdSeq {
-        pub fn before_talk() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn talk() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn after_talk() -> Self {
-            Self { value: 2 }
-        }
-    }
+    pub struct EventDemoSequence_LightSetupInfo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_WeightFader.md"))]
     #[::unity2::class(namespace = "App", name = "EventDemoSequence.WeightFader")]
@@ -81,83 +33,6 @@ mod __types {
         pub m_wgt_from: f32,
         #[rename(name = "m_wgtTo")]
         pub m_wgt_to: f32,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_CmdInfo {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct EventDemoSequence_EventCmdResult {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "EventDemoSequence.EventCmdResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EventDemoSequence_EventCmdResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl EventDemoSequence_EventCmdResult {
-        pub fn r#continue() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn continue_next_frame() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn retry() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn retry_next_frame() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn cmd_not_found() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_ColorFader {
-        #[rename(name = "m_color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_colorFrom")]
-        pub m_color_from: crate::unity_engine::color::Color,
-        #[rename(name = "m_colorTo")]
-        pub m_color_to: crate::unity_engine::color::Color,
         #[rename(name = "m_time")]
         pub m_time: f32,
         #[rename(name = "m_duration")]
@@ -265,71 +140,6 @@ mod __types {
         pub m_picture_controller: crate::app::eventpicturecontroller::EventPictureController,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EventDemoSequence_SoundEnv {
-        #[rename(name = "m_EventNameDataList")]
-        pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
-        >,
-        #[rename(name = "m_EventNameDictionary")]
-        pub m_event_name_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::Il2CppString,
-            >,
-        #[rename(name = "m_SoundEventName")]
-        pub m_sound_event_name: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_EffectWork {
-        #[rename(name = "m_effectResourceObject")]
-        pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.RotateFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_RotateFader {
-        #[rename(name = "m_rot")]
-        pub m_rot: f32,
-        #[rename(name = "m_rotFrom")]
-        pub m_rot_from: f32,
-        #[rename(name = "m_rotTo")]
-        pub m_rot_to: f32,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SplitViewWork")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_SplitViewWork {
-        #[rename(name = "m_renderTextureHandle")]
-        pub m_render_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_LightSetupInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]
-    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv.EventNameData")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventDemoSequence_SoundEnv_EventNameData {
-        #[rename(name = "m_MaterialName")]
-        pub m_material_name: ::unity2::Il2CppString,
-        #[rename(name = "m_EventName")]
-        pub m_event_name: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]
     #[repr(C)]
     #[derive(
@@ -378,6 +188,196 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CharacterWork")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_CharacterWork {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct EventDemoSequence_EventCmdSeq {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdSeq {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "EventDemoSequence.EventCmdSeq";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EventDemoSequence_EventCmdSeq {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl EventDemoSequence_EventCmdSeq {
+        pub fn before_talk() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn talk() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn after_talk() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_CmdInfo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_ColorFader {
+        #[rename(name = "m_color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_colorFrom")]
+        pub m_color_from: crate::unity_engine::color::Color,
+        #[rename(name = "m_colorTo")]
+        pub m_color_to: crate::unity_engine::color::Color,
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct EventDemoSequence_EventCmdResult {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "EventDemoSequence.EventCmdResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EventDemoSequence_EventCmdResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl EventDemoSequence_EventCmdResult {
+        pub fn r#continue() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn continue_next_frame() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn retry() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn retry_next_frame() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn cmd_not_found() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_EffectWork {
+        #[rename(name = "m_effectResourceObject")]
+        pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SplitViewWork")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_SplitViewWork {
+        #[rename(name = "m_renderTextureHandle")]
+        pub m_render_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventDemoSequence_SoundEnv {
+        #[rename(name = "m_EventNameDataList")]
+        pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
+        >,
+        #[rename(name = "m_EventNameDictionary")]
+        pub m_event_name_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            >,
+        #[rename(name = "m_SoundEventName")]
+        pub m_sound_event_name: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.RotateFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_RotateFader {
+        #[rename(name = "m_rot")]
+        pub m_rot: f32,
+        #[rename(name = "m_rotFrom")]
+        pub m_rot_from: f32,
+        #[rename(name = "m_rotTo")]
+        pub m_rot_to: f32,
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]
+    #[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv.EventNameData")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventDemoSequence_SoundEnv_EventNameData {
+        #[rename(name = "m_MaterialName")]
+        pub m_material_name: ::unity2::Il2CppString,
+        #[rename(name = "m_EventName")]
+        pub m_event_name: ::unity2::Il2CppString,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]
     #[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdFunc")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -389,151 +389,49 @@ pub use __types::*;
 
 #[cfg(feature = "app-eventdemosequence")]
 #[::unity2::methods]
-impl EventDemoSequence_CharacterWork {
-    #[doc = "`get_Pid()` overload"]
-    #[method(name = "get_Pid", args = 0)]
-    pub fn get_pid(self) -> ::unity2::Il2CppString;
+impl EventDemoSequence_LightSetupInfo {
+    #[doc = "`get_LightName()` overload"]
+    #[method(name = "get_LightName", args = 0)]
+    pub fn get_light_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Pid", args = 1)]
-    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
+    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_LightName", args = 1)]
+    pub fn set_light_name(self, value: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`get_PidForCreate()` overload"]
-    #[method(name = "get_PidForCreate", args = 0)]
-    pub fn get_pid_for_create(self) -> ::unity2::Il2CppString;
+    #[doc = "`get_RotOffset()` overload"]
+    #[method(name = "get_RotOffset", args = 0)]
+    pub fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3;
 
-    #[doc = "`set_PidForCreate(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_PidForCreate", args = 1)]
-    pub fn set_pid_for_create(self, value: ::unity2::Il2CppString) -> ();
+    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_RotOffset", args = 1)]
+    pub fn set_rot_offset(self, value: crate::unity_engine::vector3::Vector3) -> ();
 
-    #[doc = "`get_Character()` overload"]
-    #[method(name = "get_Character", args = 0)]
-    pub fn get_character(self) -> crate::combat::character::Character;
+    #[doc = "`get_ParentCameraObject()` overload"]
+    #[method(name = "get_ParentCameraObject", args = 0)]
+    pub fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject;
 
-    #[doc = "`set_Character(crate::combat::character::Character)` overload"]
-    #[method(name = "set_Character", args = 1)]
-    pub fn set_character(self, value: crate::combat::character::Character) -> ();
-
-    #[doc = "`get_Appearance()` overload"]
-    #[method(name = "get_Appearance", args = 0)]
-    pub fn get_appearance(self) -> crate::combat::characterappearance::CharacterAppearance;
-
-    #[doc = "`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = "set_Appearance", args = 1)]
-    pub fn set_appearance(
-        self,
-        value: crate::combat::characterappearance::CharacterAppearance,
-    ) -> ();
-
-    #[doc = "`get_PositionLocater()` overload"]
-    #[method(name = "get_PositionLocater", args = 0)]
-    pub fn get_position_locater(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_PositionLocater(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_PositionLocater", args = 1)]
-    pub fn set_position_locater(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_RotateFader()` overload"]
-    #[method(name = "get_RotateFader", args = 0)]
-    pub fn get_rotate_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_RotateFader;
-
-    #[doc = "`set_RotateFader(crate::app::eventdemosequence::EventDemoSequence_RotateFader)` overload"]
-    #[method(name = "set_RotateFader", args = 1)]
-    pub fn set_rotate_fader(
-        self,
-        value: crate::app::eventdemosequence::EventDemoSequence_RotateFader,
-    ) -> ();
-
-    #[doc = "`get_RotateYTo()` overload"]
-    #[method(name = "get_RotateYTo", args = 0)]
-    pub fn get_rotate_y_to(self) -> f32;
-
-    #[doc = "`set_RotateYTo(f32)` overload"]
-    #[method(name = "set_RotateYTo", args = 1)]
-    pub fn set_rotate_y_to(self, value: f32) -> ();
-
-    #[doc = "`get_AnimStatehash()` overload"]
-    #[method(name = "get_AnimStatehash", args = 0)]
-    pub fn get_anim_statehash(self) -> i32;
-
-    #[doc = "`set_AnimStatehash(i32)` overload"]
-    #[method(name = "set_AnimStatehash", args = 1)]
-    pub fn set_anim_statehash(self, value: i32) -> ();
-
-    #[doc = "`get_EquipWeaponAsset()` overload"]
-    #[method(name = "get_EquipWeaponAsset", args = 0)]
-    pub fn get_equip_weapon_asset(self) -> crate::combat::characterasset::CharacterAsset;
-
-    #[doc = "`set_EquipWeaponAsset(crate::combat::characterasset::CharacterAsset)` overload"]
-    #[method(name = "set_EquipWeaponAsset", args = 1)]
-    pub fn set_equip_weapon_asset(self, value: crate::combat::characterasset::CharacterAsset)
+    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_ParentCameraObject", args = 1)]
+    pub fn set_parent_camera_object(self, value: crate::unity_engine::gameobject::GameObject)
         -> ();
 
-    #[doc = "`get_AnimatorResourceHandle()` overload"]
-    #[method(name = "get_AnimatorResourceHandle", args = 0)]
-    pub fn get_animator_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
-
-    #[doc = "`set_AnimatorResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    #[method(name = "set_AnimatorResourceHandle", args = 1)]
-    pub fn set_animator_resource_handle(
-        self,
-        value: crate::app::resourcehandle_2::ResourceHandle_2,
-    ) -> ();
-
-    #[doc = "`get_FishingRodResourceHandle()` overload"]
-    #[method(name = "get_FishingRodResourceHandle", args = 0)]
-    pub fn get_fishing_rod_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
-
-    #[doc = "`set_FishingRodResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    #[method(name = "set_FishingRodResourceHandle", args = 1)]
-    pub fn set_fishing_rod_resource_handle(
-        self,
-        value: crate::app::resourcehandle_2::ResourceHandle_2,
-    ) -> ();
-
-    #[doc = "`get_FishingRodObject()` overload"]
-    #[method(name = "get_FishingRodObject", args = 0)]
-    pub fn get_fishing_rod_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_FishingRodObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_FishingRodObject", args = 1)]
-    pub fn set_fishing_rod_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        pid: ::unity2::Il2CppString,
-        pid_for_create: ::unity2::Il2CppString,
-        appearance: crate::combat::characterappearance::CharacterAppearance,
-    ) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CharacterWork {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` — overload selector"]
-    pub fn new(
-        pid: ::unity2::Il2CppString,
-        pid_for_create: ::unity2::Il2CppString,
-        appearance: crate::combat::characterappearance::CharacterAppearance,
-    ) -> Self {
+impl EventDemoSequence_LightSetupInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CharacterWork),
+                ::core::stringify!(EventDemoSequence_LightSetupInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_CharacterWorkMethods>::ctor(
-            this,
-            pid,
-            pid_for_create,
-            appearance,
-        );
+        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
         this
     }
 }
@@ -574,115 +472,6 @@ impl EventDemoSequence_WeightFader {
             )
         });
         <Self as IEventDemoSequence_WeightFaderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`get_Func()` overload"]
-    #[method(name = "get_Func", args = 0)]
-    pub fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
-
-    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
-    #[method(name = "set_Func", args = 1)]
-    pub fn set_func(self, value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc) -> ();
-
-    #[doc = "`get_CmdName()` overload"]
-    #[method(name = "get_CmdName", args = 0)]
-    pub fn get_cmd_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_CmdName", args = 1)]
-    pub fn set_cmd_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Args()` overload"]
-    #[method(name = "get_Args", args = 0)]
-    pub fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_Args", args = 1)]
-    pub fn set_args(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`get_RepeatCounter()` overload"]
-    #[method(name = "get_RepeatCounter", args = 0)]
-    pub fn get_repeat_counter(self) -> i32;
-
-    #[doc = "`set_RepeatCounter(i32)` overload"]
-    #[method(name = "set_RepeatCounter", args = 1)]
-    pub fn set_repeat_counter(self, value: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`IncRepetCounter()` overload"]
-    #[method(name = "IncRepetCounter", args = 0)]
-    pub fn inc_repet_counter(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CmdInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_ColorFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, color: crate::unity_engine::color::Color, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> crate::unity_engine::color::Color;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_ColorFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_ColorFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
         this
     }
 }
@@ -1401,44 +1190,260 @@ impl EventDemoSequence {
 
 #[cfg(feature = "app-eventdemosequence")]
 #[::unity2::methods]
-impl EventDemoSequence_SoundEnv {
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
+impl EventDemoSequence_CharacterWork {
+    #[doc = "`get_Pid()` overload"]
+    #[method(name = "get_Pid", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
+    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Pid", args = 1)]
+    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetEventName", args = 1)]
-    pub fn get_event_name(self, material_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+    #[doc = "`get_PidForCreate()` overload"]
+    #[method(name = "get_PidForCreate", args = 0)]
+    pub fn get_pid_for_create(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayEnv", args = 1)]
-    pub fn play_env(self, material_name: ::unity2::Il2CppString) -> ();
+    #[doc = "`set_PidForCreate(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_PidForCreate", args = 1)]
+    pub fn set_pid_for_create(self, value: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`StopCurrentEnv()` overload"]
-    #[method(name = "StopCurrentEnv", args = 0)]
-    pub fn stop_current_env(self) -> ();
+    #[doc = "`get_Character()` overload"]
+    #[method(name = "get_Character", args = 0)]
+    pub fn get_character(self) -> crate::combat::character::Character;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`set_Character(crate::combat::character::Character)` overload"]
+    #[method(name = "set_Character", args = 1)]
+    pub fn set_character(self, value: crate::combat::character::Character) -> ();
+
+    #[doc = "`get_Appearance()` overload"]
+    #[method(name = "get_Appearance", args = 0)]
+    pub fn get_appearance(self) -> crate::combat::characterappearance::CharacterAppearance;
+
+    #[doc = "`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]
+    #[method(name = "set_Appearance", args = 1)]
+    pub fn set_appearance(
+        self,
+        value: crate::combat::characterappearance::CharacterAppearance,
+    ) -> ();
+
+    #[doc = "`get_PositionLocater()` overload"]
+    #[method(name = "get_PositionLocater", args = 0)]
+    pub fn get_position_locater(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_PositionLocater(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_PositionLocater", args = 1)]
+    pub fn set_position_locater(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`get_RotateFader()` overload"]
+    #[method(name = "get_RotateFader", args = 0)]
+    pub fn get_rotate_fader(self) -> crate::app::eventdemosequence::EventDemoSequence_RotateFader;
+
+    #[doc = "`set_RotateFader(crate::app::eventdemosequence::EventDemoSequence_RotateFader)` overload"]
+    #[method(name = "set_RotateFader", args = 1)]
+    pub fn set_rotate_fader(
+        self,
+        value: crate::app::eventdemosequence::EventDemoSequence_RotateFader,
+    ) -> ();
+
+    #[doc = "`get_RotateYTo()` overload"]
+    #[method(name = "get_RotateYTo", args = 0)]
+    pub fn get_rotate_y_to(self) -> f32;
+
+    #[doc = "`set_RotateYTo(f32)` overload"]
+    #[method(name = "set_RotateYTo", args = 1)]
+    pub fn set_rotate_y_to(self, value: f32) -> ();
+
+    #[doc = "`get_AnimStatehash()` overload"]
+    #[method(name = "get_AnimStatehash", args = 0)]
+    pub fn get_anim_statehash(self) -> i32;
+
+    #[doc = "`set_AnimStatehash(i32)` overload"]
+    #[method(name = "set_AnimStatehash", args = 1)]
+    pub fn set_anim_statehash(self, value: i32) -> ();
+
+    #[doc = "`get_EquipWeaponAsset()` overload"]
+    #[method(name = "get_EquipWeaponAsset", args = 0)]
+    pub fn get_equip_weapon_asset(self) -> crate::combat::characterasset::CharacterAsset;
+
+    #[doc = "`set_EquipWeaponAsset(crate::combat::characterasset::CharacterAsset)` overload"]
+    #[method(name = "set_EquipWeaponAsset", args = 1)]
+    pub fn set_equip_weapon_asset(self, value: crate::combat::characterasset::CharacterAsset)
+        -> ();
+
+    #[doc = "`get_AnimatorResourceHandle()` overload"]
+    #[method(name = "get_AnimatorResourceHandle", args = 0)]
+    pub fn get_animator_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
+
+    #[doc = "`set_AnimatorResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
+    #[method(name = "set_AnimatorResourceHandle", args = 1)]
+    pub fn set_animator_resource_handle(
+        self,
+        value: crate::app::resourcehandle_2::ResourceHandle_2,
+    ) -> ();
+
+    #[doc = "`get_FishingRodResourceHandle()` overload"]
+    #[method(name = "get_FishingRodResourceHandle", args = 0)]
+    pub fn get_fishing_rod_resource_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
+
+    #[doc = "`set_FishingRodResourceHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
+    #[method(name = "set_FishingRodResourceHandle", args = 1)]
+    pub fn set_fishing_rod_resource_handle(
+        self,
+        value: crate::app::resourcehandle_2::ResourceHandle_2,
+    ) -> ();
+
+    #[doc = "`get_FishingRodObject()` overload"]
+    #[method(name = "get_FishingRodObject", args = 0)]
+    pub fn get_fishing_rod_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_FishingRodObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_FishingRodObject", args = 1)]
+    pub fn set_fishing_rod_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        pid: ::unity2::Il2CppString,
+        pid_for_create: ::unity2::Il2CppString,
+        appearance: crate::combat::characterappearance::CharacterAppearance,
+    ) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_SoundEnv {
+impl EventDemoSequence_CharacterWork {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` — overload selector"]
+    pub fn new(
+        pid: ::unity2::Il2CppString,
+        pid_for_create: ::unity2::Il2CppString,
+        appearance: crate::combat::characterappearance::CharacterAppearance,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CharacterWork),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CharacterWorkMethods>::ctor(
+            this,
+            pid,
+            pid_for_create,
+            appearance,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_CmdInfo {
+    #[doc = "`get_Func()` overload"]
+    #[method(name = "get_Func", args = 0)]
+    pub fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
+
+    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
+    #[method(name = "set_Func", args = 1)]
+    pub fn set_func(self, value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc) -> ();
+
+    #[doc = "`get_CmdName()` overload"]
+    #[method(name = "get_CmdName", args = 0)]
+    pub fn get_cmd_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_CmdName", args = 1)]
+    pub fn set_cmd_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Args()` overload"]
+    #[method(name = "get_Args", args = 0)]
+    pub fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "set_Args", args = 1)]
+    pub fn set_args(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`get_RepeatCounter()` overload"]
+    #[method(name = "get_RepeatCounter", args = 0)]
+    pub fn get_repeat_counter(self) -> i32;
+
+    #[doc = "`set_RepeatCounter(i32)` overload"]
+    #[method(name = "set_RepeatCounter", args = 1)]
+    pub fn set_repeat_counter(self, value: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`IncRepetCounter()` overload"]
+    #[method(name = "IncRepetCounter", args = 0)]
+    pub fn inc_repet_counter(self) -> ();
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_CmdInfo {
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CmdInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_ColorFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> crate::unity_engine::color::Color;
+
+    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, color: crate::unity_engine::color::Color, msec: f32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> crate::unity_engine::color::Color;
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_ColorFader {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_SoundEnv),
+                ::core::stringify!(EventDemoSequence_ColorFader),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
+        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
         this
     }
 }
@@ -1488,46 +1493,6 @@ impl EventDemoSequence_EffectWork {
             )
         });
         <Self as IEventDemoSequence_EffectWorkMethods>::ctor(this, effect_path, parent_trans);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_RotateFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`Set(f32, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, rot: f32, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> f32;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_RotateFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_RotateFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_RotateFaderMethods>::ctor(this);
         this
     }
 }
@@ -1665,31 +1630,26 @@ impl EventDemoSequence_SplitViewWork {
 
 #[cfg(feature = "app-eventdemosequence")]
 #[::unity2::methods]
-impl EventDemoSequence_LightSetupInfo {
-    #[doc = "`get_LightName()` overload"]
-    #[method(name = "get_LightName", args = 0)]
-    pub fn get_light_name(self) -> ::unity2::Il2CppString;
+impl EventDemoSequence_SoundEnv {
+    #[doc = "`Awake()` overload"]
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
 
-    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_LightName", args = 1)]
-    pub fn set_light_name(self, value: ::unity2::Il2CppString) -> ();
+    #[doc = "`OnDestroy()` overload"]
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
 
-    #[doc = "`get_RotOffset()` overload"]
-    #[method(name = "get_RotOffset", args = 0)]
-    pub fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3;
+    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetEventName", args = 1)]
+    pub fn get_event_name(self, material_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
 
-    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_RotOffset", args = 1)]
-    pub fn set_rot_offset(self, value: crate::unity_engine::vector3::Vector3) -> ();
+    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
+    #[method(name = "PlayEnv", args = 1)]
+    pub fn play_env(self, material_name: ::unity2::Il2CppString) -> ();
 
-    #[doc = "`get_ParentCameraObject()` overload"]
-    #[method(name = "get_ParentCameraObject", args = 0)]
-    pub fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_ParentCameraObject", args = 1)]
-    pub fn set_parent_camera_object(self, value: crate::unity_engine::gameobject::GameObject)
-        -> ();
+    #[doc = "`StopCurrentEnv()` overload"]
+    #[method(name = "StopCurrentEnv", args = 0)]
+    pub fn stop_current_env(self) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -1697,17 +1657,57 @@ impl EventDemoSequence_LightSetupInfo {
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_LightSetupInfo {
+impl EventDemoSequence_SoundEnv {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_LightSetupInfo),
+                ::core::stringify!(EventDemoSequence_SoundEnv),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
+        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_RotateFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`Set(f32, f32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, rot: f32, msec: f32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> f32;
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_RotateFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_RotateFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_RotateFaderMethods>::ctor(this);
         this
     }
 }

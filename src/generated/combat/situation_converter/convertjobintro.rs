@@ -10,14 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertJobIntro")]
-    #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
-    pub struct ConvertJobIntro {
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md"))]
     #[repr(C)]
     #[derive(
@@ -68,6 +60,14 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]
+    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertJobIntro")]
+    #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
+    pub struct ConvertJobIntro {
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,
     }
 }
 

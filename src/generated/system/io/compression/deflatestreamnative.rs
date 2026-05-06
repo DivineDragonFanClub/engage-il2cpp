@@ -9,6 +9,13 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]
+    #[::unity2::class(
+        namespace = "System.IO.Compression",
+        name = "DeflateStreamNative.SafeDeflateStreamHandle"
+    )]
+    pub struct DeflateStreamNative_SafeDeflateStreamHandle {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative.md"))]
     #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStreamNative")]
     #[parent(crate::system::object::Object)]
@@ -19,13 +26,6 @@ mod __types {
 # [rename (name = "disposed")] pub disposed : bool ,
 # [rename (name = "io_buffer")] pub io_buffer : :: unity2 :: Array < u8 > ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]
-    #[::unity2::class(
-        namespace = "System.IO.Compression",
-        name = "DeflateStreamNative.SafeDeflateStreamHandle"
-    )]
-    pub struct DeflateStreamNative_SafeDeflateStreamHandle {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]
     #[::unity2::class(
@@ -38,6 +38,38 @@ mod __types {
 
 #[cfg(feature = "system-io-compression-deflatestreamnative-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+#[::unity2::methods]
+impl DeflateStreamNative_SafeDeflateStreamHandle {
+    #[doc = "`get_IsInvalid()` overload"]
+    #[method(name = "get_IsInvalid", args = 0)]
+    pub fn get_is_invalid(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ReleaseHandle()` overload"]
+    #[method(name = "ReleaseHandle", args = 0)]
+    pub fn release_handle(self) -> bool;
+}
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+impl DeflateStreamNative_SafeDeflateStreamHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DeflateStreamNative_SafeDeflateStreamHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeflateStreamNative_SafeDeflateStreamHandleMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 #[::unity2::methods]
@@ -137,38 +169,6 @@ impl DeflateStreamNative {
             )
         });
         <Self as IDeflateStreamNativeMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-#[::unity2::methods]
-impl DeflateStreamNative_SafeDeflateStreamHandle {
-    #[doc = "`get_IsInvalid()` overload"]
-    #[method(name = "get_IsInvalid", args = 0)]
-    pub fn get_is_invalid(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ReleaseHandle()` overload"]
-    #[method(name = "ReleaseHandle", args = 0)]
-    pub fn release_handle(self) -> bool;
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-impl DeflateStreamNative_SafeDeflateStreamHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DeflateStreamNative_SafeDeflateStreamHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDeflateStreamNative_SafeDeflateStreamHandleMethods>::ctor(this);
         this
     }
 }

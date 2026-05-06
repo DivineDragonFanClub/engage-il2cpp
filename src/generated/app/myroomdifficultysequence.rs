@@ -14,21 +14,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_NoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.NoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MyRoomDifficultySequence_NoMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MyRoomDifficultySequence {
-        #[rename(name = "m_CurrentDifficulty")]
-        pub m_current_difficulty: crate::app::difficulty::Difficulty,
-        #[rename(name = "m_NextDifficulty")]
-        pub m_next_difficulty: crate::app::difficulty::Difficulty,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -43,78 +28,25 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MyRoomDifficultySequence_YesMenuItem_YesEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MyRoomDifficultySequence {
+        #[rename(name = "m_CurrentDifficulty")]
+        pub m_current_difficulty: crate::app::difficulty::Difficulty,
+        #[rename(name = "m_NextDifficulty")]
+        pub m_next_difficulty: crate::app::difficulty::Difficulty,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MyRoomDifficultySequence_NoMenuItem {}
 }
 
 #[cfg(feature = "app-myroomdifficultysequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-myroomdifficultysequence")]
-#[::unity2::methods]
-impl MyRoomDifficultySequence_NoMenuItem {
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-myroomdifficultysequence")]
-impl MyRoomDifficultySequence_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomDifficultySequence_NoMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomDifficultySequence_NoMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomdifficultysequence")]
-#[::unity2::methods]
-impl MyRoomDifficultySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CreateDesc()` overload"]
-    #[method(name = "CreateDesc", args = 0)]
-    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateDifficultyDialog()` overload"]
-    #[method(name = "CreateDifficultyDialog", args = 0)]
-    pub fn create_difficulty_dialog(self) -> ();
-
-    #[doc = "`ChangeDifficulty()` overload"]
-    #[method(name = "ChangeDifficulty", args = 0)]
-    pub fn change_difficulty(self) -> ();
-}
-
-#[cfg(feature = "app-myroomdifficultysequence")]
-impl MyRoomDifficultySequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomDifficultySequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomDifficultySequenceMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-myroomdifficultysequence")]
 #[::unity2::methods]
@@ -185,6 +117,74 @@ impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler {
         <Self as IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomdifficultysequence")]
+#[::unity2::methods]
+impl MyRoomDifficultySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`CreateDesc()` overload"]
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[doc = "`CreateDifficultyDialog()` overload"]
+    #[method(name = "CreateDifficultyDialog", args = 0)]
+    pub fn create_difficulty_dialog(self) -> ();
+
+    #[doc = "`ChangeDifficulty()` overload"]
+    #[method(name = "ChangeDifficulty", args = 0)]
+    pub fn change_difficulty(self) -> ();
+}
+
+#[cfg(feature = "app-myroomdifficultysequence")]
+impl MyRoomDifficultySequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomDifficultySequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomDifficultySequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomdifficultysequence")]
+#[::unity2::methods]
+impl MyRoomDifficultySequence_NoMenuItem {
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomdifficultysequence")]
+impl MyRoomDifficultySequence_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomDifficultySequence_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomDifficultySequence_NoMenuItemMethods>::ctor(this);
         this
     }
 }

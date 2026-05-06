@@ -13,6 +13,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot.ReturnEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ItemShopBuyRoot_ReturnEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -71,15 +76,38 @@ mod __types {
         #[rename(name = "m_ItemDetailDisplayWithUnit")]
         pub m_item_detail_display_with_unit: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot.ReturnEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ItemShopBuyRoot_ReturnEventHandler {}
 }
 
 #[cfg(feature = "app-itemshopbuyroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-itemshopbuyroot")]
+#[::unity2::methods]
+impl ItemShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-itemshopbuyroot")]
+impl ItemShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-itemshopbuyroot")]
 #[::unity2::methods]
@@ -204,34 +232,6 @@ impl ItemShopBuyRoot {
             )
         });
         <Self as IItemShopBuyRootMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-#[::unity2::methods]
-impl ItemShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-impl ItemShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

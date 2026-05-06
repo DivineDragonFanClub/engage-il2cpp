@@ -12,20 +12,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_GmapTeleportMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.GmapTeleportMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GmapTeleportMenu_GmapTeleportMenuItem {
-        #[rename(name = "m_GmapSpot")]
-        pub m_gmap_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_SpotPosition")]
-        pub m_spot_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_CloseMapAndBarFunc")]
-        pub m_close_map_and_bar_func: crate::system::action::Action,
-        #[rename(name = "m_IsCameraFocus")]
-        pub m_is_camera_focus: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu.md"))]
     #[::unity2::class(namespace = "App", name = "GmapTeleportMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -42,6 +28,20 @@ mod __types {
         pub m_close_map_and_bar_func: crate::system::action::Action,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_GmapTeleportMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.GmapTeleportMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct GmapTeleportMenu_GmapTeleportMenuItem {
+        #[rename(name = "m_GmapSpot")]
+        pub m_gmap_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_SpotPosition")]
+        pub m_spot_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_CloseMapAndBarFunc")]
+        pub m_close_map_and_bar_func: crate::system::action::Action,
+        #[rename(name = "m_IsCameraFocus")]
+        pub m_is_camera_focus: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -50,61 +50,6 @@ mod __types {
 
 #[cfg(feature = "app-gmapteleportmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gmapteleportmenu")]
-#[::unity2::methods]
-impl GmapTeleportMenu_GmapTeleportMenuItem {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        gmap_spot: crate::app::gmapspot::GmapSpot,
-        close_map_and_bar_func: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Spot()` overload"]
-    #[method(name = "get_Spot", args = 0)]
-    pub fn get_spot(self) -> crate::app::gmapspot::GmapSpot;
-}
-
-#[cfg(feature = "app-gmapteleportmenu")]
-impl GmapTeleportMenu_GmapTeleportMenuItem {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        gmap_spot: crate::app::gmapspot::GmapSpot,
-        close_map_and_bar_func: crate::system::action::Action,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapTeleportMenu_GmapTeleportMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapTeleportMenu_GmapTeleportMenuItemMethods>::ctor(
-            this,
-            gmap_spot,
-            close_map_and_bar_func,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-gmapteleportmenu")]
 #[::unity2::methods]
@@ -182,6 +127,61 @@ impl GmapTeleportMenu {
             gmap_map_info,
             decide_event_handler,
             goto_solanel_callback,
+            close_map_and_bar_func,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapteleportmenu")]
+#[::unity2::methods]
+impl GmapTeleportMenu_GmapTeleportMenuItem {
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        gmap_spot: crate::app::gmapspot::GmapSpot,
+        close_map_and_bar_func: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Spot()` overload"]
+    #[method(name = "get_Spot", args = 0)]
+    pub fn get_spot(self) -> crate::app::gmapspot::GmapSpot;
+}
+
+#[cfg(feature = "app-gmapteleportmenu")]
+impl GmapTeleportMenu_GmapTeleportMenuItem {
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        gmap_spot: crate::app::gmapspot::GmapSpot,
+        close_map_and_bar_func: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapTeleportMenu_GmapTeleportMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapTeleportMenu_GmapTeleportMenuItemMethods>::ctor(
+            this,
+            gmap_spot,
             close_map_and_bar_func,
         );
         this

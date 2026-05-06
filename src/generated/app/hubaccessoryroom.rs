@@ -56,6 +56,28 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
+    pub struct HubAccessoryRoom {
+        #[rename(name = "_DisableList")]
+        pub disable_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_Shop")]
+        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+        #[rename(name = "m_LastResultHash")]
+        pub m_last_result_hash: i32,
+        #[rename(name = "m_Character")]
+        pub m_character: crate::combat::character::Character,
+        #[rename(name = "m_LoadingAppearance")]
+        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
+        #[rename(name = "m_LoadingChara")]
+        pub m_loading_chara: crate::combat::character::Character,
+        #[rename(name = "m_LastPID")]
+        pub m_last_pid: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -154,28 +176,6 @@ mod __types {
         pub fn preview() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
-    pub struct HubAccessoryRoom {
-        #[rename(name = "_DisableList")]
-        pub disable_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_Shop")]
-        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
-        #[rename(name = "m_LastResultHash")]
-        pub m_last_result_hash: i32,
-        #[rename(name = "m_Character")]
-        pub m_character: crate::combat::character::Character,
-        #[rename(name = "m_LoadingAppearance")]
-        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
-        #[rename(name = "m_LoadingChara")]
-        pub m_loading_chara: crate::combat::character::Character,
-        #[rename(name = "m_LastPID")]
-        pub m_last_pid: ::unity2::Il2CppString,
     }
 }
 

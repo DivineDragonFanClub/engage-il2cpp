@@ -11,11 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]
-    #[::unity2::class(namespace = "App.RingCleaning", name = "EffectController.AutoDelete")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct EffectController_AutoDelete {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController.md"))]
     #[::unity2::class(namespace = "App.RingCleaning", name = "EffectController")]
     #[parent(crate::system::object::Object)]
@@ -57,38 +52,15 @@ mod __types {
         #[rename(name = "s_Rub")]
         pub s_rub: crate::unity_engine::gameobject::GameObject,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]
+    #[::unity2::class(namespace = "App.RingCleaning", name = "EffectController.AutoDelete")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EffectController_AutoDelete {}
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-#[::unity2::methods]
-impl EffectController_AutoDelete {
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController_AutoDelete {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectController_AutoDelete),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectController_AutoDeleteMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
 #[::unity2::methods]
@@ -149,6 +121,34 @@ impl EffectController {
             )
         });
         <Self as IEffectControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+#[::unity2::methods]
+impl EffectController_AutoDelete {
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ring_cleaning-effectcontroller")]
+impl EffectController_AutoDelete {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectController_AutoDelete),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectController_AutoDeleteMethods>::ctor(this);
         this
     }
 }

@@ -10,69 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceGod_ProcEngage {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapSequenceGod_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSequenceGod_Kind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapSequenceGod.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSequenceGod_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapSequenceGod_Kind {
-        pub fn engage_start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn engage_link() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn god_change() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSequenceGod {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
-    #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
-    pub struct MapSequenceGod_ProcEngageCancel {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -130,10 +67,174 @@ mod __types {
         #[rename(name = "m_IsSimple")]
         pub m_is_simple: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
+    #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
+    pub struct MapSequenceGod_ProcEngageCancel {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceGod_ProcEngage {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapSequenceGod {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapSequenceGod_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSequenceGod_Kind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapSequenceGod.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSequenceGod_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapSequenceGod_Kind {
+        pub fn engage_start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn engage_link() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn god_change() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-mapsequencegod-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapsequencegod")]
+#[::unity2::methods]
+impl MapSequenceGod_ProcEngageStart {
+    #[doc = "`.ctor(crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, kind: crate::app::mapsequencegod::MapSequenceGod_Kind, is_simple: bool)
+        -> ();
+
+    #[doc = "`PlayEffect(f32)` overload"]
+    #[method(name = "PlayEffect", args = 1)]
+    pub fn play_effect(self, wait: f32) -> ();
+
+    #[doc = "`PlayEffectSimple()` overload"]
+    #[method(name = "PlayEffectSimple", args = 0)]
+    pub fn play_effect_simple(self) -> ();
+
+    #[doc = "`PlayEffectDetail()` overload"]
+    #[method(name = "PlayEffectDetail", args = 0)]
+    pub fn play_effect_detail(self) -> ();
+
+    #[doc = "`Demo()` overload"]
+    #[method(name = "Demo", args = 0)]
+    pub fn demo(self) -> ();
+
+    #[doc = "`Apply()` overload"]
+    #[method(name = "Apply", args = 0)]
+    pub fn apply(self) -> ();
+
+    #[doc = "`ApplyEngage()` overload"]
+    #[method(name = "ApplyEngage", args = 0)]
+    pub fn apply_engage(self) -> ();
+
+    #[doc = "`ApplyGodChange()` overload"]
+    #[method(name = "ApplyGodChange", args = 0)]
+    pub fn apply_god_change(self) -> ();
+
+    #[doc = "`IsSimple()` overload"]
+    #[method(name = "IsSimple", args = 0)]
+    pub fn is_simple(self) -> bool;
+
+    #[doc = "`Branch()` overload"]
+    #[method(name = "Branch", args = 0)]
+    pub fn branch(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapsequencegod::MapSequenceGod_Kind,
+        is_simple: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl MapSequenceGod_ProcEngageStart {
+    #[doc = "`.ctor(crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` — overload selector"]
+    pub fn new(kind: crate::app::mapsequencegod::MapSequenceGod_Kind, is_simple: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceGod_ProcEngageStart),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceGod_ProcEngageStartMethods>::ctor(this, kind, is_simple);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+#[::unity2::methods]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapsequencegod")]
 #[::unity2::methods]
@@ -247,107 +348,6 @@ impl MapSequenceGod {
             )
         });
         <Self as IMapSequenceGodMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-#[::unity2::methods]
-impl MapSequenceGod_ProcEngageCancel {
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod_ProcEngageCancel {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-#[::unity2::methods]
-impl MapSequenceGod_ProcEngageStart {
-    #[doc = "`.ctor(crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, kind: crate::app::mapsequencegod::MapSequenceGod_Kind, is_simple: bool)
-        -> ();
-
-    #[doc = "`PlayEffect(f32)` overload"]
-    #[method(name = "PlayEffect", args = 1)]
-    pub fn play_effect(self, wait: f32) -> ();
-
-    #[doc = "`PlayEffectSimple()` overload"]
-    #[method(name = "PlayEffectSimple", args = 0)]
-    pub fn play_effect_simple(self) -> ();
-
-    #[doc = "`PlayEffectDetail()` overload"]
-    #[method(name = "PlayEffectDetail", args = 0)]
-    pub fn play_effect_detail(self) -> ();
-
-    #[doc = "`Demo()` overload"]
-    #[method(name = "Demo", args = 0)]
-    pub fn demo(self) -> ();
-
-    #[doc = "`Apply()` overload"]
-    #[method(name = "Apply", args = 0)]
-    pub fn apply(self) -> ();
-
-    #[doc = "`ApplyEngage()` overload"]
-    #[method(name = "ApplyEngage", args = 0)]
-    pub fn apply_engage(self) -> ();
-
-    #[doc = "`ApplyGodChange()` overload"]
-    #[method(name = "ApplyGodChange", args = 0)]
-    pub fn apply_god_change(self) -> ();
-
-    #[doc = "`IsSimple()` overload"]
-    #[method(name = "IsSimple", args = 0)]
-    pub fn is_simple(self) -> bool;
-
-    #[doc = "`Branch()` overload"]
-    #[method(name = "Branch", args = 0)]
-    pub fn branch(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapsequencegod::MapSequenceGod_Kind,
-        is_simple: bool,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod_ProcEngageStart {
-    #[doc = "`.ctor(crate::app::mapsequencegod::MapSequenceGod_Kind, bool)` — overload selector"]
-    pub fn new(kind: crate::app::mapsequencegod::MapSequenceGod_Kind, is_simple: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod_ProcEngageStart),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceGod_ProcEngageStartMethods>::ctor(this, kind, is_simple);
         this
     }
 }

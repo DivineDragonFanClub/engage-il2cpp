@@ -14,18 +14,15 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogNo.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MascotFoodSelectMenuItem_ConfirmDialogNo {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialog")]
     #[parent(crate::app::basicdialog::BasicDialog)]
     pub struct MascotFoodSelectMenuItem_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct MascotFoodSelectMenuItem_ConfirmDialogYes {
-        #[rename(name = "m_foodStuffData")]
-        pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem")]
@@ -35,14 +32,41 @@ mod __types {
         pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogNo.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MascotFoodSelectMenuItem_ConfirmDialogNo {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct MascotFoodSelectMenuItem_ConfirmDialogYes {
+        #[rename(name = "m_foodStuffData")]
+        pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
+    }
 }
 
 #[cfg(feature = "app-mascotfoodselectmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[::unity2::methods]
+impl MascotFoodSelectMenuItem_ConfirmDialogNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem_ConfirmDialogNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogNoMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mascotfoodselectmenuitem")]
 #[::unity2::methods]
@@ -86,34 +110,6 @@ impl MascotFoodSelectMenuItem_ConfirmDialog {
             menu_item_list,
             menu_content,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-#[::unity2::methods]
-impl MascotFoodSelectMenuItem_ConfirmDialogYes {
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-impl MascotFoodSelectMenuItem_ConfirmDialogYes {
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]
-    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods>::ctor(this, foodstuff_data);
         this
     }
 }
@@ -188,24 +184,28 @@ impl MascotFoodSelectMenuItem {
 
 #[cfg(feature = "app-mascotfoodselectmenuitem")]
 #[::unity2::methods]
-impl MascotFoodSelectMenuItem_ConfirmDialogNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl MascotFoodSelectMenuItem_ConfirmDialogYes {
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-mascotfoodselectmenuitem")]
-impl MascotFoodSelectMenuItem_ConfirmDialogNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl MascotFoodSelectMenuItem_ConfirmDialogYes {
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]
+    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogNo),
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMascotFoodSelectMenuItem_ConfirmDialogNoMethods>::ctor(this);
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods>::ctor(this, foodstuff_data);
         this
     }
 }

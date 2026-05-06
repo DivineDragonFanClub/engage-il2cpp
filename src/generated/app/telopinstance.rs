@@ -45,6 +45,8 @@ mod __types {
         pub m_fade_time: f32,
         #[rename(name = "m_ElapsedTime")]
         pub m_elapsed_time: f32,
+        #[rename(name = "m_MVPRoot")]
+        pub m_mvp_root: crate::root::mvproot::MVPRoot,
         #[rename(name = "m_IsKeyLock")]
         pub m_is_key_lock: bool,
         #[rename(name = "m_IsForcedPlayOut")]

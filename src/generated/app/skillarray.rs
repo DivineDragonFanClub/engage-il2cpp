@@ -36,36 +36,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Enumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct SkillArray_Enumerator {
-        pub m_array: crate::app::skillarray::SkillArray,
-        pub m_current: crate::app::skilldata::SkillData,
-        pub m_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillArray_Enumerator {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillArray.Enumerator";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillArray_Enumerator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillarray/SkillArray.md"))]
     #[::unity2::class(namespace = "App", name = "SkillArray")]
     #[parent(crate::system::object::Object)]
@@ -103,6 +73,36 @@ mod __types {
         pub m_weapon_levels: crate::app::weaponlevels::WeaponLevels,
         #[rename(name = "m_IsEquipSkillFirstNull")]
         pub m_is_equip_skill_first_null: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Enumerator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct SkillArray_Enumerator {
+        pub m_array: crate::app::skillarray::SkillArray,
+        pub m_current: crate::app::skilldata::SkillData,
+        pub m_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillArray_Enumerator {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillArray.Enumerator";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillArray_Enumerator {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
     }
 }
 
@@ -157,34 +157,6 @@ impl SkillArray_Entity {
     #[doc = "`get_Skill()` overload"]
     #[method(name = "get_Skill", args = 0)]
     pub fn get_skill(self) -> crate::app::skilldata::SkillData;
-}
-
-#[cfg(feature = "app-skillarray")]
-#[::unity2::methods(value)]
-impl SkillArray_Enumerator {
-    #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, skill_array: crate::app::skillarray::SkillArray) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::skilldata::SkillData;
 }
 
 #[cfg(feature = "app-skillarray")]
@@ -672,4 +644,32 @@ impl SkillArray {
         <Self as ISkillArrayMethods>::ctor_2(this, src);
         this
     }
+}
+
+#[cfg(feature = "app-skillarray")]
+#[::unity2::methods(value)]
+impl SkillArray_Enumerator {
+    #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, skill_array: crate::app::skillarray::SkillArray) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::skilldata::SkillData;
 }

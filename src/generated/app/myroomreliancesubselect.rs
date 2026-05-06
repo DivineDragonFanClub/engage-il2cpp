@@ -41,6 +41,19 @@ mod __types {
         pub m_god_unit: crate::app::godunit::GodUnit,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence"
+    )]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_PieceCount")]
+        pub m_piece_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -99,19 +112,6 @@ mod __types {
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
             crate::app::basicmenuselect::BasicMenuSelect,
         >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence"
-    )]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_PieceCount")]
-        pub m_piece_count: i32,
     }
 }
 
@@ -429,6 +429,59 @@ impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
 
 #[cfg(feature = "app-myroomreliancesubselect")]
 #[::unity2::methods]
+impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+    #[doc = "`.ctor(crate::app::godunit::GodUnit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, god_unit: crate::app::godunit::GodUnit) -> ();
+
+    #[doc = "`Accessory()` overload"]
+    #[method(name = "Accessory", args = 0)]
+    pub fn accessory(self) -> ();
+
+    #[doc = "`Music()` overload"]
+    #[method(name = "Music", args = 0)]
+    pub fn music(self) -> ();
+
+    #[doc = "`PieceOfBond()` overload"]
+    #[method(name = "PieceOfBond", args = 0)]
+    pub fn piece_of_bond(self) -> ();
+
+    #[doc = "`Message(crate::app::godunit::GodUnit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Message", args = 3)]
+    pub fn message(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        sprite_name: ::unity2::Il2CppString,
+        item_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        god_unit: crate::app::godunit::GodUnit,
+    ) -> ();
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+    #[doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"]
+    pub fn new(god_unit: crate::app::godunit::GodUnit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect_AmiiboBenefitSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods>::ctor(this, god_unit);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+#[::unity2::methods]
 impl MyRoomRelianceSubSelect {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
     #[method(name = "CreateBind", args = 2)]
@@ -511,59 +564,6 @@ impl MyRoomRelianceSubSelect {
             )
         });
         <Self as IMyRoomRelianceSubSelectMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-#[::unity2::methods]
-impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, god_unit: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`Accessory()` overload"]
-    #[method(name = "Accessory", args = 0)]
-    pub fn accessory(self) -> ();
-
-    #[doc = "`Music()` overload"]
-    #[method(name = "Music", args = 0)]
-    pub fn music(self) -> ();
-
-    #[doc = "`PieceOfBond()` overload"]
-    #[method(name = "PieceOfBond", args = 0)]
-    pub fn piece_of_bond(self) -> ();
-
-    #[doc = "`Message(crate::app::godunit::GodUnit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Message", args = 3)]
-    pub fn message(
-        self,
-        god_unit: crate::app::godunit::GodUnit,
-        sprite_name: ::unity2::Il2CppString,
-        item_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        god_unit: crate::app::godunit::GodUnit,
-    ) -> ();
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"]
-    pub fn new(god_unit: crate::app::godunit::GodUnit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect_AmiiboBenefitSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods>::ctor(this, god_unit);
         this
     }
 }

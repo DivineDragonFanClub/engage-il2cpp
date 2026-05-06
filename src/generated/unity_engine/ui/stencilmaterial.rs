@@ -7,6 +7,17 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial")]
+    #[parent(crate::system::object::Object)]
+    pub struct StencilMaterial {
+        #[static_field]
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::stencilmaterial::StencilMaterial_MatEntry,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial.MatEntry")]
     #[parent(crate::system::object::Object)]
@@ -32,45 +43,10 @@ mod __types {
         #[rename(name = "colorMask")]
         pub color_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial")]
-    #[parent(crate::system::object::Object)]
-    pub struct StencilMaterial {
-        #[static_field]
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::stencilmaterial::StencilMaterial_MatEntry,
-        >,
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-#[::unity2::methods]
-impl StencilMaterial_MatEntry {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-impl StencilMaterial_MatEntry {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StencilMaterial_MatEntry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStencilMaterial_MatEntryMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
 #[::unity2::methods]
@@ -115,4 +91,28 @@ impl StencilMaterial {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+#[::unity2::methods]
+impl StencilMaterial_MatEntry {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+impl StencilMaterial_MatEntry {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StencilMaterial_MatEntry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStencilMaterial_MatEntryMethods>::ctor(this);
+        this
+    }
 }

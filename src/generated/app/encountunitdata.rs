@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountunitdata/EncountUnitData.md"))]
+    #[::unity2::class(namespace = "App", name = "EncountUnitData")]
+    #[parent(crate::system::object::Object)]
+    pub struct EncountUnitData {
+        #[rename(name = "m_DisposData")]
+        pub m_dispos_data: crate::app::disposdata::DisposData,
+        #[rename(name = "m_RareType")]
+        pub m_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
+        #[rename(name = "m_JobData")]
+        pub m_job_data: crate::app::jobdata::JobData,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountunitdata/EncountUnitData_RareType.md"))]
     #[repr(C)]
     #[derive(
@@ -55,18 +67,6 @@ mod __types {
         pub fn gold() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountunitdata/EncountUnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "EncountUnitData")]
-    #[parent(crate::system::object::Object)]
-    pub struct EncountUnitData {
-        #[rename(name = "m_DisposData")]
-        pub m_dispos_data: crate::app::disposdata::DisposData,
-        #[rename(name = "m_RareType")]
-        pub m_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
-        #[rename(name = "m_JobData")]
-        pub m_job_data: crate::app::jobdata::JobData,
     }
 }
 

@@ -36,6 +36,8 @@ mod __types {
         pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
         #[rename(name = "m_SubSpriteAtlas")]
         pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_LocatorRoot")]
+        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
         #[rename(name = "m_TutorialData")]
         pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<
             crate::app::tutorialdata::TutorialData,

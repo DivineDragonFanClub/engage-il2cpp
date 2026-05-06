@@ -12,6 +12,18 @@ mod __types {
     use crate::unity_engine::timeline::marker::{IMarker, Marker};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomCameraMarker")]
+    #[parent(crate::unity_engine::timeline::marker::Marker)]
+    pub struct MyRoomCameraMarker {
+        #[rename(name = "CameraType")]
+        pub camera_type: crate::app::myroomcameramarker::MyRoomCameraMarker_Type,
+        #[rename(name = "CameraName")]
+        pub camera_name: ::unity2::Il2CppString,
+        #[rename(name = "AnimName")]
+        pub anim_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomcameramarker/MyRoomCameraMarker_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -54,18 +66,6 @@ mod __types {
         pub fn scene_camera() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomCameraMarker")]
-    #[parent(crate::unity_engine::timeline::marker::Marker)]
-    pub struct MyRoomCameraMarker {
-        #[rename(name = "CameraType")]
-        pub camera_type: crate::app::myroomcameramarker::MyRoomCameraMarker_Type,
-        #[rename(name = "CameraName")]
-        pub camera_name: ::unity2::Il2CppString,
-        #[rename(name = "AnimName")]
-        pub anim_name: ::unity2::Il2CppString,
     }
 }
 

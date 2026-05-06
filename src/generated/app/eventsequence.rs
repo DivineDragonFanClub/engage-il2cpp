@@ -11,16 +11,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence.MapEventStatck")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct EventSequence_MapEventStatck {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::mapinspector::MapInspector,
-        >,
-        #[rename(name = "m_UnitIndex")]
-        pub m_unit_index: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventSequence_Coroutine {
+        #[rename(name = "m_Func")]
+        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[rename(name = "m_Args")]
+        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[rename(name = "m_First")]
+        pub m_first: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md"))]
@@ -63,18 +63,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventSequence_Coroutine {
-        #[rename(name = "m_Func")]
-        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_Args")]
-        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        #[rename(name = "m_First")]
-        pub m_first: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))]
     #[::unity2::class(namespace = "App", name = "EventSequence")]
     # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)]
@@ -88,123 +76,22 @@ mod __types {
         #[rename(name = "m_BindingUI")]
         pub m_binding_ui: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence.MapEventStatck")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct EventSequence_MapEventStatck {
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::mapinspector::MapInspector,
+        >,
+        #[rename(name = "m_UnitIndex")]
+        pub m_unit_index: i32,
+    }
 }
 
 #[cfg(feature = "app-eventsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-eventsequence")]
-#[::unity2::methods]
-impl EventSequence_MapEventStatck {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, inspector: crate::app::mapinspector::MapInspector) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::mapinspector::MapInspector,
-        >,
-        unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "TryCreateBind", args = 7)]
-    pub fn try_create_bind(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        arg1: i32,
-        arg2: i32,
-        arg3: i32,
-        arg4: i32,
-    ) -> bool;
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]
-    #[method(name = "TryCreateBind", args = 2)]
-    pub fn try_create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        inspector: crate::app::mapinspector::MapInspector,
-    ) -> bool;
-
-    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsExist", args = 1)]
-    pub fn is_exist(unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]
-    #[method(name = "TryCreateBind", args = 3)]
-    pub fn try_create_bind_3(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-    ) -> bool;
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "TryCreateBind", args = 4)]
-    pub fn try_create_bind_4(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        value: i32,
-    ) -> bool;
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "TryCreateBind", args = 4)]
-    pub fn try_create_bind_5(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        from: crate::app::unit::Unit,
-        to: crate::app::unit::Unit,
-    ) -> bool;
-}
-
-#[cfg(feature = "app-eventsequence")]
-impl EventSequence_MapEventStatck {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]
-    pub fn new(inspector: crate::app::mapinspector::MapInspector) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_MapEventStatck),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventSequence_MapEventStatckMethods>::ctor(this, inspector);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]
-    pub fn new_2(
-        stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::mapinspector::MapInspector,
-        >,
-        unit: crate::app::unit::Unit,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_MapEventStatck),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IEventSequence_MapEventStatckMethods>::ctor_2(this, stack, unit);
-        this
-    }
-}
 
 #[cfg(feature = "app-eventsequence")]
 #[::unity2::methods]
@@ -605,6 +492,119 @@ impl EventSequence {
             )
         });
         <Self as IEventSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-eventsequence")]
+#[::unity2::methods]
+impl EventSequence_MapEventStatck {
+    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, inspector: crate::app::mapinspector::MapInspector) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::mapinspector::MapInspector,
+        >,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "TryCreateBind", args = 7)]
+    pub fn try_create_bind(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        arg1: i32,
+        arg2: i32,
+        arg3: i32,
+        arg4: i32,
+    ) -> bool;
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]
+    #[method(name = "TryCreateBind", args = 2)]
+    pub fn try_create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        inspector: crate::app::mapinspector::MapInspector,
+    ) -> bool;
+
+    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
+    #[method(name = "IsExist", args = 1)]
+    pub fn is_exist(unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]
+    #[method(name = "TryCreateBind", args = 3)]
+    pub fn try_create_bind_3(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "TryCreateBind", args = 4)]
+    pub fn try_create_bind_4(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        value: i32,
+    ) -> bool;
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "TryCreateBind", args = 4)]
+    pub fn try_create_bind_5(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        from: crate::app::unit::Unit,
+        to: crate::app::unit::Unit,
+    ) -> bool;
+}
+
+#[cfg(feature = "app-eventsequence")]
+impl EventSequence_MapEventStatck {
+    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]
+    pub fn new(inspector: crate::app::mapinspector::MapInspector) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_MapEventStatck),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventSequence_MapEventStatckMethods>::ctor(this, inspector);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]
+    pub fn new_2(
+        stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::mapinspector::MapInspector,
+        >,
+        unit: crate::app::unit::Unit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_MapEventStatck),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IEventSequence_MapEventStatckMethods>::ctor_2(this, stack, unit);
         this
     }
 }

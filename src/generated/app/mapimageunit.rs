@@ -11,14 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageunit/MapImageUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "MapImageUnit")]
-    #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
-    pub struct MapImageUnit {
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,6 +37,14 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageunit/MapImageUnit.md"))]
+    #[::unity2::class(namespace = "App", name = "MapImageUnit")]
+    #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
+    pub struct MapImageUnit {
+        #[rename(name = "m_Cells")]
+        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
@@ -80,6 +80,18 @@ mod __types {
 
 #[cfg(feature = "app-mapimageunit-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapimageunit")]
+#[::unity2::methods(value)]
+impl MapImageUnit_UnitScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
 
 #[cfg(feature = "app-mapimageunit")]
 #[::unity2::methods]
@@ -183,18 +195,6 @@ impl MapImageUnit {
         <Self as IMapImageUnitMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-mapimageunit")]
-#[::unity2::methods(value)]
-impl MapImageUnit_UnitScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
 }
 
 #[cfg(feature = "app-mapimageunit")]

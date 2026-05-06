@@ -9,40 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procinst/ProcInst.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcInst")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProcInst {
-        #[rename(name = "m_Descs")]
-        pub m_descs: ::unity2::Array<crate::app::procdesc::ProcDesc>,
-        #[rename(name = "m_DescIndex")]
-        pub m_desc_index: i32,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_HashCode")]
-        pub m_hash_code: i32,
-        #[rename(name = "m_Super")]
-        pub m_super: crate::app::procinst::ProcInst,
-        #[rename(name = "m_Child")]
-        pub m_child: crate::app::procinst::ProcInst,
-        #[rename(name = "m_Prev")]
-        pub m_prev: crate::app::procinst::ProcInst,
-        #[rename(name = "m_Next")]
-        pub m_next: crate::app::procinst::ProcInst,
-        #[rename(name = "m_Persistent")]
-        pub m_persistent: crate::app::procvoidmethod::ProcVoidMethod,
-        #[rename(name = "m_State")]
-        pub m_state: crate::app::procinst::ProcInst_State,
-        #[rename(name = "m_Suspend")]
-        pub m_suspend: i32,
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
-        #[rename(name = "m_TickTime")]
-        pub m_tick_time: f32,
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::app::rawvaluestack::RawValueStack,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procinst/ProcInst_State.md"))]
     #[repr(C)]
     #[derive(
@@ -97,6 +63,40 @@ mod __types {
         pub fn r#yield() -> Self {
             Self { value: 16 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procinst/ProcInst.md"))]
+    #[::unity2::class(namespace = "App", name = "ProcInst")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProcInst {
+        #[rename(name = "m_Descs")]
+        pub m_descs: ::unity2::Array<crate::app::procdesc::ProcDesc>,
+        #[rename(name = "m_DescIndex")]
+        pub m_desc_index: i32,
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_HashCode")]
+        pub m_hash_code: i32,
+        #[rename(name = "m_Super")]
+        pub m_super: crate::app::procinst::ProcInst,
+        #[rename(name = "m_Child")]
+        pub m_child: crate::app::procinst::ProcInst,
+        #[rename(name = "m_Prev")]
+        pub m_prev: crate::app::procinst::ProcInst,
+        #[rename(name = "m_Next")]
+        pub m_next: crate::app::procinst::ProcInst,
+        #[rename(name = "m_Persistent")]
+        pub m_persistent: crate::app::procvoidmethod::ProcVoidMethod,
+        #[rename(name = "m_State")]
+        pub m_state: crate::app::procinst::ProcInst_State,
+        #[rename(name = "m_Suspend")]
+        pub m_suspend: i32,
+        #[rename(name = "m_WaitTime")]
+        pub m_wait_time: f32,
+        #[rename(name = "m_TickTime")]
+        pub m_tick_time: f32,
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::app::rawvaluestack::RawValueStack,
     }
 }
 

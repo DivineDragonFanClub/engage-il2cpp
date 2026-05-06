@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopCore")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopCore {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopcore/ShopCore_Result.md"))]
     #[repr(C)]
     #[derive(
@@ -65,6 +60,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopCore")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopCore {}
 }
 
 #[cfg(feature = "app-shopcore-types")]

@@ -13,6 +13,28 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubconditioncontroller/HubConditionController.md"))]
+    #[::unity2::class(namespace = "App", name = "HubConditionController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubConditionController {
+        #[rename(name = "m_conditionType")]
+        pub m_condition_type: crate::app::hubutil::HubUtil_ConditionType,
+        #[rename(name = "m_controlType")]
+        pub m_control_type: crate::app::hubconditioncontroller::HubConditionController_ControlType,
+        #[rename(name = "m_conditionFlag")]
+        pub m_condition_flag: bool,
+        #[rename(name = "m_isUseTargets")]
+        pub m_is_use_targets: bool,
+        #[rename(name = "m_targets")]
+        pub m_targets: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_lods")]
+        pub m_lods: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubconditioncontroller/HubConditionController_ControlType.md"))]
     #[repr(C)]
     #[derive(
@@ -55,28 +77,6 @@ mod __types {
         pub fn hide() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubconditioncontroller/HubConditionController.md"))]
-    #[::unity2::class(namespace = "App", name = "HubConditionController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubConditionController {
-        #[rename(name = "m_conditionType")]
-        pub m_condition_type: crate::app::hubutil::HubUtil_ConditionType,
-        #[rename(name = "m_controlType")]
-        pub m_control_type: crate::app::hubconditioncontroller::HubConditionController_ControlType,
-        #[rename(name = "m_conditionFlag")]
-        pub m_condition_flag: bool,
-        #[rename(name = "m_isUseTargets")]
-        pub m_is_use_targets: bool,
-        #[rename(name = "m_targets")]
-        pub m_targets: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_lods")]
-        pub m_lods: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
     }
 }
 

@@ -9,32 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaybackupdata/RelayBackupData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayBackupData")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayBackupData {
-        #[static_field]
-        #[rename(name = "BufferSizeReplay")]
-        pub buffer_size_replay: i32,
-        #[static_field]
-        #[rename(name = "BufferSizeAll")]
-        pub buffer_size_all: i32,
-        #[static_field]
-        #[rename(name = "VersionReplay")]
-        pub version_replay: u8,
-        #[static_field]
-        #[rename(name = "VersionAll")]
-        pub version_all: u8,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::relaybackupdata::RelayBackupData_Kinds,
-        #[rename(name = "m_Buffer")]
-        pub m_buffer: ::unity2::Array<u8>,
-        #[rename(name = "m_Stream")]
-        pub m_stream: crate::app::stream_2::Stream_2,
-        #[rename(name = "m_SaveData")]
-        pub m_save_data: crate::app::gamesavedata::GameSaveData,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaybackupdata/RelayBackupData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +51,32 @@ mod __types {
         pub fn all() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaybackupdata/RelayBackupData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayBackupData")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayBackupData {
+        #[static_field]
+        #[rename(name = "BufferSizeReplay")]
+        pub buffer_size_replay: i32,
+        #[static_field]
+        #[rename(name = "BufferSizeAll")]
+        pub buffer_size_all: i32,
+        #[static_field]
+        #[rename(name = "VersionReplay")]
+        pub version_replay: u8,
+        #[static_field]
+        #[rename(name = "VersionAll")]
+        pub version_all: u8,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::relaybackupdata::RelayBackupData_Kinds,
+        #[rename(name = "m_Buffer")]
+        pub m_buffer: ::unity2::Array<u8>,
+        #[rename(name = "m_Stream")]
+        pub m_stream: crate::app::stream_2::Stream_2,
+        #[rename(name = "m_SaveData")]
+        pub m_save_data: crate::app::gamesavedata::GameSaveData,
     }
 }
 

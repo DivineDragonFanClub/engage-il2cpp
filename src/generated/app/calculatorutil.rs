@@ -9,6 +9,29 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
+    #[parent(crate::system::object::Object)]
+    pub struct CalculatorUtil_Entity {
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::calculatorutil::CalculatorUtil_Type,
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[rename(name = "m_Code")]
+        pub m_code: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct CalculatorUtil {
+        #[static_field]
+        #[rename(name = "NullArgs")]
+        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -200,33 +223,59 @@ mod __types {
             Self { value: 38 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil {
-        #[static_field]
-        #[rename(name = "NullArgs")]
-        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil_Entity {
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::calculatorutil::CalculatorUtil_Type,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_Code")]
-        pub m_code: i32,
-    }
 }
 
 #[cfg(feature = "app-calculatorutil-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-calculatorutil")]
+#[::unity2::methods]
+impl CalculatorUtil_Entity {
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::calculatorutil::CalculatorUtil_Type;
+
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> f32;
+
+    #[doc = "`get_Code()` overload"]
+    #[method(name = "get_Code", args = 0)]
+    pub fn get_code(self) -> i32;
+
+    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        r#type: crate::app::calculatorutil::CalculatorUtil_Type,
+        name: ::unity2::Il2CppString,
+        value: f32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil_Entity {
+    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]
+    pub fn new(
+        r#type: crate::app::calculatorutil::CalculatorUtil_Type,
+        name: ::unity2::Il2CppString,
+        value: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorUtil_Entity),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorUtil_EntityMethods>::ctor(this, r#type, name, value);
+        this
+    }
+}
 
 #[cfg(feature = "app-calculatorutil")]
 #[::unity2::methods]
@@ -321,55 +370,6 @@ impl CalculatorUtil {
             )
         });
         <Self as ICalculatorUtilMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-calculatorutil")]
-#[::unity2::methods]
-impl CalculatorUtil_Entity {
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> crate::app::calculatorutil::CalculatorUtil_Type;
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> f32;
-
-    #[doc = "`get_Code()` overload"]
-    #[method(name = "get_Code", args = 0)]
-    pub fn get_code(self) -> i32;
-
-    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        r#type: crate::app::calculatorutil::CalculatorUtil_Type,
-        name: ::unity2::Il2CppString,
-        value: f32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil_Entity {
-    #[doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]
-    pub fn new(
-        r#type: crate::app::calculatorutil::CalculatorUtil_Type,
-        name: ::unity2::Il2CppString,
-        value: f32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorUtil_Entity),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorUtil_EntityMethods>::ctor(this, r#type, name, value);
         this
     }
 }

@@ -12,16 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VersusSendReportSequence_EndCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusSendReportSequence_UploadInfo {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -66,6 +56,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct VersusSendReportSequence_UploadInfo {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md"))]
     #[::unity2::class(namespace = "App", name = "VersusSendReportSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -84,38 +79,15 @@ mod __types {
         #[rename(name = "MAX_SEND_COUNT")]
         pub max_send_count: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VersusSendReportSequence_EndCallback {}
 }
 
 #[cfg(feature = "app-versussendreportsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-versussendreportsequence")]
-#[::unity2::methods]
-impl VersusSendReportSequence_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_succeed: bool) -> ();
-}
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSendReportSequence_EndCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-versussendreportsequence")]
 #[::unity2::methods]
@@ -243,6 +215,34 @@ impl VersusSendReportSequence {
             )
         });
         <Self as IVersusSendReportSequenceMethods>::ctor(this, info, end_callback);
+        this
+    }
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[::unity2::methods]
+impl VersusSendReportSequence_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_succeed: bool) -> ();
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence_EndCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
         this
     }
 }

@@ -16,98 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitActor.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: unitactor :: UnitActor_Status >)]
-    pub struct UnitActor_StatusField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitActor")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitActor {
-        #[rename(name = "m_Models")]
-        pub m_models: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitModel")]
-        pub m_unit_model: crate::app::unitmodel::UnitModel,
-        #[rename(name = "m_GodModel")]
-        pub m_god_model: crate::app::unitmodel::UnitModel,
-        #[rename(name = "m_Effect")]
-        pub m_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::unitactor::UnitActor_StatusField,
-        #[rename(name = "m_Binder")]
-        pub m_binder: crate::app::bindholder::BindHolder,
-        #[rename(name = "m_Position")]
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Rotation")]
-        pub m_rotation: crate::app::interpolatorrotation::InterpolatorRotation,
-        #[rename(name = "m_SlopeRotation")]
-        pub m_slope_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "m_SlopeOffset")]
-        pub m_slope_offset: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Moving")]
-        pub m_moving: crate::app::interpolatorvector3::InterpolatorVector3,
-        #[static_field]
-        #[rename(name = "SHAKE_COUNT")]
-        pub shake_count: i32,
-        #[rename(name = "m_ShakeCount")]
-        pub m_shake_count: i32,
-        #[rename(name = "m_ShakeScale")]
-        pub m_shake_scale: f32,
-        #[rename(name = "m_ShakeOffset")]
-        pub m_shake_offset: crate::unity_engine::vector3::Vector3,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_ViewMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitActor_ViewMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitActor_ViewMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitActor.ViewMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitActor_ViewMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitActor_ViewMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn hide() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -175,38 +83,102 @@ mod __types {
             Self { value: 128 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitActor")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct UnitActor {
+        #[rename(name = "m_Models")]
+        pub m_models: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitModel")]
+        pub m_unit_model: crate::app::unitmodel::UnitModel,
+        #[rename(name = "m_GodModel")]
+        pub m_god_model: crate::app::unitmodel::UnitModel,
+        #[rename(name = "m_Effect")]
+        pub m_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::unitactor::UnitActor_StatusField,
+        #[rename(name = "m_Binder")]
+        pub m_binder: crate::app::bindholder::BindHolder,
+        #[rename(name = "m_Position")]
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_Rotation")]
+        pub m_rotation: crate::app::interpolatorrotation::InterpolatorRotation,
+        #[rename(name = "m_SlopeRotation")]
+        pub m_slope_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "m_SlopeOffset")]
+        pub m_slope_offset: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_Moving")]
+        pub m_moving: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[static_field]
+        #[rename(name = "SHAKE_COUNT")]
+        pub shake_count: i32,
+        #[rename(name = "m_ShakeCount")]
+        pub m_shake_count: i32,
+        #[rename(name = "m_ShakeScale")]
+        pub m_shake_scale: f32,
+        #[rename(name = "m_ShakeOffset")]
+        pub m_shake_offset: crate::unity_engine::vector3::Vector3,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitActor.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: unitactor :: UnitActor_Status >)]
+    pub struct UnitActor_StatusField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_ViewMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnitActor_ViewMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitActor_ViewMode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "UnitActor.ViewMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitActor_ViewMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnitActor_ViewMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn hide() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-unitactor-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-unitactor")]
-#[::unity2::methods]
-impl UnitActor_StatusField {
-    #[doc = "`ToInt(crate::app::unitactor::UnitActor_Status)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::unitactor::UnitActor_Status) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitactor")]
-impl UnitActor_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitActor_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitActor_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-unitactor")]
 #[::unity2::methods]
@@ -745,6 +717,34 @@ impl UnitActor {
             )
         });
         <Self as IUnitActorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitactor")]
+#[::unity2::methods]
+impl UnitActor_StatusField {
+    #[doc = "`ToInt(crate::app::unitactor::UnitActor_Status)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::unitactor::UnitActor_Status) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitactor")]
+impl UnitActor_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitActor_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitActor_StatusFieldMethods>::ctor(this);
         this
     }
 }

@@ -8,6 +8,21 @@ mod __types {
     use crate::unity_engine::gui::{GUI_Scope, IGUI_Scope};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.AreaScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_AreaScope {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_ScrollViewScope {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_HorizontalScope {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_LayoutedWindow.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.LayoutedWindow")]
     #[parent(crate::system::object::Object)]
@@ -22,21 +37,6 @@ mod __types {
         pub m_style: crate::unity_engine::guistyle::GUIStyle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_ScrollViewScope {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.AreaScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_AreaScope {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_HorizontalScope {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout")]
     #[parent(crate::system::object::Object)]
@@ -48,48 +48,28 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-guilayout")]
 #[::unity2::methods]
-impl GUILayout_LayoutedWindow {
-    #[doc = "`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        f: crate::unity_engine::gui::GUI_WindowFunction,
-        screen_rect: crate::unity_engine::rect::Rect,
-        content: crate::unity_engine::guicontent::GUIContent,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> ();
+impl GUILayout_AreaScope {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, screen_rect: crate::unity_engine::rect::Rect) -> ();
 
-    #[doc = "`DoWindow(i32)` overload"]
-    #[method(name = "DoWindow", args = 1)]
-    pub fn do_window(self, window_id: i32) -> ();
+    #[doc = "`CloseScope()` overload"]
+    #[method(name = "CloseScope", args = 0)]
+    pub fn close_scope(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_LayoutedWindow {
-    #[doc = "`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` — overload selector"]
-    pub fn new(
-        f: crate::unity_engine::gui::GUI_WindowFunction,
-        screen_rect: crate::unity_engine::rect::Rect,
-        content: crate::unity_engine::guicontent::GUIContent,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        style: crate::unity_engine::guistyle::GUIStyle,
-    ) -> Self {
+impl GUILayout_AreaScope {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]
+    pub fn new(screen_rect: crate::unity_engine::rect::Rect) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_LayoutedWindow),
+                ::core::stringify!(GUILayout_AreaScope),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGUILayout_LayoutedWindowMethods>::ctor(
-            this,
-            f,
-            screen_rect,
-            content,
-            options,
-            style,
-        );
+        <Self as IGUILayout_AreaScopeMethods>::ctor(this, screen_rect);
         this
     }
 }
@@ -157,34 +137,6 @@ impl GUILayout_ScrollViewScope {
 
 #[cfg(feature = "unity_engine-guilayout")]
 #[::unity2::methods]
-impl GUILayout_AreaScope {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, screen_rect: crate::unity_engine::rect::Rect) -> ();
-
-    #[doc = "`CloseScope()` overload"]
-    #[method(name = "CloseScope", args = 0)]
-    pub fn close_scope(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_AreaScope {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]
-    pub fn new(screen_rect: crate::unity_engine::rect::Rect) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_AreaScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_AreaScopeMethods>::ctor(this, screen_rect);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[::unity2::methods]
 impl GUILayout_HorizontalScope {
     #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -212,6 +164,54 @@ impl GUILayout_HorizontalScope {
             )
         });
         <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[::unity2::methods]
+impl GUILayout_LayoutedWindow {
+    #[doc = "`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        f: crate::unity_engine::gui::GUI_WindowFunction,
+        screen_rect: crate::unity_engine::rect::Rect,
+        content: crate::unity_engine::guicontent::GUIContent,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        style: crate::unity_engine::guistyle::GUIStyle,
+    ) -> ();
+
+    #[doc = "`DoWindow(i32)` overload"]
+    #[method(name = "DoWindow", args = 1)]
+    pub fn do_window(self, window_id: i32) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_LayoutedWindow {
+    #[doc = "`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` — overload selector"]
+    pub fn new(
+        f: crate::unity_engine::gui::GUI_WindowFunction,
+        screen_rect: crate::unity_engine::rect::Rect,
+        content: crate::unity_engine::guicontent::GUIContent,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        style: crate::unity_engine::guistyle::GUIStyle,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_LayoutedWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayout_LayoutedWindowMethods>::ctor(
+            this,
+            f,
+            screen_rect,
+            content,
+            options,
+            style,
+        );
         this
     }
 }

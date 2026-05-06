@@ -54,32 +54,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieInventoryManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieinventorymanager :: SortieInventoryManager >)]
-    pub struct SortieInventoryManager {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieinventorymanager::SortieInventoryManager_Modes,
-        #[rename(name = "m_Selection")]
-        pub m_selection: crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo,
-        #[rename(name = "m_MenuItemDisplayIndex")]
-        pub m_menu_item_display_index: i32,
-        #[rename(name = "m_UnitItemMenu")]
-        pub m_unit_item_menu: crate::app::inventoryunititemmenu::InventoryUnitItemMenu,
-        #[rename(name = "m_PoolItemMenu")]
-        pub m_pool_item_menu: crate::app::inventorypoolitemmenu::InventoryPoolItemMenu,
-        #[rename(name = "m_ActiveWindow")]
-        pub m_active_window:
-            crate::app::sortieinventorymanager::SortieInventoryManager_ActiveWindow,
-        #[rename(name = "m_ItemInfo")]
-        pub m_item_info: crate::unity_engine::gameobject::GameObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieInventoryManager_SelectionInfo {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md"))]
     #[repr(C)]
     #[derive(
@@ -171,6 +145,32 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieInventoryManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieinventorymanager :: SortieInventoryManager >)]
+    pub struct SortieInventoryManager {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortieinventorymanager::SortieInventoryManager_Modes,
+        #[rename(name = "m_Selection")]
+        pub m_selection: crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo,
+        #[rename(name = "m_MenuItemDisplayIndex")]
+        pub m_menu_item_display_index: i32,
+        #[rename(name = "m_UnitItemMenu")]
+        pub m_unit_item_menu: crate::app::inventoryunititemmenu::InventoryUnitItemMenu,
+        #[rename(name = "m_PoolItemMenu")]
+        pub m_pool_item_menu: crate::app::inventorypoolitemmenu::InventoryPoolItemMenu,
+        #[rename(name = "m_ActiveWindow")]
+        pub m_active_window:
+            crate::app::sortieinventorymanager::SortieInventoryManager_ActiveWindow,
+        #[rename(name = "m_ItemInfo")]
+        pub m_item_info: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieInventoryManager_SelectionInfo {}
 }
 
 #[cfg(feature = "app-sortieinventorymanager-types")]

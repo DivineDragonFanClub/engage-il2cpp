@@ -13,139 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleScene.FieldResult")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)]
-    pub struct BattleScene_FieldResult {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct BattleScene_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for BattleScene_Kind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleScene.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleScene_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl BattleScene_Kind {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn rod() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn dance() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn give_direct() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn give_delay() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn strip() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn equip() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn god() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn dead() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn engage_attack() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn separator() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn push_battle() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn push_order() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn push_action() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn push_attack() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn pop_attack() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn pop_action() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn pop_order() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn pop_battle() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn heal() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 22 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
     #[repr(C)]
     #[derive(
@@ -277,44 +144,143 @@ mod __types {
         #[rename(name = "m_Damages")]
         pub m_damages: crate::app::battleside::BattleSide_ShortArray,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct BattleScene_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for BattleScene_Kind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "BattleScene.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleScene_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl BattleScene_Kind {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn rod() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn dance() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn skill() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn give_direct() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn give_delay() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn strip() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn equip() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn god() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn dead() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn engage_attack() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn separator() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn push_battle() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn push_order() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn push_action() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn push_attack() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn pop_attack() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn pop_action() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn pop_order() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn pop_battle() -> Self {
+            Self { value: 20 }
+        }
+
+        pub fn heal() -> Self {
+            Self { value: 21 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 22 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleScene.FieldResult")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)]
+    pub struct BattleScene_FieldResult {}
 }
 
 #[cfg(feature = "app-battlescene-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-battlescene")]
-#[::unity2::methods]
-impl BattleScene_FieldResult {
-    #[doc = "`ToInt(crate::app::battlescene::BattleScene_Result)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::battlescene::BattleScene_Result) -> i32;
-
-    #[doc = "`op_Implicit(crate::app::battlescene::BattleScene_FieldResult)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        self_: crate::app::battlescene::BattleScene_FieldResult,
-    ) -> crate::app::battlescene::BattleScene_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battlescene")]
-impl BattleScene_FieldResult {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleScene_FieldResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleScene_FieldResultMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-battlescene")]
 #[::unity2::methods]
@@ -513,6 +479,40 @@ impl BattleScene {
             )
         });
         <Self as IBattleSceneMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlescene")]
+#[::unity2::methods]
+impl BattleScene_FieldResult {
+    #[doc = "`ToInt(crate::app::battlescene::BattleScene_Result)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::battlescene::BattleScene_Result) -> i32;
+
+    #[doc = "`op_Implicit(crate::app::battlescene::BattleScene_FieldResult)` overload"]
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        self_: crate::app::battlescene::BattleScene_FieldResult,
+    ) -> crate::app::battlescene::BattleScene_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battlescene")]
+impl BattleScene_FieldResult {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleScene_FieldResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleScene_FieldResultMethods>::ctor(this);
         this
     }
 }

@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "DebuggerAction")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebuggerAction {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction_ActionType.md"))]
     #[repr(C)]
     #[derive(
@@ -100,11 +105,6 @@ mod __types {
             Self { value: 13 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "DebuggerAction")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebuggerAction {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debuggeraction-types")]

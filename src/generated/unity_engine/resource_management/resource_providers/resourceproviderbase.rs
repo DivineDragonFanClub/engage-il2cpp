@@ -10,17 +10,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "ResourceProviderBase"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ResourceProviderBase {
-# [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_BehaviourFlags")] pub m_behaviour_flags : crate :: unity_engine :: resource_management :: resource_providers :: providerbehaviourflags :: ProviderBehaviourFlags ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase_BaseInitAsyncOp.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.ResourceManagement.ResourceProviders",
@@ -31,12 +20,59 @@ mod __types {
         #[rename(name = "m_CallBack")]
         pub m_call_back: crate::system::func_1::Func_1<bool>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+        name = "ResourceProviderBase"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ResourceProviderBase {
+# [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_BehaviourFlags")] pub m_behaviour_flags : crate :: unity_engine :: resource_management :: resource_providers :: providerbehaviourflags :: ProviderBehaviourFlags ,
+}
 }
 
 #[cfg(
     feature = "unity_engine-resource_management-resource_providers-resourceproviderbase-types"
 )]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
+#[::unity2::methods]
+impl ResourceProviderBase_BaseInitAsyncOp {
+    #[doc = "`Init(crate::system::func_1::Func_1<bool>)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, callback: crate::system::func_1::Func_1<bool>) -> ();
+
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
+impl ResourceProviderBase_BaseInitAsyncOp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceProviderBase_BaseInitAsyncOp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceProviderBase_BaseInitAsyncOpMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
 #[::unity2::methods]
@@ -111,42 +147,6 @@ impl ResourceProviderBase {
             )
         });
         <Self as IResourceProviderBaseMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
-#[::unity2::methods]
-impl ResourceProviderBase_BaseInitAsyncOp {
-    #[doc = "`Init(crate::system::func_1::Func_1<bool>)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(self, callback: crate::system::func_1::Func_1<bool>) -> ();
-
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    #[method(name = "InvokeWaitForCompletion", args = 0)]
-    pub fn invoke_wait_for_completion(self) -> bool;
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
-impl ResourceProviderBase_BaseInitAsyncOp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceProviderBase_BaseInitAsyncOp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceProviderBase_BaseInitAsyncOpMethods>::ctor(this);
         this
     }
 }

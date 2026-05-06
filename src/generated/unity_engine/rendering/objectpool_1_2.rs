@@ -8,20 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectPool`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct ObjectPool_1_2<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
-        #[rename(name = "m_ActionOnGet")]
-        pub m_action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
-        #[rename(name = "m_ActionOnRelease")]
-        pub m_action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
-        #[rename(name = "m_CollectionCheck")]
-        pub m_collection_check: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -53,10 +39,40 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectPool`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct ObjectPool_1_2<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
+        #[rename(name = "m_ActionOnGet")]
+        pub m_action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        #[rename(name = "m_ActionOnRelease")]
+        pub m_action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        #[rename(name = "m_CollectionCheck")]
+        pub m_collection_check: bool,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
+    #[doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        value: T0,
+        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
+    ) -> ();
+
+    #[doc = "`System.IDisposable.Dispose()` overload"]
+    #[method(name = "System.IDisposable.Dispose", args = 0)]
+    pub fn system_i_disposable_dispose(self) -> ();
+}
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
 #[::unity2::methods]
@@ -125,20 +141,4 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
         );
         this
     }
-}
-
-#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
-    #[doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        value: T0,
-        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
-    ) -> ();
-
-    #[doc = "`System.IDisposable.Dispose()` overload"]
-    #[method(name = "System.IDisposable.Dispose", args = 0)]
-    pub fn system_i_disposable_dispose(self) -> ();
 }

@@ -10,6 +10,39 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp.md"))]
+    #[::unity2::class(namespace = "App", name = "KeyHelp")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: keyhelp :: KeyHelp >)]
+    pub struct KeyHelp {
+        #[rename(name = "m_UI")]
+        pub m_ui: crate::app::keyhelp::KeyHelp_UI,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md"))]
+    #[::unity2::class(namespace = "App", name = "KeyHelp.UI")]
+    #[parent(crate::system::object::Object)]
+    pub struct KeyHelp_UI {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "ElementNames")]
+        pub element_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Elements")]
+        pub m_elements: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::keyhelp::KeyHelp_Type,
+            crate::app::keyhelp::KeyHelp_UI_Element,
+        >,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelp/KeyHelp_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -94,39 +127,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md"))]
-    #[::unity2::class(namespace = "App", name = "KeyHelp.UI")]
-    #[parent(crate::system::object::Object)]
-    pub struct KeyHelp_UI {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ElementNames")]
-        pub element_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Elements")]
-        pub m_elements: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::keyhelp::KeyHelp_Type,
-            crate::app::keyhelp::KeyHelp_UI_Element,
-        >,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp.md"))]
-    #[::unity2::class(namespace = "App", name = "KeyHelp")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: keyhelp :: KeyHelp >)]
-    pub struct KeyHelp {
-        #[rename(name = "m_UI")]
-        pub m_ui: crate::app::keyhelp::KeyHelp_UI,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI_Element.md"))]
     #[::unity2::class(namespace = "App", name = "KeyHelp.UI.Element")]
     #[parent(crate::system::object::Object)]
@@ -140,6 +140,58 @@ mod __types {
 
 #[cfg(feature = "app-keyhelp-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-keyhelp")]
+#[::unity2::methods]
+impl KeyHelp {
+    #[doc = "`IsCreating()` overload"]
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating() -> bool;
+
+    #[doc = "`SetVisible(bool)` overload"]
+    #[method(name = "SetVisible", args = 1)]
+    pub fn set_visible(is_visible: bool) -> ();
+
+    #[doc = "`Add(crate::app::keyhelp::KeyHelp_Type, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add(r#type: crate::app::keyhelp::KeyHelp_Type, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Add(::unity2::Il2CppString)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_2(key_help_id: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear() -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-keyhelp")]
+impl KeyHelp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KeyHelp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKeyHelpMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-keyhelp")]
 #[::unity2::methods]
@@ -198,58 +250,6 @@ impl KeyHelp_UI {
             )
         });
         <Self as IKeyHelp_UIMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-keyhelp")]
-#[::unity2::methods]
-impl KeyHelp {
-    #[doc = "`IsCreating()` overload"]
-    #[method(name = "IsCreating", args = 0)]
-    pub fn is_creating() -> bool;
-
-    #[doc = "`SetVisible(bool)` overload"]
-    #[method(name = "SetVisible", args = 1)]
-    pub fn set_visible(is_visible: bool) -> ();
-
-    #[doc = "`Add(crate::app::keyhelp::KeyHelp_Type, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(r#type: crate::app::keyhelp::KeyHelp_Type, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Add(::unity2::Il2CppString)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_2(key_help_id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear() -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-keyhelp")]
-impl KeyHelp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KeyHelp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKeyHelpMethods>::ctor(this);
         this
     }
 }

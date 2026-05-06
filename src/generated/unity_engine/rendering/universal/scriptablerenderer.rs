@@ -8,6 +8,46 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ScriptableRenderer.Profiling"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_Profiling {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "setPerCameraShaderVariables")]
+        pub set_per_camera_shader_variables:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "sortRenderPasses")]
+        pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "setupLights")]
+        pub setup_lights: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "setupCamera")]
+        pub setup_camera: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "addRenderPasses")]
+        pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "clearRenderingState")]
+        pub clear_rendering_state:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "internalStartRendering")]
+        pub internal_start_rendering:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "internalFinishRendering")]
+        pub internal_finish_rendering:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -15,43 +55,6 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct ScriptableRenderer_RenderingFeatures {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling.RenderPass"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_Profiling_RenderPass {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "configure")]
-        pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer {
-# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
-# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
-# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
-# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
-# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
-# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
-# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
-# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
-# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
-# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
     #[repr(C)]
@@ -108,27 +111,6 @@ mod __types {
         pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.RenderPassBlock"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_RenderPassBlock {
-        #[static_field]
-        #[rename(name = "BeforeRendering")]
-        pub before_rendering: i32,
-        #[static_field]
-        #[rename(name = "MainRenderingOpaque")]
-        pub main_rendering_opaque: i32,
-        #[static_field]
-        #[rename(name = "MainRenderingTransparent")]
-        pub main_rendering_transparent: i32,
-        #[static_field]
-        #[rename(name = "AfterRendering")]
-        pub after_rendering: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -155,49 +137,75 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling"
+        name = "ScriptableRenderer"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_Profiling {
+    pub struct ScriptableRenderer {
+# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
+# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
+# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
+# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
+# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
+# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
+# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
+# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
+# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
+# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ScriptableRenderer.RenderPassBlock"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_RenderPassBlock {
+        #[static_field]
+        #[rename(name = "BeforeRendering")]
+        pub before_rendering: i32,
+        #[static_field]
+        #[rename(name = "MainRenderingOpaque")]
+        pub main_rendering_opaque: i32,
+        #[static_field]
+        #[rename(name = "MainRenderingTransparent")]
+        pub main_rendering_transparent: i32,
+        #[static_field]
+        #[rename(name = "AfterRendering")]
+        pub after_rendering: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ScriptableRenderer.Profiling.RenderPass"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_Profiling_RenderPass {
         #[static_field]
         #[rename(name = "k_Name")]
         pub k_name: ::unity2::Il2CppString,
         #[static_field]
-        #[rename(name = "setPerCameraShaderVariables")]
-        pub set_per_camera_shader_variables:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "sortRenderPasses")]
-        pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "setupLights")]
-        pub setup_lights: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "setupCamera")]
-        pub setup_camera: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "addRenderPasses")]
-        pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "clearRenderingState")]
-        pub clear_rendering_state:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "internalStartRendering")]
-        pub internal_start_rendering:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "internalFinishRendering")]
-        pub internal_finish_rendering:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "configure")]
+        pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[::unity2::methods]
@@ -240,11 +248,69 @@ impl ScriptableRenderer_RenderingFeatures {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods(value)]
+impl ScriptableRenderer_RenderBlocks_BlockRange {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, begin: i32, end: i32) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> i32;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[::unity2::methods]
-impl ScriptableRenderer_Profiling_RenderPass {
+impl ScriptableRenderer_Profiling_RenderBlock {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods(value)]
+impl ScriptableRenderer_RenderBlocks {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    #[method(name = "FillBlockRanges", args = 1)]
+    pub fn fill_block_ranges(
+        self,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+    ) -> ();
+
+    #[doc = "`GetLength(i32)` overload"]
+    #[method(name = "GetLength", args = 1)]
+    pub fn get_length(self, index: i32) -> i32;
+
+    #[doc = "`GetRange(i32)` overload"]
+    #[method(name = "GetRange", args = 1)]
+    pub fn get_range (self , index : i32) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
@@ -618,38 +684,6 @@ impl ScriptableRenderer {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods(value)]
-impl ScriptableRenderer_RenderBlocks_BlockRange {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, begin: i32, end: i32) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> i32;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods]
-impl ScriptableRenderer_Profiling_RenderBlock {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[::unity2::methods]
 impl ScriptableRenderer_RenderPassBlock {
     #[doc = "`.cctor()` overload"]
@@ -658,42 +692,8 @@ impl ScriptableRenderer_RenderPassBlock {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods(value)]
-impl ScriptableRenderer_RenderBlocks {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    #[method(name = "FillBlockRanges", args = 1)]
-    pub fn fill_block_ranges(
-        self,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-    ) -> ();
-
-    #[doc = "`GetLength(i32)` overload"]
-    #[method(name = "GetLength", args = 1)]
-    pub fn get_length(self, index: i32) -> i32;
-
-    #[doc = "`GetRange(i32)` overload"]
-    #[method(name = "GetRange", args = 1)]
-    pub fn get_range (self , index : i32) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[::unity2::methods]
-impl ScriptableRenderer_Profiling {
+impl ScriptableRenderer_Profiling_RenderPass {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();

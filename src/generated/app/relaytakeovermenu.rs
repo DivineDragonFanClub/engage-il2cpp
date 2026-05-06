@@ -12,6 +12,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaytakeovermenu/RelayTakeOverMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayTakeOverMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RelayTakeOverMenu_MenuItem {
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CommentText")]
+        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_NameLabel")]
+        pub m_name_label: ::unity2::Il2CppString,
+        #[rename(name = "m_CommentLabel")]
+        pub m_comment_label: ::unity2::Il2CppString,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relay::Relay_TakeOverModes,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaytakeovermenu/RelayTakeOverMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -60,26 +76,53 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayTakeOverMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct RelayTakeOverMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaytakeovermenu/RelayTakeOverMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayTakeOverMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RelayTakeOverMenu_MenuItem {
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CommentText")]
-        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_NameLabel")]
-        pub m_name_label: ::unity2::Il2CppString,
-        #[rename(name = "m_CommentLabel")]
-        pub m_comment_label: ::unity2::Il2CppString,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relay::Relay_TakeOverModes,
-    }
 }
 
 #[cfg(feature = "app-relaytakeovermenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaytakeovermenu")]
+#[::unity2::methods]
+impl RelayTakeOverMenu_MenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        result: crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-relaytakeovermenu")]
+impl RelayTakeOverMenu_MenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` — overload selector"]
+    pub fn new(
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        result: crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayTakeOverMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayTakeOverMenu_MenuItemMethods>::ctor(this, menu_obj, result);
+        this
+    }
+}
 
 #[cfg(feature = "app-relaytakeovermenu")]
 #[::unity2::methods]
@@ -134,49 +177,6 @@ impl RelayTakeOverMenu {
             menu_content,
             initial_selected,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-relaytakeovermenu")]
-#[::unity2::methods]
-impl RelayTakeOverMenu_MenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        result: crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-relaytakeovermenu")]
-impl RelayTakeOverMenu_MenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` — overload selector"]
-    pub fn new(
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        result: crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayTakeOverMenu_MenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayTakeOverMenu_MenuItemMethods>::ctor(this, menu_obj, result);
         this
     }
 }

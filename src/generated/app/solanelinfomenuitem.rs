@@ -14,11 +14,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuItem.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct SolanelInfoMenuItem_ConfirmDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -37,50 +32,15 @@ mod __types {
         #[rename(name = "m_HubAreaData")]
         pub m_hub_area_data: crate::app::hubareadata::HubAreaData,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuItem.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SolanelInfoMenuItem_ConfirmDialog {}
 }
 
 #[cfg(feature = "app-solanelinfomenuitem-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-#[::unity2::methods]
-impl SolanelInfoMenuItem_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubareadata::HubAreaData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        hub_area_data: crate::app::hubareadata::HubAreaData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuItem_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
 
 #[cfg(feature = "app-solanelinfomenuitem")]
 #[::unity2::methods]
@@ -157,6 +117,46 @@ impl SolanelInfoMenuItem {
             )
         });
         <Self as ISolanelInfoMenuItemMethods>::ctor(this, index);
+        this
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenuitem")]
+#[::unity2::methods]
+impl SolanelInfoMenuItem_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubareadata::HubAreaData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        hub_area_data: crate::app::hubareadata::HubAreaData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-solanelinfomenuitem")]
+impl SolanelInfoMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenuItem_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }

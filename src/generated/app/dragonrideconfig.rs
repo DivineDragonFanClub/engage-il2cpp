@@ -11,48 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideConfig.ShotConfig")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideConfig_ShotConfig {
-        #[rename(name = "ShotRepeatIntervalSec")]
-        pub shot_repeat_interval_sec: f32,
-        #[rename(name = "ShotTriggerIntervalSec")]
-        pub shot_trigger_interval_sec: f32,
-        #[rename(name = "SpecialTimeSec")]
-        pub special_time_sec: f32,
-        #[rename(name = "SpecialIntervalSec")]
-        pub special_interval_sec: f32,
-        #[rename(name = "IsShotPenetrate")]
-        pub is_shot_penetrate: bool,
-        #[rename(name = "IsShowRaySquare")]
-        pub is_show_ray_square: bool,
-        #[rename(name = "IsNeedRouletteStop")]
-        pub is_need_roulette_stop: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ResultConfig.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideConfig.ResultConfig")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideConfig_ResultConfig {
-        #[rename(name = "TitleWaitSec")]
-        pub title_wait_sec: f64,
-        #[rename(name = "ShowTargetWaitSec")]
-        pub show_target_wait_sec: f64,
-        #[rename(name = "ShowAssistWaitSec")]
-        pub show_assist_wait_sec: f64,
-        #[rename(name = "ShowScoreWaitSec")]
-        pub show_score_wait_sec: f64,
-        #[rename(name = "ShowBestScoreWaitSec")]
-        pub show_best_score_wait_sec: f64,
-        #[rename(name = "ShowRankWaitSec")]
-        pub show_rank_wait_sec: f64,
-        #[rename(name = "ShowNewRecordWaitSec")]
-        pub show_new_record_wait_sec: f64,
-        #[rename(name = "CloseAnimeWaitSec")]
-        pub close_anime_wait_sec: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideConfig")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -98,10 +56,76 @@ mod __types {
         #[rename(name = "resultConfig")]
         pub result_config: crate::app::dragonrideconfig::DragonRideConfig_ResultConfig,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideConfig.ShotConfig")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideConfig_ShotConfig {
+        #[rename(name = "ShotRepeatIntervalSec")]
+        pub shot_repeat_interval_sec: f32,
+        #[rename(name = "ShotTriggerIntervalSec")]
+        pub shot_trigger_interval_sec: f32,
+        #[rename(name = "SpecialTimeSec")]
+        pub special_time_sec: f32,
+        #[rename(name = "SpecialIntervalSec")]
+        pub special_interval_sec: f32,
+        #[rename(name = "IsShotPenetrate")]
+        pub is_shot_penetrate: bool,
+        #[rename(name = "IsShowRaySquare")]
+        pub is_show_ray_square: bool,
+        #[rename(name = "IsNeedRouletteStop")]
+        pub is_need_roulette_stop: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ResultConfig.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideConfig.ResultConfig")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideConfig_ResultConfig {
+        #[rename(name = "TitleWaitSec")]
+        pub title_wait_sec: f64,
+        #[rename(name = "ShowTargetWaitSec")]
+        pub show_target_wait_sec: f64,
+        #[rename(name = "ShowAssistWaitSec")]
+        pub show_assist_wait_sec: f64,
+        #[rename(name = "ShowScoreWaitSec")]
+        pub show_score_wait_sec: f64,
+        #[rename(name = "ShowBestScoreWaitSec")]
+        pub show_best_score_wait_sec: f64,
+        #[rename(name = "ShowRankWaitSec")]
+        pub show_rank_wait_sec: f64,
+        #[rename(name = "ShowNewRecordWaitSec")]
+        pub show_new_record_wait_sec: f64,
+        #[rename(name = "CloseAnimeWaitSec")]
+        pub close_anime_wait_sec: f32,
+    }
 }
 
 #[cfg(feature = "app-dragonrideconfig-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-dragonrideconfig")]
+#[::unity2::methods]
+impl DragonRideConfig {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideConfigMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-dragonrideconfig")]
 #[::unity2::methods]
@@ -147,30 +171,6 @@ impl DragonRideConfig_ResultConfig {
             )
         });
         <Self as IDragonRideConfig_ResultConfigMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-dragonrideconfig")]
-#[::unity2::methods]
-impl DragonRideConfig {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-dragonrideconfig")]
-impl DragonRideConfig {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideConfig),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideConfigMethods>::ctor(this);
         this
     }
 }

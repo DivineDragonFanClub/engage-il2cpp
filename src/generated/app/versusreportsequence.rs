@@ -17,6 +17,17 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+        #[rename(name = "m_Action")]
+        pub m_action: crate::system::action::Action,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -101,21 +112,40 @@ mod __types {
         #[rename(name = "m_IsReported")]
         pub m_is_reported: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
-    }
 }
 
 #[cfg(feature = "app-versusreportsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-versusreportsequence")]
+#[::unity2::methods]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this, text, action,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-versusreportsequence")]
 #[::unity2::methods]
@@ -282,36 +312,6 @@ impl VersusReportSequence {
             )
         });
         <Self as IVersusReportSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-#[::unity2::methods]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this, text, action,
-        );
         this
     }
 }

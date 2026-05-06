@@ -12,11 +12,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog.md"))]
-    #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelOrDlcGmapDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct GoToSolanelOrDlcGmapDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogItem.md"))]
     #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelOrDlcGmapDialog.DialogItem")]
     #[parent(crate::app::basicdialogitem::BasicDialogItem)]
@@ -24,6 +19,11 @@ mod __types {
         #[rename(name = "m_func")]
         pub m_func: crate::system::action::Action,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog.md"))]
+    #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelOrDlcGmapDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct GoToSolanelOrDlcGmapDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogGmapItem.md"))]
     #[::unity2::class(
@@ -39,6 +39,34 @@ mod __types {
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+#[::unity2::methods]
+impl GoToSolanelOrDlcGmapDialog_DialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, label: ::unity2::Il2CppString, func: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+impl GoToSolanelOrDlcGmapDialog_DialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(label: ::unity2::Il2CppString, func: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoToSolanelOrDlcGmapDialog_DialogItemMethods>::ctor(this, label, func);
+        this
+    }
+}
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
 #[::unity2::methods]
@@ -79,34 +107,6 @@ impl GoToSolanelOrDlcGmapDialog {
             )
         });
         <Self as IGoToSolanelOrDlcGmapDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-#[::unity2::methods]
-impl GoToSolanelOrDlcGmapDialog_DialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, label: ::unity2::Il2CppString, func: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(label: ::unity2::Il2CppString, func: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGoToSolanelOrDlcGmapDialog_DialogItemMethods>::ctor(this, label, func);
         this
     }
 }

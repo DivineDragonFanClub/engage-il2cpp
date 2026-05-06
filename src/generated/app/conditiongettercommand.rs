@@ -8,16 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand_Command.md"))]
-    #[::unity2::class(namespace = "App", name = "ConditionGetterCommand.Command")]
-    #[parent(crate::system::object::Object)]
-    pub struct ConditionGetterCommand_Command {
-        #[rename(name = "Condition")]
-        pub condition: crate::app::stringcalculator::StringCalculator,
-        #[rename(name = "Function")]
-        pub function: crate::app::stringcalculator::StringCalculator,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand.md"))]
     #[::unity2::class(namespace = "App", name = "ConditionGetterCommand")]
     #[parent(crate::app::calculatorcommand::CalculatorCommand)]
@@ -29,34 +19,20 @@ mod __types {
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand_Command.md"))]
+    #[::unity2::class(namespace = "App", name = "ConditionGetterCommand.Command")]
+    #[parent(crate::system::object::Object)]
+    pub struct ConditionGetterCommand_Command {
+        #[rename(name = "Condition")]
+        pub condition: crate::app::stringcalculator::StringCalculator,
+        #[rename(name = "Function")]
+        pub function: crate::app::stringcalculator::StringCalculator,
+    }
 }
 
 #[cfg(feature = "app-conditiongettercommand-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-conditiongettercommand")]
-#[::unity2::methods]
-impl ConditionGetterCommand_Command {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-conditiongettercommand")]
-impl ConditionGetterCommand_Command {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConditionGetterCommand_Command),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConditionGetterCommand_CommandMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-conditiongettercommand")]
 #[::unity2::methods]
@@ -107,6 +83,30 @@ impl ConditionGetterCommand {
             )
         });
         <Self as IConditionGetterCommandMethods>::ctor(this, name);
+        this
+    }
+}
+
+#[cfg(feature = "app-conditiongettercommand")]
+#[::unity2::methods]
+impl ConditionGetterCommand_Command {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-conditiongettercommand")]
+impl ConditionGetterCommand_Command {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConditionGetterCommand_Command),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConditionGetterCommand_CommandMethods>::ctor(this);
         this
     }
 }

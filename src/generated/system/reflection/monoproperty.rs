@@ -14,6 +14,20 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))]
+    #[::unity2::class(namespace = "System.Reflection", name = "MonoProperty.Getter`2")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct MonoProperty_Getter_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_StaticGetter_1.md"))]
+    #[::unity2::class(namespace = "System.Reflection", name = "MonoProperty.StaticGetter`1")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct MonoProperty_StaticGetter_1<T0: ::unity2::ClassIdentity> {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_GetterAdapter.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "MonoProperty.GetterAdapter")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -34,24 +48,66 @@ mod __types {
         #[rename(name = "cached_getter")]
         pub cached_getter: crate::system::reflection::monoproperty::MonoProperty_GetterAdapter,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "MonoProperty.Getter`2")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct MonoProperty_Getter_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_StaticGetter_1.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "MonoProperty.StaticGetter`1")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct MonoProperty_StaticGetter_1<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "system-reflection-monoproperty-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-monoproperty")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MonoProperty_Getter_2<T0, T1> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, target_0: T0) -> T1;
+}
+
+#[cfg(feature = "system-reflection-monoproperty")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MonoProperty_Getter_2<T0, T1> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MonoProperty_Getter_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMonoProperty_Getter_2Methods<T0, T1>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "system-reflection-monoproperty")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MonoProperty_StaticGetter_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> T0;
+}
+
+#[cfg(feature = "system-reflection-monoproperty")]
+impl<T0: ::unity2::ClassIdentity> MonoProperty_StaticGetter_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MonoProperty_StaticGetter_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMonoProperty_StaticGetter_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "system-reflection-monoproperty")]
 #[::unity2::methods]
@@ -219,62 +275,6 @@ impl MonoProperty {
             )
         });
         <Self as IMonoPropertyMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-reflection-monoproperty")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MonoProperty_Getter_2<T0, T1> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, target_0: T0) -> T1;
-}
-
-#[cfg(feature = "system-reflection-monoproperty")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MonoProperty_Getter_2<T0, T1> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MonoProperty_Getter_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMonoProperty_Getter_2Methods<T0, T1>>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "system-reflection-monoproperty")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MonoProperty_StaticGetter_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> T0;
-}
-
-#[cfg(feature = "system-reflection-monoproperty")]
-impl<T0: ::unity2::ClassIdentity> MonoProperty_StaticGetter_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MonoProperty_StaticGetter_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMonoProperty_StaticGetter_1Methods<T0>>::ctor(this, object, method);
         this
     }
 }

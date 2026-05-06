@@ -10,28 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSelectionUnitManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)]
-    pub struct SortieSelectionUnitManager {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
-        #[rename(name = "m_InventoryMode")]
-        pub m_inventory_mode:
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_MenuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        #[rename(name = "m_statusUpdate")]
-        pub m_status_update: bool,
-        #[rename(name = "m_openItemSubMenu")]
-        pub m_open_item_sub_menu:
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
-        #[rename(name = "m_menuBg")]
-        pub m_menu_bg: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
     #[repr(C)]
     #[derive(
@@ -130,6 +108,28 @@ mod __types {
         pub fn trade() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSelectionUnitManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)]
+    pub struct SortieSelectionUnitManager {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
+        #[rename(name = "m_InventoryMode")]
+        pub m_inventory_mode:
+            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_MenuSelect")]
+        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+        #[rename(name = "m_statusUpdate")]
+        pub m_status_update: bool,
+        #[rename(name = "m_openItemSubMenu")]
+        pub m_open_item_sub_menu:
+            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
+        #[rename(name = "m_menuBg")]
+        pub m_menu_bg: crate::unity_engine::gameobject::GameObject,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]

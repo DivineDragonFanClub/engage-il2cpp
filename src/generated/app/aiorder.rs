@@ -10,6 +10,35 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIOrder_UnitPriority {
+        pub number: i32,
+        pub priority: u32,
+    }
+
+    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AIOrder.UnitPriority";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIOrder_UnitPriority {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder.md"))]
     #[::unity2::class(namespace = "App", name = "AIOrder")]
     #[parent(crate::system::object::Object)]
@@ -61,39 +90,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AIOrder.Func")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AIOrder_Func {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIOrder_UnitPriority {
-        pub number: i32,
-        pub priority: u32,
-    }
-
-    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AIOrder.UnitPriority";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIOrder_UnitPriority {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-aiorder-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-aiorder")]
+#[::unity2::methods(value)]
+impl AIOrder_UnitPriority {
+    #[doc = "`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
+    #[method(name = "op_LessThanOrEqual", args = 2)]
+    pub fn op_less_than_or_equal(
+        a: crate::app::aiorder::AIOrder_UnitPriority,
+        b: crate::app::aiorder::AIOrder_UnitPriority,
+    ) -> bool;
+
+    #[doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
+    #[method(name = "op_GreaterThanOrEqual", args = 2)]
+    pub fn op_greater_than_or_equal(
+        a: crate::app::aiorder::AIOrder_UnitPriority,
+        b: crate::app::aiorder::AIOrder_UnitPriority,
+    ) -> bool;
+}
 
 #[cfg(feature = "app-aiorder")]
 #[::unity2::methods]
@@ -449,22 +467,4 @@ impl AIOrder_Func {
         <Self as IAIOrder_FuncMethods>::ctor(this, object, method);
         this
     }
-}
-
-#[cfg(feature = "app-aiorder")]
-#[::unity2::methods(value)]
-impl AIOrder_UnitPriority {
-    #[doc = "`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
-    #[method(name = "op_LessThanOrEqual", args = 2)]
-    pub fn op_less_than_or_equal(
-        a: crate::app::aiorder::AIOrder_UnitPriority,
-        b: crate::app::aiorder::AIOrder_UnitPriority,
-    ) -> bool;
-
-    #[doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
-    #[method(name = "op_GreaterThanOrEqual", args = 2)]
-    pub fn op_greater_than_or_equal(
-        a: crate::app::aiorder::AIOrder_UnitPriority,
-        b: crate::app::aiorder::AIOrder_UnitPriority,
-    ) -> bool;
 }

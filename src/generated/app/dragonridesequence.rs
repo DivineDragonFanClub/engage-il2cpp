@@ -12,32 +12,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
-    pub struct DragonRideSequence {
-        #[rename(name = "m_IsLoadMenuContent")]
-        pub m_is_load_menu_content: bool,
-        #[rename(name = "m_PrizeBondData")]
-        pub m_prize_bond_data: crate::app::dragonridesequence::DragonRideSequence_PrizeData,
-        #[rename(name = "m_PrizeItemDataList")]
-        pub m_prize_item_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::dragonridesequence::DragonRideSequence_PrizeData,
-        >,
-        #[rename(name = "m_PrizeItemMax")]
-        pub m_prize_item_max: i32,
-        #[rename(name = "m_PrizeItemCount")]
-        pub m_prize_item_count: i32,
-        #[rename(name = "m_AnnouceDifficult")]
-        pub m_annouce_difficult:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_IsAnnounceVoiceOnce")]
-        pub m_is_announce_voice_once: bool,
-        #[rename(name = "m_Talker")]
-        pub m_talker: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TalkerChara")]
-        pub m_talker_chara: crate::combat::character::Character,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideSequence_PrizeData {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
     #[repr(C)]
@@ -131,14 +109,105 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideSequence_PrizeData {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
+    pub struct DragonRideSequence {
+        #[rename(name = "m_IsLoadMenuContent")]
+        pub m_is_load_menu_content: bool,
+        #[rename(name = "m_PrizeBondData")]
+        pub m_prize_bond_data: crate::app::dragonridesequence::DragonRideSequence_PrizeData,
+        #[rename(name = "m_PrizeItemDataList")]
+        pub m_prize_item_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::dragonridesequence::DragonRideSequence_PrizeData,
+        >,
+        #[rename(name = "m_PrizeItemMax")]
+        pub m_prize_item_max: i32,
+        #[rename(name = "m_PrizeItemCount")]
+        pub m_prize_item_count: i32,
+        #[rename(name = "m_AnnouceDifficult")]
+        pub m_annouce_difficult:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "m_IsAnnounceVoiceOnce")]
+        pub m_is_announce_voice_once: bool,
+        #[rename(name = "m_Talker")]
+        pub m_talker: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TalkerChara")]
+        pub m_talker_chara: crate::combat::character::Character,
+    }
 }
 
 #[cfg(feature = "app-dragonridesequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-dragonridesequence")]
+#[::unity2::methods]
+impl DragonRideSequence_PrizeData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, set_item: crate::app::itemdata::ItemData, set_num: i32) -> ();
+
+    #[doc = "`AddNum(i32)` overload"]
+    #[method(name = "AddNum", args = 1)]
+    pub fn add_num(self, add: i32) -> ();
+
+    #[doc = "`get_ID()` overload"]
+    #[method(name = "get_ID", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_ID", args = 1)]
+    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_item()` overload"]
+    #[method(name = "get_item", args = 0)]
+    pub fn get_item(self) -> crate::app::itemdata::ItemData;
+
+    #[doc = "`set_item(crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "set_item", args = 1)]
+    pub fn set_item(self, value: crate::app::itemdata::ItemData) -> ();
+
+    #[doc = "`get_num()` overload"]
+    #[method(name = "get_num", args = 0)]
+    pub fn get_num(self) -> i32;
+
+    #[doc = "`set_num(i32)` overload"]
+    #[method(name = "set_num", args = 1)]
+    pub fn set_num(self, value: i32) -> ();
+}
+
+#[cfg(feature = "app-dragonridesequence")]
+impl DragonRideSequence_PrizeData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideSequence_PrizeData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideSequence_PrizeDataMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]
+    pub fn new_2(set_item: crate::app::itemdata::ItemData, set_num: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideSequence_PrizeData),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDragonRideSequence_PrizeDataMethods>::ctor_2(this, set_item, set_num);
+        this
+    }
+}
 
 #[cfg(feature = "app-dragonridesequence")]
 #[::unity2::methods]
@@ -296,75 +365,6 @@ impl DragonRideSequence {
             )
         });
         <Self as IDragonRideSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-dragonridesequence")]
-#[::unity2::methods]
-impl DragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, set_item: crate::app::itemdata::ItemData, set_num: i32) -> ();
-
-    #[doc = "`AddNum(i32)` overload"]
-    #[method(name = "AddNum", args = 1)]
-    pub fn add_num(self, add: i32) -> ();
-
-    #[doc = "`get_ID()` overload"]
-    #[method(name = "get_ID", args = 0)]
-    pub fn get_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_ID", args = 1)]
-    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_item()` overload"]
-    #[method(name = "get_item", args = 0)]
-    pub fn get_item(self) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`set_item(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "set_item", args = 1)]
-    pub fn set_item(self, value: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`get_num()` overload"]
-    #[method(name = "get_num", args = 0)]
-    pub fn get_num(self) -> i32;
-
-    #[doc = "`set_num(i32)` overload"]
-    #[method(name = "set_num", args = 1)]
-    pub fn set_num(self, value: i32) -> ();
-}
-
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]
-    pub fn new_2(set_item: crate::app::itemdata::ItemData, set_num: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor_2(this, set_item, set_num);
         this
     }
 }

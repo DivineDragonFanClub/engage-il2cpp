@@ -13,50 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcontroller/HubMascotController.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMascotController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMascotController {
-        #[rename(name = "FollowSpeed1")]
-        pub follow_speed1: f32,
-        #[rename(name = "FollowSpeed2")]
-        pub follow_speed2: f32,
-        #[rename(name = "SpeedRate")]
-        pub speed_rate: f32,
-        #[rename(name = "overlapColliders")]
-        pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
-        #[rename(name = "results")]
-        pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_speed")]
-        pub m_speed: f32,
-        #[rename(name = "m_angle")]
-        pub m_angle: f32,
-        #[rename(name = "m_lastAngle")]
-        pub m_last_angle: f32,
-        #[rename(name = "m_reactionCounter")]
-        pub m_reaction_counter: f32,
-        #[rename(name = "m_moveDelay")]
-        pub m_move_delay: f32,
-        #[rename(name = "m_distanceTime")]
-        pub m_distance_time: f32,
-        #[rename(name = "m_keepAway")]
-        pub m_keep_away: bool,
-        #[rename(name = "m_reactionFirst")]
-        pub m_reaction_first: bool,
-        #[rename(name = "m_findLast")]
-        pub m_find_last: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_agent")]
-        pub m_agent: crate::unity_engine::ai::navmeshagent::NavMeshAgent,
-        #[rename(name = "m_path")]
-        pub m_path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
-        #[rename(name = "ObjectCollisionLayerMask")]
-        pub object_collision_layer_mask: i32,
-        #[rename(name = "GroundCollisionLayerMask")]
-        pub ground_collision_layer_mask: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -107,6 +63,50 @@ mod __types {
         pub fn lost() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcontroller/HubMascotController.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMascotController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubMascotController {
+        #[rename(name = "FollowSpeed1")]
+        pub follow_speed1: f32,
+        #[rename(name = "FollowSpeed2")]
+        pub follow_speed2: f32,
+        #[rename(name = "SpeedRate")]
+        pub speed_rate: f32,
+        #[rename(name = "overlapColliders")]
+        pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        #[rename(name = "results")]
+        pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        #[rename(name = "m_animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_speed")]
+        pub m_speed: f32,
+        #[rename(name = "m_angle")]
+        pub m_angle: f32,
+        #[rename(name = "m_lastAngle")]
+        pub m_last_angle: f32,
+        #[rename(name = "m_reactionCounter")]
+        pub m_reaction_counter: f32,
+        #[rename(name = "m_moveDelay")]
+        pub m_move_delay: f32,
+        #[rename(name = "m_distanceTime")]
+        pub m_distance_time: f32,
+        #[rename(name = "m_keepAway")]
+        pub m_keep_away: bool,
+        #[rename(name = "m_reactionFirst")]
+        pub m_reaction_first: bool,
+        #[rename(name = "m_findLast")]
+        pub m_find_last: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_agent")]
+        pub m_agent: crate::unity_engine::ai::navmeshagent::NavMeshAgent,
+        #[rename(name = "m_path")]
+        pub m_path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
+        #[rename(name = "ObjectCollisionLayerMask")]
+        pub object_collision_layer_mask: i32,
+        #[rename(name = "GroundCollisionLayerMask")]
+        pub ground_collision_layer_mask: i32,
     }
 }
 

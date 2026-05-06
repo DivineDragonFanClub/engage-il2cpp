@@ -7,11 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader.md"))]
-    #[::unity2::class(namespace = "App", name = "StructHeader")]
-    #[parent(crate::system::object::Object)]
-    pub struct StructHeader {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader_Param.md"))]
     #[::unity2::class(namespace = "App", name = "StructHeader.Param")]
     #[parent(crate::system::object::Object)]
@@ -19,71 +14,15 @@ mod __types {
         #[rename(name = "_type")]
         pub r#type: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader.md"))]
+    #[::unity2::class(namespace = "App", name = "StructHeader")]
+    #[parent(crate::system::object::Object)]
+    pub struct StructHeader {}
 }
 
 #[cfg(feature = "app-structheader-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-structheader")]
-#[::unity2::methods]
-impl StructHeader {
-    #[doc = "`get_param()` overload"]
-    #[method(name = "get_param", args = 0)]
-    pub fn get_param(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::structheader::StructHeader_Param,
-    >;
-
-    #[doc = "`set_param(crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>)` overload"]
-    #[method(name = "set_param", args = 1)]
-    pub fn set_param(
-        self,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::structheader::StructHeader_Param,
-        >,
-    ) -> ();
-
-    #[doc = "`get_sheetName()` overload"]
-    #[method(name = "get_sheetName", args = 0)]
-    pub fn get_sheet_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_sheetName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_sheetName", args = 1)]
-    pub fn set_sheet_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_filePath()` overload"]
-    #[method(name = "get_filePath", args = 0)]
-    pub fn get_file_path(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_filePath(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_filePath", args = 1)]
-    pub fn set_file_path(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetArrayIdent()` overload"]
-    #[method(name = "GetArrayIdent", args = 0)]
-    pub fn get_array_ident(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-structheader")]
-impl StructHeader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StructHeader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStructHeaderMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-structheader")]
 #[::unity2::methods]
@@ -153,6 +92,67 @@ impl StructHeader_Param {
             )
         });
         <Self as IStructHeader_ParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-structheader")]
+#[::unity2::methods]
+impl StructHeader {
+    #[doc = "`get_param()` overload"]
+    #[method(name = "get_param", args = 0)]
+    pub fn get_param(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::structheader::StructHeader_Param,
+    >;
+
+    #[doc = "`set_param(crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>)` overload"]
+    #[method(name = "set_param", args = 1)]
+    pub fn set_param(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::structheader::StructHeader_Param,
+        >,
+    ) -> ();
+
+    #[doc = "`get_sheetName()` overload"]
+    #[method(name = "get_sheetName", args = 0)]
+    pub fn get_sheet_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_sheetName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_sheetName", args = 1)]
+    pub fn set_sheet_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_filePath()` overload"]
+    #[method(name = "get_filePath", args = 0)]
+    pub fn get_file_path(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_filePath(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_filePath", args = 1)]
+    pub fn set_file_path(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetArrayIdent()` overload"]
+    #[method(name = "GetArrayIdent", args = 0)]
+    pub fn get_array_ident(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-structheader")]
+impl StructHeader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StructHeader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStructHeaderMethods>::ctor(this);
         this
     }
 }

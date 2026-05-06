@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagAnimation")]
+    #[parent(crate::app::talk3_d::talktag::TalkTag)]
+    pub struct TalkTagAnimation {
+        #[rename(name = "m_TagID")]
+        pub m_tag_id: crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID,
+        #[rename(name = "m_Pid")]
+        pub m_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_AnimeName")]
+        pub m_anime_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktaganimation/TalkTagAnimation_TagID.md"))]
     #[repr(C)]
     #[derive(
@@ -56,18 +68,6 @@ mod __types {
         pub fn look_at() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagAnimation")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagAnimation {
-        #[rename(name = "m_TagID")]
-        pub m_tag_id: crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID,
-        #[rename(name = "m_Pid")]
-        pub m_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_AnimeName")]
-        pub m_anime_name: ::unity2::Il2CppString,
     }
 }
 

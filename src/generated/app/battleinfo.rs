@@ -14,57 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_SupportList.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
-    pub struct BattleInfo_SupportList {
-        #[rename(name = "m_Offense")]
-        pub m_offense: crate::app::unit::Unit,
-        #[rename(name = "m_Defense")]
-        pub m_defense: crate::app::unit::Unit,
-        #[rename(name = "m_Compare")]
-        pub m_compare: crate::system::comparison_1::Comparison_1<
-            crate::app::battleinfo::BattleInfo_SupportData,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
-    pub struct BattleInfo_BattleInfoSideArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleInfo {
-        #[static_field]
-        #[rename(name = "CriticalFactor")]
-        pub critical_factor: i32,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::battleinfo::BattleInfo_FlagField,
-        #[rename(name = "m_Sides")]
-        pub m_sides: crate::app::battleinfo::BattleInfo_BattleInfoSideArray,
-        #[rename(name = "m_Supports")]
-        pub m_supports: crate::app::battleinfo::BattleInfo_SupportList,
-        #[rename(name = "m_MainUnitEnum")]
-        pub m_main_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_WholeUnitEnum")]
-        pub m_whole_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainOffenseEnum")]
-        pub m_chain_offense_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainDefenseEnum")]
-        pub m_chain_defense_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainUnitEnum")]
-        pub m_chain_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_TempSkills")]
-        pub m_temp_skills:
-            crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
-        #[rename(name = "m_GuardSide")]
-        pub m_guard_side: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_GuardFunc")]
-        pub m_guard_func: crate::app::mapfor::MapFor_RangeFunction,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -221,6 +170,20 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_SupportList.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
+    pub struct BattleInfo_SupportList {
+        #[rename(name = "m_Offense")]
+        pub m_offense: crate::app::unit::Unit,
+        #[rename(name = "m_Defense")]
+        pub m_defense: crate::app::unit::Unit,
+        #[rename(name = "m_Compare")]
+        pub m_compare: crate::system::comparison_1::Comparison_1<
+            crate::app::battleinfo::BattleInfo_SupportData,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -281,6 +244,38 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleInfo {
+        #[static_field]
+        #[rename(name = "CriticalFactor")]
+        pub critical_factor: i32,
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::battleinfo::BattleInfo_FlagField,
+        #[rename(name = "m_Sides")]
+        pub m_sides: crate::app::battleinfo::BattleInfo_BattleInfoSideArray,
+        #[rename(name = "m_Supports")]
+        pub m_supports: crate::app::battleinfo::BattleInfo_SupportList,
+        #[rename(name = "m_MainUnitEnum")]
+        pub m_main_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[rename(name = "m_WholeUnitEnum")]
+        pub m_whole_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[rename(name = "m_ChainOffenseEnum")]
+        pub m_chain_offense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[rename(name = "m_ChainDefenseEnum")]
+        pub m_chain_defense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[rename(name = "m_ChainUnitEnum")]
+        pub m_chain_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[rename(name = "m_TempSkills")]
+        pub m_temp_skills:
+            crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
+        #[rename(name = "m_GuardSide")]
+        pub m_guard_side: crate::app::battleside::BattleSide_Type,
+        #[rename(name = "m_GuardFunc")]
+        pub m_guard_func: crate::app::mapfor::MapFor_RangeFunction,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_MindScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -315,6 +310,11 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
     pub struct BattleInfo_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
+    pub struct BattleInfo_BattleInfoSideArray {}
 }
 
 #[cfg(feature = "app-battleinfo-types")]
@@ -369,27 +369,49 @@ impl BattleInfo_SupportList {
 }
 
 #[cfg(feature = "app-battleinfo")]
-#[::unity2::methods]
-impl BattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[::unity2::methods(value)]
+impl BattleInfo_SupportData {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+    ) -> ();
 }
 
 #[cfg(feature = "app-battleinfo")]
-impl BattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleInfo_BattleInfoSideArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
-        this
-    }
+#[::unity2::methods(value)]
+impl BattleInfo_SetupScope {
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        revenge_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 }
 
 #[cfg(feature = "app-battleinfo")]
@@ -885,52 +907,6 @@ impl BattleInfo {
 
 #[cfg(feature = "app-battleinfo")]
 #[::unity2::methods(value)]
-impl BattleInfo_SupportData {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        unit: crate::app::unit::Unit,
-        status: crate::app::battleinfoside::BattleInfoSide_Status,
-    ) -> ();
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods(value)]
-impl BattleInfo_SetupScope {
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "GetSide", args = 1)]
-    pub fn get_side(
-        self,
-        side: crate::app::battleside::BattleSide_Type,
-    ) -> crate::app::battleinfoside::BattleInfoSide;
-
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor(
-        self,
-        info: crate::app::battleinfo::BattleInfo,
-        offense: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-        defense: crate::app::unit::Unit,
-        revenge_item: crate::app::unititem::UnitItem,
-        attack_x: i32,
-        attack_z: i32,
-        target_x: i32,
-        target_z: i32,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods(value)]
 impl BattleInfo_MindScope {
     #[doc = "`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]
     #[method(name = ".ctor", args = 3)]
@@ -970,6 +946,30 @@ impl BattleInfo_FlagField {
             )
         });
         <Self as IBattleInfo_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_BattleInfoSideArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
         this
     }
 }

@@ -7,15 +7,15 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Layer")]
-    #[parent(crate::system::object::Object)]
-    pub struct Layer {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Mask.md"))]
     #[::unity2::class(namespace = "Combat", name = "Layer.Mask")]
     #[parent(crate::system::object::Object)]
     pub struct Layer_Mask {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Layer")]
+    #[parent(crate::system::object::Object)]
+    pub struct Layer {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Shift.md"))]
     #[::unity2::class(namespace = "Combat", name = "Layer.Shift")]
@@ -29,18 +29,6 @@ mod __types {
 
 #[cfg(feature = "combat-layer-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-layer")]
-#[::unity2::methods]
-impl Layer {
-    #[doc = "`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]
-    #[method(name = "CollidesTo", args = 2)]
-    pub fn collides_to(c: crate::unity_engine::collider::Collider, mask: i32) -> bool;
-
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-}
 
 #[cfg(feature = "combat-layer")]
 #[::unity2::methods]
@@ -84,6 +72,18 @@ impl Layer_Mask {
     #[doc = "`set_Hideable(i32)` overload"]
     #[method(name = "set_Hideable", args = 1)]
     pub fn set_hideable(value: i32) -> ();
+
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+}
+
+#[cfg(feature = "combat-layer")]
+#[::unity2::methods]
+impl Layer {
+    #[doc = "`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]
+    #[method(name = "CollidesTo", args = 2)]
+    pub fn collides_to(c: crate::unity_engine::collider::Collider, mask: i32) -> bool;
 
     #[doc = "`Initialize()` overload"]
     #[method(name = "Initialize", args = 0)]

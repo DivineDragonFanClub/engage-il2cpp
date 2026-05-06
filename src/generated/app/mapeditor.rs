@@ -14,6 +14,14 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditor/MapEditor_EditObject.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEditor.EditObject")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapEditor_EditObject {
+        #[rename(name = "gameObject")]
+        pub game_object: crate::unity_engine::gameobject::GameObject,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditor/MapEditor.md"))]
     #[::unity2::class(namespace = "App", name = "MapEditor")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapeditor :: MapEditor >)]
@@ -53,18 +61,34 @@ mod __types {
         #[rename(name = "CasualMapSlotMax")]
         pub casual_map_slot_max: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditor/MapEditor_EditObject.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditor.EditObject")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEditor_EditObject {
-        #[rename(name = "gameObject")]
-        pub game_object: crate::unity_engine::gameobject::GameObject,
-    }
 }
 
 #[cfg(feature = "app-mapeditor-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapeditor")]
+#[::unity2::methods]
+impl MapEditor_EditObject {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapeditor")]
+impl MapEditor_EditObject {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEditor_EditObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEditor_EditObjectMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapeditor")]
 #[::unity2::methods]
@@ -363,30 +387,6 @@ impl MapEditor {
             )
         });
         <Self as IMapEditorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapeditor")]
-#[::unity2::methods]
-impl MapEditor_EditObject {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapeditor")]
-impl MapEditor_EditObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditor_EditObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditor_EditObjectMethods>::ctor(this);
         this
     }
 }

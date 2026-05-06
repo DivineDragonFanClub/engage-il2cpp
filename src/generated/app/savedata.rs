@@ -15,16 +15,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct SaveData_Manager_Task {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveData.Manager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: savedata :: SaveData_Manager >)]
-    pub struct SaveData_Manager {
-        #[rename(name = "m_Tasks")]
-        pub m_tasks: crate::system::collections::generic::queue_1::Queue_1<
-            crate::app::savedata::SaveData_Manager_Task,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_TaskKind.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +67,31 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveData.Manager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: savedata :: SaveData_Manager >)]
+    pub struct SaveData_Manager {
+        #[rename(name = "m_Tasks")]
+        pub m_tasks: crate::system::collections::generic::queue_1::Queue_1<
+            crate::app::savedata::SaveData_Manager_Task,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveData")]
+    #[parent(crate::system::object::Object)]
+    pub struct SaveData {
+        #[static_field]
+        #[rename(name = "MountName")]
+        pub mount_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "MountNameWithColon")]
+        pub mount_name_with_colon: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_IsMounted")]
+        pub s_is_mounted: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md"))]
     #[repr(C)]
     #[derive(
@@ -119,21 +134,6 @@ mod __types {
         pub fn task() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveData")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveData {
-        #[static_field]
-        #[rename(name = "MountName")]
-        pub mount_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "MountNameWithColon")]
-        pub mount_name_with_colon: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_IsMounted")]
-        pub s_is_mounted: bool,
     }
 }
 

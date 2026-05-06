@@ -11,6 +11,28 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceUnitSelect")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceunitselect :: SortieSequenceUnitSelect >)]
+    pub struct SortieSequenceUnitSelect {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "SortieResNameC")]
+        pub sortie_res_name_c: ::unity2::Il2CppString,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::unitselectroot::UnitSelectRoot,
+        #[rename(name = "m_unitSelectMenu")]
+        pub m_unit_select_menu: crate::app::basicmenu::BasicMenu,
+        #[rename(name = "m_rootAnimator")]
+        pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_menuSelect")]
+        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -81,28 +103,6 @@ mod __types {
         pub fn end_from_troop() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceUnitSelect")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceunitselect :: SortieSequenceUnitSelect >)]
-    pub struct SortieSequenceUnitSelect {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SortieResNameC")]
-        pub sortie_res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::unitselectroot::UnitSelectRoot,
-        #[rename(name = "m_unitSelectMenu")]
-        pub m_unit_select_menu: crate::app::basicmenu::BasicMenu,
-        #[rename(name = "m_rootAnimator")]
-        pub m_root_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_menuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
     }
 }
 

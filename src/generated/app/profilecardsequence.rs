@@ -12,60 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProfileCardSequence {
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::profilecardtopmenu::ProfileCardTopMenu_Result2,
-        #[rename(name = "m_MyCardMenuResult")]
-        pub m_my_card_menu_result: crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2,
-        #[rename(name = "m_SelectEditMenuResult")]
-        pub m_select_edit_menu_result:
-            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
-        #[rename(name = "m_CommentIndexMenuResult")]
-        pub m_comment_index_menu_result:
-            crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,
-        #[rename(name = "m_AlbumMenuResult")]
-        pub m_album_menu_result: crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2,
-        #[rename(name = "m_AlbumListMenuResult")]
-        pub m_album_list_menu_result:
-            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2,
-        #[rename(name = "m_ProfileCardMyCardRoot")]
-        pub m_profile_card_my_card_root: crate::app::profilecardmycardroot::ProfileCardMyCardRoot,
-        #[rename(name = "m_ProfileCardAlbumRoot")]
-        pub m_profile_card_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
-        #[rename(name = "m_ProfileCardTemp")]
-        pub m_profile_card_temp: crate::app::profilecard::ProfileCard,
-        #[rename(name = "m_AlbumIndex")]
-        pub m_album_index: i32,
-        #[rename(name = "m_EnabledPhoto")]
-        pub m_enabled_photo: bool,
-        #[rename(name = "m_CommentIndex")]
-        pub m_comment_index: i32,
-        #[rename(name = "m_CommentTempArray")]
-        pub m_comment_temp_array:
-            ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
-        #[rename(name = "m_NeededUpdateCardOnBuild")]
-        pub m_needed_update_card_on_build: bool,
-        #[rename(name = "m_BgData")]
-        pub m_bg_data: crate::app::profilecardbgdata::ProfileCardBgData,
-        #[rename(name = "m_FrameData")]
-        pub m_frame_data: crate::app::profilecardframedata::ProfileCardFrameData,
-        #[rename(name = "m_LoadingBgData")]
-        pub m_loading_bg_data: bool,
-        #[rename(name = "m_LoadingFrameData")]
-        pub m_loading_frame_data: bool,
-        #[rename(name = "m_DisposeEventHandler")]
-        pub m_dispose_event_handler:
-            crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardSequence.DisposeEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardSequence_DisposeEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardsequence/ProfileCardSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -205,10 +151,92 @@ mod __types {
             Self { value: 25 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardSequence.DisposeEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardSequence_DisposeEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ProfileCardSequence {
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::profilecardtopmenu::ProfileCardTopMenu_Result2,
+        #[rename(name = "m_MyCardMenuResult")]
+        pub m_my_card_menu_result: crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2,
+        #[rename(name = "m_SelectEditMenuResult")]
+        pub m_select_edit_menu_result:
+            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
+        #[rename(name = "m_CommentIndexMenuResult")]
+        pub m_comment_index_menu_result:
+            crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,
+        #[rename(name = "m_AlbumMenuResult")]
+        pub m_album_menu_result: crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2,
+        #[rename(name = "m_AlbumListMenuResult")]
+        pub m_album_list_menu_result:
+            crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2,
+        #[rename(name = "m_ProfileCardMyCardRoot")]
+        pub m_profile_card_my_card_root: crate::app::profilecardmycardroot::ProfileCardMyCardRoot,
+        #[rename(name = "m_ProfileCardAlbumRoot")]
+        pub m_profile_card_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
+        #[rename(name = "m_ProfileCardTemp")]
+        pub m_profile_card_temp: crate::app::profilecard::ProfileCard,
+        #[rename(name = "m_AlbumIndex")]
+        pub m_album_index: i32,
+        #[rename(name = "m_EnabledPhoto")]
+        pub m_enabled_photo: bool,
+        #[rename(name = "m_CommentIndex")]
+        pub m_comment_index: i32,
+        #[rename(name = "m_CommentTempArray")]
+        pub m_comment_temp_array:
+            ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
+        #[rename(name = "m_NeededUpdateCardOnBuild")]
+        pub m_needed_update_card_on_build: bool,
+        #[rename(name = "m_BgData")]
+        pub m_bg_data: crate::app::profilecardbgdata::ProfileCardBgData,
+        #[rename(name = "m_FrameData")]
+        pub m_frame_data: crate::app::profilecardframedata::ProfileCardFrameData,
+        #[rename(name = "m_LoadingBgData")]
+        pub m_loading_bg_data: bool,
+        #[rename(name = "m_LoadingFrameData")]
+        pub m_loading_frame_data: bool,
+        #[rename(name = "m_DisposeEventHandler")]
+        pub m_dispose_event_handler:
+            crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler,
+    }
 }
 
 #[cfg(feature = "app-profilecardsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-profilecardsequence")]
+#[::unity2::methods]
+impl ProfileCardSequence_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardsequence")]
+impl ProfileCardSequence_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardSequence_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardSequence_DisposeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-profilecardsequence")]
 #[::unity2::methods]
@@ -473,34 +501,6 @@ impl ProfileCardSequence {
             )
         });
         <Self as IProfileCardSequenceMethods>::ctor(this, enabled_photo, dispose_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardsequence")]
-#[::unity2::methods]
-impl ProfileCardSequence_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardsequence")]
-impl ProfileCardSequence_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardSequence_DisposeEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardSequence_DisposeEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

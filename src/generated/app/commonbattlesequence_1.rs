@@ -30,12 +30,6 @@ mod __types {
             crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
-    #[parent(crate::system::object::Object)]
-    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1_Reliance.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -67,6 +61,12 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
+    #[parent(crate::system::object::Object)]
+    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "app-commonbattlesequence_1-types")]

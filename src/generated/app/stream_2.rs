@@ -8,56 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Stream_WriteScope {
-        pub m_stream: crate::app::stream_2::Stream_2,
-    }
-
-    impl ::unity2::ClassIdentity for Stream_WriteScope {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Stream.WriteScope";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Stream_WriteScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stream_2/Stream_2.md"))]
-    #[::unity2::class(namespace = "App", name = "Stream")]
-    #[parent(crate::system::object::Object)]
-    pub struct Stream_2 {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::stream_2::Stream_Info,
-        >,
-        #[static_field]
-        #[rename(name = "MAGIC_CODE")]
-        pub magic_code: u32,
-        #[static_field]
-        #[rename(name = "Magic_Number_Compress")]
-        pub magic_number_compress: u64,
-        #[static_field]
-        #[rename(name = "HashCode")]
-        pub hash_code: u16,
-        #[static_field]
-        #[rename(name = "NullCode")]
-        pub null_code: u16,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_PositionScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -144,6 +94,56 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stream_2/Stream_2.md"))]
+    #[::unity2::class(namespace = "App", name = "Stream")]
+    #[parent(crate::system::object::Object)]
+    pub struct Stream_2 {
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::stream_2::Stream_Info,
+        >,
+        #[static_field]
+        #[rename(name = "MAGIC_CODE")]
+        pub magic_code: u32,
+        #[static_field]
+        #[rename(name = "Magic_Number_Compress")]
+        pub magic_number_compress: u64,
+        #[static_field]
+        #[rename(name = "HashCode")]
+        pub hash_code: u16,
+        #[static_field]
+        #[rename(name = "NullCode")]
+        pub null_code: u16,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Stream_WriteScope {
+        pub m_stream: crate::app::stream_2::Stream_2,
+    }
+
+    impl ::unity2::ClassIdentity for Stream_WriteScope {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Stream.WriteScope";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Stream_WriteScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-stream_2-types")]
@@ -151,14 +151,34 @@ pub use __types::*;
 
 #[cfg(feature = "app-stream_2")]
 #[::unity2::methods(value)]
-impl Stream_WriteScope {
+impl Stream_PositionScope {
     #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, position: i32) -> ();
 
     #[doc = "`Dispose()` overload"]
     #[method(name = "Dispose", args = 0)]
     pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-stream_2")]
+#[::unity2::methods(value)]
+impl Stream_ReadScope {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`set_Version(i32)` overload"]
+    #[method(name = "set_Version", args = 1)]
+    pub fn set_version(self, value: i32) -> ();
 }
 
 #[cfg(feature = "app-stream_2")]
@@ -614,32 +634,12 @@ impl Stream_2 {
 
 #[cfg(feature = "app-stream_2")]
 #[::unity2::methods(value)]
-impl Stream_PositionScope {
+impl Stream_WriteScope {
     #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, position: i32) -> ();
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
 
     #[doc = "`Dispose()` overload"]
     #[method(name = "Dispose", args = 0)]
     pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "app-stream_2")]
-#[::unity2::methods(value)]
-impl Stream_ReadScope {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`set_Version(i32)` overload"]
-    #[method(name = "set_Version", args = 1)]
-    pub fn set_version(self, value: i32) -> ();
 }

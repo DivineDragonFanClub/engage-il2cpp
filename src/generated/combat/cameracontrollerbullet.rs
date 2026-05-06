@@ -14,22 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerBullet")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerBullet {
-        #[rename(name = "StartVector")]
-        pub start_vector: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "HoldVector")]
-        pub hold_vector: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "BulletVector")]
-        pub bullet_vector: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "SpeedBrake")]
-        pub speed_brake: f32,
-        #[rename(name = "m_LastSpeed")]
-        pub m_last_speed: crate::unity_engine::vector3::Vector3,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
     #[repr(C)]
     #[derive(
@@ -80,6 +64,22 @@ mod __types {
         pub fn after_shoot() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraControllerBullet")]
+    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
+    pub struct CameraControllerBullet {
+        #[rename(name = "StartVector")]
+        pub start_vector: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "HoldVector")]
+        pub hold_vector: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "BulletVector")]
+        pub bullet_vector: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "SpeedBrake")]
+        pub speed_brake: f32,
+        #[rename(name = "m_LastSpeed")]
+        pub m_last_speed: crate::unity_engine::vector3::Vector3,
     }
 }
 

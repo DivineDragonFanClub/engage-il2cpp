@@ -14,16 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/adhocassetloader/AdhocAssetLoader.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AdhocAssetLoader")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: adhocassetloader :: AdhocAssetLoader >)]
-    pub struct AdhocAssetLoader {
-        #[rename(name = "assets")]
-        pub assets: crate::system::collections::generic::list_1::List_1<
-            crate::combat::adhocassetloader::AdhocAssetLoader_Asset,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/adhocassetloader/AdhocAssetLoader_Asset.md"))]
     #[::unity2::class(namespace = "Combat", name = "AdhocAssetLoader.Asset")]
     #[parent(crate::system::object::Object)]
@@ -33,57 +23,20 @@ mod __types {
             crate::unity_engine::gameobject::GameObject,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/adhocassetloader/AdhocAssetLoader.md"))]
+    #[::unity2::class(namespace = "Combat", name = "AdhocAssetLoader")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: adhocassetloader :: AdhocAssetLoader >)]
+    pub struct AdhocAssetLoader {
+        #[rename(name = "assets")]
+        pub assets: crate::system::collections::generic::list_1::List_1<
+            crate::combat::adhocassetloader::AdhocAssetLoader_Asset,
+        >,
+    }
 }
 
 #[cfg(feature = "combat-adhocassetloader-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-adhocassetloader")]
-#[::unity2::methods]
-impl AdhocAssetLoader {
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(
-        self,
-        path: ::unity2::Il2CppString,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`Add(::unity2::Il2CppString)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Preload()` overload"]
-    #[method(name = "Preload", args = 0)]
-    pub fn preload(self) -> ();
-
-    #[doc = "`IsReady()` overload"]
-    #[method(name = "IsReady", args = 0)]
-    pub fn is_ready(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-adhocassetloader")]
-impl AdhocAssetLoader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AdhocAssetLoader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAdhocAssetLoaderMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "combat-adhocassetloader")]
 #[::unity2::methods]
@@ -145,6 +98,53 @@ impl AdhocAssetLoader_Asset {
             )
         });
         <Self as IAdhocAssetLoader_AssetMethods>::ctor(this, name, hash);
+        this
+    }
+}
+
+#[cfg(feature = "combat-adhocassetloader")]
+#[::unity2::methods]
+impl AdhocAssetLoader {
+    #[doc = "`OnDestroy()` overload"]
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        path: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`Add(::unity2::Il2CppString)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Preload()` overload"]
+    #[method(name = "Preload", args = 0)]
+    pub fn preload(self) -> ();
+
+    #[doc = "`IsReady()` overload"]
+    #[method(name = "IsReady", args = 0)]
+    pub fn is_ready(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-adhocassetloader")]
+impl AdhocAssetLoader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AdhocAssetLoader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAdhocAssetLoaderMethods>::ctor(this);
         this
     }
 }

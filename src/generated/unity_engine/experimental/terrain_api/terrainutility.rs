@@ -12,6 +12,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.TerrainAPI",
+        name = "TerrainUtility.TerrainMap.TerrainFilter"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TerrainUtility_TerrainMap_TerrainFilter {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]
     #[repr(C)]
     #[derive(
@@ -64,22 +72,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainUtility"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TerrainUtility {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainUtility.TerrainGroups"
-    )]
-    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)]
-    pub struct TerrainUtility_TerrainGroups {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.TerrainAPI",
@@ -121,13 +113,21 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainUtility.TerrainMap.TerrainFilter"
+        name = "TerrainUtility.TerrainGroups"
     )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TerrainUtility_TerrainMap_TerrainFilter {}
+    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)]
+    pub struct TerrainUtility_TerrainGroups {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.TerrainAPI",
+        name = "TerrainUtility"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct TerrainUtility {}
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility-types")]
@@ -135,46 +135,28 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 #[::unity2::methods]
-impl TerrainUtility {
-    #[doc = "`HasValidTerrains()` overload"]
-    #[method(name = "HasValidTerrains", args = 0)]
-    pub fn has_valid_terrains() -> bool;
+impl TerrainUtility_TerrainMap_TerrainFilter {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`ClearConnectivity()` overload"]
-    #[method(name = "ClearConnectivity", args = 0)]
-    pub fn clear_connectivity() -> ();
-
-    #[doc = "`CollectTerrains(bool)` overload"]
-    #[method(name = "CollectTerrains", args = 1)]
-    pub fn collect_terrains(
-        only_auto_connected_terrains: bool,
-    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups;
-
-    #[doc = "`AutoConnect()` overload"]
-    #[method(name = "AutoConnect", args = 0)]
-    pub fn auto_connect() -> ();
+    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, terrain: crate::unity_engine::terrain::Terrain) -> bool;
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[::unity2::methods]
-impl TerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl TerrainUtility_TerrainMap_TerrainFilter {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainGroups),
+                ::core::stringify!(TerrainUtility_TerrainMap_TerrainFilter),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITerrainUtility_TerrainGroupsMethods>::ctor(this);
+        <Self as ITerrainUtility_TerrainMap_TerrainFilterMethods>::ctor(this, object, method);
         this
     }
 }
@@ -260,28 +242,46 @@ impl TerrainUtility_TerrainMap_TileCoord {
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 #[::unity2::methods]
-impl TerrainUtility_TerrainMap_TerrainFilter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, terrain: crate::unity_engine::terrain::Terrain) -> bool;
+impl TerrainUtility_TerrainGroups {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TerrainFilter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl TerrainUtility_TerrainGroups {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainMap_TerrainFilter),
+                ::core::stringify!(TerrainUtility_TerrainGroups),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITerrainUtility_TerrainMap_TerrainFilterMethods>::ctor(this, object, method);
+        <Self as ITerrainUtility_TerrainGroupsMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+#[::unity2::methods]
+impl TerrainUtility {
+    #[doc = "`HasValidTerrains()` overload"]
+    #[method(name = "HasValidTerrains", args = 0)]
+    pub fn has_valid_terrains() -> bool;
+
+    #[doc = "`ClearConnectivity()` overload"]
+    #[method(name = "ClearConnectivity", args = 0)]
+    pub fn clear_connectivity() -> ();
+
+    #[doc = "`CollectTerrains(bool)` overload"]
+    #[method(name = "CollectTerrains", args = 1)]
+    pub fn collect_terrains(
+        only_auto_connected_terrains: bool,
+    ) -> crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups;
+
+    #[doc = "`AutoConnect()` overload"]
+    #[method(name = "AutoConnect", args = 0)]
+    pub fn auto_connect() -> ();
 }

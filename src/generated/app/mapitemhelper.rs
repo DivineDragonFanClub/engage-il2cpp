@@ -9,6 +9,62 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapItemHelper_Flag {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapItemHelper_Flag {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapItemHelper.Flag";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapItemHelper_Flag {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapItemHelper_Flag {
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn rod() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn destroy() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn offense() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn direct_rod() -> Self {
+            Self { value: 16 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_BlessFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -73,62 +129,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapItemHelper")]
     #[parent(crate::system::object::Object)]
     pub struct MapItemHelper {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapItemHelper_Flag {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapItemHelper_Flag {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapItemHelper.Flag";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapItemHelper_Flag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapItemHelper_Flag {
-        pub fn attack() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn rod() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn destroy() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn offense() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn direct_rod() -> Self {
-            Self { value: 16 }
-        }
-    }
 }
 
 #[cfg(feature = "app-mapitemhelper-types")]

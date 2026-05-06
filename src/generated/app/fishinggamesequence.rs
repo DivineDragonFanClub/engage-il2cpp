@@ -12,6 +12,62 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FishingGameSequence_FishingAngleState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_FishingAngleState {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.FishingAngleState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_FishingAngleState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FishingGameSequence_FishingAngleState {
+        pub fn center() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn lethal() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn angle_state_count() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
     #[repr(C)]
     #[derive(
@@ -57,6 +113,36 @@ mod __types {
 
         pub fn slow() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct FishingGameSequence_LureRoot {
+        pub x: f32,
+        pub y: f32,
+        pub frame: f32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.LureRoot";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_LureRoot {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
         }
     }
 
@@ -178,28 +264,6 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 20 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingGameSequence_Ripple {
-        #[rename(name = "m_obj")]
-        pub m_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BasePos")]
-        pub m_base_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_SizeList")]
-        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_BaseHeight")]
-        pub m_base_height: f32,
-        #[rename(name = "m_PopIntervalBaseTime")]
-        pub m_pop_interval_base_time: f32,
-        #[rename(name = "m_PopRandomMax")]
-        pub m_pop_random_max: f32,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[rename(name = "m_parentNode")]
-        pub m_parent_node: crate::unity_engine::transform::Transform,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence.md"))]
@@ -574,90 +638,26 @@ mod __types {
         pub m_assist_damage: f32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FishingGameSequence_FishingAngleState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_FishingAngleState {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.FishingAngleState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_FishingAngleState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FishingGameSequence_FishingAngleState {
-        pub fn center() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn lethal() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn angle_state_count() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FishingGameSequence_LureRoot {
-        pub x: f32,
-        pub y: f32,
-        pub frame: f32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.LureRoot";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_LureRoot {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingGameSequence_Ripple {
+        #[rename(name = "m_obj")]
+        pub m_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BasePos")]
+        pub m_base_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_SizeList")]
+        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "m_BaseHeight")]
+        pub m_base_height: f32,
+        #[rename(name = "m_PopIntervalBaseTime")]
+        pub m_pop_interval_base_time: f32,
+        #[rename(name = "m_PopRandomMax")]
+        pub m_pop_random_max: f32,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+        #[rename(name = "m_parentNode")]
+        pub m_parent_node: crate::unity_engine::transform::Transform,
     }
 }
 
@@ -665,46 +665,11 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-fishinggamesequence")]
-#[::unity2::methods]
-impl FishingGameSequence_Ripple {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
-    #[method(name = "Init", args = 5)]
-    pub fn init(
-        self,
-        pos: crate::unity_engine::vector3::Vector3,
-        size: crate::system::collections::generic::list_1::List_1<i32>,
-        base_height: f32,
-        base_interval: f32,
-        add_range: f32,
-    ) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`DestroyObjSoon()` overload"]
-    #[method(name = "DestroyObjSoon", args = 0)]
-    pub fn destroy_obj_soon(self) -> ();
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl FishingGameSequence_Ripple {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingGameSequence_Ripple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
-        this
-    }
+#[::unity2::methods(value)]
+impl FishingGameSequence_LureRoot {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, set_x: f32, set_y: f32, set_frame: f32) -> ();
 }
 
 #[cfg(feature = "app-fishinggamesequence")]
@@ -1075,9 +1040,44 @@ impl FishingGameSequence {
 }
 
 #[cfg(feature = "app-fishinggamesequence")]
-#[::unity2::methods(value)]
-impl FishingGameSequence_LureRoot {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, set_x: f32, set_y: f32, set_frame: f32) -> ();
+#[::unity2::methods]
+impl FishingGameSequence_Ripple {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
+    #[method(name = "Init", args = 5)]
+    pub fn init(
+        self,
+        pos: crate::unity_engine::vector3::Vector3,
+        size: crate::system::collections::generic::list_1::List_1<i32>,
+        base_height: f32,
+        base_interval: f32,
+        add_range: f32,
+    ) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`DestroyObjSoon()` overload"]
+    #[method(name = "DestroyObjSoon", args = 0)]
+    pub fn destroy_obj_soon(self) -> ();
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl FishingGameSequence_Ripple {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingGameSequence_Ripple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
+        this
+    }
 }

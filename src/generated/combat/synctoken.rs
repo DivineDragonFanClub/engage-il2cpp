@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))]
-    #[::unity2::class(namespace = "Combat", name = "SyncToken")]
-    #[parent(crate::system::object::Object)]
-    pub struct SyncToken {
-        #[rename(name = "state")]
-        pub state: ::unity2::Array<crate::combat::synctoken::SyncToken_State>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/synctoken/SyncToken_State.md"))]
     #[repr(C)]
     #[derive(
@@ -63,6 +55,14 @@ mod __types {
         pub fn reached() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))]
+    #[::unity2::class(namespace = "Combat", name = "SyncToken")]
+    #[parent(crate::system::object::Object)]
+    pub struct SyncToken {
+        #[rename(name = "state")]
+        pub state: ::unity2::Array<crate::combat::synctoken::SyncToken_State>,
     }
 }
 

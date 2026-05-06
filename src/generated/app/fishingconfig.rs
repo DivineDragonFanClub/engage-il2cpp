@@ -171,16 +171,6 @@ mod __types {
         pub m_battle_counter_splash_interval: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingConfig.FixCameraConfig")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingConfig_FixCameraConfig {
-        #[rename(name = "Pos")]
-        pub pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "Rot")]
-        pub rot: crate::unity_engine::vector3::Vector3,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_AngleBorder.md"))]
     #[::unity2::class(namespace = "App", name = "FishingConfig.AngleBorder")]
     #[parent(crate::system::object::Object)]
@@ -191,6 +181,16 @@ mod __types {
         pub middle: f32,
         #[rename(name = "Low")]
         pub low: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingConfig.FixCameraConfig")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingConfig_FixCameraConfig {
+        #[rename(name = "Pos")]
+        pub pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "Rot")]
+        pub rot: crate::unity_engine::vector3::Vector3,
     }
 }
 
@@ -225,37 +225,6 @@ impl FishingConfig {
             )
         });
         <Self as IFishingConfigMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-#[::unity2::methods]
-impl FishingConfig_FixCameraConfig {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        set_pos: crate::unity_engine::vector3::Vector3,
-        set_rot: crate::unity_engine::vector3::Vector3,
-    ) -> ();
-}
-
-#[cfg(feature = "app-fishingconfig")]
-impl FishingConfig_FixCameraConfig {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"]
-    pub fn new(
-        set_pos: crate::unity_engine::vector3::Vector3,
-        set_rot: crate::unity_engine::vector3::Vector3,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_FixCameraConfig),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfig_FixCameraConfigMethods>::ctor(this, set_pos, set_rot);
         this
     }
 }
@@ -297,6 +266,37 @@ impl FishingConfig_AngleBorder {
             )
         });
         <Self as IFishingConfig_AngleBorderMethods>::ctor_2(this, set_high, set_middle, set_low);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+#[::unity2::methods]
+impl FishingConfig_FixCameraConfig {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        set_pos: crate::unity_engine::vector3::Vector3,
+        set_rot: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}
+
+#[cfg(feature = "app-fishingconfig")]
+impl FishingConfig_FixCameraConfig {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"]
+    pub fn new(
+        set_pos: crate::unity_engine::vector3::Vector3,
+        set_rot: crate::unity_engine::vector3::Vector3,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_FixCameraConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingConfig_FixCameraConfigMethods>::ctor(this, set_pos, set_rot);
         this
     }
 }

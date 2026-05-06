@@ -12,6 +12,27 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayModeMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RelayModeMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayModeMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RelayModeMenu_MenuItem {
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CommentText")]
+        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_NameLabel")]
+        pub m_name_label: ::unity2::Il2CppString,
+        #[rename(name = "m_CommentLabel")]
+        pub m_comment_label: ::unity2::Il2CppString,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relay::Relay_Modes,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaymodemenu/RelayModeMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -64,35 +85,66 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayModeMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RelayModeMenu_MenuItem {
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CommentText")]
-        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_NameLabel")]
-        pub m_name_label: ::unity2::Il2CppString,
-        #[rename(name = "m_CommentLabel")]
-        pub m_comment_label: ::unity2::Il2CppString,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relay::Relay_Modes,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_ReplayMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RelayModeMenu.ReplayMenuItem")]
     #[parent(crate::app::relaymodemenu::RelayModeMenu_MenuItem)]
     pub struct RelayModeMenu_ReplayMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayModeMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RelayModeMenu {}
 }
 
 #[cfg(feature = "app-relaymodemenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaymodemenu")]
+#[::unity2::methods]
+impl RelayModeMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relaymodemenu::RelayModeMenu_Result2)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymodemenucontent::RelayModeMenuContent, crate::app::relaymodemenu::RelayModeMenu_Result2)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::relaymodemenucontent::RelayModeMenuContent,
+        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetTutorial()` overload"]
+    #[method(name = "GetTutorial", args = 0)]
+    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-relaymodemenu")]
+impl RelayModeMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymodemenucontent::RelayModeMenuContent, crate::app::relaymodemenu::RelayModeMenu_Result2)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::relaymodemenucontent::RelayModeMenuContent,
+        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayModeMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayModeMenuMethods>::ctor(this, menu_item_list, menu_content, initial_selected);
+        this
+    }
+}
 
 #[cfg(feature = "app-relaymodemenu")]
 #[::unity2::methods]
@@ -164,58 +216,6 @@ impl RelayModeMenu_ReplayMenuItem {
             )
         });
         <Self as IRelayModeMenu_ReplayMenuItemMethods>::ctor(this, menu_obj, mode);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaymodemenu")]
-#[::unity2::methods]
-impl RelayModeMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relaymodemenu::RelayModeMenu_Result2)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymodemenucontent::RelayModeMenuContent, crate::app::relaymodemenu::RelayModeMenu_Result2)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::relaymodemenucontent::RelayModeMenuContent,
-        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetTutorial()` overload"]
-    #[method(name = "GetTutorial", args = 0)]
-    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-relaymodemenu")]
-impl RelayModeMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymodemenucontent::RelayModeMenuContent, crate::app::relaymodemenu::RelayModeMenu_Result2)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::relaymodemenucontent::RelayModeMenuContent,
-        initial_selected: crate::app::relaymodemenu::RelayModeMenu_Result2,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayModeMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayModeMenuMethods>::ctor(this, menu_item_list, menu_content, initial_selected);
         this
     }
 }

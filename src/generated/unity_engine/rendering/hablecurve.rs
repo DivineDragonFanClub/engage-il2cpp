@@ -8,6 +8,24 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Segment")]
+    #[parent(crate::system::object::Object)]
+    pub struct HableCurve_Segment {
+        #[rename(name = "offsetX")]
+        pub offset_x: f32,
+        #[rename(name = "offsetY")]
+        pub offset_y: f32,
+        #[rename(name = "scaleX")]
+        pub scale_x: f32,
+        #[rename(name = "scaleY")]
+        pub scale_y: f32,
+        #[rename(name = "lnA")]
+        pub ln_a: f32,
+        #[rename(name = "B")]
+        pub b: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -54,24 +72,6 @@ mod __types {
         pub uniforms: crate::unity_engine::rendering::hablecurve::HableCurve_Uniforms,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Segment")]
-    #[parent(crate::system::object::Object)]
-    pub struct HableCurve_Segment {
-        #[rename(name = "offsetX")]
-        pub offset_x: f32,
-        #[rename(name = "offsetY")]
-        pub offset_y: f32,
-        #[rename(name = "scaleX")]
-        pub scale_x: f32,
-        #[rename(name = "scaleY")]
-        pub scale_y: f32,
-        #[rename(name = "lnA")]
-        pub ln_a: f32,
-        #[rename(name = "B")]
-        pub b: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Uniforms")]
     #[parent(crate::system::object::Object)]
@@ -83,6 +83,34 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-hablecurve-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+#[::unity2::methods]
+impl HableCurve_Segment {
+    #[doc = "`Eval(f32)` overload"]
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(self, x: f32) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl HableCurve_Segment {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HableCurve_Segment),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHableCurve_SegmentMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
 #[::unity2::methods]
@@ -171,34 +199,6 @@ impl HableCurve {
             )
         });
         <Self as IHableCurveMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-#[::unity2::methods]
-impl HableCurve_Segment {
-    #[doc = "`Eval(f32)` overload"]
-    #[method(name = "Eval", args = 1)]
-    pub fn eval(self, x: f32) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Segment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HableCurve_Segment),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHableCurve_SegmentMethods>::ctor(this);
         this
     }
 }

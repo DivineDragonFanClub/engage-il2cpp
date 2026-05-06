@@ -20,18 +20,6 @@ mod __types {
         pub mid: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayTalk")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayTalk {
-        #[static_field]
-        #[rename(name = "GiveAccessoryFlag1")]
-        pub give_accessory_flag1: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "GiveAccessoryFlag2")]
-        pub give_accessory_flag2: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalk/HubPlayTalk_TalkType.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +66,18 @@ mod __types {
         pub fn event() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayTalk")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubPlayTalk {
+        #[static_field]
+        #[rename(name = "GiveAccessoryFlag1")]
+        pub give_accessory_flag1: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "GiveAccessoryFlag2")]
+        pub give_accessory_flag2: ::unity2::Il2CppString,
     }
 }
 

@@ -8,16 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCamera")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceHelper_ProcWaitCamera {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCameraLoosely")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceHelper_ProcWaitCameraLoosely {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceHelper")]
     #[parent(crate::system::object::Object)]
@@ -35,82 +25,20 @@ mod __types {
         #[rename(name = "InsideScreenMax")]
         pub inside_screen_max: f32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCamera")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceHelper_ProcWaitCamera {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCameraLoosely")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceHelper_ProcWaitCameraLoosely {}
 }
 
 #[cfg(feature = "app-mapsequencehelper-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapsequencehelper")]
-#[::unity2::methods]
-impl MapSequenceHelper_ProcWaitCamera {
-    #[doc = "`IsCameraScrolling()` overload"]
-    #[method(name = "IsCameraScrolling", args = 0)]
-    pub fn is_camera_scrolling() -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceHelper_ProcWaitCamera),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceHelper_ProcWaitCameraMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencehelper")]
-#[::unity2::methods]
-impl MapSequenceHelper_ProcWaitCameraLoosely {
-    #[doc = "`IsCameraScrolling()` overload"]
-    #[method(name = "IsCameraScrolling", args = 0)]
-    pub fn is_camera_scrolling() -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceHelper_ProcWaitCameraLoosely),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapsequencehelper")]
 #[::unity2::methods]
@@ -222,6 +150,78 @@ impl MapSequenceHelper {
             )
         });
         <Self as IMapSequenceHelperMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencehelper")]
+#[::unity2::methods]
+impl MapSequenceHelper_ProcWaitCamera {
+    #[doc = "`IsCameraScrolling()` overload"]
+    #[method(name = "IsCameraScrolling", args = 0)]
+    pub fn is_camera_scrolling() -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencehelper")]
+impl MapSequenceHelper_ProcWaitCamera {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceHelper_ProcWaitCamera),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceHelper_ProcWaitCameraMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencehelper")]
+#[::unity2::methods]
+impl MapSequenceHelper_ProcWaitCameraLoosely {
+    #[doc = "`IsCameraScrolling()` overload"]
+    #[method(name = "IsCameraScrolling", args = 0)]
+    pub fn is_camera_scrolling() -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencehelper")]
+impl MapSequenceHelper_ProcWaitCameraLoosely {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceHelper_ProcWaitCameraLoosely),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods>::ctor(this);
         this
     }
 }

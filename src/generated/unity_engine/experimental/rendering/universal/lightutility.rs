@@ -38,14 +38,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "LightUtility"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct LightUtility {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -71,6 +63,14 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "LightUtility"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct LightUtility {}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility-types")]
@@ -79,6 +79,14 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[::unity2::methods(value)]
 impl LightUtility_SpriteLightMeshVertex {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
+#[::unity2::methods(value)]
+impl LightUtility_ParametricLightMeshVertex {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
@@ -129,12 +137,4 @@ impl LightUtility {
         shape_path: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         falloff_distance: f32,
     ) -> crate::unity_engine::bounds::Bounds;
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-#[::unity2::methods(value)]
-impl LightUtility_ParametricLightMeshVertex {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

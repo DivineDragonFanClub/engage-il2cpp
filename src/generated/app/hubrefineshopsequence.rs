@@ -10,46 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubRefineShopSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubRefineShopSequence {
-        #[rename(name = "m_WeaponModelRenderer")]
-        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        #[rename(name = "m_RefineShopRefineBaseRoot")]
-        pub m_refine_shop_refine_base_root:
-            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot,
-        #[rename(name = "m_RefineShopRefineTargetRoot")]
-        pub m_refine_shop_refine_target_root:
-            crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot,
-        #[rename(name = "m_RefineShopEngraveItemSelectRoot")]
-        pub m_refine_shop_engrave_item_select_root:
-            crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot,
-        #[rename(name = "m_RefineShopEngraveGodRoot")]
-        pub m_refine_shop_engrave_god_root:
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
-        #[rename(name = "m_RefineShopEngraveDemoRoot")]
-        pub m_refine_shop_engrave_demo_root:
-            crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
-        #[rename(name = "m_RefineShopExchangeMenuTop")]
-        pub m_refine_shop_exchange_menu_top:
-            crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_OwnerItemIndex")]
-        pub m_owner_item_index: i32,
-        #[rename(name = "m_BaseUnitItem")]
-        pub m_base_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_AfterUnitItem")]
-        pub m_after_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_GodData")]
-        pub m_god_data: crate::app::goddata::GodData,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubrefineshopsequence/HubRefineShopSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -128,6 +88,46 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 10 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubRefineShopSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubRefineShopSequence {
+        #[rename(name = "m_WeaponModelRenderer")]
+        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        #[rename(name = "m_RefineShopRefineBaseRoot")]
+        pub m_refine_shop_refine_base_root:
+            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot,
+        #[rename(name = "m_RefineShopRefineTargetRoot")]
+        pub m_refine_shop_refine_target_root:
+            crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot,
+        #[rename(name = "m_RefineShopEngraveItemSelectRoot")]
+        pub m_refine_shop_engrave_item_select_root:
+            crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot,
+        #[rename(name = "m_RefineShopEngraveGodRoot")]
+        pub m_refine_shop_engrave_god_root:
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
+        #[rename(name = "m_RefineShopEngraveDemoRoot")]
+        pub m_refine_shop_engrave_demo_root:
+            crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
+        #[rename(name = "m_RefineShopExchangeMenuTop")]
+        pub m_refine_shop_exchange_menu_top:
+            crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_OwnerItemIndex")]
+        pub m_owner_item_index: i32,
+        #[rename(name = "m_BaseUnitItem")]
+        pub m_base_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_AfterUnitItem")]
+        pub m_after_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_GodData")]
+        pub m_god_data: crate::app::goddata::GodData,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::itemdata::ItemData_Kinds,
     }
 }
 

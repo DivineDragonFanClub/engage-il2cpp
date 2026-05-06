@@ -9,102 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MenuItem_Align {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MenuItem_Align {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MenuItem.Align";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MenuItem_Align {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MenuItem_Align {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MenuItem_State {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MenuItem_State {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MenuItem.State";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MenuItem_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MenuItem_State {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn open() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn close() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Result.md"))]
     #[repr(C)]
     #[derive(
@@ -173,6 +77,54 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MenuItem_Align {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MenuItem_Align {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MenuItem.Align";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MenuItem_Align {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MenuItem_Align {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn center() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MenuItem")]
     #[parent(crate::system::object::Object)]
@@ -229,6 +181,54 @@ mod __types {
         }
 
         pub fn group_end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MenuItem_State {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MenuItem_State {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MenuItem.State";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MenuItem_State {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MenuItem_State {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn open() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn close() -> Self {
             Self { value: 2 }
         }
     }

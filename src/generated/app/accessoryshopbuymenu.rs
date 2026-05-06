@@ -11,11 +11,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryShopBuyMenu_DecideEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_ChangeKindEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -28,6 +23,11 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AccessoryShopBuyMenu_SelectEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AccessoryShopBuyMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu.md"))]
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu")]
@@ -65,34 +65,6 @@ mod __types {
 
 #[cfg(feature = "app-accessoryshopbuymenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-#[::unity2::methods]
-impl AccessoryShopBuyMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-impl AccessoryShopBuyMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopBuyMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-accessoryshopbuymenu")]
 #[::unity2::methods]
@@ -146,6 +118,34 @@ impl AccessoryShopBuyMenu_SelectEventHandler {
             )
         });
         <Self as IAccessoryShopBuyMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+#[::unity2::methods]
+impl AccessoryShopBuyMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+impl AccessoryShopBuyMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -11,11 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSoundSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsoundsequence :: MyRoomSoundSequence >)]
-    pub struct MyRoomSoundSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -63,6 +58,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSoundSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsoundsequence :: MyRoomSoundSequence >)]
+    pub struct MyRoomSoundSequence {}
 }
 
 #[cfg(feature = "app-myroomsoundsequence-types")]

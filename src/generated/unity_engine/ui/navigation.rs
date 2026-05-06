@@ -9,39 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Navigation {
-        pub m_mode: crate::unity_engine::ui::navigation::Navigation_Mode,
-        pub m_wrap_around: bool,
-        pub m_select_on_up: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_down: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_left: crate::unity_engine::ui::selectable::Selectable,
-        pub m_select_on_right: crate::unity_engine::ui::selectable::Selectable,
-    }
-
-    impl ::unity2::ClassIdentity for Navigation {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Navigation";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Navigation {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -95,6 +62,39 @@ mod __types {
 
         pub fn explicit() -> Self {
             Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Navigation {
+        pub m_mode: crate::unity_engine::ui::navigation::Navigation_Mode,
+        pub m_wrap_around: bool,
+        pub m_select_on_up: crate::unity_engine::ui::selectable::Selectable,
+        pub m_select_on_down: crate::unity_engine::ui::selectable::Selectable,
+        pub m_select_on_left: crate::unity_engine::ui::selectable::Selectable,
+        pub m_select_on_right: crate::unity_engine::ui::selectable::Selectable,
+    }
+
+    impl ::unity2::ClassIdentity for Navigation {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Navigation";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Navigation {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
         }
     }
 }

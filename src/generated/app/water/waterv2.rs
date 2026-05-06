@@ -13,6 +13,47 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterv2/WaterV2.md"))]
+    #[::unity2::class(namespace = "App.Water", name = "WaterV2")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct WaterV2 {
+        #[rename(name = "waterMode")]
+        pub water_mode: crate::app::water::waterv2::WaterV2_WaterMode,
+        #[rename(name = "disablePixelLights")]
+        pub disable_pixel_lights: bool,
+        #[rename(name = "textureSize")]
+        pub texture_size: i32,
+        #[rename(name = "clipPlaneOffset")]
+        pub clip_plane_offset: f32,
+        #[rename(name = "reflectLayers")]
+        pub reflect_layers: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "refractLayers")]
+        pub refract_layers: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "m_ReflectionCameras")]
+        pub m_reflection_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::camera::Camera,
+        >,
+        #[rename(name = "m_RefractionCameras")]
+        pub m_refraction_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::unity_engine::camera::Camera,
+            crate::unity_engine::camera::Camera,
+        >,
+        #[rename(name = "m_ReflectionTexture")]
+        pub m_reflection_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[rename(name = "m_RefractionTexture")]
+        pub m_refraction_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[rename(name = "m_HardwareWaterSupport")]
+        pub m_hardware_water_support: crate::app::water::waterv2::WaterV2_WaterMode,
+        #[rename(name = "m_OldReflectionTextureSize")]
+        pub m_old_reflection_texture_size: i32,
+        #[rename(name = "m_OldRefractionTextureSize")]
+        pub m_old_refraction_texture_size: i32,
+        #[static_field]
+        #[rename(name = "s_InsideWater")]
+        pub s_inside_water: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2_WaterMode.md"))]
     #[repr(C)]
     #[derive(
@@ -59,47 +100,6 @@ mod __types {
         pub fn refractive() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterv2/WaterV2.md"))]
-    #[::unity2::class(namespace = "App.Water", name = "WaterV2")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct WaterV2 {
-        #[rename(name = "waterMode")]
-        pub water_mode: crate::app::water::waterv2::WaterV2_WaterMode,
-        #[rename(name = "disablePixelLights")]
-        pub disable_pixel_lights: bool,
-        #[rename(name = "textureSize")]
-        pub texture_size: i32,
-        #[rename(name = "clipPlaneOffset")]
-        pub clip_plane_offset: f32,
-        #[rename(name = "reflectLayers")]
-        pub reflect_layers: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "refractLayers")]
-        pub refract_layers: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "m_ReflectionCameras")]
-        pub m_reflection_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::camera::Camera,
-            crate::unity_engine::camera::Camera,
-        >,
-        #[rename(name = "m_RefractionCameras")]
-        pub m_refraction_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::camera::Camera,
-            crate::unity_engine::camera::Camera,
-        >,
-        #[rename(name = "m_ReflectionTexture")]
-        pub m_reflection_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_RefractionTexture")]
-        pub m_refraction_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_HardwareWaterSupport")]
-        pub m_hardware_water_support: crate::app::water::waterv2::WaterV2_WaterMode,
-        #[rename(name = "m_OldReflectionTextureSize")]
-        pub m_old_reflection_texture_size: i32,
-        #[rename(name = "m_OldRefractionTextureSize")]
-        pub m_old_refraction_texture_size: i32,
-        #[static_field]
-        #[rename(name = "s_InsideWater")]
-        pub s_inside_water: bool,
     }
 }
 

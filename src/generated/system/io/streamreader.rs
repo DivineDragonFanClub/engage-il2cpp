@@ -8,11 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader_NullStreamReader.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "StreamReader.NullStreamReader")]
-    #[parent(crate::system::io::streamreader::StreamReader)]
-    pub struct StreamReader_NullStreamReader {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader.md"))]
     #[::unity2::class(namespace = "System.IO", name = "StreamReader")]
     #[parent(crate::system::io::textreader::TextReader)]
@@ -45,66 +40,15 @@ mod __types {
         #[rename(name = "_closable")]
         pub closable: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader_NullStreamReader.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "StreamReader.NullStreamReader")]
+    #[parent(crate::system::io::streamreader::StreamReader)]
+    pub struct StreamReader_NullStreamReader {}
 }
 
 #[cfg(feature = "system-io-streamreader-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-io-streamreader")]
-#[::unity2::methods]
-impl StreamReader_NullStreamReader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_BaseStream()` overload"]
-    #[method(name = "get_BaseStream", args = 0)]
-    pub fn get_base_stream(self) -> crate::system::io::stream::Stream;
-
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose(self, disposing: bool) -> ();
-
-    #[doc = "`Peek()` overload"]
-    #[method(name = "Peek", args = 0)]
-    pub fn peek(self) -> i32;
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> i32;
-
-    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "Read", args = 3)]
-    pub fn read_2(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
-
-    #[doc = "`ReadLine()` overload"]
-    #[method(name = "ReadLine", args = 0)]
-    pub fn read_line(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadToEnd()` overload"]
-    #[method(name = "ReadToEnd", args = 0)]
-    pub fn read_to_end(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadBuffer()` overload"]
-    #[method(name = "ReadBuffer", args = 0)]
-    pub fn read_buffer(self) -> i32;
-}
-
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader_NullStreamReader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StreamReader_NullStreamReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStreamReader_NullStreamReaderMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "system-io-streamreader")]
 #[::unity2::methods]
@@ -298,6 +242,62 @@ impl StreamReader {
             )
         });
         <Self as IStreamReaderMethods>::ctor_5(this, path, detect_encoding_from_byte_order_marks);
+        this
+    }
+}
+
+#[cfg(feature = "system-io-streamreader")]
+#[::unity2::methods]
+impl StreamReader_NullStreamReader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_BaseStream()` overload"]
+    #[method(name = "get_BaseStream", args = 0)]
+    pub fn get_base_stream(self) -> crate::system::io::stream::Stream;
+
+    #[doc = "`Dispose(bool)` overload"]
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[doc = "`Peek()` overload"]
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> i32;
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> i32;
+
+    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
+    #[method(name = "Read", args = 3)]
+    pub fn read_2(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
+
+    #[doc = "`ReadLine()` overload"]
+    #[method(name = "ReadLine", args = 0)]
+    pub fn read_line(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadToEnd()` overload"]
+    #[method(name = "ReadToEnd", args = 0)]
+    pub fn read_to_end(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadBuffer()` overload"]
+    #[method(name = "ReadBuffer", args = 0)]
+    pub fn read_buffer(self) -> i32;
+}
+
+#[cfg(feature = "system-io-streamreader")]
+impl StreamReader_NullStreamReader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StreamReader_NullStreamReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStreamReader_NullStreamReaderMethods>::ctor(this);
         this
     }
 }

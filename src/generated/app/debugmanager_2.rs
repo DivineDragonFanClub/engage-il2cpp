@@ -9,18 +9,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_2.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugManager")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogArg.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugManager.LogArg")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugManager_2 {
-        #[static_field]
-        #[rename(name = "s_LogStack")]
-        pub s_log_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::debugmanager_2::DebugManager_LogArg,
-        >,
-        #[static_field]
-        #[rename(name = "s_LogLock")]
-        pub s_log_lock: bool,
+    pub struct DebugManager_LogArg {
+        #[rename(name = "m_Func")]
+        pub m_func: crate::app::debugmanager_2::DebugManager_LogFunc,
+        #[rename(name = "m_Args")]
+        pub m_args: ::unity2::Array<::unity2::Il2CppString>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogFunc.md"))]
@@ -36,14 +32,18 @@ mod __types {
         pub m_disposed: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogArg.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugManager.LogArg")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_2.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugManager")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugManager_LogArg {
-        #[rename(name = "m_Func")]
-        pub m_func: crate::app::debugmanager_2::DebugManager_LogFunc,
-        #[rename(name = "m_Args")]
-        pub m_args: ::unity2::Array<::unity2::Il2CppString>,
+    pub struct DebugManager_2 {
+        #[static_field]
+        #[rename(name = "s_LogStack")]
+        pub s_log_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::debugmanager_2::DebugManager_LogArg,
+        >,
+        #[static_field]
+        #[rename(name = "s_LogLock")]
+        pub s_log_lock: bool,
     }
 }
 
@@ -52,54 +52,14 @@ pub use __types::*;
 
 #[cfg(feature = "app-debugmanager_2")]
 #[::unity2::methods]
-impl DebugManager_2 {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
+impl DebugManager_LogArg {
+    #[doc = "`Call()` overload"]
+    #[method(name = "Call", args = 0)]
+    pub fn call(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`OnMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]
-    #[method(name = "OnMessage", args = 3)]
-    pub fn on_message(
-        log_text: ::unity2::Il2CppString,
-        stack_trace: ::unity2::Il2CppString,
-        r#type: crate::unity_engine::logtype::LogType,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear() -> ();
-
-    #[doc = "`GetStackMethodName(i32)` overload"]
-    #[method(name = "GetStackMethodName", args = 1)]
-    pub fn get_stack_method_name(depth: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`Stop(::unity2::Il2CppString)` overload"]
-    #[method(name = "Stop", args = 1)]
-    pub fn stop(ex: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugManager_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugManager_2Methods>::ctor(this);
-        this
-    }
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 }
 
 #[cfg(feature = "app-debugmanager_2")]
@@ -188,12 +148,52 @@ impl DebugManager_LogScope {
 
 #[cfg(feature = "app-debugmanager_2")]
 #[::unity2::methods]
-impl DebugManager_LogArg {
-    #[doc = "`Call()` overload"]
-    #[method(name = "Call", args = 0)]
-    pub fn call(self) -> ::unity2::Il2CppString;
+impl DebugManager_2 {
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    #[doc = "`OnMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]
+    #[method(name = "OnMessage", args = 3)]
+    pub fn on_message(
+        log_text: ::unity2::Il2CppString,
+        stack_trace: ::unity2::Il2CppString,
+        r#type: crate::unity_engine::logtype::LogType,
+    ) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear() -> ();
+
+    #[doc = "`GetStackMethodName(i32)` overload"]
+    #[method(name = "GetStackMethodName", args = 1)]
+    pub fn get_stack_method_name(depth: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`Stop(::unity2::Il2CppString)` overload"]
+    #[method(name = "Stop", args = 1)]
+    pub fn stop(ex: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-debugmanager_2")]
+impl DebugManager_2 {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugManager_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugManager_2Methods>::ctor(this);
+        this
+    }
 }

@@ -11,85 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SaveDataMenuSequence_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SaveDataMenuSequence_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SaveDataMenuSequence.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SaveDataMenuSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SaveDataMenuSequence_Mode {
-        pub fn load() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn save_from_menu() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn save_from_period() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn save_from_ending() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn suspend() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn copy() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn delete() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 7 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)]
-    pub struct SaveDataMenuSequence {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
-        #[rename(name = "m_saveDataHeaderReader")]
-        pub m_save_data_header_reader:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -159,6 +80,85 @@ mod __types {
 
         pub fn end() -> Self {
             Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)]
+    pub struct SaveDataMenuSequence {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
+        #[rename(name = "m_saveDataHeaderReader")]
+        pub m_save_data_header_reader:
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SaveDataMenuSequence_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SaveDataMenuSequence_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SaveDataMenuSequence.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SaveDataMenuSequence_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SaveDataMenuSequence_Mode {
+        pub fn load() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn save_from_menu() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn save_from_period() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn save_from_ending() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn suspend() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn copy() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn delete() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 7 }
         }
     }
 }

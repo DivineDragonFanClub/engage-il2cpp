@@ -12,6 +12,58 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AccessoryData_Masks {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AccessoryData_Masks {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AccessoryData.Masks";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AccessoryData_Masks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AccessoryData_Masks {
+        pub fn body() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn head() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn face() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn back() -> Self {
+            Self { value: 8 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -74,58 +126,6 @@ mod __types {
     pub struct AccessoryData {
         #[rename(name = "FlagName")]
         pub flag_name: ::unity2::Il2CppString,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AccessoryData_Masks {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AccessoryData_Masks {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AccessoryData.Masks";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AccessoryData_Masks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AccessoryData_Masks {
-        pub fn body() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn head() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn face() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn back() -> Self {
-            Self { value: 8 }
-        }
     }
 }
 

@@ -11,53 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrade/SortieSequenceTrade.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceTrade")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrade :: SortieSequenceTrade >)]
-    pub struct SortieSequenceTrade {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_menuL")]
-        pub m_menu_l: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
-        #[rename(name = "m_menuR")]
-        pub m_menu_r: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
-        #[rename(name = "m_bSelectLeft")]
-        pub m_b_select_left: bool,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::traderoot::TradeRoot,
-        #[static_field]
-        #[rename(name = "m_bSortieTrade")]
-        pub m_b_sortie_trade: bool,
-        #[static_field]
-        #[rename(name = "m_bInvalidCharaImage")]
-        pub m_b_invalid_chara_image: bool,
-        #[static_field]
-        #[rename(name = "m_TradeFromUnit")]
-        pub m_trade_from_unit: crate::app::unit::Unit,
-        #[static_field]
-        #[rename(name = "m_TradeToUnit")]
-        pub m_trade_to_unit: crate::app::unit::Unit,
-        #[static_field]
-        #[rename(name = "m_DefaultSelectFrom")]
-        pub m_default_select_from: i32,
-        #[static_field]
-        #[rename(name = "m_DefaultSelectTo")]
-        pub m_default_select_to: i32,
-        #[static_field]
-        #[rename(name = "m_InitialSelectSide")]
-        pub m_initial_select_side: crate::app::sortietrademanager::SortieTradeManager_SideId,
-        #[static_field]
-        #[rename(name = "m_IsFirstSelectedOnInit")]
-        pub m_is_first_selected_on_init: bool,
-        #[rename(name = "m_CharaImage")]
-        pub m_chara_image: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CharaImageRight")]
-        pub m_chara_image_right: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrade/SortieSequenceTrade_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -128,6 +81,53 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrade/SortieSequenceTrade.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceTrade")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrade :: SortieSequenceTrade >)]
+    pub struct SortieSequenceTrade {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_menuL")]
+        pub m_menu_l: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
+        #[rename(name = "m_menuR")]
+        pub m_menu_r: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
+        #[rename(name = "m_bSelectLeft")]
+        pub m_b_select_left: bool,
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::traderoot::TradeRoot,
+        #[static_field]
+        #[rename(name = "m_bSortieTrade")]
+        pub m_b_sortie_trade: bool,
+        #[static_field]
+        #[rename(name = "m_bInvalidCharaImage")]
+        pub m_b_invalid_chara_image: bool,
+        #[static_field]
+        #[rename(name = "m_TradeFromUnit")]
+        pub m_trade_from_unit: crate::app::unit::Unit,
+        #[static_field]
+        #[rename(name = "m_TradeToUnit")]
+        pub m_trade_to_unit: crate::app::unit::Unit,
+        #[static_field]
+        #[rename(name = "m_DefaultSelectFrom")]
+        pub m_default_select_from: i32,
+        #[static_field]
+        #[rename(name = "m_DefaultSelectTo")]
+        pub m_default_select_to: i32,
+        #[static_field]
+        #[rename(name = "m_InitialSelectSide")]
+        pub m_initial_select_side: crate::app::sortietrademanager::SortieTradeManager_SideId,
+        #[static_field]
+        #[rename(name = "m_IsFirstSelectedOnInit")]
+        pub m_is_first_selected_on_init: bool,
+        #[rename(name = "m_CharaImage")]
+        pub m_chara_image: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CharaImageRight")]
+        pub m_chara_image_right: crate::unity_engine::gameobject::GameObject,
     }
 }
 

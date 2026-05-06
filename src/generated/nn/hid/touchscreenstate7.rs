@@ -8,37 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate7/TouchScreenState7.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TouchScreenState7 {
-        pub sampling_number: i64,
-        pub count: i32,
-        pub reserved: i32,
-        pub touches: crate::nn::hid::touchscreenstate7::TouchScreenState7_TouchStateArray7,
-    }
-
-    impl ::unity2::ClassIdentity for TouchScreenState7 {
-        const NAMESPACE: &'static str = "nn.hid";
-
-        const NAME: &'static str = "TouchScreenState7";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TouchScreenState7 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate7/TouchScreenState7_TouchStateArray7.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -72,18 +41,41 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate7/TouchScreenState7.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TouchScreenState7 {
+        pub sampling_number: i64,
+        pub count: i32,
+        pub reserved: i32,
+        pub touches: crate::nn::hid::touchscreenstate7::TouchScreenState7_TouchStateArray7,
+    }
+
+    impl ::unity2::ClassIdentity for TouchScreenState7 {
+        const NAMESPACE: &'static str = "nn.hid";
+
+        const NAME: &'static str = "TouchScreenState7";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TouchScreenState7 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate7-types")]
 pub use __types::*;
-
-#[cfg(feature = "nn-hid-touchscreenstate7")]
-#[::unity2::methods(value)]
-impl TouchScreenState7 {
-    #[doc = "`SetDefault()` overload"]
-    #[method(name = "SetDefault", args = 0)]
-    pub fn set_default(self) -> ();
-}
 
 #[cfg(feature = "nn-hid-touchscreenstate7")]
 #[::unity2::methods(value)]
@@ -161,4 +153,12 @@ impl TouchScreenState7_TouchStateArray7 {
     #[doc = "`RemoveAt(i32)` overload"]
     #[method(name = "RemoveAt", args = 1)]
     pub fn remove_at(self, index: i32) -> ();
+}
+
+#[cfg(feature = "nn-hid-touchscreenstate7")]
+#[::unity2::methods(value)]
+impl TouchScreenState7 {
+    #[doc = "`SetDefault()` overload"]
+    #[method(name = "SetDefault", args = 0)]
+    pub fn set_default(self) -> ();
 }

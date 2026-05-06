@@ -10,6 +10,36 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+        name = "CustomShadowCasterPass.CustomShadowConstantBuffer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct CustomShadowCasterPass_CustomShadowConstantBuffer {
+        #[static_field]
+        #[rename(name = "_WorldToShadow")]
+        pub world_to_shadow: i32,
+        #[static_field]
+        #[rename(name = "_ShadowParams")]
+        pub shadow_params: i32,
+        #[static_field]
+        #[rename(name = "_ShadowOffset0")]
+        pub shadow_offset0: i32,
+        #[static_field]
+        #[rename(name = "_ShadowOffset1")]
+        pub shadow_offset1: i32,
+        #[static_field]
+        #[rename(name = "_ShadowOffset2")]
+        pub shadow_offset2: i32,
+        #[static_field]
+        #[rename(name = "_ShadowOffset3")]
+        pub shadow_offset3: i32,
+        #[static_field]
+        #[rename(name = "_ShadowmapSize")]
+        pub shadowmap_size: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
@@ -51,36 +81,6 @@ mod __types {
         pub m_profiler_tag: ::unity2::Il2CppString,
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-        name = "CustomShadowCasterPass.CustomShadowConstantBuffer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomShadowCasterPass_CustomShadowConstantBuffer {
-        #[static_field]
-        #[rename(name = "_WorldToShadow")]
-        pub world_to_shadow: i32,
-        #[static_field]
-        #[rename(name = "_ShadowParams")]
-        pub shadow_params: i32,
-        #[static_field]
-        #[rename(name = "_ShadowOffset0")]
-        pub shadow_offset0: i32,
-        #[static_field]
-        #[rename(name = "_ShadowOffset1")]
-        pub shadow_offset1: i32,
-        #[static_field]
-        #[rename(name = "_ShadowOffset2")]
-        pub shadow_offset2: i32,
-        #[static_field]
-        #[rename(name = "_ShadowOffset3")]
-        pub shadow_offset3: i32,
-        #[static_field]
-        #[rename(name = "_ShadowmapSize")]
-        pub shadowmap_size: i32,
     }
 }
 

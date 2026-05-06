@@ -9,6 +9,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass_CustomMirrorView.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "XRPass.CustomMirrorView"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct XRPass_CustomMirrorView {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRPass")]
     #[parent(crate::system::object::Object)]
@@ -51,18 +59,44 @@ mod __types {
         pub stereo_camera_projection_matrix:
             ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass_CustomMirrorView.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "XRPass.CustomMirrorView"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct XRPass_CustomMirrorView {}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrpass-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+#[::unity2::methods]
+impl XRPass_CustomMirrorView {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::rendering::universal::xrpass::XRPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rect::Rect)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rt: crate::unity_engine::rendertexture::RenderTexture,
+        viewport: crate::unity_engine::rect::Rect,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+impl XRPass_CustomMirrorView {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRPass_CustomMirrorView),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRPass_CustomMirrorViewMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrpass")]
 #[::unity2::methods]
@@ -336,40 +370,6 @@ impl XRPass {
             )
         });
         <Self as IXRPassMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-#[::unity2::methods]
-impl XRPass_CustomMirrorView {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::rendering::universal::xrpass::XRPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rect::Rect)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rt: crate::unity_engine::rendertexture::RenderTexture,
-        viewport: crate::unity_engine::rect::Rect,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-impl XRPass_CustomMirrorView {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRPass_CustomMirrorView),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRPass_CustomMirrorViewMethods>::ctor(this, object, method);
         this
     }
 }

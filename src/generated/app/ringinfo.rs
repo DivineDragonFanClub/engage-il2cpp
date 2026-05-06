@@ -9,6 +9,24 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RingInfo")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringinfo :: RingInfo >)]
+    pub struct RingInfo {
+        #[rename(name = "m_RingInfoWindows")]
+        pub m_ring_info_windows:
+            ::unity2::Array<crate::app::ringinfo::RingInfo_RingInfoWindowRingModel>,
+        #[static_field]
+        #[rename(name = "s_IsPlayAnimation")]
+        pub s_is_play_animation: bool,
+        #[static_field]
+        #[rename(name = "LoadStartWait")]
+        pub load_start_wait: i32,
+        #[static_field]
+        #[rename(name = "s_IsVisibleDirty")]
+        pub s_is_visible_dirty: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]
     #[::unity2::class(namespace = "App", name = "RingInfo.RingInfoWindowRingModel")]
     #[parent(crate::system::object::Object)]
@@ -29,24 +47,6 @@ mod __types {
         pub m_camera: crate::unity_engine::camera::Camera,
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RingInfo")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringinfo :: RingInfo >)]
-    pub struct RingInfo {
-        #[rename(name = "m_RingInfoWindows")]
-        pub m_ring_info_windows:
-            ::unity2::Array<crate::app::ringinfo::RingInfo_RingInfoWindowRingModel>,
-        #[static_field]
-        #[rename(name = "s_IsPlayAnimation")]
-        pub s_is_play_animation: bool,
-        #[static_field]
-        #[rename(name = "LoadStartWait")]
-        pub load_start_wait: i32,
-        #[static_field]
-        #[rename(name = "s_IsVisibleDirty")]
-        pub s_is_visible_dirty: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingPrefabObject.md"))]
@@ -79,78 +79,6 @@ mod __types {
 
 #[cfg(feature = "app-ringinfo-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ringinfo")]
-#[::unity2::methods]
-impl RingInfo_RingInfoWindowRingModel {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, index: i32) -> ();
-
-    #[doc = "`CreateAsync()` overload"]
-    #[method(name = "CreateAsync", args = 0)]
-    pub fn create_async(self) -> ();
-
-    #[doc = "`IsCreating()` overload"]
-    #[method(name = "IsCreating", args = 0)]
-    pub fn is_creating(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`CreateImpl()` overload"]
-    #[method(name = "CreateImpl", args = 0)]
-    pub fn create_impl(self) -> ();
-
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> bool;
-
-    #[doc = "`GetRenderTexture()` overload"]
-    #[method(name = "GetRenderTexture", args = 0)]
-    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
-
-    #[doc = "`get_PrefabObject()` overload"]
-    #[method(name = "get_PrefabObject", args = 0)]
-    pub fn get_prefab_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_RingModelRoot()` overload"]
-    #[method(name = "get_RingModelRoot", args = 0)]
-    pub fn get_ring_model_root(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetAnimatorEnable(bool)` overload"]
-    #[method(name = "SetAnimatorEnable", args = 1)]
-    pub fn set_animator_enable(self, value: bool) -> ();
-
-    #[doc = "`GetDirtyTextureValue(i32)` overload"]
-    #[method(name = "GetDirtyTextureValue", args = 1)]
-    pub fn get_dirty_texture_value(self, dirty: i32) -> f32;
-
-    #[doc = "`PlayDecisionAnim()` overload"]
-    #[method(name = "PlayDecisionAnim", args = 0)]
-    pub fn play_decision_anim(self) -> ();
-
-    #[doc = "`GetModelPosition()` overload"]
-    #[method(name = "GetModelPosition", args = 0)]
-    pub fn get_model_position(self) -> crate::unity_engine::vector3::Vector3;
-}
-
-#[cfg(feature = "app-ringinfo")]
-impl RingInfo_RingInfoWindowRingModel {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingInfo_RingInfoWindowRingModel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingInfo_RingInfoWindowRingModelMethods>::ctor(this, index);
-        this
-    }
-}
 
 #[cfg(feature = "app-ringinfo")]
 #[::unity2::methods]
@@ -298,6 +226,78 @@ impl RingInfo {
             )
         });
         <Self as IRingInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringinfo")]
+#[::unity2::methods]
+impl RingInfo_RingInfoWindowRingModel {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, index: i32) -> ();
+
+    #[doc = "`CreateAsync()` overload"]
+    #[method(name = "CreateAsync", args = 0)]
+    pub fn create_async(self) -> ();
+
+    #[doc = "`IsCreating()` overload"]
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating(self) -> bool;
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[doc = "`CreateImpl()` overload"]
+    #[method(name = "CreateImpl", args = 0)]
+    pub fn create_impl(self) -> ();
+
+    #[doc = "`Setup()` overload"]
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> bool;
+
+    #[doc = "`GetRenderTexture()` overload"]
+    #[method(name = "GetRenderTexture", args = 0)]
+    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[doc = "`get_PrefabObject()` overload"]
+    #[method(name = "get_PrefabObject", args = 0)]
+    pub fn get_prefab_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`get_RingModelRoot()` overload"]
+    #[method(name = "get_RingModelRoot", args = 0)]
+    pub fn get_ring_model_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`SetAnimatorEnable(bool)` overload"]
+    #[method(name = "SetAnimatorEnable", args = 1)]
+    pub fn set_animator_enable(self, value: bool) -> ();
+
+    #[doc = "`GetDirtyTextureValue(i32)` overload"]
+    #[method(name = "GetDirtyTextureValue", args = 1)]
+    pub fn get_dirty_texture_value(self, dirty: i32) -> f32;
+
+    #[doc = "`PlayDecisionAnim()` overload"]
+    #[method(name = "PlayDecisionAnim", args = 0)]
+    pub fn play_decision_anim(self) -> ();
+
+    #[doc = "`GetModelPosition()` overload"]
+    #[method(name = "GetModelPosition", args = 0)]
+    pub fn get_model_position(self) -> crate::unity_engine::vector3::Vector3;
+}
+
+#[cfg(feature = "app-ringinfo")]
+impl RingInfo_RingInfoWindowRingModel {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingInfo_RingInfoWindowRingModel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingInfo_RingInfoWindowRingModelMethods>::ctor(this, index);
         this
     }
 }

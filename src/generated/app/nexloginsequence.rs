@@ -10,6 +10,68 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexLoginSequence_Result {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexLoginSequence_Result {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexLoginSequence.Result";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexLoginSequence_Result {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexLoginSequence_Result {
+        pub fn failed() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn cancelled() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn succeeded() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexLoginSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexLoginSequence {
+        #[rename(name = "m_IsShowError")]
+        pub m_is_show_error: bool,
+        #[static_field]
+        #[rename(name = "s_LastResult")]
+        pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
+        #[static_field]
+        #[rename(name = "s_IsGotIntegerSettings")]
+        pub s_is_got_integer_settings: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -80,68 +142,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 8 }
         }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexLoginSequence_Result {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexLoginSequence_Result {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexLoginSequence.Result";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexLoginSequence_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexLoginSequence_Result {
-        pub fn failed() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn cancelled() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexLoginSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexLoginSequence {
-        #[rename(name = "m_IsShowError")]
-        pub m_is_show_error: bool,
-        #[static_field]
-        #[rename(name = "s_LastResult")]
-        pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
-        #[static_field]
-        #[rename(name = "s_IsGotIntegerSettings")]
-        pub s_is_got_integer_settings: bool,
     }
 }
 

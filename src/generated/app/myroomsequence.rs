@@ -18,6 +18,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsequence :: MyRoomSequence >)]
@@ -36,11 +44,6 @@ mod __types {
         #[rename(name = "demoName")]
         pub demo_name: ::unity2::Il2CppString,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceListMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MyRoomSequence_RelianceListMenu {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsequence/MyRoomSequence_Label.md"))]
     #[repr(C)]
@@ -134,16 +137,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence.SleepConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct MyRoomSequence_SleepConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceUnitMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MyRoomSequence_RelianceUnitMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -152,17 +145,52 @@ mod __types {
     #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
     pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence.SleepConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct MyRoomSequence_SleepConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceListMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MyRoomSequence_RelianceListMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceUnitMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MyRoomSequence_RelianceUnitMenuItem {}
 }
 
 #[cfg(feature = "app-myroomsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-myroomsequence")]
+#[::unity2::methods]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-myroomsequence")]
 #[::unity2::methods]
@@ -282,6 +310,67 @@ impl MyRoomSequence {
 
 #[cfg(feature = "app-myroomsequence")]
 #[::unity2::methods]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomsequence")]
+#[::unity2::methods]
+impl MyRoomSequence_SleepConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomsequence")]
+#[::unity2::methods]
 impl MyRoomSequence_RelianceListMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -327,43 +416,6 @@ impl MyRoomSequence_RelianceListMenu {
             )
         });
         <Self as IMyRoomSequence_RelianceListMenuMethods>::ctor(this, menu_item_list, super_);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomsequence")]
-#[::unity2::methods]
-impl MyRoomSequence_SleepConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }
@@ -419,58 +471,6 @@ impl MyRoomSequence_RelianceUnitMenuItem {
             )
         });
         <Self as IMyRoomSequence_RelianceUnitMenuItemMethods>::ctor(this, self_, target);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomsequence")]
-#[::unity2::methods]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomsequence")]
-#[::unity2::methods]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this);
         this
     }
 }

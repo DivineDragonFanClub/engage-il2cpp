@@ -11,20 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))]
-    #[::unity2::class(namespace = "App", name = "HubManualCullingManager.CullingGroup")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubManualCullingManager_CullingGroup {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_CullTargets")]
-        pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Renderers")]
-        pub m_renderers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::renderer::Renderer,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager.md"))]
     #[::unity2::class(namespace = "App", name = "HubManualCullingManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -40,50 +26,24 @@ mod __types {
         #[rename(name = "m_Enable")]
         pub m_enable: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))]
+    #[::unity2::class(namespace = "App", name = "HubManualCullingManager.CullingGroup")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubManualCullingManager_CullingGroup {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_CullTargets")]
+        pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_Renderers")]
+        pub m_renderers: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::renderer::Renderer,
+        >,
+    }
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubmanualcullingmanager")]
-#[::unity2::methods]
-impl HubManualCullingManager_CullingGroup {
-    #[doc = "`get_IsCulling()` overload"]
-    #[method(name = "get_IsCulling", args = 0)]
-    pub fn get_is_culling(self) -> bool;
-
-    #[doc = "`set_IsCulling(bool)` overload"]
-    #[method(name = "set_IsCulling", args = 1)]
-    pub fn set_is_culling(self, value: bool) -> ();
-
-    #[doc = "`ChangeCullingState(bool, bool)` overload"]
-    #[method(name = "ChangeCullingState", args = 2)]
-    pub fn change_culling_state(self, is_next_culling: bool, force: bool) -> ();
-
-    #[doc = "`CollectRenderers()` overload"]
-    #[method(name = "CollectRenderers", args = 0)]
-    pub fn collect_renderers(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl HubManualCullingManager_CullingGroup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubManualCullingManager_CullingGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubManualCullingManager_CullingGroupMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubmanualcullingmanager")]
 #[::unity2::methods]
@@ -184,6 +144,46 @@ impl HubManualCullingManager {
             )
         });
         <Self as IHubManualCullingManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmanualcullingmanager")]
+#[::unity2::methods]
+impl HubManualCullingManager_CullingGroup {
+    #[doc = "`get_IsCulling()` overload"]
+    #[method(name = "get_IsCulling", args = 0)]
+    pub fn get_is_culling(self) -> bool;
+
+    #[doc = "`set_IsCulling(bool)` overload"]
+    #[method(name = "set_IsCulling", args = 1)]
+    pub fn set_is_culling(self, value: bool) -> ();
+
+    #[doc = "`ChangeCullingState(bool, bool)` overload"]
+    #[method(name = "ChangeCullingState", args = 2)]
+    pub fn change_culling_state(self, is_next_culling: bool, force: bool) -> ();
+
+    #[doc = "`CollectRenderers()` overload"]
+    #[method(name = "CollectRenderers", args = 0)]
+    pub fn collect_renderers(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmanualcullingmanager")]
+impl HubManualCullingManager_CullingGroup {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubManualCullingManager_CullingGroup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubManualCullingManager_CullingGroupMethods>::ctor(this);
         this
     }
 }

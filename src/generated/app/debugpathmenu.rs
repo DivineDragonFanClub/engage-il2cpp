@@ -11,6 +11,23 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_PCDriveMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.PCDriveMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_PCDriveMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory_EnumResult.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory.EnumResult")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_Directory_EnumResult {
+        #[rename(name = "Entries")]
+        pub entries: crate::system::collections::generic::list_1::List_1<
+            crate::app::debugpathmenu::DebugPathMenu_EntryData,
+        >,
+        #[rename(name = "ErrorMessage")]
+        pub error_message: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugpathmenu/DebugPathMenu_Categories.md"))]
     #[repr(C)]
     #[derive(
@@ -59,28 +76,15 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryMenu")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Path.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Path")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_EntryMenu {}
+    pub struct DebugPathMenu_Path {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu")]
     #[parent(crate::system::object::Object)]
     pub struct DebugPathMenu_CategoriesMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError_ErrorMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError.ErrorMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct DebugPathMenu_ShowError_ErrorMenuItem {
-        #[rename(name = "m_Error")]
-        pub m_error: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_ShowError {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_AssetsMenuItem.md"))]
     #[::unity2::class(
@@ -93,23 +97,10 @@ mod __types {
         pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryData")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryMenu")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_EntryData {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct DebugPathMenu {
-        #[rename(name = "m_Setting")]
-        pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Path.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Path")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Path {}
+    pub struct DebugPathMenu_EntryMenu {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugpathmenu/DebugPathMenu_Result.md"))]
     #[repr(C)]
@@ -155,15 +146,41 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Directory {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_PCMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu.PCMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DebugPathMenu_CategoriesMenu_PCMenuItem {
+        #[rename(name = "m_Setting")]
+        pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Setting")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_Setting {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError_ErrorMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError.ErrorMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct DebugPathMenu_ShowError_ErrorMenuItem {
+        #[rename(name = "m_Error")]
+        pub m_error: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_ShowError {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_EntryData {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DebugPathMenu {
         #[rename(name = "m_Setting")]
         pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
     }
@@ -183,31 +200,213 @@ mod __types {
         pub m_entry_data: crate::app::debugpathmenu::DebugPathMenu_EntryData,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Setting")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Setting {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_PCDriveMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.PCDriveMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_PCDriveMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory_EnumResult.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory.EnumResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Directory_EnumResult {
-        #[rename(name = "Entries")]
-        pub entries: crate::system::collections::generic::list_1::List_1<
-            crate::app::debugpathmenu::DebugPathMenu_EntryData,
-        >,
-        #[rename(name = "ErrorMessage")]
-        pub error_message: ::unity2::Il2CppString,
-    }
+    pub struct DebugPathMenu_Directory {}
 }
 
 #[cfg(feature = "app-debugpathmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_PCDriveMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_PCDriveMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_PCDriveMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_PCDriveMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_Directory_EnumResult {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        entries: crate::system::collections::generic::list_1::List_1<
+            crate::app::debugpathmenu::DebugPathMenu_EntryData,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, error_message: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`IsFailure()` overload"]
+    #[method(name = "IsFailure", args = 0)]
+    pub fn is_failure(self) -> bool;
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_Directory_EnumResult {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]
+    pub fn new(
+        entries: crate::system::collections::generic::list_1::List_1<
+            crate::app::debugpathmenu::DebugPathMenu_EntryData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor(this, entries);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new_2(error_message: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor_2(this, error_message);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_Path {
+    #[doc = "`NormalizeForDirectory(::unity2::Il2CppString)` overload"]
+    #[method(name = "NormalizeForDirectory", args = 1)]
+    pub fn normalize_for_directory(original_path: ::unity2::Il2CppString)
+        -> ::unity2::Il2CppString;
+
+    #[doc = "`NormalizeForFile(::unity2::Il2CppString)` overload"]
+    #[method(name = "NormalizeForFile", args = 1)]
+    pub fn normalize_for_file(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`NormalizePathSeparator(::unity2::Il2CppString)` overload"]
+    #[method(name = "NormalizePathSeparator", args = 1)]
+    pub fn normalize_path_separator(
+        original_path: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetParentDirectory(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetParentDirectory", args = 1)]
+    pub fn get_parent_directory(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetDirectoryName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetDirectoryName", args = 1)]
+    pub fn get_directory_name(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetFileName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetFileName", args = 1)]
+    pub fn get_file_name(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_Path {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_Path),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_PathMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_CategoriesMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
+    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods>::ctor(this, setting);
+        this
+    }
+}
 
 #[cfg(feature = "app-debugpathmenu")]
 #[::unity2::methods]
@@ -244,31 +443,99 @@ impl DebugPathMenu_EntryMenu {
 
 #[cfg(feature = "app-debugpathmenu")]
 #[::unity2::methods]
-impl DebugPathMenu_CategoriesMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-    ) -> ();
+impl DebugPathMenu_CategoriesMenu_PCMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu {
+impl DebugPathMenu_CategoriesMenu_PCMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
+    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods>::ctor(this, setting);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[::unity2::methods]
+impl DebugPathMenu_Setting {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Categories()` overload"]
+    #[method(name = "get_Categories", args = 0)]
+    pub fn get_categories(self) -> crate::app::debugpathmenu::DebugPathMenu_Categories;
+
+    #[doc = "`set_Categories(crate::app::debugpathmenu::DebugPathMenu_Categories)` overload"]
+    #[method(name = "set_Categories", args = 1)]
+    pub fn set_categories(self, value: crate::app::debugpathmenu::DebugPathMenu_Categories) -> ();
+
+    #[doc = "`get_IsDirectoryOnly()` overload"]
+    #[method(name = "get_IsDirectoryOnly", args = 0)]
+    pub fn get_is_directory_only(self) -> bool;
+
+    #[doc = "`set_IsDirectoryOnly(bool)` overload"]
+    #[method(name = "set_IsDirectoryOnly", args = 1)]
+    pub fn set_is_directory_only(self, value: bool) -> ();
+
+    #[doc = "`get_InitialDirectoryPath()` overload"]
+    #[method(name = "get_InitialDirectoryPath", args = 0)]
+    pub fn get_initial_directory_path(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_InitialDirectoryPath(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_InitialDirectoryPath", args = 1)]
+    pub fn set_initial_directory_path(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_OnSelect()` overload"]
+    #[method(name = "get_OnSelect", args = 0)]
+    pub fn get_on_select(self) -> crate::system::action_1::Action_1<::unity2::Il2CppString>;
+
+    #[doc = "`set_OnSelect(crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
+    #[method(name = "set_OnSelect", args = 1)]
+    pub fn set_on_select(
+        self,
+        value: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`get_OnCancel()` overload"]
+    #[method(name = "get_OnCancel", args = 0)]
+    pub fn get_on_cancel(self) -> crate::system::action::Action;
+
+    #[doc = "`set_OnCancel(crate::system::action::Action)` overload"]
+    #[method(name = "set_OnCancel", args = 1)]
+    pub fn set_on_cancel(self, value: crate::system::action::Action) -> ();
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_Setting {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu),
+                ::core::stringify!(DebugPathMenu_Setting),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_CategoriesMenuMethods>::ctor(this);
+        <Self as IDebugPathMenu_SettingMethods>::ctor(this);
         this
     }
 }
@@ -336,38 +603,6 @@ impl DebugPathMenu_ShowError {
             )
         });
         <Self as IDebugPathMenu_ShowErrorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
-impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
-    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods>::ctor(this, setting);
         this
     }
 }
@@ -465,160 +700,6 @@ impl DebugPathMenu {
 
 #[cfg(feature = "app-debugpathmenu")]
 #[::unity2::methods]
-impl DebugPathMenu_Path {
-    #[doc = "`NormalizeForDirectory(::unity2::Il2CppString)` overload"]
-    #[method(name = "NormalizeForDirectory", args = 1)]
-    pub fn normalize_for_directory(original_path: ::unity2::Il2CppString)
-        -> ::unity2::Il2CppString;
-
-    #[doc = "`NormalizeForFile(::unity2::Il2CppString)` overload"]
-    #[method(name = "NormalizeForFile", args = 1)]
-    pub fn normalize_for_file(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`NormalizePathSeparator(::unity2::Il2CppString)` overload"]
-    #[method(name = "NormalizePathSeparator", args = 1)]
-    pub fn normalize_path_separator(
-        original_path: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetParentDirectory(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetParentDirectory", args = 1)]
-    pub fn get_parent_directory(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDirectoryName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetDirectoryName", args = 1)]
-    pub fn get_directory_name(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetFileName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetFileName", args = 1)]
-    pub fn get_file_name(original_path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Path {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Path),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_PathMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
-impl DebugPathMenu_Directory {
-    #[doc = "`EnumEntries(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    #[method(name = "EnumEntries", args = 2)]
-    pub fn enum_entries(
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
-
-    #[doc = "`IsExists(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsExists", args = 1)]
-    pub fn is_exists(path: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`EnumEntriesNX(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    #[method(name = "EnumEntriesNX", args = 2)]
-    pub fn enum_entries_nx(
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
-
-    #[doc = "`MakeEntryDataNX(bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "MakeEntryDataNX", args = 2)]
-    pub fn make_entry_data_nx(
-        is_directory: bool,
-        entry_name: ::unity2::Il2CppString,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData;
-
-    #[doc = "`IsExistsNX(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsExistsNX", args = 1)]
-    pub fn is_exists_nx(path: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`EnumEntriesWin(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    #[method(name = "EnumEntriesWin", args = 2)]
-    pub fn enum_entries_win(
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
-
-    #[doc = "`MakeEntryDataWin(bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "MakeEntryDataWin", args = 2)]
-    pub fn make_entry_data_win(
-        is_directory: bool,
-        full_path: ::unity2::Il2CppString,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData;
-
-    #[doc = "`IsExistsWin(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsExistsWin", args = 1)]
-    pub fn is_exists_win(path: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Directory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_DirectoryMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
-impl DebugPathMenu_CategoriesMenu_PCMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu_PCMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
-    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods>::ctor(this, setting);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
 impl DebugPathMenu_EntryMenuItem {
     #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, crate::app::debugpathmenu::DebugPathMenu_EntryData)` overload"]
     #[method(name = ".ctor", args = 3)]
@@ -697,80 +778,53 @@ impl DebugPathMenu_EntryMenuItem {
 
 #[cfg(feature = "app-debugpathmenu")]
 #[::unity2::methods]
-impl DebugPathMenu_Setting {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Categories()` overload"]
-    #[method(name = "get_Categories", args = 0)]
-    pub fn get_categories(self) -> crate::app::debugpathmenu::DebugPathMenu_Categories;
-
-    #[doc = "`set_Categories(crate::app::debugpathmenu::DebugPathMenu_Categories)` overload"]
-    #[method(name = "set_Categories", args = 1)]
-    pub fn set_categories(self, value: crate::app::debugpathmenu::DebugPathMenu_Categories) -> ();
-
-    #[doc = "`get_IsDirectoryOnly()` overload"]
-    #[method(name = "get_IsDirectoryOnly", args = 0)]
-    pub fn get_is_directory_only(self) -> bool;
-
-    #[doc = "`set_IsDirectoryOnly(bool)` overload"]
-    #[method(name = "set_IsDirectoryOnly", args = 1)]
-    pub fn set_is_directory_only(self, value: bool) -> ();
-
-    #[doc = "`get_InitialDirectoryPath()` overload"]
-    #[method(name = "get_InitialDirectoryPath", args = 0)]
-    pub fn get_initial_directory_path(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_InitialDirectoryPath(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_InitialDirectoryPath", args = 1)]
-    pub fn set_initial_directory_path(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_OnSelect()` overload"]
-    #[method(name = "get_OnSelect", args = 0)]
-    pub fn get_on_select(self) -> crate::system::action_1::Action_1<::unity2::Il2CppString>;
-
-    #[doc = "`set_OnSelect(crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_OnSelect", args = 1)]
-    pub fn set_on_select(
-        self,
-        value: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`get_OnCancel()` overload"]
-    #[method(name = "get_OnCancel", args = 0)]
-    pub fn get_on_cancel(self) -> crate::system::action::Action;
-
-    #[doc = "`set_OnCancel(crate::system::action::Action)` overload"]
-    #[method(name = "set_OnCancel", args = 1)]
-    pub fn set_on_cancel(self, value: crate::system::action::Action) -> ();
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Setting {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Setting),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_SettingMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
-impl DebugPathMenu_PCDriveMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
+impl DebugPathMenu_Directory {
+    #[doc = "`EnumEntries(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    #[method(name = "EnumEntries", args = 2)]
+    pub fn enum_entries(
         setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-    ) -> ();
+        path: ::unity2::Il2CppString,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
+
+    #[doc = "`IsExists(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsExists", args = 1)]
+    pub fn is_exists(path: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`EnumEntriesNX(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    #[method(name = "EnumEntriesNX", args = 2)]
+    pub fn enum_entries_nx(
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        path: ::unity2::Il2CppString,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
+
+    #[doc = "`MakeEntryDataNX(bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "MakeEntryDataNX", args = 2)]
+    pub fn make_entry_data_nx(
+        is_directory: bool,
+        entry_name: ::unity2::Il2CppString,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData;
+
+    #[doc = "`IsExistsNX(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsExistsNX", args = 1)]
+    pub fn is_exists_nx(path: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`EnumEntriesWin(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    #[method(name = "EnumEntriesWin", args = 2)]
+    pub fn enum_entries_win(
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        path: ::unity2::Il2CppString,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult;
+
+    #[doc = "`MakeEntryDataWin(bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "MakeEntryDataWin", args = 2)]
+    pub fn make_entry_data_win(
+        is_directory: bool,
+        full_path: ::unity2::Il2CppString,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData;
+
+    #[doc = "`IsExistsWin(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsExistsWin", args = 1)]
+    pub fn is_exists_win(path: ::unity2::Il2CppString) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -778,71 +832,17 @@ impl DebugPathMenu_PCDriveMenu {
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_PCDriveMenu {
+impl DebugPathMenu_Directory {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_PCDriveMenu),
+                ::core::stringify!(DebugPathMenu_Directory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_PCDriveMenuMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[::unity2::methods]
-impl DebugPathMenu_Directory_EnumResult {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        entries: crate::system::collections::generic::list_1::List_1<
-            crate::app::debugpathmenu::DebugPathMenu_EntryData,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, error_message: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`IsFailure()` overload"]
-    #[method(name = "IsFailure", args = 0)]
-    pub fn is_failure(self) -> bool;
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Directory_EnumResult {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]
-    pub fn new(
-        entries: crate::system::collections::generic::list_1::List_1<
-            crate::app::debugpathmenu::DebugPathMenu_EntryData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor(this, entries);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new_2(error_message: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor_2(this, error_message);
+        <Self as IDebugPathMenu_DirectoryMethods>::ctor(this);
         this
     }
 }

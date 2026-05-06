@@ -11,6 +11,11 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin_SkinChangedDelegate.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUISkin.SkinChangedDelegate")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GUISkin_SkinChangedDelegate {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUISkin")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
@@ -82,15 +87,38 @@ mod __types {
         #[rename(name = "current")]
         pub current: crate::unity_engine::guiskin::GUISkin,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin_SkinChangedDelegate.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUISkin.SkinChangedDelegate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GUISkin_SkinChangedDelegate {}
 }
 
 #[cfg(feature = "unity_engine-guiskin-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-guiskin")]
+#[::unity2::methods]
+impl GUISkin_SkinChangedDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-guiskin")]
+impl GUISkin_SkinChangedDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUISkin_SkinChangedDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUISkin_SkinChangedDelegateMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-guiskin")]
 #[::unity2::methods]
@@ -383,34 +411,6 @@ impl GUISkin {
             )
         });
         <Self as IGUISkinMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-guiskin")]
-#[::unity2::methods]
-impl GUISkin_SkinChangedDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-guiskin")]
-impl GUISkin_SkinChangedDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUISkin_SkinChangedDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUISkin_SkinChangedDelegateMethods>::ctor(this, object, method);
         this
     }
 }

@@ -9,18 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_FloatArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.FloatArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < f32 >)]
-    pub struct BattleSide_FloatArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_StructArray_1.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.StructArray`1")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ClassArray_1.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.ClassArray`1")]
+    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < T0 >)]
     #[parent(crate::system::object::Object)]
-    pub struct BattleSide_StructArray_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Array")]
-        pub m_array: ::unity2::Array<T0>,
-    }
+    pub struct BattleSide_ClassArray_1<T0: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ContainerArray_1.md"))]
     #[::unity2::class(namespace = "App", name = "BattleSide.ContainerArray`1")]
@@ -29,16 +22,6 @@ mod __types {
         #[rename(name = "m_Array")]
         pub m_array: ::unity2::Array<T0>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_IntArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.IntArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i32 >)]
-    pub struct BattleSide_IntArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_SbyteArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.SbyteArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i8 >)]
-    pub struct BattleSide_SbyteArray {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleside/BattleSide_Type.md"))]
     #[repr(C)]
@@ -254,16 +237,33 @@ mod __types {
         pub stands: ::unity2::Array<crate::app::battleside::BattleSide_Type>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ClassArray_1.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.ClassArray`1")]
-    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < T0 >)]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_IntArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.IntArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i32 >)]
+    pub struct BattleSide_IntArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_StructArray_1.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.StructArray`1")]
     #[parent(crate::system::object::Object)]
-    pub struct BattleSide_ClassArray_1<T0: ::unity2::ClassIdentity> {}
+    pub struct BattleSide_StructArray_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Array")]
+        pub m_array: ::unity2::Array<T0>,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ShortArray.md"))]
     #[::unity2::class(namespace = "App", name = "BattleSide.ShortArray")]
     # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i16 >)]
     pub struct BattleSide_ShortArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_SbyteArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.SbyteArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i8 >)]
+    pub struct BattleSide_SbyteArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_FloatArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.FloatArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < f32 >)]
+    pub struct BattleSide_FloatArray {}
 }
 
 #[cfg(feature = "app-battleside-types")]
@@ -271,64 +271,24 @@ pub use __types::*;
 
 #[cfg(feature = "app-battleside")]
 #[::unity2::methods]
-impl BattleSide_FloatArray {
+impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-battleside")]
-impl BattleSide_FloatArray {
+impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_FloatArray),
+                ::core::stringify!(BattleSide_ClassArray_1),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleSide_FloatArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> T0;
-
-    #[doc = "`set_Item(i32, T0)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, i: i32, value: T0) -> ();
-
-    #[doc = "`get_Item(crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item_2(self, r#type: crate::app::battleside::BattleSide_Type) -> T0;
-
-    #[doc = "`set_Item(crate::app::battleside::BattleSide_Type, T0)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item_2(self, r#type: crate::app::battleside::BattleSide_Type, value: T0) -> ();
-}
-
-#[cfg(feature = "app-battleside")]
-impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_StructArray_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_StructArray_1Methods<T0>>::ctor(this);
+        <Self as IBattleSide_ClassArray_1Methods<T0>>::ctor(this);
         this
     }
 }
@@ -369,54 +329,6 @@ impl<T0: ::unity2::ClassIdentity> BattleSide_ContainerArray_1<T0> {
             )
         });
         <Self as IBattleSide_ContainerArray_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-#[::unity2::methods]
-impl BattleSide_IntArray {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battleside")]
-impl BattleSide_IntArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_IntArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_IntArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-#[::unity2::methods]
-impl BattleSide_SbyteArray {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battleside")]
-impl BattleSide_SbyteArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_SbyteArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_SbyteArrayMethods>::ctor(this);
         this
     }
 }
@@ -496,24 +408,64 @@ impl BattleSide {
 
 #[cfg(feature = "app-battleside")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
+impl BattleSide_IntArray {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-battleside")]
-impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
+impl BattleSide_IntArray {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_ClassArray_1),
+                ::core::stringify!(BattleSide_IntArray),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleSide_ClassArray_1Methods<T0>>::ctor(this);
+        <Self as IBattleSide_IntArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> T0;
+
+    #[doc = "`set_Item(i32, T0)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: T0) -> ();
+
+    #[doc = "`get_Item(crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(self, r#type: crate::app::battleside::BattleSide_Type) -> T0;
+
+    #[doc = "`set_Item(crate::app::battleside::BattleSide_Type, T0)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item_2(self, r#type: crate::app::battleside::BattleSide_Type, value: T0) -> ();
+}
+
+#[cfg(feature = "app-battleside")]
+impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_StructArray_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_StructArray_1Methods<T0>>::ctor(this);
         this
     }
 }
@@ -538,6 +490,54 @@ impl BattleSide_ShortArray {
             )
         });
         <Self as IBattleSide_ShortArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+#[::unity2::methods]
+impl BattleSide_SbyteArray {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleside")]
+impl BattleSide_SbyteArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_SbyteArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_SbyteArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+#[::unity2::methods]
+impl BattleSide_FloatArray {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleside")]
+impl BattleSide_FloatArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_FloatArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_FloatArrayMethods>::ctor(this);
         this
     }
 }

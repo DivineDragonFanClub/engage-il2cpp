@@ -10,117 +10,17 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_Particle {
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        pub m_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
-        pub m_rotation: crate::unity_engine::vector3::Vector3,
-        pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
-        pub m_start_size: crate::unity_engine::vector3::Vector3,
-        pub m_start_color: crate::unity_engine::color32::Color32,
-        pub m_random_seed: u32,
-        pub m_parent_random_seed: u32,
-        pub m_lifetime: f32,
-        pub m_start_lifetime: f32,
-        pub m_mesh_index: i32,
-        pub m_emit_accumulator0: f32,
-        pub m_emit_accumulator1: f32,
-        pub m_flags: u32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_Particle {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.Particle";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_Particle {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Force {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Noise {
-        pub m_scroll_offset: f32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ColorOverLifetimeModule {
+    pub struct ParticleSystem_TrailModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.ColorOverLifetimeModule";
+        const NAME: &'static str = "ParticleSystem.TrailModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -129,7 +29,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_ColorOverLifetimeModule {
+    impl ::unity2::IlType for ParticleSystem_TrailModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -166,6 +66,184 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ForceOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ForceOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ForceOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Emission {
+        pub m_particle_spacing: f32,
+        pub m_to_emit_accumulator: f32,
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Lights {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+        pub m_particle_emission_counter: f32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_Trails {
+        pub positions: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector4::Vector4,
+        >,
+        pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
+        pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
+        pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
+        pub max_trail_count: i32,
+        pub max_positions_per_trail_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_Trails {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.Trails";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_Trails {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_RotationOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_VelocityOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -194,6 +272,238 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_RotationBySpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_TextureSheetAnimationModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.TextureSheetAnimationModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_TextureSheetAnimationModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_CollisionModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.CollisionModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_CollisionModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ExternalForcesModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Initial {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_MinMaxCurve {
+        pub m_mode: crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,
+        pub m_curve_multiplier: f32,
+        pub m_curve_min: crate::unity_engine::animationcurve::AnimationCurve,
+        pub m_curve_max: crate::unity_engine::animationcurve::AnimationCurve,
+        pub m_constant_min: f32,
+        pub m_constant_max: f32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxCurve {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.MinMaxCurve";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_MinMaxCurve {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed4.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Seed4 {
+        pub x: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+        pub y: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+        pub z: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+        pub w: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed4 {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed4";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed4 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_SizeOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.SizeOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_SizeOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -214,6 +524,146 @@ mod __types {
     }
 
     impl ::unity2::IlType for ParticleSystem_EmissionModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_NoiseModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_NoiseModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.NoiseModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_NoiseModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CustomDataModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_CustomDataModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_CustomDataModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.CustomDataModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_CustomDataModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ShapeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ShapeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ShapeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ShapeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ColorBySpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ColorBySpeedModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ColorBySpeedModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_TriggerModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.TriggerModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_TriggerModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -262,17 +712,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_RotationOverLifetimeModule {
+    pub struct ParticleSystem_InheritVelocityModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
+        const NAME: &'static str = "ParticleSystem.InheritVelocityModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -281,7 +731,250 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
+    impl ::unity2::IlType for ParticleSystem_InheritVelocityModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Force {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_SizeBySpeedModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Shape {
+        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+        pub m_radius_timer: f32,
+        pub m_radius_timer_prev: f32,
+        pub m_arc_timer: f32,
+        pub m_arc_timer_prev: f32,
+        pub m_mesh_spawn_timer: f32,
+        pub m_mesh_spawn_timer_prev: f32,
+        pub m_ordered_mesh_vertex_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_MainModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.MainModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_MainModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_LightsModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_LightsModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.LightsModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_LightsModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/particlesystem/ParticleSystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "ParticleSystem")]
+    #[parent(crate::unity_engine::component::Component)]
+    pub struct ParticleSystem {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_MinMaxGradient {
+        pub m_mode: crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,
+        pub m_gradient_min: crate::unity_engine::gradient::Gradient,
+        pub m_gradient_max: crate::unity_engine::gradient::Gradient,
+        pub m_color_min: crate::unity_engine::color::Color,
+        pub m_color_max: crate::unity_engine::color::Color,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxGradient {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.MinMaxGradient";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_MinMaxGradient {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_ColorOverLifetimeModule {
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.ColorOverLifetimeModule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_ColorOverLifetimeModule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ParticleSystem_PlaybackState_Seed {
+        pub x: u32,
+        pub y: u32,
+        pub z: u32,
+        pub w: u32,
+    }
+
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -318,17 +1011,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ShapeModule {
+    pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_ShapeModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.ShapeModule";
+        const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -337,7 +1030,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_ShapeModule {
+    impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -346,52 +1039,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_Trails {
-        pub positions: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
-        pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
-        pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
-        pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
-        pub max_trail_count: i32,
-        pub max_positions_per_trail_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_Trails {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.Trails";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_Trails {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_NoiseModule {
+    pub struct ParticleSystem_SubEmittersModule {
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_NoiseModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_SubEmittersModule {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.NoiseModule";
+        const NAME: &'static str = "ParticleSystem.SubEmittersModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -400,7 +1058,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_NoiseModule {
+    impl ::unity2::IlType for ParticleSystem_SubEmittersModule {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -409,17 +1067,33 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_CollisionModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    pub struct ParticleSystem_Particle {
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        pub m_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
+        pub m_rotation: crate::unity_engine::vector3::Vector3,
+        pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
+        pub m_start_size: crate::unity_engine::vector3::Vector3,
+        pub m_start_color: crate::unity_engine::color32::Color32,
+        pub m_random_seed: u32,
+        pub m_parent_random_seed: u32,
+        pub m_lifetime: f32,
+        pub m_start_lifetime: f32,
+        pub m_mesh_index: i32,
+        pub m_emit_accumulator0: f32,
+        pub m_emit_accumulator1: f32,
+        pub m_flags: u32,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_Particle {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.CollisionModule";
+        const NAME: &'static str = "ParticleSystem.Particle";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -428,7 +1102,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_CollisionModule {
+    impl ::unity2::IlType for ParticleSystem_Particle {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -437,17 +1111,17 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_TextureSheetAnimationModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    pub struct ParticleSystem_PlaybackState_Noise {
+        pub m_scroll_offset: f32,
     }
 
-    impl ::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule {
+    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
         const NAMESPACE: &'static str = "UnityEngine";
 
-        const NAME: &'static str = "ParticleSystem.TextureSheetAnimationModule";
+        const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -456,93 +1130,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ParticleSystem_TextureSheetAnimationModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Emission {
-        pub m_particle_spacing: f32,
-        pub m_to_emit_accumulator: f32,
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_TriggerModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.TriggerModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_TriggerModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_MainModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.MainModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_MainModule {
+    impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -589,594 +1177,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_LightsModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_LightsModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.LightsModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_LightsModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_MinMaxCurve {
-        pub m_mode: crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,
-        pub m_curve_multiplier: f32,
-        pub m_curve_min: crate::unity_engine::animationcurve::AnimationCurve,
-        pub m_curve_max: crate::unity_engine::animationcurve::AnimationCurve,
-        pub m_constant_min: f32,
-        pub m_constant_max: f32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxCurve {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.MinMaxCurve";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_MinMaxCurve {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Shape {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-        pub m_radius_timer: f32,
-        pub m_radius_timer_prev: f32,
-        pub m_arc_timer: f32,
-        pub m_arc_timer_prev: f32,
-        pub m_mesh_spawn_timer: f32,
-        pub m_mesh_spawn_timer_prev: f32,
-        pub m_ordered_mesh_vertex_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Seed {
-        pub x: u32,
-        pub y: u32,
-        pub z: u32,
-        pub w: u32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed4.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Seed4 {
-        pub x: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-        pub y: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-        pub z: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-        pub w: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed4 {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Seed4";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed4 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_SubEmittersModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_SubEmittersModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.SubEmittersModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_SubEmittersModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/particlesystem/ParticleSystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ParticleSystem")]
-    #[parent(crate::unity_engine::component::Component)]
-    pub struct ParticleSystem {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ExternalForcesModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ForceOverLifetimeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.ForceOverLifetimeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_ForceOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_SizeOverLifetimeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.SizeOverLifetimeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_SizeOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_MinMaxGradient {
-        pub m_mode: crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,
-        pub m_gradient_min: crate::unity_engine::gradient::Gradient,
-        pub m_gradient_max: crate::unity_engine::gradient::Gradient,
-        pub m_color_min: crate::unity_engine::color::Color,
-        pub m_color_max: crate::unity_engine::color::Color,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_MinMaxGradient {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.MinMaxGradient";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_MinMaxGradient {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_RotationBySpeedModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_TrailModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.TrailModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_TrailModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_SizeBySpeedModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_ColorBySpeedModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.ColorBySpeedModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_ColorBySpeedModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Initial {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_InheritVelocityModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.InheritVelocityModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_InheritVelocityModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_PlaybackState_Lights {
-        pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-        pub m_particle_emission_counter: f32,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_VelocityOverLifetimeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CustomDataModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_CustomDataModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_CustomDataModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.CustomDataModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_CustomDataModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
-        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    }
-
-    impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-particlesystem-types")]
@@ -1184,55 +1184,85 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_Particle {
-    #[doc = "`set_lifetime(f32)` overload"]
-    #[method(name = "set_lifetime", args = 1)]
-    pub fn set_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position", args = 1)]
-    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_velocity", args = 1)]
-    pub fn set_velocity(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_remainingLifetime(f32)` overload"]
-    #[method(name = "set_remainingLifetime", args = 1)]
-    pub fn set_remaining_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startLifetime(f32)` overload"]
-    #[method(name = "set_startLifetime", args = 1)]
-    pub fn set_start_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "set_startColor", args = 1)]
-    pub fn set_start_color(self, value: crate::unity_engine::color32::Color32) -> ();
-
-    #[doc = "`set_randomSeed(u32)` overload"]
-    #[method(name = "set_randomSeed", args = 1)]
-    pub fn set_random_seed(self, value: u32) -> ();
-
-    #[doc = "`set_startSize(f32)` overload"]
-    #[method(name = "set_startSize", args = 1)]
-    pub fn set_start_size(self, value: f32) -> ();
-
-    #[doc = "`set_rotation(f32)` overload"]
-    #[method(name = "set_rotation", args = 1)]
-    pub fn set_rotation(self, value: f32) -> ();
-
-    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_rotation3D", args = 1)]
-    pub fn set_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_angularVelocity3D", args = 1)]
-    pub fn set_angular_velocity3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
+impl ParticleSystem_TrailModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_ColorOverLifetimeModule {
+impl ParticleSystem_ForceOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_RotationOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_VelocityOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_RotationBySpeedModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_TextureSheetAnimationModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_CollisionModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_ExternalForcesModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_MinMaxCurve {
+    #[doc = "`.ctor(f32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, constant: f32) -> ();
+
+    #[doc = "`op_Implicit(f32)` overload"]
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        constant: f32,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_SizeOverLifetimeModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -1293,7 +1323,7 @@ impl ParticleSystem_EmissionModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_RotationOverLifetimeModule {
+impl ParticleSystem_NoiseModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -1301,7 +1331,7 @@ impl ParticleSystem_RotationOverLifetimeModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_LifetimeByEmitterSpeedModule {
+impl ParticleSystem_CustomDataModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -1368,23 +1398,7 @@ impl ParticleSystem_ShapeModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_NoiseModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_CollisionModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_TextureSheetAnimationModule {
+impl ParticleSystem_ColorBySpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -1393,6 +1407,22 @@ impl ParticleSystem_TextureSheetAnimationModule {
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
 impl ParticleSystem_TriggerModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_InheritVelocityModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_SizeBySpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -1837,28 +1867,6 @@ impl ParticleSystem_MainModule {
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
 impl ParticleSystem_LightsModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_MinMaxCurve {
-    #[doc = "`.ctor(f32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, constant: f32) -> ();
-
-    #[doc = "`op_Implicit(f32)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        constant: f32,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SubEmittersModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -2566,30 +2574,6 @@ impl ParticleSystem {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_ExternalForcesModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ForceOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SizeOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
 impl ParticleSystem_MinMaxGradient {
     #[doc = "`.ctor(crate::unity_engine::color::Color)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -2608,7 +2592,7 @@ impl ParticleSystem_MinMaxGradient {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_RotationBySpeedModule {
+impl ParticleSystem_ColorOverLifetimeModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -2616,47 +2600,7 @@ impl ParticleSystem_RotationBySpeedModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_TrailModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SizeBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ColorBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_InheritVelocityModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_VelocityOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_CustomDataModule {
+impl ParticleSystem_LifetimeByEmitterSpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -2668,4 +2612,60 @@ impl ParticleSystem_LimitVelocityOverLifetimeModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_SubEmittersModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_Particle {
+    #[doc = "`set_lifetime(f32)` overload"]
+    #[method(name = "set_lifetime", args = 1)]
+    pub fn set_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_position", args = 1)]
+    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_velocity", args = 1)]
+    pub fn set_velocity(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`set_remainingLifetime(f32)` overload"]
+    #[method(name = "set_remainingLifetime", args = 1)]
+    pub fn set_remaining_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_startLifetime(f32)` overload"]
+    #[method(name = "set_startLifetime", args = 1)]
+    pub fn set_start_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
+    #[method(name = "set_startColor", args = 1)]
+    pub fn set_start_color(self, value: crate::unity_engine::color32::Color32) -> ();
+
+    #[doc = "`set_randomSeed(u32)` overload"]
+    #[method(name = "set_randomSeed", args = 1)]
+    pub fn set_random_seed(self, value: u32) -> ();
+
+    #[doc = "`set_startSize(f32)` overload"]
+    #[method(name = "set_startSize", args = 1)]
+    pub fn set_start_size(self, value: f32) -> ();
+
+    #[doc = "`set_rotation(f32)` overload"]
+    #[method(name = "set_rotation", args = 1)]
+    pub fn set_rotation(self, value: f32) -> ();
+
+    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_rotation3D", args = 1)]
+    pub fn set_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_angularVelocity3D", args = 1)]
+    pub fn set_angular_velocity3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
 }

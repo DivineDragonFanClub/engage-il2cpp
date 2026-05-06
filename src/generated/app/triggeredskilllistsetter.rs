@@ -11,16 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/triggeredskilllistsetter/TriggeredSkillListSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "TriggeredSkillListSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TriggeredSkillListSetter {
-        #[rename(name = "m_ShowSkillList")]
-        pub m_show_skill_list: ::unity2::Array<
-            crate::app::triggeredskilllistsetter::TriggeredSkillListSetter_ShowSkill,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/triggeredskilllistsetter/TriggeredSkillListSetter_ShowSkill.md"))]
     #[::unity2::class(namespace = "App", name = "TriggeredSkillListSetter.ShowSkill")]
     #[parent(crate::system::object::Object)]
@@ -34,10 +24,64 @@ mod __types {
         #[rename(name = "m_Ani")]
         pub m_ani: crate::unity_engine::animator::Animator,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/triggeredskilllistsetter/TriggeredSkillListSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "TriggeredSkillListSetter")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TriggeredSkillListSetter {
+        #[rename(name = "m_ShowSkillList")]
+        pub m_show_skill_list: ::unity2::Array<
+            crate::app::triggeredskilllistsetter::TriggeredSkillListSetter_ShowSkill,
+        >,
+    }
 }
 
 #[cfg(feature = "app-triggeredskilllistsetter-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-triggeredskilllistsetter")]
+#[::unity2::methods]
+impl TriggeredSkillListSetter_ShowSkill {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show(crate::app::skilldata::SkillData, f32)` overload"]
+    #[method(name = "Show", args = 2)]
+    pub fn show(self, data: crate::app::skilldata::SkillData, time: f32) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`Equals(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, data: crate::app::skilldata::SkillData) -> bool;
+
+    #[doc = "`IsEmpty()` overload"]
+    #[method(name = "IsEmpty", args = 0)]
+    pub fn is_empty(self) -> bool;
+}
+
+#[cfg(feature = "app-triggeredskilllistsetter")]
+impl TriggeredSkillListSetter_ShowSkill {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(obj: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TriggeredSkillListSetter_ShowSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITriggeredSkillListSetter_ShowSkillMethods>::ctor(this, obj);
+        this
+    }
+}
 
 #[cfg(feature = "app-triggeredskilllistsetter")]
 #[::unity2::methods]
@@ -91,50 +135,6 @@ impl TriggeredSkillListSetter {
             )
         });
         <Self as ITriggeredSkillListSetterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-triggeredskilllistsetter")]
-#[::unity2::methods]
-impl TriggeredSkillListSetter_ShowSkill {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show(crate::app::skilldata::SkillData, f32)` overload"]
-    #[method(name = "Show", args = 2)]
-    pub fn show(self, data: crate::app::skilldata::SkillData, time: f32) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`Equals(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "Equals", args = 1)]
-    pub fn equals(self, data: crate::app::skilldata::SkillData) -> bool;
-
-    #[doc = "`IsEmpty()` overload"]
-    #[method(name = "IsEmpty", args = 0)]
-    pub fn is_empty(self) -> bool;
-}
-
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl TriggeredSkillListSetter_ShowSkill {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(obj: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TriggeredSkillListSetter_ShowSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITriggeredSkillListSetter_ShowSkillMethods>::ctor(this, obj);
         this
     }
 }

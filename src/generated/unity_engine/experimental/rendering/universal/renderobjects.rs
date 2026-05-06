@@ -12,36 +12,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RenderObjects.RenderObjectsSettings"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderObjects_RenderObjectsSettings {
-# [rename (name = "passTag")] pub pass_tag : :: unity2 :: Il2CppString ,
-# [rename (name = "Event")] pub event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent ,
-# [rename (name = "filterSettings")] pub filter_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_FilterSettings ,
-# [rename (name = "overrideMaterial")] pub override_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "overrideMaterialPassIndex")] pub override_material_pass_index : i32 ,
-# [rename (name = "overrideDepthState")] pub override_depth_state : bool ,
-# [rename (name = "depthCompareFunction")] pub depth_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
-# [rename (name = "enableWrite")] pub enable_write : bool ,
-# [rename (name = "stencilSettings")] pub stencil_settings : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "cameraSettings")] pub camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RenderObjects"
-    )]
-    # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)]
-    pub struct RenderObjects {
-# [rename (name = "settings")] pub settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_RenderObjectsSettings ,
-# [rename (name = "renderObjectsPass")] pub render_objects_pass : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjectspass :: RenderObjectsPass ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.Universal",
@@ -70,70 +40,40 @@ mod __types {
 # [rename (name = "LayerMask")] pub layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
 # [rename (name = "PassNames")] pub pass_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "RenderObjects"
+    )]
+    # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)]
+    pub struct RenderObjects {
+# [rename (name = "settings")] pub settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_RenderObjectsSettings ,
+# [rename (name = "renderObjectsPass")] pub render_objects_pass : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjectspass :: RenderObjectsPass ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "RenderObjects.RenderObjectsSettings"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderObjects_RenderObjectsSettings {
+# [rename (name = "passTag")] pub pass_tag : :: unity2 :: Il2CppString ,
+# [rename (name = "Event")] pub event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent ,
+# [rename (name = "filterSettings")] pub filter_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_FilterSettings ,
+# [rename (name = "overrideMaterial")] pub override_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "overrideMaterialPassIndex")] pub override_material_pass_index : i32 ,
+# [rename (name = "overrideDepthState")] pub override_depth_state : bool ,
+# [rename (name = "depthCompareFunction")] pub depth_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
+# [rename (name = "enableWrite")] pub enable_write : bool ,
+# [rename (name = "stencilSettings")] pub stencil_settings : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "cameraSettings")] pub camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
+}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[::unity2::methods]
-impl RenderObjects_RenderObjectsSettings {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_RenderObjectsSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_RenderObjectsSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[::unity2::methods]
-impl RenderObjects {
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create(self) -> ();
-
-    #[doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "AddRenderPasses", args = 2)]
-    pub fn add_render_passes(
-        self,
-        renderer: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjectsMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[::unity2::methods]
@@ -179,6 +119,66 @@ impl RenderObjects_FilterSettings {
             )
         });
         <Self as IRenderObjects_FilterSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+#[::unity2::methods]
+impl RenderObjects {
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    #[method(name = "AddRenderPasses", args = 2)]
+    pub fn add_render_passes(
+        self,
+        renderer: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderObjectsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+#[::unity2::methods]
+impl RenderObjects_RenderObjectsSettings {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects_RenderObjectsSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderObjects_RenderObjectsSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
         this
     }
 }

@@ -19,438 +19,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapDisposeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_GmapDisposeSequence {
-        #[rename(name = "m_DisposSpot")]
-        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.EnterChapterSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_EnterChapterSequence {
-        #[static_field]
-        #[rename(name = "TalkFlagNameM010")]
-        pub talk_flag_name_m010: ::unity2::Il2CppString,
-        #[rename(name = "m_NowSpot")]
-        pub m_now_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::system::action::Action,
-        #[rename(name = "m_DecideEventHandler2")]
-        pub m_decide_event_handler2: crate::system::action::Action,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapFreeCameraSequence_Dir {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Dir";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapFreeCameraSequence_Dir {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_EnterChapterSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.EnterChapterSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_EnterChapterSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_EnterChapterSequence_Label {
-        pub fn talk() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn dialog() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapWholeMapSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_GmapWholeMapSequence {
-        #[rename(name = "m_WholeMap")]
-        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
-        #[rename(name = "m_GmapCamera")]
-        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
-        #[rename(name = "m_MapInfo")]
-        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: gmapsequence :: GmapSequence >)]
-    pub struct GmapSequence {
-        #[rename(name = "m_NowSpot")]
-        pub m_now_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_ChangingSpot")]
-        pub m_changing_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_ChangingPath")]
-        pub m_changing_path: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DisposSpot")]
-        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_GmapCamera")]
-        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
-        #[rename(name = "m_PathController")]
-        pub m_path_controller: crate::app::gmapcinemachinecontroller::GmapCinemachineController,
-        #[rename(name = "m_VirtualSphere")]
-        pub m_virtual_sphere: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_WholeMap")]
-        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
-        #[rename(name = "m_MapInfo")]
-        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
-        #[rename(name = "m_IsMoveForward")]
-        pub m_is_move_forward: bool,
-        #[rename(name = "m_NextSpot")]
-        pub m_next_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_PrevSpot")]
-        pub m_prev_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_Paths")]
-        pub m_paths: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PathCollection")]
-        pub m_path_collection: crate::app::gmap::gmappathcollection::GmapPathCollection,
-        #[rename(name = "m_AutoMoveRoutes")]
-        pub m_auto_move_routes:
-            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_AppearedSpotList")]
-        pub m_appeared_spot_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_IsAppearedEncount")]
-        pub m_is_appeared_encount: bool,
-        #[rename(name = "m_EffectParent")]
-        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "AppearLineEffectPath")]
-        pub appear_line_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "AppearSymbolEffectPath")]
-        pub appear_symbol_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "AppearSpotEffectPath")]
-        pub appear_spot_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "m_AppearLineEffect")]
-        pub m_appear_line_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
-        #[rename(name = "m_IsSkipping")]
-        pub m_is_skipping: bool,
-        #[rename(name = "m_CinemaScope")]
-        pub m_cinema_scope: crate::app::gmapcinemascope::GmapCinemaScope,
-        #[rename(name = "m_DlcPathHandle")]
-        pub m_dlc_path_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_DlcSpotHandle")]
-        pub m_dlc_spot_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_DlcPath")]
-        pub m_dlc_path: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DlcSpot")]
-        pub m_dlc_spot: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "PathLengthMainToGod")]
-        pub path_length_main_to_god: f32,
-        #[static_field]
-        #[rename(name = "PathLengthGodToMain")]
-        pub path_length_god_to_main: f32,
-        #[rename(name = "m_IsEncountAppearOfMain")]
-        pub m_is_encount_appear_of_main: bool,
-        #[rename(name = "m_IsEncountAppearOfGod")]
-        pub m_is_encount_appear_of_god: bool,
-        #[rename(name = "m_IsEncountAppearOfEvil")]
-        pub m_is_encount_appear_of_evil: bool,
-        #[rename(name = "m_G002SymbolPath")]
-        pub m_g002_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G004SymbolPath")]
-        pub m_g004_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G005SymbolPath")]
-        pub m_g005_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G003SymbolPath")]
-        pub m_g003_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G006SymbolPath")]
-        pub m_g006_symbol_path: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapSequence.GmapFreeCameraSequence.DirFlagField"
-    )]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag >)]
-    pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapSequence.GmapFreeCameraSequence.SelfDestroy"
-    )]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy {
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_Label {
-        pub fn init() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn enter_from_other_gmap() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn event() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn check_spot() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn appear_spot() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn check_dispos() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn check_dispos_debug() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn tick_without_camara_wait() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn r#move() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn move_to_other_gmap() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn save_data_load() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn tail() -> Self {
-            Self { value: 13 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapTeleportSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapTeleportSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapTeleportSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapTeleportSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapTeleportSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapTeleportSequence_Label {
-        pub fn end() -> Self {
-            Self { value: 0 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlag.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapFreeCameraSequence_DirFlag {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_DirFlag {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.DirFlag";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_DirFlag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapFreeCameraSequence_DirFlag {
-        pub fn up() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 8 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence.md"))]
     #[::unity2::class(namespace = "App", name = "GmapSequence.GmapFreeCameraSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -548,6 +116,17 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapSequence.GmapFreeCameraSequence.SelfDestroy"
+    )]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapTeleportSequence.md"))]
     #[::unity2::class(namespace = "App", name = "GmapSequence.GmapTeleportSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -556,6 +135,269 @@ mod __types {
         pub m_destination: crate::app::gmapspot::GmapSpot,
         #[rename(name = "m_IsClosed")]
         pub m_is_closed: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_EnterChapterSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.EnterChapterSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_EnterChapterSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_EnterChapterSequence_Label {
+        pub fn talk() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn dialog() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapWholeMapSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_GmapWholeMapSequence {
+        #[rename(name = "m_WholeMap")]
+        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
+        #[rename(name = "m_GmapCamera")]
+        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
+        #[rename(name = "m_MapInfo")]
+        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: gmapsequence :: GmapSequence >)]
+    pub struct GmapSequence {
+        #[rename(name = "m_NowSpot")]
+        pub m_now_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_ChangingSpot")]
+        pub m_changing_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_ChangingPath")]
+        pub m_changing_path: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DisposSpot")]
+        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_GmapCamera")]
+        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
+        #[rename(name = "m_PathController")]
+        pub m_path_controller: crate::app::gmapcinemachinecontroller::GmapCinemachineController,
+        #[rename(name = "m_VirtualSphere")]
+        pub m_virtual_sphere: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_WholeMap")]
+        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
+        #[rename(name = "m_MapInfo")]
+        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
+        #[rename(name = "m_EncountIconRoot")]
+        pub m_encount_icon_root: crate::root::encounticonroot::EncountIconRoot,
+        #[rename(name = "m_IsMoveForward")]
+        pub m_is_move_forward: bool,
+        #[rename(name = "m_NextSpot")]
+        pub m_next_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_PrevSpot")]
+        pub m_prev_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_Paths")]
+        pub m_paths: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PathCollection")]
+        pub m_path_collection: crate::app::gmap::gmappathcollection::GmapPathCollection,
+        #[rename(name = "m_AutoMoveRoutes")]
+        pub m_auto_move_routes:
+            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
+        #[rename(name = "m_AppearedSpotList")]
+        pub m_appeared_spot_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
+        #[rename(name = "m_IsAppearedEncount")]
+        pub m_is_appeared_encount: bool,
+        #[rename(name = "m_EffectParent")]
+        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "AppearLineEffectPath")]
+        pub appear_line_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "AppearSymbolEffectPath")]
+        pub appear_symbol_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "AppearSpotEffectPath")]
+        pub appear_spot_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "m_AppearLineEffect")]
+        pub m_appear_line_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
+        #[rename(name = "m_IsSkipping")]
+        pub m_is_skipping: bool,
+        #[rename(name = "m_CinemaScope")]
+        pub m_cinema_scope: crate::app::gmapcinemascope::GmapCinemaScope,
+        #[rename(name = "m_DlcPathHandle")]
+        pub m_dlc_path_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_DlcSpotHandle")]
+        pub m_dlc_spot_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_DlcPath")]
+        pub m_dlc_path: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DlcSpot")]
+        pub m_dlc_spot: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "PathLengthMainToGod")]
+        pub path_length_main_to_god: f32,
+        #[static_field]
+        #[rename(name = "PathLengthGodToMain")]
+        pub path_length_god_to_main: f32,
+        #[rename(name = "m_IsEncountAppearOfMain")]
+        pub m_is_encount_appear_of_main: bool,
+        #[rename(name = "m_IsEncountAppearOfGod")]
+        pub m_is_encount_appear_of_god: bool,
+        #[rename(name = "m_IsEncountAppearOfEvil")]
+        pub m_is_encount_appear_of_evil: bool,
+        #[rename(name = "m_G002SymbolPath")]
+        pub m_g002_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G004SymbolPath")]
+        pub m_g004_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G005SymbolPath")]
+        pub m_g005_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G003SymbolPath")]
+        pub m_g003_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G006SymbolPath")]
+        pub m_g006_symbol_path: ::unity2::Il2CppString,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapTeleportSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapTeleportSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapTeleportSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapTeleportSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapTeleportSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapTeleportSequence_Label {
+        pub fn end() -> Self {
+            Self { value: 0 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.EnterChapterSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_EnterChapterSequence {
+        #[static_field]
+        #[rename(name = "TalkFlagNameM010")]
+        pub talk_flag_name_m010: ::unity2::Il2CppString,
+        #[rename(name = "m_NowSpot")]
+        pub m_now_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::system::action::Action,
+        #[rename(name = "m_DecideEventHandler2")]
+        pub m_decide_event_handler2: crate::system::action::Action,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapFreeCameraSequence_Dir {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Dir";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapFreeCameraSequence_Dir {
+        pub fn up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Label.md"))]
@@ -595,6 +437,166 @@ mod __types {
     impl GmapSequence_GmapFreeCameraSequence_Label {
         pub fn end() -> Self {
             Self { value: 0 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapSequence.GmapFreeCameraSequence.DirFlagField"
+    )]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag >)]
+    pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn enter_from_other_gmap() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn event() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn check_spot() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn appear_spot() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn check_dispos() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn check_dispos_debug() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn tick_without_camara_wait() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn r#move() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn move_to_other_gmap() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn save_data_load() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn tail() -> Self {
+            Self { value: 13 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapDisposeSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_GmapDisposeSequence {
+        #[rename(name = "m_DisposSpot")]
+        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlag.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapFreeCameraSequence_DirFlag {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_DirFlag {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.DirFlag";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_DirFlag {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapFreeCameraSequence_DirFlag {
+        pub fn up() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 8 }
         }
     }
 
@@ -644,64 +646,102 @@ pub use __types::*;
 
 #[cfg(feature = "app-gmapsequence")]
 #[::unity2::methods]
-impl GmapSequence_GmapDisposeSequence {
-    #[doc = "`CheckDispos()` overload"]
-    #[method(name = "CheckDispos", args = 0)]
-    pub fn check_dispos(self) -> ();
+impl GmapSequence_GmapFreeCameraSequence {
+    #[doc = "`LoadResorces()` overload"]
+    #[method(name = "LoadResorces", args = 0)]
+    pub fn load_resorces() -> ();
 
-    #[doc = "`DetermineDisposSpot()` overload"]
-    #[method(name = "DetermineDisposSpot", args = 0)]
-    pub fn determine_dispos_spot(self) -> ();
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading() -> bool;
 
-    #[doc = "`CheckAppearDisposSpot()` overload"]
-    #[method(name = "CheckAppearDisposSpot", args = 0)]
-    pub fn check_appear_dispos_spot(self) -> ();
+    #[doc = "`UnloadResources()` overload"]
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources() -> ();
 
-    #[doc = "`DisposMoveCamera()` overload"]
-    #[method(name = "DisposMoveCamera", args = 0)]
-    pub fn dispos_move_camera(self) -> crate::system::collections::ienumerator::IEnumerator;
+    #[doc = "`Init()` overload"]
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
 
-    #[doc = "`StartDisposEffect()` overload"]
-    #[method(name = "StartDisposEffect", args = 0)]
-    pub fn start_dispos_effect(self) -> ();
+    #[doc = "`WaitScroll()` overload"]
+    #[method(name = "WaitScroll", args = 0)]
+    pub fn wait_scroll(self) -> bool;
 
-    #[doc = "`WaitAppearDispos()` overload"]
-    #[method(name = "WaitAppearDispos", args = 0)]
-    pub fn wait_appear_dispos(self) -> crate::system::collections::ienumerator::IEnumerator;
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
 
-    #[doc = "`SetReturnCameraPosition()` overload"]
-    #[method(name = "SetReturnCameraPosition", args = 0)]
-    pub fn set_return_camera_position(self) -> ();
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
 
-    #[doc = "`StartAppearSkip()` overload"]
-    #[method(name = "StartAppearSkip", args = 0)]
-    pub fn start_appear_skip(self) -> ();
+    #[doc = "`TryLRMove(f32)` overload"]
+    #[method(name = "TryLRMove", args = 1)]
+    pub fn try_lr_move(self, move_l_stick_x: f32) -> crate::unity_engine::vector3::Vector3;
 
-    #[doc = "`EndAppearSkip()` overload"]
-    #[method(name = "EndAppearSkip", args = 0)]
-    pub fn end_appear_skip(self) -> ();
+    #[doc = "`TryUDMove(f32)` overload"]
+    #[method(name = "TryUDMove", args = 1)]
+    pub fn try_ud_move(self, move_l_stick_y: f32) -> crate::unity_engine::vector3::Vector3;
 
-    #[doc = "`WaitCameraMove()` overload"]
-    #[method(name = "WaitCameraMove", args = 0)]
-    pub fn wait_camera_move(self) -> ();
+    #[doc = "`CalcLeftRightPos(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    #[method(name = "CalcLeftRightPos", args = 2)]
+    pub fn calc_left_right_pos(
+        pos: crate::unity_engine::vector3::Vector3,
+        angle: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
 
-    #[doc = "`DisposUpdateOfOtherMode()` overload"]
-    #[method(name = "DisposUpdateOfOtherMode", args = 0)]
-    pub fn dispos_update_of_other_mode(self) -> ();
+    #[doc = "`CalcUDPos(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    #[method(name = "CalcUDPos", args = 2)]
+    pub fn calc_ud_pos(
+        pos: crate::unity_engine::vector3::Vector3,
+        angle: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
 
-    #[doc = "`SetUpEncountInfo()` overload"]
-    #[method(name = "SetUpEncountInfo", args = 0)]
-    pub fn set_up_encount_info(self) -> ();
+    #[doc = "`InitAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)` overload"]
+    #[method(name = "InitAngleLimit", args = 1)]
+    pub fn init_angle_limit(
+        self,
+        flags: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField,
+    ) -> ();
+
+    #[doc = "`ClampAngle(f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
+    #[method(name = "ClampAngle", args = 2)]
+    pub fn clamp_angle(
+        self,
+        angle: f32,
+        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+    ) -> f32;
+
+    #[doc = "`TryGetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir, f32)` overload"]
+    #[method(name = "TryGetAngleLimit", args = 2)]
+    pub fn try_get_angle_limit(
+        self,
+        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+        value: f32,
+    ) -> bool;
+
+    #[doc = "`SetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
+    #[method(name = "SetAngleLimit", args = 3)]
+    pub fn set_angle_limit(
+        self,
+        flag: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        angle: f32,
+        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+    ) -> ();
+
+    #[doc = "`GetRecalcIgnoreFlag()` overload"]
+    #[method(name = "GetRecalcIgnoreFlag", args = 0)]
+    pub fn get_recalc_ignore_flag(
+        self,
+    ) -> crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField;
+
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
 
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "CreateBind", args = 1)]
     pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`GetDescs(crate::app::gmapsequence::GmapSequence_GmapDisposeSequence)` overload"]
-    #[method(name = "GetDescs", args = 1)]
-    pub fn get_descs(
-        p: crate::app::gmapsequence::GmapSequence_GmapDisposeSequence,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -709,80 +749,109 @@ impl GmapSequence_GmapDisposeSequence {
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapDisposeSequence {
+impl GmapSequence_GmapFreeCameraSequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapDisposeSequence),
+                ::core::stringify!(GmapSequence_GmapFreeCameraSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_GmapDisposeSequenceMethods>::ctor(this);
+        <Self as IGmapSequence_GmapFreeCameraSequenceMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-gmapsequence")]
 #[::unity2::methods]
-impl GmapSequence_EnterChapterSequence {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        now_spot: crate::app::gmapspot::GmapSpot,
-        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        decide_event_handler: crate::system::action::Action,
-    ) -> ();
+impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
 
-    #[doc = "`Branch()` overload"]
-    #[method(name = "Branch", args = 0)]
-    pub fn branch(self) -> ();
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
 
-    #[doc = "`Talk()` overload"]
-    #[method(name = "Talk", args = 0)]
-    pub fn talk(self) -> ();
-
-    #[doc = "`OpenDialog()` overload"]
-    #[method(name = "OpenDialog", args = 0)]
-    pub fn open_dialog(self) -> ();
-
-    #[doc = "`Final()` overload"]
-    #[method(name = "Final", args = 0)]
-    pub fn r#final(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        now_spot: crate::app::gmapspot::GmapSpot,
-        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        decide_event_handler: crate::system::action::Action,
-    ) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_EnterChapterSequence {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        now_spot: crate::app::gmapspot::GmapSpot,
-        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        decide_event_handler: crate::system::action::Action,
-    ) -> Self {
+impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_EnterChapterSequence),
+                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_SelfDestroy),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_EnterChapterSequenceMethods>::ctor(
-            this,
-            now_spot,
-            r#type,
-            decide_event_handler,
-        );
+        <Self as IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+#[::unity2::methods]
+impl GmapSequence_GmapTeleportSequence {
+    #[doc = "`LoadResources()` overload"]
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources() -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading() -> bool;
+
+    #[doc = "`UnloadResources()` overload"]
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources() -> ();
+
+    #[doc = "`StartTeleport()` overload"]
+    #[method(name = "StartTeleport", args = 0)]
+    pub fn start_teleport(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`OpenMenu()` overload"]
+    #[method(name = "OpenMenu", args = 0)]
+    pub fn open_menu(self) -> ();
+
+    #[doc = "`Teleport()` overload"]
+    #[method(name = "Teleport", args = 0)]
+    pub fn teleport(self) -> ();
+
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[doc = "`CloseMapAndTitleBar()` overload"]
+    #[method(name = "CloseMapAndTitleBar", args = 0)]
+    pub fn close_map_and_title_bar(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapsequence")]
+impl GmapSequence_GmapTeleportSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapSequence_GmapTeleportSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapSequence_GmapTeleportSequenceMethods>::ctor(this);
         this
     }
 }
@@ -1169,6 +1238,69 @@ impl GmapSequence {
 
 #[cfg(feature = "app-gmapsequence")]
 #[::unity2::methods]
+impl GmapSequence_EnterChapterSequence {
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        now_spot: crate::app::gmapspot::GmapSpot,
+        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        decide_event_handler: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`Branch()` overload"]
+    #[method(name = "Branch", args = 0)]
+    pub fn branch(self) -> ();
+
+    #[doc = "`Talk()` overload"]
+    #[method(name = "Talk", args = 0)]
+    pub fn talk(self) -> ();
+
+    #[doc = "`OpenDialog()` overload"]
+    #[method(name = "OpenDialog", args = 0)]
+    pub fn open_dialog(self) -> ();
+
+    #[doc = "`Final()` overload"]
+    #[method(name = "Final", args = 0)]
+    pub fn r#final(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        now_spot: crate::app::gmapspot::GmapSpot,
+        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        decide_event_handler: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gmapsequence")]
+impl GmapSequence_EnterChapterSequence {
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        now_spot: crate::app::gmapspot::GmapSpot,
+        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        decide_event_handler: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapSequence_EnterChapterSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapSequence_EnterChapterSequenceMethods>::ctor(
+            this,
+            now_spot,
+            r#type,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+#[::unity2::methods]
 impl GmapSequence_GmapFreeCameraSequence_DirFlagField {
     #[doc = "`.ctor(i32)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -1243,194 +1375,64 @@ impl GmapSequence_GmapFreeCameraSequence_DirFlagField {
 
 #[cfg(feature = "app-gmapsequence")]
 #[::unity2::methods]
-impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
+impl GmapSequence_GmapDisposeSequence {
+    #[doc = "`CheckDispos()` overload"]
+    #[method(name = "CheckDispos", args = 0)]
+    pub fn check_dispos(self) -> ();
 
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
+    #[doc = "`DetermineDisposSpot()` overload"]
+    #[method(name = "DetermineDisposSpot", args = 0)]
+    pub fn determine_dispos_spot(self) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
+    #[doc = "`CheckAppearDisposSpot()` overload"]
+    #[method(name = "CheckAppearDisposSpot", args = 0)]
+    pub fn check_appear_dispos_spot(self) -> ();
 
-#[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_SelfDestroy),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods>::ctor(this);
-        this
-    }
-}
+    #[doc = "`DisposMoveCamera()` overload"]
+    #[method(name = "DisposMoveCamera", args = 0)]
+    pub fn dispos_move_camera(self) -> crate::system::collections::ienumerator::IEnumerator;
 
-#[cfg(feature = "app-gmapsequence")]
-#[::unity2::methods]
-impl GmapSequence_GmapFreeCameraSequence {
-    #[doc = "`LoadResorces()` overload"]
-    #[method(name = "LoadResorces", args = 0)]
-    pub fn load_resorces() -> ();
+    #[doc = "`StartDisposEffect()` overload"]
+    #[method(name = "StartDisposEffect", args = 0)]
+    pub fn start_dispos_effect(self) -> ();
 
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading() -> bool;
+    #[doc = "`WaitAppearDispos()` overload"]
+    #[method(name = "WaitAppearDispos", args = 0)]
+    pub fn wait_appear_dispos(self) -> crate::system::collections::ienumerator::IEnumerator;
 
-    #[doc = "`UnloadResources()` overload"]
-    #[method(name = "UnloadResources", args = 0)]
-    pub fn unload_resources() -> ();
+    #[doc = "`SetReturnCameraPosition()` overload"]
+    #[method(name = "SetReturnCameraPosition", args = 0)]
+    pub fn set_return_camera_position(self) -> ();
 
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
+    #[doc = "`StartAppearSkip()` overload"]
+    #[method(name = "StartAppearSkip", args = 0)]
+    pub fn start_appear_skip(self) -> ();
 
-    #[doc = "`WaitScroll()` overload"]
-    #[method(name = "WaitScroll", args = 0)]
-    pub fn wait_scroll(self) -> bool;
+    #[doc = "`EndAppearSkip()` overload"]
+    #[method(name = "EndAppearSkip", args = 0)]
+    pub fn end_appear_skip(self) -> ();
 
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
+    #[doc = "`WaitCameraMove()` overload"]
+    #[method(name = "WaitCameraMove", args = 0)]
+    pub fn wait_camera_move(self) -> ();
 
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
+    #[doc = "`DisposUpdateOfOtherMode()` overload"]
+    #[method(name = "DisposUpdateOfOtherMode", args = 0)]
+    pub fn dispos_update_of_other_mode(self) -> ();
 
-    #[doc = "`TryLRMove(f32)` overload"]
-    #[method(name = "TryLRMove", args = 1)]
-    pub fn try_lr_move(self, move_l_stick_x: f32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`TryUDMove(f32)` overload"]
-    #[method(name = "TryUDMove", args = 1)]
-    pub fn try_ud_move(self, move_l_stick_y: f32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CalcLeftRightPos(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "CalcLeftRightPos", args = 2)]
-    pub fn calc_left_right_pos(
-        pos: crate::unity_engine::vector3::Vector3,
-        angle: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CalcUDPos(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "CalcUDPos", args = 2)]
-    pub fn calc_ud_pos(
-        pos: crate::unity_engine::vector3::Vector3,
-        angle: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`InitAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)` overload"]
-    #[method(name = "InitAngleLimit", args = 1)]
-    pub fn init_angle_limit(
-        self,
-        flags: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField,
-    ) -> ();
-
-    #[doc = "`ClampAngle(f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
-    #[method(name = "ClampAngle", args = 2)]
-    pub fn clamp_angle(
-        self,
-        angle: f32,
-        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-    ) -> f32;
-
-    #[doc = "`TryGetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir, f32)` overload"]
-    #[method(name = "TryGetAngleLimit", args = 2)]
-    pub fn try_get_angle_limit(
-        self,
-        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-        value: f32,
-    ) -> bool;
-
-    #[doc = "`SetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
-    #[method(name = "SetAngleLimit", args = 3)]
-    pub fn set_angle_limit(
-        self,
-        flag: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        angle: f32,
-        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-    ) -> ();
-
-    #[doc = "`GetRecalcIgnoreFlag()` overload"]
-    #[method(name = "GetRecalcIgnoreFlag", args = 0)]
-    pub fn get_recalc_ignore_flag(
-        self,
-    ) -> crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField;
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
+    #[doc = "`SetUpEncountInfo()` overload"]
+    #[method(name = "SetUpEncountInfo", args = 0)]
+    pub fn set_up_encount_info(self) -> ();
 
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "CreateBind", args = 1)]
     pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapFreeCameraSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapFreeCameraSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapSequence_GmapFreeCameraSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapsequence")]
-#[::unity2::methods]
-impl GmapSequence_GmapTeleportSequence {
-    #[doc = "`LoadResources()` overload"]
-    #[method(name = "LoadResources", args = 0)]
-    pub fn load_resources() -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading() -> bool;
-
-    #[doc = "`UnloadResources()` overload"]
-    #[method(name = "UnloadResources", args = 0)]
-    pub fn unload_resources() -> ();
-
-    #[doc = "`StartTeleport()` overload"]
-    #[method(name = "StartTeleport", args = 0)]
-    pub fn start_teleport(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`OpenMenu()` overload"]
-    #[method(name = "OpenMenu", args = 0)]
-    pub fn open_menu(self) -> ();
-
-    #[doc = "`Teleport()` overload"]
-    #[method(name = "Teleport", args = 0)]
-    pub fn teleport(self) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`CloseMapAndTitleBar()` overload"]
-    #[method(name = "CloseMapAndTitleBar", args = 0)]
-    pub fn close_map_and_title_bar(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`GetDescs(crate::app::gmapsequence::GmapSequence_GmapDisposeSequence)` overload"]
+    #[method(name = "GetDescs", args = 1)]
+    pub fn get_descs(
+        p: crate::app::gmapsequence::GmapSequence_GmapDisposeSequence,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -1438,17 +1440,17 @@ impl GmapSequence_GmapTeleportSequence {
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapTeleportSequence {
+impl GmapSequence_GmapDisposeSequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapTeleportSequence),
+                ::core::stringify!(GmapSequence_GmapDisposeSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_GmapTeleportSequenceMethods>::ctor(this);
+        <Self as IGmapSequence_GmapDisposeSequenceMethods>::ctor(this);
         this
     }
 }

@@ -14,7 +14,7 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -23,14 +23,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MapInfoUnitLocatorRoot_CanvasGroupKind {
+    pub struct MapInfoUnitLocatorRoot_TextMeshProKind {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind {
+    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MapInfoUnitLocatorRoot.CanvasGroupKind";
+        const NAME: &'static str = "MapInfoUnitLocatorRoot.TextMeshProKind";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,7 +39,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind {
+    impl ::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -48,45 +48,109 @@ mod __types {
         }
     }
 
-    impl MapInfoUnitLocatorRoot_CanvasGroupKind {
-        pub fn frm1() -> Self {
+    impl MapInfoUnitLocatorRoot_TextMeshProKind {
+        pub fn battle_type() -> Self {
             Self { value: 0 }
         }
 
-        pub fn frm2() -> Self {
+        pub fn phys_atk_title() -> Self {
             Self { value: 1 }
         }
 
-        pub fn info0() -> Self {
+        pub fn phys_atk_value() -> Self {
             Self { value: 2 }
         }
 
-        pub fn info1() -> Self {
+        pub fn def_title() -> Self {
             Self { value: 3 }
         }
 
-        pub fn info2() -> Self {
+        pub fn def_value() -> Self {
             Self { value: 4 }
         }
 
-        pub fn info3() -> Self {
+        pub fn mag_atk_title() -> Self {
             Self { value: 5 }
         }
 
-        pub fn info4() -> Self {
+        pub fn mag_atk_value() -> Self {
             Self { value: 6 }
         }
 
-        pub fn info5() -> Self {
+        pub fn res_title() -> Self {
             Self { value: 7 }
         }
 
-        pub fn info6() -> Self {
+        pub fn res_value() -> Self {
             Self { value: 8 }
         }
 
-        pub fn num() -> Self {
+        pub fn hit_title() -> Self {
             Self { value: 9 }
+        }
+
+        pub fn hit_value() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn avo_title() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn avo_value() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn crit_title() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn crit_value() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn crit_avo_title() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn crit_avo_value() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn skill_title() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn skill_value() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn spd_title() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn spd_value() -> Self {
+            Self { value: 20 }
+        }
+
+        pub fn move_title() -> Self {
+            Self { value: 21 }
+        }
+
+        pub fn move_value() -> Self {
+            Self { value: 22 }
+        }
+
+        pub fn phys_title() -> Self {
+            Self { value: 23 }
+        }
+
+        pub fn phys_value() -> Self {
+            Self { value: 24 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 25 }
         }
     }
 
@@ -230,6 +294,82 @@ mod __types {
         pub m_is_update: bool,
         #[rename(name = "m_IsDirtyAlpha")]
         pub m_is_dirty_alpha: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapInfoUnitLocatorRoot_CanvasGroupKind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapInfoUnitLocatorRoot.CanvasGroupKind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapInfoUnitLocatorRoot_CanvasGroupKind {
+        pub fn frm1() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn frm2() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn info0() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn info1() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn info2() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn info3() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn info4() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn info5() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn info6() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 9 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_ImageKind.md"))]
@@ -565,146 +705,6 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 62 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapInfoUnitLocatorRoot_TextMeshProKind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapInfoUnitLocatorRoot.TextMeshProKind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapInfoUnitLocatorRoot_TextMeshProKind {
-        pub fn battle_type() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn phys_atk_title() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn phys_atk_value() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn def_title() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn def_value() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mag_atk_title() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mag_atk_value() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn res_title() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn res_value() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn hit_title() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn hit_value() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn avo_title() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn avo_value() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn crit_title() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn crit_value() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn crit_avo_title() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn crit_avo_value() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn skill_title() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn skill_value() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn spd_title() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn spd_value() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn move_title() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn move_value() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn phys_title() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn phys_value() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 25 }
         }
     }
 }

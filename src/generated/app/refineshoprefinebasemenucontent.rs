@@ -12,6 +12,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent_KindIcon.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseMenuContent.KindIcon")]
+    #[parent(crate::system::object::Object)]
+    pub struct RefineShopRefineBaseMenuContent_KindIcon {
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::itemdata::ItemData_Kinds,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -25,20 +35,34 @@ mod __types {
         #[rename(name = "m_EnabledItemKindCount")]
         pub m_enabled_item_kind_count: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent_KindIcon.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseMenuContent.KindIcon")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefineShopRefineBaseMenuContent_KindIcon {
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-    }
 }
 
 #[cfg(feature = "app-refineshoprefinebasemenucontent-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refineshoprefinebasemenucontent")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenuContent_KindIcon {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenucontent")]
+impl RefineShopRefineBaseMenuContent_KindIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenuContent_KindIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenuContent_KindIconMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-refineshoprefinebasemenucontent")]
 #[::unity2::methods]
@@ -118,30 +142,6 @@ impl RefineShopRefineBaseMenuContent {
             )
         });
         <Self as IRefineShopRefineBaseMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshoprefinebasemenucontent")]
-#[::unity2::methods]
-impl RefineShopRefineBaseMenuContent_KindIcon {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinebasemenucontent")]
-impl RefineShopRefineBaseMenuContent_KindIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineBaseMenuContent_KindIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineBaseMenuContent_KindIconMethods>::ctor(this);
         this
     }
 }

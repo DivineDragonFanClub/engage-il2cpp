@@ -4,10 +4,17 @@
 mod __types {
     use super::*;
 
+    use crate::root::simpleanimation::{ISimpleAnimation, SimpleAnimation};
+    use crate::system::object::{IObject, Object};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactersimpleanimation/EventCharacterSimpleAnimation.md"))]
     #[::unity2::class(namespace = "App", name = "EventCharacterSimpleAnimation")]
+    #[parent(crate::root::simpleanimation::SimpleAnimation)]
     pub struct EventCharacterSimpleAnimation {}
 }
 

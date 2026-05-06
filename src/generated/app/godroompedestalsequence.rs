@@ -10,6 +10,37 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GodRoomPedestalSequence {
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_RefineRingUnitSelectMenu")]
+        pub m_refine_ring_unit_select_menu:
+            crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu,
+        #[rename(name = "m_RefineRingTimesSelectMenu")]
+        pub m_refine_ring_times_select_menu:
+            crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu,
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_RingGachaTimes")]
+        pub m_ring_gacha_times: i32,
+        #[rename(name = "m_UnitRingList")]
+        pub m_unit_ring_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+        #[rename(name = "m_NewRingList")]
+        pub m_new_ring_list: crate::system::collections::generic::list_1::List_1<bool>,
+        #[rename(name = "m_SynthesisRingMenu")]
+        pub m_synthesis_ring_menu: crate::app::synthesisringmenutop::SynthesisRingMenuTop,
+        #[rename(name = "m_SynthesisResultSet")]
+        pub m_synthesis_result_set: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        #[rename(name = "m_GeneratedNewRings")]
+        pub m_generated_new_rings: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -104,37 +135,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 14 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GodRoomPedestalSequence {
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_RefineRingUnitSelectMenu")]
-        pub m_refine_ring_unit_select_menu:
-            crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu,
-        #[rename(name = "m_RefineRingTimesSelectMenu")]
-        pub m_refine_ring_times_select_menu:
-            crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_RingGachaTimes")]
-        pub m_ring_gacha_times: i32,
-        #[rename(name = "m_UnitRingList")]
-        pub m_unit_ring_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
-        #[rename(name = "m_NewRingList")]
-        pub m_new_ring_list: crate::system::collections::generic::list_1::List_1<bool>,
-        #[rename(name = "m_SynthesisRingMenu")]
-        pub m_synthesis_ring_menu: crate::app::synthesisringmenutop::SynthesisRingMenuTop,
-        #[rename(name = "m_SynthesisResultSet")]
-        pub m_synthesis_result_set: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        #[rename(name = "m_GeneratedNewRings")]
-        pub m_generated_new_rings: bool,
     }
 }
 

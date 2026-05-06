@@ -12,14 +12,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct VersusViolationTypeMenu {
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback:
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.DecideCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VersusViolationTypeMenu_DecideCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md"))]
     #[::unity2::class(
@@ -29,14 +25,50 @@ mod __types {
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.DecideCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VersusViolationTypeMenu_DecideCallback {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct VersusViolationTypeMenu {
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback:
+            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+    }
 }
 
 #[cfg(feature = "app-versusviolationtypemenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl VersusViolationTypeMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusViolationTypeMenu_DecideCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusViolationTypeMenu_DecideCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu_VersusViolationTypeMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
 
 #[cfg(feature = "app-versusviolationtypemenu")]
 #[::unity2::methods]
@@ -92,38 +124,6 @@ impl VersusViolationTypeMenu {
             menu_content,
             decide_callback,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-#[::unity2::methods]
-impl VersusViolationTypeMenu_VersusViolationTypeMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-#[::unity2::methods]
-impl VersusViolationTypeMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusViolationTypeMenu_DecideCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusViolationTypeMenu_DecideCallbackMethods>::ctor(this, object, method);
         this
     }
 }

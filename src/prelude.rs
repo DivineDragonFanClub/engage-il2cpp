@@ -14,6 +14,9 @@ pub use unity2::{
 };
 
 // System collection types — `List_1<T>` and `Dictionary_2<K, V>` show up
+// constantly in IL2CPP signatures. Each one is gated by its own feature
+// so a project that opts out of every binding (default-features = false)
+// still compiles.
 #[cfg(feature = "system-collections-generic-dictionary_2-types")]
 pub use crate::system::collections::generic::dictionary_2::Dictionary_2;
 #[cfg(feature = "system-collections-generic-list_1-types")]

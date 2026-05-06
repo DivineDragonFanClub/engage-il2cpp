@@ -4,9 +4,17 @@
 mod __types {
     use super::*;
 
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md"))]
@@ -59,6 +67,40 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDangerAll")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldangerall :: MapPanelDangerAll >)]
+    pub struct MapPanelDangerAll {
+        #[rename(name = "m_AttackMaterial")]
+        pub m_attack_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodMaterial")]
+        pub m_rod_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_GunnerMaterial")]
+        pub m_gunner_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_FrameForGunnerMaterial")]
+        pub m_frame_for_gunner_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::gameconfig::GameConfig_AllInfo,
+        #[rename(name = "m_OldMode")]
+        pub m_old_mode: crate::app::gameconfig::GameConfig_AllInfo,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_MiniMapFillMaterials")]
+        pub m_mini_map_fill_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_MiniMapFrameMaterials")]
+        pub m_mini_map_frame_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_RodColor")]
+        pub m_rod_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_GunnerColor")]
+        pub m_gunner_color: crate::unity_engine::color::Color,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
@@ -115,39 +157,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDangerAll")]
-    pub struct MapPanelDangerAll {
-        #[rename(name = "m_AttackMaterial")]
-        pub m_attack_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodMaterial")]
-        pub m_rod_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_GunnerMaterial")]
-        pub m_gunner_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_FrameForGunnerMaterial")]
-        pub m_frame_for_gunner_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::gameconfig::GameConfig_AllInfo,
-        #[rename(name = "m_OldMode")]
-        pub m_old_mode: crate::app::gameconfig::GameConfig_AllInfo,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_MiniMapFillMaterials")]
-        pub m_mini_map_fill_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_MiniMapFrameMaterials")]
-        pub m_mini_map_frame_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_RodColor")]
-        pub m_rod_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_GunnerColor")]
-        pub m_gunner_color: crate::unity_engine::color::Color,
     }
 }
 
@@ -224,6 +233,36 @@ impl MapPanelDangerAll {
     #[doc = "`SetVertex()` overload"]
     #[method(name = "SetVertex", args = 0)]
     pub fn set_vertex(self) -> ();
+
+    #[doc = "`SetMesh(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldangerall::MapPanelDangerAll_DangerType, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"]
+    #[method(name = "SetMesh", args = 4)]
+    pub fn set_mesh(
+        self,
+        index: crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
+        color: crate::unity_engine::color::Color,
+        r#type: crate::app::mappaneldangerall::MapPanelDangerAll_DangerType,
+        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldangerall::MapPanelDangerAll,
+        >,
+    ) -> ();
+
+    #[doc = "`SetMeshForGunner(crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex, crate::unity_engine::color::Color, bool, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldangerall::MapPanelDangerAll>)` overload"]
+    #[method(name = "SetMeshForGunner", args = 6)]
+    pub fn set_mesh_for_gunner(
+        self,
+        index: crate::app::mappaneldangerall::MapPanelDangerAll_MeshIndex,
+        color: crate::unity_engine::color::Color,
+        is_image_filled: bool,
+        gunner: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldangerall::MapPanelDangerAll,
+        >,
+        attack: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldangerall::MapPanelDangerAll,
+        >,
+        rod: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldangerall::MapPanelDangerAll,
+        >,
+    ) -> ();
 
     #[doc = "`get_IsVisible()` overload"]
     #[method(name = "get_IsVisible", args = 0)]

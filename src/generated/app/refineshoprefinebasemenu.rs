@@ -11,6 +11,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefineShopRefineBaseMenu.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineShopRefineBaseMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_SelectEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -48,18 +56,43 @@ mod __types {
             crate::app::basicmenuselect::BasicMenuSelect,
         >,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopRefineBaseMenu.DecideEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopRefineBaseMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-refineshoprefinebasemenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+impl RefineShopRefineBaseMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-refineshoprefinebasemenu")]
 #[::unity2::methods]
@@ -252,39 +285,6 @@ impl RefineShopRefineBaseMenu {
             decide_event_handler,
             request_close_event_handler,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshoprefinebasemenu")]
-#[::unity2::methods]
-impl RefineShopRefineBaseMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        kind: crate::app::itemdata::ItemData_Kinds,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinebasemenu")]
-impl RefineShopRefineBaseMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineBaseMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineBaseMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

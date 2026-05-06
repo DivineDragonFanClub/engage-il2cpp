@@ -14,20 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingCleaningItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingCleaningItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_RingCleaningItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GodRoomPedestalTopMenu_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -88,6 +74,25 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingCleaningItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingCleaningItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct GodRoomPedestalTopMenu_RingCleaningItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GodRoomPedestalTopMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GodRoomPedestalTopMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingMergeItem.md"))]
     #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingMergeItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -109,24 +114,19 @@ mod __types {
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GodRoomPedestalTopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RefineGodWeaponItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RefineGodWeaponItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingGachaItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_RefineGodWeaponItem {
+    pub struct GodRoomPedestalTopMenu_RingGachaItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingGachaItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RefineGodWeaponItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RefineGodWeaponItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_RingGachaItem {
+    pub struct GodRoomPedestalTopMenu_RefineGodWeaponItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
@@ -173,6 +173,80 @@ impl GodRoomPedestalTopMenu_RingCleaningItem {
             )
         });
         <Self as IGodRoomPedestalTopMenu_RingCleaningItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+#[::unity2::methods]
+impl GodRoomPedestalTopMenu {
+    #[doc = "`get_m_DecideEventHandler()` overload"]
+    #[method(name = "get_m_DecideEventHandler", args = 0)]
+    pub fn get_m_decide_event_handler(
+        self,
+    ) -> crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler;
+
+    #[doc = "`set_m_DecideEventHandler(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    #[method(name = "set_m_DecideEventHandler", args = 1)]
+    pub fn set_m_decide_event_handler(
+        self,
+        value: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> ();
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+impl GodRoomPedestalTopMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodRoomPedestalTopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodRoomPedestalTopMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            initial_selected,
+            event_handler,
+        );
         this
     }
 }
@@ -292,33 +366,11 @@ impl GodRoomPedestalTopMenu_SkillInheritanceItem {
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
 #[::unity2::methods]
-impl GodRoomPedestalTopMenu {
-    #[doc = "`get_m_DecideEventHandler()` overload"]
-    #[method(name = "get_m_DecideEventHandler", args = 0)]
-    pub fn get_m_decide_event_handler(
-        self,
-    ) -> crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler;
-
-    #[doc = "`set_m_DecideEventHandler(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
-    #[method(name = "set_m_DecideEventHandler", args = 1)]
-    pub fn set_m_decide_event_handler(
-        self,
-        value: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 4)]
+impl GodRoomPedestalTopMenu_RingGachaItem {
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
     pub fn ctor(
         self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
         event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
     ) -> ();
 
@@ -326,40 +378,29 @@ impl GodRoomPedestalTopMenu {
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> ();
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
+impl GodRoomPedestalTopMenu_RingGachaItem {
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        initial_selected: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
         event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu),
+                ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodRoomPedestalTopMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            initial_selected,
-            event_handler,
-        );
+        <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -401,47 +442,6 @@ impl GodRoomPedestalTopMenu_RefineGodWeaponItem {
             )
         });
         <Self as IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-#[::unity2::methods]
-impl GodRoomPedestalTopMenu_RingGachaItem {
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu_RingGachaItem {
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods>::ctor(this, event_handler);
         this
     }
 }

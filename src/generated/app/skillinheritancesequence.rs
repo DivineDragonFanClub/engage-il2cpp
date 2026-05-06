@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillInheritanceSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SkillInheritanceSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillinheritancesequence/SkillInheritanceSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -66,6 +61,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SkillInheritanceSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct SkillInheritanceSequence {}
 }
 
 #[cfg(feature = "app-skillinheritancesequence-types")]

@@ -39,8 +39,12 @@ mod __types {
         pub _unnamed: f32,
         #[rename(name = "m_PlayEndWorldPos")]
         pub m_play_end_world_pos: crate::combat::fxz::FXZ,
+        #[rename(name = "_DitherFade")]
+        pub dither_fade: crate::root::iron19characterfader::Iron19CharacterFader,
         #[rename(name = "cached_DitherFade")]
         pub cached_dither_fade: bool,
+        #[rename(name = "_MaterialEngage")]
+        pub material_engage: crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage,
         #[rename(name = "cached_MaterialEngage")]
         pub cached_material_engage: bool,
         #[rename(name = "_Signal")]
@@ -556,6 +560,16 @@ impl Character {
     #[doc = "`Hide()` overload"]
     #[method(name = "Hide", args = 0)]
     pub fn hide(self) -> ();
+
+    #[doc = "`get_DitherFade()` overload"]
+    #[method(name = "get_DitherFade", args = 0)]
+    pub fn get_dither_fade(self) -> crate::root::iron19characterfader::Iron19CharacterFader;
+
+    #[doc = "`get_MaterialEngage()` overload"]
+    #[method(name = "get_MaterialEngage", args = 0)]
+    pub fn get_material_engage(
+        self,
+    ) -> crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage;
 
     #[doc = "`get_Signal()` overload"]
     #[method(name = "get_Signal", args = 0)]

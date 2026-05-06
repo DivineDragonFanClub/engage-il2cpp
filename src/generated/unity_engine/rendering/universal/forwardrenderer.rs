@@ -11,6 +11,53 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ForwardRenderer.Profiling"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ForwardRenderer_Profiling {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "createCameraRenderTarget")]
+        pub create_camera_render_target:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ForwardRenderer_RenderPassInputSummary {
+        pub requires_depth_texture: bool,
+        pub requires_depth_prepass: bool,
+        pub requires_normals_texture: bool,
+        pub requires_color_texture: bool,
+    }
+
+    impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+        const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -67,57 +114,18 @@ mod __types {
 # [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
 # [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRenderer.Profiling"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardRenderer_Profiling {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "createCameraRenderTarget")]
-        pub create_camera_render_target:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ForwardRenderer_RenderPassInputSummary {
-        pub requires_depth_texture: bool,
-        pub requires_depth_prepass: bool,
-        pub requires_normals_texture: bool,
-        pub requires_color_texture: bool,
-    }
-
-    impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-        const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
+#[::unity2::methods]
+impl ForwardRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
 #[::unity2::methods]
@@ -239,12 +247,4 @@ impl ForwardRenderer {
         <Self as IForwardRendererMethods>::ctor(this, data);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
-#[::unity2::methods]
-impl ForwardRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessManager.MaterialCalculator")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubAccessManager_MaterialCalculator {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -61,15 +66,67 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAccessManager")]
     #[parent(crate::system::object::Object)]
     pub struct HubAccessManager {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessManager.MaterialCalculator")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubAccessManager_MaterialCalculator {}
 }
 
 #[cfg(feature = "app-hubaccessmanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-hubaccessmanager")]
+#[::unity2::methods]
+impl HubAccessManager_MaterialCalculator {
+    #[doc = "`GenerateHigherMaterials(i32)` overload"]
+    #[method(name = "GenerateHigherMaterials", args = 1)]
+    pub fn generate_higher_materials(
+        num: i32,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+        i32,
+    >;
+
+    #[doc = "`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
+    #[method(name = "GetValidHigherMateriaslType", args = 1)]
+    pub fn get_valid_higher_materiasl_type(
+        materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+            i32,
+        >,
+    ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+
+    #[doc = "`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]
+    #[method(name = "ConvertToLowerMaterialType", args = 1)]
+    pub fn convert_to_lower_material_type(
+        r#type: crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+    ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+
+    #[doc = "`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
+    #[method(name = "FilterLowerMaterials", args = 1)]
+    pub fn filter_lower_materials(
+        materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+            i32,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubaccessmanager")]
+impl HubAccessManager_MaterialCalculator {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubAccessManager_MaterialCalculator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubAccessManager_MaterialCalculatorMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-hubaccessmanager")]
 #[::unity2::methods]
@@ -293,63 +350,6 @@ impl HubAccessManager {
             )
         });
         <Self as IHubAccessManagerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubaccessmanager")]
-#[::unity2::methods]
-impl HubAccessManager_MaterialCalculator {
-    #[doc = "`GenerateHigherMaterials(i32)` overload"]
-    #[method(name = "GenerateHigherMaterials", args = 1)]
-    pub fn generate_higher_materials(
-        num: i32,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-        i32,
-    >;
-
-    #[doc = "`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
-    #[method(name = "GetValidHigherMateriaslType", args = 1)]
-    pub fn get_valid_higher_materiasl_type(
-        materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-            i32,
-        >,
-    ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
-
-    #[doc = "`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]
-    #[method(name = "ConvertToLowerMaterialType", args = 1)]
-    pub fn convert_to_lower_material_type(
-        r#type: crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-    ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
-
-    #[doc = "`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
-    #[method(name = "FilterLowerMaterials", args = 1)]
-    pub fn filter_lower_materials(
-        materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-            i32,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager_MaterialCalculator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubAccessManager_MaterialCalculator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubAccessManager_MaterialCalculatorMethods>::ctor(this);
         this
     }
 }

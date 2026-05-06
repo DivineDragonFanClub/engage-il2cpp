@@ -12,32 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct HubAccessoryRoomCamera_CameraPositionParam {}
-
-    impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubAccessoryRoomCamera.CameraPositionParam";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_BackgroundSettings.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -180,71 +154,36 @@ mod __types {
         #[rename(name = "m_LastRotSpeed")]
         pub m_last_rot_speed: f32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct HubAccessoryRoomCamera_CameraPositionParam {}
+
+    impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubAccessoryRoomCamera.CameraPositionParam";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-hubaccessoryroomcamera-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-#[::unity2::methods(value)]
-impl HubAccessoryRoomCamera_CameraPositionParam {
-    #[doc = "`get_Distance()` overload"]
-    #[method(name = "get_Distance", args = 0)]
-    pub fn get_distance(self) -> f32;
-
-    #[doc = "`set_Distance(f32)` overload"]
-    #[method(name = "set_Distance", args = 1)]
-    pub fn set_distance(self, value: f32) -> ();
-
-    #[doc = "`get_FoV()` overload"]
-    #[method(name = "get_FoV", args = 0)]
-    pub fn get_fo_v(self) -> f32;
-
-    #[doc = "`set_FoV(f32)` overload"]
-    #[method(name = "set_FoV", args = 1)]
-    pub fn set_fo_v(self, value: f32) -> ();
-
-    #[doc = "`get_Degree()` overload"]
-    #[method(name = "get_Degree", args = 0)]
-    pub fn get_degree(self) -> f32;
-
-    #[doc = "`set_Degree(f32)` overload"]
-    #[method(name = "set_Degree", args = 1)]
-    pub fn set_degree(self, value: f32) -> ();
-
-    #[doc = "`get_TargetPos()` overload"]
-    #[method(name = "get_TargetPos", args = 0)]
-    pub fn get_target_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_TargetPos", args = 1)]
-    pub fn set_target_pos(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"]
-    #[method(name = "op_Multiply", args = 2)]
-    pub fn op_multiply(
-        param: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        rate: f32,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
-
-    #[doc = "`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
-    #[method(name = "op_Addition", args = 2)]
-    pub fn op_addition(
-        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
-
-    #[doc = "`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
-    #[method(name = "op_Subtraction", args = 2)]
-    pub fn op_subtraction(
-        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
-}
 
 #[cfg(feature = "app-hubaccessoryroomcamera")]
 #[::unity2::methods]
@@ -411,4 +350,65 @@ impl HubAccessoryRoomCamera {
         <Self as IHubAccessoryRoomCameraMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "app-hubaccessoryroomcamera")]
+#[::unity2::methods(value)]
+impl HubAccessoryRoomCamera_CameraPositionParam {
+    #[doc = "`get_Distance()` overload"]
+    #[method(name = "get_Distance", args = 0)]
+    pub fn get_distance(self) -> f32;
+
+    #[doc = "`set_Distance(f32)` overload"]
+    #[method(name = "set_Distance", args = 1)]
+    pub fn set_distance(self, value: f32) -> ();
+
+    #[doc = "`get_FoV()` overload"]
+    #[method(name = "get_FoV", args = 0)]
+    pub fn get_fo_v(self) -> f32;
+
+    #[doc = "`set_FoV(f32)` overload"]
+    #[method(name = "set_FoV", args = 1)]
+    pub fn set_fo_v(self, value: f32) -> ();
+
+    #[doc = "`get_Degree()` overload"]
+    #[method(name = "get_Degree", args = 0)]
+    pub fn get_degree(self) -> f32;
+
+    #[doc = "`set_Degree(f32)` overload"]
+    #[method(name = "set_Degree", args = 1)]
+    pub fn set_degree(self, value: f32) -> ();
+
+    #[doc = "`get_TargetPos()` overload"]
+    #[method(name = "get_TargetPos", args = 0)]
+    pub fn get_target_pos(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_TargetPos", args = 1)]
+    pub fn set_target_pos(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"]
+    #[method(name = "op_Multiply", args = 2)]
+    pub fn op_multiply(
+        param: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        rate: f32,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
+
+    #[doc = "`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition(
+        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
+
+    #[doc = "`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction(
+        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
 }

@@ -12,16 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent_KindIcon.md"))]
-    #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent.KindIcon")]
-    #[parent(crate::system::object::Object)]
-    pub struct DiscardItemMenuContent_KindIcon {
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -38,34 +28,20 @@ mod __types {
         #[rename(name = "m_StockValueMaxText")]
         pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent_KindIcon.md"))]
+    #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent.KindIcon")]
+    #[parent(crate::system::object::Object)]
+    pub struct DiscardItemMenuContent_KindIcon {
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::itemdata::ItemData_Kinds,
+    }
 }
 
 #[cfg(feature = "app-discarditemmenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-discarditemmenucontent")]
-#[::unity2::methods]
-impl DiscardItemMenuContent_KindIcon {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-discarditemmenucontent")]
-impl DiscardItemMenuContent_KindIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenuContent_KindIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenuContent_KindIconMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-discarditemmenucontent")]
 #[::unity2::methods]
@@ -129,6 +105,30 @@ impl DiscardItemMenuContent {
             )
         });
         <Self as IDiscardItemMenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-discarditemmenucontent")]
+#[::unity2::methods]
+impl DiscardItemMenuContent_KindIcon {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-discarditemmenucontent")]
+impl DiscardItemMenuContent_KindIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenuContent_KindIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenuContent_KindIconMethods>::ctor(this);
         this
     }
 }

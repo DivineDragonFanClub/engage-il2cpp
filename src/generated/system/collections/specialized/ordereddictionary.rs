@@ -7,19 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "OrderedDictionary.OrderedDictionaryKeyValueCollection"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection {
-        #[rename(name = "_objects")]
-        pub objects: crate::system::collections::arraylist::ArrayList,
-        #[rename(name = "isKeys")]
-        pub is_keys: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary.md"))]
     #[::unity2::class(
         namespace = "System.Collections.Specialized",
@@ -53,63 +40,23 @@ mod __types {
         #[rename(name = "arrayEnumerator")]
         pub array_enumerator: crate::system::collections::ienumerator::IEnumerator,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections.Specialized",
+        name = "OrderedDictionary.OrderedDictionaryKeyValueCollection"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection {
+        #[rename(name = "_objects")]
+        pub objects: crate::system::collections::arraylist::ArrayList,
+        #[rename(name = "isKeys")]
+        pub is_keys: bool,
+    }
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-#[::unity2::methods]
-impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, array: crate::system::collections::arraylist::ArrayList, is_keys: bool)
-        -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
-
-    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
-    #[method(name = "System.Collections.ICollection.get_Count", args = 0)]
-    pub fn system_collections_i_collection_get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
-    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(
-            this, array, is_keys,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 #[::unity2::methods]
@@ -332,6 +279,59 @@ impl OrderedDictionary_OrderedDictionaryEnumerator {
             this,
             array,
             object_return_type,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+#[::unity2::methods]
+impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, array: crate::system::collections::arraylist::ArrayList, is_keys: bool)
+        -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(
+        self,
+        array: ::unity2::IlInstance,
+        index: i32,
+    ) -> ();
+
+    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
+    #[method(name = "System.Collections.ICollection.get_Count", args = 0)]
+    pub fn system_collections_i_collection_get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
+    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(
+            this, array, is_keys,
         );
         this
     }

@@ -24,6 +24,14 @@ mod __types {
 # [rename (name = "m_registererId")] pub m_registerer_id : :: unity2 :: Il2CppString ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
+    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct AssetBundleBuildMap {
+# [rename (name = "m_assetBundles")] pub m_asset_bundles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry > ,
+# [static_field] # [rename (name = "s_map")] pub s_map : crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,14 +60,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct AssetBundleBuildMap {
-# [rename (name = "m_assetBundles")] pub m_asset_bundles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry > ,
-# [static_field] # [rename (name = "s_map")] pub s_map : crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap ,
-}
 }
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap-types")]
@@ -134,14 +134,6 @@ impl AssetBundleBuildMap_AssetBundleEntry {
         );
         this
     }
-}
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-#[::unity2::methods(value)]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, s: ::unity2::Il2CppString) -> ();
 }
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
@@ -250,4 +242,12 @@ impl AssetBundleBuildMap {
         <Self as IAssetBundleBuildMapMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+#[::unity2::methods(value)]
+impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, s: ::unity2::Il2CppString) -> ();
 }

@@ -29,6 +29,10 @@ mod __types {
         pub m_is_valid: bool,
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_GaugeControllerLeft")]
+        pub m_gauge_controller_left: crate::root::combatgaugecontroller::CombatGaugeController,
+        #[rename(name = "m_GaugeControllerRight")]
+        pub m_gauge_controller_right: crate::root::combatgaugecontroller::CombatGaugeController,
     }
 }
 
@@ -41,6 +45,15 @@ impl MapSimpleBattle {
     #[doc = "`IsLoading()` overload"]
     #[method(name = "IsLoading", args = 0)]
     pub fn is_loading(self) -> bool;
+
+    #[doc = "`GetObject(crate::app::battleinfo::BattleInfo, crate::root::combatgaugecontroller::CombatGaugeController, crate::root::combatgaugecontroller::CombatGaugeController)` overload"]
+    #[method(name = "GetObject", args = 3)]
+    pub fn get_object(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: crate::root::combatgaugecontroller::CombatGaugeController,
+        defense: crate::root::combatgaugecontroller::CombatGaugeController,
+    ) -> ();
 
     #[doc = "`SetSimpleBattle(crate::app::battlecalculator::BattleCalculator)` overload"]
     #[method(name = "SetSimpleBattle", args = 1)]

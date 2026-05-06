@@ -13,6 +13,136 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
+    #[::unity2::class(namespace = "App", name = "MiniMapController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MiniMapController {
+# [rename (name = "m_GridSize")] pub m_grid_size : f32 ,
+# [rename (name = "m_OutLineSize")] pub m_out_line_size : f32 ,
+# [rename (name = "m_ViewPort")] pub m_view_port : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_Scroll")] pub m_scroll : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_TerrainRoot")] pub m_terrain_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_SightRoot")] pub m_sight_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_PanelDeployRoot")] pub m_panel_deploy_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_PanelDangerRoot")] pub m_panel_danger_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_PanelDangerAllRoot")] pub m_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_FrameForPanelDangerAllRoot")] pub m_frame_for_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_PanelRouteRoot")] pub m_panel_route_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_UnitSymbolRoot")] pub m_unit_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_UnitIconRoot")] pub m_unit_icon_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_ColorPlayer")] pub m_color_player : crate :: unity_engine :: color :: Color ,
+# [rename (name = "m_ColorEnemy")] pub m_color_enemy : crate :: unity_engine :: color :: Color ,
+# [rename (name = "m_ColorAlly")] pub m_color_ally : crate :: unity_engine :: color :: Color ,
+# [rename (name = "m_ColorEnemy2")] pub m_color_enemy2 : crate :: unity_engine :: color :: Color ,
+# [rename (name = "m_EventSymbolRoot")] pub m_event_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_CursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_Scale")] pub m_scale : f32 ,
+# [rename (name = "m_PanelDeployScale")] pub m_panel_deploy_scale : f32 ,
+# [rename (name = "m_LargeModePosition")] pub m_large_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [rename (name = "m_LargeModeSize")] pub m_large_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [rename (name = "m_LargeModeScale")] pub m_large_mode_scale : f32 ,
+# [rename (name = "m_LargeModeAlignment")] pub m_large_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
+# [rename (name = "m_LargeModeScaleOld")] pub m_large_mode_scale_old : f32 ,
+# [rename (name = "m_SmallModePosition")] pub m_small_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [rename (name = "m_SmallModeSize")] pub m_small_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [rename (name = "m_SmallModeScale")] pub m_small_mode_scale : f32 ,
+# [rename (name = "m_SmallModeAlignment")] pub m_small_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
+# [rename (name = "m_MenuModePosition")] pub m_menu_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [rename (name = "m_MenuModeSize")] pub m_menu_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [rename (name = "m_MenuModeScale")] pub m_menu_mode_scale : f32 ,
+# [rename (name = "m_MenuModeAlignment")] pub m_menu_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
+# [rename (name = "m_DisplayPosSize")] pub m_display_pos_size : crate :: app :: minimapcontroller :: MiniMapController_DisplayPosSize ,
+# [rename (name = "m_InterpolateZoom")] pub m_interpolate_zoom : bool ,
+# [rename (name = "m_MiniMapAlphaChangeTime")] pub m_mini_map_alpha_change_time : f32 ,
+# [rename (name = "m_MiniMapAlphaMax")] pub m_mini_map_alpha_max : f32 ,
+# [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [rename (name = "m_InterpolateTime")] pub m_interpolate_time : f32 ,
+# [rename (name = "m_OldScale")] pub m_old_scale : f32 ,
+# [rename (name = "m_UnitSymbolList")] pub m_unit_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
+# [rename (name = "m_EventSymbolList")] pub m_event_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
+# [rename (name = "m_UnitIconList")] pub m_unit_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: app :: uniticon :: UnitIcon > > ,
+# [rename (name = "m_ZoomScaleMax")] pub m_zoom_scale_max : f32 ,
+# [rename (name = "m_ZoomScaleMin")] pub m_zoom_scale_min : f32 ,
+# [rename (name = "m_TargetPosition")] pub m_target_position : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
+# [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
+# [rename (name = "m_Alignment")] pub m_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
+# [static_field] # [rename (name = "IconNames")] pub icon_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [rename (name = "m_Mode")] pub m_mode : crate :: app :: minimapcontroller :: MiniMapController_Mode ,
+# [rename (name = "m_ModeDirty")] pub m_mode_dirty : bool ,
+# [rename (name = "m_ModeChangeDelay")] pub m_mode_change_delay : i32 ,
+# [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
+# [rename (name = "m_MiniMapAlpha")] pub m_mini_map_alpha : f32 ,
+# [rename (name = "m_MinimapType")] pub m_minimap_type : crate :: app :: gameconfig :: GameConfig_MinimapType ,
+# [rename (name = "m_TerrainHashCode")] pub m_terrain_hash_code : i32 ,
+# [rename (name = "m_AlphaFadeMode")] pub m_alpha_fade_mode : crate :: app :: minimapcontroller :: MiniMapController_FadeMode ,
+# [rename (name = "m_minimaplRT")] pub m_minimapl_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_scrollRT")] pub m_scroll_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_terrainRT")] pub m_terrain_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_sightRT")] pub m_sight_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_panelDeployRT")] pub m_panel_deploy_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_panelDangerRT")] pub m_panel_danger_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_panelDangerAllRT")] pub m_panel_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_frameForDangerAllRT")] pub m_frame_for_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_panelRouteRT")] pub m_panel_route_rt : crate :: unity_engine :: recttransform :: RectTransform ,
+# [rename (name = "m_cursor")] pub m_cursor : crate :: app :: minimapcursor :: MiniMapCursor ,
+# [rename (name = "m_deployRenderer")] pub m_deploy_renderer : crate :: app :: minimappaneldeployrenderer :: MiniMapPanelDeployRenderer ,
+# [rename (name = "m_dangerRenderer")] pub m_danger_renderer : crate :: app :: minimappaneldangerrenderer :: MiniMapPanelDangerRenderer ,
+# [rename (name = "m_dangerAllRenderer")] pub m_danger_all_renderer : crate :: app :: minimappaneldangerallrenderer :: MiniMapPanelDangerAllRenderer ,
+# [rename (name = "m_frameForDangerAllRenderer")] pub m_frame_for_danger_all_renderer : crate :: app :: minimappanelframefordangerallrenderer :: MiniMapPanelFrameForDangerAllRenderer ,
+# [rename (name = "m_routeRenderer")] pub m_route_renderer : crate :: app :: minimappanelrouterenderer :: MiniMapPanelRouteRenderer ,
+# [rename (name = "m_terrainRenderer")] pub m_terrain_renderer : crate :: app :: minimapterrainrenderer :: MiniMapTerrainRenderer ,
+# [rename (name = "m_sightRenderer")] pub m_sight_renderer : crate :: app :: minimapsightrenderer :: MiniMapSightRenderer ,
+}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_Mode {
+        pub fn hide() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn menu() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
     #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
     #[parent(crate::system::object::Object)]
@@ -70,6 +200,130 @@ mod __types {
 
         pub fn fade_out() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_Alignment {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_Alignment {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.Alignment";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_Alignment {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_Alignment {
+        pub fn left_up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn left_center() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left_bottom() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn center_up() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn center() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn center_bottom() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn right_up() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn right_center() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn right_bottom() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_DisplayPosSize {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.DisplayPosSize";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_DisplayPosSize {
+        pub fn small() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn large() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn menu() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn none() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -172,288 +426,10 @@ mod __types {
             Self { value: 15 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_Mode {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_DisplayPosSize {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.DisplayPosSize";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_DisplayPosSize {
-        pub fn small() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn large() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
-    #[::unity2::class(namespace = "App", name = "MiniMapController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MiniMapController {
-# [rename (name = "m_GridSize")] pub m_grid_size : f32 ,
-# [rename (name = "m_OutLineSize")] pub m_out_line_size : f32 ,
-# [rename (name = "m_ViewPort")] pub m_view_port : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Scroll")] pub m_scroll : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_TerrainRoot")] pub m_terrain_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_SightRoot")] pub m_sight_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDeployRoot")] pub m_panel_deploy_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDangerRoot")] pub m_panel_danger_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDangerAllRoot")] pub m_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_FrameForPanelDangerAllRoot")] pub m_frame_for_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelRouteRoot")] pub m_panel_route_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_UnitSymbolRoot")] pub m_unit_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_UnitIconRoot")] pub m_unit_icon_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_ColorPlayer")] pub m_color_player : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorEnemy")] pub m_color_enemy : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorAlly")] pub m_color_ally : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorEnemy2")] pub m_color_enemy2 : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_EventSymbolRoot")] pub m_event_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_CursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Scale")] pub m_scale : f32 ,
-# [rename (name = "m_PanelDeployScale")] pub m_panel_deploy_scale : f32 ,
-# [rename (name = "m_LargeModePosition")] pub m_large_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_LargeModeSize")] pub m_large_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_LargeModeScale")] pub m_large_mode_scale : f32 ,
-# [rename (name = "m_LargeModeAlignment")] pub m_large_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_LargeModeScaleOld")] pub m_large_mode_scale_old : f32 ,
-# [rename (name = "m_SmallModePosition")] pub m_small_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_SmallModeSize")] pub m_small_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_SmallModeScale")] pub m_small_mode_scale : f32 ,
-# [rename (name = "m_SmallModeAlignment")] pub m_small_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_MenuModePosition")] pub m_menu_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_MenuModeSize")] pub m_menu_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_MenuModeScale")] pub m_menu_mode_scale : f32 ,
-# [rename (name = "m_MenuModeAlignment")] pub m_menu_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_DisplayPosSize")] pub m_display_pos_size : crate :: app :: minimapcontroller :: MiniMapController_DisplayPosSize ,
-# [rename (name = "m_InterpolateZoom")] pub m_interpolate_zoom : bool ,
-# [rename (name = "m_MiniMapAlphaChangeTime")] pub m_mini_map_alpha_change_time : f32 ,
-# [rename (name = "m_MiniMapAlphaMax")] pub m_mini_map_alpha_max : f32 ,
-# [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [rename (name = "m_InterpolateTime")] pub m_interpolate_time : f32 ,
-# [rename (name = "m_OldScale")] pub m_old_scale : f32 ,
-# [rename (name = "m_UnitSymbolList")] pub m_unit_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
-# [rename (name = "m_EventSymbolList")] pub m_event_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
-# [rename (name = "m_UnitIconList")] pub m_unit_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: app :: uniticon :: UnitIcon > > ,
-# [rename (name = "m_ZoomScaleMax")] pub m_zoom_scale_max : f32 ,
-# [rename (name = "m_ZoomScaleMin")] pub m_zoom_scale_min : f32 ,
-# [rename (name = "m_TargetPosition")] pub m_target_position : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_Alignment")] pub m_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [static_field] # [rename (name = "IconNames")] pub icon_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [rename (name = "m_Mode")] pub m_mode : crate :: app :: minimapcontroller :: MiniMapController_Mode ,
-# [rename (name = "m_ModeDirty")] pub m_mode_dirty : bool ,
-# [rename (name = "m_ModeChangeDelay")] pub m_mode_change_delay : i32 ,
-# [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [rename (name = "m_MiniMapAlpha")] pub m_mini_map_alpha : f32 ,
-# [rename (name = "m_MinimapType")] pub m_minimap_type : crate :: app :: gameconfig :: GameConfig_MinimapType ,
-# [rename (name = "m_TerrainHashCode")] pub m_terrain_hash_code : i32 ,
-# [rename (name = "m_AlphaFadeMode")] pub m_alpha_fade_mode : crate :: app :: minimapcontroller :: MiniMapController_FadeMode ,
-# [rename (name = "m_minimaplRT")] pub m_minimapl_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_scrollRT")] pub m_scroll_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_terrainRT")] pub m_terrain_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_sightRT")] pub m_sight_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDeployRT")] pub m_panel_deploy_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDangerRT")] pub m_panel_danger_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDangerAllRT")] pub m_panel_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_frameForDangerAllRT")] pub m_frame_for_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelRouteRT")] pub m_panel_route_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_cursor")] pub m_cursor : crate :: app :: minimapcursor :: MiniMapCursor ,
-# [rename (name = "m_deployRenderer")] pub m_deploy_renderer : crate :: app :: minimappaneldeployrenderer :: MiniMapPanelDeployRenderer ,
-# [rename (name = "m_dangerRenderer")] pub m_danger_renderer : crate :: app :: minimappaneldangerrenderer :: MiniMapPanelDangerRenderer ,
-# [rename (name = "m_dangerAllRenderer")] pub m_danger_all_renderer : crate :: app :: minimappaneldangerallrenderer :: MiniMapPanelDangerAllRenderer ,
-# [rename (name = "m_frameForDangerAllRenderer")] pub m_frame_for_danger_all_renderer : crate :: app :: minimappanelframefordangerallrenderer :: MiniMapPanelFrameForDangerAllRenderer ,
-# [rename (name = "m_routeRenderer")] pub m_route_renderer : crate :: app :: minimappanelrouterenderer :: MiniMapPanelRouteRenderer ,
-# [rename (name = "m_terrainRenderer")] pub m_terrain_renderer : crate :: app :: minimapterrainrenderer :: MiniMapTerrainRenderer ,
-# [rename (name = "m_sightRenderer")] pub m_sight_renderer : crate :: app :: minimapsightrenderer :: MiniMapSightRenderer ,
-}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_Alignment {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_Alignment {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.Alignment";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_Alignment {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_Alignment {
-        pub fn left_up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn left_center() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left_bottom() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn center_up() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn center_bottom() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn right_up() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn right_center() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn right_bottom() -> Self {
-            Self { value: 8 }
-        }
-    }
 }
 
 #[cfg(feature = "app-minimapcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-minimapcontroller")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
-    #[doc = "`.ctor(T0)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, image: T0) -> ();
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
-    #[doc = "`.ctor(T0)` — overload selector"]
-    pub fn new(image: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MiniMapController_TImage_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMiniMapController_TImage_1Methods<T0>>::ctor(this, image);
-        this
-    }
-}
 
 #[cfg(feature = "app-minimapcontroller")]
 #[::unity2::methods]
@@ -570,6 +546,30 @@ impl MiniMapController {
             )
         });
         <Self as IMiniMapControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
+    #[doc = "`.ctor(T0)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, image: T0) -> ();
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
+    #[doc = "`.ctor(T0)` — overload selector"]
+    pub fn new(image: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapController_TImage_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapController_TImage_1Methods<T0>>::ctor(this, image);
         this
     }
 }

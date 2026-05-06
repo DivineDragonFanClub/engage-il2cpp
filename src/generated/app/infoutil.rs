@@ -9,6 +9,20 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
+    #[parent(crate::system::object::Object)]
+    pub struct InfoUtil_StatusSkill {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "InfoUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct InfoUtil {
+        #[static_field]
+        #[rename(name = "SKILL_SLOT_MAX")]
+        pub skill_slot_max: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
     #[repr(C)]
     #[derive(
@@ -55,20 +69,6 @@ mod __types {
         pub fn player() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
-    #[parent(crate::system::object::Object)]
-    pub struct InfoUtil_StatusSkill {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "InfoUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct InfoUtil {
-        #[static_field]
-        #[rename(name = "SKILL_SLOT_MAX")]
-        pub skill_slot_max: i32,
     }
 }
 

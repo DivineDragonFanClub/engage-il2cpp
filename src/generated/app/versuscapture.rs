@@ -9,18 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusCapture")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusCapture {
-        #[static_field]
-        #[rename(name = "OpponentPos")]
-        pub opponent_pos: crate::unity_engine::vector3::Vector3,
-        #[static_field]
-        #[rename(name = "PlayerPos")]
-        pub player_pos: crate::unity_engine::vector3::Vector3,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuscapture/VersusCapture_Preset.md"))]
     #[repr(C)]
     #[derive(
@@ -63,6 +51,18 @@ mod __types {
         pub fn player() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusCapture")]
+    #[parent(crate::system::object::Object)]
+    pub struct VersusCapture {
+        #[static_field]
+        #[rename(name = "OpponentPos")]
+        pub opponent_pos: crate::unity_engine::vector3::Vector3,
+        #[static_field]
+        #[rename(name = "PlayerPos")]
+        pub player_pos: crate::unity_engine::vector3::Vector3,
     }
 }
 

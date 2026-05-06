@@ -7,19 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "NameObjectCollectionBase.NameObjectEntry"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct NameObjectCollectionBase_NameObjectEntry {
-        #[rename(name = "Key")]
-        pub key: ::unity2::Il2CppString,
-        #[rename(name = "Value")]
-        pub value: ::unity2::IlInstance,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]
     #[::unity2::class(
         namespace = "System.Collections.Specialized",
@@ -47,34 +34,23 @@ mod __types {
 # [rename (name = "_coll")] pub coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase ,
 # [rename (name = "_version")] pub version : i32 ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections.Specialized",
+        name = "NameObjectCollectionBase.NameObjectEntry"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct NameObjectCollectionBase_NameObjectEntry {
+        #[rename(name = "Key")]
+        pub key: ::unity2::Il2CppString,
+        #[rename(name = "Value")]
+        pub value: ::unity2::IlInstance,
+    }
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-#[::unity2::methods]
-impl NameObjectCollectionBase_NameObjectEntry {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, name: ::unity2::Il2CppString, value: crate::system::object::Object) -> ();
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectEntry {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, value: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NameObjectCollectionBase_NameObjectEntry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INameObjectCollectionBase_NameObjectEntryMethods>::ctor(this, name, value);
-        this
-    }
-}
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 #[::unity2::methods]
@@ -257,6 +233,30 @@ impl NameObjectCollectionBase_NameObjectKeysEnumerator {
             )
         });
         <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods>::ctor(this, coll);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+#[::unity2::methods]
+impl NameObjectCollectionBase_NameObjectEntry {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, name: ::unity2::Il2CppString, value: crate::system::object::Object) -> ();
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl NameObjectCollectionBase_NameObjectEntry {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString, value: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NameObjectCollectionBase_NameObjectEntry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INameObjectCollectionBase_NameObjectEntryMethods>::ctor(this, name, value);
         this
     }
 }

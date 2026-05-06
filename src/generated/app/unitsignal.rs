@@ -13,6 +13,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsignal/UnitSignal_Func.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSignal.Func")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct UnitSignal_Func {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsignal/UnitSignal.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSignal")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -28,15 +33,38 @@ mod __types {
         #[rename(name = "m_Arg")]
         pub m_arg: ::unity2::IlInstance,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsignal/UnitSignal_Func.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSignal.Func")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct UnitSignal_Func {}
 }
 
 #[cfg(feature = "app-unitsignal-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitsignal")]
+#[::unity2::methods]
+impl UnitSignal_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unitsignal::UnitSignal)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, signal: crate::app::unitsignal::UnitSignal) -> ();
+}
+
+#[cfg(feature = "app-unitsignal")]
+impl UnitSignal_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSignal_Func),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSignal_FuncMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-unitsignal")]
 #[::unity2::methods]
@@ -137,34 +165,6 @@ impl UnitSignal {
             )
         });
         <Self as IUnitSignalMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitsignal")]
-#[::unity2::methods]
-impl UnitSignal_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unitsignal::UnitSignal)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, signal: crate::app::unitsignal::UnitSignal) -> ();
-}
-
-#[cfg(feature = "app-unitsignal")]
-impl UnitSignal_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSignal_Func),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSignal_FuncMethods>::ctor(this, object, method);
         this
     }
 }

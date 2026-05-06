@@ -11,24 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceTargetSelect")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencetargetselect :: MapSequenceTargetSelect >)]
-    pub struct MapSequenceTargetSelect {
-        #[rename(name = "m_TargetData")]
-        pub m_target_data: crate::app::maptarget::MapTarget_Data,
-        #[rename(name = "m_ItemIndex")]
-        pub m_item_index: i32,
-        #[rename(name = "m_BattleInfo")]
-        pub m_battle_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_BattleCalc")]
-        pub m_battle_calc: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_EngageLinkInfo")]
-        pub m_engage_link_info: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MaskSkill")]
-        pub m_mask_skill: crate::app::skillarray::SkillArray,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -67,6 +49,24 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceTargetSelect")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencetargetselect :: MapSequenceTargetSelect >)]
+    pub struct MapSequenceTargetSelect {
+        #[rename(name = "m_TargetData")]
+        pub m_target_data: crate::app::maptarget::MapTarget_Data,
+        #[rename(name = "m_ItemIndex")]
+        pub m_item_index: i32,
+        #[rename(name = "m_BattleInfo")]
+        pub m_battle_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_BattleCalc")]
+        pub m_battle_calc: crate::app::battlecalculator::BattleCalculator,
+        #[rename(name = "m_EngageLinkInfo")]
+        pub m_engage_link_info: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_MaskSkill")]
+        pub m_mask_skill: crate::app::skillarray::SkillArray,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_InfoType.md"))]

@@ -9,6 +9,38 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultui/FishingResultUI.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingResultUI")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingResultUI {
+        #[rename(name = "m_Sprites")]
+        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[static_field]
+        #[rename(name = "cTextureRootPath")]
+        pub c_texture_root_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureGold")]
+        pub c_result_texture_gold: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureSilver")]
+        pub c_result_texture_silver: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureBronze")]
+        pub c_result_texture_bronze: ::unity2::Il2CppString,
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::fishingresultdata::FishingResultData,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f64,
+        #[rename(name = "m_TimeLimit")]
+        pub m_time_limit: f32,
+        #[rename(name = "m_IsNewRecord")]
+        pub m_is_new_record: bool,
+        #[rename(name = "m_Phase")]
+        pub m_phase: crate::app::fishingresultui::FishingResultUI_ResultPhase,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
     #[repr(C)]
     #[derive(
@@ -103,38 +135,6 @@ mod __types {
         pub fn gyotaku() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultui/FishingResultUI.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingResultUI")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingResultUI {
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[static_field]
-        #[rename(name = "cTextureRootPath")]
-        pub c_texture_root_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureGold")]
-        pub c_result_texture_gold: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureSilver")]
-        pub c_result_texture_silver: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureBronze")]
-        pub c_result_texture_bronze: ::unity2::Il2CppString,
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::fishingresultdata::FishingResultData,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f64,
-        #[rename(name = "m_TimeLimit")]
-        pub m_time_limit: f32,
-        #[rename(name = "m_IsNewRecord")]
-        pub m_is_new_record: bool,
-        #[rename(name = "m_Phase")]
-        pub m_phase: crate::app::fishingresultui::FishingResultUI_ResultPhase,
     }
 }
 

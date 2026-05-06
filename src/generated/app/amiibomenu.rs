@@ -11,11 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboMenu")]
-    #[parent(crate::app::gamemessage::GameMessage)]
-    pub struct AmiiboMenu {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomenu/AmiiboMenu_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -59,6 +54,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboMenu")]
+    #[parent(crate::app::gamemessage::GameMessage)]
+    pub struct AmiiboMenu {}
 }
 
 #[cfg(feature = "app-amiibomenu-types")]

@@ -10,6 +10,11 @@ mod __types {
     use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/floattween_2/FloatTween_FloatTweenCallback_2.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "FloatTween.FloatTweenCallback")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
+    pub struct FloatTween_FloatTweenCallback_2 {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/floattween_2/FloatTween_2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,15 +46,34 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/floattween_2/FloatTween_FloatTweenCallback_2.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "FloatTween.FloatTweenCallback")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-    pub struct FloatTween_FloatTweenCallback_2 {}
 }
 
 #[cfg(feature = "tm_pro-floattween_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-floattween_2")]
+#[::unity2::methods]
+impl FloatTween_FloatTweenCallback_2 {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-floattween_2")]
+impl FloatTween_FloatTweenCallback_2 {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FloatTween_FloatTweenCallback_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFloatTween_FloatTweenCallback_2Methods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "tm_pro-floattween_2")]
 #[::unity2::methods(value)]
@@ -104,28 +128,4 @@ impl FloatTween_2 {
     #[doc = "`ValidTarget()` overload"]
     #[method(name = "ValidTarget", args = 0)]
     pub fn valid_target(self) -> bool;
-}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-#[::unity2::methods]
-impl FloatTween_FloatTweenCallback_2 {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-impl FloatTween_FloatTweenCallback_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FloatTween_FloatTweenCallback_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFloatTween_FloatTweenCallback_2Methods>::ctor(this);
-        this
-    }
 }

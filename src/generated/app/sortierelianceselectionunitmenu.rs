@@ -10,11 +10,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieRelianceSelectionUnitMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SortieRelianceSelectionUnitMenu {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu_UnitMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -27,10 +22,51 @@ mod __types {
         #[rename(name = "m_CanTalk")]
         pub m_can_talk: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieRelianceSelectionUnitMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct SortieRelianceSelectionUnitMenu {}
 }
 
 #[cfg(feature = "app-sortierelianceselectionunitmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-sortierelianceselectionunitmenu")]
+#[::unity2::methods]
+impl SortieRelianceSelectionUnitMenu_UnitMenuItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortierelianceselectionunitmenu")]
+impl SortieRelianceSelectionUnitMenu_UnitMenuItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieRelianceSelectionUnitMenu_UnitMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieRelianceSelectionUnitMenu_UnitMenuItemMethods>::ctor(this, unit);
+        this
+    }
+}
 
 #[cfg(feature = "app-sortierelianceselectionunitmenu")]
 #[::unity2::methods]
@@ -65,42 +101,6 @@ impl SortieRelianceSelectionUnitMenu {
             )
         });
         <Self as ISortieRelianceSelectionUnitMenuMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortierelianceselectionunitmenu")]
-#[::unity2::methods]
-impl SortieRelianceSelectionUnitMenu_UnitMenuItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortierelianceselectionunitmenu")]
-impl SortieRelianceSelectionUnitMenu_UnitMenuItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieRelianceSelectionUnitMenu_UnitMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieRelianceSelectionUnitMenu_UnitMenuItemMethods>::ctor(this, unit);
         this
     }
 }

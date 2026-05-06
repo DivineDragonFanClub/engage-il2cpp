@@ -10,6 +10,59 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)]
+    pub struct DragonRideEffectManager {
+        #[rename(name = "MaxNormalCount")]
+        pub max_normal_count: i32,
+        #[rename(name = "MaxOtherTypeCount")]
+        pub max_other_type_count: i32,
+        #[rename(name = "MaxShotCount")]
+        pub max_shot_count: i32,
+        #[rename(name = "MaxMaximumAssistCount")]
+        pub max_maximum_assist_count: i32,
+        #[rename(name = "EffecttRoot")]
+        pub effectt_root: ::unity2::Il2CppString,
+        #[rename(name = "PathTargetNormal")]
+        pub path_target_normal: ::unity2::Il2CppString,
+        #[rename(name = "PathTargetBig")]
+        pub path_target_big: ::unity2::Il2CppString,
+        #[rename(name = "PathTargetLink")]
+        pub path_target_link: ::unity2::Il2CppString,
+        #[rename(name = "PathTargetSpecial")]
+        pub path_target_special: ::unity2::Il2CppString,
+        #[rename(name = "PathShotPlayer")]
+        pub path_shot_player: ::unity2::Il2CppString,
+        #[rename(name = "PathShotAssist")]
+        pub path_shot_assist: ::unity2::Il2CppString,
+        #[rename(name = "PathMaximumAssist")]
+        pub path_maximum_assist: ::unity2::Il2CppString,
+        #[rename(name = "m_EffectParent")]
+        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_NormalReserve")]
+        pub m_normal_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_BigReserve")]
+        pub m_big_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_LinkReserve")]
+        pub m_link_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_SpecialReserve")]
+        pub m_special_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_ShotPReserve")]
+        pub m_shot_p_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_ShotAReserve")]
+        pub m_shot_a_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+        #[rename(name = "m_MaximumReserve")]
+        pub m_maximum_reserve:
+            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideEffectManager.EffectReserver")]
     #[parent(crate::system::object::Object)]
@@ -73,113 +126,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)]
-    pub struct DragonRideEffectManager {
-        #[rename(name = "MaxNormalCount")]
-        pub max_normal_count: i32,
-        #[rename(name = "MaxOtherTypeCount")]
-        pub max_other_type_count: i32,
-        #[rename(name = "MaxShotCount")]
-        pub max_shot_count: i32,
-        #[rename(name = "MaxMaximumAssistCount")]
-        pub max_maximum_assist_count: i32,
-        #[rename(name = "EffecttRoot")]
-        pub effectt_root: ::unity2::Il2CppString,
-        #[rename(name = "PathTargetNormal")]
-        pub path_target_normal: ::unity2::Il2CppString,
-        #[rename(name = "PathTargetBig")]
-        pub path_target_big: ::unity2::Il2CppString,
-        #[rename(name = "PathTargetLink")]
-        pub path_target_link: ::unity2::Il2CppString,
-        #[rename(name = "PathTargetSpecial")]
-        pub path_target_special: ::unity2::Il2CppString,
-        #[rename(name = "PathShotPlayer")]
-        pub path_shot_player: ::unity2::Il2CppString,
-        #[rename(name = "PathShotAssist")]
-        pub path_shot_assist: ::unity2::Il2CppString,
-        #[rename(name = "PathMaximumAssist")]
-        pub path_maximum_assist: ::unity2::Il2CppString,
-        #[rename(name = "m_EffectParent")]
-        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_NormalReserve")]
-        pub m_normal_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_BigReserve")]
-        pub m_big_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_LinkReserve")]
-        pub m_link_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_SpecialReserve")]
-        pub m_special_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_ShotPReserve")]
-        pub m_shot_p_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_ShotAReserve")]
-        pub m_shot_a_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-        #[rename(name = "m_MaximumReserve")]
-        pub m_maximum_reserve:
-            crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
-    }
 }
 
 #[cfg(feature = "app-dragonrideeffectmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-#[::unity2::methods]
-impl DragonRideEffectManager_EffectReserver {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`CreateReserve(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "CreateReserve", args = 4)]
-    pub fn create_reserve(
-        self,
-        type_name: ::unity2::Il2CppString,
-        path: ::unity2::Il2CppString,
-        root_obj: crate::unity_engine::gameobject::GameObject,
-        max: i32,
-    ) -> ();
-
-    #[doc = "`RentalObj()` overload"]
-    #[method(name = "RentalObj", args = 0)]
-    pub fn rental_obj(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`ReturnObj(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "ReturnObj", args = 2)]
-    pub fn return_obj(
-        self,
-        root_obj: crate::unity_engine::gameobject::GameObject,
-        obj: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`Destruct()` overload"]
-    #[method(name = "Destruct", args = 0)]
-    pub fn destruct(self) -> ();
-}
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-impl DragonRideEffectManager_EffectReserver {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideEffectManager_EffectReserver),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideEffectManager_EffectReserverMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-dragonrideeffectmanager")]
 #[::unity2::methods]
@@ -283,6 +233,56 @@ impl DragonRideEffectManager {
             )
         });
         <Self as IDragonRideEffectManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+#[::unity2::methods]
+impl DragonRideEffectManager_EffectReserver {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`CreateReserve(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    #[method(name = "CreateReserve", args = 4)]
+    pub fn create_reserve(
+        self,
+        type_name: ::unity2::Il2CppString,
+        path: ::unity2::Il2CppString,
+        root_obj: crate::unity_engine::gameobject::GameObject,
+        max: i32,
+    ) -> ();
+
+    #[doc = "`RentalObj()` overload"]
+    #[method(name = "RentalObj", args = 0)]
+    pub fn rental_obj(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`ReturnObj(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "ReturnObj", args = 2)]
+    pub fn return_obj(
+        self,
+        root_obj: crate::unity_engine::gameobject::GameObject,
+        obj: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`Destruct()` overload"]
+    #[method(name = "Destruct", args = 0)]
+    pub fn destruct(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+impl DragonRideEffectManager_EffectReserver {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideEffectManager_EffectReserver),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideEffectManager_EffectReserverMethods>::ctor(this);
         this
     }
 }

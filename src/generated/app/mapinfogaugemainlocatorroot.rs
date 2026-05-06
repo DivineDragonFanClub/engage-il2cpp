@@ -76,6 +76,11 @@ mod __types {
     pub struct MapInfoGaugeMainLocatorRoot {
         #[rename(name = "m_MainLocatorRoot")]
         pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SubLocatorRoots")]
+        pub m_sub_locator_roots:
+            ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot>,
+        #[rename(name = "m_SubLocatorRoot")]
+        pub m_sub_locator_root: crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,
     }
 }
 
@@ -112,6 +117,12 @@ impl MapInfoGaugeMainLocatorRoot {
     #[doc = "`DeleteDisuseLocatorRoot(crate::app::unit::Unit)` overload"]
     #[method(name = "DeleteDisuseLocatorRoot", args = 1)]
     pub fn delete_disuse_locator_root(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_SubLocatorRoot()` overload"]
+    #[method(name = "get_SubLocatorRoot", args = 0)]
+    pub fn get_sub_locator_root(
+        self,
+    ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot;
 
     #[doc = "`IsDisplayOutside(crate::app::unit::Unit, f32, f32, crate::unity_engine::camera::Camera)` overload"]
     #[method(name = "IsDisplayOutside", args = 4)]

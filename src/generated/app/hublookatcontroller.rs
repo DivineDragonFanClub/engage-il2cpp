@@ -12,34 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublookatcontroller/HubLookAtController.md"))]
-    #[::unity2::class(namespace = "App", name = "HubLookAtController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubLookAtController {
-        #[rename(name = "m_curve")]
-        pub m_curve: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_lookAtIKParam")]
-        pub m_look_at_ik_param:
-            ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam>,
-        #[rename(name = "m_lookAtTarget")]
-        pub m_look_at_target: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_target")]
-        pub m_target: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_targetPosition")]
-        pub m_target_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_headTransform")]
-        pub m_head_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_disableFollow")]
-        pub m_disable_follow: bool,
-        #[rename(name = "m_verticalLimit")]
-        pub m_vertical_limit: bool,
-        #[rename(name = "m_verticalLimitValue")]
-        pub m_vertical_limit_value: f32,
-        #[static_field]
-        #[rename(name = "DefaultParam")]
-        pub default_param: crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublookatcontroller/HubLookAtController_LookAtIKParam.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -69,10 +41,46 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublookatcontroller/HubLookAtController.md"))]
+    #[::unity2::class(namespace = "App", name = "HubLookAtController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubLookAtController {
+        #[rename(name = "m_curve")]
+        pub m_curve: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_lookAtIKParam")]
+        pub m_look_at_ik_param:
+            ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam>,
+        #[rename(name = "m_lookAtTarget")]
+        pub m_look_at_target: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_target")]
+        pub m_target: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_targetPosition")]
+        pub m_target_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_headTransform")]
+        pub m_head_transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_disableFollow")]
+        pub m_disable_follow: bool,
+        #[rename(name = "m_verticalLimit")]
+        pub m_vertical_limit: bool,
+        #[rename(name = "m_verticalLimitValue")]
+        pub m_vertical_limit_value: f32,
+        #[static_field]
+        #[rename(name = "DefaultParam")]
+        pub default_param: crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,
+    }
 }
 
 #[cfg(feature = "app-hublookatcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-hublookatcontroller")]
+#[::unity2::methods(value)]
+impl HubLookAtController_LookAtIKParam {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, body: f32, head: f32, eyes: f32) -> ();
+}
 
 #[cfg(feature = "app-hublookatcontroller")]
 #[::unity2::methods]
@@ -164,12 +172,4 @@ impl HubLookAtController {
         <Self as IHubLookAtControllerMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-hublookatcontroller")]
-#[::unity2::methods(value)]
-impl HubLookAtController_LookAtIKParam {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, body: f32, head: f32, eyes: f32) -> ();
 }

@@ -55,6 +55,18 @@ mod __types {
         pub m_line_appear_speed: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapLineRenderer_LinePoint {
+        #[rename(name = "vtxOffsets")]
+        pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "uv_table")]
+        pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        #[rename(name = "m_Color")]
+        pub m_color: crate::unity_engine::color::Color,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md"))]
     #[repr(C)]
     #[derive(
@@ -93,18 +105,6 @@ mod __types {
         pub fn _unnamed() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapLineRenderer_LinePoint {
-        #[rename(name = "vtxOffsets")]
-        pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "uv_table")]
-        pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
     }
 }
 

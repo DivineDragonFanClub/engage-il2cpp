@@ -10,6 +10,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_ExchangeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu.ExchangeMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct AnimalOutsideSubMenu_ExchangeMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_RemoveMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu.RemoveMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -19,15 +24,56 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct AnimalOutsideSubMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_ExchangeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu.ExchangeMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct AnimalOutsideSubMenu_ExchangeMenuItem {}
 }
 
 #[cfg(feature = "app-animaloutsidesubmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-animaloutsidesubmenu")]
+#[::unity2::methods]
+impl AnimalOutsideSubMenu_ExchangeMenuItem {
+    #[doc = "`get_ParentMenuItem()` overload"]
+    #[method(name = "get_ParentMenuItem", args = 0)]
+    pub fn get_parent_menu_item(self) -> crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem;
+
+    #[doc = "`set_ParentMenuItem(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]
+    #[method(name = "set_ParentMenuItem", args = 1)]
+    pub fn set_parent_menu_item(
+        self,
+        value: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        parent_menu_item: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-animaloutsidesubmenu")]
+impl AnimalOutsideSubMenu_ExchangeMenuItem {
+    #[doc = "`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` — overload selector"]
+    pub fn new(parent_menu_item: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalOutsideSubMenu_ExchangeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalOutsideSubMenu_ExchangeMenuItemMethods>::ctor(this, parent_menu_item);
+        this
+    }
+}
 
 #[cfg(feature = "app-animaloutsidesubmenu")]
 #[::unity2::methods]
@@ -123,52 +169,6 @@ impl AnimalOutsideSubMenu {
             )
         });
         <Self as IAnimalOutsideSubMenuMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-animaloutsidesubmenu")]
-#[::unity2::methods]
-impl AnimalOutsideSubMenu_ExchangeMenuItem {
-    #[doc = "`get_ParentMenuItem()` overload"]
-    #[method(name = "get_ParentMenuItem", args = 0)]
-    pub fn get_parent_menu_item(self) -> crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem;
-
-    #[doc = "`set_ParentMenuItem(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]
-    #[method(name = "set_ParentMenuItem", args = 1)]
-    pub fn set_parent_menu_item(
-        self,
-        value: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        parent_menu_item: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-animaloutsidesubmenu")]
-impl AnimalOutsideSubMenu_ExchangeMenuItem {
-    #[doc = "`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` — overload selector"]
-    pub fn new(parent_menu_item: crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimalOutsideSubMenu_ExchangeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimalOutsideSubMenu_ExchangeMenuItemMethods>::ctor(this, parent_menu_item);
         this
     }
 }

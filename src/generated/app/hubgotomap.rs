@@ -14,6 +14,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))]
+    #[::unity2::class(namespace = "App", name = "HubGoToMap")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct HubGoToMap {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubGoToMap.GoToDialogItem")]
     #[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]
@@ -21,52 +26,10 @@ mod __types {
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::gmapmode::GmapMode_Mode,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))]
-    #[::unity2::class(namespace = "App", name = "HubGoToMap")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct HubGoToMap {}
 }
 
 #[cfg(feature = "app-hubgotomap-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubgotomap")]
-#[::unity2::methods]
-impl HubGoToMap_GoToDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        label: ::unity2::Il2CppString,
-        func: crate::system::action::Action,
-        mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap_GoToDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
-    pub fn new(
-        label: ::unity2::Il2CppString,
-        func: crate::system::action::Action,
-        mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubGoToMap_GoToDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubGoToMap_GoToDialogItemMethods>::ctor(this, label, func, mode);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubgotomap")]
 #[::unity2::methods]
@@ -106,6 +69,43 @@ impl HubGoToMap {
             )
         });
         <Self as IHubGoToMapMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubgotomap")]
+#[::unity2::methods]
+impl HubGoToMap_GoToDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubgotomap")]
+impl HubGoToMap_GoToDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
+    pub fn new(
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubGoToMap_GoToDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubGoToMap_GoToDialogItemMethods>::ctor(this, label, func, mode);
         this
     }
 }

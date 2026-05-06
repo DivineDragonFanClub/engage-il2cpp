@@ -10,24 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialog/DishResultDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "DishResultDialog")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct DishResultDialog {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_DishResultRoot")]
-        pub m_dish_result_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ResultContent")]
-        pub m_result_content: crate::app::dishresultdialogcontent::DishResultDialogContent,
-        #[rename(name = "m_Dish")]
-        pub m_dish: crate::app::dish::Dish,
-        #[rename(name = "m_SelectedUnits")]
-        pub m_selected_units:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dishresultdialog/DishResultDialog_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -74,6 +56,24 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialog/DishResultDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "DishResultDialog")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DishResultDialog {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_DishResultRoot")]
+        pub m_dish_result_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ResultContent")]
+        pub m_result_content: crate::app::dishresultdialogcontent::DishResultDialogContent,
+        #[rename(name = "m_Dish")]
+        pub m_dish: crate::app::dish::Dish,
+        #[rename(name = "m_SelectedUnits")]
+        pub m_selected_units:
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
     }
 }
 

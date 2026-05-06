@@ -10,25 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographsequence/PhotographSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct PhotographSequence {
-        #[rename(name = "m_ReservedLabel")]
-        pub m_reserved_label: crate::app::photographsequence::PhotographSequence_Label,
-        #[rename(name = "m_AllMenuContent")]
-        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        #[rename(name = "m_SpotObj")]
-        pub m_spot_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[rename(name = "m_CameraController")]
-        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        #[rename(name = "m_AnimalLocatorNameList")]
-        pub m_animal_locator_name_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographsequence/PhotographSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -107,6 +88,25 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 10 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographsequence/PhotographSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct PhotographSequence {
+        #[rename(name = "m_ReservedLabel")]
+        pub m_reserved_label: crate::app::photographsequence::PhotographSequence_Label,
+        #[rename(name = "m_AllMenuContent")]
+        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        #[rename(name = "m_SpotObj")]
+        pub m_spot_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DisposManager")]
+        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[rename(name = "m_CameraController")]
+        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        #[rename(name = "m_AnimalLocatorNameList")]
+        pub m_animal_locator_name_list:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }
 }
 

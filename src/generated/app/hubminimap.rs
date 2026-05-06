@@ -13,54 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HubMiniMap_MapMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HubMiniMap_MapMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubMiniMap.MapMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubMiniMap_MapMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HubMiniMap_MapMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn small() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn large() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))]
     #[::unity2::class(namespace = "App", name = "HubMiniMap.IconData")]
     #[parent(crate::system::object::Object)]
@@ -171,6 +123,54 @@ mod __types {
         pub m_icon_list: crate::system::collections::generic::list_1::List_1<
             crate::app::hubminimap::HubMiniMap_IconData,
         >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HubMiniMap_MapMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HubMiniMap_MapMode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubMiniMap.MapMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubMiniMap_MapMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HubMiniMap_MapMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn small() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn large() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 

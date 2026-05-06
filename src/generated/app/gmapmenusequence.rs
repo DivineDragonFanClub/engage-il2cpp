@@ -17,129 +17,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem"
-    )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.EnterChapterItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_EnterChapterItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence"
-    )]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SaveItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SaveItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GodItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GodItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.MaterialListItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_MaterialListItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GoToMapSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapMenuSequence_GoToMapSequence {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapMenuSequence_GoToMapSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapMenuSequence_GoToMapSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapMenuSequence.GoToMapSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapMenuSequence_GoToMapSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapMenuSequence_GoToMapSequence_Label {
-        pub fn move_to_solanel() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn move_to_gmap() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.ShopItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_ShopItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem"
-    )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -148,18 +25,15 @@ mod __types {
     #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
     pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]
-    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GoToSolanelItem")]
     #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {}
+    pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_RankingItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence.md"))]
     #[::unity2::class(namespace = "App", name = "GmapMenuSequence")]
@@ -173,49 +47,21 @@ mod __types {
         pub m_close_callback: crate::system::action::Action,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SystemItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SystemItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem"
+        name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence"
     )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {}
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+        #[rename(name = "m_ResultFunc")]
+        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GoToSolanelItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.EnterChapterItem")]
     #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.FriendItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_FriendItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem"
-    )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem"
-    )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {}
+    pub struct GmapMenuSequence_GmapMenu_EnterChapterItem {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_Label.md"))]
     #[repr(C)]
@@ -289,10 +135,44 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.InventoryItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SystemItem")]
     #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_InventoryItem {}
+    pub struct GmapMenuSequence_GmapMenu_SystemItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubFriendMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]
+    #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))]
     #[::unity2::class(
@@ -305,31 +185,18 @@ mod __types {
         pub m_jump_func: crate::system::action::Action,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.InventoryItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_InventoryItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem"
+        name = "GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem"
     )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem"
-    )]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubShopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GmapMenuSequence_GmapMenu_SubShopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.RankingItem")]
-    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
-    pub struct GmapMenuSequence_GmapMenu_RankingItem {}
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]
     #[::unity2::class(
@@ -341,6 +208,139 @@ mod __types {
         #[rename(name = "m_ResultFunc")]
         pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.GodItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_GodItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.FriendItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_FriendItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SaveItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SaveItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.ShopItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_ShopItem {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapMenuSequence_GoToMapSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapMenuSequence_GoToMapSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapMenuSequence.GoToMapSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapMenuSequence_GoToMapSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapMenuSequence_GoToMapSequence_Label {
+        pub fn move_to_solanel() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn move_to_gmap() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem"
+    )]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubShopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GmapMenuSequence_GmapMenu_SubShopMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.MaterialListItem")]
+    #[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]
+    pub struct GmapMenuSequence_GmapMenu_MaterialListItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GoToMapSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapMenuSequence_GoToMapSequence {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GmapMenuSequence_GmapMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMenuSequence.GmapMenu.SubSystemMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GmapMenuSequence_GmapMenu_SubSystemMenu {}
 }
 
 #[cfg(feature = "app-gmapmenusequence-types")]
@@ -348,71 +348,7 @@ pub use __types::*;
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[::unity2::methods]
-impl GmapMenuSequence_GmapMenu {
-    #[doc = "`get_EnterChapterType()` overload"]
-    #[method(name = "get_EnterChapterType", args = 0)]
-    pub fn get_enter_chapter_type(
-    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = "AddStartChapterItem", args = 1)]
-    pub fn add_start_chapter_item(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`OnResume()` overload"]
-    #[method(name = "OnResume", args = 0)]
-    pub fn on_resume(self) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -439,17 +375,211 @@ impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem),
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
+        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_RankingItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_RankingItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence {
+    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        open_top_callback: crate::system::action::Action,
+        decide_callback: crate::system::action::Action,
+        close_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`OpenTopCallback()` overload"]
+    #[method(name = "OpenTopCallback", args = 0)]
+    pub fn open_top_callback(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        open_top_callback: crate::system::action::Action,
+        decide_callback: crate::system::action::Action,
+        close_callback: crate::system::action::Action,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[doc = "`OnShutdown()` overload"]
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[doc = "`Init()` overload"]
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[doc = "`OpenTopMenu()` overload"]
+    #[method(name = "OpenTopMenu", args = 0)]
+    pub fn open_top_menu(self) -> ();
+
+    #[doc = "`EnterChapterDialog()` overload"]
+    #[method(name = "EnterChapterDialog", args = 0)]
+    pub fn enter_chapter_dialog(self) -> ();
+
+    #[doc = "`Final()` overload"]
+    #[method(name = "Final", args = 0)]
+    pub fn r#final(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence {
+    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        open_top_callback: crate::system::action::Action,
+        decide_callback: crate::system::action::Action,
+        close_callback: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequenceMethods>::ctor(
+            this,
+            open_top_callback,
+            decide_callback,
+            close_callback,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> ();
+
+    #[doc = "`Confirm()` overload"]
+    #[method(name = "Confirm", args = 0)]
+    pub fn confirm(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
+    pub fn new(
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods>::ctor(
+            this,
+            result_func,
+        );
         this
     }
 }
@@ -515,7 +645,398 @@ impl GmapMenuSequence_GmapMenu_EnterChapterItem {
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+impl GmapMenuSequence_GmapMenu_SystemItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SystemItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`SetHelpVisible(bool)` overload"]
+    #[method(name = "SetHelpVisible", args = 1)]
+    pub fn set_help_visible(self, active: bool) -> ();
+
+    #[doc = "`SaveMenuSelect()` overload"]
+    #[method(name = "SaveMenuSelect", args = 0)]
+    pub fn save_menu_select(self) -> ();
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_GmapMenuMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, jump_func: crate::system::action::Action) -> ();
+
+    #[doc = "`JumpToRanking()` overload"]
+    #[method(name = "JumpToRanking", args = 0)]
+    pub fn jump_to_ranking(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        jump_func: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(jump_func: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods>::ctor(
+            this, jump_func,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_InventoryItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_InventoryItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods>::ctor(
+            this,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
     #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
@@ -523,20 +1044,17 @@ impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
         result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
     ) -> ();
 
-    #[doc = "`Confirm()` overload"]
-    #[method(name = "Confirm", args = 0)]
-    pub fn confirm(self) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
+impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
     #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
     pub fn new(
         result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
@@ -544,14 +1062,188 @@ impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence),
+                ::core::stringify!(
+                    GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem
+                ),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods>::ctor(
+        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods>::ctor(
             this,
             result_func,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_GodItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_GodItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_GodItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_FriendItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_FriendItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods>::ctor(this);
         this
     }
 }
@@ -598,7 +1290,51 @@ impl GmapMenuSequence_GmapMenu_SaveItem {
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_GodItem {
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_ShopItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -621,17 +1357,155 @@ impl GmapMenuSequence_GmapMenu_GodItem {
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_GodItem {
+impl GmapMenuSequence_GmapMenu_ShopItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem),
+                ::core::stringify!(GmapMenuSequence_GmapMenu_ShopItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapMenuSequence_GmapMenu_GodItemMethods>::ctor(this);
+        <Self as IGmapMenuSequence_GmapMenu_ShopItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
+impl GmapMenuSequence_GmapMenu_SubShopMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu_SubShopMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
         this
     }
 }
@@ -718,6 +1592,70 @@ impl GmapMenuSequence_GoToMapSequence {
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[::unity2::methods]
+impl GmapMenuSequence_GmapMenu {
+    #[doc = "`get_EnterChapterType()` overload"]
+    #[method(name = "get_EnterChapterType", args = 0)]
+    pub fn get_enter_chapter_type(
+    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = "AddStartChapterItem", args = 1)]
+    pub fn add_start_chapter_item(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[doc = "`OnResume()` overload"]
+    #[method(name = "OnResume", args = 0)]
+    pub fn on_resume(self) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+impl GmapMenuSequence_GmapMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMenuSequence_GmapMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMenuSequence_GmapMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapmenusequence")]
+#[::unity2::methods]
 impl GmapMenuSequence_GmapMenu_SubSystemMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -761,944 +1699,6 @@ impl GmapMenuSequence_GmapMenu_SubSystemMenu {
             this,
             menu_item_list,
             menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_ShopItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_ShopItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_ShopItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_ShopItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods>::ctor(
-            this,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`SetHelpVisible(bool)` overload"]
-    #[method(name = "SetHelpVisible", args = 1)]
-    pub fn set_help_visible(self, active: bool) -> ();
-
-    #[doc = "`SaveMenuSelect()` overload"]
-    #[method(name = "SaveMenuSelect", args = 0)]
-    pub fn save_menu_select(self) -> ();
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GmapMenuMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence {
-    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`OpenTopCallback()` overload"]
-    #[method(name = "OpenTopCallback", args = 0)]
-    pub fn open_top_callback(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-    ) -> crate::app::procinst::ProcInst;
-
-    #[doc = "`OnShutdown()` overload"]
-    #[method(name = "OnShutdown", args = 0)]
-    pub fn on_shutdown(self) -> ();
-
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`OpenTopMenu()` overload"]
-    #[method(name = "OpenTopMenu", args = 0)]
-    pub fn open_top_menu(self) -> ();
-
-    #[doc = "`EnterChapterDialog()` overload"]
-    #[method(name = "EnterChapterDialog", args = 0)]
-    pub fn enter_chapter_dialog(self) -> ();
-
-    #[doc = "`Final()` overload"]
-    #[method(name = "Final", args = 0)]
-    pub fn r#final(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence {
-    #[doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        open_top_callback: crate::system::action::Action,
-        decide_callback: crate::system::action::Action,
-        close_callback: crate::system::action::Action,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequenceMethods>::ctor(
-            this,
-            open_top_callback,
-            decide_callback,
-            close_callback,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SystemItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SystemItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_GoToSolanelItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_FriendItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_FriendItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_InventoryItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_InventoryItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, jump_func: crate::system::action::Action) -> ();
-
-    #[doc = "`JumpToRanking()` overload"]
-    #[method(name = "JumpToRanking", args = 0)]
-    pub fn jump_to_ranking(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        jump_func: crate::system::action::Action,
-    ) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(jump_func: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods>::ctor(
-            this, jump_func,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_SubShopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_SubShopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_RankingItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-#[::unity2::methods]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-gmapmenusequence")]
-impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
-    pub fn new(
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods>::ctor(
-            this,
-            result_func,
         );
         this
     }

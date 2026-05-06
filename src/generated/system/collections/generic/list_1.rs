@@ -8,6 +8,26 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/list_1/List_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "List`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct List_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "_defaultCapacity")]
+        pub default_capacity: i32,
+        #[rename(name = "_items")]
+        pub items: ::unity2::Array<T0>,
+        #[rename(name = "_size")]
+        pub size: i32,
+        #[rename(name = "_version")]
+        pub version: i32,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+        #[static_field]
+        #[rename(name = "_emptyArray")]
+        pub empty_array: ::unity2::Array<T0>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/list_1/List_1_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,62 +59,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/list_1/List_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "List`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct List_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "_defaultCapacity")]
-        pub default_capacity: i32,
-        #[rename(name = "_items")]
-        pub items: ::unity2::Array<T0>,
-        #[rename(name = "_size")]
-        pub size: i32,
-        #[rename(name = "_version")]
-        pub version: i32,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-        #[static_field]
-        #[rename(name = "_emptyArray")]
-        pub empty_array: ::unity2::Array<T0>,
-    }
 }
 
 #[cfg(feature = "system-collections-generic-list_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-generic-list_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> List_1_Enumerator<T0> {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, list: crate::system::collections::generic::list_1::List_1<T0>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`MoveNextRare()` overload"]
-    #[method(name = "MoveNextRare", args = 0)]
-    pub fn move_next_rare(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
-}
 
 #[cfg(feature = "system-collections-generic-list_1")]
 #[::unity2::methods]
@@ -426,4 +394,36 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
         <Self as IList_1Methods<T0>>::ctor_3(this, collection);
         this
     }
+}
+
+#[cfg(feature = "system-collections-generic-list_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> List_1_Enumerator<T0> {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, list: crate::system::collections::generic::list_1::List_1<T0>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`MoveNextRare()` overload"]
+    #[method(name = "MoveNextRare", args = 0)]
+    pub fn move_next_rare(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
 }

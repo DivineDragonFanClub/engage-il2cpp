@@ -14,52 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardSelectEditMenu.DecideEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardSelectEditMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardSelectEditMenu.ProfileCardSelectEditMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem {
-        #[rename(name = "m_Result2")]
-        pub m_result2: crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler,
-        #[rename(name = "m_NameMid")]
-        pub m_name_mid: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DisposeEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardSelectEditMenu.DisposeEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardSelectEditMenu_DisposeEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardSelectEditMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ProfileCardSelectEditMenu {
-        #[rename(name = "m_ProfileCardRoot")]
-        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler,
-        #[rename(name = "m_DisposeEventHandler")]
-        pub m_dispose_event_handler:
-            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DisposeEventHandler,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -143,6 +97,52 @@ mod __types {
             Self { value: 10 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DisposeEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardSelectEditMenu.DisposeEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardSelectEditMenu_DisposeEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardSelectEditMenu.ProfileCardSelectEditMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem {
+        #[rename(name = "m_Result2")]
+        pub m_result2: crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler,
+        #[rename(name = "m_NameMid")]
+        pub m_name_mid: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardSelectEditMenu.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardSelectEditMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardSelectEditMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ProfileCardSelectEditMenu {
+        #[rename(name = "m_ProfileCardRoot")]
+        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler,
+        #[rename(name = "m_DisposeEventHandler")]
+        pub m_dispose_event_handler:
+            crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DisposeEventHandler,
+    }
 }
 
 #[cfg(feature = "app-profilecardselecteditmenu-types")]
@@ -150,31 +150,28 @@ pub use __types::*;
 
 #[cfg(feature = "app-profilecardselecteditmenu")]
 #[::unity2::methods]
-impl ProfileCardSelectEditMenu_DecideEventHandler {
+impl ProfileCardSelectEditMenu_DisposeEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        result: crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
-    ) -> ();
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }
 
 #[cfg(feature = "app-profilecardselecteditmenu")]
-impl ProfileCardSelectEditMenu_DecideEventHandler {
+impl ProfileCardSelectEditMenu_DisposeEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardSelectEditMenu_DecideEventHandler),
+                ::core::stringify!(ProfileCardSelectEditMenu_DisposeEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardSelectEditMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardSelectEditMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -236,28 +233,31 @@ impl ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem {
 
 #[cfg(feature = "app-profilecardselecteditmenu")]
 #[::unity2::methods]
-impl ProfileCardSelectEditMenu_DisposeEventHandler {
+impl ProfileCardSelectEditMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    #[doc = "`Invoke(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        result: crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2,
+    ) -> ();
 }
 
 #[cfg(feature = "app-profilecardselecteditmenu")]
-impl ProfileCardSelectEditMenu_DisposeEventHandler {
+impl ProfileCardSelectEditMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardSelectEditMenu_DisposeEventHandler),
+                ::core::stringify!(ProfileCardSelectEditMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardSelectEditMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardSelectEditMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

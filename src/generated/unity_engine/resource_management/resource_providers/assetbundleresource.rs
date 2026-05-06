@@ -9,28 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundleresource/AssetBundleResource.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "AssetBundleResource"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetBundleResource {
-# [rename (name = "m_AssetBundle")] pub m_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [rename (name = "m_downloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle ,
-# [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
-# [rename (name = "m_WebRequestQueueOperation")] pub m_web_request_queue_operation : crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation ,
-# [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
-# [rename (name = "m_Options")] pub m_options : crate :: unity_engine :: resource_management :: resource_providers :: assetbundlerequestoptions :: AssetBundleRequestOptions ,
-# [rename (name = "m_WebRequestCompletedCallbackCalled")] pub m_web_request_completed_callback_called : bool ,
-# [rename (name = "m_Retries")] pub m_retries : i32 ,
-# [rename (name = "m_BytesToDownload")] pub m_bytes_to_download : i64 ,
-# [rename (name = "m_DownloadedBytes")] pub m_downloaded_bytes : i64 ,
-# [rename (name = "m_Completed")] pub m_completed : bool ,
-# [static_field] # [rename (name = "k_WaitForWebRequestMainThreadSleep")] pub k_wait_for_web_request_main_thread_sleep : i32 ,
-# [rename (name = "m_TransformedInternalId")] pub m_transformed_internal_id : :: unity2 :: Il2CppString ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/assetbundleresource/AssetBundleResource_LoadType.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +56,28 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundleresource/AssetBundleResource.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+        name = "AssetBundleResource"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetBundleResource {
+# [rename (name = "m_AssetBundle")] pub m_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [rename (name = "m_downloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle ,
+# [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
+# [rename (name = "m_WebRequestQueueOperation")] pub m_web_request_queue_operation : crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation ,
+# [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
+# [rename (name = "m_Options")] pub m_options : crate :: unity_engine :: resource_management :: resource_providers :: assetbundlerequestoptions :: AssetBundleRequestOptions ,
+# [rename (name = "m_WebRequestCompletedCallbackCalled")] pub m_web_request_completed_callback_called : bool ,
+# [rename (name = "m_Retries")] pub m_retries : i32 ,
+# [rename (name = "m_BytesToDownload")] pub m_bytes_to_download : i64 ,
+# [rename (name = "m_DownloadedBytes")] pub m_downloaded_bytes : i64 ,
+# [rename (name = "m_Completed")] pub m_completed : bool ,
+# [static_field] # [rename (name = "k_WaitForWebRequestMainThreadSleep")] pub k_wait_for_web_request_main_thread_sleep : i32 ,
+# [rename (name = "m_TransformedInternalId")] pub m_transformed_internal_id : :: unity2 :: Il2CppString ,
+}
 }
 
 #[cfg(

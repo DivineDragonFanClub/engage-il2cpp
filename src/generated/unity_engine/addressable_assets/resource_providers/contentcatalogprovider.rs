@@ -12,6 +12,35 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.AddressableAssets.ResourceProviders",
+        name = "ContentCatalogProvider.InternalOp.BundledCatalog"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
+# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
+# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
+# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
+# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
+# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
+# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.AddressableAssets.ResourceProviders",
+        name = "ContentCatalogProvider"
+    )]
+    # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+    pub struct ContentCatalogProvider {
+# [rename (name = "DisableCatalogUpdateOnStart")] pub disable_catalog_update_on_start : bool ,
+# [rename (name = "IsLocalCatalogInBundle")] pub is_local_catalog_in_bundle : bool ,
+# [rename (name = "m_LocationToCatalogLoadOpMap")] pub m_location_to_catalog_load_op_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp > ,
+# [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.AddressableAssets.ResourceProviders",
@@ -26,19 +55,6 @@ mod __types {
 # [rename (name = "m_ContentCatalogData")] pub m_content_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
 # [rename (name = "m_ContentCatalogDataLoadOp")] pub m_content_catalog_data_load_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
 # [rename (name = "m_BundledCatalog")] pub m_bundled_catalog : crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp_BundledCatalog ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-        name = "ContentCatalogProvider"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-    pub struct ContentCatalogProvider {
-# [rename (name = "DisableCatalogUpdateOnStart")] pub disable_catalog_update_on_start : bool ,
-# [rename (name = "IsLocalCatalogInBundle")] pub is_local_catalog_in_bundle : bool ,
-# [rename (name = "m_LocationToCatalogLoadOpMap")] pub m_location_to_catalog_load_op_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp > ,
-# [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
 }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]
@@ -88,28 +104,125 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-        name = "ContentCatalogProvider.InternalOp.BundledCatalog"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
-# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
-# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
-# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
-# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
-# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-}
 }
 
 #[cfg(
     feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider-types"
 )]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+#[::unity2::methods]
+impl ContentCatalogProvider_InternalOp_BundledCatalog {
+    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    #[method(name = "add_OnLoaded", args = 1)]
+    pub fn add_on_loaded(
+        self,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+    ) -> ();
+
+    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    #[method(name = "remove_OnLoaded", args = 1)]
+    pub fn remove_on_loaded(
+        self,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+    ) -> ();
+
+    #[doc = "`get_OpInProgress()` overload"]
+    #[method(name = "get_OpInProgress", args = 0)]
+    pub fn get_op_in_progress(self) -> bool;
+
+    #[doc = "`get_OpIsSuccess()` overload"]
+    #[method(name = "get_OpIsSuccess", args = 0)]
+    pub fn get_op_is_success(self) -> bool;
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, bundle_path: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Unload()` overload"]
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+
+    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
+    #[method(name = "LoadCatalogFromBundleAsync", args = 0)]
+    pub fn load_catalog_from_bundle_async(self) -> ();
+
+    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    #[method(name = "LoadTextAssetRequestComplete", args = 1)]
+    pub fn load_text_asset_request_complete(
+        self,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[doc = "`WaitForCompletion()` overload"]
+    #[method(name = "WaitForCompletion", args = 0)]
+    pub fn wait_for_completion(self) -> bool;
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider_InternalOp_BundledCatalog {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+#[::unity2::methods]
+impl ContentCatalogProvider {
+    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> ();
+
+    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
+    #[method(name = "Release", args = 2)]
+    pub fn release(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        obj: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider {
+    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
+    pub fn new(
+        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogProviderMethods>::ctor(this, resource_manager_instance);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
 #[::unity2::methods]
@@ -187,119 +300,6 @@ impl ContentCatalogProvider_InternalOp {
             )
         });
         <Self as IContentCatalogProvider_InternalOpMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(
-        self,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        obj: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
-        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
-    pub fn new(
-        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IContentCatalogProviderMethods>::ctor(this, resource_manager_instance);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "add_OnLoaded", args = 1)]
-    pub fn add_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "remove_OnLoaded", args = 1)]
-    pub fn remove_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`get_OpInProgress()` overload"]
-    #[method(name = "get_OpInProgress", args = 0)]
-    pub fn get_op_in_progress(self) -> bool;
-
-    #[doc = "`get_OpIsSuccess()` overload"]
-    #[method(name = "get_OpIsSuccess", args = 0)]
-    pub fn get_op_is_success(self) -> bool;
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, bundle_path: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Unload()` overload"]
-    #[method(name = "Unload", args = 0)]
-    pub fn unload(self) -> ();
-
-    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
-    #[method(name = "LoadCatalogFromBundleAsync", args = 0)]
-    pub fn load_catalog_from_bundle_async(self) -> ();
-
-    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "LoadTextAssetRequestComplete", args = 1)]
-    pub fn load_text_asset_request_complete(
-        self,
-        op: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`WaitForCompletion()` overload"]
-    #[method(name = "WaitForCompletion", args = 0)]
-    pub fn wait_for_completion(self) -> bool;
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
         this
     }
 }

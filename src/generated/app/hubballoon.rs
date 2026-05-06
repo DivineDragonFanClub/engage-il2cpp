@@ -118,6 +118,17 @@ impl HubBalloon {
     #[method(name = "set_TargetAccess", args = 1)]
     pub fn set_target_access(self, value: crate::app::hubaccess::HubAccess) -> ();
 
+    #[doc = "`get_CharaFader()` overload"]
+    #[method(name = "get_CharaFader", args = 0)]
+    pub fn get_chara_fader(self) -> crate::root::iron19characterfader::Iron19CharacterFader;
+
+    #[doc = "`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"]
+    #[method(name = "set_CharaFader", args = 1)]
+    pub fn set_chara_fader(
+        self,
+        value: crate::root::iron19characterfader::Iron19CharacterFader,
+    ) -> ();
+
     #[doc = "`get_FadeDistance()` overload"]
     #[method(name = "get_FadeDistance", args = 0)]
     pub fn get_fade_distance(self) -> f32;

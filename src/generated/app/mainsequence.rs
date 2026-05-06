@@ -12,21 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mainsequence/MainSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MainSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mainsequence :: MainSequence >)]
-    pub struct MainSequence {
-        #[static_field]
-        #[rename(name = "s_JumpLabel")]
-        pub s_jump_label: crate::app::mainsequence::MainSequence_Label,
-        #[static_field]
-        #[rename(name = "s_FakeLabel")]
-        pub s_fake_label: crate::app::mainsequence::MainSequence_Label,
-        #[static_field]
-        #[rename(name = "s_Initialized")]
-        pub s_initialized: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mainsequence/MainSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -181,6 +166,21 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 29 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mainsequence/MainSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MainSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mainsequence :: MainSequence >)]
+    pub struct MainSequence {
+        #[static_field]
+        #[rename(name = "s_JumpLabel")]
+        pub s_jump_label: crate::app::mainsequence::MainSequence_Label,
+        #[static_field]
+        #[rename(name = "s_FakeLabel")]
+        pub s_fake_label: crate::app::mainsequence::MainSequence_Label,
+        #[static_field]
+        #[rename(name = "s_Initialized")]
+        pub s_initialized: bool,
     }
 }
 

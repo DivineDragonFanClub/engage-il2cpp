@@ -20,6 +20,28 @@ mod __types {
 # [rename (name = "start")] pub start : bool ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "ListDictionaryInternal")]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionaryInternal {
+# [rename (name = "head")] pub head : crate :: system :: collections :: listdictionaryinternal :: ListDictionaryInternal_DictionaryNode ,
+# [rename (name = "version")] pub version : i32 ,
+# [rename (name = "count")] pub count : i32 ,
+# [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_DictionaryNode.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections",
+        name = "ListDictionaryInternal.DictionaryNode"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionaryInternal_DictionaryNode {
+# [rename (name = "key")] pub key : :: unity2 :: IlInstance ,
+# [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
+# [rename (name = "next")] pub next : crate :: system :: collections :: listdictionaryinternal :: ListDictionaryInternal_DictionaryNode ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_NodeKeyValueCollection.md"))]
     #[::unity2::class(
         namespace = "System.Collections",
@@ -45,28 +67,6 @@ mod __types {
 # [rename (name = "version")] pub version : i32 ,
 # [rename (name = "isKeys")] pub is_keys : bool ,
 # [rename (name = "start")] pub start : bool ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_DictionaryNode.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections",
-        name = "ListDictionaryInternal.DictionaryNode"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionaryInternal_DictionaryNode {
-# [rename (name = "key")] pub key : :: unity2 :: IlInstance ,
-# [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
-# [rename (name = "next")] pub next : crate :: system :: collections :: listdictionaryinternal :: ListDictionaryInternal_DictionaryNode ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "ListDictionaryInternal")]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionaryInternal {
-# [rename (name = "head")] pub head : crate :: system :: collections :: listdictionaryinternal :: ListDictionaryInternal_DictionaryNode ,
-# [rename (name = "version")] pub version : i32 ,
-# [rename (name = "count")] pub count : i32 ,
-# [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
 }
 }
 
@@ -122,6 +122,126 @@ impl ListDictionaryInternal_NodeEnumerator {
             )
         });
         <Self as IListDictionaryInternal_NodeEnumeratorMethods>::ctor(this, list);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+#[::unity2::methods]
+impl ListDictionaryInternal {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Item(crate::system::object::Object)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, key: crate::system::object::Object) -> crate::system::object::Object;
+
+    #[doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(
+        self,
+        key: crate::system::object::Object,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_Keys()` overload"]
+    #[method(name = "get_Keys", args = 0)]
+    pub fn get_keys(self) -> crate::system::collections::icollection::ICollection;
+
+    #[doc = "`get_IsReadOnly()` overload"]
+    #[method(name = "get_IsReadOnly", args = 0)]
+    pub fn get_is_read_only(self) -> bool;
+
+    #[doc = "`get_IsFixedSize()` overload"]
+    #[method(name = "get_IsFixedSize", args = 0)]
+    pub fn get_is_fixed_size(self) -> bool;
+
+    #[doc = "`get_IsSynchronized()` overload"]
+    #[method(name = "get_IsSynchronized", args = 0)]
+    pub fn get_is_synchronized(self) -> bool;
+
+    #[doc = "`get_SyncRoot()` overload"]
+    #[method(name = "get_SyncRoot", args = 0)]
+    pub fn get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Values()` overload"]
+    #[method(name = "get_Values", args = 0)]
+    pub fn get_values(self) -> crate::system::collections::icollection::ICollection;
+
+    #[doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add(
+        self,
+        key: crate::system::object::Object,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`Contains(crate::system::object::Object)` overload"]
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, key: crate::system::object::Object) -> bool;
+
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`Remove(crate::system::object::Object)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, key: crate::system::object::Object) -> ();
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+impl ListDictionaryInternal {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionaryInternal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionaryInternalMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+#[::unity2::methods]
+impl ListDictionaryInternal_DictionaryNode {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+impl ListDictionaryInternal_DictionaryNode {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionaryInternal_DictionaryNode),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionaryInternal_DictionaryNodeMethods>::ctor(this);
         this
     }
 }
@@ -224,126 +344,6 @@ impl ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
             )
         });
         < Self as IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods > :: ctor (this , list , is_keys) ;
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-#[::unity2::methods]
-impl ListDictionaryInternal_DictionaryNode {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-impl ListDictionaryInternal_DictionaryNode {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionaryInternal_DictionaryNode),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionaryInternal_DictionaryNodeMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-#[::unity2::methods]
-impl ListDictionaryInternal {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Item(crate::system::object::Object)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, key: crate::system::object::Object) -> crate::system::object::Object;
-
-    #[doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(
-        self,
-        key: crate::system::object::Object,
-        value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_Keys()` overload"]
-    #[method(name = "get_Keys", args = 0)]
-    pub fn get_keys(self) -> crate::system::collections::icollection::ICollection;
-
-    #[doc = "`get_IsReadOnly()` overload"]
-    #[method(name = "get_IsReadOnly", args = 0)]
-    pub fn get_is_read_only(self) -> bool;
-
-    #[doc = "`get_IsFixedSize()` overload"]
-    #[method(name = "get_IsFixedSize", args = 0)]
-    pub fn get_is_fixed_size(self) -> bool;
-
-    #[doc = "`get_IsSynchronized()` overload"]
-    #[method(name = "get_IsSynchronized", args = 0)]
-    pub fn get_is_synchronized(self) -> bool;
-
-    #[doc = "`get_SyncRoot()` overload"]
-    #[method(name = "get_SyncRoot", args = 0)]
-    pub fn get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Values()` overload"]
-    #[method(name = "get_Values", args = 0)]
-    pub fn get_values(self) -> crate::system::collections::icollection::ICollection;
-
-    #[doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(
-        self,
-        key: crate::system::object::Object,
-        value: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Contains(crate::system::object::Object)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, key: crate::system::object::Object) -> bool;
-
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`Remove(crate::system::object::Object)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, key: crate::system::object::Object) -> ();
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-impl ListDictionaryInternal {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionaryInternal),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionaryInternalMethods>::ctor(this);
         this
     }
 }

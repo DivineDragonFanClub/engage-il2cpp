@@ -24,6 +24,11 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefineGodWeaponResetYesNoDialog_YesEventHandler {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponResetYesNoDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct RefineGodWeaponResetYesNoDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog_YesMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -33,11 +38,6 @@ mod __types {
     pub struct RefineGodWeaponResetYesNoDialog_YesMenuItem {
 # [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: app :: refinegodweaponresetyesnodialog :: RefineGodWeaponResetYesNoDialog_YesEventHandler ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponResetYesNoDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct RefineGodWeaponResetYesNoDialog {}
 }
 
 #[cfg(feature = "app-refinegodweaponresetyesnodialog-types")]
@@ -68,42 +68,6 @@ impl RefineGodWeaponResetYesNoDialog_YesEventHandler {
         });
         <Self as IRefineGodWeaponResetYesNoDialog_YesEventHandlerMethods>::ctor(
             this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refinegodweaponresetyesnodialog")]
-#[::unity2::methods]
-impl RefineGodWeaponResetYesNoDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        yes_event_handler : crate :: app :: refinegodweaponresetyesnodialog :: RefineGodWeaponResetYesNoDialog_YesEventHandler,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-refinegodweaponresetyesnodialog")]
-impl RefineGodWeaponResetYesNoDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler : crate :: app :: refinegodweaponresetyesnodialog :: RefineGodWeaponResetYesNoDialog_YesEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponResetYesNoDialog_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods>::ctor(
-            this,
-            yes_event_handler,
         );
         this
     }
@@ -164,6 +128,42 @@ impl RefineGodWeaponResetYesNoDialog {
             )
         });
         <Self as IRefineGodWeaponResetYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-refinegodweaponresetyesnodialog")]
+#[::unity2::methods]
+impl RefineGodWeaponResetYesNoDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        yes_event_handler : crate :: app :: refinegodweaponresetyesnodialog :: RefineGodWeaponResetYesNoDialog_YesEventHandler,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-refinegodweaponresetyesnodialog")]
+impl RefineGodWeaponResetYesNoDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` — overload selector"]
+    pub fn new(
+        yes_event_handler : crate :: app :: refinegodweaponresetyesnodialog :: RefineGodWeaponResetYesNoDialog_YesEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponResetYesNoDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods>::ctor(
+            this,
+            yes_event_handler,
+        );
         this
     }
 }

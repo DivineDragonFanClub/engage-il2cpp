@@ -12,70 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TitleLoopSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TitleLoopSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TitleLoopSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TitleLoopSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TitleLoopSequence_Label {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn start_from_main_menu() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn grand_opening() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn title() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn title_from_main_menu() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn job_intro() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 6 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md"))]
     #[::unity2::class(namespace = "App", name = "TitleLoopSequence")]
     # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)]
@@ -138,6 +74,70 @@ mod __types {
 
         pub fn job_intro() -> Self {
             Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TitleLoopSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TitleLoopSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TitleLoopSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TitleLoopSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TitleLoopSequence_Label {
+        pub fn start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn start_from_main_menu() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn grand_opening() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn title() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn title_from_main_menu() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn job_intro() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 6 }
         }
     }
 }

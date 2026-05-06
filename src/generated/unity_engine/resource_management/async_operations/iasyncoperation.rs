@@ -119,6 +119,15 @@ impl IAsyncOperation {
     #[method(name = "InvokeCompletionEvent", args = 0)]
     pub fn invoke_completion_event(self) -> ();
 
+    #[doc = "`Start(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::root::delegatelist_1::DelegateList_1<f32>)` overload"]
+    #[method(name = "Start", args = 3)]
+    pub fn start(
+        self,
+        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+        update_callbacks: crate::root::delegatelist_1::DelegateList_1<f32>,
+    ) -> ();
+
     #[doc = "`get_Handle()` overload"]
     #[method(name = "get_Handle", args = 0)]
     pub fn get_handle (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;

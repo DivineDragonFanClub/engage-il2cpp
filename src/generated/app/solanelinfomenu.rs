@@ -13,10 +13,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SolanelInfoMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct SolanelInfoMenu {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfomenu/SolanelInfoMenu_InfoResult.md"))]
     #[repr(C)]
@@ -62,42 +62,14 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SolanelInfoMenu {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SolanelInfoMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-solanelinfomenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-solanelinfomenu")]
-#[::unity2::methods]
-impl SolanelInfoMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult) -> ();
-}
-
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-solanelinfomenu")]
 #[::unity2::methods]
@@ -173,6 +145,34 @@ impl SolanelInfoMenu {
             )
         });
         <Self as ISolanelInfoMenuMethods>::ctor(this, menu_item_list, menu_content, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenu")]
+#[::unity2::methods]
+impl SolanelInfoMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult) -> ();
+}
+
+#[cfg(feature = "app-solanelinfomenu")]
+impl SolanelInfoMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

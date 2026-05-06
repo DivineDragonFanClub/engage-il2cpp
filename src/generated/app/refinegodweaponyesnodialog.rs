@@ -16,6 +16,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineGodWeaponYesNoDialog_YesEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -29,15 +34,38 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct RefineGodWeaponYesNoDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponyesnodialog/RefineGodWeaponYesNoDialog_YesEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineGodWeaponYesNoDialog.YesEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineGodWeaponYesNoDialog_YesEventHandler {}
 }
 
 #[cfg(feature = "app-refinegodweaponyesnodialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+#[::unity2::methods]
+impl RefineGodWeaponYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponyesnodialog")]
+impl RefineGodWeaponYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponYesNoDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-refinegodweaponyesnodialog")]
 #[::unity2::methods]
@@ -147,34 +175,6 @@ impl RefineGodWeaponYesNoDialog {
             )
         });
         <Self as IRefineGodWeaponYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-refinegodweaponyesnodialog")]
-#[::unity2::methods]
-impl RefineGodWeaponYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-refinegodweaponyesnodialog")]
-impl RefineGodWeaponYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponYesNoDialog_YesEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineGodWeaponYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

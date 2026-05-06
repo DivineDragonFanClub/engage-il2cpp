@@ -24,12 +24,35 @@ mod __types {
         pub m_select: crate::app::basicmenuselect::BasicMenuSelect,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
-    #[parent(crate::system::object::Object)]
-    pub struct DishSelectMenu_DishMenuCompare {
-        #[rename(name = "m_IsRecommended")]
-        pub m_is_recommended: bool,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct DishSelectMenu {
+        #[static_field]
+        #[rename(name = "s_Content")]
+        pub s_content: crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent,
+        #[static_field]
+        #[rename(name = "s_SelectUnitList")]
+        pub s_select_unit_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[static_field]
+        #[rename(name = "s_DecideEventHandler")]
+        pub s_decide_event_handler:
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
+        #[rename(name = "m_MenuSelectList")]
+        pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuselect::BasicMenuSelect,
+        >,
+        #[rename(name = "m_CancelEventHandler")]
+        pub m_cancel_event_handler:
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler,
+        #[static_field]
+        #[rename(name = "s_SelectedUnitCookList")]
+        pub s_selected_unit_cook_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::cookdata::CookData>,
+        #[static_field]
+        #[rename(name = "s_IsFirstSelect")]
+        pub s_is_first_select: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))]
@@ -73,35 +96,12 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DishSelectMenu_SelectEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct DishSelectMenu {
-        #[static_field]
-        #[rename(name = "s_Content")]
-        pub s_content: crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent,
-        #[static_field]
-        #[rename(name = "s_SelectUnitList")]
-        pub s_select_unit_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[static_field]
-        #[rename(name = "s_DecideEventHandler")]
-        pub s_decide_event_handler:
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
-        #[rename(name = "m_MenuSelectList")]
-        pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuselect::BasicMenuSelect,
-        >,
-        #[rename(name = "m_CancelEventHandler")]
-        pub m_cancel_event_handler:
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler,
-        #[static_field]
-        #[rename(name = "s_SelectedUnitCookList")]
-        pub s_selected_unit_cook_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::cookdata::CookData>,
-        #[static_field]
-        #[rename(name = "s_IsFirstSelect")]
-        pub s_is_first_select: bool,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
+    #[parent(crate::system::object::Object)]
+    pub struct DishSelectMenu_DishMenuCompare {
+        #[rename(name = "m_IsRecommended")]
+        pub m_is_recommended: bool,
     }
 }
 
@@ -146,56 +146,88 @@ impl DishSelectMenu_DishSelectMenuManager {
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[::unity2::methods]
-impl DishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_recommended: bool) -> ();
-
-    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareBothLike", args = 2)]
-    pub fn compare_both_like(
+impl DishSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
         self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
+    ) -> ();
 
-    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareDifficulty", args = 2)]
-    pub fn compare_difficulty(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareDislike", args = 2)]
-    pub fn compare_dislike(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        all_content: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
+        selected_unit_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::unit::Unit,
+        >,
+        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
+        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
+    ) -> ();
 
-    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareIndex", args = 2)]
-    pub fn compare_index(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
+    #[doc = "`CreateMenuItemList()` overload"]
+    #[method(name = "CreateMenuItemList", args = 0)]
+    pub fn create_menu_item_list(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`SetupMenuSkill()` overload"]
+    #[method(name = "SetupMenuSkill", args = 0)]
+    pub fn setup_menu_skill(self) -> ();
+
+    #[doc = "`UpdateDisplayIndex()` overload"]
+    #[method(name = "UpdateDisplayIndex", args = 0)]
+    pub fn update_display_index(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`KeyLeft(bool)` overload"]
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[doc = "`KeyRight(bool)` overload"]
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_recommended: bool) -> Self {
+impl DishSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DishMenuCompare),
+                ::core::stringify!(DishSelectMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
+        <Self as IDishSelectMenuMethods>::ctor(this, menu_item_list, cancel_event_handler);
         this
     }
 }
@@ -340,88 +372,56 @@ impl DishSelectMenu_SelectEventHandler {
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[::unity2::methods]
-impl DishSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
+impl DishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_recommended: bool) -> ();
+
+    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareBothLike", args = 2)]
+    pub fn compare_both_like(
         self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
-    ) -> ();
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareDifficulty", args = 2)]
+    pub fn compare_difficulty(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        all_content: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
-        selected_unit_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::unit::Unit,
-        >,
-        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
-        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
-    ) -> ();
+    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareDislike", args = 2)]
+    pub fn compare_dislike(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
 
-    #[doc = "`CreateMenuItemList()` overload"]
-    #[method(name = "CreateMenuItemList", args = 0)]
-    pub fn create_menu_item_list(
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`SetupMenuSkill()` overload"]
-    #[method(name = "SetupMenuSkill", args = 0)]
-    pub fn setup_menu_skill(self) -> ();
-
-    #[doc = "`UpdateDisplayIndex()` overload"]
-    #[method(name = "UpdateDisplayIndex", args = 0)]
-    pub fn update_display_index(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`KeyLeft(bool)` overload"]
-    #[method(name = "KeyLeft", args = 1)]
-    pub fn key_left(self, is_trigger: bool) -> ();
-
-    #[doc = "`KeyRight(bool)` overload"]
-    #[method(name = "KeyRight", args = 1)]
-    pub fn key_right(self, is_trigger: bool) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareIndex", args = 2)]
+    pub fn compare_index(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler,
-    ) -> Self {
+impl DishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_recommended: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu),
+                ::core::stringify!(DishSelectMenu_DishMenuCompare),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectMenuMethods>::ctor(this, menu_item_list, cancel_event_handler);
+        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
         this
     }
 }

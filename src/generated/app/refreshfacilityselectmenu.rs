@@ -11,14 +11,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_CloseEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefreshFacilitySelectMenu.CloseEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshFacilitySelectMenu_CloseEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -27,13 +19,13 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefreshFacilitySelectMenu_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_DisposeEventHandler.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_CloseEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "RefreshFacilitySelectMenu.DisposeEventHandler"
+        name = "RefreshFacilitySelectMenu.CloseEventHandler"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshFacilitySelectMenu_DisposeEventHandler {}
+    pub struct RefreshFacilitySelectMenu_CloseEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_SelectEventHandler.md"))]
     #[::unity2::class(
@@ -60,38 +52,18 @@ mod __types {
         pub m_dispose_event_handler:
             crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DisposeEventHandler,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenu/RefreshFacilitySelectMenu_DisposeEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefreshFacilitySelectMenu.DisposeEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefreshFacilitySelectMenu_DisposeEventHandler {}
 }
 
 #[cfg(feature = "app-refreshfacilityselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-refreshfacilityselectmenu")]
-#[::unity2::methods]
-impl RefreshFacilitySelectMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-refreshfacilityselectmenu")]
-impl RefreshFacilitySelectMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshFacilitySelectMenu_CloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshFacilitySelectMenu_CloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-refreshfacilityselectmenu")]
 #[::unity2::methods]
@@ -123,7 +95,7 @@ impl RefreshFacilitySelectMenu_DecideEventHandler {
 
 #[cfg(feature = "app-refreshfacilityselectmenu")]
 #[::unity2::methods]
-impl RefreshFacilitySelectMenu_DisposeEventHandler {
+impl RefreshFacilitySelectMenu_CloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -134,17 +106,17 @@ impl RefreshFacilitySelectMenu_DisposeEventHandler {
 }
 
 #[cfg(feature = "app-refreshfacilityselectmenu")]
-impl RefreshFacilitySelectMenu_DisposeEventHandler {
+impl RefreshFacilitySelectMenu_CloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshFacilitySelectMenu_DisposeEventHandler),
+                ::core::stringify!(RefreshFacilitySelectMenu_CloseEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshFacilitySelectMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefreshFacilitySelectMenu_CloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -255,6 +227,34 @@ impl RefreshFacilitySelectMenu {
             close_event_handler,
             dispose_event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-refreshfacilityselectmenu")]
+#[::unity2::methods]
+impl RefreshFacilitySelectMenu_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refreshfacilityselectmenu")]
+impl RefreshFacilitySelectMenu_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshFacilitySelectMenu_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshFacilitySelectMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

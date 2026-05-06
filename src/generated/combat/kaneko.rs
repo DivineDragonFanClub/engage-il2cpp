@@ -12,18 +12,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Kaneko_GUIFitScope {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Kaneko")]
-    #[parent(crate::system::object::Object)]
-    pub struct Kaneko {
-        #[static_field]
-        #[rename(name = "Epsilon")]
-        pub epsilon: f32,
-        #[static_field]
-        #[rename(name = "s_DummyDisposable")]
-        pub s_dummy_disposable: crate::combat::kaneko::Kaneko_DummyDisposable,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_Screen.md"))]
     #[::unity2::class(namespace = "Combat", name = "Kaneko.Screen")]
     #[parent(crate::system::object::Object)]
@@ -34,6 +22,18 @@ mod __types {
         #[static_field]
         #[rename(name = "height")]
         pub height: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Kaneko")]
+    #[parent(crate::system::object::Object)]
+    pub struct Kaneko {
+        #[static_field]
+        #[rename(name = "Epsilon")]
+        pub epsilon: f32,
+        #[static_field]
+        #[rename(name = "s_DummyDisposable")]
+        pub s_dummy_disposable: crate::combat::kaneko::Kaneko_DummyDisposable,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
@@ -71,6 +71,14 @@ impl Kaneko_GUIFitScope {
         <Self as IKaneko_GUIFitScopeMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "combat-kaneko")]
+#[::unity2::methods]
+impl Kaneko_Screen {
+    #[doc = "`get_WH()` overload"]
+    #[method(name = "get_WH", args = 0)]
+    pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
 }
 
 #[cfg(feature = "combat-kaneko")]
@@ -244,6 +252,22 @@ impl Kaneko {
     #[method(name = "GetManhattanDistance", args = 4)]
     pub fn get_manhattan_distance(x0: i32, y0: i32, x1: i32, y1: i32) -> i32;
 
+    #[doc = "`SetSpeed(crate::root::simpleanimation::SimpleAnimation, f32)` overload"]
+    #[method(name = "SetSpeed", args = 2)]
+    pub fn set_speed(ani: crate::root::simpleanimation::SimpleAnimation, speed: f32) -> ();
+
+    #[doc = "`GetFixedTime(crate::root::simpleanimation::SimpleAnimation)` overload"]
+    #[method(name = "GetFixedTime", args = 1)]
+    pub fn get_fixed_time(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
+
+    #[doc = "`GetNormalizedTime(crate::root::simpleanimation::SimpleAnimation)` overload"]
+    #[method(name = "GetNormalizedTime", args = 1)]
+    pub fn get_normalized_time(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
+
+    #[doc = "`GetLength(crate::root::simpleanimation::SimpleAnimation)` overload"]
+    #[method(name = "GetLength", args = 1)]
+    pub fn get_length(ani: crate::root::simpleanimation::SimpleAnimation) -> f32;
+
     #[doc = "`RoundupTime(f32)` overload"]
     #[method(name = "RoundupTime", args = 1)]
     pub fn roundup_time(time: f32) -> f32;
@@ -292,14 +316,6 @@ impl Kaneko {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-#[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_Screen {
-    #[doc = "`get_WH()` overload"]
-    #[method(name = "get_WH", args = 0)]
-    pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
 }
 
 #[cfg(feature = "combat-kaneko")]

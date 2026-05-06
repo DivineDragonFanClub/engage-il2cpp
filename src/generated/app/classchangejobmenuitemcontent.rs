@@ -12,16 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenuitemcontent/ClassChangeJobMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct ClassChangeJobMenuItemContent {
-# [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
-# [rename (name = "m_Title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [rename (name = "m_WeaponLevelList")] pub m_weapon_level_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchangejobmenuitemcontent :: ClassChangeJobMenuItemContent_WeaponLevelItem > ,
-# [rename (name = "m_NameRanks")] pub m_name_ranks : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenuitemcontent/ClassChangeJobMenuItemContent_WeaponLevelItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -38,54 +28,20 @@ mod __types {
         #[rename(name = "m_IsUp")]
         pub m_is_up: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenuitemcontent/ClassChangeJobMenuItemContent.md"))]
+    #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuItemContent")]
+    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+    pub struct ClassChangeJobMenuItemContent {
+# [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
+# [rename (name = "m_Title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [rename (name = "m_WeaponLevelList")] pub m_weapon_level_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchangejobmenuitemcontent :: ClassChangeJobMenuItemContent_WeaponLevelItem > ,
+# [rename (name = "m_NameRanks")] pub m_name_ranks : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
 }
 
 #[cfg(feature = "app-classchangejobmenuitemcontent-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-classchangejobmenuitemcontent")]
-#[::unity2::methods]
-impl ClassChangeJobMenuItemContent {
-    #[doc = "`BuildText()` overload"]
-    #[method(name = "BuildText", args = 0)]
-    pub fn build_text(self) -> ();
-
-    #[doc = "`BuildTextColor()` overload"]
-    #[method(name = "BuildTextColor", args = 0)]
-    pub fn build_text_color(self) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`SetJobText(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    #[method(name = "SetJobText", args = 2)]
-    pub fn set_job_text(
-        self,
-        unit: crate::app::unit::Unit,
-        change_job_data: crate::app::classchange::ClassChange_ChangeJobData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-classchangejobmenuitemcontent")]
-impl ClassChangeJobMenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChangeJobMenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeJobMenuItemContentMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
 #[::unity2::methods]
@@ -129,6 +85,50 @@ impl ClassChangeJobMenuItemContent_WeaponLevelItem {
             )
         });
         <Self as IClassChangeJobMenuItemContent_WeaponLevelItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+#[::unity2::methods]
+impl ClassChangeJobMenuItemContent {
+    #[doc = "`BuildText()` overload"]
+    #[method(name = "BuildText", args = 0)]
+    pub fn build_text(self) -> ();
+
+    #[doc = "`BuildTextColor()` overload"]
+    #[method(name = "BuildTextColor", args = 0)]
+    pub fn build_text_color(self) -> ();
+
+    #[doc = "`UpdateTextColor()` overload"]
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[doc = "`SetJobText(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
+    #[method(name = "SetJobText", args = 2)]
+    pub fn set_job_text(
+        self,
+        unit: crate::app::unit::Unit,
+        change_job_data: crate::app::classchange::ClassChange_ChangeJobData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-classchangejobmenuitemcontent")]
+impl ClassChangeJobMenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ClassChangeJobMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IClassChangeJobMenuItemContentMethods>::ctor(this);
         this
     }
 }

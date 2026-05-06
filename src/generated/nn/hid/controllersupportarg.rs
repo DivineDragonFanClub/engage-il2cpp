@@ -8,32 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/controllersupportarg/ControllerSupportArg_Color4u8Array8.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ControllerSupportArg_Color4u8Array8 {}
-
-    impl ::unity2::ClassIdentity for ControllerSupportArg_Color4u8Array8 {
-        const NAMESPACE: &'static str = "nn.hid";
-
-        const NAME: &'static str = "ControllerSupportArg.Color4u8Array8";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ControllerSupportArg_Color4u8Array8 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/controllersupportarg/ControllerSupportArg.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -71,10 +45,48 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/controllersupportarg/ControllerSupportArg_Color4u8Array8.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ControllerSupportArg_Color4u8Array8 {}
+
+    impl ::unity2::ClassIdentity for ControllerSupportArg_Color4u8Array8 {
+        const NAMESPACE: &'static str = "nn.hid";
+
+        const NAME: &'static str = "ControllerSupportArg.Color4u8Array8";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ControllerSupportArg_Color4u8Array8 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "nn-hid-controllersupportarg-types")]
 pub use __types::*;
+
+#[cfg(feature = "nn-hid-controllersupportarg")]
+#[::unity2::methods(value)]
+impl ControllerSupportArg {
+    #[doc = "`SetDefault()` overload"]
+    #[method(name = "SetDefault", args = 0)]
+    pub fn set_default(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
 
 #[cfg(feature = "nn-hid-controllersupportarg")]
 #[::unity2::methods(value)]
@@ -108,16 +120,4 @@ impl ControllerSupportArg_Color4u8Array8 {
     #[doc = "`RemoveAt(i32)` overload"]
     #[method(name = "RemoveAt", args = 1)]
     pub fn remove_at(self, index: i32) -> ();
-}
-
-#[cfg(feature = "nn-hid-controllersupportarg")]
-#[::unity2::methods(value)]
-impl ControllerSupportArg {
-    #[doc = "`SetDefault()` overload"]
-    #[method(name = "SetDefault", args = 0)]
-    pub fn set_default(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

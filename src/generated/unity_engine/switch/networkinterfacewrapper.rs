@@ -11,21 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetworkInterfaceWrapper {
-# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Switch",
-        name = "NetworkInterfaceWrapper.NetworkConnectedHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
     #[repr(C)]
     #[derive(
@@ -73,10 +58,55 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Switch",
+        name = "NetworkInterfaceWrapper.NetworkConnectedHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetworkInterfaceWrapper {
+# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+}
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+#[::unity2::methods]
+impl NetworkInterfaceWrapper_NetworkConnectedHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult ;
+}
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+impl NetworkInterfaceWrapper_NetworkConnectedHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
 #[::unity2::methods]
@@ -151,34 +181,4 @@ impl NetworkInterfaceWrapper {
     pub fn remove_network_connected(
         value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler,
     ) -> ();
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-#[::unity2::methods]
-impl NetworkInterfaceWrapper_NetworkConnectedHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult ;
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper_NetworkConnectedHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
 }

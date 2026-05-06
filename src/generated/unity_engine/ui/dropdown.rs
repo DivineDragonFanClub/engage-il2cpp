@@ -15,6 +15,16 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionData")]
+    #[parent(crate::system::object::Object)]
+    pub struct Dropdown_OptionData {
+        #[rename(name = "m_Text")]
+        pub m_text: ::unity2::Il2CppString,
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::sprite::Sprite,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownItem.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownItem")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -29,15 +39,20 @@ mod __types {
         pub m_toggle: crate::unity_engine::ui::toggle::Toggle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionData")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionDataList")]
     #[parent(crate::system::object::Object)]
-    pub struct Dropdown_OptionData {
-        #[rename(name = "m_Text")]
-        pub m_text: ::unity2::Il2CppString,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::sprite::Sprite,
+    pub struct Dropdown_OptionDataList {
+        #[rename(name = "m_Options")]
+        pub m_options: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+        >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)]
+    pub struct Dropdown_DropdownEvent {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown")]
@@ -80,96 +95,10 @@ mod __types {
         #[rename(name = "s_NoOptionData")]
         pub s_no_option_data: crate::unity_engine::ui::dropdown::Dropdown_OptionData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)]
-    pub struct Dropdown_DropdownEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionDataList")]
-    #[parent(crate::system::object::Object)]
-    pub struct Dropdown_OptionDataList {
-        #[rename(name = "m_Options")]
-        pub m_options: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-        >,
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-dropdown-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-#[::unity2::methods]
-impl Dropdown_DropdownItem {
-    #[doc = "`get_text()` overload"]
-    #[method(name = "get_text", args = 0)]
-    pub fn get_text(self) -> crate::unity_engine::ui::text::Text;
-
-    #[doc = "`set_text(crate::unity_engine::ui::text::Text)` overload"]
-    #[method(name = "set_text", args = 1)]
-    pub fn set_text(self, value: crate::unity_engine::ui::text::Text) -> ();
-
-    #[doc = "`get_image()` overload"]
-    #[method(name = "get_image", args = 0)]
-    pub fn get_image(self) -> crate::unity_engine::ui::image::Image;
-
-    #[doc = "`set_image(crate::unity_engine::ui::image::Image)` overload"]
-    #[method(name = "set_image", args = 1)]
-    pub fn set_image(self, value: crate::unity_engine::ui::image::Image) -> ();
-
-    #[doc = "`get_rectTransform()` overload"]
-    #[method(name = "get_rectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "set_rectTransform", args = 1)]
-    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
-        -> ();
-
-    #[doc = "`get_toggle()` overload"]
-    #[method(name = "get_toggle", args = 0)]
-    pub fn get_toggle(self) -> crate::unity_engine::ui::toggle::Toggle;
-
-    #[doc = "`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]
-    #[method(name = "set_toggle", args = 1)]
-    pub fn set_toggle(self, value: crate::unity_engine::ui::toggle::Toggle) -> ();
-
-    #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "OnPointerEnter", args = 1)]
-    pub fn on_pointer_enter(
-        self,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
-
-    #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    #[method(name = "OnCancel", args = 1)]
-    pub fn on_cancel(
-        self,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_DropdownItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_DropdownItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDropdown_DropdownItemMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-ui-dropdown")]
 #[::unity2::methods]
@@ -262,6 +191,142 @@ impl Dropdown_OptionData {
             )
         });
         <Self as IDropdown_OptionDataMethods>::ctor_4(this, text, image);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+#[::unity2::methods]
+impl Dropdown_DropdownItem {
+    #[doc = "`get_text()` overload"]
+    #[method(name = "get_text", args = 0)]
+    pub fn get_text(self) -> crate::unity_engine::ui::text::Text;
+
+    #[doc = "`set_text(crate::unity_engine::ui::text::Text)` overload"]
+    #[method(name = "set_text", args = 1)]
+    pub fn set_text(self, value: crate::unity_engine::ui::text::Text) -> ();
+
+    #[doc = "`get_image()` overload"]
+    #[method(name = "get_image", args = 0)]
+    pub fn get_image(self) -> crate::unity_engine::ui::image::Image;
+
+    #[doc = "`set_image(crate::unity_engine::ui::image::Image)` overload"]
+    #[method(name = "set_image", args = 1)]
+    pub fn set_image(self, value: crate::unity_engine::ui::image::Image) -> ();
+
+    #[doc = "`get_rectTransform()` overload"]
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "set_rectTransform", args = 1)]
+    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
+        -> ();
+
+    #[doc = "`get_toggle()` overload"]
+    #[method(name = "get_toggle", args = 0)]
+    pub fn get_toggle(self) -> crate::unity_engine::ui::toggle::Toggle;
+
+    #[doc = "`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]
+    #[method(name = "set_toggle", args = 1)]
+    pub fn set_toggle(self, value: crate::unity_engine::ui::toggle::Toggle) -> ();
+
+    #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    #[method(name = "OnPointerEnter", args = 1)]
+    pub fn on_pointer_enter(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    #[method(name = "OnCancel", args = 1)]
+    pub fn on_cancel(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl Dropdown_DropdownItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_DropdownItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDropdown_DropdownItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+#[::unity2::methods]
+impl Dropdown_OptionDataList {
+    #[doc = "`get_options()` overload"]
+    #[method(name = "get_options", args = 0)]
+    pub fn get_options(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+    >;
+
+    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]
+    #[method(name = "set_options", args = 1)]
+    pub fn set_options(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl Dropdown_OptionDataList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_OptionDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDropdown_OptionDataListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+#[::unity2::methods]
+impl Dropdown_DropdownEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl Dropdown_DropdownEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_DropdownEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDropdown_DropdownEventMethods>::ctor(this);
         this
     }
 }
@@ -536,71 +601,6 @@ impl Dropdown {
             )
         });
         <Self as IDropdownMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-#[::unity2::methods]
-impl Dropdown_DropdownEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_DropdownEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_DropdownEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDropdown_DropdownEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-#[::unity2::methods]
-impl Dropdown_OptionDataList {
-    #[doc = "`get_options()` overload"]
-    #[method(name = "get_options", args = 0)]
-    pub fn get_options(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-    >;
-
-    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]
-    #[method(name = "set_options", args = 1)]
-    pub fn set_options(
-        self,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_OptionDataList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDropdown_OptionDataListMethods>::ctor(this);
         this
     }
 }

@@ -11,63 +11,26 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenuContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct BasicMenuContent {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_srcMaterial")]
-        pub m_src_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_menu")]
-        pub m_menu: crate::app::basicmenu::BasicMenu,
-        #[rename(name = "m_winAnimator")]
-        pub m_win_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_objMenu")]
-        pub m_obj_menu: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objFrontCursor")]
-        pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objBackCursor")]
-        pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objViewport")]
-        pub m_obj_viewport: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objVerticalScrollBar")]
-        pub m_obj_vertical_scroll_bar: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objScrollBarHandle")]
-        pub m_obj_scroll_bar_handle: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objContent")]
-        pub m_obj_content: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objSubMenuBase")]
-        pub m_obj_sub_menu_base: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_backContent")]
-        pub m_back_content: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_cursor")]
-        pub m_cursor: crate::app::basicmenucontent::BasicMenuContent_Cursor,
-        #[rename(name = "m_scroll")]
-        pub m_scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll,
-        #[rename(name = "m_pos")]
-        pub m_pos: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_posOld")]
-        pub m_pos_old: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_anchorType")]
-        pub m_anchor_type: crate::app::basicmenu::BasicMenu_AnchorType,
-        #[rename(name = "m_anchoredPosOriginal")]
-        pub m_anchored_pos_original: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_anchorMinOriginal")]
-        pub m_anchor_min_original: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_anchorMaxOriginal")]
-        pub m_anchor_max_original: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_objContentBaseLocalPos")]
-        pub m_obj_content_base_local_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_backContentBaseLocalPos")]
-        pub m_back_content_base_local_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_requestAdjust")]
-        pub m_request_adjust: bool,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
+    #[parent(crate::system::object::Object)]
+    pub struct BasicMenuContent_Scroll {
+        #[rename(name = "m_menuContent")]
+        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        #[rename(name = "m_objScrollBar")]
+        pub m_obj_scroll_bar: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_scrollBar")]
+        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[rename(name = "m_scrollNow")]
+        pub m_scroll_now: f32,
+        #[rename(name = "m_scrollOld")]
+        pub m_scroll_old: f32,
+        #[rename(name = "m_scrollFrom")]
+        pub m_scroll_from: f32,
+        #[rename(name = "m_scrollTick")]
+        pub m_scroll_tick: f32,
+        #[rename(name = "m_scrollFrame")]
+        pub m_scroll_frame: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Cursor.md"))]
@@ -130,31 +93,225 @@ mod __types {
         pub m_front_cursor_from_y: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
-    #[parent(crate::system::object::Object)]
-    pub struct BasicMenuContent_Scroll {
-        #[rename(name = "m_menuContent")]
-        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        #[rename(name = "m_objScrollBar")]
-        pub m_obj_scroll_bar: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_scrollBar")]
-        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
-        #[rename(name = "m_scrollNow")]
-        pub m_scroll_now: f32,
-        #[rename(name = "m_scrollOld")]
-        pub m_scroll_old: f32,
-        #[rename(name = "m_scrollFrom")]
-        pub m_scroll_from: f32,
-        #[rename(name = "m_scrollTick")]
-        pub m_scroll_tick: f32,
-        #[rename(name = "m_scrollFrame")]
-        pub m_scroll_frame: f32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenuContent")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct BasicMenuContent {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_srcMaterial")]
+        pub m_src_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_menu")]
+        pub m_menu: crate::app::basicmenu::BasicMenu,
+        #[rename(name = "m_winAnimator")]
+        pub m_win_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_objMenu")]
+        pub m_obj_menu: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objFrontCursor")]
+        pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objBackCursor")]
+        pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objViewport")]
+        pub m_obj_viewport: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objVerticalScrollBar")]
+        pub m_obj_vertical_scroll_bar: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objScrollBarHandle")]
+        pub m_obj_scroll_bar_handle: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objContent")]
+        pub m_obj_content: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objSubMenuBase")]
+        pub m_obj_sub_menu_base: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_backContent")]
+        pub m_back_content: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_cursor")]
+        pub m_cursor: crate::app::basicmenucontent::BasicMenuContent_Cursor,
+        #[rename(name = "m_scroll")]
+        pub m_scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll,
+        #[rename(name = "m_pos")]
+        pub m_pos: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_posOld")]
+        pub m_pos_old: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_anchorType")]
+        pub m_anchor_type: crate::app::basicmenu::BasicMenu_AnchorType,
+        #[rename(name = "m_anchoredPosOriginal")]
+        pub m_anchored_pos_original: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_anchorMinOriginal")]
+        pub m_anchor_min_original: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_anchorMaxOriginal")]
+        pub m_anchor_max_original: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_objContentBaseLocalPos")]
+        pub m_obj_content_base_local_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_backContentBaseLocalPos")]
+        pub m_back_content_base_local_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_requestAdjust")]
+        pub m_request_adjust: bool,
     }
 }
 
 #[cfg(feature = "app-basicmenucontent-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-basicmenucontent")]
+#[::unity2::methods]
+impl BasicMenuContent_Scroll {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        scroll_bar: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`GetScroll()` overload"]
+    #[method(name = "GetScroll", args = 0)]
+    pub fn get_scroll(self) -> f32;
+
+    #[doc = "`GetScrollOld()` overload"]
+    #[method(name = "GetScrollOld", args = 0)]
+    pub fn get_scroll_old(self) -> f32;
+
+    #[doc = "`GetScrollFrom()` overload"]
+    #[method(name = "GetScrollFrom", args = 0)]
+    pub fn get_scroll_from(self) -> f32;
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`ScrollInstant()` overload"]
+    #[method(name = "ScrollInstant", args = 0)]
+    pub fn scroll_instant(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`SetScrollFrame(f32)` overload"]
+    #[method(name = "SetScrollFrame", args = 1)]
+    pub fn set_scroll_frame(self, frame: f32) -> ();
+
+    #[doc = "`SetScrollBarHandleSize(f32)` overload"]
+    #[method(name = "SetScrollBarHandleSize", args = 1)]
+    pub fn set_scroll_bar_handle_size(self, size: f32) -> ();
+}
+
+#[cfg(feature = "app-basicmenucontent")]
+impl BasicMenuContent_Scroll {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        scroll_bar: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicMenuContent_Scroll),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicMenuContent_ScrollMethods>::ctor(this, menu_content, scroll_bar);
+        this
+    }
+}
+
+#[cfg(feature = "app-basicmenucontent")]
+#[::unity2::methods]
+impl BasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`GetPosX()` overload"]
+    #[method(name = "GetPosX", args = 0)]
+    pub fn get_pos_x(self) -> f32;
+
+    #[doc = "`GetPosY()` overload"]
+    #[method(name = "GetPosY", args = 0)]
+    pub fn get_pos_y(self) -> f32;
+
+    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll) -> ();
+
+    #[doc = "`UpdateVisibility()` overload"]
+    #[method(name = "UpdateVisibility", args = 0)]
+    pub fn update_visibility(self) -> ();
+
+    #[doc = "`MoveInstant()` overload"]
+    #[method(name = "MoveInstant", args = 0)]
+    pub fn move_instant(self) -> ();
+
+    #[doc = "`SetMoveFrame(f32)` overload"]
+    #[method(name = "SetMoveFrame", args = 1)]
+    pub fn set_move_frame(self, frame: f32) -> ();
+
+    #[doc = "`PauseAnim()` overload"]
+    #[method(name = "PauseAnim", args = 0)]
+    pub fn pause_anim(self) -> ();
+
+    #[doc = "`ResumeAnim()` overload"]
+    #[method(name = "ResumeAnim", args = 0)]
+    pub fn resume_anim(self) -> ();
+
+    #[doc = "`RestartAnim()` overload"]
+    #[method(name = "RestartAnim", args = 0)]
+    pub fn restart_anim(self) -> ();
+
+    #[doc = "`SetSiblingIndex(i32)` overload"]
+    #[method(name = "SetSiblingIndex", args = 1)]
+    pub fn set_sibling_index(self, index: i32) -> ();
+
+    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
+    #[method(name = "SetBackCursorImageEnabled", args = 1)]
+    pub fn set_back_cursor_image_enabled(self, enabled: bool) -> ();
+
+    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
+    #[method(name = "SetToKeepAnimatorState", args = 1)]
+    pub fn set_to_keep_animator_state(self, keep: bool) -> ();
+
+    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
+    #[method(name = "MoveFrontCursorFrom", args = 3)]
+    pub fn move_front_cursor_from(self, from_x: f32, from_y: f32, frame: f32) -> ();
+
+    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
+    #[method(name = "SetFrontCursorVisibility", args = 1)]
+    pub fn set_front_cursor_visibility(self, visibility: bool) -> ();
+}
+
+#[cfg(feature = "app-basicmenucontent")]
+impl BasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicMenuContent_Cursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicMenuContent_CursorMethods>::ctor(
+            this,
+            menu_content,
+            obj_front_cursor,
+            obj_back_cursor,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-basicmenucontent")]
 #[::unity2::methods]
@@ -528,163 +685,6 @@ impl BasicMenuContent {
             )
         });
         <Self as IBasicMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-#[::unity2::methods]
-impl BasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`GetPosX()` overload"]
-    #[method(name = "GetPosX", args = 0)]
-    pub fn get_pos_x(self) -> f32;
-
-    #[doc = "`GetPosY()` overload"]
-    #[method(name = "GetPosY", args = 0)]
-    pub fn get_pos_y(self) -> f32;
-
-    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
-    #[method(name = "Tick", args = 1)]
-    pub fn tick(self, scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll) -> ();
-
-    #[doc = "`UpdateVisibility()` overload"]
-    #[method(name = "UpdateVisibility", args = 0)]
-    pub fn update_visibility(self) -> ();
-
-    #[doc = "`MoveInstant()` overload"]
-    #[method(name = "MoveInstant", args = 0)]
-    pub fn move_instant(self) -> ();
-
-    #[doc = "`SetMoveFrame(f32)` overload"]
-    #[method(name = "SetMoveFrame", args = 1)]
-    pub fn set_move_frame(self, frame: f32) -> ();
-
-    #[doc = "`PauseAnim()` overload"]
-    #[method(name = "PauseAnim", args = 0)]
-    pub fn pause_anim(self) -> ();
-
-    #[doc = "`ResumeAnim()` overload"]
-    #[method(name = "ResumeAnim", args = 0)]
-    pub fn resume_anim(self) -> ();
-
-    #[doc = "`RestartAnim()` overload"]
-    #[method(name = "RestartAnim", args = 0)]
-    pub fn restart_anim(self) -> ();
-
-    #[doc = "`SetSiblingIndex(i32)` overload"]
-    #[method(name = "SetSiblingIndex", args = 1)]
-    pub fn set_sibling_index(self, index: i32) -> ();
-
-    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
-    #[method(name = "SetBackCursorImageEnabled", args = 1)]
-    pub fn set_back_cursor_image_enabled(self, enabled: bool) -> ();
-
-    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
-    #[method(name = "SetToKeepAnimatorState", args = 1)]
-    pub fn set_to_keep_animator_state(self, keep: bool) -> ();
-
-    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
-    #[method(name = "MoveFrontCursorFrom", args = 3)]
-    pub fn move_front_cursor_from(self, from_x: f32, from_y: f32, frame: f32) -> ();
-
-    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
-    #[method(name = "SetFrontCursorVisibility", args = 1)]
-    pub fn set_front_cursor_visibility(self, visibility: bool) -> ();
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-impl BasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BasicMenuContent_Cursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBasicMenuContent_CursorMethods>::ctor(
-            this,
-            menu_content,
-            obj_front_cursor,
-            obj_back_cursor,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-#[::unity2::methods]
-impl BasicMenuContent_Scroll {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        scroll_bar: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`GetScroll()` overload"]
-    #[method(name = "GetScroll", args = 0)]
-    pub fn get_scroll(self) -> f32;
-
-    #[doc = "`GetScrollOld()` overload"]
-    #[method(name = "GetScrollOld", args = 0)]
-    pub fn get_scroll_old(self) -> f32;
-
-    #[doc = "`GetScrollFrom()` overload"]
-    #[method(name = "GetScrollFrom", args = 0)]
-    pub fn get_scroll_from(self) -> f32;
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`ScrollInstant()` overload"]
-    #[method(name = "ScrollInstant", args = 0)]
-    pub fn scroll_instant(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`SetScrollFrame(f32)` overload"]
-    #[method(name = "SetScrollFrame", args = 1)]
-    pub fn set_scroll_frame(self, frame: f32) -> ();
-
-    #[doc = "`SetScrollBarHandleSize(f32)` overload"]
-    #[method(name = "SetScrollBarHandleSize", args = 1)]
-    pub fn set_scroll_bar_handle_size(self, size: f32) -> ();
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-impl BasicMenuContent_Scroll {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        scroll_bar: crate::unity_engine::gameobject::GameObject,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BasicMenuContent_Scroll),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBasicMenuContent_ScrollMethods>::ctor(this, menu_content, scroll_bar);
         this
     }
 }

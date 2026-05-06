@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencedance/MapSequenceDance.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceDance")]
+    # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencedance :: MapSequenceDance >)]
+    pub struct MapSequenceDance {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencedance/MapSequenceDance_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -63,11 +68,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencedance/MapSequenceDance.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceDance")]
-    # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencedance :: MapSequenceDance >)]
-    pub struct MapSequenceDance {}
 }
 
 #[cfg(feature = "app-mapsequencedance-types")]

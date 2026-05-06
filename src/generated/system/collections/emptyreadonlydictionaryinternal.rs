@@ -7,14 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections",
-        name = "EmptyReadOnlyDictionaryInternal"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct EmptyReadOnlyDictionaryInternal {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal_NodeEnumerator.md"))]
     #[::unity2::class(
         namespace = "System.Collections",
@@ -22,10 +14,66 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct EmptyReadOnlyDictionaryInternal_NodeEnumerator {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections",
+        name = "EmptyReadOnlyDictionaryInternal"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct EmptyReadOnlyDictionaryInternal {}
 }
 
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
+#[::unity2::methods]
+impl EmptyReadOnlyDictionaryInternal_NodeEnumerator {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`get_Key()` overload"]
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Entry()` overload"]
+    #[method(name = "get_Entry", args = 0)]
+    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
+}
+
+#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
+impl EmptyReadOnlyDictionaryInternal_NodeEnumerator {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EmptyReadOnlyDictionaryInternal_NodeEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
 #[::unity2::methods]
@@ -119,54 +167,6 @@ impl EmptyReadOnlyDictionaryInternal {
             )
         });
         <Self as IEmptyReadOnlyDictionaryInternalMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
-#[::unity2::methods]
-impl EmptyReadOnlyDictionaryInternal_NodeEnumerator {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-}
-
-#[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
-impl EmptyReadOnlyDictionaryInternal_NodeEnumerator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EmptyReadOnlyDictionaryInternal_NodeEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods>::ctor(this);
         this
     }
 }

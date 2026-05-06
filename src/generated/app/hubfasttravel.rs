@@ -8,6 +8,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfasttravel/HubFastTravel.md"))]
+    #[::unity2::class(namespace = "App", name = "HubFastTravel")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubFastTravel {
+        #[rename(name = "m_location")]
+        pub m_location: crate::system::collections::generic::list_1::List_1<
+            crate::app::hubfasttravel::HubFastTravel_Location,
+        >,
+        #[rename(name = "m_currentAccessManager")]
+        pub m_current_access_manager: crate::app::hubaccessmanager::HubAccessManager,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfasttravel/HubFastTravel_Location.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,18 +48,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfasttravel/HubFastTravel.md"))]
-    #[::unity2::class(namespace = "App", name = "HubFastTravel")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubFastTravel {
-        #[rename(name = "m_location")]
-        pub m_location: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubfasttravel::HubFastTravel_Location,
-        >,
-        #[rename(name = "m_currentAccessManager")]
-        pub m_current_access_manager: crate::app::hubaccessmanager::HubAccessManager,
     }
 }
 

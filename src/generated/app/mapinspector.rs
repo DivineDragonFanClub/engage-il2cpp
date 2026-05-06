@@ -10,6 +10,20 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspector/MapInspector.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInspector")]
+    #[parent(crate::app::scriptutil::ScriptUtil)]
+    pub struct MapInspector {
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::mapinspector::MapInspector_Kind,
+        #[rename(name = "m_Condition")]
+        pub m_condition: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[rename(name = "m_Function")]
+        pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[rename(name = "m_Args")]
+        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspector/MapInspector_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -172,20 +186,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 31 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspector/MapInspector.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInspector")]
-    #[parent(crate::app::scriptutil::ScriptUtil)]
-    pub struct MapInspector {
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::mapinspector::MapInspector_Kind,
-        #[rename(name = "m_Condition")]
-        pub m_condition: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_Function")]
-        pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_Args")]
-        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     }
 }
 

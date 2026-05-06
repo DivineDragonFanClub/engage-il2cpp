@@ -10,6 +10,60 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapGodExp_KindDesc {
+        pub param_name: ::unity2::Il2CppString,
+        pub is_multi: bool,
+    }
+
+    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapGodExp.KindDesc";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapGodExp_KindDesc {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapGodExp")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
+    pub struct MapGodExp {
+        #[rename(name = "m_AddFlag")]
+        pub m_add_flag: crate::app::bitfield32::BitField32,
+        #[rename(name = "m_CommitUnit")]
+        pub m_commit_unit: crate::app::unit::Unit,
+        #[rename(name = "m_CommitGodUnit")]
+        pub m_commit_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_Dirty")]
+        pub m_dirty: i32,
+        #[static_field]
+        #[rename(name = "KindDescs")]
+        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
+        #[static_field]
+        #[rename(name = "EngageParamNameSuffix")]
+        pub engage_param_name_suffix: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "RingDirtyKindDescs")]
+        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -73,64 +127,22 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapGodExp")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
-    pub struct MapGodExp {
-        #[rename(name = "m_AddFlag")]
-        pub m_add_flag: crate::app::bitfield32::BitField32,
-        #[rename(name = "m_CommitUnit")]
-        pub m_commit_unit: crate::app::unit::Unit,
-        #[rename(name = "m_CommitGodUnit")]
-        pub m_commit_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[static_field]
-        #[rename(name = "KindDescs")]
-        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-        #[static_field]
-        #[rename(name = "EngageParamNameSuffix")]
-        pub engage_param_name_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "RingDirtyKindDescs")]
-        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapGodExp_KindDesc {
-        pub param_name: ::unity2::Il2CppString,
-        pub is_multi: bool,
-    }
-
-    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapGodExp.KindDesc";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapGodExp_KindDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-mapgodexp-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapgodexp")]
+#[::unity2::methods(value)]
+impl MapGodExp_KindDesc {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, param_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, param_name: ::unity2::Il2CppString, is_multi: bool) -> ();
+}
 
 #[cfg(feature = "app-mapgodexp")]
 #[::unity2::methods]
@@ -202,16 +214,4 @@ impl MapGodExp {
         <Self as IMapGodExpMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-mapgodexp")]
-#[::unity2::methods(value)]
-impl MapGodExp_KindDesc {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, param_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, param_name: ::unity2::Il2CppString, is_multi: bool) -> ();
 }

@@ -11,6 +11,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemUseSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ItemUseSequence {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_UseItem")]
+        pub m_use_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_ItemData")]
+        pub m_item_data: crate::app::itemdata::ItemData,
+        #[rename(name = "m_TargetIndex")]
+        pub m_target_index: i32,
+        #[rename(name = "m_GainExp")]
+        pub m_gain_exp: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]
     #[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
     # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
@@ -63,54 +79,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemUseSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ItemUseSequence {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UseItem")]
-        pub m_use_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_ItemData")]
-        pub m_item_data: crate::app::itemdata::ItemData,
-        #[rename(name = "m_TargetIndex")]
-        pub m_target_index: i32,
-        #[rename(name = "m_GainExp")]
-        pub m_gain_exp: i32,
-    }
 }
 
 #[cfg(feature = "app-itemusesequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-itemusesequence")]
-#[::unity2::methods]
-impl ItemUseSequence_EnchantedUnitList {
-    #[doc = "`Search()` overload"]
-    #[method(name = "Search", args = 0)]
-    pub fn search(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-itemusesequence")]
-impl ItemUseSequence_EnchantedUnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemUseSequence_EnchantedUnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemUseSequence_EnchantedUnitListMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-itemusesequence")]
 #[::unity2::methods]
@@ -223,6 +195,34 @@ impl ItemUseSequence {
             )
         });
         <Self as IItemUseSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-itemusesequence")]
+#[::unity2::methods]
+impl ItemUseSequence_EnchantedUnitList {
+    #[doc = "`Search()` overload"]
+    #[method(name = "Search", args = 0)]
+    pub fn search(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence_EnchantedUnitList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemUseSequence_EnchantedUnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemUseSequence_EnchantedUnitListMethods>::ctor(this);
         this
     }
 }

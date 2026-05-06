@@ -9,25 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_DirectoryItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FileViewerItem.DirectoryItem")]
-    #[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]
-    pub struct FileViewerItem_DirectoryItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FileViewerItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct FileViewerItem {
-        #[rename(name = "m_Path")]
-        pub m_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Func")]
-        pub m_func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_PathItem.md"))]
     #[::unity2::class(namespace = "App", name = "FileViewerItem.PathItem")]
     #[parent(crate::app::stringitem::StringItem)]
@@ -42,14 +23,92 @@ mod __types {
         >,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_DirectoryItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FileViewerItem.DirectoryItem")]
+    #[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]
+    pub struct FileViewerItem_DirectoryItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_FileItem.md"))]
     #[::unity2::class(namespace = "App", name = "FileViewerItem.FileItem")]
     #[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]
     pub struct FileViewerItem_FileItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FileViewerItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct FileViewerItem {
+        #[rename(name = "m_Path")]
+        pub m_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Func")]
+        pub m_func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    }
 }
 
 #[cfg(feature = "app-filevieweritem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-filevieweritem")]
+#[::unity2::methods]
+impl FileViewerItem_PathItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        path: ::unity2::Il2CppString,
+        name: ::unity2::Il2CppString,
+        func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    ) -> ();
+
+    #[doc = "`GetFullPath()` overload"]
+    #[method(name = "GetFullPath", args = 0)]
+    pub fn get_full_path(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetFunc()` overload"]
+    #[method(name = "GetFunc", args = 0)]
+    pub fn get_func(
+        self,
+    ) -> crate::system::func_3::Func_3<
+        crate::app::debugmenu::DebugMenu,
+        ::unity2::Il2CppString,
+        crate::app::menuitem::MenuItem_Result,
+    >;
+
+    #[doc = "`DoFunc()` overload"]
+    #[method(name = "DoFunc", args = 0)]
+    pub fn do_func(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-filevieweritem")]
+impl FileViewerItem_PathItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
+    pub fn new(
+        path: ::unity2::Il2CppString,
+        name: ::unity2::Il2CppString,
+        func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FileViewerItem_PathItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFileViewerItem_PathItemMethods>::ctor(this, path, name, func);
+        this
+    }
+}
 
 #[cfg(feature = "app-filevieweritem")]
 #[::unity2::methods]
@@ -100,6 +159,55 @@ impl FileViewerItem_DirectoryItem {
             )
         });
         <Self as IFileViewerItem_DirectoryItemMethods>::ctor(this, path, name, func);
+        this
+    }
+}
+
+#[cfg(feature = "app-filevieweritem")]
+#[::unity2::methods]
+impl FileViewerItem_FileItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        path: ::unity2::Il2CppString,
+        name: ::unity2::Il2CppString,
+        func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-filevieweritem")]
+impl FileViewerItem_FileItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
+    pub fn new(
+        path: ::unity2::Il2CppString,
+        name: ::unity2::Il2CppString,
+        func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FileViewerItem_FileItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFileViewerItem_FileItemMethods>::ctor(this, path, name, func);
         this
     }
 }
@@ -166,114 +274,6 @@ impl FileViewerItem {
             )
         });
         <Self as IFileViewerItemMethods>::ctor(this, path, func);
-        this
-    }
-}
-
-#[cfg(feature = "app-filevieweritem")]
-#[::unity2::methods]
-impl FileViewerItem_PathItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        path: ::unity2::Il2CppString,
-        name: ::unity2::Il2CppString,
-        func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    ) -> ();
-
-    #[doc = "`GetFullPath()` overload"]
-    #[method(name = "GetFullPath", args = 0)]
-    pub fn get_full_path(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetFunc()` overload"]
-    #[method(name = "GetFunc", args = 0)]
-    pub fn get_func(
-        self,
-    ) -> crate::system::func_3::Func_3<
-        crate::app::debugmenu::DebugMenu,
-        ::unity2::Il2CppString,
-        crate::app::menuitem::MenuItem_Result,
-    >;
-
-    #[doc = "`DoFunc()` overload"]
-    #[method(name = "DoFunc", args = 0)]
-    pub fn do_func(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_PathItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
-    pub fn new(
-        path: ::unity2::Il2CppString,
-        name: ::unity2::Il2CppString,
-        func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FileViewerItem_PathItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFileViewerItem_PathItemMethods>::ctor(this, path, name, func);
-        this
-    }
-}
-
-#[cfg(feature = "app-filevieweritem")]
-#[::unity2::methods]
-impl FileViewerItem_FileItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        path: ::unity2::Il2CppString,
-        name: ::unity2::Il2CppString,
-        func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_FileItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
-    pub fn new(
-        path: ::unity2::Il2CppString,
-        name: ::unity2::Il2CppString,
-        func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FileViewerItem_FileItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFileViewerItem_FileItemMethods>::ctor(this, path, name, func);
         this
     }
 }

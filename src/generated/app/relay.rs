@@ -14,6 +14,212 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay.md"))]
+    #[::unity2::class(namespace = "App", name = "Relay")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: relay :: Relay >)]
+    pub struct Relay {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::relayserverdata::RelayServerData,
+        #[rename(name = "m_SelectedMetaData")]
+        pub m_selected_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_BackupDataForReplay")]
+        pub m_backup_data_for_replay: crate::app::relaybackupdata::RelayBackupData,
+        #[rename(name = "m_BackupDataForAll")]
+        pub m_backup_data_for_all: crate::app::relaybackupdata::RelayBackupData,
+        #[rename(name = "m_CopiedUserData")]
+        pub m_copied_user_data: crate::app::relayuserdata::RelayUserData,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relay::Relay_Modes,
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::relay::Relay_FlagsField,
+        #[rename(name = "m_DisposPlayerCounts")]
+        pub m_dispos_player_counts: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            i32,
+        >,
+        #[rename(name = "m_Sortie")]
+        pub m_sortie: crate::app::relaysortie::RelaySortie,
+        #[rename(name = "m_AppearanceUnits")]
+        pub m_appearance_units:
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[rename(name = "m_LeavingUnits")]
+        pub m_leaving_units:
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[rename(name = "m_MaxTurn")]
+        pub m_max_turn: i32,
+        #[rename(name = "m_LimitTurn")]
+        pub m_limit_turn: i32,
+        #[rename(name = "m_CurrentPlayerIndex")]
+        pub m_current_player_index: i32,
+        #[rename(name = "m_CurrentBattle")]
+        pub m_current_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
+        #[rename(name = "m_ReplayPlayerIndex")]
+        pub m_replay_player_index: i32,
+        #[rename(name = "m_PlayingTermHolder")]
+        pub m_playing_term_holder: crate::app::gameparam::GameParam_Holder,
+        #[rename(name = "m_PoolUnits")]
+        pub m_pool_units:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "m_PoolGods")]
+        pub m_pool_gods:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_Flags {
+        pub fn need_to_upload() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn uploaded() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn global_saved() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn show_win_rule() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Modes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_Modes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_Modes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.Modes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_Modes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_Modes {
+        pub fn new() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn take_over() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn replay() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TrfrResult.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_TrfrResult {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_TrfrResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.TrfrResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_TrfrResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_TrfrResult {
+        pub fn no_changed() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn done() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn failed() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_FlagsField.md"))]
+    #[::unity2::class(namespace = "App", name = "Relay.FlagsField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relay :: Relay_Flags >)]
+    pub struct Relay_FlagsField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_CstoResult.md"))]
     #[repr(C)]
     #[derive(
@@ -74,6 +280,36 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_ChooseAwardeeData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Relay_ChooseAwardeeData {
+        pub unit: crate::app::unit::Unit,
+        pub leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
+        pub count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_ChooseAwardeeData {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.ChooseAwardeeData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_ChooseAwardeeData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -115,152 +351,6 @@ mod __types {
 
         pub fn end() -> Self {
             Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay.md"))]
-    #[::unity2::class(namespace = "App", name = "Relay")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: relay :: Relay >)]
-    pub struct Relay {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::relayserverdata::RelayServerData,
-        #[rename(name = "m_SelectedMetaData")]
-        pub m_selected_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_BackupDataForReplay")]
-        pub m_backup_data_for_replay: crate::app::relaybackupdata::RelayBackupData,
-        #[rename(name = "m_BackupDataForAll")]
-        pub m_backup_data_for_all: crate::app::relaybackupdata::RelayBackupData,
-        #[rename(name = "m_CopiedUserData")]
-        pub m_copied_user_data: crate::app::relayuserdata::RelayUserData,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relay::Relay_Modes,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::relay::Relay_FlagsField,
-        #[rename(name = "m_DisposPlayerCounts")]
-        pub m_dispos_player_counts: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            i32,
-        >,
-        #[rename(name = "m_Sortie")]
-        pub m_sortie: crate::app::relaysortie::RelaySortie,
-        #[rename(name = "m_AppearanceUnits")]
-        pub m_appearance_units:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_LeavingUnits")]
-        pub m_leaving_units:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_MaxTurn")]
-        pub m_max_turn: i32,
-        #[rename(name = "m_LimitTurn")]
-        pub m_limit_turn: i32,
-        #[rename(name = "m_CurrentPlayerIndex")]
-        pub m_current_player_index: i32,
-        #[rename(name = "m_CurrentBattle")]
-        pub m_current_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
-        #[rename(name = "m_ReplayPlayerIndex")]
-        pub m_replay_player_index: i32,
-        #[rename(name = "m_PlayingTermHolder")]
-        pub m_playing_term_holder: crate::app::gameparam::GameParam_Holder,
-        #[rename(name = "m_PoolUnits")]
-        pub m_pool_units:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_PoolGods")]
-        pub m_pool_gods:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Modes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_Modes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_Modes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.Modes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_Modes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_Modes {
-        pub fn new() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn take_over() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn replay() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_FlagsField.md"))]
-    #[::unity2::class(namespace = "App", name = "Relay.FlagsField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relay :: Relay_Flags >)]
-    pub struct Relay_FlagsField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_DisposPlayerCountsSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "Relay.DisposPlayerCountsSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct Relay_DisposPlayerCountsSequence {
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_Cid")]
-        pub m_cid: ::unity2::Il2CppString,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_ChooseAwardeeData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Relay_ChooseAwardeeData {
-        pub unit: crate::app::unit::Unit,
-        pub leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
-        pub count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_ChooseAwardeeData {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.ChooseAwardeeData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_ChooseAwardeeData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
         }
     }
 
@@ -308,104 +398,14 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_Flags {
-        pub fn need_to_upload() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn uploaded() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn global_saved() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn show_win_rule() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TrfrResult.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_TrfrResult {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_TrfrResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.TrfrResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_TrfrResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_TrfrResult {
-        pub fn no_changed() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn done() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn failed() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_DisposPlayerCountsSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "Relay.DisposPlayerCountsSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct Relay_DisposPlayerCountsSequence {
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[rename(name = "m_Cid")]
+        pub m_cid: ::unity2::Il2CppString,
     }
 }
 
@@ -794,50 +794,6 @@ impl Relay_FlagsField {
 }
 
 #[cfg(feature = "app-relay")]
-#[::unity2::methods]
-impl Relay_DisposPlayerCountsSequence {
-    #[doc = "`LoadFirst()` overload"]
-    #[method(name = "LoadFirst", args = 0)]
-    pub fn load_first(self) -> ();
-
-    #[doc = "`LoadDone()` overload"]
-    #[method(name = "LoadDone", args = 0)]
-    pub fn load_done(self) -> ();
-
-    #[doc = "`GetChapter()` overload"]
-    #[method(name = "GetChapter", args = 0)]
-    pub fn get_chapter(self) -> crate::app::chapterdata::ChapterData;
-
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load(self) -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relay")]
-impl Relay_DisposPlayerCountsSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Relay_DisposPlayerCountsSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelay_DisposPlayerCountsSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relay")]
 #[::unity2::methods(value)]
 impl Relay_ChooseAwardeeData {
     #[doc = "`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
@@ -885,4 +841,48 @@ impl Relay_ChooseAwardeeData {
     #[doc = "`IsValid()` overload"]
     #[method(name = "IsValid", args = 0)]
     pub fn is_valid(self) -> bool;
+}
+
+#[cfg(feature = "app-relay")]
+#[::unity2::methods]
+impl Relay_DisposPlayerCountsSequence {
+    #[doc = "`LoadFirst()` overload"]
+    #[method(name = "LoadFirst", args = 0)]
+    pub fn load_first(self) -> ();
+
+    #[doc = "`LoadDone()` overload"]
+    #[method(name = "LoadDone", args = 0)]
+    pub fn load_done(self) -> ();
+
+    #[doc = "`GetChapter()` overload"]
+    #[method(name = "GetChapter", args = 0)]
+    pub fn get_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[doc = "`Load()` overload"]
+    #[method(name = "Load", args = 0)]
+    pub fn load(self) -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relay")]
+impl Relay_DisposPlayerCountsSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Relay_DisposPlayerCountsSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelay_DisposPlayerCountsSequenceMethods>::ctor(this);
+        this
+    }
 }

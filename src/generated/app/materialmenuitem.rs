@@ -22,15 +22,15 @@ mod __types {
             crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialMenuItem.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MaterialMenuItem_SelectEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "MaterialMenuItem.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MaterialMenuItem_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialMenuItem.SelectEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MaterialMenuItem_SelectEventHandler {}
 }
 
 #[cfg(feature = "app-materialmenuitem-types")]
@@ -108,34 +108,6 @@ impl MaterialMenuItem {
 
 #[cfg(feature = "app-materialmenuitem")]
 #[::unity2::methods]
-impl MaterialMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, material_id: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialMenuItem_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-#[::unity2::methods]
 impl MaterialMenuItem_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -158,6 +130,34 @@ impl MaterialMenuItem_DecideEventHandler {
             )
         });
         <Self as IMaterialMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+#[::unity2::methods]
+impl MaterialMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, material_id: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl MaterialMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialMenuItem_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

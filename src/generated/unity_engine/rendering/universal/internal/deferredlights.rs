@@ -9,67 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_CullLightsJob {}
-
-    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.CullLightsJob";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_CullLightsJob {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_DrawCall {
-        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub tile_list_size: i32,
-        pub punctual_light_buffer_size: i32,
-        pub rel_light_list_size: i32,
-        pub instance_offset: i32,
-        pub instance_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.DrawCall";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_DrawCall {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -113,6 +52,67 @@ mod __types {
 # [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
 # [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
 }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_DrawCall {
+        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub tile_list_size: i32,
+        pub punctual_light_buffer_size: i32,
+        pub rel_light_list_size: i32,
+        pub instance_offset: i32,
+        pub instance_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.DrawCall";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_DrawCall {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_CullLightsJob {}
+
+    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.CullLightsJob";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_CullLightsJob {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
     #[repr(C)]
@@ -376,14 +376,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[::unity2::methods(value)]
-impl DeferredLights_CullLightsJob {
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
 #[::unity2::methods]
@@ -869,6 +861,14 @@ impl DeferredLights {
         );
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+#[::unity2::methods(value)]
+impl DeferredLights_CullLightsJob {
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]

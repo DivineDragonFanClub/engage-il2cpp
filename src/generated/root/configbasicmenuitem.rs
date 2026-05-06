@@ -10,26 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))]
-    #[::unity2::class(namespace = "", name = "ConfigBasicMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct ConfigBasicMenuItem {
-        #[rename(name = "m_ConfigMethod")]
-        pub m_config_method: crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: ::unity2::Il2CppString,
-        #[rename(name = "m_CommandText")]
-        pub m_command_text: ::unity2::Il2CppString,
-        #[rename(name = "m_HelpText")]
-        pub m_help_text: ::unity2::Il2CppString,
-        #[rename(name = "m_IsArrow")]
-        pub m_is_arrow: bool,
-        #[rename(name = "m_IsCommandIcon")]
-        pub m_is_command_icon: bool,
-        #[rename(name = "m_GaugeRatio")]
-        pub m_gauge_ratio: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configbasicmenuitem/ConfigBasicMenuItem_ConfigMethodKind.md"))]
     #[repr(C)]
     #[derive(
@@ -72,6 +52,26 @@ mod __types {
         pub fn gauge() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))]
+    #[::unity2::class(namespace = "", name = "ConfigBasicMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ConfigBasicMenuItem {
+        #[rename(name = "m_ConfigMethod")]
+        pub m_config_method: crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: ::unity2::Il2CppString,
+        #[rename(name = "m_CommandText")]
+        pub m_command_text: ::unity2::Il2CppString,
+        #[rename(name = "m_HelpText")]
+        pub m_help_text: ::unity2::Il2CppString,
+        #[rename(name = "m_IsArrow")]
+        pub m_is_arrow: bool,
+        #[rename(name = "m_IsCommandIcon")]
+        pub m_is_command_icon: bool,
+        #[rename(name = "m_GaugeRatio")]
+        pub m_gauge_ratio: f32,
     }
 }
 

@@ -14,6 +14,27 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_SellMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.SellMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ItemShopTopMenu_SellMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.BuyMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ItemShopTopMenu_BuyMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ItemShopTopMenu {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemshoptopmenu/ItemShopTopMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -62,31 +83,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_SellMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.SellMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct ItemShopTopMenu_SellMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ItemShopTopMenu {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ItemShopTopMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.BuyMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct ItemShopTopMenu_BuyMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
-    }
 }
 
 #[cfg(feature = "app-itemshoptopmenu-types")]
@@ -125,6 +125,43 @@ impl ItemShopTopMenu_SellMenuItem {
             )
         });
         <Self as IItemShopTopMenu_SellMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-itemshoptopmenu")]
+#[::unity2::methods]
+impl ItemShopTopMenu_BuyMenuItem {
+    #[doc = "`.ctor(crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-itemshoptopmenu")]
+impl ItemShopTopMenu_BuyMenuItem {
+    #[doc = "`.ctor(crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopTopMenu_BuyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopTopMenu_BuyMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }
@@ -227,43 +264,6 @@ impl ItemShopTopMenu_DecideEventHandler {
             )
         });
         <Self as IItemShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemshoptopmenu")]
-#[::unity2::methods]
-impl ItemShopTopMenu_BuyMenuItem {
-    #[doc = "`.ctor(crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-itemshoptopmenu")]
-impl ItemShopTopMenu_BuyMenuItem {
-    #[doc = "`.ctor(crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopTopMenu_BuyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopTopMenu_BuyMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }

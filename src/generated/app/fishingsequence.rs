@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
-    pub struct FishingSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingsequence/FishingSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -72,6 +67,11 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
+    pub struct FishingSequence {}
 }
 
 #[cfg(feature = "app-fishingsequence-types")]

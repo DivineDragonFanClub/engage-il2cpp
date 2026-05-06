@@ -15,32 +15,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))]
-    #[::unity2::class(namespace = "App", name = "JobData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)]
-    pub struct JobData {
-        #[static_field]
-        #[rename(name = "MaxHighJob")]
-        pub max_high_job: i32,
-        #[static_field]
-        #[rename(name = "JidMaleSuffix")]
-        pub jid_male_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "JidFemaleSuffix")]
-        pub jid_female_suffix: ::unity2::Il2CppString,
-        #[rename(name = "Weapons")]
-        pub weapons: ::unity2::Array<i8>,
-        #[rename(name = "MaxWeaponLevels")]
-        pub max_weapon_levels: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "WeaponLevels")]
-        pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind>,
-        #[rename(name = "WeaponLevelPlusMask")]
-        pub weapon_level_plus_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "HighJobs")]
-        pub high_jobs: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -49,14 +24,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct JobData_Ranks {
+    pub struct JobData_Flags {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for JobData_Ranks {
+    impl ::unity2::ClassIdentity for JobData_Flags {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "JobData.Ranks";
+        const NAME: &'static str = "JobData.Flags";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -65,7 +40,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for JobData_Ranks {
+    impl ::unity2::IlType for JobData_Flags {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -74,13 +49,21 @@ mod __types {
         }
     }
 
-    impl JobData_Ranks {
-        pub fn low() -> Self {
-            Self { value: 0 }
+    impl JobData_Flags {
+        pub fn can_cc() -> Self {
+            Self { value: 1 }
         }
 
-        pub fn high() -> Self {
-            Self { value: 1 }
+        pub fn anyone_cc() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn female_only() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn encount_map() -> Self {
+            Self { value: 8 }
         }
     }
 
@@ -136,7 +119,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -145,14 +128,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct JobData_Flags {
+    pub struct JobData_Ranks {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for JobData_Flags {
+    impl ::unity2::ClassIdentity for JobData_Ranks {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "JobData.Flags";
+        const NAME: &'static str = "JobData.Ranks";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -161,7 +144,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for JobData_Flags {
+    impl ::unity2::IlType for JobData_Ranks {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -170,23 +153,45 @@ mod __types {
         }
     }
 
-    impl JobData_Flags {
-        pub fn can_cc() -> Self {
+    impl JobData_Ranks {
+        pub fn low() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn high() -> Self {
             Self { value: 1 }
         }
-
-        pub fn anyone_cc() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn female_only() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn encount_map() -> Self {
-            Self { value: 8 }
-        }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))]
+    #[::unity2::class(namespace = "App", name = "JobData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)]
+    pub struct JobData {
+        #[static_field]
+        #[rename(name = "MaxHighJob")]
+        pub max_high_job: i32,
+        #[static_field]
+        #[rename(name = "JidMaleSuffix")]
+        pub jid_male_suffix: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "JidFemaleSuffix")]
+        pub jid_female_suffix: ::unity2::Il2CppString,
+        #[rename(name = "Weapons")]
+        pub weapons: ::unity2::Array<i8>,
+        #[rename(name = "MaxWeaponLevels")]
+        pub max_weapon_levels: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "WeaponLevels")]
+        pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind>,
+        #[rename(name = "WeaponLevelPlusMask")]
+        pub weapon_level_plus_mask: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "HighJobs")]
+        pub high_jobs: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "JobData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
+    pub struct JobData_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md"))]
     #[repr(C)]
@@ -251,11 +256,6 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "JobData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
-    pub struct JobData_FlagField {}
 }
 
 #[cfg(feature = "app-jobdata-types")]

@@ -10,18 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardDeleteOverLimitSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProfileCardDeleteOverLimitSequence {
-        #[rename(name = "m_ProfileList")]
-        pub m_profile_list: crate::app::profilelist::ProfileList,
-        #[rename(name = "m_AlbumRoot")]
-        pub m_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
-        #[rename(name = "m_IsFadeOut")]
-        pub m_is_fade_out: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +52,18 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardDeleteOverLimitSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ProfileCardDeleteOverLimitSequence {
+        #[rename(name = "m_ProfileList")]
+        pub m_profile_list: crate::app::profilelist::ProfileList,
+        #[rename(name = "m_AlbumRoot")]
+        pub m_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
+        #[rename(name = "m_IsFadeOut")]
+        pub m_is_fade_out: bool,
     }
 }
 

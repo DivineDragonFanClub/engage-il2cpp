@@ -124,6 +124,41 @@ mod __types {
 # [static_field] # [rename (name = "viewProjMatrixStereo")] pub view_proj_matrix_stereo : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "PostProcessPass.MaterialLibrary"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct PostProcessPass_MaterialLibrary {
+        #[rename(name = "stopNaN")]
+        pub stop_na_n: crate::unity_engine::material::Material,
+        #[rename(name = "subpixelMorphologicalAntialiasing")]
+        pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
+        #[rename(name = "gaussianDepthOfField")]
+        pub gaussian_depth_of_field: crate::unity_engine::material::Material,
+        #[rename(name = "bokehDepthOfField")]
+        pub bokeh_depth_of_field: crate::unity_engine::material::Material,
+        #[rename(name = "cameraMotionBlur")]
+        pub camera_motion_blur: crate::unity_engine::material::Material,
+        #[rename(name = "paniniProjection")]
+        pub panini_projection: crate::unity_engine::material::Material,
+        #[rename(name = "bloom")]
+        pub bloom: crate::unity_engine::material::Material,
+        #[rename(name = "uber")]
+        pub uber: crate::unity_engine::material::Material,
+        #[rename(name = "finalPass")]
+        pub final_pass: crate::unity_engine::material::Material,
+        #[rename(name = "customBlur")]
+        pub custom_blur: crate::unity_engine::material::Material,
+        #[rename(name = "customRadialBlur")]
+        pub custom_radial_blur: crate::unity_engine::material::Material,
+        #[rename(name = "customFilter")]
+        pub custom_filter: crate::unity_engine::material::Material,
+        #[rename(name = "customUber")]
+        pub custom_uber: crate::unity_engine::material::Material,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_ShaderConstants.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -275,41 +310,6 @@ mod __types {
         #[static_field]
         #[rename(name = "_CustomGradationFilter_Params2")]
         pub custom_gradation_filter_params2: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "PostProcessPass.MaterialLibrary"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct PostProcessPass_MaterialLibrary {
-        #[rename(name = "stopNaN")]
-        pub stop_na_n: crate::unity_engine::material::Material,
-        #[rename(name = "subpixelMorphologicalAntialiasing")]
-        pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
-        #[rename(name = "gaussianDepthOfField")]
-        pub gaussian_depth_of_field: crate::unity_engine::material::Material,
-        #[rename(name = "bokehDepthOfField")]
-        pub bokeh_depth_of_field: crate::unity_engine::material::Material,
-        #[rename(name = "cameraMotionBlur")]
-        pub camera_motion_blur: crate::unity_engine::material::Material,
-        #[rename(name = "paniniProjection")]
-        pub panini_projection: crate::unity_engine::material::Material,
-        #[rename(name = "bloom")]
-        pub bloom: crate::unity_engine::material::Material,
-        #[rename(name = "uber")]
-        pub uber: crate::unity_engine::material::Material,
-        #[rename(name = "finalPass")]
-        pub final_pass: crate::unity_engine::material::Material,
-        #[rename(name = "customBlur")]
-        pub custom_blur: crate::unity_engine::material::Material,
-        #[rename(name = "customRadialBlur")]
-        pub custom_radial_blur: crate::unity_engine::material::Material,
-        #[rename(name = "customFilter")]
-        pub custom_filter: crate::unity_engine::material::Material,
-        #[rename(name = "customUber")]
-        pub custom_uber: crate::unity_engine::material::Material,
     }
 }
 
@@ -716,14 +716,6 @@ impl PostProcessPass {
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
 #[::unity2::methods]
-impl PostProcessPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-#[::unity2::methods]
 impl PostProcessPass_MaterialLibrary {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -760,4 +752,12 @@ impl PostProcessPass_MaterialLibrary {
         <Self as IPostProcessPass_MaterialLibraryMethods>::ctor(this, data);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+#[::unity2::methods]
+impl PostProcessPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

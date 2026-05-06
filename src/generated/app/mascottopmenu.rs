@@ -14,6 +14,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_MealMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotTopMenu.MealMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MascotTopMenu_MealMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascottopmenu/MascotTopMenu_MenuResult.md"))]
     #[repr(C)]
     #[derive(
@@ -66,21 +74,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_MealMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotTopMenu.MealMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MascotTopMenu_MealMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_StrokMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotTopMenu.StrokMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MascotTopMenu_StrokMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MascotTopMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu.md"))]
     #[::unity2::class(namespace = "App", name = "MascotTopMenu")]
@@ -95,10 +92,13 @@ mod __types {
         pub m_decide_event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MascotTopMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascottopmenu/MascotTopMenu_StrokMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotTopMenu.StrokMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MascotTopMenu_StrokMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-mascottopmenu-types")]
@@ -149,43 +149,28 @@ impl MascotTopMenu_MealMenuItem {
 
 #[cfg(feature = "app-mascottopmenu")]
 #[::unity2::methods]
-impl MascotTopMenu_StrokMenuItem {
-    #[doc = "`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
-    ) -> ();
+impl MascotTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`Invoke(crate::app::mascottopmenu::MascotTopMenu_MenuResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::mascottopmenu::MascotTopMenu_MenuResult) -> ();
 }
 
 #[cfg(feature = "app-mascottopmenu")]
-impl MascotTopMenu_StrokMenuItem {
-    #[doc = "`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler) -> Self {
+impl MascotTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MascotTopMenu_StrokMenuItem),
+                ::core::stringify!(MascotTopMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMascotTopMenu_StrokMenuItemMethods>::ctor(this, event_handler);
+        <Self as IMascotTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -313,28 +298,43 @@ impl MascotTopMenu_CustomMenuItem {
 
 #[cfg(feature = "app-mascottopmenu")]
 #[::unity2::methods]
-impl MascotTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+impl MascotTopMenu_StrokMenuItem {
+    #[doc = "`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,
+    ) -> ();
 
-    #[doc = "`Invoke(crate::app::mascottopmenu::MascotTopMenu_MenuResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::mascottopmenu::MascotTopMenu_MenuResult) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-mascottopmenu")]
-impl MascotTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl MascotTopMenu_StrokMenuItem {
+    #[doc = "`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MascotTopMenu_DecideEventHandler),
+                ::core::stringify!(MascotTopMenu_StrokMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMascotTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IMascotTopMenu_StrokMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }

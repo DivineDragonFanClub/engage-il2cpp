@@ -11,6 +11,49 @@ mod __types {
     use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ColorTween {
+        pub m_target:
+            crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenCallback,
+        pub m_start_color: crate::unity_engine::color::Color,
+        pub m_target_color: crate::unity_engine::color::Color,
+        pub m_tween_mode:
+            crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode,
+        pub m_duration: f32,
+        pub m_ignore_time_scale: bool,
+    }
+
+    impl ::unity2::ClassIdentity for ColorTween {
+        const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
+
+        const NAME: &'static str = "ColorTween";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ColorTween {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.UI.CoroutineTween",
+        name = "ColorTween.ColorTweenCallback"
+    )]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
+    pub struct ColorTween_ColorTweenCallback {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenMode.md"))]
     #[repr(C)]
     #[derive(
@@ -58,77 +101,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.UI.CoroutineTween",
-        name = "ColorTween.ColorTweenCallback"
-    )]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
-    pub struct ColorTween_ColorTweenCallback {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ColorTween {
-        pub m_target:
-            crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenCallback,
-        pub m_start_color: crate::unity_engine::color::Color,
-        pub m_target_color: crate::unity_engine::color::Color,
-        pub m_tween_mode:
-            crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode,
-        pub m_duration: f32,
-        pub m_ignore_time_scale: bool,
-    }
-
-    impl ::unity2::ClassIdentity for ColorTween {
-        const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
-
-        const NAME: &'static str = "ColorTween";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ColorTween {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-#[::unity2::methods]
-impl ColorTween_ColorTweenCallback {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl ColorTween_ColorTweenCallback {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorTween_ColorTweenCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IColorTween_ColorTweenCallbackMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
 #[::unity2::methods(value)]
@@ -198,4 +174,28 @@ impl ColorTween {
     #[doc = "`ValidTarget()` overload"]
     #[method(name = "ValidTarget", args = 0)]
     pub fn valid_target(self) -> bool;
+}
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
+#[::unity2::methods]
+impl ColorTween_ColorTweenCallback {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
+impl ColorTween_ColorTweenCallback {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ColorTween_ColorTweenCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IColorTween_ColorTweenCallbackMethods>::ctor(this);
+        this
+    }
 }

@@ -15,10 +15,34 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionDataList")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_Dropdown_OptionDataList {
+        #[rename(name = "m_Options")]
+        pub m_options: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownEvent.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.DropdownEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)]
     pub struct TMP_Dropdown_DropdownEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownItem.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.DropdownItem")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TMP_Dropdown_DropdownItem {
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::tmp_text::TMP_Text,
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_RectTransform")]
+        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Toggle")]
+        pub m_toggle: crate::unity_engine::ui::toggle::Toggle,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionData.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionData")]
@@ -74,34 +98,51 @@ mod __types {
         #[rename(name = "s_NoOptionData")]
         pub s_no_option_data: crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownItem.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.DropdownItem")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TMP_Dropdown_DropdownItem {
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_RectTransform")]
-        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Toggle")]
-        pub m_toggle: crate::unity_engine::ui::toggle::Toggle,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionDataList")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Dropdown_OptionDataList {
-        #[rename(name = "m_Options")]
-        pub m_options: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-        >,
-    }
 }
 
 #[cfg(feature = "tm_pro-tmp_dropdown-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+#[::unity2::methods]
+impl TMP_Dropdown_OptionDataList {
+    #[doc = "`get_options()` overload"]
+    #[method(name = "get_options", args = 0)]
+    pub fn get_options(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+    >;
+
+    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]
+    #[method(name = "set_options", args = 1)]
+    pub fn set_options(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+impl TMP_Dropdown_OptionDataList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Dropdown_OptionDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_Dropdown_OptionDataListMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "tm_pro-tmp_dropdown")]
 #[::unity2::methods]
@@ -123,6 +164,77 @@ impl TMP_Dropdown_DropdownEvent {
             )
         });
         <Self as ITMP_Dropdown_DropdownEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+#[::unity2::methods]
+impl TMP_Dropdown_DropdownItem {
+    #[doc = "`get_text()` overload"]
+    #[method(name = "get_text", args = 0)]
+    pub fn get_text(self) -> crate::tm_pro::tmp_text::TMP_Text;
+
+    #[doc = "`set_text(crate::tm_pro::tmp_text::TMP_Text)` overload"]
+    #[method(name = "set_text", args = 1)]
+    pub fn set_text(self, value: crate::tm_pro::tmp_text::TMP_Text) -> ();
+
+    #[doc = "`get_image()` overload"]
+    #[method(name = "get_image", args = 0)]
+    pub fn get_image(self) -> crate::unity_engine::ui::image::Image;
+
+    #[doc = "`set_image(crate::unity_engine::ui::image::Image)` overload"]
+    #[method(name = "set_image", args = 1)]
+    pub fn set_image(self, value: crate::unity_engine::ui::image::Image) -> ();
+
+    #[doc = "`get_rectTransform()` overload"]
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "set_rectTransform", args = 1)]
+    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
+        -> ();
+
+    #[doc = "`get_toggle()` overload"]
+    #[method(name = "get_toggle", args = 0)]
+    pub fn get_toggle(self) -> crate::unity_engine::ui::toggle::Toggle;
+
+    #[doc = "`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]
+    #[method(name = "set_toggle", args = 1)]
+    pub fn set_toggle(self, value: crate::unity_engine::ui::toggle::Toggle) -> ();
+
+    #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    #[method(name = "OnPointerEnter", args = 1)]
+    pub fn on_pointer_enter(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    #[method(name = "OnCancel", args = 1)]
+    pub fn on_cancel(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+impl TMP_Dropdown_DropdownItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Dropdown_DropdownItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_Dropdown_DropdownItemMethods>::ctor(this);
         this
     }
 }
@@ -503,118 +615,6 @@ impl TMP_Dropdown {
             )
         });
         <Self as ITMP_DropdownMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-#[::unity2::methods]
-impl TMP_Dropdown_DropdownItem {
-    #[doc = "`get_text()` overload"]
-    #[method(name = "get_text", args = 0)]
-    pub fn get_text(self) -> crate::tm_pro::tmp_text::TMP_Text;
-
-    #[doc = "`set_text(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    #[method(name = "set_text", args = 1)]
-    pub fn set_text(self, value: crate::tm_pro::tmp_text::TMP_Text) -> ();
-
-    #[doc = "`get_image()` overload"]
-    #[method(name = "get_image", args = 0)]
-    pub fn get_image(self) -> crate::unity_engine::ui::image::Image;
-
-    #[doc = "`set_image(crate::unity_engine::ui::image::Image)` overload"]
-    #[method(name = "set_image", args = 1)]
-    pub fn set_image(self, value: crate::unity_engine::ui::image::Image) -> ();
-
-    #[doc = "`get_rectTransform()` overload"]
-    #[method(name = "get_rectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "set_rectTransform", args = 1)]
-    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
-        -> ();
-
-    #[doc = "`get_toggle()` overload"]
-    #[method(name = "get_toggle", args = 0)]
-    pub fn get_toggle(self) -> crate::unity_engine::ui::toggle::Toggle;
-
-    #[doc = "`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]
-    #[method(name = "set_toggle", args = 1)]
-    pub fn set_toggle(self, value: crate::unity_engine::ui::toggle::Toggle) -> ();
-
-    #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "OnPointerEnter", args = 1)]
-    pub fn on_pointer_enter(
-        self,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
-
-    #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    #[method(name = "OnCancel", args = 1)]
-    pub fn on_cancel(
-        self,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-impl TMP_Dropdown_DropdownItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_Dropdown_DropdownItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_Dropdown_DropdownItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-#[::unity2::methods]
-impl TMP_Dropdown_OptionDataList {
-    #[doc = "`get_options()` overload"]
-    #[method(name = "get_options", args = 0)]
-    pub fn get_options(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-    >;
-
-    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]
-    #[method(name = "set_options", args = 1)]
-    pub fn set_options(
-        self,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-impl TMP_Dropdown_OptionDataList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_Dropdown_OptionDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_Dropdown_OptionDataListMethods>::ctor(this);
         this
     }
 }

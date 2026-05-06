@@ -14,20 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.SolanelInfoItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct NoticeBoardTopMenu_SolanelInfoItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NoticeBoardTopMenu_DecideEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu.md"))]
     #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -46,10 +32,10 @@ mod __types {
             crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_InvestmentItem.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.InvestmentItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.SolanelInfoItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct NoticeBoardTopMenu_InvestmentItem {
+    pub struct NoticeBoardTopMenu_SolanelInfoItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
@@ -106,79 +92,24 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NoticeBoardTopMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_InvestmentItem.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.InvestmentItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct NoticeBoardTopMenu_InvestmentItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-noticeboardtopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-#[::unity2::methods]
-impl NoticeBoardTopMenu_SolanelInfoItem {
-    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl NoticeBoardTopMenu_SolanelInfoItem {
-    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INoticeBoardTopMenu_SolanelInfoItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-#[::unity2::methods]
-impl NoticeBoardTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2) -> ();
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl NoticeBoardTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INoticeBoardTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-noticeboardtopmenu")]
 #[::unity2::methods]
@@ -295,6 +226,75 @@ impl NoticeBoardTopMenu_AchievementItem {
             )
         });
         <Self as INoticeBoardTopMenu_AchievementItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+#[::unity2::methods]
+impl NoticeBoardTopMenu_SolanelInfoItem {
+    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl NoticeBoardTopMenu_SolanelInfoItem {
+    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoticeBoardTopMenu_SolanelInfoItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+#[::unity2::methods]
+impl NoticeBoardTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2) -> ();
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl NoticeBoardTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoticeBoardTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoticeBoardTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

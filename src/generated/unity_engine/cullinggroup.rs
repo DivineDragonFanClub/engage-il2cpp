@@ -9,11 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup.StateChanged")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct CullingGroup_StateChanged {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup")]
     #[parent(crate::system::object::Object)]
@@ -23,10 +18,27 @@ mod __types {
         #[rename(name = "m_OnStateChanged")]
         pub m_on_state_changed: crate::unity_engine::cullinggroup::CullingGroup_StateChanged,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup.StateChanged")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct CullingGroup_StateChanged {}
 }
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-cullinggroup")]
+#[::unity2::methods]
+impl CullingGroup {
+    #[doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]
+    #[method(name = "SendEvents", args = 3)]
+    pub fn send_events(
+        culling_group: crate::unity_engine::cullinggroup::CullingGroup,
+        events_ptr: ::unity2::IntPtr,
+        count: i32,
+    ) -> ();
+}
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[::unity2::methods]
@@ -54,16 +66,4 @@ impl CullingGroup_StateChanged {
         <Self as ICullingGroup_StateChangedMethods>::ctor(this, object, method);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-cullinggroup")]
-#[::unity2::methods]
-impl CullingGroup {
-    #[doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]
-    #[method(name = "SendEvents", args = 3)]
-    pub fn send_events(
-        culling_group: crate::unity_engine::cullinggroup::CullingGroup,
-        events_ptr: ::unity2::IntPtr,
-        count: i32,
-    ) -> ();
 }

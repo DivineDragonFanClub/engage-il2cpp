@@ -9,14 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ChallengeDifficultyManager.ReturnEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ChallengeDifficultyManager_ReturnEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager.md"))]
     #[::unity2::class(namespace = "App", name = "ChallengeDifficultyManager")]
     #[parent(crate::system::object::Object)]
@@ -31,38 +23,18 @@ mod __types {
         #[rename(name = "m_Difficulty")]
         pub m_difficulty: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ChallengeDifficultyManager.ReturnEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ChallengeDifficultyManager_ReturnEventHandler {}
 }
 
 #[cfg(feature = "app-challengedifficultymanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-challengedifficultymanager")]
-#[::unity2::methods]
-impl ChallengeDifficultyManager_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, result: crate::app::basicmenu::BasicMenu_Result, difficulty: i32) -> ();
-}
-
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeDifficultyManager_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeDifficultyManager_ReturnEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-challengedifficultymanager")]
 #[::unity2::methods]
@@ -122,6 +94,34 @@ impl ChallengeDifficultyManager {
             challenge_data,
             return_event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+#[::unity2::methods]
+impl ChallengeDifficultyManager_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, result: crate::app::basicmenu::BasicMenu_Result, difficulty: i32) -> ();
+}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+impl ChallengeDifficultyManager_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeDifficultyManager_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeDifficultyManager_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -17,19 +17,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMascotSequence.NameDecideConfirm")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct HubMascotSequence_NameDecideConfirm {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubMascotSequence.NameDecideConfirm.ConfirmDialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -42,6 +29,14 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMascotSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct HubMascotSequence {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "HubMascotSequence.NameDecideConfirm.ConfirmDialogItemNo"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotsequence/HubMascotSequence_Label.md"))]
     #[repr(C)]
@@ -106,79 +101,15 @@ mod __types {
             Self { value: 6 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMascotSequence.NameDecideConfirm")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct HubMascotSequence_NameDecideConfirm {}
 }
 
 #[cfg(feature = "app-hubmascotsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubmascotsequence")]
-#[::unity2::methods]
-impl HubMascotSequence_NameDecideConfirm {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-hubmascotsequence")]
-impl HubMascotSequence_NameDecideConfirm {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMascotSequence_NameDecideConfirm),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMascotSequence_NameDecideConfirmMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubmascotsequence")]
-#[::unity2::methods]
-impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubmascotsequence")]
-impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubmascotsequence")]
 #[::unity2::methods]
@@ -276,6 +207,75 @@ impl HubMascotSequence {
             )
         });
         <Self as IHubMascotSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmascotsequence")]
+#[::unity2::methods]
+impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubmascotsequence")]
+impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubmascotsequence")]
+#[::unity2::methods]
+impl HubMascotSequence_NameDecideConfirm {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-hubmascotsequence")]
+impl HubMascotSequence_NameDecideConfirm {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMascotSequence_NameDecideConfirm),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMascotSequence_NameDecideConfirmMethods>::ctor(this, menu_item_list);
         this
     }
 }

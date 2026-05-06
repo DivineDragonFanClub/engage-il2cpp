@@ -16,15 +16,15 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct RelayConfirmSearchDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog.NoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct RelayConfirmSearchDialog_NoMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct RelayConfirmSearchDialog_YesMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct RelayConfirmSearchDialog_NoMenuItem {}
 }
 
 #[cfg(feature = "app-relayconfirmsearchdialog-types")]
@@ -54,42 +54,6 @@ impl RelayConfirmSearchDialog {
             )
         });
         <Self as IRelayConfirmSearchDialogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-#[::unity2::methods]
-impl RelayConfirmSearchDialog_NoMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayConfirmSearchDialog_NoMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayConfirmSearchDialog_NoMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -126,6 +90,42 @@ impl RelayConfirmSearchDialog_YesMenuItem {
             )
         });
         <Self as IRelayConfirmSearchDialog_YesMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayconfirmsearchdialog")]
+#[::unity2::methods]
+impl RelayConfirmSearchDialog_NoMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relayconfirmsearchdialog")]
+impl RelayConfirmSearchDialog_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayConfirmSearchDialog_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayConfirmSearchDialog_NoMenuItemMethods>::ctor(this);
         this
     }
 }

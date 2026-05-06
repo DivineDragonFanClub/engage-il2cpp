@@ -11,16 +11,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct TimeNotificationBehaviour {
-# [rename (name = "m_Notifications")] pub m_notifications : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > ,
-# [rename (name = "m_PreviousTime")] pub m_previous_time : f64 ,
-# [rename (name = "m_NeedSortNotifications")] pub m_need_sort_notifications : bool ,
-# [rename (name = "m_TimeSource")] pub m_time_source : crate :: unity_engine :: playables :: playable :: Playable ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -51,10 +41,36 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct TimeNotificationBehaviour {
+# [rename (name = "m_Notifications")] pub m_notifications : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour_NotificationEntry > ,
+# [rename (name = "m_PreviousTime")] pub m_previous_time : f64 ,
+# [rename (name = "m_NeedSortNotifications")] pub m_need_sort_notifications : bool ,
+# [rename (name = "m_TimeSource")] pub m_time_source : crate :: unity_engine :: playables :: playable :: Playable ,
+}
 }
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+#[::unity2::methods(value)]
+impl TimeNotificationBehaviour_NotificationEntry {
+    #[doc = "`get_triggerInEditor()` overload"]
+    #[method(name = "get_triggerInEditor", args = 0)]
+    pub fn get_trigger_in_editor(self) -> bool;
+
+    #[doc = "`get_prewarm()` overload"]
+    #[method(name = "get_prewarm", args = 0)]
+    pub fn get_prewarm(self) -> bool;
+
+    #[doc = "`get_triggerOnce()` overload"]
+    #[method(name = "get_triggerOnce", args = 0)]
+    pub fn get_trigger_once(self) -> bool;
+}
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
 #[::unity2::methods]
@@ -167,20 +183,4 @@ impl TimeNotificationBehaviour {
         <Self as ITimeNotificationBehaviourMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-#[::unity2::methods(value)]
-impl TimeNotificationBehaviour_NotificationEntry {
-    #[doc = "`get_triggerInEditor()` overload"]
-    #[method(name = "get_triggerInEditor", args = 0)]
-    pub fn get_trigger_in_editor(self) -> bool;
-
-    #[doc = "`get_prewarm()` overload"]
-    #[method(name = "get_prewarm", args = 0)]
-    pub fn get_prewarm(self) -> bool;
-
-    #[doc = "`get_triggerOnce()` overload"]
-    #[method(name = "get_triggerOnce", args = 0)]
-    pub fn get_trigger_once(self) -> bool;
 }

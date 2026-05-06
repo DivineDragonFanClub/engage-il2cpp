@@ -10,18 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayShowDataSequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
-        #[rename(name = "m_IsNewPlay")]
-        pub m_is_new_play: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +52,18 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RelayShowDataSequence {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+        #[rename(name = "m_IsNewPlay")]
+        pub m_is_new_play: bool,
     }
 }
 

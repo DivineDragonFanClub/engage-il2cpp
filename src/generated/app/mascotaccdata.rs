@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotAccData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)]
-    pub struct MascotAccData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +59,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotAccData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)]
+    pub struct MascotAccData {}
 }
 
 #[cfg(feature = "app-mascotaccdata-types")]

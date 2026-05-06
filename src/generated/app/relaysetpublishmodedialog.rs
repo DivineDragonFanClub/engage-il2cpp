@@ -16,15 +16,15 @@ mod __types {
     #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
     pub struct RelaySetPublishModeDialog_NoMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_YesMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog.YesMenuItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RelaySetPublishModeDialog_YesMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog")]
     #[parent(crate::system::object::Object)]
     pub struct RelaySetPublishModeDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_YesMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog.YesMenuItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RelaySetPublishModeDialog_YesMenuItem {}
 }
 
 #[cfg(feature = "app-relaysetpublishmodedialog-types")]
@@ -68,6 +68,34 @@ impl RelaySetPublishModeDialog_NoMenuItem {
 
 #[cfg(feature = "app-relaysetpublishmodedialog")]
 #[::unity2::methods]
+impl RelaySetPublishModeDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+impl RelaySetPublishModeDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySetPublishModeDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySetPublishModeDialogMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+#[::unity2::methods]
 impl RelaySetPublishModeDialog_YesMenuItem {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -98,34 +126,6 @@ impl RelaySetPublishModeDialog_YesMenuItem {
             )
         });
         <Self as IRelaySetPublishModeDialog_YesMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaysetpublishmodedialog")]
-#[::unity2::methods]
-impl RelaySetPublishModeDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaysetpublishmodedialog")]
-impl RelaySetPublishModeDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelaySetPublishModeDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelaySetPublishModeDialogMethods>::ctor(this);
         this
     }
 }

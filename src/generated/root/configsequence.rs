@@ -6,6 +6,8 @@ mod __types {
 
     use crate::app::procinst::{IProcInst, ProcInst};
     use crate::system::object::{IObject, Object};
+    use crate::system::r#enum::{Enum, IEnum};
+    use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configsequence/ConfigSequence.md"))]
@@ -14,6 +16,54 @@ mod __types {
     pub struct ConfigSequence {
         #[rename(name = "m_ConfigObject")]
         pub m_config_object: crate::unity_engine::gameobject::GameObject,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configsequence/ConfigSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ConfigSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ConfigSequence_Label {
+        const NAMESPACE: &'static str = "";
+
+        const NAME: &'static str = "ConfigSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ConfigSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ConfigSequence_Label {
+        pub fn load() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unload() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 

@@ -27,6 +27,32 @@ mod __types {
         pub force: ::unity2::Il2CppString,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct UnitInfoViewerSetting {
+        #[rename(name = "m_LeftUnit")]
+        pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[rename(name = "m_RightUnit")]
+        pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[rename(name = "m_IsCharaOnlyTransition")]
+        pub m_is_chara_only_transition: bool,
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitInfoViewerSetting_ForceList {
+        #[static_field]
+        #[rename(name = "Types")]
+        pub types: ::unity2::Array<crate::app::force::Force_Type>,
+        #[static_field]
+        #[rename(name = "Names")]
+        pub names: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
     #[repr(C)]
     #[derive(
@@ -73,32 +99,6 @@ mod __types {
         pub fn normal() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitInfoViewerSetting {
-        #[rename(name = "m_LeftUnit")]
-        pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[rename(name = "m_RightUnit")]
-        pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[rename(name = "m_IsCharaOnlyTransition")]
-        pub m_is_chara_only_transition: bool,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_ForceList {
-        #[static_field]
-        #[rename(name = "Types")]
-        pub types: ::unity2::Array<crate::app::force::Force_Type>,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

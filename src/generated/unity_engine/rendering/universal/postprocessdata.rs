@@ -9,16 +9,22 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_TextureResources.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessData"
+        name = "PostProcessData.TextureResources"
     )]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct PostProcessData {
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
-# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
-}
+    #[parent(crate::system::object::Object)]
+    pub struct PostProcessData_TextureResources {
+        #[rename(name = "blueNoise16LTex")]
+        pub blue_noise16_l_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[rename(name = "filmGrainTex")]
+        pub film_grain_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[rename(name = "smaaAreaTex")]
+        pub smaa_area_tex: crate::unity_engine::texture2d::Texture2D,
+        #[rename(name = "smaaSearchTex")]
+        pub smaa_search_tex: crate::unity_engine::texture2d::Texture2D,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_ShaderResources.md"))]
     #[::unity2::class(
@@ -57,22 +63,16 @@ mod __types {
         pub custom_uber_post_ps: crate::unity_engine::shader::Shader,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_TextureResources.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessData.TextureResources"
+        name = "PostProcessData"
     )]
-    #[parent(crate::system::object::Object)]
-    pub struct PostProcessData_TextureResources {
-        #[rename(name = "blueNoise16LTex")]
-        pub blue_noise16_l_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
-        #[rename(name = "filmGrainTex")]
-        pub film_grain_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
-        #[rename(name = "smaaAreaTex")]
-        pub smaa_area_tex: crate::unity_engine::texture2d::Texture2D,
-        #[rename(name = "smaaSearchTex")]
-        pub smaa_search_tex: crate::unity_engine::texture2d::Texture2D,
-    }
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct PostProcessData {
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
+# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
+}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata-types")]
@@ -80,24 +80,24 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
 #[::unity2::methods]
-impl PostProcessData {
+impl PostProcessData_TextureResources {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl PostProcessData {
+impl PostProcessData_TextureResources {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessData),
+                ::core::stringify!(PostProcessData_TextureResources),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPostProcessDataMethods>::ctor(this);
+        <Self as IPostProcessData_TextureResourcesMethods>::ctor(this);
         this
     }
 }
@@ -128,24 +128,24 @@ impl PostProcessData_ShaderResources {
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
 #[::unity2::methods]
-impl PostProcessData_TextureResources {
+impl PostProcessData {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl PostProcessData_TextureResources {
+impl PostProcessData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessData_TextureResources),
+                ::core::stringify!(PostProcessData),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPostProcessData_TextureResourcesMethods>::ctor(this);
+        <Self as IPostProcessDataMethods>::ctor(this);
         this
     }
 }

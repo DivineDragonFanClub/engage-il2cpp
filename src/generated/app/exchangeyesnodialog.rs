@@ -24,6 +24,14 @@ mod __types {
         pub enabled_num: bool,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
+    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct ExchangeYesNoDialog_MoneyParam {
+        #[rename(name = "num")]
+        pub num: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog.md"))]
     #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog")]
     #[parent(crate::app::basicdialog::BasicDialog)]
@@ -32,14 +40,6 @@ mod __types {
         pub m_dispose_event_handler: crate::system::action::Action,
         #[rename(name = "m_IsForWell")]
         pub m_is_for_well: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
-    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct ExchangeYesNoDialog_MoneyParam {
-        #[rename(name = "num")]
-        pub num: i32,
     }
 }
 
@@ -66,6 +66,30 @@ impl ExchangeYesNoDialog_ItemParam {
             )
         });
         <Self as IExchangeYesNoDialog_ItemParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+#[::unity2::methods]
+impl ExchangeYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }
@@ -602,30 +626,6 @@ impl ExchangeYesNoDialog {
             cost_item_title,
             cost_item_name,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-#[::unity2::methods]
-impl ExchangeYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }

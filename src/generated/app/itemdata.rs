@@ -15,6 +15,265 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Kinds.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_Kinds {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_Kinds {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.Kinds";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_Kinds {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_Kinds {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn sword() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn lance() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn axe() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn bow() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn dagger() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn magic() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn rod() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn fist() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn special() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn tool() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn shield() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn accessory() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn precious() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn refine_iron() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn refine_steel() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn refine_silver() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn piece_of_bond() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn gold() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn weapon_num() -> Self {
+            Self { value: 10 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemdata :: ItemData >)]
+    pub struct ItemData {
+        #[static_field]
+        #[rename(name = "MAX_NAME_LENGTH")]
+        pub max_name_length: i32,
+        #[static_field]
+        #[rename(name = "RANGE_INF")]
+        pub range_inf: i32,
+        #[static_field]
+        #[rename(name = "ENDURANCE_INF")]
+        pub endurance_inf: i32,
+        #[static_field]
+        #[rename(name = "HIT_INF")]
+        pub hit_inf: i32,
+        #[rename(name = "m_IsWeapon")]
+        pub m_is_weapon: bool,
+        #[rename(name = "FlagName")]
+        pub flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_PrefixlessIid")]
+        pub m_prefixless_iid: ::unity2::Il2CppString,
+        #[rename(name = "m_EnchantHash")]
+        pub m_enchant_hash: i32,
+        #[rename(name = "m_WeaponLevel")]
+        pub m_weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
+        #[rename(name = "m_UnitItem")]
+        pub m_unit_item: crate::app::unititem::UnitItem,
+        #[static_field]
+        #[rename(name = "EmptyEnchantHash")]
+        pub empty_enchant_hash: i32,
+        #[static_field]
+        #[rename(name = "MaxInventory")]
+        pub max_inventory: i32,
+        #[static_field]
+        #[rename(name = "MaxRefine")]
+        pub max_refine: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_RodTypes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_RodTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_RodTypes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.RodTypes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_RodTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_RodTypes {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn basic() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn heal() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn interference() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Attrs.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_Attrs {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_Attrs {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.Attrs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_Attrs {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_Attrs {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn physical() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn magic() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_AddTargets.md"))]
     #[repr(C)]
     #[derive(
@@ -275,165 +534,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Kinds.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_Kinds {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_Kinds {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.Kinds";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_Kinds {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn sword() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn lance() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn axe() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn bow() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn dagger() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn magic() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn rod() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn fist() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn special() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn tool() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn shield() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn accessory() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn precious() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn refine_iron() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn refine_steel() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn refine_silver() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn piece_of_bond() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn gold() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn weapon_num() -> Self {
-            Self { value: 10 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemdata :: ItemData >)]
-    pub struct ItemData {
-        #[static_field]
-        #[rename(name = "MAX_NAME_LENGTH")]
-        pub max_name_length: i32,
-        #[static_field]
-        #[rename(name = "RANGE_INF")]
-        pub range_inf: i32,
-        #[static_field]
-        #[rename(name = "ENDURANCE_INF")]
-        pub endurance_inf: i32,
-        #[static_field]
-        #[rename(name = "HIT_INF")]
-        pub hit_inf: i32,
-        #[rename(name = "m_IsWeapon")]
-        pub m_is_weapon: bool,
-        #[rename(name = "FlagName")]
-        pub flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_PrefixlessIid")]
-        pub m_prefixless_iid: ::unity2::Il2CppString,
-        #[rename(name = "m_EnchantHash")]
-        pub m_enchant_hash: i32,
-        #[rename(name = "m_WeaponLevel")]
-        pub m_weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
-        #[rename(name = "m_UnitItem")]
-        pub m_unit_item: crate::app::unititem::UnitItem,
-        #[static_field]
-        #[rename(name = "EmptyEnchantHash")]
-        pub empty_enchant_hash: i32,
-        #[static_field]
-        #[rename(name = "MaxInventory")]
-        pub max_inventory: i32,
-        #[static_field]
-        #[rename(name = "MaxRefine")]
-        pub max_refine: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_WeaponAttrs.md"))]
     #[repr(C)]
     #[derive(
@@ -498,57 +598,10 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_RodTypes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_RodTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_RodTypes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.RodTypes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_RodTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_RodTypes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn basic() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn heal() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn interference() -> Self {
-            Self { value: 3 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: itemdata :: ItemData_Flags >)]
+    pub struct ItemData_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Flags.md"))]
     #[repr(C)]
@@ -687,59 +740,6 @@ mod __types {
 
         pub fn bullet() -> Self {
             Self { value: 134217728 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: itemdata :: ItemData_Flags >)]
-    pub struct ItemData_FlagField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Attrs.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_Attrs {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_Attrs {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.Attrs";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_Attrs {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_Attrs {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn physical() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn magic() -> Self {
-            Self { value: 2 }
         }
     }
 }

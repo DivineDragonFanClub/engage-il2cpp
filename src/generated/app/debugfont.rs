@@ -8,27 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugfont/DebugFont.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugFont")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugFont {
-        #[static_field]
-        #[rename(name = "s_Font")]
-        pub s_font: crate::unity_engine::font::Font,
-        #[static_field]
-        #[rename(name = "s_NormalStyle")]
-        pub s_normal_style: crate::unity_engine::guistyle::GUIStyle,
-        #[static_field]
-        #[rename(name = "s_MiddleStyle")]
-        pub s_middle_style: crate::unity_engine::guistyle::GUIStyle,
-        #[static_field]
-        #[rename(name = "s_SmallStyle")]
-        pub s_small_style: crate::unity_engine::guistyle::GUIStyle,
-        #[static_field]
-        #[rename(name = "s_CurrentStyle")]
-        pub s_current_style: crate::unity_engine::guistyle::GUIStyle,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugfont/DebugFont_Scope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -56,10 +35,43 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugfont/DebugFont.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugFont")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugFont {
+        #[static_field]
+        #[rename(name = "s_Font")]
+        pub s_font: crate::unity_engine::font::Font,
+        #[static_field]
+        #[rename(name = "s_NormalStyle")]
+        pub s_normal_style: crate::unity_engine::guistyle::GUIStyle,
+        #[static_field]
+        #[rename(name = "s_MiddleStyle")]
+        pub s_middle_style: crate::unity_engine::guistyle::GUIStyle,
+        #[static_field]
+        #[rename(name = "s_SmallStyle")]
+        pub s_small_style: crate::unity_engine::guistyle::GUIStyle,
+        #[static_field]
+        #[rename(name = "s_CurrentStyle")]
+        pub s_current_style: crate::unity_engine::guistyle::GUIStyle,
+    }
 }
 
 #[cfg(feature = "app-debugfont-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-debugfont")]
+#[::unity2::methods(value)]
+impl DebugFont_Scope {
+    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, style: crate::unity_engine::guistyle::GUIStyle) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
 
 #[cfg(feature = "app-debugfont")]
 #[::unity2::methods]
@@ -127,16 +139,4 @@ impl DebugFont {
         <Self as IDebugFontMethods>::ctor(this);
         this
     }
-}
-
-#[cfg(feature = "app-debugfont")]
-#[::unity2::methods(value)]
-impl DebugFont_Scope {
-    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, style: crate::unity_engine::guistyle::GUIStyle) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
 }

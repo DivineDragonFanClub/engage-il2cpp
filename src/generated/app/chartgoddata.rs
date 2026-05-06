@@ -15,6 +15,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData.md"))]
+    #[::unity2::class(namespace = "App", name = "ChartGodData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chartgoddata :: ChartGodData >)]
+    pub struct ChartGodData {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "ChartGodData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: chartgoddata :: ChartGodData_Flags >)]
+    pub struct ChartGodData_FlagField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/chartgoddata/ChartGodData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -54,65 +64,10 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "ChartGodData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: chartgoddata :: ChartGodData_Flags >)]
-    pub struct ChartGodData_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData.md"))]
-    #[::unity2::class(namespace = "App", name = "ChartGodData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chartgoddata :: ChartGodData >)]
-    pub struct ChartGodData {}
 }
 
 #[cfg(feature = "app-chartgoddata-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-chartgoddata")]
-#[::unity2::methods]
-impl ChartGodData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::chartgoddata::ChartGodData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::chartgoddata::ChartGodData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::chartgoddata::ChartGodData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChartGodData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChartGodData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::chartgoddata::ChartGodData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChartGodData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IChartGodData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
 
 #[cfg(feature = "app-chartgoddata")]
 #[::unity2::methods]
@@ -262,6 +217,51 @@ impl ChartGodData {
             )
         });
         <Self as IChartGodDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-chartgoddata")]
+#[::unity2::methods]
+impl ChartGodData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::chartgoddata::ChartGodData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::chartgoddata::ChartGodData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::chartgoddata::ChartGodData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-chartgoddata")]
+impl ChartGodData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChartGodData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChartGodData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::chartgoddata::ChartGodData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChartGodData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IChartGodData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

@@ -13,6 +13,14 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSequence")]
+    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
+    pub struct UnitSequence {
+        #[rename(name = "待機中")]
+        pub _unnamed: crate::app::unitsequence::UnitSequence_Action,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitsequence/UnitSequence_Action.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,14 +47,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSequence")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
-    pub struct UnitSequence {
-        #[rename(name = "待機中")]
-        pub _unnamed: crate::app::unitsequence::UnitSequence_Action,
     }
 }
 

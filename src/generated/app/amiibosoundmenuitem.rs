@@ -10,6 +10,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem_YesItem.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItem.YesItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct AmiiboSoundMenuItem_YesItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -17,15 +22,38 @@ mod __types {
         #[rename(name = "m_musicData")]
         pub m_music_data: crate::app::musicdata::MusicData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem_YesItem.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItem.YesItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct AmiiboSoundMenuItem_YesItem {}
 }
 
 #[cfg(feature = "app-amiibosoundmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-amiibosoundmenuitem")]
+#[::unity2::methods]
+impl AmiiboSoundMenuItem_YesItem {
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-amiibosoundmenuitem")]
+impl AmiiboSoundMenuItem_YesItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboSoundMenuItem_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboSoundMenuItem_YesItemMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-amiibosoundmenuitem")]
 #[::unity2::methods]
@@ -83,34 +111,6 @@ impl AmiiboSoundMenuItem {
             )
         });
         <Self as IAmiiboSoundMenuItemMethods>::ctor(this, music_data, empty);
-        this
-    }
-}
-
-#[cfg(feature = "app-amiibosoundmenuitem")]
-#[::unity2::methods]
-impl AmiiboSoundMenuItem_YesItem {
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-amiibosoundmenuitem")]
-impl AmiiboSoundMenuItem_YesItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboSoundMenuItem_YesItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboSoundMenuItem_YesItemMethods>::ctor(this);
         this
     }
 }

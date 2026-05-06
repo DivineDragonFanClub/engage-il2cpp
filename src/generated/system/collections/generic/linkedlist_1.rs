@@ -8,6 +8,29 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/linkedlist_1/LinkedList_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "LinkedList`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct LinkedList_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "head")]
+        pub head: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+        #[rename(name = "count")]
+        pub count: i32,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+        #[static_field]
+        #[rename(name = "VersionName")]
+        pub version_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "CountName")]
+        pub count_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "ValuesName")]
+        pub values_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/linkedlist_1/LinkedList_1_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,74 +62,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/linkedlist_1/LinkedList_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "LinkedList`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct LinkedList_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "head")]
-        pub head: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
-        #[rename(name = "count")]
-        pub count: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-        #[static_field]
-        #[rename(name = "VersionName")]
-        pub version_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "CountName")]
-        pub count_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ValuesName")]
-        pub values_name: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "system-collections-generic-linkedlist_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-generic-linkedlist_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> LinkedList_1_Enumerator<T0> {
-    #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>,
-    ) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(
-        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-        args = 1
-    )]
-    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
-        self,
-        sender: crate::system::object::Object,
-    ) -> ();
-}
 
 #[cfg(feature = "system-collections-generic-linkedlist_1")]
 #[::unity2::methods]
@@ -288,4 +247,45 @@ impl<T0: ::unity2::ClassIdentity> LinkedList_1<T0> {
         <Self as ILinkedList_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "system-collections-generic-linkedlist_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> LinkedList_1_Enumerator<T0> {
+    #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>,
+    ) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
+    #[method(
+        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+        args = 1
+    )]
+    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        self,
+        sender: crate::system::object::Object,
+    ) -> ();
 }

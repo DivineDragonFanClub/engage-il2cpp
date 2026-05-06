@@ -13,6 +13,16 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct MapOverlap_Data {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap_List.md"))]
+    #[::unity2::class(namespace = "App", name = "MapOverlap.List")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapOverlap_List {
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapoverlap::MapOverlap_Data,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap.md"))]
     #[::unity2::class(namespace = "App", name = "MapOverlap")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapoverlap :: MapOverlap >)]
@@ -24,16 +34,6 @@ mod __types {
         pub m_image: crate::app::mapimagecorebyte::MapImageCoreByte,
         #[rename(name = "m_List")]
         pub m_list: crate::app::mapoverlap::MapOverlap_List,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap_List.md"))]
-    #[::unity2::class(namespace = "App", name = "MapOverlap.List")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapOverlap_List {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapoverlap::MapOverlap_Data,
-        >,
     }
 }
 
@@ -176,6 +176,66 @@ impl MapOverlap_Data {
             )
         });
         <Self as IMapOverlap_DataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapoverlap")]
+#[::unity2::methods]
+impl MapOverlap_List {
+    #[doc = "`IndexOf(i32, i32)` overload"]
+    #[method(name = "IndexOf", args = 2)]
+    pub fn index_of(self, x: i32, z: i32) -> i32;
+
+    #[doc = "`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, data: crate::app::mapoverlap::MapOverlap_Data) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`RemoveAt(i32)` overload"]
+    #[method(name = "RemoveAt", args = 1)]
+    pub fn remove_at(self, index: i32) -> ();
+
+    #[doc = "`CreateEffect()` overload"]
+    #[method(name = "CreateEffect", args = 0)]
+    pub fn create_effect(self) -> ();
+
+    #[doc = "`UpdateEffect()` overload"]
+    #[method(name = "UpdateEffect", args = 0)]
+    pub fn update_effect(self) -> ();
+
+    #[doc = "`DeleteEffect()` overload"]
+    #[method(name = "DeleteEffect", args = 0)]
+    pub fn delete_effect(self) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> crate::app::mapoverlap::MapOverlap_Data;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapoverlap")]
+impl MapOverlap_List {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapOverlap_List),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapOverlap_ListMethods>::ctor(this);
         this
     }
 }
@@ -359,66 +419,6 @@ impl MapOverlap {
             )
         });
         <Self as IMapOverlapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapoverlap")]
-#[::unity2::methods]
-impl MapOverlap_List {
-    #[doc = "`IndexOf(i32, i32)` overload"]
-    #[method(name = "IndexOf", args = 2)]
-    pub fn index_of(self, x: i32, z: i32) -> i32;
-
-    #[doc = "`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, data: crate::app::mapoverlap::MapOverlap_Data) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`RemoveAt(i32)` overload"]
-    #[method(name = "RemoveAt", args = 1)]
-    pub fn remove_at(self, index: i32) -> ();
-
-    #[doc = "`CreateEffect()` overload"]
-    #[method(name = "CreateEffect", args = 0)]
-    pub fn create_effect(self) -> ();
-
-    #[doc = "`UpdateEffect()` overload"]
-    #[method(name = "UpdateEffect", args = 0)]
-    pub fn update_effect(self) -> ();
-
-    #[doc = "`DeleteEffect()` overload"]
-    #[method(name = "DeleteEffect", args = 0)]
-    pub fn delete_effect(self) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> crate::app::mapoverlap::MapOverlap_Data;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapoverlap")]
-impl MapOverlap_List {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapOverlap_List),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapOverlap_ListMethods>::ctor(this);
         this
     }
 }

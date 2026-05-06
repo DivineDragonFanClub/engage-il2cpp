@@ -20,38 +20,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MapItemMenu_SubItemMenuItem {
-        #[rename(name = "m_UnitItemIndex")]
-        pub m_unit_item_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.ItemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MapItemMenu_ItemMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.MapTradeMenu")]
-    #[parent(crate::app::trademenu::TradeMenu)]
-    pub struct MapItemMenu_MapTradeMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.MapTradeMenuItem")]
-    #[parent(crate::app::trademenuitem::TradeMenuItem)]
-    pub struct MapItemMenu_MapTradeMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_AttackMenu.md"))]
     #[::unity2::class(namespace = "App", name = "MapItemMenu.AttackMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct MapItemMenu_AttackMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MapItemMenu_SubItemMenu {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MapItemMenu.SubItemPutOffMenuItem.ConfirmDialog"
+    )]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes.md"))]
     #[::unity2::class(
@@ -66,28 +46,80 @@ mod __types {
         pub m_unit_item_index: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.RodMenu")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.ItemMenuItem")]
+    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
+    pub struct MapItemMenu_ItemMenuItem {
+        #[rename(name = "m_BasicItemMenuContent")]
+        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+        #[rename(name = "m_UnitItemIndex")]
+        pub m_unit_item_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.MapTradeMenuItem")]
+    #[parent(crate::app::trademenuitem::TradeMenuItem)]
+    pub struct MapItemMenu_MapTradeMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemEquipMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemEquipMenuItem")]
+    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
+    pub struct MapItemMenu_SubItemEquipMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.RodMenuItem")]
+    #[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]
+    pub struct MapItemMenu_RodMenuItem {
+        #[rename(name = "m_BasicItemMenuContent")]
+        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.ItemMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MapItemMenu_RodMenu {}
+    pub struct MapItemMenu_ItemMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MapItemMenu_SubItemMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemUseMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemUseMenuItem")]
+    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
+    pub struct MapItemMenu_SubItemUseMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemSortMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemSortMenuItem")]
+    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
+    pub struct MapItemMenu_SubItemSortMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_AttackMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.AttackMenuItem")]
+    #[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]
+    pub struct MapItemMenu_AttackMenuItem {
+        #[rename(name = "m_Mind")]
+        pub m_mind: crate::app::mapmind::MapMind_Type,
+        #[rename(name = "m_ActionMask")]
+        pub m_action_mask: crate::app::maptarget::MapTarget_ActionMask,
+        #[rename(name = "m_Skill")]
+        pub m_skill: crate::app::skilldata::SkillData,
+        #[rename(name = "m_BasicItemMenuContent")]
+        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MapItemMenu_SubItemMenuItem {
+        #[rename(name = "m_UnitItemIndex")]
+        pub m_unit_item_index: i32,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemTradeMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemTradeMenuItem")]
     #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
     pub struct MapItemMenu_SubItemTradeMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapItemMenu.SubItemPutOffMenuItem.ConfirmDialog"
-    )]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemPutOffMenuItem")]
-    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
-    pub struct MapItemMenu_SubItemPutOffMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_EnchantItemMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MapItemMenu.EnchantItemMenuItem")]
@@ -97,10 +129,27 @@ mod __types {
         pub m_enchant_type: crate::app::mapitemmenu::MapItemMenu_EnchantType,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemEquipMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemEquipMenuItem")]
-    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
-    pub struct MapItemMenu_SubItemEquipMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.MapTradeMenu")]
+    #[parent(crate::app::trademenu::TradeMenu)]
+    pub struct MapItemMenu_MapTradeMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.RodMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MapItemMenu_RodMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapItemMenu {
+        #[static_field]
+        #[rename(name = "s_RodSelectIndex")]
+        pub s_rod_select_index: i32,
+        #[static_field]
+        #[rename(name = "s_EnchantSelectIndex")]
+        pub s_enchant_select_index: i32,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_TargetMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MapItemMenu.TargetMenuItem")]
@@ -110,15 +159,10 @@ mod __types {
         pub m_unit_item_index: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemSortMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemSortMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemTakeOffMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemTakeOffMenuItem")]
     #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
-    pub struct MapItemMenu_SubItemSortMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemUseMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemUseMenuItem")]
-    #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
-    pub struct MapItemMenu_SubItemUseMenuItem {}
+    pub struct MapItemMenu_SubItemTakeOffMenuItem {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemmenu/MapItemMenu_EnchantType.md"))]
     #[repr(C)]
@@ -168,54 +212,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemTakeOffMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemTakeOffMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemMenu.SubItemPutOffMenuItem")]
     #[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]
-    pub struct MapItemMenu_SubItemTakeOffMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.RodMenuItem")]
-    #[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]
-    pub struct MapItemMenu_RodMenuItem {
-        #[rename(name = "m_BasicItemMenuContent")]
-        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.ItemMenuItem")]
-    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
-    pub struct MapItemMenu_ItemMenuItem {
-        #[rename(name = "m_BasicItemMenuContent")]
-        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-        #[rename(name = "m_UnitItemIndex")]
-        pub m_unit_item_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapItemMenu {
-        #[static_field]
-        #[rename(name = "s_RodSelectIndex")]
-        pub s_rod_select_index: i32,
-        #[static_field]
-        #[rename(name = "s_EnchantSelectIndex")]
-        pub s_enchant_select_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_AttackMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemMenu.AttackMenuItem")]
-    #[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]
-    pub struct MapItemMenu_AttackMenuItem {
-        #[rename(name = "m_Mind")]
-        pub m_mind: crate::app::mapmind::MapMind_Type,
-        #[rename(name = "m_ActionMask")]
-        pub m_action_mask: crate::app::maptarget::MapTarget_ActionMask,
-        #[rename(name = "m_Skill")]
-        pub m_skill: crate::app::skilldata::SkillData,
-        #[rename(name = "m_BasicItemMenuContent")]
-        pub m_basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    }
+    pub struct MapItemMenu_SubItemPutOffMenuItem {}
 }
 
 #[cfg(feature = "app-mapitemmenu-types")]
@@ -223,36 +223,340 @@ pub use __types::*;
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_SubItemMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
+impl MapItemMenu_AttackMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> ();
 
-    #[doc = "`GetParentMenu()` overload"]
-    #[method(name = "GetParentMenu", args = 0)]
-    pub fn get_parent_menu(self) -> crate::app::basicmenu::BasicMenu;
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mind: crate::app::mapmind::MapMind_Type,
+        mask: crate::app::maptarget::MapTarget_ActionMask,
+        skill: crate::app::skilldata::SkillData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_AttackMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_AttackMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_AttackMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            basic_item_menu_content,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        text: ::unity2::Il2CppString,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` — overload selector"]
+    pub fn new(
+        text: ::unity2::Il2CppString,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            text,
+            unit,
+            unit_item_index,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_ItemMenuItem {
+    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit_item_index: i32,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
     #[doc = "`GetUnit()` overload"]
     #[method(name = "GetUnit", args = 0)]
     pub fn get_unit(self) -> crate::app::unit::Unit;
 
+    #[doc = "`GetUnitItemIndex()` overload"]
+    #[method(name = "GetUnitItemIndex", args = 0)]
+    pub fn get_unit_item_index(self) -> i32;
+
     #[doc = "`GetUnitItem()` overload"]
     #[method(name = "GetUnitItem", args = 0)]
     pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[doc = "`IsEffective()` overload"]
+    #[method(name = "IsEffective", args = 0)]
+    pub fn is_effective(self) -> bool;
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenuItem {
+impl MapItemMenu_ItemMenuItem {
+    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
+    pub fn new(
+        unit_item_index: i32,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_ItemMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_ItemMenuItemMethods>::ctor(
+            this,
+            unit_item_index,
+            basic_item_menu_content,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_MapTradeMenuItem {
+    #[doc = "`GetLeftUnit()` overload"]
+    #[method(name = "GetLeftUnit", args = 0)]
+    pub fn get_left_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`GetRightUnit()` overload"]
+    #[method(name = "GetRightUnit", args = 0)]
+    pub fn get_right_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`SetDone()` overload"]
+    #[method(name = "SetDone", args = 0)]
+    pub fn set_done(self) -> ();
+
+    #[doc = "`IsDone()` overload"]
+    #[method(name = "IsDone", args = 0)]
+    pub fn is_done(self) -> bool;
+
+    #[doc = "`OnEnd()` overload"]
+    #[method(name = "OnEnd", args = 0)]
+    pub fn on_end(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_MapTradeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_MapTradeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_MapTradeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemEquipMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_SubItemEquipMenuItem {
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new(unit_item_index: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemMenuItem),
+                ::core::stringify!(MapItemMenu_SubItemEquipMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_SubItemMenuItemMethods>::ctor(this, unit_item_index);
+        <Self as IMapItemMenu_SubItemEquipMenuItemMethods>::ctor(this, unit_item_index);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_RodMenuItem {
+    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit_item_index: i32,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_RodMenuItem {
+    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
+    pub fn new(
+        unit_item_index: i32,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_RodMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_RodMenuItemMethods>::ctor(
+            this,
+            unit_item_index,
+            basic_item_menu_content,
+        );
         this
     }
 }
@@ -317,147 +621,6 @@ impl MapItemMenu_ItemMenu {
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_MapTradeMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_MapTradeMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_MapTradeMenuMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_MapTradeMenuItem {
-    #[doc = "`GetLeftUnit()` overload"]
-    #[method(name = "GetLeftUnit", args = 0)]
-    pub fn get_left_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`GetRightUnit()` overload"]
-    #[method(name = "GetRightUnit", args = 0)]
-    pub fn get_right_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`SetDone()` overload"]
-    #[method(name = "SetDone", args = 0)]
-    pub fn set_done(self) -> ();
-
-    #[doc = "`IsDone()` overload"]
-    #[method(name = "IsDone", args = 0)]
-    pub fn is_done(self) -> bool;
-
-    #[doc = "`OnEnd()` overload"]
-    #[method(name = "OnEnd", args = 0)]
-    pub fn on_end(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_MapTradeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_MapTradeMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_AttackMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        mind: crate::app::mapmind::MapMind_Type,
-        mask: crate::app::maptarget::MapTarget_ActionMask,
-        skill: crate::app::skilldata::SkillData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_AttackMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_AttackMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            basic_item_menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
 impl MapItemMenu_SubItemMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -505,15 +668,18 @@ impl MapItemMenu_SubItemMenu {
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        text: ::unity2::Il2CppString,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-    ) -> ();
+impl MapItemMenu_SubItemUseMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
@@ -521,25 +687,108 @@ impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` — overload selector"]
-    pub fn new(
-        text: ::unity2::Il2CppString,
-        unit: crate::app::unit::Unit,
+impl MapItemMenu_SubItemUseMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_SubItemUseMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_SubItemUseMenuItemMethods>::ctor(this, unit_item_index);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemSortMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_SubItemSortMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_SubItemSortMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_SubItemSortMenuItemMethods>::ctor(this, unit_item_index);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_AttackMenuItem {
+    #[doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
         unit_item_index: i32,
+        mind: crate::app::mapmind::MapMind_Type,
+        action_mask: crate::app::maptarget::MapTarget_ActionMask,
+        skill: crate::app::skilldata::SkillData,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
+    ) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_AttackMenuItem {
+    #[doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
+    pub fn new(
+        unit_item_index: i32,
+        mind: crate::app::mapmind::MapMind_Type,
+        action_mask: crate::app::maptarget::MapTarget_ActionMask,
+        skill: crate::app::skilldata::SkillData,
+        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes),
+                ::core::stringify!(MapItemMenu_AttackMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods>::ctor(
+        <Self as IMapItemMenu_AttackMenuItemMethods>::ctor(
             this,
-            text,
-            unit,
             unit_item_index,
+            mind,
+            action_mask,
+            skill,
+            basic_item_menu_content,
         );
         this
     }
@@ -547,47 +796,36 @@ impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_RodMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> ();
+impl MapItemMenu_SubItemMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
 
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
+    #[doc = "`GetParentMenu()` overload"]
+    #[method(name = "GetParentMenu", args = 0)]
+    pub fn get_parent_menu(self) -> crate::app::basicmenu::BasicMenu;
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`GetUnitItem()` overload"]
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> Self {
+impl MapItemMenu_SubItemMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_RodMenu),
+                ::core::stringify!(MapItemMenu_SubItemMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_RodMenuMethods>::ctor(this, menu_item_list, basic_item_menu_content);
+        <Self as IMapItemMenu_SubItemMenuItemMethods>::ctor(this, unit_item_index);
         this
     }
 }
@@ -624,86 +862,6 @@ impl MapItemMenu_SubItemTradeMenuItem {
             )
         });
         <Self as IMapItemMenu_SubItemTradeMenuItemMethods>::ctor(this, unit_item_index);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_SubItemPutOffMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_SubItemPutOffMenuItemMethods>::ctor(this, unit_item_index);
         this
     }
 }
@@ -776,310 +934,88 @@ impl MapItemMenu_EnchantItemMenuItem {
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_SubItemEquipMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
+impl MapItemMenu_MapTradeMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
 
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
 
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemEquipMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
+impl MapItemMenu_MapTradeMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemEquipMenuItem),
+                ::core::stringify!(MapItemMenu_MapTradeMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_SubItemEquipMenuItemMethods>::ctor(this, unit_item_index);
+        <Self as IMapItemMenu_MapTradeMenuMethods>::ctor(this, menu_item_list);
         this
     }
 }
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_TargetMenuItem {
-    #[doc = "`get_ActiveMind()` overload"]
-    #[method(name = "get_ActiveMind", args = 0)]
-    pub fn get_active_mind(self) -> crate::app::mapmind::MapMind_Type;
-
-    #[doc = "`get_DeployMode()` overload"]
-    #[method(name = "get_DeployMode", args = 0)]
-    pub fn get_deploy_mode(self) -> crate::app::mappaneldeploy::MapPanelDeploy_Mode;
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetUnitItem()` overload"]
-    #[method(name = "GetUnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_TargetMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_TargetMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_TargetMenuItemMethods>::ctor(this, unit_item_index);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_SubItemSortMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemSortMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemSortMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_SubItemSortMenuItemMethods>::ctor(this, unit_item_index);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_SubItemUseMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemUseMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemUseMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_SubItemUseMenuItemMethods>::ctor(this, unit_item_index);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_SubItemTakeOffMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit_item_index: i32) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemTakeOffMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(unit_item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_SubItemTakeOffMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_SubItemTakeOffMenuItemMethods>::ctor(this, unit_item_index);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_RodMenuItem {
-    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
+impl MapItemMenu_RodMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(
         self,
-        unit_item_index: i32,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
         basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
     ) -> ();
 
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenuItem {
-    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
+impl MapItemMenu_RodMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
     pub fn new(
-        unit_item_index: i32,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
         basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_RodMenuItem),
+                ::core::stringify!(MapItemMenu_RodMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_RodMenuItemMethods>::ctor(
-            this,
-            unit_item_index,
-            basic_item_menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-#[::unity2::methods]
-impl MapItemMenu_ItemMenuItem {
-    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        unit_item_index: i32,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`GetUnitItemIndex()` overload"]
-    #[method(name = "GetUnitItemIndex", args = 0)]
-    pub fn get_unit_item_index(self) -> i32;
-
-    #[doc = "`GetUnitItem()` overload"]
-    #[method(name = "GetUnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`IsEffective()` overload"]
-    #[method(name = "IsEffective", args = 0)]
-    pub fn is_effective(self) -> bool;
-}
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenuItem {
-    #[doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
-    pub fn new(
-        unit_item_index: i32,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_ItemMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapItemMenu_ItemMenuItemMethods>::ctor(
-            this,
-            unit_item_index,
-            basic_item_menu_content,
-        );
+        <Self as IMapItemMenu_RodMenuMethods>::ctor(this, menu_item_list, basic_item_menu_content);
         this
     }
 }
@@ -1208,56 +1144,120 @@ impl MapItemMenu {
 
 #[cfg(feature = "app-mapitemmenu")]
 #[::unity2::methods]
-impl MapItemMenu_AttackMenuItem {
-    #[doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        unit_item_index: i32,
-        mind: crate::app::mapmind::MapMind_Type,
-        action_mask: crate::app::maptarget::MapTarget_ActionMask,
-        skill: crate::app::skilldata::SkillData,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> ();
+impl MapItemMenu_TargetMenuItem {
+    #[doc = "`get_ActiveMind()` overload"]
+    #[method(name = "get_ActiveMind", args = 0)]
+    pub fn get_active_mind(self) -> crate::app::mapmind::MapMind_Type;
+
+    #[doc = "`get_DeployMode()` overload"]
+    #[method(name = "get_DeployMode", args = 0)]
+    pub fn get_deploy_mode(self) -> crate::app::mappaneldeploy::MapPanelDeploy_Mode;
+
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetUnitItem()` overload"]
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
 
     #[doc = "`OnSelect()` overload"]
     #[method(name = "OnSelect", args = 0)]
     pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_TargetMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_TargetMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_TargetMenuItemMethods>::ctor(this, unit_item_index);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemTakeOffMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 }
 
 #[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenuItem {
-    #[doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]
-    pub fn new(
-        unit_item_index: i32,
-        mind: crate::app::mapmind::MapMind_Type,
-        action_mask: crate::app::maptarget::MapTarget_ActionMask,
-        skill: crate::app::skilldata::SkillData,
-        basic_item_menu_content: crate::app::basicitemmenucontent::BasicItemMenuContent,
-    ) -> Self {
+impl MapItemMenu_SubItemTakeOffMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemMenu_AttackMenuItem),
+                ::core::stringify!(MapItemMenu_SubItemTakeOffMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapItemMenu_AttackMenuItemMethods>::ctor(
-            this,
-            unit_item_index,
-            mind,
-            action_mask,
-            skill,
-            basic_item_menu_content,
-        );
+        <Self as IMapItemMenu_SubItemTakeOffMenuItemMethods>::ctor(this, unit_item_index);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+#[::unity2::methods]
+impl MapItemMenu_SubItemPutOffMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit_item_index: i32) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapitemmenu")]
+impl MapItemMenu_SubItemPutOffMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(unit_item_index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapItemMenu_SubItemPutOffMenuItemMethods>::ctor(this, unit_item_index);
         this
     }
 }

@@ -15,59 +15,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject.Coroutine")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ResourceObject_Coroutine {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ResourceObject_Sequence {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ResourceObject.Sequence";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ResourceObject_Sequence {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ResourceObject_Sequence {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
     #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -104,6 +51,11 @@ mod __types {
         #[rename(name = "m_SoundLabel")]
         pub m_sound_label: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject.Coroutine")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ResourceObject_Coroutine {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Flags.md"))]
     #[repr(C)]
@@ -160,41 +112,58 @@ mod __types {
             Self { value: 16 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ResourceObject_Sequence {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ResourceObject.Sequence";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ResourceObject_Sequence {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ResourceObject_Sequence {
+        pub fn start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-resourceobject-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-resourceobject")]
-#[::unity2::methods]
-impl ResourceObject_Coroutine {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        go: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "app-resourceobject")]
-impl ResourceObject_Coroutine {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceObject_Coroutine),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceObject_CoroutineMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-resourceobject")]
 #[::unity2::methods]
@@ -467,6 +436,37 @@ impl ResourceObject {
             )
         });
         <Self as IResourceObjectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+#[::unity2::methods]
+impl ResourceObject_Coroutine {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        go: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "app-resourceobject")]
+impl ResourceObject_Coroutine {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceObject_Coroutine),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceObject_CoroutineMethods>::ctor(this, object, method);
         this
     }
 }

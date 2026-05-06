@@ -9,16 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/dict_1/Dict_1_LessOrEqual.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "Dict`1.LessOrEqual"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct Dict_1_LessOrEqual<T0: ::unity2::ClassIdentity> {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/dict_1/Dict_1_Node.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
@@ -41,38 +31,20 @@ mod __types {
 # [rename (name = "_leq")] pub leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_LessOrEqual < T0 > ,
 # [rename (name = "_head")] pub head : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_Node < T0 > ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/dict_1/Dict_1_LessOrEqual.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+        name = "Dict`1.LessOrEqual"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct Dict_1_LessOrEqual<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> Dict_1_LessOrEqual<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0, T0)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, lhs: T0, rhs: T0) -> bool;
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
-impl<T0: ::unity2::ClassIdentity> Dict_1_LessOrEqual<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dict_1_LessOrEqual),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDict_1_LessOrEqualMethods<T0>>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
 #[::unity2::methods]
@@ -158,6 +130,34 @@ impl<T0: ::unity2::ClassIdentity> Dict_1<T0> {
             )
         });
         <Self as IDict_1Methods<T0>>::ctor(this, leq);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> Dict_1_LessOrEqual<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0, T0)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, lhs: T0, rhs: T0) -> bool;
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
+impl<T0: ::unity2::ClassIdentity> Dict_1_LessOrEqual<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dict_1_LessOrEqual),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDict_1_LessOrEqualMethods<T0>>::ctor(this, object, method);
         this
     }
 }

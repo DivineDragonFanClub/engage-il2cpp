@@ -28,14 +28,6 @@ mod __types {
             crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_SelectedFunction.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "VersusMapEditThemeSelectMenu.SelectedFunction"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VersusMapEditThemeSelectMenu_SelectedFunction {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -50,6 +42,14 @@ mod __types {
             crate::app::basicmenuselect::BasicMenuSelect,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_SelectedFunction.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "VersusMapEditThemeSelectMenu.SelectedFunction"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VersusMapEditThemeSelectMenu_SelectedFunction {}
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectmenu-types")]
@@ -136,37 +136,6 @@ impl VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem {
 
 #[cfg(feature = "app-versusmapeditthemeselectmenu")]
 #[::unity2::methods]
-impl VersusMapEditThemeSelectMenu_SelectedFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        selected_theme: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-impl VersusMapEditThemeSelectMenu_SelectedFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusMapEditThemeSelectMenu_SelectedFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusMapEditThemeSelectMenu_SelectedFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-#[::unity2::methods]
 impl VersusMapEditThemeSelectMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)` overload"]
     #[method(name = "CreateBind", args = 3)]
@@ -230,6 +199,37 @@ impl VersusMapEditThemeSelectMenu {
             content,
             init_category,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+#[::unity2::methods]
+impl VersusMapEditThemeSelectMenu_SelectedFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        selected_theme: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+impl VersusMapEditThemeSelectMenu_SelectedFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusMapEditThemeSelectMenu_SelectedFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusMapEditThemeSelectMenu_SelectedFunctionMethods>::ctor(this, object, method);
         this
     }
 }

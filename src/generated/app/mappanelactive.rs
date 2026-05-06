@@ -7,11 +7,19 @@ mod __types {
     use crate::app::bitfield64::{BitField64, IBitField64};
     use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
     use crate::app::bitfieldtemplate64_1::{BitFieldTemplate64_1, IBitFieldTemplate64_1};
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::delegate::{Delegate, IDelegate};
     use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]
@@ -90,13 +98,9 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapPanelActive_TargetFunc {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))]
     #[::unity2::class(namespace = "App", name = "MapPanelActive")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelactive :: MapPanelActive >)]
     pub struct MapPanelActive {
         #[rename(name = "m_ImageList")]
         pub m_image_list: ::unity2::Array<
@@ -190,38 +194,15 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
     # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
     pub struct MapPanelActive_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapPanelActive_TargetFunc {}
 }
 
 #[cfg(feature = "app-mappanelactive-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mappanelactive")]
-#[::unity2::methods]
-impl MapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, x: i32, z: i32) -> bool;
-}
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelActive_TargetFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-mappanelactive")]
 #[::unity2::methods]
@@ -308,6 +289,21 @@ impl MapPanelActive {
         min_range: i32,
         max_range: i32,
         func: crate::app::mappanelactive::MapPanelActive_TargetFunc,
+    ) -> ();
+
+    #[doc = "`AddCell(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>, i32, i32, crate::unity_engine::color::Color, crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive>)` overload"]
+    #[method(name = "AddCell", args = 5)]
+    pub fn add_cell(
+        self,
+        ranges: crate::system::collections::generic::list_1::List_1<
+            crate::app::rangedata::RangeData_Offset,
+        >,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        r#type: crate::root::mappanelbase_1::MapPanelBase_1_PanelType<
+            crate::app::mappanelactive::MapPanelActive,
+        >,
     ) -> ();
 
     #[doc = "`SetVertex()` overload"]
@@ -461,6 +457,34 @@ impl MapPanelActive_FlagField {
             )
         });
         <Self as IMapPanelActive_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+#[::unity2::methods]
+impl MapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> bool;
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_TargetFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
         this
     }
 }

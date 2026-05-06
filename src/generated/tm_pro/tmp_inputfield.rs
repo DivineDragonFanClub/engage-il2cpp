@@ -20,7 +20,7 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_ContentType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -29,14 +29,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TMP_InputField_ContentType {
+    pub struct TMP_InputField_LineType {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TMP_InputField_ContentType {
+    impl ::unity2::ClassIdentity for TMP_InputField_LineType {
         const NAMESPACE: &'static str = "TMPro";
 
-        const NAME: &'static str = "TMP_InputField.ContentType";
+        const NAME: &'static str = "TMP_InputField.LineType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -45,7 +45,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TMP_InputField_ContentType {
+    impl ::unity2::IlType for TMP_InputField_LineType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -54,107 +54,16 @@ mod __types {
         }
     }
 
-    impl TMP_InputField_ContentType {
-        pub fn standard() -> Self {
+    impl TMP_InputField_LineType {
+        pub fn single_line() -> Self {
             Self { value: 0 }
         }
 
-        pub fn autocorrected() -> Self {
+        pub fn multi_line_submit() -> Self {
             Self { value: 1 }
         }
 
-        pub fn integer_number() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn decimal_number() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn alphanumeric() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn name() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn email_address() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn password() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn pin() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn custom() -> Self {
-            Self { value: 9 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TouchScreenKeyboardEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status >)]
-    pub struct TMP_InputField_TouchScreenKeyboardEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_SelectionEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
-    pub struct TMP_InputField_TextSelectionEvent {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_InputField_InputType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_InputField_InputType {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_InputField.InputType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_InputType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_InputField_InputType {
-        pub fn standard() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn auto_correct() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn password() -> Self {
+        pub fn multi_line_newline() -> Self {
             Self { value: 2 }
         }
     }
@@ -228,6 +137,194 @@ mod __types {
 
         pub fn custom_validator() -> Self {
             Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_OnChangeEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
+    pub struct TMP_InputField_TextSelectionEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SubmitEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SubmitEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_SubmitEvent {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TMP_InputField_InputType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_InputType {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_InputField.InputType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_InputType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TMP_InputField_InputType {
+        pub fn standard() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn auto_correct() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn password() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_SelectionEvent {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TMP_InputField_EditState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_EditState {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_InputField.EditState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_EditState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TMP_InputField_EditState {
+        pub fn r#continue() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn finish() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_ContentType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TMP_InputField_ContentType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_ContentType {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_InputField.ContentType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_ContentType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TMP_InputField_ContentType {
+        pub fn standard() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn autocorrected() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn integer_number() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn decimal_number() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn alphanumeric() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn name() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn email_address() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn password() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn pin() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn custom() -> Self {
+            Self { value: 9 }
         }
     }
 
@@ -437,112 +534,15 @@ mod __types {
         pub m_processing_event: crate::unity_engine::event::Event,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_InputField_LineType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_InputField_LineType {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_InputField.LineType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_LineType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_InputField_LineType {
-        pub fn single_line() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn multi_line_submit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn multi_line_newline() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_InputField_EditState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_InputField_EditState {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_InputField.EditState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_EditState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_InputField_EditState {
-        pub fn r#continue() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SubmitEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SubmitEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_SubmitEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_OnChangeEvent {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnValidateInput")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct TMP_InputField_OnValidateInput {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TouchScreenKeyboardEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status >)]
+    pub struct TMP_InputField_TouchScreenKeyboardEvent {}
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield-types")]
@@ -550,48 +550,24 @@ pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[::unity2::methods]
-impl TMP_InputField_TouchScreenKeyboardEvent {
+impl TMP_InputField_OnChangeEvent {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_TouchScreenKeyboardEvent {
+impl TMP_InputField_OnChangeEvent {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent),
+                ::core::stringify!(TMP_InputField_OnChangeEvent),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITMP_InputField_TouchScreenKeyboardEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[::unity2::methods]
-impl TMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_SelectionEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
+        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
         this
     }
 }
@@ -616,6 +592,54 @@ impl TMP_InputField_TextSelectionEvent {
             )
         });
         <Self as ITMP_InputField_TextSelectionEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[::unity2::methods]
+impl TMP_InputField_SubmitEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_SubmitEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_SubmitEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_SubmitEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[::unity2::methods]
+impl TMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_SelectionEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
         this
     }
 }
@@ -1669,54 +1693,6 @@ impl TMP_InputField {
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[::unity2::methods]
-impl TMP_InputField_SubmitEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_SubmitEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_SubmitEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_SubmitEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[::unity2::methods]
-impl TMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_OnChangeEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[::unity2::methods]
 impl TMP_InputField_OnValidateInput {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -1739,6 +1715,30 @@ impl TMP_InputField_OnValidateInput {
             )
         });
         <Self as ITMP_InputField_OnValidateInputMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[::unity2::methods]
+impl TMP_InputField_TouchScreenKeyboardEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_TouchScreenKeyboardEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_TouchScreenKeyboardEventMethods>::ctor(this);
         this
     }
 }

@@ -11,42 +11,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TrackAsset_TransientBuildData {
-        pub track_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
-        pub clip_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-        >,
-        pub marker_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-        >,
-    }
-
-    impl ::unity2::ClassIdentity for TrackAsset_TransientBuildData {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TrackAsset.TransientBuildData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TrackAsset_TransientBuildData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackasset/TrackAsset.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackAsset")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -124,22 +88,46 @@ mod __types {
         #[rename(name = "m_Markers")]
         pub m_markers: crate::unity_engine::timeline::markerlist::MarkerList,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TrackAsset_TransientBuildData {
+        pub track_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+        >,
+        pub clip_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+        >,
+        pub marker_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
+        >,
+    }
+
+    impl ::unity2::ClassIdentity for TrackAsset_TransientBuildData {
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        const NAME: &'static str = "TrackAsset.TransientBuildData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TrackAsset_TransientBuildData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-trackasset-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-#[::unity2::methods(value)]
-impl TrackAsset_TransientBuildData {
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
 
 #[cfg(feature = "unity_engine-timeline-trackasset")]
 #[::unity2::methods]
@@ -738,4 +726,16 @@ impl TrackAsset {
         <Self as ITrackAssetMethods>::ctor(this);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+#[::unity2::methods(value)]
+impl TrackAsset_TransientBuildData {
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
 }

@@ -10,66 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_ActionMask.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapTarget_ActionMask {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapTarget_ActionMask {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapTarget.ActionMask";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapTarget_ActionMask {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapTarget_ActionMask {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack_only() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn magic_only() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn rod_only() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn cursor_only() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn direct_only() -> Self {
-            Self { value: 5 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget.md"))]
     #[::unity2::class(namespace = "App", name = "MapTarget")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maptarget :: MapTarget >)]
@@ -204,6 +144,66 @@ mod __types {
         pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
             crate::app::maptarget::MapTarget_Data,
         >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_ActionMask.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapTarget_ActionMask {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapTarget_ActionMask {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapTarget.ActionMask";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapTarget_ActionMask {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapTarget_ActionMask {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack_only() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn magic_only() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn rod_only() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn cursor_only() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn direct_only() -> Self {
+            Self { value: 5 }
+        }
     }
 }
 

@@ -9,21 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking_Probability {
-        #[static_field]
-        #[rename(name = "BaseProbability")]
-        pub base_probability: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "ProbabilityCorrections")]
-        pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
-        #[static_field]
-        #[rename(name = "ProbabilityFromFoodstuff")]
-        pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
     #[repr(C)]
     #[derive(
@@ -74,6 +59,26 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
+    #[::unity2::class(namespace = "App", name = "Cooking")]
+    #[parent(crate::system::object::Object)]
+    pub struct Cooking {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
+    #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
+    #[parent(crate::system::object::Object)]
+    pub struct Cooking_Probability {
+        #[static_field]
+        #[rename(name = "BaseProbability")]
+        pub base_probability: ::unity2::Array<f32>,
+        #[static_field]
+        #[rename(name = "ProbabilityCorrections")]
+        pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
+        #[static_field]
+        #[rename(name = "ProbabilityFromFoodstuff")]
+        pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
@@ -183,50 +188,10 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking {}
 }
 
 #[cfg(feature = "app-cooking-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-cooking")]
-#[::unity2::methods]
-impl Cooking_Probability {
-    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    #[method(name = "GetProbabilities", args = 2)]
-    pub fn get_probabilities(
-        difficulty: crate::app::cookdata::CookData_Difficulty,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-    ) -> crate::system::collections::generic::list_1::List_1<f32>;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-cooking")]
-impl Cooking_Probability {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Cooking_Probability),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICooking_ProbabilityMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-cooking")]
 #[::unity2::methods]
@@ -298,6 +263,41 @@ impl Cooking {
             )
         });
         <Self as ICookingMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking")]
+#[::unity2::methods]
+impl Cooking_Probability {
+    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    #[method(name = "GetProbabilities", args = 2)]
+    pub fn get_probabilities(
+        difficulty: crate::app::cookdata::CookData_Difficulty,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> crate::system::collections::generic::list_1::List_1<f32>;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking_Probability {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Cooking_Probability),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICooking_ProbabilityMethods>::ctor(this);
         this
     }
 }

@@ -9,6 +9,156 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HistoryBoolField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HistoryBoolField")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_BoolField)]
+    pub struct DebugUI_HistoryBoolField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HistoryEnumField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HistoryEnumField")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_EnumField)]
+    pub struct DebugUI_HistoryEnumField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_BitField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.BitField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: system :: r#enum :: Enum >)]
+    pub struct DebugUI_BitField {
+        #[rename(name = "m_EnumType")]
+        pub m_enum_type: ::unity2::SystemType,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugUI {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_EnumField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.EnumField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < i32 >)]
+    pub struct DebugUI_EnumField {
+        #[rename(name = "enumNames")]
+        pub enum_names: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
+        #[rename(name = "enumValues")]
+        pub enum_values: ::unity2::Array<i32>,
+        #[rename(name = "quickSeparators")]
+        pub quick_separators: ::unity2::Array<i32>,
+        #[rename(name = "indexes")]
+        pub indexes: ::unity2::Array<i32>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Widget.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Widget")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugUI_Widget {
+        #[rename(name = "m_Panel")]
+        pub m_panel: crate::unity_engine::rendering::debugui::DebugUI_Panel,
+        #[rename(name = "m_Parent")]
+        pub m_parent: crate::unity_engine::rendering::debugui::DebugUI_IContainer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Value.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Value")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
+    pub struct DebugUI_Value {
+        #[rename(name = "refreshRate")]
+        pub refresh_rate: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Panel.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Panel")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugUI_Panel {
+        #[rename(name = "onSetDirty")]
+        pub on_set_dirty: crate::system::action_1::Action_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Panel,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Foldout.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Foldout")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
+    pub struct DebugUI_Foldout {
+        #[rename(name = "opened")]
+        pub opened: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HBox.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HBox")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
+    pub struct DebugUI_HBox {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IntField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IntField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < i32 >)]
+    pub struct DebugUI_IntField {
+        #[rename(name = "min")]
+        pub min: crate::system::func_1::Func_1<i32>,
+        #[rename(name = "max")]
+        pub max: crate::system::func_1::Func_1<i32>,
+        #[rename(name = "incStep")]
+        pub inc_step: i32,
+        #[rename(name = "intStepMult")]
+        pub int_step_mult: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Table.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Table")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
+    pub struct DebugUI_Table {
+        #[rename(name = "isReadOnly")]
+        pub is_read_only: bool,
+        #[rename(name = "m_Header")]
+        pub m_header: ::unity2::Array<bool>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IValueField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IValueField")]
+    pub struct DebugUI_IValueField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_ColorField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.ColorField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: color :: Color >)]
+    pub struct DebugUI_ColorField {
+        #[rename(name = "hdr")]
+        pub hdr: bool,
+        #[rename(name = "showAlpha")]
+        pub show_alpha: bool,
+        #[rename(name = "showPicker")]
+        pub show_picker: bool,
+        #[rename(name = "incStep")]
+        pub inc_step: f32,
+        #[rename(name = "incStepMult")]
+        pub inc_step_mult: f32,
+        #[rename(name = "decimals")]
+        pub decimals: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IContainer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IContainer")]
+    pub struct DebugUI_IContainer {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Container.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Container")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
+    pub struct DebugUI_Container {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Vector2Field.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Vector2Field")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
+    pub struct DebugUI_Vector2Field {
+        #[rename(name = "incStep")]
+        pub inc_step: f32,
+        #[rename(name = "incStepMult")]
+        pub inc_step_mult: f32,
+        #[rename(name = "decimals")]
+        pub decimals: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_VBox.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.VBox")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
+    pub struct DebugUI_VBox {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_FloatField.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.FloatField")]
     # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < f32 >)]
@@ -37,62 +187,10 @@ mod __types {
         >,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IValueField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IValueField")]
-    pub struct DebugUI_IValueField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_UIntField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.UIntField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < u32 >)]
-    pub struct DebugUI_UIntField {
-        #[rename(name = "min")]
-        pub min: crate::system::func_1::Func_1<u32>,
-        #[rename(name = "max")]
-        pub max: crate::system::func_1::Func_1<u32>,
-        #[rename(name = "incStep")]
-        pub inc_step: u32,
-        #[rename(name = "intStepMult")]
-        pub int_step_mult: u32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_EnumField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.EnumField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < i32 >)]
-    pub struct DebugUI_EnumField {
-        #[rename(name = "enumNames")]
-        pub enum_names: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
-        #[rename(name = "enumValues")]
-        pub enum_values: ::unity2::Array<i32>,
-        #[rename(name = "quickSeparators")]
-        pub quick_separators: ::unity2::Array<i32>,
-        #[rename(name = "indexes")]
-        pub indexes: ::unity2::Array<i32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Vector4Field.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Vector4Field")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: vector4 :: Vector4 >)]
-    pub struct DebugUI_Vector4Field {
-        #[rename(name = "incStep")]
-        pub inc_step: f32,
-        #[rename(name = "incStepMult")]
-        pub inc_step_mult: f32,
-        #[rename(name = "decimals")]
-        pub decimals: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugUI {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_BitField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.BitField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: system :: r#enum :: Enum >)]
-    pub struct DebugUI_BitField {
-        #[rename(name = "m_EnumType")]
-        pub m_enum_type: ::unity2::SystemType,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Button.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Button")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
+    pub struct DebugUI_Button {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugui/DebugUI_Flags.md"))]
     #[repr(C)]
@@ -146,10 +244,41 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_VBox.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.VBox")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
-    pub struct DebugUI_VBox {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Table_Row.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Table.Row")]
+    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Foldout)]
+    pub struct DebugUI_Table_Row {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_UIntField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.UIntField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < u32 >)]
+    pub struct DebugUI_UIntField {
+        #[rename(name = "min")]
+        pub min: crate::system::func_1::Func_1<u32>,
+        #[rename(name = "max")]
+        pub max: crate::system::func_1::Func_1<u32>,
+        #[rename(name = "incStep")]
+        pub inc_step: u32,
+        #[rename(name = "intStepMult")]
+        pub int_step_mult: u32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_BoolField.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.BoolField")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < bool >)]
+    pub struct DebugUI_BoolField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Vector4Field.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Vector4Field")]
+    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: vector4 :: Vector4 >)]
+    pub struct DebugUI_Vector4Field {
+        #[rename(name = "incStep")]
+        pub inc_step: f32,
+        #[rename(name = "incStepMult")]
+        pub inc_step_mult: f32,
+        #[rename(name = "decimals")]
+        pub decimals: i32,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Vector3Field.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Vector3Field")]
@@ -162,135 +291,6 @@ mod __types {
         #[rename(name = "decimals")]
         pub decimals: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Vector2Field.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Vector2Field")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
-    pub struct DebugUI_Vector2Field {
-        #[rename(name = "incStep")]
-        pub inc_step: f32,
-        #[rename(name = "incStepMult")]
-        pub inc_step_mult: f32,
-        #[rename(name = "decimals")]
-        pub decimals: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HBox.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HBox")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
-    pub struct DebugUI_HBox {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Button.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Button")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
-    pub struct DebugUI_Button {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_ColorField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.ColorField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < crate :: unity_engine :: color :: Color >)]
-    pub struct DebugUI_ColorField {
-        #[rename(name = "hdr")]
-        pub hdr: bool,
-        #[rename(name = "showAlpha")]
-        pub show_alpha: bool,
-        #[rename(name = "showPicker")]
-        pub show_picker: bool,
-        #[rename(name = "incStep")]
-        pub inc_step: f32,
-        #[rename(name = "incStepMult")]
-        pub inc_step_mult: f32,
-        #[rename(name = "decimals")]
-        pub decimals: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IntField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IntField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < i32 >)]
-    pub struct DebugUI_IntField {
-        #[rename(name = "min")]
-        pub min: crate::system::func_1::Func_1<i32>,
-        #[rename(name = "max")]
-        pub max: crate::system::func_1::Func_1<i32>,
-        #[rename(name = "incStep")]
-        pub inc_step: i32,
-        #[rename(name = "intStepMult")]
-        pub int_step_mult: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_BoolField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.BoolField")]
-    # [parent (crate :: unity_engine :: rendering :: debugui :: DebugUI_Field_1 < bool >)]
-    pub struct DebugUI_BoolField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Table.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Table")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
-    pub struct DebugUI_Table {
-        #[rename(name = "isReadOnly")]
-        pub is_read_only: bool,
-        #[rename(name = "m_Header")]
-        pub m_header: ::unity2::Array<bool>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Container.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Container")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
-    pub struct DebugUI_Container {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Value.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Value")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Widget)]
-    pub struct DebugUI_Value {
-        #[rename(name = "refreshRate")]
-        pub refresh_rate: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Widget.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Widget")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugUI_Widget {
-        #[rename(name = "m_Panel")]
-        pub m_panel: crate::unity_engine::rendering::debugui::DebugUI_Panel,
-        #[rename(name = "m_Parent")]
-        pub m_parent: crate::unity_engine::rendering::debugui::DebugUI_IContainer,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HistoryBoolField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HistoryBoolField")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_BoolField)]
-    pub struct DebugUI_HistoryBoolField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Foldout.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Foldout")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Container)]
-    pub struct DebugUI_Foldout {
-        #[rename(name = "opened")]
-        pub opened: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Panel.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Panel")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugUI_Panel {
-        #[rename(name = "onSetDirty")]
-        pub on_set_dirty: crate::system::action_1::Action_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Panel,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_IContainer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.IContainer")]
-    pub struct DebugUI_IContainer {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_Table_Row.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.Table.Row")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_Foldout)]
-    pub struct DebugUI_Table_Row {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugui/DebugUI_HistoryEnumField.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugUI.HistoryEnumField")]
-    #[parent(crate::unity_engine::rendering::debugui::DebugUI_EnumField)]
-    pub struct DebugUI_HistoryEnumField {}
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui-types")]
@@ -298,10 +298,25 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
-impl DebugUI_FloatField {
-    #[doc = "`ValidateValue(f32)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(self, value: f32) -> f32;
+impl DebugUI_HistoryBoolField {
+    #[doc = "`get_historyGetter()` overload"]
+    #[method(name = "get_historyGetter", args = 0)]
+    pub fn get_history_getter(self) -> ::unity2::Array<crate::system::func_1::Func_1<bool>>;
+
+    #[doc = "`set_historyGetter(::unity2::Array<crate::system::func_1::Func_1<bool>>)` overload"]
+    #[method(name = "set_historyGetter", args = 1)]
+    pub fn set_history_getter(
+        self,
+        value: ::unity2::Array<crate::system::func_1::Func_1<bool>>,
+    ) -> ();
+
+    #[doc = "`get_historyDepth()` overload"]
+    #[method(name = "get_historyDepth", args = 0)]
+    pub fn get_history_depth(self) -> i32;
+
+    #[doc = "`GetHistoryValue(i32)` overload"]
+    #[method(name = "GetHistoryValue", args = 1)]
+    pub fn get_history_value(self, history_index: i32) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -309,71 +324,42 @@ impl DebugUI_FloatField {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_FloatField {
+impl DebugUI_HistoryBoolField {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_FloatField),
+                ::core::stringify!(DebugUI_HistoryBoolField),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUI_FloatFieldMethods>::ctor(this);
+        <Self as IDebugUI_HistoryBoolFieldMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> DebugUI_Field_1<T0> {
-    #[doc = "`get_getter()` overload"]
-    #[method(name = "get_getter", args = 0)]
-    pub fn get_getter(self) -> crate::system::func_1::Func_1<T0>;
+impl DebugUI_HistoryEnumField {
+    #[doc = "`get_historyIndexGetter()` overload"]
+    #[method(name = "get_historyIndexGetter", args = 0)]
+    pub fn get_history_index_getter(self) -> ::unity2::Array<crate::system::func_1::Func_1<i32>>;
 
-    #[doc = "`set_getter(crate::system::func_1::Func_1<T0>)` overload"]
-    #[method(name = "set_getter", args = 1)]
-    pub fn set_getter(self, value: crate::system::func_1::Func_1<T0>) -> ();
-
-    #[doc = "`get_setter()` overload"]
-    #[method(name = "get_setter", args = 0)]
-    pub fn get_setter(self) -> crate::system::action_1::Action_1<T0>;
-
-    #[doc = "`set_setter(crate::system::action_1::Action_1<T0>)` overload"]
-    #[method(name = "set_setter", args = 1)]
-    pub fn set_setter(self, value: crate::system::action_1::Action_1<T0>) -> ();
-
-    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.ValidateValue(crate::system::object::Object)` overload"]
-    #[method(
-        name = "UnityEngine.Rendering.DebugUI.IValueField.ValidateValue",
-        args = 1
-    )]
-    pub fn unity_engine_rendering_debug_ui_i_value_field_validate_value(
+    #[doc = "`set_historyIndexGetter(::unity2::Array<crate::system::func_1::Func_1<i32>>)` overload"]
+    #[method(name = "set_historyIndexGetter", args = 1)]
+    pub fn set_history_index_getter(
         self,
-        value: crate::system::object::Object,
-    ) -> crate::system::object::Object;
+        value: ::unity2::Array<crate::system::func_1::Func_1<i32>>,
+    ) -> ();
 
-    #[doc = "`ValidateValue(T0)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(self, value: T0) -> T0;
+    #[doc = "`get_historyDepth()` overload"]
+    #[method(name = "get_historyDepth", args = 0)]
+    pub fn get_history_depth(self) -> i32;
 
-    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.GetValue()` overload"]
-    #[method(name = "UnityEngine.Rendering.DebugUI.IValueField.GetValue", args = 0)]
-    pub fn unity_engine_rendering_debug_ui_i_value_field_get_value(
-        self,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`GetValue()` overload"]
-    #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> T0;
-
-    #[doc = "`SetValue(crate::system::object::Object)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: crate::system::object::Object) -> ();
-
-    #[doc = "`SetValue(T0)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value_2(self, value: T0) -> ();
+    #[doc = "`GetHistoryValue(i32)` overload"]
+    #[method(name = "GetHistoryValue", args = 1)]
+    pub fn get_history_value(self, history_index: i32) -> i32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -381,46 +367,50 @@ impl<T0: ::unity2::ClassIdentity> DebugUI_Field_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
-impl<T0: ::unity2::ClassIdentity> DebugUI_Field_1<T0> {
+impl DebugUI_HistoryEnumField {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Field_1),
+                ::core::stringify!(DebugUI_HistoryEnumField),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUI_Field_1Methods<T0>>::ctor(this);
+        <Self as IDebugUI_HistoryEnumFieldMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
-impl DebugUI_IValueField {
-    #[doc = "`GetValue()` overload"]
-    #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
+impl DebugUI_BitField {
+    #[doc = "`get_enumNames()` overload"]
+    #[method(name = "get_enumNames", args = 0)]
+    pub fn get_enum_names(self) -> ::unity2::Array<crate::unity_engine::guicontent::GUIContent>;
 
-    #[doc = "`SetValue(crate::system::object::Object)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: crate::system::object::Object) -> ();
-
-    #[doc = "`ValidateValue(crate::system::object::Object)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(
+    #[doc = "`set_enumNames(::unity2::Array<crate::unity_engine::guicontent::GUIContent>)` overload"]
+    #[method(name = "set_enumNames", args = 1)]
+    pub fn set_enum_names(
         self,
-        value: crate::system::object::Object,
-    ) -> crate::system::object::Object;
-}
+        value: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
+    ) -> ();
 
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_UIntField {
-    #[doc = "`ValidateValue(u32)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(self, value: u32) -> u32;
+    #[doc = "`get_enumValues()` overload"]
+    #[method(name = "get_enumValues", args = 0)]
+    pub fn get_enum_values(self) -> ::unity2::Array<i32>;
+
+    #[doc = "`set_enumValues(::unity2::Array<i32>)` overload"]
+    #[method(name = "set_enumValues", args = 1)]
+    pub fn set_enum_values(self, value: ::unity2::Array<i32>) -> ();
+
+    #[doc = "`set_enumType(::unity2::SystemType)` overload"]
+    #[method(name = "set_enumType", args = 1)]
+    pub fn set_enum_type(self, value: ::unity2::SystemType) -> ();
+
+    #[doc = "`get_enumType()` overload"]
+    #[method(name = "get_enumType", args = 0)]
+    pub fn get_enum_type(self) -> ::unity2::SystemType;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -428,17 +418,41 @@ impl DebugUI_UIntField {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_UIntField {
+impl DebugUI_BitField {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_UIntField),
+                ::core::stringify!(DebugUI_BitField),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUI_UIntFieldMethods>::ctor(this);
+        <Self as IDebugUI_BitFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUIMethods>::ctor(this);
         this
     }
 }
@@ -499,524 +513,6 @@ impl DebugUI_EnumField {
             )
         });
         <Self as IDebugUI_EnumFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Vector4Field {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Vector4Field {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Vector4Field),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_Vector4FieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUIMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_BitField {
-    #[doc = "`get_enumNames()` overload"]
-    #[method(name = "get_enumNames", args = 0)]
-    pub fn get_enum_names(self) -> ::unity2::Array<crate::unity_engine::guicontent::GUIContent>;
-
-    #[doc = "`set_enumNames(::unity2::Array<crate::unity_engine::guicontent::GUIContent>)` overload"]
-    #[method(name = "set_enumNames", args = 1)]
-    pub fn set_enum_names(
-        self,
-        value: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
-    ) -> ();
-
-    #[doc = "`get_enumValues()` overload"]
-    #[method(name = "get_enumValues", args = 0)]
-    pub fn get_enum_values(self) -> ::unity2::Array<i32>;
-
-    #[doc = "`set_enumValues(::unity2::Array<i32>)` overload"]
-    #[method(name = "set_enumValues", args = 1)]
-    pub fn set_enum_values(self, value: ::unity2::Array<i32>) -> ();
-
-    #[doc = "`set_enumType(::unity2::SystemType)` overload"]
-    #[method(name = "set_enumType", args = 1)]
-    pub fn set_enum_type(self, value: ::unity2::SystemType) -> ();
-
-    #[doc = "`get_enumType()` overload"]
-    #[method(name = "get_enumType", args = 0)]
-    pub fn get_enum_type(self) -> ::unity2::SystemType;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_BitField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_BitField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_BitFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_VBox {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_VBox {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_VBox),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_VBoxMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Vector3Field {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Vector3Field {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Vector3Field),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_Vector3FieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Vector2Field {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Vector2Field {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Vector2Field),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_Vector2FieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_HBox {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_HBox {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_HBox),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_HBoxMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Button {
-    #[doc = "`get_action()` overload"]
-    #[method(name = "get_action", args = 0)]
-    pub fn get_action(self) -> crate::system::action::Action;
-
-    #[doc = "`set_action(crate::system::action::Action)` overload"]
-    #[method(name = "set_action", args = 1)]
-    pub fn set_action(self, value: crate::system::action::Action) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Button {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Button),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_ButtonMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_ColorField {
-    #[doc = "`ValidateValue(crate::unity_engine::color::Color)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(
-        self,
-        value: crate::unity_engine::color::Color,
-    ) -> crate::unity_engine::color::Color;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_ColorField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_ColorField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_ColorFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_IntField {
-    #[doc = "`ValidateValue(i32)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(self, value: i32) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_IntField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_IntField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_IntFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_BoolField {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_BoolField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_BoolField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_BoolFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Table {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SetColumnVisibility(i32, bool)` overload"]
-    #[method(name = "SetColumnVisibility", args = 2)]
-    pub fn set_column_visibility(self, index: i32, visible: bool) -> ();
-
-    #[doc = "`GetColumnVisibility(i32)` overload"]
-    #[method(name = "GetColumnVisibility", args = 1)]
-    pub fn get_column_visibility(self, index: i32) -> bool;
-
-    #[doc = "`get_VisibleColumns()` overload"]
-    #[method(name = "get_VisibleColumns", args = 0)]
-    pub fn get_visible_columns(self) -> ::unity2::Array<bool>;
-
-    #[doc = "`OnItemAdded(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = "OnItemAdded", args = 2)]
-    pub fn on_item_added(
-        self,
-        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-
-    #[doc = "`OnItemRemoved(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = "OnItemRemoved", args = 2)]
-    pub fn on_item_removed(
-        self,
-        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Table {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Table),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_TableMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Container {
-    #[doc = "`get_children()` overload"]
-    #[method(name = "get_children", args = 0)]
-    pub fn get_children(
-        self,
-    ) -> crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-        crate::unity_engine::rendering::debugui::DebugUI_Widget,
-    >;
-
-    #[doc = "`set_children(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = "set_children", args = 1)]
-    pub fn set_children(
-        self,
-        value: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-
-    #[doc = "`get_panel()` overload"]
-    #[method(name = "get_panel", args = 0)]
-    pub fn get_panel(self) -> crate::unity_engine::rendering::debugui::DebugUI_Panel;
-
-    #[doc = "`set_panel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"]
-    #[method(name = "set_panel", args = 1)]
-    pub fn set_panel(self, value: crate::unity_engine::rendering::debugui::DebugUI_Panel) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        display_name: ::unity2::Il2CppString,
-        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-
-    #[doc = "`GenerateQueryPath()` overload"]
-    #[method(name = "GenerateQueryPath", args = 0)]
-    pub fn generate_query_path(self) -> ();
-
-    #[doc = "`OnItemAdded(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = "OnItemAdded", args = 2)]
-    pub fn on_item_added(
-        self,
-        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-
-    #[doc = "`OnItemRemoved(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
-    #[method(name = "OnItemRemoved", args = 2)]
-    pub fn on_item_removed(
-        self,
-        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> ();
-
-    #[doc = "`GetHashCode()` overload"]
-    #[method(name = "GetHashCode", args = 0)]
-    pub fn get_hash_code(self) -> i32;
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Container {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Container),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_ContainerMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` — overload selector"]
-    pub fn new_2(
-        display_name: ::unity2::Il2CppString,
-        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Container),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDebugUI_ContainerMethods>::ctor_2(this, display_name, children);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Value {
-    #[doc = "`get_getter()` overload"]
-    #[method(name = "get_getter", args = 0)]
-    pub fn get_getter(self) -> crate::system::func_1::Func_1<crate::system::object::Object>;
-
-    #[doc = "`set_getter(crate::system::func_1::Func_1<crate::system::object::Object>)` overload"]
-    #[method(name = "set_getter", args = 1)]
-    pub fn set_getter(
-        self,
-        value: crate::system::func_1::Func_1<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetValue()` overload"]
-    #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Value {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Value),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_ValueMethods>::ctor(this);
         this
     }
 }
@@ -1110,134 +606,39 @@ impl DebugUI_Widget {
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
-impl DebugUI_HistoryBoolField {
-    #[doc = "`get_historyGetter()` overload"]
-    #[method(name = "get_historyGetter", args = 0)]
-    pub fn get_history_getter(self) -> ::unity2::Array<crate::system::func_1::Func_1<bool>>;
+impl DebugUI_Value {
+    #[doc = "`get_getter()` overload"]
+    #[method(name = "get_getter", args = 0)]
+    pub fn get_getter(self) -> crate::system::func_1::Func_1<crate::system::object::Object>;
 
-    #[doc = "`set_historyGetter(::unity2::Array<crate::system::func_1::Func_1<bool>>)` overload"]
-    #[method(name = "set_historyGetter", args = 1)]
-    pub fn set_history_getter(
+    #[doc = "`set_getter(crate::system::func_1::Func_1<crate::system::object::Object>)` overload"]
+    #[method(name = "set_getter", args = 1)]
+    pub fn set_getter(
         self,
-        value: ::unity2::Array<crate::system::func_1::Func_1<bool>>,
+        value: crate::system::func_1::Func_1<crate::system::object::Object>,
     ) -> ();
-
-    #[doc = "`get_historyDepth()` overload"]
-    #[method(name = "get_historyDepth", args = 0)]
-    pub fn get_history_depth(self) -> i32;
-
-    #[doc = "`GetHistoryValue(i32)` overload"]
-    #[method(name = "GetHistoryValue", args = 1)]
-    pub fn get_history_value(self, history_index: i32) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_HistoryBoolField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_HistoryBoolField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUI_HistoryBoolFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-debugui")]
-#[::unity2::methods]
-impl DebugUI_Foldout {
-    #[doc = "`get_isReadOnly()` overload"]
-    #[method(name = "get_isReadOnly", args = 0)]
-    pub fn get_is_read_only(self) -> bool;
-
-    #[doc = "`get_columnLabels()` overload"]
-    #[method(name = "get_columnLabels", args = 0)]
-    pub fn get_column_labels(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`set_columnLabels(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_columnLabels", args = 1)]
-    pub fn set_column_labels(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
-        display_name: ::unity2::Il2CppString,
-        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        column_labels: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
 
     #[doc = "`GetValue()` overload"]
     #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> bool;
-
-    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.GetValue()` overload"]
-    #[method(name = "UnityEngine.Rendering.DebugUI.IValueField.GetValue", args = 0)]
-    pub fn unity_engine_rendering_debug_ui_i_value_field_get_value(
-        self,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`SetValue(crate::system::object::Object)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: crate::system::object::Object) -> ();
-
-    #[doc = "`ValidateValue(crate::system::object::Object)` overload"]
-    #[method(name = "ValidateValue", args = 1)]
-    pub fn validate_value(
-        self,
-        value: crate::system::object::Object,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`SetValue(bool)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value_2(self, value: bool) -> ();
+    pub fn get_value(self) -> crate::system::object::Object;
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_Foldout {
+impl DebugUI_Value {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Foldout),
+                ::core::stringify!(DebugUI_Value),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUI_FoldoutMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new_2(
-        display_name: ::unity2::Il2CppString,
-        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-        >,
-        column_labels: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_Foldout),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDebugUI_FoldoutMethods>::ctor_2(this, display_name, children, column_labels);
+        <Self as IDebugUI_ValueMethods>::ctor(this);
         this
     }
 }
@@ -1379,6 +780,259 @@ impl DebugUI_Panel {
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
+impl DebugUI_Foldout {
+    #[doc = "`get_isReadOnly()` overload"]
+    #[method(name = "get_isReadOnly", args = 0)]
+    pub fn get_is_read_only(self) -> bool;
+
+    #[doc = "`get_columnLabels()` overload"]
+    #[method(name = "get_columnLabels", args = 0)]
+    pub fn get_column_labels(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`set_columnLabels(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "set_columnLabels", args = 1)]
+    pub fn set_column_labels(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        display_name: ::unity2::Il2CppString,
+        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        column_labels: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`GetValue()` overload"]
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> bool;
+
+    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.GetValue()` overload"]
+    #[method(name = "UnityEngine.Rendering.DebugUI.IValueField.GetValue", args = 0)]
+    pub fn unity_engine_rendering_debug_ui_i_value_field_get_value(
+        self,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`SetValue(crate::system::object::Object)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: crate::system::object::Object) -> ();
+
+    #[doc = "`ValidateValue(crate::system::object::Object)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(
+        self,
+        value: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`SetValue(bool)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value_2(self, value: bool) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Foldout {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Foldout),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_FoldoutMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new_2(
+        display_name: ::unity2::Il2CppString,
+        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        column_labels: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Foldout),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDebugUI_FoldoutMethods>::ctor_2(this, display_name, children, column_labels);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_HBox {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_HBox {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_HBox),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_HBoxMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_IntField {
+    #[doc = "`ValidateValue(i32)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(self, value: i32) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_IntField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_IntField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_IntFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Table {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`SetColumnVisibility(i32, bool)` overload"]
+    #[method(name = "SetColumnVisibility", args = 2)]
+    pub fn set_column_visibility(self, index: i32, visible: bool) -> ();
+
+    #[doc = "`GetColumnVisibility(i32)` overload"]
+    #[method(name = "GetColumnVisibility", args = 1)]
+    pub fn get_column_visibility(self, index: i32) -> bool;
+
+    #[doc = "`get_VisibleColumns()` overload"]
+    #[method(name = "get_VisibleColumns", args = 0)]
+    pub fn get_visible_columns(self) -> ::unity2::Array<bool>;
+
+    #[doc = "`OnItemAdded(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = "OnItemAdded", args = 2)]
+    pub fn on_item_added(
+        self,
+        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+
+    #[doc = "`OnItemRemoved(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = "OnItemRemoved", args = 2)]
+    pub fn on_item_removed(
+        self,
+        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Table {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Table),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_TableMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_IValueField {
+    #[doc = "`GetValue()` overload"]
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[doc = "`SetValue(crate::system::object::Object)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: crate::system::object::Object) -> ();
+
+    #[doc = "`ValidateValue(crate::system::object::Object)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(
+        self,
+        value: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_ColorField {
+    #[doc = "`ValidateValue(crate::unity_engine::color::Color)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(
+        self,
+        value: crate::unity_engine::color::Color,
+    ) -> crate::unity_engine::color::Color;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_ColorField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_ColorField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_ColorFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
 impl DebugUI_IContainer {
     #[doc = "`get_children()` overload"]
     #[method(name = "get_children", args = 0)]
@@ -1399,6 +1053,295 @@ impl DebugUI_IContainer {
     #[doc = "`get_queryPath()` overload"]
     #[method(name = "get_queryPath", args = 0)]
     pub fn get_query_path(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Container {
+    #[doc = "`get_children()` overload"]
+    #[method(name = "get_children", args = 0)]
+    pub fn get_children(
+        self,
+    ) -> crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+        crate::unity_engine::rendering::debugui::DebugUI_Widget,
+    >;
+
+    #[doc = "`set_children(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = "set_children", args = 1)]
+    pub fn set_children(
+        self,
+        value: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+
+    #[doc = "`get_panel()` overload"]
+    #[method(name = "get_panel", args = 0)]
+    pub fn get_panel(self) -> crate::unity_engine::rendering::debugui::DebugUI_Panel;
+
+    #[doc = "`set_panel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"]
+    #[method(name = "set_panel", args = 1)]
+    pub fn set_panel(self, value: crate::unity_engine::rendering::debugui::DebugUI_Panel) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        display_name: ::unity2::Il2CppString,
+        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+
+    #[doc = "`GenerateQueryPath()` overload"]
+    #[method(name = "GenerateQueryPath", args = 0)]
+    pub fn generate_query_path(self) -> ();
+
+    #[doc = "`OnItemAdded(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = "OnItemAdded", args = 2)]
+    pub fn on_item_added(
+        self,
+        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+
+    #[doc = "`OnItemRemoved(crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>, crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` overload"]
+    #[method(name = "OnItemRemoved", args = 2)]
+    pub fn on_item_removed(
+        self,
+        sender: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+        e: crate::unity_engine::rendering::listchangedeventargs_1::ListChangedEventArgs_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> ();
+
+    #[doc = "`GetHashCode()` overload"]
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Container {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Container),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_ContainerMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::observablelist_1::ObservableList_1<crate::unity_engine::rendering::debugui::DebugUI_Widget>)` — overload selector"]
+    pub fn new_2(
+        display_name: ::unity2::Il2CppString,
+        children: crate::unity_engine::rendering::observablelist_1::ObservableList_1<
+            crate::unity_engine::rendering::debugui::DebugUI_Widget,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Container),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDebugUI_ContainerMethods>::ctor_2(this, display_name, children);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Vector2Field {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Vector2Field {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Vector2Field),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_Vector2FieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_VBox {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_VBox {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_VBox),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_VBoxMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_FloatField {
+    #[doc = "`ValidateValue(f32)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(self, value: f32) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_FloatField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_FloatField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_FloatFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> DebugUI_Field_1<T0> {
+    #[doc = "`get_getter()` overload"]
+    #[method(name = "get_getter", args = 0)]
+    pub fn get_getter(self) -> crate::system::func_1::Func_1<T0>;
+
+    #[doc = "`set_getter(crate::system::func_1::Func_1<T0>)` overload"]
+    #[method(name = "set_getter", args = 1)]
+    pub fn set_getter(self, value: crate::system::func_1::Func_1<T0>) -> ();
+
+    #[doc = "`get_setter()` overload"]
+    #[method(name = "get_setter", args = 0)]
+    pub fn get_setter(self) -> crate::system::action_1::Action_1<T0>;
+
+    #[doc = "`set_setter(crate::system::action_1::Action_1<T0>)` overload"]
+    #[method(name = "set_setter", args = 1)]
+    pub fn set_setter(self, value: crate::system::action_1::Action_1<T0>) -> ();
+
+    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.ValidateValue(crate::system::object::Object)` overload"]
+    #[method(
+        name = "UnityEngine.Rendering.DebugUI.IValueField.ValidateValue",
+        args = 1
+    )]
+    pub fn unity_engine_rendering_debug_ui_i_value_field_validate_value(
+        self,
+        value: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`ValidateValue(T0)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(self, value: T0) -> T0;
+
+    #[doc = "`UnityEngine.Rendering.DebugUI.IValueField.GetValue()` overload"]
+    #[method(name = "UnityEngine.Rendering.DebugUI.IValueField.GetValue", args = 0)]
+    pub fn unity_engine_rendering_debug_ui_i_value_field_get_value(
+        self,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`GetValue()` overload"]
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> T0;
+
+    #[doc = "`SetValue(crate::system::object::Object)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: crate::system::object::Object) -> ();
+
+    #[doc = "`SetValue(T0)` overload"]
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value_2(self, value: T0) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl<T0: ::unity2::ClassIdentity> DebugUI_Field_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Field_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_Field_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Button {
+    #[doc = "`get_action()` overload"]
+    #[method(name = "get_action", args = 0)]
+    pub fn get_action(self) -> crate::system::action::Action;
+
+    #[doc = "`set_action(crate::system::action::Action)` overload"]
+    #[method(name = "set_action", args = 1)]
+    pub fn set_action(self, value: crate::system::action::Action) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Button {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Button),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_ButtonMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
@@ -1427,25 +1370,10 @@ impl DebugUI_Table_Row {
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
 #[::unity2::methods]
-impl DebugUI_HistoryEnumField {
-    #[doc = "`get_historyIndexGetter()` overload"]
-    #[method(name = "get_historyIndexGetter", args = 0)]
-    pub fn get_history_index_getter(self) -> ::unity2::Array<crate::system::func_1::Func_1<i32>>;
-
-    #[doc = "`set_historyIndexGetter(::unity2::Array<crate::system::func_1::Func_1<i32>>)` overload"]
-    #[method(name = "set_historyIndexGetter", args = 1)]
-    pub fn set_history_index_getter(
-        self,
-        value: ::unity2::Array<crate::system::func_1::Func_1<i32>>,
-    ) -> ();
-
-    #[doc = "`get_historyDepth()` overload"]
-    #[method(name = "get_historyDepth", args = 0)]
-    pub fn get_history_depth(self) -> i32;
-
-    #[doc = "`GetHistoryValue(i32)` overload"]
-    #[method(name = "GetHistoryValue", args = 1)]
-    pub fn get_history_value(self, history_index: i32) -> i32;
+impl DebugUI_UIntField {
+    #[doc = "`ValidateValue(u32)` overload"]
+    #[method(name = "ValidateValue", args = 1)]
+    pub fn validate_value(self, value: u32) -> u32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -1453,17 +1381,89 @@ impl DebugUI_HistoryEnumField {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugui")]
-impl DebugUI_HistoryEnumField {
+impl DebugUI_UIntField {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUI_HistoryEnumField),
+                ::core::stringify!(DebugUI_UIntField),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUI_HistoryEnumFieldMethods>::ctor(this);
+        <Self as IDebugUI_UIntFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_BoolField {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_BoolField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_BoolField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_BoolFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Vector4Field {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Vector4Field {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Vector4Field),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_Vector4FieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+#[::unity2::methods]
+impl DebugUI_Vector3Field {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugui")]
+impl DebugUI_Vector3Field {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUI_Vector3Field),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUI_Vector3FieldMethods>::ctor(this);
         this
     }
 }

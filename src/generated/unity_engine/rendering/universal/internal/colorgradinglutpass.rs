@@ -10,6 +10,30 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "ColorGradingLutPass"
+    )]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct ColorGradingLutPass {
+        #[rename(name = "m_LutBuilderLdr")]
+        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+        #[rename(name = "m_LutBuilderHdr")]
+        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+        #[rename(name = "m_HdrLutFormat")]
+        pub m_hdr_lut_format:
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_LdrLutFormat")]
+        pub m_ldr_lut_format:
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_InternalLut")]
+        pub m_internal_lut:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_HableCurve")]
+        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -90,42 +114,10 @@ mod __types {
         #[rename(name = "_CurveSatVsSat")]
         pub curve_sat_vs_sat: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "ColorGradingLutPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct ColorGradingLutPass {
-        #[rename(name = "m_LutBuilderLdr")]
-        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
-        #[rename(name = "m_LutBuilderHdr")]
-        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
-        #[rename(name = "m_HdrLutFormat")]
-        pub m_hdr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_LdrLutFormat")]
-        pub m_ldr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_InternalLut")]
-        pub m_internal_lut:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_HableCurve")]
-        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-#[::unity2::methods]
-impl ColorGradingLutPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
 #[::unity2::methods]
@@ -182,4 +174,12 @@ impl ColorGradingLutPass {
         <Self as IColorGradingLutPassMethods>::ctor(this, evt, data);
         this
     }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[::unity2::methods]
+impl ColorGradingLutPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
