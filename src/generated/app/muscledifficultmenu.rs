@@ -12,18 +12,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MuscleDifficultMenu {
-        #[rename(name = "m_EnableChecker")]
-        pub m_enable_checker: ::unity2::Array<bool>,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        #[rename(name = "m_PastDeside")]
-        pub m_past_deside: i32,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MuscleDifficultMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_MuscleDifficultMenuItem.md"))]
     #[::unity2::class(
@@ -41,14 +33,422 @@ mod __types {
         pub m_is_enable: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MuscleDifficultMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MuscleDifficultMenu {
+        #[rename(name = "m_EnableChecker")]
+        pub m_enable_checker: ::unity2::Array<bool>,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        #[rename(name = "m_PastDeside")]
+        pub m_past_deside: i32,
+    }
 }
 
 #[cfg(feature = "app-muscledifficultmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-muscledifficultmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MuscleDifficultMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MuscleDifficultMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MuscleDifficultMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::muscle_exercise::level::Level as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MuscleDifficultMenu_DecideEventHandler,
+        result: crate::app::muscle_exercise::level::Level,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MuscleDifficultMenu_DecideEventHandler,
+            crate::app::muscle_exercise::level::Level,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+pub trait IMuscleDifficultMenu_DecideEventHandlerMethods:
+    IMuscleDifficultMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < MuscleDifficultMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MuscleDifficultMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::muscle_exercise::level::Level)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::muscle_exercise::level::Level>,
+    ) -> () {
+        unsafe {
+            let __receiver = < MuscleDifficultMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MuscleDifficultMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+impl<__T: IMuscleDifficultMenu_DecideEventHandler> IMuscleDifficultMenu_DecideEventHandlerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+impl MuscleDifficultMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleDifficultMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleDifficultMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: muscledifficultmenu :: MuscleDifficultMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
+        name: ::unity2::Il2CppString,
+        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MuscleDifficultMenu_MuscleDifficultMenuItem,
+            ::unity2::Il2CppString,
+            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, event_handler, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            MuscleDifficultMenu_MuscleDifficultMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            MuscleDifficultMenu_MuscleDifficultMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+pub trait IMuscleDifficultMenu_MuscleDifficultMenuItemMethods:
+    IMuscleDifficultMenu_MuscleDifficultMenuItem
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]
+    fn ctor(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        event_handler: impl ::core::convert::Into<
+            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        >,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(event_handler),
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+impl<__T: IMuscleDifficultMenu_MuscleDifficultMenuItem>
+    IMuscleDifficultMenu_MuscleDifficultMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+impl MuscleDifficultMenu_MuscleDifficultMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        enable: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods>::ctor(
+            this,
+            name,
+            event_handler,
+            enable,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-muscledifficultmenu")]
 #[doc(hidden)]
@@ -550,406 +950,6 @@ impl MuscleDifficultMenu {
             enable_array,
             past_deside,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: muscledifficultmenu :: MuscleDifficultMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
-        name: ::unity2::Il2CppString,
-        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MuscleDifficultMenu_MuscleDifficultMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, name, event_handler, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MuscleDifficultMenu_MuscleDifficultMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleDifficultMenu_MuscleDifficultMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: MuscleDifficultMenu_MuscleDifficultMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MuscleDifficultMenu_MuscleDifficultMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-pub trait IMuscleDifficultMenu_MuscleDifficultMenuItemMethods:
-    IMuscleDifficultMenu_MuscleDifficultMenuItem
-{
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]
-    fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        event_handler: impl ::core::convert::Into<
-            crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        >,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(event_handler),
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < MuscleDifficultMenu_MuscleDifficultMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MuscleDifficultMenu_MuscleDifficultMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-impl<__T: IMuscleDifficultMenu_MuscleDifficultMenuItem>
-    IMuscleDifficultMenu_MuscleDifficultMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-impl MuscleDifficultMenu_MuscleDifficultMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]
-    pub fn new(
-        name: ::unity2::Il2CppString,
-        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        enable: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods>::ctor(
-            this,
-            name,
-            event_handler,
-            enable,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MuscleDifficultMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MuscleDifficultMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MuscleDifficultMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::muscle_exercise::level::Level as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleDifficultMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MuscleDifficultMenu_DecideEventHandler,
-        result: crate::app::muscle_exercise::level::Level,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MuscleDifficultMenu_DecideEventHandler,
-            crate::app::muscle_exercise::level::Level,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-pub trait IMuscleDifficultMenu_DecideEventHandlerMethods:
-    IMuscleDifficultMenu_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MuscleDifficultMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MuscleDifficultMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::muscle_exercise::level::Level)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::muscle_exercise::level::Level>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MuscleDifficultMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MuscleDifficultMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-impl<__T: IMuscleDifficultMenu_DecideEventHandler> IMuscleDifficultMenu_DecideEventHandlerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-impl MuscleDifficultMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleDifficultMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleDifficultMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

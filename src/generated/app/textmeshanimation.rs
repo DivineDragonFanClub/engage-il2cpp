@@ -69,50 +69,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TextMeshAnimation_DelayTimeType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TextMeshAnimation_DelayTimeType {
-        pub fn interval() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn total() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
     #[repr(C)]
     #[derive(
@@ -174,6 +130,50 @@ mod __types {
         pub m_now_animation_index: i32,
         #[rename(name = "m_NowTime")]
         pub m_now_time: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TextMeshAnimation_DelayTimeType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TextMeshAnimation_DelayTimeType {
+        pub fn interval() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn total() -> Self {
+            Self { value: 1 }
+        }
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]

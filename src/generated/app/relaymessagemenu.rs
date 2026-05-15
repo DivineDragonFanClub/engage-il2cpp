@@ -10,11 +10,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayMessageMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RelayMessageMenu_MenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RelayMessageMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -29,408 +24,15 @@ mod __types {
             crate::app::basicmenuselect::BasicMenuSelect,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayMessageMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RelayMessageMenu_MenuItem {}
 }
 
 #[cfg(feature = "app-relaymessagemenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-relaymessagemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayMessageMenu_MenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: RelayMessageMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::relaystampdata::RelayStampData {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::relaystampdata::RelayStampData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relaystampdata::RelayStampData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "set_Data",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RelayMessageMenu_MenuItem,
-        value: crate::app::relaystampdata::RelayStampData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            crate::app::relaystampdata::RelayStampData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relaystampdata::RelayStampData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayMessageMenu_MenuItem,
-        data: crate::app::relaystampdata::RelayStampData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            crate::app::relaystampdata::RelayStampData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RelayMessageMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RelayMessageMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: RelayMessageMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayMessageMenu_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaymessagemenu")]
-pub trait IRelayMessageMenu_MenuItemMethods: IRelayMessageMenu_MenuItem {
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::relaystampdata::RelayStampData {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]
-    fn set_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::relaystampdata::RelayStampData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<crate::app::relaystampdata::RelayStampData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayMessageMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relaymessagemenu")]
-impl<__T: IRelayMessageMenu_MenuItem> IRelayMessageMenu_MenuItemMethods for __T {}
-
-#[cfg(feature = "app-relaymessagemenu")]
-impl RelayMessageMenu_MenuItem {
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]
-    pub fn new(data: crate::app::relaystampdata::RelayStampData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMessageMenu_MenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMessageMenu_MenuItemMethods>::ctor(this, data);
-        this
-    }
-}
 
 #[cfg(feature = "app-relaymessagemenu")]
 #[doc(hidden)]
@@ -895,6 +497,404 @@ impl RelayMessageMenu {
             )
         });
         <Self as IRelayMessageMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaymessagemenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayMessageMenu_MenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "get_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: RelayMessageMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::relaystampdata::RelayStampData {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::relaystampdata::RelayStampData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relaystampdata::RelayStampData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "set_Data",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "set_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RelayMessageMenu_MenuItem,
+        value: crate::app::relaystampdata::RelayStampData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            crate::app::relaystampdata::RelayStampData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relaystampdata::RelayStampData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayMessageMenu_MenuItem,
+        data: crate::app::relaystampdata::RelayStampData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            crate::app::relaystampdata::RelayStampData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RelayMessageMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RelayMessageMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayMessageMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: RelayMessageMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RelayMessageMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaymessagemenu")]
+pub trait IRelayMessageMenu_MenuItemMethods: IRelayMessageMenu_MenuItem {
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::relaystampdata::RelayStampData {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::get_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]
+    fn set_data(
+        self,
+        value: impl ::core::convert::Into<crate::app::relaystampdata::RelayStampData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]
+    fn ctor(
+        self,
+        data: impl ::core::convert::Into<crate::app::relaystampdata::RelayStampData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RelayMessageMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayMessageMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relaymessagemenu")]
+impl<__T: IRelayMessageMenu_MenuItem> IRelayMessageMenu_MenuItemMethods for __T {}
+
+#[cfg(feature = "app-relaymessagemenu")]
+impl RelayMessageMenu_MenuItem {
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]
+    pub fn new(data: crate::app::relaystampdata::RelayStampData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMessageMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMessageMenu_MenuItemMethods>::ctor(this, data);
         this
     }
 }

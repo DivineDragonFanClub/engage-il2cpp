@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_Compatibility {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]
     #[repr(C)]
     #[derive(
@@ -88,11 +93,6 @@ mod __types {
             Self { value: 10 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Compatibility {}
 }
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]

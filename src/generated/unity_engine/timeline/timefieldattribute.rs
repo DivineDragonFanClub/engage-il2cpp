@@ -10,6 +10,11 @@ mod __types {
     use crate::unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeFieldAttribute")]
+    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+    pub struct TimeFieldAttribute {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute_UseEditMode.md"))]
     #[repr(C)]
     #[derive(
@@ -53,11 +58,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeFieldAttribute")]
-    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
-    pub struct TimeFieldAttribute {}
 }
 
 #[cfg(feature = "unity_engine-timeline-timefieldattribute-types")]

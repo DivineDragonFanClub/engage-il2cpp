@@ -10,14 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.LowLevel",
-        name = "PlayerLoopSystem.UpdateFunction"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PlayerLoopSystem_UpdateFunction {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -51,10 +43,80 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.LowLevel",
+        name = "PlayerLoopSystem.UpdateFunction"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PlayerLoopSystem_UpdateFunction {}
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PlayerLoopSystem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PlayerLoopSystem as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayerLoopSystem as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: PlayerLoopSystem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            PlayerLoopSystem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+impl PlayerLoopSystem {
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe { __PlayerLoopSystem_unity2_raw::to_string(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 #[doc(hidden)]
@@ -214,68 +276,6 @@ impl PlayerLoopSystem_UpdateFunction {
         });
         <Self as IPlayerLoopSystem_UpdateFunctionMethods>::ctor(this, object, method);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PlayerLoopSystem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayerLoopSystem as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerLoopSystem as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: PlayerLoopSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlayerLoopSystem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-impl PlayerLoopSystem {
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __PlayerLoopSystem_unity2_raw::to_string(self, ::core::option::Option::None) }
     }
 }
 

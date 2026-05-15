@@ -13,6 +13,32 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSequence")]
+    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
+    pub struct UnitSequence {
+        #[rename(name = "待機中")]
+        pub 待機中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "カーソル")]
+        pub カーソル: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "掴み中")]
+        pub 掴み中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "移動中")]
+        pub 移動中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "移動後")]
+        pub 移動後: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "敵選択中")]
+        pub 敵選択中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "戦闘中")]
+        pub 戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "戦闘後")]
+        pub 戦闘後: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "杖戦闘中")]
+        pub 杖戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[rename(name = "ガード中")]
+        pub ガード中: crate::app::unitsequence::UnitSequence_Action,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitsequence/UnitSequence_Action.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,32 +67,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSequence")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
-    pub struct UnitSequence {
-        #[rename(name = "待機中")]
-        pub 待機中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "カーソル")]
-        pub カーソル: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "掴み中")]
-        pub 掴み中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "移動中")]
-        pub 移動中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "移動後")]
-        pub 移動後: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "敵選択中")]
-        pub 敵選択中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "戦闘中")]
-        pub 戦闘中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "戦闘後")]
-        pub 戦闘後: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "杖戦闘中")]
-        pub 杖戦闘中: crate::app::unitsequence::UnitSequence_Action,
-        #[rename(name = "ガード中")]
-        pub ガード中: crate::app::unitsequence::UnitSequence_Action,
     }
 }
 

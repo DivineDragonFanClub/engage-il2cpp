@@ -11,22 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectroot/RingSelectRoot_CharaPhoto.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSelectRoot.CharaPhoto")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingSelectRoot_CharaPhoto {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RootAnimator")]
-        pub m_root_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_CharaImage")]
-        pub m_chara_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_FrameImage")]
-        pub m_frame_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_IsSetup")]
-        pub m_is_setup: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectroot/RingSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "RingSelectRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -44,278 +28,26 @@ mod __types {
         #[rename(name = "m_PhotoIdx")]
         pub m_photo_idx: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectroot/RingSelectRoot_CharaPhoto.md"))]
+    #[::unity2::class(namespace = "App", name = "RingSelectRoot.CharaPhoto")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingSelectRoot_CharaPhoto {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RootAnimator")]
+        pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_CharaImage")]
+        pub m_chara_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_FrameImage")]
+        pub m_frame_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_IsSetup")]
+        pub m_is_setup: bool,
+    }
 }
 
 #[cfg(feature = "app-ringselectroot-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ringselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingSelectRoot_CharaPhoto_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingSelectRoot_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
-                "FadeIn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "FadeIn",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_in(
-        this: RingSelectRoot_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_in::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
-                "FadeOut",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "FadeOut",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_out(
-        this: RingSelectRoot_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_out::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ring_chara {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
-                "SetRingChara",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "SetRingChara",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_ring_chara(
-        this: RingSelectRoot_CharaPhoto,
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSelectRoot_CharaPhoto,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ring_chara::get_offset() as isize),
-        );
-        inner(this, ring_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringselectroot")]
-pub trait IRingSelectRoot_CharaPhotoMethods: IRingSelectRoot_CharaPhoto {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectRoot_CharaPhoto_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeIn()` overload"]
-    fn fade_in(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectRoot_CharaPhoto_unity2_raw::fade_in(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FadeOut()` overload"]
-    fn fade_out(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectRoot_CharaPhoto_unity2_raw::fade_out(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetRingChara(crate::app::ringdata::RingData)` overload"]
-    fn set_ring_chara(
-        self,
-        ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectRoot_CharaPhoto_unity2_raw::set_ring_chara(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringselectroot")]
-impl<__T: IRingSelectRoot_CharaPhoto> IRingSelectRoot_CharaPhotoMethods for __T {}
-
-#[cfg(feature = "app-ringselectroot")]
-impl RingSelectRoot_CharaPhoto {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSelectRoot_CharaPhoto),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSelectRoot_CharaPhotoMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-ringselectroot")]
 #[doc(hidden)]
@@ -803,6 +535,274 @@ impl RingSelectRoot {
             )
         });
         <Self as IRingSelectRootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringselectroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingSelectRoot_CharaPhoto_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingSelectRoot_CharaPhoto,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
+                "FadeIn",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                    "FadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_in(
+        this: RingSelectRoot_CharaPhoto,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_in::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
+                "FadeOut",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                    "FadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_out(
+        this: RingSelectRoot_CharaPhoto,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingSelectRoot_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_out::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ring_chara {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::class(),
+                "SetRingChara",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingSelectRoot_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                    "SetRingChara",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_ring_chara(
+        this: RingSelectRoot_CharaPhoto,
+        ring_data: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingSelectRoot_CharaPhoto,
+            crate::app::ringdata::RingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_ring_chara::get_offset() as isize),
+        );
+        inner(this, ring_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringselectroot")]
+pub trait IRingSelectRoot_CharaPhotoMethods: IRingSelectRoot_CharaPhoto {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingSelectRoot_CharaPhoto_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeIn()` overload"]
+    fn fade_in(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingSelectRoot_CharaPhoto_unity2_raw::fade_in(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FadeOut()` overload"]
+    fn fade_out(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingSelectRoot_CharaPhoto_unity2_raw::fade_out(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRingChara(crate::app::ringdata::RingData)` overload"]
+    fn set_ring_chara(
+        self,
+        ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingSelectRoot_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingSelectRoot_CharaPhoto_unity2_raw::set_ring_chara(
+                __receiver,
+                ::core::convert::Into::into(ring_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringselectroot")]
+impl<__T: IRingSelectRoot_CharaPhoto> IRingSelectRoot_CharaPhotoMethods for __T {}
+
+#[cfg(feature = "app-ringselectroot")]
+impl RingSelectRoot_CharaPhoto {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectRoot_CharaPhoto),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectRoot_CharaPhotoMethods>::ctor(this);
         this
     }
 }

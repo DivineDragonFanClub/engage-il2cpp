@@ -856,7 +856,9 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
-    fn find_instance_id<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn find_instance_id<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         target: impl ::core::convert::Into<M0>,
     ) -> i32 {

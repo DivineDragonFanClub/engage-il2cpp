@@ -11,14 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Switch",
-        name = "SwitchVideoPlayer.MovieEventDelegate"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SwitchVideoPlayer_MovieEventDelegate {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
     #[repr(C)]
     #[derive(
@@ -74,6 +66,14 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Switch",
+        name = "SwitchVideoPlayer.MovieEventDelegate"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SwitchVideoPlayer_MovieEventDelegate {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
     #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]

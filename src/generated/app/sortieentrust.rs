@@ -7,6 +7,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieEntrust")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieEntrust {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust_Executor.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrust.Executor")]
     #[parent(crate::system::object::Object)]
@@ -20,15 +25,402 @@ mod __types {
         pub m_stock_data_holer:
             crate::app::sortieentruststockdataholder::SortieEntrustStockDataHolder,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrust")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrust {}
 }
 
 #[cfg(feature = "app-sortieentrust-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-sortieentrust")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieEntrust_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::sortieentrustresult::SortieEntrustResult = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute::get_offset() as isize),
+        );
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_all_sortie_units {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                "ExecuteAllSortieUnits",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteAllSortieUnits",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_all_sortie_units(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::app::sortieentrustresult::SortieEntrustResult = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_all_sortie_units::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_warning {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustresult::SortieEntrustResult as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                "ShowWarning",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    "ShowWarning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_warning(
+        super_: crate::app::procinst::ProcInst,
+        result: crate::app::sortieentrustresult::SortieEntrustResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::sortieentrustresult::SortieEntrustResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_warning::get_offset() as isize),
+        );
+        inner(super_, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_warning_all_sortie_units {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustresult::SortieEntrustResult as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                "ShowWarningAllSortieUnits",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    "ShowWarningAllSortieUnits",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_warning_all_sortie_units(
+        super_: crate::app::procinst::ProcInst,
+        result: crate::app::sortieentrustresult::SortieEntrustResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::sortieentrustresult::SortieEntrustResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_warning_all_sortie_units::get_offset() as isize),
+        );
+        inner(super_, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_warning_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                "ShowWarningCommon",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    "ShowWarningCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show_warning_common(
+        super_: crate::app::procinst::ProcInst,
+        mid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_show_warning_common::get_offset() as isize),
+        );
+        inner(super_, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrust as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: SortieEntrust, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SortieEntrust, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-sortieentrust")]
+impl SortieEntrust {
+    #[doc = "`Execute(crate::app::unit::Unit)` overload"]
+    pub fn execute(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
+        unsafe {
+            __SortieEntrust_unity2_raw::execute(
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteAllSortieUnits()` overload"]
+    pub fn execute_all_sortie_units() -> crate::app::sortieentrustresult::SortieEntrustResult {
+        unsafe {
+            __SortieEntrust_unity2_raw::execute_all_sortie_units(::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
+    pub fn show_warning(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        result: impl ::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>,
+    ) -> () {
+        unsafe {
+            __SortieEntrust_unity2_raw::show_warning(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
+    pub fn show_warning_all_sortie_units(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        result: impl ::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>,
+    ) -> () {
+        unsafe {
+            __SortieEntrust_unity2_raw::show_warning_all_sortie_units(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    pub fn show_warning_common(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __SortieEntrust_unity2_raw::show_warning_common(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentrust")]
+pub trait ISortieEntrustMethods: ISortieEntrust {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SortieEntrust as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SortieEntrust_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentrust")]
+impl<__T: ISortieEntrust> ISortieEntrustMethods for __T {}
+
+#[cfg(feature = "app-sortieentrust")]
+impl SortieEntrust {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieEntrust),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieEntrustMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-sortieentrust")]
 #[doc(hidden)]
@@ -589,398 +981,6 @@ impl SortieEntrust_Executor {
             )
         });
         <Self as ISortieEntrust_ExecutorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortieentrust")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrust_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::sortieentrustresult::SortieEntrustResult = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_all_sortie_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                "ExecuteAllSortieUnits",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteAllSortieUnits",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_all_sortie_units(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::app::sortieentrustresult::SortieEntrustResult = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_all_sortie_units::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_warning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::sortieentrustresult::SortieEntrustResult as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                "ShowWarning",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    "ShowWarning",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_warning(
-        super_: crate::app::procinst::ProcInst,
-        result: crate::app::sortieentrustresult::SortieEntrustResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::sortieentrustresult::SortieEntrustResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show_warning::get_offset() as isize),
-        );
-        inner(super_, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_warning_all_sortie_units {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::sortieentrustresult::SortieEntrustResult as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                "ShowWarningAllSortieUnits",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    "ShowWarningAllSortieUnits",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_warning_all_sortie_units(
-        super_: crate::app::procinst::ProcInst,
-        result: crate::app::sortieentrustresult::SortieEntrustResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::sortieentrustresult::SortieEntrustResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show_warning_all_sortie_units::get_offset() as isize),
-        );
-        inner(super_, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_warning_common {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                "ShowWarningCommon",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    "ShowWarningCommon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_warning_common(
-        super_: crate::app::procinst::ProcInst,
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show_warning_common::get_offset() as isize),
-        );
-        inner(super_, mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrust as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrust as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: SortieEntrust, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SortieEntrust, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-sortieentrust")]
-impl SortieEntrust {
-    #[doc = "`Execute(crate::app::unit::Unit)` overload"]
-    pub fn execute(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::sortieentrustresult::SortieEntrustResult {
-        unsafe {
-            __SortieEntrust_unity2_raw::execute(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ExecuteAllSortieUnits()` overload"]
-    pub fn execute_all_sortie_units() -> crate::app::sortieentrustresult::SortieEntrustResult {
-        unsafe {
-            __SortieEntrust_unity2_raw::execute_all_sortie_units(::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
-    pub fn show_warning(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        result: impl ::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>,
-    ) -> () {
-        unsafe {
-            __SortieEntrust_unity2_raw::show_warning(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]
-    pub fn show_warning_all_sortie_units(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        result: impl ::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>,
-    ) -> () {
-        unsafe {
-            __SortieEntrust_unity2_raw::show_warning_all_sortie_units(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    pub fn show_warning_common(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __SortieEntrust_unity2_raw::show_warning_common(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(mid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrust")]
-pub trait ISortieEntrustMethods: ISortieEntrust {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SortieEntrust as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrust_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrust")]
-impl<__T: ISortieEntrust> ISortieEntrustMethods for __T {}
-
-#[cfg(feature = "app-sortieentrust")]
-impl SortieEntrust {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrust),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustMethods>::ctor(this);
         this
     }
 }

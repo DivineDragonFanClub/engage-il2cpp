@@ -8,15 +8,15 @@ mod __types {
     use crate::unity_engine::gui::{GUI_Scope, IGUI_Scope};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_ScrollViewScope {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
     #[parent(crate::unity_engine::gui::GUI_Scope)]
     pub struct GUILayout_HorizontalScope {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.AreaScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_AreaScope {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout")]
@@ -37,14 +37,446 @@ mod __types {
         pub m_style: crate::unity_engine::guistyle::GUIStyle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.AreaScope")]
     #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_ScrollViewScope {}
+    pub struct GUILayout_AreaScope {}
 }
 
 #[cfg(feature = "unity_engine-guilayout-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUILayout_ScrollViewScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scroll_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "get_scrollPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    "get_scrollPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scroll_position(
+        this: GUILayout_ScrollViewScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            GUILayout_ScrollViewScope,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_scroll_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scroll_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "set_scrollPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    "set_scrollPosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_scroll_position(
+        this: GUILayout_ScrollViewScope,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayout_ScrollViewScope,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_scroll_position::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_handle_scroll_wheel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "get_handleScrollWheel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    "get_handleScrollWheel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_handle_scroll_wheel(
+        this: GUILayout_ScrollViewScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_handle_scroll_wheel::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_handle_scroll_wheel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "set_handleScrollWheel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    "set_handleScrollWheel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_handle_scroll_wheel(
+        this: GUILayout_ScrollViewScope,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_handle_scroll_wheel::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GUILayout_ScrollViewScope,
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayout_ScrollViewScope,
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            bool,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
+            options,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_scope {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "CloseScope",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    "CloseScope",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_scope(
+        this: GUILayout_ScrollViewScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_scope::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+pub trait IGUILayout_ScrollViewScopeMethods: IGUILayout_ScrollViewScope {
+    #[doc = "`get_scrollPosition()` overload"]
+    fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::get_scroll_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_scroll_position(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::set_scroll_position(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_handleScrollWheel()` overload"]
+    fn get_handle_scroll_wheel(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::get_handle_scroll_wheel(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_handleScrollWheel(bool)` overload"]
+    fn set_handle_scroll_wheel(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::set_handle_scroll_wheel(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn ctor(
+        self,
+        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        always_show_horizontal: impl ::core::convert::Into<bool>,
+        always_show_vertical: impl ::core::convert::Into<bool>,
+        options: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(scroll_position),
+                ::core::convert::Into::into(always_show_horizontal),
+                ::core::convert::Into::into(always_show_vertical),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseScope()` overload"]
+    fn close_scope(self) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GUILayout_ScrollViewScope_unity2_raw::close_scope(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl<__T: IGUILayout_ScrollViewScope> IGUILayout_ScrollViewScopeMethods for __T {}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_ScrollViewScope {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_ScrollViewScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(
+            this,
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
+            options,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
@@ -203,153 +635,6 @@ impl GUILayout_HorizontalScope {
             )
         });
         <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUILayout_AreaScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GUILayout_AreaScope,
-        screen_rect: crate::unity_engine::rect::Rect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_AreaScope,
-            crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, screen_rect, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_scope {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
-                "CloseScope",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
-                    "CloseScope",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_scope(
-        this: GUILayout_AreaScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUILayout_AreaScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_scope::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-pub trait IGUILayout_AreaScopeMethods: IGUILayout_AreaScope {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` overload"]
-    fn ctor(self, screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
-        unsafe {
-            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GUILayout_AreaScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(screen_rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloseScope()` overload"]
-    fn close_scope(self) -> () {
-        unsafe {
-            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GUILayout_AreaScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl<__T: IGUILayout_AreaScope> IGUILayout_AreaScopeMethods for __T {}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_AreaScope {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]
-    pub fn new(screen_rect: crate::unity_engine::rect::Rect) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_AreaScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_AreaScopeMethods>::ctor(this, screen_rect);
         this
     }
 }
@@ -1785,197 +2070,8 @@ impl GUILayout_LayoutedWindow {
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUILayout_ScrollViewScope_unity2_raw {
+mod __GUILayout_AreaScope_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "get_scrollPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "get_scrollPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scroll_position(
-        this: GUILayout_ScrollViewScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scroll_position::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_scroll_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "set_scrollPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "set_scrollPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_scroll_position(
-        this: GUILayout_ScrollViewScope,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scroll_position::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle_scroll_wheel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "get_handleScrollWheel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "get_handleScrollWheel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_handle_scroll_wheel(
-        this: GUILayout_ScrollViewScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_handle_scroll_wheel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_handle_scroll_wheel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "set_handleScrollWheel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "set_handleScrollWheel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_handle_scroll_wheel(
-        this: GUILayout_ScrollViewScope,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_handle_scroll_wheel::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -1983,11 +2079,12 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                4,
+                1,
                 param_types,
                 false,
             )
@@ -1997,7 +2094,7 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2010,33 +2107,20 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GUILayout_ScrollViewScope,
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        this: GUILayout_AreaScope,
+        screen_rect: crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            GUILayout_AreaScope,
+            crate::unity_engine::rect::Rect,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(
-            this,
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-            __unity2_method_info,
-        )
+        inner(this, screen_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2047,7 +2131,7 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
                 "CloseScope",
                 0,
                 param_types,
@@ -2059,7 +2143,7 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
                     "CloseScope",
                     e
                 ),
@@ -2072,10 +2156,10 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
         }
     }
     pub unsafe fn close_scope(
-        this: GUILayout_ScrollViewScope,
+        this: GUILayout_AreaScope,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(GUILayout_AreaScope, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2086,85 +2170,16 @@ mod __GUILayout_ScrollViewScope_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-guilayout")]
-pub trait IGUILayout_ScrollViewScopeMethods: IGUILayout_ScrollViewScope {
-    #[doc = "`get_scrollPosition()` overload"]
-    fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2 {
+pub trait IGUILayout_AreaScopeMethods: IGUILayout_AreaScope {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` overload"]
+    fn ctor(self, screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
         unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::get_scroll_position(
+            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayout_AreaScope_unity2_raw::ctor(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_scroll_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::set_scroll_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_handleScrollWheel()` overload"]
-    fn get_handle_scroll_wheel(self) -> bool {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::get_handle_scroll_wheel(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_handleScrollWheel(bool)` overload"]
-    fn set_handle_scroll_wheel(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::set_handle_scroll_wheel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    fn ctor(
-        self,
-        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        always_show_horizontal: impl ::core::convert::Into<bool>,
-        always_show_vertical: impl ::core::convert::Into<bool>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(scroll_position),
-                ::core::convert::Into::into(always_show_horizontal),
-                ::core::convert::Into::into(always_show_vertical),
-                ::core::convert::Into::into(options),
+                ::core::convert::Into::into(screen_rect),
                 ::core::option::Option::None,
             )
         }
@@ -2172,44 +2187,29 @@ pub trait IGUILayout_ScrollViewScopeMethods: IGUILayout_ScrollViewScope {
     #[doc = "`CloseScope()` overload"]
     fn close_scope(self) -> () {
         unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::close_scope(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GUILayout_AreaScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-guilayout")]
-impl<__T: IGUILayout_ScrollViewScope> IGUILayout_ScrollViewScopeMethods for __T {}
+impl<__T: IGUILayout_AreaScope> IGUILayout_AreaScopeMethods for __T {}
 
 #[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_ScrollViewScope {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
+impl GUILayout_AreaScope {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]
+    pub fn new(screen_rect: crate::unity_engine::rect::Rect) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_ScrollViewScope),
+                ::core::stringify!(GUILayout_AreaScope),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(
-            this,
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-        );
+        <Self as IGUILayout_AreaScopeMethods>::ctor(this, screen_rect);
         this
     }
 }

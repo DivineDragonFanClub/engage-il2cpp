@@ -367,7 +367,7 @@ impl AttributeHelperEngine {
             )
         }
     }
-    fn get_custom_attribute_of_type<
+    pub fn get_custom_attribute_of_type<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         klass: impl ::core::convert::Into<::unity2::SystemType>,

@@ -12,6 +12,21 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMaterialArray")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubMaterialArray {
+        #[rename(name = "m_objectTag")]
+        pub m_object_tag: ::unity2::Il2CppString,
+        #[rename(name = "m_activeMaterial")]
+        pub m_active_material: ::unity2::Il2CppString,
+        #[rename(name = "m_materials")]
+        pub m_materials:
+            ::unity2::Array<crate::app::hubmaterialarray::HubMaterialArray_MaterialInfo>,
+        #[rename(name = "m_renderer")]
+        pub m_renderer: crate::unity_engine::renderer::Renderer,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,21 +54,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMaterialArray")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMaterialArray {
-        #[rename(name = "m_objectTag")]
-        pub m_object_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_activeMaterial")]
-        pub m_active_material: ::unity2::Il2CppString,
-        #[rename(name = "m_materials")]
-        pub m_materials:
-            ::unity2::Array<crate::app::hubmaterialarray::HubMaterialArray_MaterialInfo>,
-        #[rename(name = "m_renderer")]
-        pub m_renderer: crate::unity_engine::renderer::Renderer,
     }
 }
 

@@ -17,6 +17,27 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle.ToggleEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)]
+    pub struct Toggle_ToggleEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Toggle {
+        #[rename(name = "toggleTransition")]
+        pub toggle_transition: crate::unity_engine::ui::toggle::Toggle_ToggleTransition,
+        #[rename(name = "graphic")]
+        pub graphic: crate::unity_engine::ui::graphic::Graphic,
+        #[rename(name = "m_Group")]
+        pub m_group: crate::unity_engine::ui::togglegroup::ToggleGroup,
+        #[rename(name = "onValueChanged")]
+        pub on_value_changed: crate::unity_engine::ui::toggle::Toggle_ToggleEvent,
+        #[rename(name = "m_IsOn")]
+        pub m_is_on: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
     #[repr(C)]
     #[derive(
@@ -60,31 +81,94 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Toggle {
-        #[rename(name = "toggleTransition")]
-        pub toggle_transition: crate::unity_engine::ui::toggle::Toggle_ToggleTransition,
-        #[rename(name = "graphic")]
-        pub graphic: crate::unity_engine::ui::graphic::Graphic,
-        #[rename(name = "m_Group")]
-        pub m_group: crate::unity_engine::ui::togglegroup::ToggleGroup,
-        #[rename(name = "onValueChanged")]
-        pub on_value_changed: crate::unity_engine::ui::toggle::Toggle_ToggleEvent,
-        #[rename(name = "m_IsOn")]
-        pub m_is_on: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle.ToggleEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)]
-    pub struct Toggle_ToggleEvent {}
 }
 
 #[cfg(feature = "unity_engine-ui-toggle-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-ui-toggle")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Toggle_ToggleEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Toggle_ToggleEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Toggle_ToggleEvent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Toggle_ToggleEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Toggle_ToggleEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-toggle")]
+pub trait IToggle_ToggleEventMethods: IToggle_ToggleEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Toggle_ToggleEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Toggle_ToggleEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-toggle")]
+impl<__T: IToggle_ToggleEvent> IToggle_ToggleEventMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-toggle")]
+impl Toggle_ToggleEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Toggle_ToggleEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IToggle_ToggleEventMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-ui-toggle")]
 #[doc(hidden)]
@@ -1335,90 +1419,6 @@ impl Toggle {
             )
         });
         <Self as IToggleMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-toggle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Toggle_ToggleEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Toggle_ToggleEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Toggle_ToggleEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Toggle_ToggleEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Toggle_ToggleEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-toggle")]
-pub trait IToggle_ToggleEventMethods: IToggle_ToggleEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Toggle_ToggleEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Toggle_ToggleEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-toggle")]
-impl<__T: IToggle_ToggleEvent> IToggle_ToggleEventMethods for __T {}
-
-#[cfg(feature = "unity_engine-ui-toggle")]
-impl Toggle_ToggleEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Toggle_ToggleEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IToggle_ToggleEventMethods>::ctor(this);
         this
     }
 }

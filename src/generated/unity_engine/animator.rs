@@ -13735,7 +13735,7 @@ mod __Animator_unity2_raw {
 
 #[cfg(feature = "unity_engine-animator")]
 impl Animator {
-    fn convert_state_machine_behaviour<
+    pub fn convert_state_machine_behaviour<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         raw_objects: impl ::core::convert::Into<

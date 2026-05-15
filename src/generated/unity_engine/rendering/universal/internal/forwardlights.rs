@@ -7,6 +7,55 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "ForwardLights"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ForwardLights {
+        #[static_field]
+        #[rename(name = "k_CustomSpecCubeCount")]
+        pub k_custom_spec_cube_count: i32,
+        #[rename(name = "m_AdditionalLightsBufferId")]
+        pub m_additional_lights_buffer_id: i32,
+        #[rename(name = "m_AdditionalLightsIndicesId")]
+        pub m_additional_lights_indices_id: i32,
+        #[static_field]
+        #[rename(name = "k_SetupLightConstants")]
+        pub k_setup_light_constants: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "m_ProfilingSampler")]
+        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "m_MixedLightingSetup")]
+        pub m_mixed_lighting_setup:
+            crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
+        #[rename(name = "m_AdditionalLightPositions")]
+        pub m_additional_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_AdditionalLightColors")]
+        pub m_additional_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_AdditionalLightAttenuations")]
+        pub m_additional_light_attenuations: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_AdditionalLightSpotDirections")]
+        pub m_additional_light_spot_directions:
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_AdditionalLightOcclusionProbeChannels")]
+        pub m_additional_light_occlusion_probe_channels:
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_UseStructuredBuffer")]
+        pub m_use_structured_buffer: bool,
+        #[static_field]
+        #[rename(name = "k_BatchSimpleLightMaxCount")]
+        pub k_batch_simple_light_max_count: i32,
+        #[rename(name = "m_BatchSimpleLightPositions")]
+        pub m_batch_simple_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_BatchSimpleLightColors")]
+        pub m_batch_simple_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[rename(name = "m_BatchSimpleLightAttenuations")]
+        pub m_batch_simple_light_attenuations:
+            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -68,55 +117,6 @@ mod __types {
         #[static_field]
         #[rename(name = "_SpecCubeTex")]
         pub spec_cube_tex: ::unity2::Array<i32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "ForwardLights"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardLights {
-        #[static_field]
-        #[rename(name = "k_CustomSpecCubeCount")]
-        pub k_custom_spec_cube_count: i32,
-        #[rename(name = "m_AdditionalLightsBufferId")]
-        pub m_additional_lights_buffer_id: i32,
-        #[rename(name = "m_AdditionalLightsIndicesId")]
-        pub m_additional_lights_indices_id: i32,
-        #[static_field]
-        #[rename(name = "k_SetupLightConstants")]
-        pub k_setup_light_constants: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[rename(name = "m_MixedLightingSetup")]
-        pub m_mixed_lighting_setup:
-            crate::unity_engine::rendering::universal::mixedlightingsetup::MixedLightingSetup,
-        #[rename(name = "m_AdditionalLightPositions")]
-        pub m_additional_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_AdditionalLightColors")]
-        pub m_additional_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_AdditionalLightAttenuations")]
-        pub m_additional_light_attenuations: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_AdditionalLightSpotDirections")]
-        pub m_additional_light_spot_directions:
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_AdditionalLightOcclusionProbeChannels")]
-        pub m_additional_light_occlusion_probe_channels:
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_UseStructuredBuffer")]
-        pub m_use_structured_buffer: bool,
-        #[static_field]
-        #[rename(name = "k_BatchSimpleLightMaxCount")]
-        pub k_batch_simple_light_max_count: i32,
-        #[rename(name = "m_BatchSimpleLightPositions")]
-        pub m_batch_simple_light_positions: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_BatchSimpleLightColors")]
-        pub m_batch_simple_light_colors: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_BatchSimpleLightAttenuations")]
-        pub m_batch_simple_light_attenuations:
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
     }
 }
 

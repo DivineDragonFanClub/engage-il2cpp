@@ -1560,7 +1560,7 @@ impl MapInspectors {
             )
         }
     }
-    fn try_create_inspector<
+    pub fn try_create_inspector<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         x: impl ::core::convert::Into<i32>,

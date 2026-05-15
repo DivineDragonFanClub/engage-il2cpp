@@ -8,6 +8,28 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1_Node.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1.Node")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortedSet_1_Node<T0: ::unity2::ClassIdentity> {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortedSet_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "root")]
+        pub root: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        #[rename(name = "comparer")]
+        pub comparer:
+            crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
+        #[rename(name = "count")]
+        pub count: i32,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/sortedset_1/SortedSet_1_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,94 +61,176 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortedSet_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "root")]
-        pub root: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        #[rename(name = "comparer")]
-        pub comparer:
-            crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
-        #[rename(name = "count")]
-        pub count: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1_Node.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1.Node")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortedSet_1_Node<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> SortedSet_1_Enumerator<T0> {
-    #[doc = "`.ctor(crate::system::collections::generic::sortedset_1::SortedSet_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, set: crate::system::collections::generic::sortedset_1::SortedSet_1<T0>)
-        -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::sortedset_1::SortedSet_1<T0>, bool)` overload"]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SortedSet_1_Node<T0> {
+    #[doc = "`.ctor(T0, crate::system::collections::generic::nodecolor::NodeColor)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
+    pub fn ctor(
         self,
-        set: crate::system::collections::generic::sortedset_1::SortedSet_1<T0>,
-        reverse: bool,
+        item: T0,
+        color: crate::system::collections::generic::nodecolor::NodeColor,
     ) -> ();
 
-    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(
-        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-        args = 1
-    )]
-    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+    #[doc = "`IsNonNullRed(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "IsNonNullRed", args = 1)]
+    pub fn is_non_null_red(
+        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> bool;
+
+    #[doc = "`IsNullOrBlack(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "IsNullOrBlack", args = 1)]
+    pub fn is_null_or_black(
+        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> bool;
+
+    #[doc = "`get_Item()` overload"]
+    #[method(name = "get_Item", args = 0)]
+    pub fn get_item(self) -> T0;
+
+    #[doc = "`set_Item(T0)` overload"]
+    #[method(name = "set_Item", args = 1)]
+    pub fn set_item(self, value: T0) -> ();
+
+    #[doc = "`get_Left()` overload"]
+    #[method(name = "get_Left", args = 0)]
+    pub fn get_left(self)
+        -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`set_Left(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "set_Left", args = 1)]
+    pub fn set_left(
         self,
-        sender: crate::system::object::Object,
+        value: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
     ) -> ();
 
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize(self) -> ();
+    #[doc = "`get_Right()` overload"]
+    #[method(name = "get_Right", args = 0)]
+    pub fn get_right(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
 
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
+    #[doc = "`set_Right(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "set_Right", args = 1)]
+    pub fn set_right(
+        self,
+        value: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> ();
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    #[doc = "`get_Color()` overload"]
+    #[method(name = "get_Color", args = 0)]
+    pub fn get_color(self) -> crate::system::collections::generic::nodecolor::NodeColor;
 
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
+    #[doc = "`set_Color(crate::system::collections::generic::nodecolor::NodeColor)` overload"]
+    #[method(name = "set_Color", args = 1)]
+    pub fn set_color(self, value: crate::system::collections::generic::nodecolor::NodeColor) -> ();
 
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+    #[doc = "`get_IsBlack()` overload"]
+    #[method(name = "get_IsBlack", args = 0)]
+    pub fn get_is_black(self) -> bool;
 
-    #[doc = "`get_NotStartedOrEnded()` overload"]
-    #[method(name = "get_NotStartedOrEnded", args = 0)]
-    pub fn get_not_started_or_ended(self) -> bool;
+    #[doc = "`get_IsRed()` overload"]
+    #[method(name = "get_IsRed", args = 0)]
+    pub fn get_is_red(self) -> bool;
 
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
+    #[doc = "`get_Is2Node()` overload"]
+    #[method(name = "get_Is2Node", args = 0)]
+    pub fn get_is2_node(self) -> bool;
 
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
+    #[doc = "`get_Is4Node()` overload"]
+    #[method(name = "get_Is4Node", args = 0)]
+    pub fn get_is4_node(self) -> bool;
 
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    #[doc = "`ColorBlack()` overload"]
+    #[method(name = "ColorBlack", args = 0)]
+    pub fn color_black(self) -> ();
+
+    #[doc = "`ColorRed()` overload"]
+    #[method(name = "ColorRed", args = 0)]
+    pub fn color_red(self) -> ();
+
+    #[doc = "`GetRotation(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "GetRotation", args = 2)]
+    pub fn get_rotation(
+        self,
+        current: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        sibling: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> crate::system::collections::generic::treerotation::TreeRotation;
+
+    #[doc = "`GetSibling(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "GetSibling", args = 1)]
+    pub fn get_sibling(
+        self,
+        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`Split4Node()` overload"]
+    #[method(name = "Split4Node", args = 0)]
+    pub fn split4_node(self) -> ();
+
+    #[doc = "`Rotate(crate::system::collections::generic::treerotation::TreeRotation)` overload"]
+    #[method(name = "Rotate", args = 1)]
+    pub fn rotate(
+        self,
+        rotation: crate::system::collections::generic::treerotation::TreeRotation,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`RotateLeft()` overload"]
+    #[method(name = "RotateLeft", args = 0)]
+    pub fn rotate_left(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`RotateLeftRight()` overload"]
+    #[method(name = "RotateLeftRight", args = 0)]
+    pub fn rotate_left_right(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`RotateRight()` overload"]
+    #[method(name = "RotateRight", args = 0)]
+    pub fn rotate_right(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`RotateRightLeft()` overload"]
+    #[method(name = "RotateRightLeft", args = 0)]
+    pub fn rotate_right_left(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`Merge2Nodes()` overload"]
+    #[method(name = "Merge2Nodes", args = 0)]
+    pub fn merge2_nodes(self) -> ();
+
+    #[doc = "`ReplaceChild(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "ReplaceChild", args = 2)]
+    pub fn replace_child(
+        self,
+        child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        new_child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> ();
+}
+
+#[cfg(feature = "system-collections-generic-sortedset_1")]
+impl<T0: ::unity2::ClassIdentity> SortedSet_1_Node<T0> {
+    #[doc = "`.ctor(T0, crate::system::collections::generic::nodecolor::NodeColor)` — overload selector"]
+    pub fn new(item: T0, color: crate::system::collections::generic::nodecolor::NodeColor) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedSet_1_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortedSet_1_NodeMethods<T0>>::ctor(this, item, color);
+        this
+    }
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]
@@ -317,170 +421,66 @@ impl<T0: ::unity2::ClassIdentity> SortedSet_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> SortedSet_1_Node<T0> {
-    #[doc = "`.ctor(T0, crate::system::collections::generic::nodecolor::NodeColor)` overload"]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> SortedSet_1_Enumerator<T0> {
+    #[doc = "`.ctor(crate::system::collections::generic::sortedset_1::SortedSet_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, set: crate::system::collections::generic::sortedset_1::SortedSet_1<T0>)
+        -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::sortedset_1::SortedSet_1<T0>, bool)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
+    pub fn ctor_2(
         self,
-        item: T0,
-        color: crate::system::collections::generic::nodecolor::NodeColor,
+        set: crate::system::collections::generic::sortedset_1::SortedSet_1<T0>,
+        reverse: bool,
     ) -> ();
 
-    #[doc = "`IsNonNullRed(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "IsNonNullRed", args = 1)]
-    pub fn is_non_null_red(
-        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> bool;
-
-    #[doc = "`IsNullOrBlack(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "IsNullOrBlack", args = 1)]
-    pub fn is_null_or_black(
-        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> bool;
-
-    #[doc = "`get_Item()` overload"]
-    #[method(name = "get_Item", args = 0)]
-    pub fn get_item(self) -> T0;
-
-    #[doc = "`set_Item(T0)` overload"]
-    #[method(name = "set_Item", args = 1)]
-    pub fn set_item(self, value: T0) -> ();
-
-    #[doc = "`get_Left()` overload"]
-    #[method(name = "get_Left", args = 0)]
-    pub fn get_left(self)
-        -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`set_Left(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "set_Left", args = 1)]
-    pub fn set_left(
+    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
+    #[method(
+        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+        args = 1
+    )]
+    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
         self,
-        value: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        sender: crate::system::object::Object,
     ) -> ();
 
-    #[doc = "`get_Right()` overload"]
-    #[method(name = "get_Right", args = 0)]
-    pub fn get_right(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
 
-    #[doc = "`set_Right(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "set_Right", args = 1)]
-    pub fn set_right(
-        self,
-        value: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> ();
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
 
-    #[doc = "`get_Color()` overload"]
-    #[method(name = "get_Color", args = 0)]
-    pub fn get_color(self) -> crate::system::collections::generic::nodecolor::NodeColor;
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 
-    #[doc = "`set_Color(crate::system::collections::generic::nodecolor::NodeColor)` overload"]
-    #[method(name = "set_Color", args = 1)]
-    pub fn set_color(self, value: crate::system::collections::generic::nodecolor::NodeColor) -> ();
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
 
-    #[doc = "`get_IsBlack()` overload"]
-    #[method(name = "get_IsBlack", args = 0)]
-    pub fn get_is_black(self) -> bool;
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
 
-    #[doc = "`get_IsRed()` overload"]
-    #[method(name = "get_IsRed", args = 0)]
-    pub fn get_is_red(self) -> bool;
+    #[doc = "`get_NotStartedOrEnded()` overload"]
+    #[method(name = "get_NotStartedOrEnded", args = 0)]
+    pub fn get_not_started_or_ended(self) -> bool;
 
-    #[doc = "`get_Is2Node()` overload"]
-    #[method(name = "get_Is2Node", args = 0)]
-    pub fn get_is2_node(self) -> bool;
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
 
-    #[doc = "`get_Is4Node()` overload"]
-    #[method(name = "get_Is4Node", args = 0)]
-    pub fn get_is4_node(self) -> bool;
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
 
-    #[doc = "`ColorBlack()` overload"]
-    #[method(name = "ColorBlack", args = 0)]
-    pub fn color_black(self) -> ();
-
-    #[doc = "`ColorRed()` overload"]
-    #[method(name = "ColorRed", args = 0)]
-    pub fn color_red(self) -> ();
-
-    #[doc = "`GetRotation(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "GetRotation", args = 2)]
-    pub fn get_rotation(
-        self,
-        current: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        sibling: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> crate::system::collections::generic::treerotation::TreeRotation;
-
-    #[doc = "`GetSibling(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "GetSibling", args = 1)]
-    pub fn get_sibling(
-        self,
-        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`Split4Node()` overload"]
-    #[method(name = "Split4Node", args = 0)]
-    pub fn split4_node(self) -> ();
-
-    #[doc = "`Rotate(crate::system::collections::generic::treerotation::TreeRotation)` overload"]
-    #[method(name = "Rotate", args = 1)]
-    pub fn rotate(
-        self,
-        rotation: crate::system::collections::generic::treerotation::TreeRotation,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`RotateLeft()` overload"]
-    #[method(name = "RotateLeft", args = 0)]
-    pub fn rotate_left(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`RotateLeftRight()` overload"]
-    #[method(name = "RotateLeftRight", args = 0)]
-    pub fn rotate_left_right(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`RotateRight()` overload"]
-    #[method(name = "RotateRight", args = 0)]
-    pub fn rotate_right(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`RotateRightLeft()` overload"]
-    #[method(name = "RotateRightLeft", args = 0)]
-    pub fn rotate_right_left(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`Merge2Nodes()` overload"]
-    #[method(name = "Merge2Nodes", args = 0)]
-    pub fn merge2_nodes(self) -> ();
-
-    #[doc = "`ReplaceChild(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "ReplaceChild", args = 2)]
-    pub fn replace_child(
-        self,
-        child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        new_child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> ();
-}
-
-#[cfg(feature = "system-collections-generic-sortedset_1")]
-impl<T0: ::unity2::ClassIdentity> SortedSet_1_Node<T0> {
-    #[doc = "`.ctor(T0, crate::system::collections::generic::nodecolor::NodeColor)` — overload selector"]
-    pub fn new(item: T0, color: crate::system::collections::generic::nodecolor::NodeColor) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedSet_1_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortedSet_1_NodeMethods<T0>>::ctor(this, item, color);
-        this
-    }
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]

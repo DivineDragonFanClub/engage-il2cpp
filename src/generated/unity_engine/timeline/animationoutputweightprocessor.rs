@@ -8,17 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "AnimationOutputWeightProcessor"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationOutputWeightProcessor {
-# [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
-# [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor_WeightInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -48,6 +37,17 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Timeline",
+        name = "AnimationOutputWeightProcessor"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimationOutputWeightProcessor {
+# [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
+# [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
+}
 }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]

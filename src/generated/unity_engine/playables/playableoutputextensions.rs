@@ -25,7 +25,7 @@ mod __PlayableOutputExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-playables-playableoutputextensions")]
 impl PlayableOutputExtensions {
-    fn set_reference_object<
+    pub fn set_reference_object<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         output: impl ::core::convert::Into<M0>,
@@ -82,7 +82,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn set_user_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn set_user_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
@@ -137,7 +137,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn get_source_playable<
+    pub fn get_source_playable<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         output: impl ::core::convert::Into<M0>,
@@ -193,7 +193,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn set_source_playable<
+    pub fn set_source_playable<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
@@ -254,7 +254,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn get_source_output_port<
+    pub fn get_source_output_port<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         output: impl ::core::convert::Into<M0>,
@@ -306,7 +306,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn set_weight<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn set_weight<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<f32>,
     ) -> () {
@@ -358,7 +358,9 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn push_notification<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn push_notification<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         output: impl ::core::convert::Into<M0>,
         origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         notification: impl ::core::convert::Into<
@@ -421,7 +423,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    fn add_notification_receiver<
+    pub fn add_notification_receiver<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         output: impl ::core::convert::Into<M0>,

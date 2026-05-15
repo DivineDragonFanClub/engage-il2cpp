@@ -10,34 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoParamManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)]
-    pub struct UnitInfoParamManager {
-        #[rename(name = "m_CalcUnit")]
-        pub m_calc_unit: crate::app::unit::Unit,
-        #[rename(name = "m_BattleInfoParam")]
-        pub m_battle_info_param: crate::app::battleinfoparam::BattleInfoParam,
-        #[rename(name = "m_CalcUnitNoGod")]
-        pub m_calc_unit_no_god: crate::app::unit::Unit,
-        #[rename(name = "m_BattleInfoParamNoGod")]
-        pub m_battle_info_param_no_god: crate::app::battleinfoparam::BattleInfoParam,
-        #[rename(name = "m_CalcUnitNoEffect")]
-        pub m_calc_unit_no_effect: crate::app::unit::Unit,
-        #[rename(name = "m_BattleInfoParamNoEffect")]
-        pub m_battle_info_param_no_effect: crate::app::battleinfoparam::BattleInfoParam,
-        #[rename(name = "m_CalcUnitNoHub")]
-        pub m_calc_unit_no_hub: crate::app::unit::Unit,
-        #[rename(name = "m_BattleInfoParamNoHub")]
-        pub m_battle_info_param_no_hub: crate::app::battleinfoparam::BattleInfoParam,
-        #[rename(name = "m_BattleInfo")]
-        pub m_battle_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_OldRingOwner")]
-        pub m_old_ring_owner: crate::app::unit::Unit,
-        #[rename(name = "m_param")]
-        pub m_param: ::unity2::Array<crate::app::unitparamdetail::UnitParamDetail>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]
     #[repr(C)]
     #[derive(
@@ -144,6 +116,34 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 17 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoParamManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)]
+    pub struct UnitInfoParamManager {
+        #[rename(name = "m_CalcUnit")]
+        pub m_calc_unit: crate::app::unit::Unit,
+        #[rename(name = "m_BattleInfoParam")]
+        pub m_battle_info_param: crate::app::battleinfoparam::BattleInfoParam,
+        #[rename(name = "m_CalcUnitNoGod")]
+        pub m_calc_unit_no_god: crate::app::unit::Unit,
+        #[rename(name = "m_BattleInfoParamNoGod")]
+        pub m_battle_info_param_no_god: crate::app::battleinfoparam::BattleInfoParam,
+        #[rename(name = "m_CalcUnitNoEffect")]
+        pub m_calc_unit_no_effect: crate::app::unit::Unit,
+        #[rename(name = "m_BattleInfoParamNoEffect")]
+        pub m_battle_info_param_no_effect: crate::app::battleinfoparam::BattleInfoParam,
+        #[rename(name = "m_CalcUnitNoHub")]
+        pub m_calc_unit_no_hub: crate::app::unit::Unit,
+        #[rename(name = "m_BattleInfoParamNoHub")]
+        pub m_battle_info_param_no_hub: crate::app::battleinfoparam::BattleInfoParam,
+        #[rename(name = "m_BattleInfo")]
+        pub m_battle_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_OldRingOwner")]
+        pub m_old_ring_owner: crate::app::unit::Unit,
+        #[rename(name = "m_param")]
+        pub m_param: ::unity2::Array<crate::app::unitparamdetail::UnitParamDetail>,
     }
 }
 

@@ -11,6 +11,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingRadicalParamData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)]
+    pub struct FishingRadicalParamData {
+        #[rename(name = "Param")]
+        pub param: ::unity2::Array<
+            crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingradicalparamdata/FishingRadicalParamData_RadicalParam.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,16 +49,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingRadicalParamData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)]
-    pub struct FishingRadicalParamData {
-        #[rename(name = "Param")]
-        pub param: ::unity2::Array<
-            crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam,
-        >,
     }
 }
 

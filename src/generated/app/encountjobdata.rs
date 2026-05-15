@@ -20,11 +20,6 @@ mod __types {
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: encountjobdata :: EncountJobData >)]
     pub struct EncountJobData {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "EncountJobData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)]
-    pub struct EncountJobData_FlagField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -72,6 +67,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "EncountJobData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)]
+    pub struct EncountJobData_FlagField {}
 }
 
 #[cfg(feature = "app-encountjobdata-types")]

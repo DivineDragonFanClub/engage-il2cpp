@@ -123,7 +123,7 @@ mod __LinqHelpers_unity2_raw {
 
 #[cfg(feature = "moon_sharp-interpreter-linqhelpers")]
 impl LinqHelpers {
-    fn convert<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn convert<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         enumerable: impl ::core::convert::Into<
             crate::system::collections::generic::ienumerable_1::IEnumerable_1<
                 crate::moon_sharp::interpreter::dynvalue::DynValue,

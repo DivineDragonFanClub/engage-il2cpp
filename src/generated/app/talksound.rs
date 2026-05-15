@@ -10,17 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
-    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TalkSound_WaitSE {
-        #[static_field]
-        #[rename(name = "MinimumWaitSec")]
-        pub minimum_wait_sec: f32,
-        #[rename(name = "m_Sec")]
-        pub m_sec: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
     #[repr(C)]
     #[derive(
@@ -75,6 +64,17 @@ mod __types {
         pub fn env() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
+    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TalkSound_WaitSE {
+        #[static_field]
+        #[rename(name = "MinimumWaitSec")]
+        pub minimum_wait_sec: f32,
+        #[rename(name = "m_Sec")]
+        pub m_sec: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))]

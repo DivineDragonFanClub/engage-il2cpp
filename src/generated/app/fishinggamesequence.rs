@@ -12,196 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FishingGameSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FishingGameSequence_Label {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn init() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn select_rod() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn confirm_assist() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn move_circle() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn throw_in() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn wait_catch() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn wait_cancel() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn announce_failed() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn hit_popup() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn assist_atack() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn battle() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn battle_lethal() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn battle_failed() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn defeat_movie() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn result() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn mascot_bond() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn get_prize() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn check_continue() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn init_continue() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 20 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FishingGameSequence_AnnounceType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.AnnounceType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FishingGameSequence_AnnounceType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fast() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn slow() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingGameSequence_Ripple {
-        #[rename(name = "m_obj")]
-        pub m_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BasePos")]
-        pub m_base_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_SizeList")]
-        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_BaseHeight")]
-        pub m_base_height: f32,
-        #[rename(name = "m_PopIntervalBaseTime")]
-        pub m_pop_interval_base_time: f32,
-        #[rename(name = "m_PopRandomMax")]
-        pub m_pop_random_max: f32,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[rename(name = "m_parentNode")]
-        pub m_parent_node: crate::unity_engine::transform::Transform,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
     #[repr(C)]
     #[derive(
@@ -659,301 +469,200 @@ mod __types {
         #[rename(name = "m_AssistDamage")]
         pub m_assist_damage: f32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingGameSequence_Ripple {
+        #[rename(name = "m_obj")]
+        pub m_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BasePos")]
+        pub m_base_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_SizeList")]
+        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "m_BaseHeight")]
+        pub m_base_height: f32,
+        #[rename(name = "m_PopIntervalBaseTime")]
+        pub m_pop_interval_base_time: f32,
+        #[rename(name = "m_PopRandomMax")]
+        pub m_pop_random_max: f32,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+        #[rename(name = "m_parentNode")]
+        pub m_parent_node: crate::unity_engine::transform::Transform,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FishingGameSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FishingGameSequence_Label {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn init() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn select_rod() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn confirm_assist() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn move_circle() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn throw_in() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn wait_catch() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn wait_cancel() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn announce_failed() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn hit_popup() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn assist_atack() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn battle() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn battle_lethal() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn battle_failed() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn defeat_movie() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn result() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn mascot_bond() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn get_prize() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn check_continue() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn init_continue() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn exit() -> Self {
+            Self { value: 20 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FishingGameSequence_AnnounceType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.AnnounceType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FishingGameSequence_AnnounceType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fast() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn slow() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-fishinggamesequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-fishinggamesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingGameSequence_Ripple_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FishingGameSequence_Ripple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "Init",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init(
-        this: FishingGameSequence_Ripple,
-        pos: crate::unity_engine::vector3::Vector3,
-        size: crate::system::collections::generic::list_1::List_1<i32>,
-        base_height: f32,
-        base_interval: f32,
-        add_range: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingGameSequence_Ripple,
-            crate::unity_engine::vector3::Vector3,
-            crate::system::collections::generic::list_1::List_1<i32>,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init::get_offset() as isize),
-        );
-        inner(
-            this,
-            pos,
-            size,
-            base_height,
-            base_interval,
-            add_range,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: FishingGameSequence_Ripple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy_obj_soon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "DestroyObjSoon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                    "DestroyObjSoon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn destroy_obj_soon(
-        this: FishingGameSequence_Ripple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_obj_soon::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-pub trait IFishingGameSequence_RippleMethods: IFishingGameSequence_Ripple {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingGameSequence_Ripple_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
-    fn init(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        size: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        base_height: impl ::core::convert::Into<f32>,
-        base_interval: impl ::core::convert::Into<f32>,
-        add_range: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingGameSequence_Ripple_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(size),
-                ::core::convert::Into::into(base_height),
-                ::core::convert::Into::into(base_interval),
-                ::core::convert::Into::into(add_range),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingGameSequence_Ripple_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DestroyObjSoon()` overload"]
-    fn destroy_obj_soon(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingGameSequence_Ripple_unity2_raw::destroy_obj_soon(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl<__T: IFishingGameSequence_Ripple> IFishingGameSequence_RippleMethods for __T {}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl FishingGameSequence_Ripple {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingGameSequence_Ripple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-fishinggamesequence")]
 #[doc(hidden)]
@@ -5935,6 +5644,297 @@ impl FishingGameSequence {
             )
         });
         <Self as IFishingGameSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingGameSequence_Ripple_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FishingGameSequence_Ripple,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "Init",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                    "Init",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn init(
+        this: FishingGameSequence_Ripple,
+        pos: crate::unity_engine::vector3::Vector3,
+        size: crate::system::collections::generic::list_1::List_1<i32>,
+        base_height: f32,
+        base_interval: f32,
+        add_range: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingGameSequence_Ripple,
+            crate::unity_engine::vector3::Vector3,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_init::get_offset() as isize),
+        );
+        inner(
+            this,
+            pos,
+            size,
+            base_height,
+            base_interval,
+            add_range,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: FishingGameSequence_Ripple,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_obj_soon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "DestroyObjSoon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                    "DestroyObjSoon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy_obj_soon(
+        this: FishingGameSequence_Ripple,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy_obj_soon::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+pub trait IFishingGameSequence_RippleMethods: IFishingGameSequence_Ripple {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FishingGameSequence_Ripple_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
+    fn init(
+        self,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        size: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        base_height: impl ::core::convert::Into<f32>,
+        base_interval: impl ::core::convert::Into<f32>,
+        add_range: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FishingGameSequence_Ripple_unity2_raw::init(
+                __receiver,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(base_height),
+                ::core::convert::Into::into(base_interval),
+                ::core::convert::Into::into(add_range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FishingGameSequence_Ripple_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DestroyObjSoon()` overload"]
+    fn destroy_obj_soon(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FishingGameSequence_Ripple_unity2_raw::destroy_obj_soon(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl<__T: IFishingGameSequence_Ripple> IFishingGameSequence_RippleMethods for __T {}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl FishingGameSequence_Ripple {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingGameSequence_Ripple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
         this
     }
 }

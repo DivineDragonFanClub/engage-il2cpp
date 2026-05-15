@@ -8,16 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]
-    #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcOpen")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NetWaitMessage_ProcOpen {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "NetWaitMessage")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetWaitMessage {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md"))]
     #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcCloseWait")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -25,6 +15,16 @@ mod __types {
         #[rename(name = "m_IsSuccess")]
         pub m_is_success: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "NetWaitMessage")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetWaitMessage {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]
+    #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcOpen")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NetWaitMessage_ProcOpen {}
 }
 
 #[cfg(feature = "app-netwaitmessage-types")]
@@ -33,20 +33,21 @@ pub use __types::*;
 #[cfg(feature = "app-netwaitmessage")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NetWaitMessage_ProcOpen_unity2_raw {
+mod __NetWaitMessage_ProcCloseWait_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_open {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
+                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
                 param_types,
                 false,
             )
@@ -56,8 +57,8 @@ mod __NetWaitMessage_ProcOpen_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
-                    "Open",
+                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -68,15 +69,64 @@ mod __NetWaitMessage_ProcOpen_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn open(
-        this: NetWaitMessage_ProcOpen,
+    pub unsafe fn ctor(
+        this: NetWaitMessage_ProcCloseWait,
+        is_success: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NetWaitMessage_ProcOpen, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(
+            NetWaitMessage_ProcCloseWait,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, is_success, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
+                    "Close",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close(
+        this: NetWaitMessage_ProcCloseWait,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NetWaitMessage_ProcCloseWait, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_open::get_offset() as isize),
+                    .offset(__lookup_close::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -87,12 +137,14 @@ mod __NetWaitMessage_ProcOpen_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
+                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                1,
+                2,
                 param_types,
                 true,
             )
@@ -102,7 +154,7 @@ mod __NetWaitMessage_ProcOpen_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
+                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -116,70 +168,33 @@ mod __NetWaitMessage_ProcOpen_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
+        is_success: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NetWaitMessage_ProcOpen,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NetWaitMessage_ProcOpen, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, is_success, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-netwaitmessage")]
-impl NetWaitMessage_ProcOpen {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+impl NetWaitMessage_ProcCloseWait {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_success: impl ::core::convert::Into<bool>,
+    ) -> () {
         unsafe {
-            __NetWaitMessage_ProcOpen_unity2_raw::create_bind(
+            __NetWaitMessage_ProcCloseWait_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(is_success),
                 ::core::option::Option::None,
             )
         }
@@ -187,44 +202,51 @@ impl NetWaitMessage_ProcOpen {
 }
 
 #[cfg(feature = "app-netwaitmessage")]
-pub trait INetWaitMessage_ProcOpenMethods: INetWaitMessage_ProcOpen {
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
+pub trait INetWaitMessage_ProcCloseWaitMethods: INetWaitMessage_ProcCloseWait {
+    #[doc = "`.ctor(bool)` overload"]
+    fn ctor(self, is_success: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <NetWaitMessage_ProcOpen as ::unity2::FromIlInstance>::from_il_instance(
+                <NetWaitMessage_ProcCloseWait as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NetWaitMessage_ProcOpen_unity2_raw::open(__receiver, ::core::option::Option::None)
+            __NetWaitMessage_ProcCloseWait_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(is_success),
+                ::core::option::Option::None,
+            )
         }
     }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
         unsafe {
             let __receiver =
-                <NetWaitMessage_ProcOpen as ::unity2::FromIlInstance>::from_il_instance(
+                <NetWaitMessage_ProcCloseWait as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NetWaitMessage_ProcOpen_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __NetWaitMessage_ProcCloseWait_unity2_raw::close(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-netwaitmessage")]
-impl<__T: INetWaitMessage_ProcOpen> INetWaitMessage_ProcOpenMethods for __T {}
+impl<__T: INetWaitMessage_ProcCloseWait> INetWaitMessage_ProcCloseWaitMethods for __T {}
 
 #[cfg(feature = "app-netwaitmessage")]
-impl NetWaitMessage_ProcOpen {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl NetWaitMessage_ProcCloseWait {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_success: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NetWaitMessage_ProcOpen),
+                ::core::stringify!(NetWaitMessage_ProcCloseWait),
                 ::core::stringify!(new),
             )
         });
-        <Self as INetWaitMessage_ProcOpenMethods>::ctor(this);
+        <Self as INetWaitMessage_ProcCloseWaitMethods>::ctor(this, is_success);
         this
     }
 }
@@ -618,69 +640,19 @@ impl NetWaitMessage {
 #[cfg(feature = "app-netwaitmessage")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NetWaitMessage_ProcCloseWait_unity2_raw {
+mod __NetWaitMessage_ProcOpen_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NetWaitMessage_ProcCloseWait,
-        is_success: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NetWaitMessage_ProcCloseWait,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, is_success, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
+    pub mod __lookup_open {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
-                "Close",
+                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
+                "Open",
                 0,
                 param_types,
                 false,
@@ -691,8 +663,8 @@ mod __NetWaitMessage_ProcCloseWait_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
-                    "Close",
+                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
+                    "Open",
                     e
                 ),
             }
@@ -703,15 +675,15 @@ mod __NetWaitMessage_ProcCloseWait_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn close(
-        this: NetWaitMessage_ProcCloseWait,
+    pub unsafe fn open(
+        this: NetWaitMessage_ProcOpen,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NetWaitMessage_ProcCloseWait, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NetWaitMessage_ProcOpen, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
+                    .offset(__lookup_open::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -722,14 +694,12 @@ mod __NetWaitMessage_ProcCloseWait_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::class(),
+                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                2,
+                1,
                 param_types,
                 true,
             )
@@ -739,7 +709,7 @@ mod __NetWaitMessage_ProcCloseWait_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NetWaitMessage_ProcCloseWait as ::unity2::ClassIdentity>::NAME,
+                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -753,33 +723,70 @@ mod __NetWaitMessage_ProcCloseWait_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        is_success: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, is_success, __unity2_method_info)
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-netwaitmessage")]
-impl NetWaitMessage_ProcCloseWait {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_success: impl ::core::convert::Into<bool>,
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NetWaitMessage_ProcOpen as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetWaitMessage_ProcOpen,
+        __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(NetWaitMessage_ProcOpen, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-netwaitmessage")]
+impl NetWaitMessage_ProcOpen {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __NetWaitMessage_ProcCloseWait_unity2_raw::create_bind(
+            __NetWaitMessage_ProcOpen_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_success),
                 ::core::option::Option::None,
             )
         }
@@ -787,51 +794,44 @@ impl NetWaitMessage_ProcCloseWait {
 }
 
 #[cfg(feature = "app-netwaitmessage")]
-pub trait INetWaitMessage_ProcCloseWaitMethods: INetWaitMessage_ProcCloseWait {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, is_success: impl ::core::convert::Into<bool>) -> () {
+pub trait INetWaitMessage_ProcOpenMethods: INetWaitMessage_ProcOpen {
+    #[doc = "`Open()` overload"]
+    fn open(self) -> () {
         unsafe {
             let __receiver =
-                <NetWaitMessage_ProcCloseWait as ::unity2::FromIlInstance>::from_il_instance(
+                <NetWaitMessage_ProcOpen as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NetWaitMessage_ProcCloseWait_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(is_success),
-                ::core::option::Option::None,
-            )
+            __NetWaitMessage_ProcOpen_unity2_raw::open(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <NetWaitMessage_ProcCloseWait as ::unity2::FromIlInstance>::from_il_instance(
+                <NetWaitMessage_ProcOpen as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NetWaitMessage_ProcCloseWait_unity2_raw::close(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            __NetWaitMessage_ProcOpen_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-netwaitmessage")]
-impl<__T: INetWaitMessage_ProcCloseWait> INetWaitMessage_ProcCloseWaitMethods for __T {}
+impl<__T: INetWaitMessage_ProcOpen> INetWaitMessage_ProcOpenMethods for __T {}
 
 #[cfg(feature = "app-netwaitmessage")]
-impl NetWaitMessage_ProcCloseWait {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_success: bool) -> Self {
+impl NetWaitMessage_ProcOpen {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NetWaitMessage_ProcCloseWait),
+                ::core::stringify!(NetWaitMessage_ProcOpen),
                 ::core::stringify!(new),
             )
         });
-        <Self as INetWaitMessage_ProcCloseWaitMethods>::ctor(this, is_success);
+        <Self as INetWaitMessage_ProcOpenMethods>::ctor(this);
         this
     }
 }

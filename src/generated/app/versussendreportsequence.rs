@@ -17,6 +17,30 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct VersusSendReportSequence_EndCallback {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct VersusSendReportSequence_UploadInfo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct VersusSendReportSequence {
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback:
+            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+        #[rename(name = "m_IsSucceed")]
+        pub m_is_succeed: bool,
+        #[static_field]
+        #[rename(name = "s_SendCount")]
+        pub s_send_count: i32,
+        #[static_field]
+        #[rename(name = "MAX_SEND_COUNT")]
+        pub max_send_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -60,30 +84,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct VersusSendReportSequence {
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback:
-            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-        #[rename(name = "m_IsSucceed")]
-        pub m_is_succeed: bool,
-        #[static_field]
-        #[rename(name = "s_SendCount")]
-        pub s_send_count: i32,
-        #[static_field]
-        #[rename(name = "MAX_SEND_COUNT")]
-        pub max_send_count: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusSendReportSequence_UploadInfo {}
 }
 
 #[cfg(feature = "app-versussendreportsequence-types")]
@@ -251,531 +251,6 @@ impl VersusSendReportSequence_EndCallback {
             )
         });
         <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-versussendreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusSendReportSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusSendReportSequence,
-        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusSendReportSequence,
-            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, end_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_report {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "SendReport",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "SendReport",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn send_report(
-        this: VersusSendReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_report::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "AddList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "AddList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_list(
-        this: VersusSendReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_list::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "GetResult",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_result(
-        this: VersusSendReportSequence,
-        message: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nexversus::NexVersus_Results {
-        let inner: extern "C" fn(
-            VersusSendReportSequence,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nexversus::NexVersus_Results = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_result::get_offset() as isize),
-        );
-        inner(this, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "Branch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "Branch",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn branch(
-        this: VersusSendReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: VersusSendReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, info, end_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        info: impl ::core::convert::Into<
-            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        >,
-        end_callback: impl ::core::convert::Into<
-            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-        >,
-    ) -> () {
-        unsafe {
-            __VersusSendReportSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(end_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __VersusSendReportSequence_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-versussendreportsequence")]
-pub trait IVersusSendReportSequenceMethods: IVersusSendReportSequence {
-    #[doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]
-    fn ctor(
-        self,
-        info: impl ::core::convert::Into<
-            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        >,
-        end_callback: impl ::core::convert::Into<
-            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusSendReportSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(end_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SendReport()` overload"]
-    fn send_report(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusSendReportSequence_unity2_raw::send_report(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddList()` overload"]
-    fn add_list(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusSendReportSequence_unity2_raw::add_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetResult(*mut::unity2::Il2CppString)` overload"]
-    fn get_result(
-        self,
-    ) -> (
-        crate::app::nexversus::NexVersus_Results,
-        ::unity2::Il2CppString,
-    ) {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __VersusSendReportSequence_unity2_raw::get_result(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`Branch()` overload"]
-    fn branch(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusSendReportSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusSendReportSequence_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl<__T: IVersusSendReportSequence> IVersusSendReportSequenceMethods for __T {}
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence {
-    #[doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` — overload selector"]
-    pub fn new(
-        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
-        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSendReportSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSendReportSequenceMethods>::ctor(this, info, end_callback);
         this
     }
 }
@@ -1491,6 +966,531 @@ impl VersusSendReportSequence_UploadInfo {
             )
         });
         <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VersusSendReportSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VersusSendReportSequence,
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VersusSendReportSequence,
+            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, info, end_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_report {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "SendReport",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "SendReport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_report(
+        this: VersusSendReportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_send_report::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "AddList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "AddList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_list(
+        this: VersusSendReportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add_list::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "GetResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        this: VersusSendReportSequence,
+        message: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::nexversus::NexVersus_Results {
+        let inner: extern "C" fn(
+            VersusSendReportSequence,
+            *mut ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::nexversus::NexVersus_Results = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_result::get_offset() as isize),
+        );
+        inner(this, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_branch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "Branch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "Branch",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn branch(
+        this: VersusSendReportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_branch::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: VersusSendReportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VersusSendReportSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, info, end_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusSendReportSequence as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <VersusSendReportSequence as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        info: impl ::core::convert::Into<
+            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        >,
+        end_callback: impl ::core::convert::Into<
+            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+        >,
+    ) -> () {
+        unsafe {
+            __VersusSendReportSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(end_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __VersusSendReportSequence_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+pub trait IVersusSendReportSequenceMethods: IVersusSendReportSequence {
+    #[doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]
+    fn ctor(
+        self,
+        info: impl ::core::convert::Into<
+            crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        >,
+        end_callback: impl ::core::convert::Into<
+            crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __VersusSendReportSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(end_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SendReport()` overload"]
+    fn send_report(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __VersusSendReportSequence_unity2_raw::send_report(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddList()` overload"]
+    fn add_list(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __VersusSendReportSequence_unity2_raw::add_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetResult(*mut::unity2::Il2CppString)` overload"]
+    fn get_result(
+        self,
+    ) -> (
+        crate::app::nexversus::NexVersus_Results,
+        ::unity2::Il2CppString,
+    ) {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __VersusSendReportSequence_unity2_raw::get_result(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`Branch()` overload"]
+    fn branch(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __VersusSendReportSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusSendReportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __VersusSendReportSequence_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl<__T: IVersusSendReportSequence> IVersusSendReportSequenceMethods for __T {}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence {
+    #[doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` — overload selector"]
+    pub fn new(
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequenceMethods>::ctor(this, info, end_callback);
         this
     }
 }

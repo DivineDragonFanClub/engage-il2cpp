@@ -11,6 +11,13 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopExchangeTargetMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RefineShopExchangeTargetMenu {
+# [rename (name = "m_CloseEventHandler")] pub m_close_event_handler : crate :: app :: refineshopexchangetargetmenu :: RefineShopExchangeTargetMenu_CloseEventHandler ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu_CloseEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -18,167 +25,10 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefineShopExchangeTargetMenu_CloseEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopExchangeTargetMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RefineShopExchangeTargetMenu {
-# [rename (name = "m_CloseEventHandler")] pub m_close_event_handler : crate :: app :: refineshopexchangetargetmenu :: RefineShopExchangeTargetMenu_CloseEventHandler ,
-}
 }
 
 #[cfg(feature = "app-refineshopexchangetargetmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeTargetMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopExchangeTargetMenu_CloseEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeTargetMenu_CloseEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeTargetMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefineShopExchangeTargetMenu_CloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeTargetMenu_CloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-pub trait IRefineShopExchangeTargetMenu_CloseEventHandlerMethods:
-    IRefineShopExchangeTargetMenu_CloseEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-impl<__T: IRefineShopExchangeTargetMenu_CloseEventHandler>
-    IRefineShopExchangeTargetMenu_CloseEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-impl RefineShopExchangeTargetMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopExchangeTargetMenu_CloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopExchangeTargetMenu_CloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-refineshopexchangetargetmenu")]
 #[doc(hidden)]
@@ -881,6 +731,156 @@ impl RefineShopExchangeTargetMenu {
             menu_content,
             initial_select_index,
             close_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopExchangeTargetMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopExchangeTargetMenu_CloseEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopExchangeTargetMenu_CloseEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopExchangeTargetMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
+                ),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefineShopExchangeTargetMenu_CloseEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopExchangeTargetMenu_CloseEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+pub trait IRefineShopExchangeTargetMenu_CloseEventHandlerMethods:
+    IRefineShopExchangeTargetMenu_CloseEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < RefineShopExchangeTargetMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopExchangeTargetMenu_CloseEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+impl<__T: IRefineShopExchangeTargetMenu_CloseEventHandler>
+    IRefineShopExchangeTargetMenu_CloseEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+impl RefineShopExchangeTargetMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeTargetMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeTargetMenu_CloseEventHandlerMethods>::ctor(
+            this, object, method,
         );
         this
     }

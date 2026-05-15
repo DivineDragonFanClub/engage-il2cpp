@@ -9,6 +9,71 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HubUtil_TimezoneType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HubUtil_TimezoneType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubUtil.TimezoneType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubUtil_TimezoneType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HubUtil_TimezoneType {
+        pub fn morning() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn day() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn evening() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn night() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn max() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "HubUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubUtil {
+        #[static_field]
+        #[rename(name = "s_HubParams")]
+        pub s_hub_params: crate::app::hubparams::HubParams,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
     #[repr(C)]
     #[derive(
@@ -109,408 +174,14 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HubUtil_TimezoneType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HubUtil_TimezoneType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubUtil.TimezoneType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubUtil_TimezoneType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HubUtil_TimezoneType {
-        pub fn morning() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn day() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn evening() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn night() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn max() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
     #[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
     #[parent(crate::system::object::Object)]
     pub struct HubUtil_BSpline {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "HubUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubUtil {
-        #[static_field]
-        #[rename(name = "s_HubParams")]
-        pub s_hub_params: crate::app::hubparams::HubParams,
-    }
 }
 
 #[cfg(feature = "app-hubutil-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubutil")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubUtil_BSpline_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_loop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
-                "Loop",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
-                    "Loop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn r#loop(
-        n: i32,
-        min: i32,
-        max: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_loop::get_offset() as isize),
-            );
-        inner(n, min, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_coefficient {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
-                "Coefficient",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
-                    "Coefficient",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn coefficient(t: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_coefficient::get_offset() as isize),
-        );
-        inner(t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
-                "Calc",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
-        inner(v, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_loop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
-                "CalcLoop",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
-                    "CalcLoop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_loop(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_loop::get_offset() as isize),
-        );
-        inner(v, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubUtil_BSpline,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubUtil_BSpline, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline {
-    #[doc = "`Loop(i32, i32, i32)` overload"]
-    pub fn r#loop(
-        n: impl ::core::convert::Into<i32>,
-        min: impl ::core::convert::Into<i32>,
-        max: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __HubUtil_BSpline_unity2_raw::r#loop(
-                ::core::convert::Into::into(n),
-                ::core::convert::Into::into(min),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Coefficient(f32)` overload"]
-    pub fn coefficient(t: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __HubUtil_BSpline_unity2_raw::coefficient(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    pub fn calc(
-        v: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
-        t: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __HubUtil_BSpline_unity2_raw::calc(
-                ::core::convert::Into::into(v),
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    pub fn calc_loop(
-        v: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
-        t: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __HubUtil_BSpline_unity2_raw::calc_loop(
-                ::core::convert::Into::into(v),
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubutil")]
-pub trait IHubUtil_BSplineMethods: IHubUtil_BSpline {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubUtil_BSpline as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubUtil_BSpline_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubutil")]
-impl<__T: IHubUtil_BSpline> IHubUtil_BSplineMethods for __T {}
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubUtil_BSpline),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubUtil_BSplineMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubutil")]
 #[doc(hidden)]
@@ -9347,6 +9018,335 @@ impl HubUtil {
             )
         });
         <Self as IHubUtilMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubutil")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubUtil_BSpline_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
+                "Loop",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
+                    "Loop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn r#loop(
+        n: i32,
+        min: i32,
+        max: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_loop::get_offset() as isize),
+            );
+        inner(n, min, max, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_coefficient {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
+                "Coefficient",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
+                    "Coefficient",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn coefficient(t: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_coefficient::get_offset() as isize),
+        );
+        inner(t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
+                "Calc",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
+                    "Calc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc::get_offset() as isize),
+        );
+        inner(v, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
+                "CalcLoop",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
+                    "CalcLoop",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_loop(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_loop::get_offset() as isize),
+        );
+        inner(v, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubUtil_BSpline as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubUtil_BSpline as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubUtil_BSpline,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubUtil_BSpline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubutil")]
+impl HubUtil_BSpline {
+    #[doc = "`Loop(i32, i32, i32)` overload"]
+    pub fn r#loop(
+        n: impl ::core::convert::Into<i32>,
+        min: impl ::core::convert::Into<i32>,
+        max: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __HubUtil_BSpline_unity2_raw::r#loop(
+                ::core::convert::Into::into(n),
+                ::core::convert::Into::into(min),
+                ::core::convert::Into::into(max),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Coefficient(f32)` overload"]
+    pub fn coefficient(t: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __HubUtil_BSpline_unity2_raw::coefficient(
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    pub fn calc(
+        v: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __HubUtil_BSpline_unity2_raw::calc(
+                ::core::convert::Into::into(v),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    pub fn calc_loop(
+        v: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __HubUtil_BSpline_unity2_raw::calc_loop(
+                ::core::convert::Into::into(v),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubutil")]
+pub trait IHubUtil_BSplineMethods: IHubUtil_BSpline {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubUtil_BSpline as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubUtil_BSpline_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubutil")]
+impl<__T: IHubUtil_BSpline> IHubUtil_BSplineMethods for __T {}
+
+#[cfg(feature = "app-hubutil")]
+impl HubUtil_BSpline {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubUtil_BSpline),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubUtil_BSplineMethods>::ctor(this);
         this
     }
 }

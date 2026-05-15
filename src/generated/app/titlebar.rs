@@ -14,6 +14,78 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Num.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.Num")]
+    #[parent(crate::system::object::Object)]
+    pub struct TitleBar_Num {
+        #[rename(name = "Gold")]
+        pub gold: i32,
+        #[rename(name = "PieceOfBond")]
+        pub piece_of_bond: i32,
+        #[rename(name = "RefineSilver")]
+        pub refine_silver: i32,
+        #[rename(name = "RefineSteel")]
+        pub refine_steel: i32,
+        #[rename(name = "RefineIron")]
+        pub refine_iron: i32,
+        #[rename(name = "RefineGodList")]
+        pub refine_god_list: ::unity2::Array<i32>,
+        #[rename(name = "ProofMaster")]
+        pub proof_master: i32,
+        #[rename(name = "ProofChange")]
+        pub proof_change: i32,
+        #[rename(name = "ProofEnchant")]
+        pub proof_enchant: i32,
+        #[rename(name = "ProofGunner")]
+        pub proof_gunner: i32,
+        #[rename(name = "RelayTicket")]
+        pub relay_ticket: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Values.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.Values")]
+    #[parent(crate::system::object::Object)]
+    pub struct TitleBar_Values {
+        #[rename(name = "Root")]
+        pub root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "Animator")]
+        pub animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "MaterialObjList")]
+        pub material_obj_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "PieceOfBondObject")]
+        pub piece_of_bond_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "PieceOfBondValue")]
+        pub piece_of_bond_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "MoneyObject")]
+        pub money_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "MoneyValue")]
+        pub money_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Title.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.Title")]
+    #[parent(crate::system::object::Object)]
+    pub struct TitleBar_Title {
+        #[rename(name = "Root")]
+        pub root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "Animator")]
+        pub animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "TitleText")]
+        pub title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "HelpText")]
+        pub help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "UnitObj")]
+        pub unit_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "UnitValue")]
+        pub unit_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "UnitMaxValue")]
+        pub unit_max_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "KeyHelp")]
+        pub key_help: crate::app::keyhelptitlebarcontroller::KeyHelpTitleBarController,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titlebar/TitleBar_FooterType.md"))]
     #[repr(C)]
     #[derive(
@@ -92,83 +164,6 @@ mod __types {
         pub fn gold_and_bond_and_relay_ticket() -> Self {
             Self { value: 35 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Num.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.Num")]
-    #[parent(crate::system::object::Object)]
-    pub struct TitleBar_Num {
-        #[rename(name = "Gold")]
-        pub gold: i32,
-        #[rename(name = "PieceOfBond")]
-        pub piece_of_bond: i32,
-        #[rename(name = "RefineSilver")]
-        pub refine_silver: i32,
-        #[rename(name = "RefineSteel")]
-        pub refine_steel: i32,
-        #[rename(name = "RefineIron")]
-        pub refine_iron: i32,
-        #[rename(name = "RefineGodList")]
-        pub refine_god_list: ::unity2::Array<i32>,
-        #[rename(name = "ProofMaster")]
-        pub proof_master: i32,
-        #[rename(name = "ProofChange")]
-        pub proof_change: i32,
-        #[rename(name = "ProofEnchant")]
-        pub proof_enchant: i32,
-        #[rename(name = "ProofGunner")]
-        pub proof_gunner: i32,
-        #[rename(name = "RelayTicket")]
-        pub relay_ticket: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_TitleBarProc.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.TitleBarProc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TitleBar_TitleBarProc {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Values.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.Values")]
-    #[parent(crate::system::object::Object)]
-    pub struct TitleBar_Values {
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "Animator")]
-        pub animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "MaterialObjList")]
-        pub material_obj_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "PieceOfBondObject")]
-        pub piece_of_bond_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "PieceOfBondValue")]
-        pub piece_of_bond_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "MoneyObject")]
-        pub money_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "MoneyValue")]
-        pub money_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_Title.md"))]
-    #[::unity2::class(namespace = "App", name = "TitleBar.Title")]
-    #[parent(crate::system::object::Object)]
-    pub struct TitleBar_Title {
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "Animator")]
-        pub animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "TitleText")]
-        pub title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "HelpText")]
-        pub help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "UnitObj")]
-        pub unit_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "UnitValue")]
-        pub unit_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "UnitMaxValue")]
-        pub unit_max_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "KeyHelp")]
-        pub key_help: crate::app::keyhelptitlebarcontroller::KeyHelpTitleBarController,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar.md"))]
@@ -279,6 +274,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlebar/TitleBar_TitleBarProc.md"))]
+    #[::unity2::class(namespace = "App", name = "TitleBar.TitleBarProc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TitleBar_TitleBarProc {}
 }
 
 #[cfg(feature = "app-titlebar-types")]
@@ -532,90 +532,6 @@ impl TitleBar_Num {
             )
         });
         <Self as ITitleBar_NumMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-titlebar")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TitleBar_TitleBarProc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TitleBar_TitleBarProc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TitleBar_TitleBarProc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TitleBar_TitleBarProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TitleBar_TitleBarProc, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-titlebar")]
-pub trait ITitleBar_TitleBarProcMethods: ITitleBar_TitleBarProc {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TitleBar_TitleBarProc as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TitleBar_TitleBarProc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-titlebar")]
-impl<__T: ITitleBar_TitleBarProc> ITitleBar_TitleBarProcMethods for __T {}
-
-#[cfg(feature = "app-titlebar")]
-impl TitleBar_TitleBarProc {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TitleBar_TitleBarProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITitleBar_TitleBarProcMethods>::ctor(this);
         this
     }
 }
@@ -3860,6 +3776,90 @@ impl TitleBar {
             )
         });
         <Self as ITitleBarMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-titlebar")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TitleBar_TitleBarProc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TitleBar_TitleBarProc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TitleBar_TitleBarProc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TitleBar_TitleBarProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TitleBar_TitleBarProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-titlebar")]
+pub trait ITitleBar_TitleBarProcMethods: ITitleBar_TitleBarProc {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TitleBar_TitleBarProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TitleBar_TitleBarProc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-titlebar")]
+impl<__T: ITitleBar_TitleBarProc> ITitleBar_TitleBarProcMethods for __T {}
+
+#[cfg(feature = "app-titlebar")]
+impl TitleBar_TitleBarProc {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TitleBar_TitleBarProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITitleBar_TitleBarProcMethods>::ctor(this);
         this
     }
 }

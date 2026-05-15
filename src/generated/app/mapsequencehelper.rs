@@ -8,10 +8,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCamera")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCameraLoosely")]
     #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceHelper_ProcWaitCamera {}
+    pub struct MapSequenceHelper_ProcWaitCameraLoosely {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceHelper")]
@@ -31,10 +31,10 @@ mod __types {
         pub inside_screen_max: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCameraLoosely")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceHelper.ProcWaitCamera")]
     #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceHelper_ProcWaitCameraLoosely {}
+    pub struct MapSequenceHelper_ProcWaitCamera {}
 }
 
 #[cfg(feature = "app-mapsequencehelper-types")]
@@ -43,7 +43,7 @@ pub use __types::*;
 #[cfg(feature = "app-mapsequencehelper")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
+mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -54,7 +54,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
                 "IsCameraScrolling",
                 0,
                 param_types,
@@ -66,7 +66,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
                     "IsCameraScrolling",
                     e
                 ),
@@ -96,7 +96,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
                 1,
                 param_types,
@@ -108,7 +108,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -141,7 +141,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
                 "OnTick",
                 0,
                 param_types,
@@ -153,7 +153,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
                     "OnTick",
                     e
                 ),
@@ -166,15 +166,17 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
         }
     }
     pub unsafe fn on_tick(
-        this: MapSequenceHelper_ProcWaitCamera,
+        this: MapSequenceHelper_ProcWaitCameraLoosely,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapSequenceHelper_ProcWaitCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_tick::get_offset() as isize),
-            );
+        let inner: extern "C" fn(
+            MapSequenceHelper_ProcWaitCameraLoosely,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_tick::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -186,7 +188,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -198,7 +200,7 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -211,25 +213,27 @@ mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapSequenceHelper_ProcWaitCamera,
+        this: MapSequenceHelper_ProcWaitCameraLoosely,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapSequenceHelper_ProcWaitCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(
+            MapSequenceHelper_ProcWaitCameraLoosely,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera {
+impl MapSequenceHelper_ProcWaitCameraLoosely {
     #[doc = "`IsCameraScrolling()` overload"]
     pub fn is_camera_scrolling() -> bool {
         unsafe {
-            __MapSequenceHelper_ProcWaitCamera_unity2_raw::is_camera_scrolling(
+            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::is_camera_scrolling(
                 ::core::option::Option::None,
             )
         }
@@ -237,7 +241,7 @@ impl MapSequenceHelper_ProcWaitCamera {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __MapSequenceHelper_ProcWaitCamera_unity2_raw::create_bind(
+            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
@@ -246,15 +250,14 @@ impl MapSequenceHelper_ProcWaitCamera {
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-pub trait IMapSequenceHelper_ProcWaitCameraMethods: IMapSequenceHelper_ProcWaitCamera {
+pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods:
+    IMapSequenceHelper_ProcWaitCameraLoosely
+{
     #[doc = "`OnTick()` overload"]
     fn on_tick(self) -> () {
         unsafe {
-            let __receiver =
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceHelper_ProcWaitCamera_unity2_raw::on_tick(
+            let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::on_tick(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -263,11 +266,8 @@ pub trait IMapSequenceHelper_ProcWaitCameraMethods: IMapSequenceHelper_ProcWaitC
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <MapSequenceHelper_ProcWaitCamera as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceHelper_ProcWaitCamera_unity2_raw::ctor(
+            let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -276,20 +276,23 @@ pub trait IMapSequenceHelper_ProcWaitCameraMethods: IMapSequenceHelper_ProcWaitC
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl<__T: IMapSequenceHelper_ProcWaitCamera> IMapSequenceHelper_ProcWaitCameraMethods for __T {}
+impl<__T: IMapSequenceHelper_ProcWaitCameraLoosely> IMapSequenceHelper_ProcWaitCameraLooselyMethods
+    for __T
+{
+}
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera {
+impl MapSequenceHelper_ProcWaitCameraLoosely {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceHelper_ProcWaitCamera),
+                ::core::stringify!(MapSequenceHelper_ProcWaitCameraLoosely),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceHelper_ProcWaitCameraMethods>::ctor(this);
+        <Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods>::ctor(this);
         this
     }
 }
@@ -1623,7 +1626,7 @@ impl MapSequenceHelper {
 #[cfg(feature = "app-mapsequencehelper")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
+mod __MapSequenceHelper_ProcWaitCamera_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1634,7 +1637,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
                 "IsCameraScrolling",
                 0,
                 param_types,
@@ -1646,7 +1649,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
                     "IsCameraScrolling",
                     e
                 ),
@@ -1676,7 +1679,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
                 1,
                 param_types,
@@ -1688,7 +1691,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -1721,7 +1724,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
                 "OnTick",
                 0,
                 param_types,
@@ -1733,7 +1736,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
                     "OnTick",
                     e
                 ),
@@ -1746,17 +1749,15 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
         }
     }
     pub unsafe fn on_tick(
-        this: MapSequenceHelper_ProcWaitCameraLoosely,
+        this: MapSequenceHelper_ProcWaitCamera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceHelper_ProcWaitCameraLoosely,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tick::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapSequenceHelper_ProcWaitCamera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1768,7 +1769,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::class(),
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1780,7 +1781,7 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapSequenceHelper_ProcWaitCameraLoosely as ::unity2::ClassIdentity>::NAME,
+                    <MapSequenceHelper_ProcWaitCamera as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1793,27 +1794,25 @@ mod __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapSequenceHelper_ProcWaitCameraLoosely,
+        this: MapSequenceHelper_ProcWaitCamera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceHelper_ProcWaitCameraLoosely,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapSequenceHelper_ProcWaitCamera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely {
+impl MapSequenceHelper_ProcWaitCamera {
     #[doc = "`IsCameraScrolling()` overload"]
     pub fn is_camera_scrolling() -> bool {
         unsafe {
-            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::is_camera_scrolling(
+            __MapSequenceHelper_ProcWaitCamera_unity2_raw::is_camera_scrolling(
                 ::core::option::Option::None,
             )
         }
@@ -1821,7 +1820,7 @@ impl MapSequenceHelper_ProcWaitCameraLoosely {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::create_bind(
+            __MapSequenceHelper_ProcWaitCamera_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
@@ -1830,14 +1829,15 @@ impl MapSequenceHelper_ProcWaitCameraLoosely {
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods:
-    IMapSequenceHelper_ProcWaitCameraLoosely
-{
+pub trait IMapSequenceHelper_ProcWaitCameraMethods: IMapSequenceHelper_ProcWaitCamera {
     #[doc = "`OnTick()` overload"]
     fn on_tick(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::on_tick(
+            let __receiver =
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceHelper_ProcWaitCamera_unity2_raw::on_tick(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1846,8 +1846,11 @@ pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceHelper_ProcWaitCameraLoosely_unity2_raw::ctor(
+            let __receiver =
+                <MapSequenceHelper_ProcWaitCamera as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceHelper_ProcWaitCamera_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1856,23 +1859,20 @@ pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods:
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl<__T: IMapSequenceHelper_ProcWaitCameraLoosely> IMapSequenceHelper_ProcWaitCameraLooselyMethods
-    for __T
-{
-}
+impl<__T: IMapSequenceHelper_ProcWaitCamera> IMapSequenceHelper_ProcWaitCameraMethods for __T {}
 
 #[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely {
+impl MapSequenceHelper_ProcWaitCamera {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceHelper_ProcWaitCameraLoosely),
+                ::core::stringify!(MapSequenceHelper_ProcWaitCamera),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods>::ctor(this);
+        <Self as IMapSequenceHelper_ProcWaitCameraMethods>::ctor(this);
         this
     }
 }

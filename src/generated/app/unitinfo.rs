@@ -35,37 +35,6 @@ mod __types {
         pub m_look_at_obj: crate::unity_engine::gameobject::GameObject,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo_Window.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfo.Window")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfo_Window {
-        #[rename(name = "m_ModeStack")]
-        pub m_mode_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::unitinfo::UnitInfo_Mode,
-        >,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_God")]
-        pub m_god: crate::app::godunit::GodUnit,
-        #[rename(name = "m_UnitX")]
-        pub m_unit_x: i32,
-        #[rename(name = "m_UnitZ")]
-        pub m_unit_z: i32,
-        #[rename(name = "m_UnitInfoWindowSimple")]
-        pub m_unit_info_window_simple: crate::app::unitinfowindow::UnitInfoWindow,
-        #[rename(name = "m_UnitInfoWindowCharaModel")]
-        pub m_unit_info_window_chara_model:
-            crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[rename(name = "m_IsDuplicateRenderTexture")]
-        pub m_is_duplicate_render_texture: bool,
-        #[rename(name = "m_IsReverse")]
-        pub m_is_reverse: bool,
-        #[rename(name = "m_IsHideStatus")]
-        pub m_is_hide_status: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -116,6 +85,37 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo_Window.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfo.Window")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitInfo_Window {
+        #[rename(name = "m_ModeStack")]
+        pub m_mode_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::unitinfo::UnitInfo_Mode,
+        >,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_God")]
+        pub m_god: crate::app::godunit::GodUnit,
+        #[rename(name = "m_UnitX")]
+        pub m_unit_x: i32,
+        #[rename(name = "m_UnitZ")]
+        pub m_unit_z: i32,
+        #[rename(name = "m_UnitInfoWindowSimple")]
+        pub m_unit_info_window_simple: crate::app::unitinfowindow::UnitInfoWindow,
+        #[rename(name = "m_UnitInfoWindowCharaModel")]
+        pub m_unit_info_window_chara_model:
+            crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+        #[rename(name = "m_IsDuplicateRenderTexture")]
+        pub m_is_duplicate_render_texture: bool,
+        #[rename(name = "m_IsReverse")]
+        pub m_is_reverse: bool,
+        #[rename(name = "m_IsHideStatus")]
+        pub m_is_hide_status: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Side.md"))]

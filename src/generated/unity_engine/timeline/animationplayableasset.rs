@@ -12,37 +12,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationPlayableAsset")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct AnimationPlayableAsset {
-        #[rename(name = "m_Clip")]
-        pub m_clip: crate::unity_engine::animationclip::AnimationClip,
-        #[rename(name = "m_Position")]
-        pub m_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_EulerAngles")]
-        pub m_euler_angles: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_UseTrackMatchFields")]
-        pub m_use_track_match_fields: bool,
-        #[rename(name = "m_MatchTargetFields")]
-        pub m_match_target_fields:
-            crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
-        #[rename(name = "m_RemoveStartOffset")]
-        pub m_remove_start_offset: bool,
-        #[rename(name = "m_ApplyFootIK")]
-        pub m_apply_foot_ik: bool,
-        #[rename(name = "m_Loop")]
-        pub m_loop:
-            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
-        #[static_field]
-        #[rename(name = "k_LatestVersion")]
-        pub k_latest_version: i32,
-        #[rename(name = "m_Version")]
-        pub m_version: i32,
-        #[rename(name = "m_Rotation")]
-        pub m_rotation: crate::unity_engine::quaternion::Quaternion,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]
     #[repr(C)]
     #[derive(
@@ -89,6 +58,37 @@ mod __types {
         pub fn off() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationPlayableAsset")]
+    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+    pub struct AnimationPlayableAsset {
+        #[rename(name = "m_Clip")]
+        pub m_clip: crate::unity_engine::animationclip::AnimationClip,
+        #[rename(name = "m_Position")]
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_EulerAngles")]
+        pub m_euler_angles: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_UseTrackMatchFields")]
+        pub m_use_track_match_fields: bool,
+        #[rename(name = "m_MatchTargetFields")]
+        pub m_match_target_fields:
+            crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+        #[rename(name = "m_RemoveStartOffset")]
+        pub m_remove_start_offset: bool,
+        #[rename(name = "m_ApplyFootIK")]
+        pub m_apply_foot_ik: bool,
+        #[rename(name = "m_Loop")]
+        pub m_loop:
+            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
+        #[static_field]
+        #[rename(name = "k_LatestVersion")]
+        pub k_latest_version: i32,
+        #[rename(name = "m_Version")]
+        pub m_version: i32,
+        #[rename(name = "m_Rotation")]
+        pub m_rotation: crate::unity_engine::quaternion::Quaternion,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]

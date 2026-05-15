@@ -10,6 +10,60 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapGodExp_KindDesc {
+        pub param_name: ::unity2::Il2CppString,
+        pub is_multi: bool,
+    }
+
+    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapGodExp.KindDesc";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapGodExp_KindDesc {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapGodExp")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
+    pub struct MapGodExp {
+        #[rename(name = "m_AddFlag")]
+        pub m_add_flag: crate::app::bitfield32::BitField32,
+        #[rename(name = "m_CommitUnit")]
+        pub m_commit_unit: crate::app::unit::Unit,
+        #[rename(name = "m_CommitGodUnit")]
+        pub m_commit_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_Dirty")]
+        pub m_dirty: i32,
+        #[static_field]
+        #[rename(name = "KindDescs")]
+        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
+        #[static_field]
+        #[rename(name = "EngageParamNameSuffix")]
+        pub engage_param_name_suffix: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "RingDirtyKindDescs")]
+        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -73,64 +127,150 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapGodExp")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
-    pub struct MapGodExp {
-        #[rename(name = "m_AddFlag")]
-        pub m_add_flag: crate::app::bitfield32::BitField32,
-        #[rename(name = "m_CommitUnit")]
-        pub m_commit_unit: crate::app::unit::Unit,
-        #[rename(name = "m_CommitGodUnit")]
-        pub m_commit_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[static_field]
-        #[rename(name = "KindDescs")]
-        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-        #[static_field]
-        #[rename(name = "EngageParamNameSuffix")]
-        pub engage_param_name_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "RingDirtyKindDescs")]
-        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapGodExp_KindDesc {
-        pub param_name: ::unity2::Il2CppString,
-        pub is_multi: bool,
-    }
-
-    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapGodExp.KindDesc";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapGodExp_KindDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-mapgodexp-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapgodexp")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapGodExp_KindDesc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapGodExp_KindDesc,
+        param_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapGodExp_KindDesc,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, param_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: MapGodExp_KindDesc,
+        param_name: ::unity2::Il2CppString,
+        is_multi: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapGodExp_KindDesc,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, param_name, is_multi, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapgodexp")]
+impl MapGodExp_KindDesc {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    pub fn ctor(self, param_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __MapGodExp_KindDesc_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(param_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
+    pub fn ctor_2(
+        self,
+        param_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_multi: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __MapGodExp_KindDesc_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(param_name),
+                ::core::convert::Into::into(is_multi),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "app-mapgodexp")]
 #[doc(hidden)]
@@ -919,146 +1059,6 @@ impl MapGodExp {
         });
         <Self as IMapGodExpMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-mapgodexp")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapGodExp_KindDesc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapGodExp_KindDesc,
-        param_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapGodExp_KindDesc,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, param_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapGodExp_KindDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapGodExp_KindDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: MapGodExp_KindDesc,
-        param_name: ::unity2::Il2CppString,
-        is_multi: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapGodExp_KindDesc,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, param_name, is_multi, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp_KindDesc {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    pub fn ctor(self, param_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __MapGodExp_KindDesc_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(param_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    pub fn ctor_2(
-        self,
-        param_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_multi: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __MapGodExp_KindDesc_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(param_name),
-                ::core::convert::Into::into(is_multi),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

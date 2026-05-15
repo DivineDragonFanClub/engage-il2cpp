@@ -276,7 +276,7 @@ mod __BaseInvokableCall_unity2_raw {
 
 #[cfg(feature = "unity_engine-events-baseinvokablecall")]
 impl BaseInvokableCall {
-    fn throw_on_invalid_arg<
+    pub fn throw_on_invalid_arg<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         arg: impl ::core::convert::Into<crate::system::object::Object>,

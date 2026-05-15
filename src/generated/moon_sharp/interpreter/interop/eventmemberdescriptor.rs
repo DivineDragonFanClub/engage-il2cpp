@@ -9,6 +9,30 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper02"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper02 {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper14"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper14 {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper07.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper07"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper07 {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper03.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
@@ -17,21 +41,29 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct EventMemberDescriptor_EventWrapper03 {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper04.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper06.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper04"
+        name = "EventMemberDescriptor.EventWrapper06"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper04 {}
+    pub struct EventMemberDescriptor_EventWrapper06 {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper15.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper05.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper15"
+        name = "EventMemberDescriptor.EventWrapper05"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper15 {}
+    pub struct EventMemberDescriptor_EventWrapper05 {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper09"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper09 {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper12.md"))]
     #[::unity2::class(
@@ -40,6 +72,14 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct EventMemberDescriptor_EventWrapper12 {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper04.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper04"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper04 {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper16.md"))]
     #[::unity2::class(
@@ -57,29 +97,13 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct EventMemberDescriptor_EventWrapper00 {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper06.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper06"
+        name = "EventMemberDescriptor.EventWrapper08"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper06 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper09"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper09 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper01.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper01"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper01 {}
+    pub struct EventMemberDescriptor_EventWrapper08 {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor.md"))]
     #[::unity2::class(
@@ -110,6 +134,14 @@ mod __types {
         pub m_remove: crate::system::reflection::methodinfo::MethodInfo,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper01.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop",
+        name = "EventMemberDescriptor.EventWrapper01"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventMemberDescriptor_EventWrapper01 {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper11.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
@@ -118,45 +150,13 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct EventMemberDescriptor_EventWrapper11 {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper15.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper02"
+        name = "EventMemberDescriptor.EventWrapper15"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper02 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper08"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper08 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper14"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper14 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper05.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper05"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper05 {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper10"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper10 {}
+    pub struct EventMemberDescriptor_EventWrapper15 {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper13.md"))]
     #[::unity2::class(
@@ -166,17 +166,644 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct EventMemberDescriptor_EventWrapper13 {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper07.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Interop",
-        name = "EventMemberDescriptor.EventWrapper07"
+        name = "EventMemberDescriptor.EventWrapper10"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EventMemberDescriptor_EventWrapper07 {}
+    pub struct EventMemberDescriptor_EventWrapper10 {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper02_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper02,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper02,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper02,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper02,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, o1, o2, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper02Methods:
+    IEventMemberDescriptor_EventWrapper02
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper02 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper02_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        o1: impl ::core::convert::Into<crate::system::object::Object>,
+        o2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper02 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper02_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::convert::Into::into(o2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper02> IEventMemberDescriptor_EventWrapper02Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper02 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper02),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper02Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper14,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper14,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                14,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper14,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+        o9: crate::system::object::Object,
+        o10: crate::system::object::Object,
+        o11: crate::system::object::Object,
+        o12: crate::system::object::Object,
+        o13: crate::system::object::Object,
+        o14: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper14,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(
+            this,
+            o1,
+            o2,
+            o3,
+            o4,
+            o5,
+            o6,
+            o7,
+            o8,
+            o9,
+            o10,
+            o11,
+            o12,
+            o13,
+            o14,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper14Methods:
+    IEventMemberDescriptor_EventWrapper14
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper14 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper14_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        o1: impl ::core::convert::Into<crate::system::object::Object>,
+        o2: impl ::core::convert::Into<crate::system::object::Object>,
+        o3: impl ::core::convert::Into<crate::system::object::Object>,
+        o4: impl ::core::convert::Into<crate::system::object::Object>,
+        o5: impl ::core::convert::Into<crate::system::object::Object>,
+        o6: impl ::core::convert::Into<crate::system::object::Object>,
+        o7: impl ::core::convert::Into<crate::system::object::Object>,
+        o8: impl ::core::convert::Into<crate::system::object::Object>,
+        o9: impl ::core::convert::Into<crate::system::object::Object>,
+        o10: impl ::core::convert::Into<crate::system::object::Object>,
+        o11: impl ::core::convert::Into<crate::system::object::Object>,
+        o12: impl ::core::convert::Into<crate::system::object::Object>,
+        o13: impl ::core::convert::Into<crate::system::object::Object>,
+        o14: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper14 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper14_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::convert::Into::into(o2),
+                ::core::convert::Into::into(o3),
+                ::core::convert::Into::into(o4),
+                ::core::convert::Into::into(o5),
+                ::core::convert::Into::into(o6),
+                ::core::convert::Into::into(o7),
+                ::core::convert::Into::into(o8),
+                ::core::convert::Into::into(o9),
+                ::core::convert::Into::into(o10),
+                ::core::convert::Into::into(o11),
+                ::core::convert::Into::into(o12),
+                ::core::convert::Into::into(o13),
+                ::core::convert::Into::into(o14),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper14> IEventMemberDescriptor_EventWrapper14Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper14 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper14),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper14Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper07,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper07,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper07,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper07,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, o1, o2, o3, o4, o5, o6, o7, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper07Methods:
+    IEventMemberDescriptor_EventWrapper07
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper07 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper07_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        o1: impl ::core::convert::Into<crate::system::object::Object>,
+        o2: impl ::core::convert::Into<crate::system::object::Object>,
+        o3: impl ::core::convert::Into<crate::system::object::Object>,
+        o4: impl ::core::convert::Into<crate::system::object::Object>,
+        o5: impl ::core::convert::Into<crate::system::object::Object>,
+        o6: impl ::core::convert::Into<crate::system::object::Object>,
+        o7: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper07 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper07_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::convert::Into::into(o2),
+                ::core::convert::Into::into(o3),
+                ::core::convert::Into::into(o4),
+                ::core::convert::Into::into(o5),
+                ::core::convert::Into::into(o6),
+                ::core::convert::Into::into(o7),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper07> IEventMemberDescriptor_EventWrapper07Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper07 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper07),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper07Methods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
@@ -361,7 +988,7 @@ impl EventMemberDescriptor_EventWrapper03 {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
+mod __EventMemberDescriptor_EventWrapper06_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -375,7 +1002,7 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -387,7 +1014,7 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -400,13 +1027,13 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper04,
+        this: EventMemberDescriptor_EventWrapper06,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper04,
+            EventMemberDescriptor_EventWrapper06,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -429,11 +1056,13 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                4,
+                6,
                 param_types,
                 false,
             )
@@ -443,7 +1072,7 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -456,15 +1085,19 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper04,
+        this: EventMemberDescriptor_EventWrapper06,
         o1: crate::system::object::Object,
         o2: crate::system::object::Object,
         o3: crate::system::object::Object,
         o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper04,
+            EventMemberDescriptor_EventWrapper06,
+            crate::system::object::Object,
+            crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
@@ -475,13 +1108,13 @@ mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, o1, o2, o3, o4, __unity2_method_info)
+        inner(this, o1, o2, o3, o4, o5, o6, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper04Methods:
-    IEventMemberDescriptor_EventWrapper04
+pub trait IEventMemberDescriptor_EventWrapper06Methods:
+    IEventMemberDescriptor_EventWrapper06
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -490,8 +1123,8 @@ pub trait IEventMemberDescriptor_EventWrapper04Methods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper04 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper04_unity2_raw::ctor(
+            let __receiver = < EventMemberDescriptor_EventWrapper06 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper06_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -499,22 +1132,26 @@ pub trait IEventMemberDescriptor_EventWrapper04Methods:
             )
         }
     }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     fn invoke(
         self,
         o1: impl ::core::convert::Into<crate::system::object::Object>,
         o2: impl ::core::convert::Into<crate::system::object::Object>,
         o3: impl ::core::convert::Into<crate::system::object::Object>,
         o4: impl ::core::convert::Into<crate::system::object::Object>,
+        o5: impl ::core::convert::Into<crate::system::object::Object>,
+        o6: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper04 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper04_unity2_raw::invoke(
+            let __receiver = < EventMemberDescriptor_EventWrapper06 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper06_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(o1),
                 ::core::convert::Into::into(o2),
                 ::core::convert::Into::into(o3),
                 ::core::convert::Into::into(o4),
+                ::core::convert::Into::into(o5),
+                ::core::convert::Into::into(o6),
                 ::core::option::Option::None,
             )
         }
@@ -522,23 +1159,23 @@ pub trait IEventMemberDescriptor_EventWrapper04Methods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper04> IEventMemberDescriptor_EventWrapper04Methods
+impl<__T: IEventMemberDescriptor_EventWrapper06> IEventMemberDescriptor_EventWrapper06Methods
     for __T
 {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper04 {
+impl EventMemberDescriptor_EventWrapper06 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper04),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper06),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper04Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper06Methods>::ctor(this, object, method);
         this
     }
 }
@@ -546,7 +1183,7 @@ impl EventMemberDescriptor_EventWrapper04 {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
+mod __EventMemberDescriptor_EventWrapper05_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -560,7 +1197,7 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -572,7 +1209,7 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -585,13 +1222,203 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper15,
+        this: EventMemberDescriptor_EventWrapper05,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper15,
+            EventMemberDescriptor_EventWrapper05,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper05,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper05,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, o1, o2, o3, o4, o5, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper05Methods:
+    IEventMemberDescriptor_EventWrapper05
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper05 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper05_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        o1: impl ::core::convert::Into<crate::system::object::Object>,
+        o2: impl ::core::convert::Into<crate::system::object::Object>,
+        o3: impl ::core::convert::Into<crate::system::object::Object>,
+        o4: impl ::core::convert::Into<crate::system::object::Object>,
+        o5: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper05 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper05_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::convert::Into::into(o2),
+                ::core::convert::Into::into(o3),
+                ::core::convert::Into::into(o4),
+                ::core::convert::Into::into(o5),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper05> IEventMemberDescriptor_EventWrapper05Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper05 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper05),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper05Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper09,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper09,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -619,17 +1446,11 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                15,
+                9,
                 param_types,
                 false,
             )
@@ -639,7 +1460,7 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -652,7 +1473,7 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper15,
+        this: EventMemberDescriptor_EventWrapper09,
         o1: crate::system::object::Object,
         o2: crate::system::object::Object,
         o3: crate::system::object::Object,
@@ -662,22 +1483,10 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
         o7: crate::system::object::Object,
         o8: crate::system::object::Object,
         o9: crate::system::object::Object,
-        o10: crate::system::object::Object,
-        o11: crate::system::object::Object,
-        o12: crate::system::object::Object,
-        o13: crate::system::object::Object,
-        o14: crate::system::object::Object,
-        o15: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper15,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
+            EventMemberDescriptor_EventWrapper09,
             crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
@@ -704,20 +1513,14 @@ mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
             o7,
             o8,
             o9,
-            o10,
-            o11,
-            o12,
-            o13,
-            o14,
-            o15,
             __unity2_method_info,
         )
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper15Methods:
-    IEventMemberDescriptor_EventWrapper15
+pub trait IEventMemberDescriptor_EventWrapper09Methods:
+    IEventMemberDescriptor_EventWrapper09
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -726,8 +1529,8 @@ pub trait IEventMemberDescriptor_EventWrapper15Methods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper15 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper15_unity2_raw::ctor(
+            let __receiver = < EventMemberDescriptor_EventWrapper09 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper09_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -735,7 +1538,7 @@ pub trait IEventMemberDescriptor_EventWrapper15Methods:
             )
         }
     }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     fn invoke(
         self,
         o1: impl ::core::convert::Into<crate::system::object::Object>,
@@ -747,16 +1550,10 @@ pub trait IEventMemberDescriptor_EventWrapper15Methods:
         o7: impl ::core::convert::Into<crate::system::object::Object>,
         o8: impl ::core::convert::Into<crate::system::object::Object>,
         o9: impl ::core::convert::Into<crate::system::object::Object>,
-        o10: impl ::core::convert::Into<crate::system::object::Object>,
-        o11: impl ::core::convert::Into<crate::system::object::Object>,
-        o12: impl ::core::convert::Into<crate::system::object::Object>,
-        o13: impl ::core::convert::Into<crate::system::object::Object>,
-        o14: impl ::core::convert::Into<crate::system::object::Object>,
-        o15: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper15 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper15_unity2_raw::invoke(
+            let __receiver = < EventMemberDescriptor_EventWrapper09 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper09_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(o1),
                 ::core::convert::Into::into(o2),
@@ -767,12 +1564,6 @@ pub trait IEventMemberDescriptor_EventWrapper15Methods:
                 ::core::convert::Into::into(o7),
                 ::core::convert::Into::into(o8),
                 ::core::convert::Into::into(o9),
-                ::core::convert::Into::into(o10),
-                ::core::convert::Into::into(o11),
-                ::core::convert::Into::into(o12),
-                ::core::convert::Into::into(o13),
-                ::core::convert::Into::into(o14),
-                ::core::convert::Into::into(o15),
                 ::core::option::Option::None,
             )
         }
@@ -780,23 +1571,23 @@ pub trait IEventMemberDescriptor_EventWrapper15Methods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper15> IEventMemberDescriptor_EventWrapper15Methods
+impl<__T: IEventMemberDescriptor_EventWrapper09> IEventMemberDescriptor_EventWrapper09Methods
     for __T
 {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper15 {
+impl EventMemberDescriptor_EventWrapper09 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper15),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper09),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper15Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper09Methods>::ctor(this, object, method);
         this
     }
 }
@@ -1037,6 +1828,191 @@ impl EventMemberDescriptor_EventWrapper12 {
             )
         });
         <Self as IEventMemberDescriptor_EventWrapper12Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper04_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper04,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper04,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper04 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper04,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper04,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, o1, o2, o3, o4, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper04Methods:
+    IEventMemberDescriptor_EventWrapper04
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper04 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper04_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        o1: impl ::core::convert::Into<crate::system::object::Object>,
+        o2: impl ::core::convert::Into<crate::system::object::Object>,
+        o3: impl ::core::convert::Into<crate::system::object::Object>,
+        o4: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper04 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper04_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::convert::Into::into(o2),
+                ::core::convert::Into::into(o3),
+                ::core::convert::Into::into(o4),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper04> IEventMemberDescriptor_EventWrapper04Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper04 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper04),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper04Methods>::ctor(this, object, method);
         this
     }
 }
@@ -1470,7 +2446,7 @@ impl EventMemberDescriptor_EventWrapper00 {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper06_unity2_raw {
+mod __EventMemberDescriptor_EventWrapper08_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1484,7 +2460,7 @@ mod __EventMemberDescriptor_EventWrapper06_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1496,7 +2472,7 @@ mod __EventMemberDescriptor_EventWrapper06_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1509,208 +2485,13 @@ mod __EventMemberDescriptor_EventWrapper06_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper06,
+        this: EventMemberDescriptor_EventWrapper08,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper06,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper06 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper06,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper06,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, o1, o2, o3, o4, o5, o6, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper06Methods:
-    IEventMemberDescriptor_EventWrapper06
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper06 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper06_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-        o3: impl ::core::convert::Into<crate::system::object::Object>,
-        o4: impl ::core::convert::Into<crate::system::object::Object>,
-        o5: impl ::core::convert::Into<crate::system::object::Object>,
-        o6: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper06 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper06_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::convert::Into::into(o3),
-                ::core::convert::Into::into(o4),
-                ::core::convert::Into::into(o5),
-                ::core::convert::Into::into(o6),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper06> IEventMemberDescriptor_EventWrapper06Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper06 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper06),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper06Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper09,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper09,
+            EventMemberDescriptor_EventWrapper08,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1737,12 +2518,11 @@ mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                9,
+                8,
                 param_types,
                 false,
             )
@@ -1752,7 +2532,7 @@ mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper09 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -1765,7 +2545,7 @@ mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper09,
+        this: EventMemberDescriptor_EventWrapper08,
         o1: crate::system::object::Object,
         o2: crate::system::object::Object,
         o3: crate::system::object::Object,
@@ -1774,12 +2554,10 @@ mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
         o6: crate::system::object::Object,
         o7: crate::system::object::Object,
         o8: crate::system::object::Object,
-        o9: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper09,
-            crate::system::object::Object,
+            EventMemberDescriptor_EventWrapper08,
             crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
@@ -1794,25 +2572,13 @@ mod __EventMemberDescriptor_EventWrapper09_unity2_raw {
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(
-            this,
-            o1,
-            o2,
-            o3,
-            o4,
-            o5,
-            o6,
-            o7,
-            o8,
-            o9,
-            __unity2_method_info,
-        )
+        inner(this, o1, o2, o3, o4, o5, o6, o7, o8, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper09Methods:
-    IEventMemberDescriptor_EventWrapper09
+pub trait IEventMemberDescriptor_EventWrapper08Methods:
+    IEventMemberDescriptor_EventWrapper08
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -1821,8 +2587,8 @@ pub trait IEventMemberDescriptor_EventWrapper09Methods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper09 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper09_unity2_raw::ctor(
+            let __receiver = < EventMemberDescriptor_EventWrapper08 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper08_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1830,7 +2596,7 @@ pub trait IEventMemberDescriptor_EventWrapper09Methods:
             )
         }
     }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     fn invoke(
         self,
         o1: impl ::core::convert::Into<crate::system::object::Object>,
@@ -1841,11 +2607,10 @@ pub trait IEventMemberDescriptor_EventWrapper09Methods:
         o6: impl ::core::convert::Into<crate::system::object::Object>,
         o7: impl ::core::convert::Into<crate::system::object::Object>,
         o8: impl ::core::convert::Into<crate::system::object::Object>,
-        o9: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper09 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper09_unity2_raw::invoke(
+            let __receiver = < EventMemberDescriptor_EventWrapper08 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper08_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(o1),
                 ::core::convert::Into::into(o2),
@@ -1855,7 +2620,6 @@ pub trait IEventMemberDescriptor_EventWrapper09Methods:
                 ::core::convert::Into::into(o6),
                 ::core::convert::Into::into(o7),
                 ::core::convert::Into::into(o8),
-                ::core::convert::Into::into(o9),
                 ::core::option::Option::None,
             )
         }
@@ -1863,189 +2627,23 @@ pub trait IEventMemberDescriptor_EventWrapper09Methods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper09> IEventMemberDescriptor_EventWrapper09Methods
+impl<__T: IEventMemberDescriptor_EventWrapper08> IEventMemberDescriptor_EventWrapper08Methods
     for __T
 {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper09 {
+impl EventMemberDescriptor_EventWrapper08 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper09),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper08),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper09Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper01_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper01,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper01,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper01,
-        o1: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper01,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, o1, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper01Methods:
-    IEventMemberDescriptor_EventWrapper01
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper01 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper01_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object)` overload"]
-    fn invoke(self, o1: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper01 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper01_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper01> IEventMemberDescriptor_EventWrapper01Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper01 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper01),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper01Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper08Methods>::ctor(this, object, method);
         this
     }
 }
@@ -3293,6 +3891,172 @@ impl EventMemberDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventMemberDescriptor_EventWrapper01_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventMemberDescriptor_EventWrapper01,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper01,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventMemberDescriptor_EventWrapper01 as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: EventMemberDescriptor_EventWrapper01,
+        o1: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventMemberDescriptor_EventWrapper01,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, o1, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+pub trait IEventMemberDescriptor_EventWrapper01Methods:
+    IEventMemberDescriptor_EventWrapper01
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper01 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper01_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::system::object::Object)` overload"]
+    fn invoke(self, o1: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = < EventMemberDescriptor_EventWrapper01 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper01_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(o1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl<__T: IEventMemberDescriptor_EventWrapper01> IEventMemberDescriptor_EventWrapper01Methods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper01 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper01),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper01Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __EventMemberDescriptor_EventWrapper11_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -3527,7 +4291,7 @@ impl EventMemberDescriptor_EventWrapper11 {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper02_unity2_raw {
+mod __EventMemberDescriptor_EventWrapper15_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -3541,7 +4305,7 @@ mod __EventMemberDescriptor_EventWrapper02_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -3553,7 +4317,7 @@ mod __EventMemberDescriptor_EventWrapper02_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -3566,393 +4330,13 @@ mod __EventMemberDescriptor_EventWrapper02_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper02,
+        this: EventMemberDescriptor_EventWrapper15,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper02,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper02 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper02,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper02,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, o1, o2, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper02Methods:
-    IEventMemberDescriptor_EventWrapper02
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper02 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper02_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper02 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper02_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper02> IEventMemberDescriptor_EventWrapper02Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper02 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper02),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper02Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper08_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper08,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper08,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                8,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper08 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper08,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper08,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, o1, o2, o3, o4, o5, o6, o7, o8, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper08Methods:
-    IEventMemberDescriptor_EventWrapper08
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper08 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper08_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-        o3: impl ::core::convert::Into<crate::system::object::Object>,
-        o4: impl ::core::convert::Into<crate::system::object::Object>,
-        o5: impl ::core::convert::Into<crate::system::object::Object>,
-        o6: impl ::core::convert::Into<crate::system::object::Object>,
-        o7: impl ::core::convert::Into<crate::system::object::Object>,
-        o8: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper08 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper08_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::convert::Into::into(o3),
-                ::core::convert::Into::into(o4),
-                ::core::convert::Into::into(o5),
-                ::core::convert::Into::into(o6),
-                ::core::convert::Into::into(o7),
-                ::core::convert::Into::into(o8),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper08> IEventMemberDescriptor_EventWrapper08Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper08 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper08),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper08Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper14,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper14,
+            EventMemberDescriptor_EventWrapper15,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -3985,11 +4369,12 @@ mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                14,
+                15,
                 param_types,
                 false,
             )
@@ -3999,7 +4384,7 @@ mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper14 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper15 as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -4012,7 +4397,7 @@ mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper14,
+        this: EventMemberDescriptor_EventWrapper15,
         o1: crate::system::object::Object,
         o2: crate::system::object::Object,
         o3: crate::system::object::Object,
@@ -4027,10 +4412,12 @@ mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
         o12: crate::system::object::Object,
         o13: crate::system::object::Object,
         o14: crate::system::object::Object,
+        o15: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper14,
+            EventMemberDescriptor_EventWrapper15,
+            crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
@@ -4067,14 +4454,15 @@ mod __EventMemberDescriptor_EventWrapper14_unity2_raw {
             o12,
             o13,
             o14,
+            o15,
             __unity2_method_info,
         )
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper14Methods:
-    IEventMemberDescriptor_EventWrapper14
+pub trait IEventMemberDescriptor_EventWrapper15Methods:
+    IEventMemberDescriptor_EventWrapper15
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -4083,8 +4471,8 @@ pub trait IEventMemberDescriptor_EventWrapper14Methods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper14 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper14_unity2_raw::ctor(
+            let __receiver = < EventMemberDescriptor_EventWrapper15 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper15_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -4092,7 +4480,7 @@ pub trait IEventMemberDescriptor_EventWrapper14Methods:
             )
         }
     }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     fn invoke(
         self,
         o1: impl ::core::convert::Into<crate::system::object::Object>,
@@ -4109,10 +4497,11 @@ pub trait IEventMemberDescriptor_EventWrapper14Methods:
         o12: impl ::core::convert::Into<crate::system::object::Object>,
         o13: impl ::core::convert::Into<crate::system::object::Object>,
         o14: impl ::core::convert::Into<crate::system::object::Object>,
+        o15: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper14 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper14_unity2_raw::invoke(
+            let __receiver = < EventMemberDescriptor_EventWrapper15 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper15_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(o1),
                 ::core::convert::Into::into(o2),
@@ -4128,6 +4517,7 @@ pub trait IEventMemberDescriptor_EventWrapper14Methods:
                 ::core::convert::Into::into(o12),
                 ::core::convert::Into::into(o13),
                 ::core::convert::Into::into(o14),
+                ::core::convert::Into::into(o15),
                 ::core::option::Option::None,
             )
         }
@@ -4135,441 +4525,23 @@ pub trait IEventMemberDescriptor_EventWrapper14Methods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper14> IEventMemberDescriptor_EventWrapper14Methods
+impl<__T: IEventMemberDescriptor_EventWrapper15> IEventMemberDescriptor_EventWrapper15Methods
     for __T
 {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper14 {
+impl EventMemberDescriptor_EventWrapper15 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper14),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper15),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper14Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper05_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper05,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper05,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper05 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper05,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper05,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, o1, o2, o3, o4, o5, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper05Methods:
-    IEventMemberDescriptor_EventWrapper05
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper05 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper05_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-        o3: impl ::core::convert::Into<crate::system::object::Object>,
-        o4: impl ::core::convert::Into<crate::system::object::Object>,
-        o5: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper05 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper05_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::convert::Into::into(o3),
-                ::core::convert::Into::into(o4),
-                ::core::convert::Into::into(o5),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper05> IEventMemberDescriptor_EventWrapper05Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper05 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper05),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper05Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper10_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper10,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper10,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                10,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper10,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-        o9: crate::system::object::Object,
-        o10: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper10,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            o1,
-            o2,
-            o3,
-            o4,
-            o5,
-            o6,
-            o7,
-            o8,
-            o9,
-            o10,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper10Methods:
-    IEventMemberDescriptor_EventWrapper10
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper10 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper10_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        o1: impl ::core::convert::Into<crate::system::object::Object>,
-        o2: impl ::core::convert::Into<crate::system::object::Object>,
-        o3: impl ::core::convert::Into<crate::system::object::Object>,
-        o4: impl ::core::convert::Into<crate::system::object::Object>,
-        o5: impl ::core::convert::Into<crate::system::object::Object>,
-        o6: impl ::core::convert::Into<crate::system::object::Object>,
-        o7: impl ::core::convert::Into<crate::system::object::Object>,
-        o8: impl ::core::convert::Into<crate::system::object::Object>,
-        o9: impl ::core::convert::Into<crate::system::object::Object>,
-        o10: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper10 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper10_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(o1),
-                ::core::convert::Into::into(o2),
-                ::core::convert::Into::into(o3),
-                ::core::convert::Into::into(o4),
-                ::core::convert::Into::into(o5),
-                ::core::convert::Into::into(o6),
-                ::core::convert::Into::into(o7),
-                ::core::convert::Into::into(o8),
-                ::core::convert::Into::into(o9),
-                ::core::convert::Into::into(o10),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper10> IEventMemberDescriptor_EventWrapper10Methods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper10 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper10),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper10Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper15Methods>::ctor(this, object, method);
         this
     }
 }
@@ -4823,7 +4795,7 @@ impl EventMemberDescriptor_EventWrapper13 {
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
+mod __EventMemberDescriptor_EventWrapper10_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4837,7 +4809,7 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -4849,7 +4821,7 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -4862,13 +4834,13 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: EventMemberDescriptor_EventWrapper07,
+        this: EventMemberDescriptor_EventWrapper10,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper07,
+            EventMemberDescriptor_EventWrapper10,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -4894,11 +4866,14 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::class(),
+                <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                7,
+                10,
                 param_types,
                 false,
             )
@@ -4908,7 +4883,7 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <EventMemberDescriptor_EventWrapper07 as ::unity2::ClassIdentity>::NAME,
+                    <EventMemberDescriptor_EventWrapper10 as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -4921,7 +4896,7 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: EventMemberDescriptor_EventWrapper07,
+        this: EventMemberDescriptor_EventWrapper10,
         o1: crate::system::object::Object,
         o2: crate::system::object::Object,
         o3: crate::system::object::Object,
@@ -4929,10 +4904,16 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
         o5: crate::system::object::Object,
         o6: crate::system::object::Object,
         o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+        o9: crate::system::object::Object,
+        o10: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            EventMemberDescriptor_EventWrapper07,
+            EventMemberDescriptor_EventWrapper10,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
             crate::system::object::Object,
@@ -4946,13 +4927,26 @@ mod __EventMemberDescriptor_EventWrapper07_unity2_raw {
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, o1, o2, o3, o4, o5, o6, o7, __unity2_method_info)
+        inner(
+            this,
+            o1,
+            o2,
+            o3,
+            o4,
+            o5,
+            o6,
+            o7,
+            o8,
+            o9,
+            o10,
+            __unity2_method_info,
+        )
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-pub trait IEventMemberDescriptor_EventWrapper07Methods:
-    IEventMemberDescriptor_EventWrapper07
+pub trait IEventMemberDescriptor_EventWrapper10Methods:
+    IEventMemberDescriptor_EventWrapper10
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -4961,8 +4955,8 @@ pub trait IEventMemberDescriptor_EventWrapper07Methods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper07 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper07_unity2_raw::ctor(
+            let __receiver = < EventMemberDescriptor_EventWrapper10 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper10_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -4970,7 +4964,7 @@ pub trait IEventMemberDescriptor_EventWrapper07Methods:
             )
         }
     }
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     fn invoke(
         self,
         o1: impl ::core::convert::Into<crate::system::object::Object>,
@@ -4980,10 +4974,13 @@ pub trait IEventMemberDescriptor_EventWrapper07Methods:
         o5: impl ::core::convert::Into<crate::system::object::Object>,
         o6: impl ::core::convert::Into<crate::system::object::Object>,
         o7: impl ::core::convert::Into<crate::system::object::Object>,
+        o8: impl ::core::convert::Into<crate::system::object::Object>,
+        o9: impl ::core::convert::Into<crate::system::object::Object>,
+        o10: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = < EventMemberDescriptor_EventWrapper07 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EventMemberDescriptor_EventWrapper07_unity2_raw::invoke(
+            let __receiver = < EventMemberDescriptor_EventWrapper10 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EventMemberDescriptor_EventWrapper10_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(o1),
                 ::core::convert::Into::into(o2),
@@ -4992,6 +4989,9 @@ pub trait IEventMemberDescriptor_EventWrapper07Methods:
                 ::core::convert::Into::into(o5),
                 ::core::convert::Into::into(o6),
                 ::core::convert::Into::into(o7),
+                ::core::convert::Into::into(o8),
+                ::core::convert::Into::into(o9),
+                ::core::convert::Into::into(o10),
                 ::core::option::Option::None,
             )
         }
@@ -4999,23 +4999,23 @@ pub trait IEventMemberDescriptor_EventWrapper07Methods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl<__T: IEventMemberDescriptor_EventWrapper07> IEventMemberDescriptor_EventWrapper07Methods
+impl<__T: IEventMemberDescriptor_EventWrapper10> IEventMemberDescriptor_EventWrapper10Methods
     for __T
 {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper07 {
+impl EventMemberDescriptor_EventWrapper10 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper07),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper10),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper07Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper10Methods>::ctor(this, object, method);
         this
     }
 }

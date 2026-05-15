@@ -10,10 +10,20 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_TradeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.TradeMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct UnitSelectSubMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_ClassChangeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.ClassChangeMenuItem")]
     #[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-    pub struct UnitSelectSubMenu_TradeMenuItem {}
+    pub struct UnitSelectSubMenu_ClassChangeMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_StoreAllMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.StoreAllMenuItem")]
+    #[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+    pub struct UnitSelectSubMenu_StoreAllMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_SkillMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.SkillMenuItem")]
@@ -25,10 +35,10 @@ mod __types {
     #[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
     pub struct UnitSelectSubMenu_EntrustMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_ClassChangeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.ClassChangeMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_TradeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.TradeMenuItem")]
     #[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-    pub struct UnitSelectSubMenu_ClassChangeMenuItem {}
+    pub struct UnitSelectSubMenu_TradeMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_InventoryMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.InventoryMenuItem")]
@@ -39,16 +49,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.BaseMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct UnitSelectSubMenu_BaseMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct UnitSelectSubMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_StoreAllMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.StoreAllMenuItem")]
-    #[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-    pub struct UnitSelectSubMenu_StoreAllMenuItem {}
 }
 
 #[cfg(feature = "app-unitselectsubmenu-types")]
@@ -57,8 +57,116 @@ pub use __types::*;
 #[cfg(feature = "app-unitselectsubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
+mod __UnitSelectSubMenu_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::basicmenu::BasicMenu,
+            crate::app::basicmenuitem::BasicMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, parent_menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitSelectSubMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, menu_item_list, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
@@ -68,7 +176,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -80,7 +188,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -93,11 +201,192 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: UnitSelectSubMenu_TradeMenuItem,
+        this: UnitSelectSubMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_TradeMenuItem,
+            UnitSelectSubMenu,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: UnitSelectSubMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitSelectSubMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu {
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
+        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
+    ) -> () {
+        unsafe {
+            __UnitSelectSubMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(parent_menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+pub trait IUnitSelectSubMenuMethods: IUnitSelectSubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitSelectSubMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitSelectSubMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitSelectSubMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl<__T: IUnitSelectSubMenu> IUnitSelectSubMenuMethods for __T {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenuMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: UnitSelectSubMenu_ClassChangeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_ClassChangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -115,7 +404,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -127,7 +416,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -140,11 +429,11 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: UnitSelectSubMenu_TradeMenuItem,
+        this: UnitSelectSubMenu_ClassChangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_TradeMenuItem,
+            UnitSelectSubMenu_ClassChangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -162,7 +451,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -174,7 +463,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -187,11 +476,11 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: UnitSelectSubMenu_TradeMenuItem,
+        this: UnitSelectSubMenu_ClassChangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_TradeMenuItem,
+            UnitSelectSubMenu_ClassChangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -209,7 +498,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -221,7 +510,7 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -234,29 +523,294 @@ mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectSubMenu_TradeMenuItem,
+        this: UnitSelectSubMenu_ClassChangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(UnitSelectSubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_ClassChangeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitselectsubmenu")]
-pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuItem {
+pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
+    IUnitSelectSubMenu_ClassChangeMenuItem
+{
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl<__T: IUnitSelectSubMenu_ClassChangeMenuItem> IUnitSelectSubMenu_ClassChangeMenuItemMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_ClassChangeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_ClassChangeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_ClassChangeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: UnitSelectSubMenu_StoreAllMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_StoreAllMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: UnitSelectSubMenu_StoreAllMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_StoreAllMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: UnitSelectSubMenu_StoreAllMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_StoreAllMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitSelectSubMenu_StoreAllMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitSelectSubMenu_StoreAllMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+pub trait IUnitSelectSubMenu_StoreAllMenuItemMethods: IUnitSelectSubMenu_StoreAllMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::get_name(
+            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -266,10 +820,10 @@ pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuI
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::build_attribute(
+            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -279,10 +833,10 @@ pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuI
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::a_call(
+            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -292,10 +846,10 @@ pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuI
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::ctor(
+            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -304,20 +858,20 @@ pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuI
 }
 
 #[cfg(feature = "app-unitselectsubmenu")]
-impl<__T: IUnitSelectSubMenu_TradeMenuItem> IUnitSelectSubMenu_TradeMenuItemMethods for __T {}
+impl<__T: IUnitSelectSubMenu_StoreAllMenuItem> IUnitSelectSubMenu_StoreAllMenuItemMethods for __T {}
 
 #[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_TradeMenuItem {
+impl UnitSelectSubMenu_StoreAllMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_TradeMenuItem),
+                ::core::stringify!(UnitSelectSubMenu_StoreAllMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectSubMenu_TradeMenuItemMethods>::ctor(this);
+        <Self as IUnitSelectSubMenu_StoreAllMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -863,7 +1417,7 @@ impl UnitSelectSubMenu_EntrustMenuItem {
 #[cfg(feature = "app-unitselectsubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
+mod __UnitSelectSubMenu_TradeMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -874,7 +1428,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -886,7 +1440,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -899,11 +1453,11 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: UnitSelectSubMenu_ClassChangeMenuItem,
+        this: UnitSelectSubMenu_TradeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_ClassChangeMenuItem,
+            UnitSelectSubMenu_TradeMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -921,7 +1475,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -933,7 +1487,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -946,11 +1500,11 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: UnitSelectSubMenu_ClassChangeMenuItem,
+        this: UnitSelectSubMenu_TradeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_ClassChangeMenuItem,
+            UnitSelectSubMenu_TradeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -968,7 +1522,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -980,7 +1534,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -993,11 +1547,11 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: UnitSelectSubMenu_ClassChangeMenuItem,
+        this: UnitSelectSubMenu_TradeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            UnitSelectSubMenu_ClassChangeMenuItem,
+            UnitSelectSubMenu_TradeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1015,7 +1569,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1027,7 +1581,7 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_ClassChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectSubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1040,30 +1594,29 @@ mod __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectSubMenu_ClassChangeMenuItem,
+        this: UnitSelectSubMenu_TradeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu_ClassChangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitSelectSubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitselectsubmenu")]
-pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
-    IUnitSelectSubMenu_ClassChangeMenuItem
-{
+pub trait IUnitSelectSubMenu_TradeMenuItemMethods: IUnitSelectSubMenu_TradeMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::get_name(
+            let __receiver =
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1072,8 +1625,11 @@ pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::build_attribute(
+            let __receiver =
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1082,8 +1638,11 @@ pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::a_call(
+            let __receiver =
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1092,8 +1651,11 @@ pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < UnitSelectSubMenu_ClassChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectSubMenu_ClassChangeMenuItem_unity2_raw::ctor(
+            let __receiver =
+                <UnitSelectSubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectSubMenu_TradeMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1102,23 +1664,20 @@ pub trait IUnitSelectSubMenu_ClassChangeMenuItemMethods:
 }
 
 #[cfg(feature = "app-unitselectsubmenu")]
-impl<__T: IUnitSelectSubMenu_ClassChangeMenuItem> IUnitSelectSubMenu_ClassChangeMenuItemMethods
-    for __T
-{
-}
+impl<__T: IUnitSelectSubMenu_TradeMenuItem> IUnitSelectSubMenu_TradeMenuItemMethods for __T {}
 
 #[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_ClassChangeMenuItem {
+impl UnitSelectSubMenu_TradeMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_ClassChangeMenuItem),
+                ::core::stringify!(UnitSelectSubMenu_TradeMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectSubMenu_ClassChangeMenuItemMethods>::ctor(this);
+        <Self as IUnitSelectSubMenu_TradeMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -1482,565 +2041,6 @@ impl UnitSelectSubMenu_BaseMenuItem {
             )
         });
         <Self as IUnitSelectSubMenu_BaseMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectSubMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::basicmenu::BasicMenu,
-            crate::app::basicmenuitem::BasicMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, parent_menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitSelectSubMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: UnitSelectSubMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: UnitSelectSubMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitSelectSubMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
-        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            __UnitSelectSubMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(parent_menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-pub trait IUnitSelectSubMenuMethods: IUnitSelectSubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitSelectSubMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitSelectSubMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <UnitSelectSubMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitSelectSubMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl<__T: IUnitSelectSubMenu> IUnitSelectSubMenuMethods for __T {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenuMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: UnitSelectSubMenu_StoreAllMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu_StoreAllMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: UnitSelectSubMenu_StoreAllMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu_StoreAllMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: UnitSelectSubMenu_StoreAllMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu_StoreAllMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitSelectSubMenu_StoreAllMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitSelectSubMenu_StoreAllMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-pub trait IUnitSelectSubMenu_StoreAllMenuItemMethods: IUnitSelectSubMenu_StoreAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitSelectSubMenu_StoreAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectSubMenu_StoreAllMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl<__T: IUnitSelectSubMenu_StoreAllMenuItem> IUnitSelectSubMenu_StoreAllMenuItemMethods for __T {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_StoreAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_StoreAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_StoreAllMenuItemMethods>::ctor(this);
         this
     }
 }

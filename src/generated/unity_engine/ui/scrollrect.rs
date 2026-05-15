@@ -16,6 +16,59 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_MovementType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ScrollRect_MovementType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ScrollRect_MovementType {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "ScrollRect.MovementType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ScrollRect_MovementType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ScrollRect_MovementType {
+        pub fn unrestricted() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn elastic() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn clamped() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect.ScrollRectEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
+    pub struct ScrollRect_ScrollRectEvent {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollbarVisibility.md"))]
     #[repr(C)]
     #[derive(
@@ -63,11 +116,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect.ScrollRectEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
-    pub struct ScrollRect_ScrollRectEvent {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollrect/ScrollRect.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect")]
@@ -149,54 +197,6 @@ mod __types {
         pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
         #[rename(name = "m_Corners")]
         pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_MovementType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ScrollRect_MovementType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ScrollRect_MovementType {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "ScrollRect.MovementType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ScrollRect_MovementType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ScrollRect_MovementType {
-        pub fn unrestricted() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn elastic() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn clamped() -> Self {
-            Self { value: 2 }
-        }
     }
 }
 

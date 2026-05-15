@@ -7,24 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord_Record.md"))]
-    #[::unity2::class(namespace = "App", name = "ChapterRecord.Record")]
-    #[parent(crate::system::object::Object)]
-    pub struct ChapterRecord_Record {
-        #[rename(name = "Cid")]
-        pub cid: ::unity2::Il2CppString,
-        #[rename(name = "MvpPid")]
-        pub mvp_pid: ::unity2::Il2CppString,
-        #[rename(name = "MvpJid")]
-        pub mvp_jid: ::unity2::Il2CppString,
-        #[rename(name = "MvpGid")]
-        pub mvp_gid: ::unity2::Il2CppString,
-        #[rename(name = "ClearTime")]
-        pub clear_time: f32,
-        #[rename(name = "ClearTurn")]
-        pub clear_turn: i32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord.md"))]
     #[::unity2::class(namespace = "App", name = "ChapterRecord")]
     #[parent(crate::system::object::Object)]
@@ -42,103 +24,28 @@ mod __types {
             crate::app::chapterrecord::ChapterRecord_Record,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord_Record.md"))]
+    #[::unity2::class(namespace = "App", name = "ChapterRecord.Record")]
+    #[parent(crate::system::object::Object)]
+    pub struct ChapterRecord_Record {
+        #[rename(name = "Cid")]
+        pub cid: ::unity2::Il2CppString,
+        #[rename(name = "MvpPid")]
+        pub mvp_pid: ::unity2::Il2CppString,
+        #[rename(name = "MvpJid")]
+        pub mvp_jid: ::unity2::Il2CppString,
+        #[rename(name = "MvpGid")]
+        pub mvp_gid: ::unity2::Il2CppString,
+        #[rename(name = "ClearTime")]
+        pub clear_time: f32,
+        #[rename(name = "ClearTurn")]
+        pub clear_turn: i32,
+    }
 }
 
 #[cfg(feature = "app-chapterrecord-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-chapterrecord")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChapterRecord_Record_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChapterRecord_Record as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChapterRecord_Record as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ChapterRecord_Record,
-        cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ChapterRecord_Record,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, cid, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-chapterrecord")]
-pub trait IChapterRecord_RecordMethods: IChapterRecord_Record {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <ChapterRecord_Record as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChapterRecord_Record_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-chapterrecord")]
-impl<__T: IChapterRecord_Record> IChapterRecord_RecordMethods for __T {}
-
-#[cfg(feature = "app-chapterrecord")]
-impl ChapterRecord_Record {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(cid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChapterRecord_Record),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChapterRecord_RecordMethods>::ctor(this, cid);
-        this
-    }
-}
 
 #[cfg(feature = "app-chapterrecord")]
 #[doc(hidden)]
@@ -845,6 +752,99 @@ impl ChapterRecord {
             )
         });
         <Self as IChapterRecordMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-chapterrecord")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ChapterRecord_Record_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChapterRecord_Record as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChapterRecord_Record as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ChapterRecord_Record,
+        cid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChapterRecord_Record,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, cid, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-chapterrecord")]
+pub trait IChapterRecord_RecordMethods: IChapterRecord_Record {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ChapterRecord_Record as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ChapterRecord_Record_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(cid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-chapterrecord")]
+impl<__T: IChapterRecord_Record> IChapterRecord_RecordMethods for __T {}
+
+#[cfg(feature = "app-chapterrecord")]
+impl ChapterRecord_Record {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(cid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChapterRecord_Record),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChapterRecord_RecordMethods>::ctor(this, cid);
         this
     }
 }

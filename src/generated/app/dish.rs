@@ -9,6 +9,58 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_Liking.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Dish_Liking {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Dish_Liking {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Dish.Liking";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Dish_Liking {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Dish_Liking {
+        pub fn none() -> Self {
+            Self { value: -1 }
+        }
+
+        pub fn ok() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn like() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn dislike() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult_TryResult.md"))]
     #[repr(C)]
     #[derive(
@@ -94,58 +146,6 @@ mod __types {
                 .raw()
                 ._1
                 .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_Liking.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Dish_Liking {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Dish_Liking {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Dish.Liking";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Dish_Liking {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Dish_Liking {
-        pub fn none() -> Self {
-            Self { value: -1 }
-        }
-
-        pub fn ok() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn like() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn dislike() -> Self {
-            Self { value: 2 }
         }
     }
 

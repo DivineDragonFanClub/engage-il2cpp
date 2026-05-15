@@ -384,7 +384,7 @@ impl SubsystemManager {
     pub fn cctor() -> () {
         unsafe { __SubsystemManager_unity2_raw::cctor(::core::option::Option::None) }
     }
-    fn get_subsystems<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn get_subsystems<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         subsystems: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<
@@ -436,7 +436,7 @@ impl SubsystemManager {
             )
         }
     }
-    fn add_subsystem_subset<
+    pub fn add_subsystem_subset<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
@@ -509,7 +509,7 @@ impl SubsystemManager {
             )
         }
     }
-    fn get_instances<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn get_instances<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         subsystems: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<

@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieTradeManager_Side {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
     #[repr(C)]
     #[derive(
@@ -62,6 +57,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieTradeManager_Side {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTradeManager")]

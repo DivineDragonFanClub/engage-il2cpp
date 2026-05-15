@@ -2582,8 +2582,8 @@ impl Proc {
             )
         }
     }
-    fn find_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> M0
-    {
+    pub fn find_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -2628,8 +2628,8 @@ impl Proc {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    fn kill_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> ()
-    {
+    pub fn kill_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    ) -> () {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -2674,7 +2674,9 @@ impl Proc {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    fn callback_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn callback_by_class<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         callback: impl ::core::convert::Into<crate::app::proc::Proc_ProcCallback_1<M0>>,
     ) -> bool {
         static OPEN: ::std::sync::LazyLock<
@@ -2900,7 +2902,7 @@ impl Proc {
             )
         }
     }
-    fn call_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn call_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         function: impl ::core::convert::Into<
             crate::system::action_2::Action_2<crate::app::procinst::ProcInst, M0>,
         >,
@@ -2957,7 +2959,7 @@ impl Proc {
             )
         }
     }
-    fn call_6<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn call_6<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         function: impl ::core::convert::Into<crate::system::action_1::Action_1<M0>>,
         arg: impl ::core::convert::Into<M0>,
     ) -> crate::app::procdesc::ProcDesc {
@@ -3254,7 +3256,7 @@ impl Proc {
     pub fn wait_is_loading() -> crate::app::procdesc::ProcDesc {
         unsafe { __Proc_unity2_raw::wait_is_loading(::core::option::Option::None) }
     }
-    fn create_no_desc<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn create_no_desc<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -3304,7 +3306,7 @@ impl Proc {
             )
         }
     }
-    fn create_bind_no_desc<
+    pub fn create_bind_no_desc<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,

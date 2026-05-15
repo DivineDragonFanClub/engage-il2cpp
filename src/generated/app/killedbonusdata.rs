@@ -20,51 +20,6 @@ mod __types {
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)]
     pub struct KilledBonusData_FlagField {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData.md"))]
-    #[::unity2::class(namespace = "App", name = "KilledBonusData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: killedbonusdata :: KilledBonusData >)]
-    pub struct KilledBonusData {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct KilledBonusData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for KilledBonusData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "KilledBonusData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for KilledBonusData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl KilledBonusData_Flags {
-        pub fn god() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -118,6 +73,51 @@ mod __types {
 
         pub fn god_exp() -> Self {
             Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData.md"))]
+    #[::unity2::class(namespace = "App", name = "KilledBonusData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: killedbonusdata :: KilledBonusData >)]
+    pub struct KilledBonusData {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct KilledBonusData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for KilledBonusData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "KilledBonusData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for KilledBonusData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl KilledBonusData_Flags {
+        pub fn god() -> Self {
+            Self { value: 1 }
         }
     }
 }

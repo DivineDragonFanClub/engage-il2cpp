@@ -226,7 +226,7 @@ mod __SpriteDataAccessExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-u2d-spritedataaccessextensions")]
 impl SpriteDataAccessExtensions {
-    fn check_attribute_type_matches_and_throw<
+    pub fn check_attribute_type_matches_and_throw<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         channel: impl ::core::convert::Into<

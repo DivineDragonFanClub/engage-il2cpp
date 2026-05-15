@@ -13,6 +13,24 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent.md"))]
+    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct InventoryPoolItemMenuContent {
+        #[rename(name = "m_MenuTitleText")]
+        pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TransporterText")]
+        pub m_transporter_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_StockValueText")]
+        pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_StockValueMaxText")]
+        pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_KindBgName")]
+        pub m_kind_bg_name: crate::system::collections::generic::list_1::List_1<
+            crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent_KindBgNameClass,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent_KindBgNameClass.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -40,24 +58,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenucontent/InventoryPoolItemMenuContent.md"))]
-    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuContent")]
-    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
-    pub struct InventoryPoolItemMenuContent {
-        #[rename(name = "m_MenuTitleText")]
-        pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_TransporterText")]
-        pub m_transporter_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_StockValueText")]
-        pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_StockValueMaxText")]
-        pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_KindBgName")]
-        pub m_kind_bg_name: crate::system::collections::generic::list_1::List_1<
-            crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent_KindBgNameClass,
-        >,
     }
 }
 

@@ -10,21 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfade/TalkTagFade.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagFade")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagFade {
-        #[static_field]
-        #[rename(name = "m_Colors")]
-        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[rename(name = "m_TagID")]
-        pub m_tag_id: crate::app::talk3_d::talktagfade::TalkTagFade_TagID,
-        #[rename(name = "m_Sec")]
-        pub m_sec: f32,
-        #[rename(name = "m_ColorIndex")]
-        pub m_color_index: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagfade/TalkTagFade_TagID.md"))]
     #[repr(C)]
     #[derive(
@@ -67,6 +52,21 @@ mod __types {
         pub fn out() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfade/TalkTagFade.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagFade")]
+    #[parent(crate::app::talk3_d::talktag::TalkTag)]
+    pub struct TalkTagFade {
+        #[static_field]
+        #[rename(name = "m_Colors")]
+        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[rename(name = "m_TagID")]
+        pub m_tag_id: crate::app::talk3_d::talktagfade::TalkTagFade_TagID,
+        #[rename(name = "m_Sec")]
+        pub m_sec: f32,
+        #[rename(name = "m_ColorIndex")]
+        pub m_color_index: i32,
     }
 }
 

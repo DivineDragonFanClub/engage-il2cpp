@@ -15,16 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MinigameAssistDialog_AssistItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MinigameAssistDialog_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
     #[repr(C)]
     #[derive(
@@ -73,6 +63,34 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MinigameAssistDialog_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct MinigameAssistDialog {
+        #[static_field]
+        #[rename(name = "ConfirmLabels")]
+        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "YesLabels")]
+        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "NoLabels")]
+        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "CancelLabels")]
+        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MinigameAssistDialog_AssistItem {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]
     #[repr(C)]
     #[derive(
@@ -120,180 +138,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct MinigameAssistDialog {
-        #[static_field]
-        #[rename(name = "ConfirmLabels")]
-        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "YesLabels")]
-        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "NoLabels")]
-        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "CancelLabels")]
-        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
-    }
 }
 
 #[cfg(feature = "app-minigameassistdialog-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-minigameassistdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MinigameAssistDialog_AssistItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_build(
-        this: MinigameAssistDialog_AssistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MinigameAssistDialog_AssistItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MinigameAssistDialog_AssistItem,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MinigameAssistDialog_AssistItem,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, name, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-minigameassistdialog")]
-pub trait IMinigameAssistDialog_AssistItemMethods: IMinigameAssistDialog_AssistItem {
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver =
-                <MinigameAssistDialog_AssistItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MinigameAssistDialog_AssistItem_unity2_raw::on_build(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <MinigameAssistDialog_AssistItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MinigameAssistDialog_AssistItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl<__T: IMinigameAssistDialog_AssistItem> IMinigameAssistDialog_AssistItemMethods for __T {}
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl MinigameAssistDialog_AssistItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MinigameAssistDialog_AssistItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMinigameAssistDialog_AssistItemMethods>::ctor(this, name);
-        this
-    }
-}
 
 #[cfg(feature = "app-minigameassistdialog")]
 #[doc(hidden)]
@@ -1050,6 +898,158 @@ impl MinigameAssistDialog {
             menu_content,
             event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MinigameAssistDialog_AssistItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::class(),
+                "OnBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::NAME,
+                    "OnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build(
+        this: MinigameAssistDialog_AssistItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MinigameAssistDialog_AssistItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_build::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MinigameAssistDialog_AssistItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MinigameAssistDialog_AssistItem,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MinigameAssistDialog_AssistItem,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
+pub trait IMinigameAssistDialog_AssistItemMethods: IMinigameAssistDialog_AssistItem {
+    #[doc = "`OnBuild()` overload"]
+    fn on_build(self) -> () {
+        unsafe {
+            let __receiver =
+                <MinigameAssistDialog_AssistItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MinigameAssistDialog_AssistItem_unity2_raw::on_build(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <MinigameAssistDialog_AssistItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MinigameAssistDialog_AssistItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl<__T: IMinigameAssistDialog_AssistItem> IMinigameAssistDialog_AssistItemMethods for __T {}
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl MinigameAssistDialog_AssistItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MinigameAssistDialog_AssistItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMinigameAssistDialog_AssistItemMethods>::ctor(this, name);
         this
     }
 }

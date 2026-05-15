@@ -8,23 +8,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Frame.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteSize.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TexturePacker_JsonArray_Frame {
-    pub filename: :: unity2 :: Il2CppString,
-    pub frame: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteFrame,
-    pub rotated: bool,
-    pub trimmed: bool,
-    pub sprite_source_size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteFrame,
-    pub source_size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteSize,
-    pub pivot: crate :: unity_engine :: vector2 :: Vector2,
-}
+    pub struct TexturePacker_JsonArray_SpriteSize {
+        pub w: f32,
+        pub h: f32,
+    }
 
-    impl ::unity2::ClassIdentity for TexturePacker_JsonArray_Frame {
+    impl ::unity2::ClassIdentity for TexturePacker_JsonArray_SpriteSize {
         const NAMESPACE: &'static str = "TMPro.SpriteAssetUtilities";
 
-        const NAME: &'static str = "TexturePacker_JsonArray.Frame";
+        const NAME: &'static str = "TexturePacker_JsonArray.SpriteSize";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +28,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TexturePacker_JsonArray_Frame {
+    impl ::unity2::IlType for TexturePacker_JsonArray_SpriteSize {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -41,6 +36,25 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray.md"))]
+    #[::unity2::class(
+        namespace = "TMPro.SpriteAssetUtilities",
+        name = "TexturePacker_JsonArray"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct TexturePacker_JsonArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteDataObject.md"))]
+    #[::unity2::class(
+        namespace = "TMPro.SpriteAssetUtilities",
+        name = "TexturePacker_JsonArray.SpriteDataObject"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct TexturePacker_JsonArray_SpriteDataObject {
+# [rename (name = "frames")] pub frames : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_Frame > ,
+# [rename (name = "meta")] pub meta : crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_Meta ,
+}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteFrame.md"))]
     #[repr(C)]
@@ -73,18 +87,23 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteSize.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Frame.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TexturePacker_JsonArray_SpriteSize {
-        pub w: f32,
-        pub h: f32,
-    }
+    pub struct TexturePacker_JsonArray_Frame {
+    pub filename: :: unity2 :: Il2CppString,
+    pub frame: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteFrame,
+    pub rotated: bool,
+    pub trimmed: bool,
+    pub sprite_source_size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteFrame,
+    pub source_size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteSize,
+    pub pivot: crate :: unity_engine :: vector2 :: Vector2,
+}
 
-    impl ::unity2::ClassIdentity for TexturePacker_JsonArray_SpriteSize {
+    impl ::unity2::ClassIdentity for TexturePacker_JsonArray_Frame {
         const NAMESPACE: &'static str = "TMPro.SpriteAssetUtilities";
 
-        const NAME: &'static str = "TexturePacker_JsonArray.SpriteSize";
+        const NAME: &'static str = "TexturePacker_JsonArray.Frame";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -93,7 +112,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TexturePacker_JsonArray_SpriteSize {
+    impl ::unity2::IlType for TexturePacker_JsonArray_Frame {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -135,96 +154,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray.md"))]
-    #[::unity2::class(
-        namespace = "TMPro.SpriteAssetUtilities",
-        name = "TexturePacker_JsonArray"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TexturePacker_JsonArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteDataObject.md"))]
-    #[::unity2::class(
-        namespace = "TMPro.SpriteAssetUtilities",
-        name = "TexturePacker_JsonArray.SpriteDataObject"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TexturePacker_JsonArray_SpriteDataObject {
-# [rename (name = "frames")] pub frames : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_Frame > ,
-# [rename (name = "meta")] pub meta : crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_Meta ,
-}
 }
 
 #[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TexturePacker_JsonArray_SpriteFrame_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePacker_JsonArray_SpriteFrame as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TexturePacker_JsonArray_SpriteFrame as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: TexturePacker_JsonArray_SpriteFrame,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TexturePacker_JsonArray_SpriteFrame,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
-impl TexturePacker_JsonArray_SpriteFrame {
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            __TexturePacker_JsonArray_SpriteFrame_unity2_raw::to_string(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
 #[doc(hidden)]
@@ -467,6 +400,73 @@ impl TexturePacker_JsonArray_SpriteDataObject {
         });
         <Self as ITexturePacker_JsonArray_SpriteDataObjectMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TexturePacker_JsonArray_SpriteFrame_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TexturePacker_JsonArray_SpriteFrame as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TexturePacker_JsonArray_SpriteFrame as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: TexturePacker_JsonArray_SpriteFrame,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            TexturePacker_JsonArray_SpriteFrame,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
+impl TexturePacker_JsonArray_SpriteFrame {
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            __TexturePacker_JsonArray_SpriteFrame_unity2_raw::to_string(
+                self,
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

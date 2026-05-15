@@ -11,27 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct InventoryPoolItemMenu {
-        #[static_field]
-        #[rename(name = "ShowRowNum")]
-        pub show_row_num: i32,
-        #[rename(name = "m_SavedFullMenuItemList")]
-        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        #[rename(name = "m_SortMenuItemList")]
-        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        #[rename(name = "m_ItemKind")]
-        pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
-        #[rename(name = "m_Selects")]
-        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +57,27 @@ mod __types {
         pub fn last() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct InventoryPoolItemMenu {
+        #[static_field]
+        #[rename(name = "ShowRowNum")]
+        pub show_row_num: i32,
+        #[rename(name = "m_SavedFullMenuItemList")]
+        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        #[rename(name = "m_SortMenuItemList")]
+        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        #[rename(name = "m_ItemKind")]
+        pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+        #[rename(name = "m_Selects")]
+        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
     }
 }
 

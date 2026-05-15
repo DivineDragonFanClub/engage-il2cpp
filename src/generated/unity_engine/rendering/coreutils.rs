@@ -4545,7 +4545,7 @@ impl CoreUtils {
             )
         }
     }
-    fn has_flag<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn has_flag<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         mask: impl ::core::convert::Into<M0>,
         flag: impl ::core::convert::Into<M0>,
     ) -> bool {
@@ -4597,7 +4597,7 @@ impl CoreUtils {
             )
         }
     }
-    fn swap<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn swap<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         a: impl ::core::convert::Into<*mut M0>,
         b: impl ::core::convert::Into<*mut M0>,
     ) -> () {
@@ -4709,7 +4709,7 @@ impl CoreUtils {
     {
         unsafe { __CoreUtils_unity2_raw::get_all_assembly_types(::core::option::Option::None) }
     }
-    fn get_all_types_derived_from<
+    pub fn get_all_types_derived_from<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >() -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
     {

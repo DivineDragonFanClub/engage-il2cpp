@@ -9,6 +9,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapCinemachineController")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapCinemachineController {
+        #[rename(name = "m_Carrier")]
+        pub m_carrier: crate::unity_engine::gameobject::GameObject,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapcinemachinecontroller/GmapCinemachineController_PointType.md"))]
     #[repr(C)]
     #[derive(
@@ -55,14 +63,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapCinemachineController")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapCinemachineController {
-        #[rename(name = "m_Carrier")]
-        pub m_carrier: crate::unity_engine::gameobject::GameObject,
     }
 }
 

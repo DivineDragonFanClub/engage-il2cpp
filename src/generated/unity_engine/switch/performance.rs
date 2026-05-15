@@ -14,50 +14,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Performance_Debug {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Performance_CpuBoostMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Performance_CpuBoostMode {
-        const NAMESPACE: &'static str = "UnityEngine.Switch";
-
-        const NAME: &'static str = "Performance.CpuBoostMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Performance_CpuBoostMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Performance_CpuBoostMode {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fast_load() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_PerformanceMode.md"))]
     #[repr(C)]
     #[derive(
@@ -160,6 +116,50 @@ mod __types {
 
         pub fn gpu_counters() -> Self {
             Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Performance_CpuBoostMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Performance_CpuBoostMode {
+        const NAMESPACE: &'static str = "UnityEngine.Switch";
+
+        const NAME: &'static str = "Performance.CpuBoostMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Performance_CpuBoostMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Performance_CpuBoostMode {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fast_load() -> Self {
+            Self { value: 1 }
         }
     }
 }

@@ -10,6 +10,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Closure")]
+    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
+    pub struct Closure {
+        #[static_field]
+        #[rename(name = "emptyClosure")]
+        pub empty_closure:
+            crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md"))]
     #[repr(C)]
     #[derive(
@@ -56,16 +66,6 @@ mod __types {
         pub fn closure() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Closure")]
-    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
-    pub struct Closure {
-        #[static_field]
-        #[rename(name = "emptyClosure")]
-        pub empty_closure:
-            crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
     }
 }
 

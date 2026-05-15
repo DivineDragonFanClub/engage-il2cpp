@@ -1100,7 +1100,7 @@ mod __AssetReference_unity2_raw {
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
 impl AssetReference {
-    fn create_failed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    pub fn create_failed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

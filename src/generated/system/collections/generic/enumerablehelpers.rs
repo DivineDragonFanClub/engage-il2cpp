@@ -25,7 +25,7 @@ mod __EnumerableHelpers_unity2_raw {
 
 #[cfg(feature = "system-collections-generic-enumerablehelpers")]
 impl EnumerableHelpers {
-    fn to_array<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn to_array<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         source: impl ::core::convert::Into<
             crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0>,
         >,

@@ -14,6 +14,24 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicSkillMenuItemContent")]
+    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+    pub struct BasicSkillMenuItemContent {
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Name")]
+        pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SubText")]
+        pub m_sub_text: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Border")]
+        pub m_border: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Efficacy")]
+        pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_IsDouble")]
+        pub m_is_double: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]
     #[repr(C)]
     #[derive(
@@ -84,24 +102,6 @@ mod __types {
         pub fn double() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicSkillMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct BasicSkillMenuItemContent {
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Name")]
-        pub m_name: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SubText")]
-        pub m_sub_text: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Border")]
-        pub m_border: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Efficacy")]
-        pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_IsDouble")]
-        pub m_is_double: bool,
     }
 }
 

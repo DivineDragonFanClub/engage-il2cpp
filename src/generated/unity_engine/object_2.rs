@@ -2719,7 +2719,7 @@ impl Object_2 {
             )
         }
     }
-    fn instantiate_6<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn instantiate_6<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         original: impl ::core::convert::Into<M0>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -2769,7 +2769,7 @@ impl Object_2 {
             )
         }
     }
-    fn instantiate_7<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn instantiate_7<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         original: impl ::core::convert::Into<M0>,
         position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
@@ -2827,7 +2827,7 @@ impl Object_2 {
             )
         }
     }
-    fn instantiate_8<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn instantiate_8<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         original: impl ::core::convert::Into<M0>,
         position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
@@ -2888,7 +2888,7 @@ impl Object_2 {
             )
         }
     }
-    fn instantiate_9<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn instantiate_9<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         original: impl ::core::convert::Into<M0>,
         parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> M0 {
@@ -2943,7 +2943,7 @@ impl Object_2 {
             )
         }
     }
-    fn instantiate_10<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn instantiate_10<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         original: impl ::core::convert::Into<M0>,
         parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
         world_position_stays: impl ::core::convert::Into<bool>,
@@ -3130,7 +3130,7 @@ impl Object_2 {
             )
         }
     }
-    fn find_objects_of_type_3<
+    pub fn find_objects_of_type_3<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >() -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -3177,7 +3177,7 @@ impl Object_2 {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    fn find_objects_of_type_4<
+    pub fn find_objects_of_type_4<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         include_inactive: impl ::core::convert::Into<bool>,
@@ -3229,7 +3229,7 @@ impl Object_2 {
             )
         }
     }
-    fn find_object_of_type<
+    pub fn find_object_of_type<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >() -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -3276,7 +3276,7 @@ impl Object_2 {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    fn find_object_of_type_2<
+    pub fn find_object_of_type_2<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         include_inactive: impl ::core::convert::Into<bool>,

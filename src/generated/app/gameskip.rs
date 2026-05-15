@@ -16,6 +16,130 @@ mod __types {
     #[parent(crate::app::procinst::ProcInst)]
     pub struct GameSkip_ProcSuspend {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSkip")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameskip :: GameSkip >)]
+    pub struct GameSkip {
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::gameskip::GameSkip_Sequence,
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::gameskip::GameSkip_Status,
+        #[rename(name = "m_Statck")]
+        pub m_statck: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::gameskip::GameSkip_Status,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSkip.ProcWaitTime")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GameSkip_ProcWaitTime {
+        #[rename(name = "m_WaitTime")]
+        pub m_wait_time: f32,
+        #[rename(name = "m_DeltaTime")]
+        pub m_delta_time: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameSkip_Result {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameSkip_Result {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameSkip.Result";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameSkip_Result {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameSkip_Result {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn short_skip() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn long_skip() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameSkip_Sequence {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameSkip_Sequence {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameSkip.Sequence";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameSkip_Sequence {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameSkip_Sequence {
+        pub fn tick() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fade_out() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn executed() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn fade_in() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -78,130 +202,6 @@ mod __types {
         pub fn disable_ai_skip() -> Self {
             Self { value: 64 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSkip.ProcWaitTime")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GameSkip_ProcWaitTime {
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
-        #[rename(name = "m_DeltaTime")]
-        pub m_delta_time: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameSkip_Sequence {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameSkip_Sequence {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameSkip.Sequence";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameSkip_Sequence {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameSkip_Sequence {
-        pub fn tick() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fade_out() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn executed() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn fade_in() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameSkip_Result {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameSkip_Result {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameSkip.Result";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameSkip_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameSkip_Result {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn short_skip() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn long_skip() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSkip")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameskip :: GameSkip >)]
-    pub struct GameSkip {
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::gameskip::GameSkip_Sequence,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::gameskip::GameSkip_Status,
-        #[rename(name = "m_Statck")]
-        pub m_statck: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::gameskip::GameSkip_Status,
-        >,
     }
 }
 
@@ -450,150 +450,6 @@ impl GameSkip_ProcSuspend {
             )
         });
         <Self as IGameSkip_ProcSuspendMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameskip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameSkip_ProcWaitTime_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GameSkip_ProcWaitTime,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameSkip_ProcWaitTime, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_tick(
-        this: GameSkip_ProcWaitTime,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameSkip_ProcWaitTime, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_tick::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameskip")]
-pub trait IGameSkip_ProcWaitTimeMethods: IGameSkip_ProcWaitTime {
-    #[doc = "`.ctor(f32)` overload"]
-    fn ctor(self, time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <GameSkip_ProcWaitTime as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameSkip_ProcWaitTime_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
-        unsafe {
-            let __receiver = <GameSkip_ProcWaitTime as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameSkip_ProcWaitTime_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameskip")]
-impl<__T: IGameSkip_ProcWaitTime> IGameSkip_ProcWaitTimeMethods for __T {}
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcWaitTime {
-    #[doc = "`.ctor(f32)` — overload selector"]
-    pub fn new(time: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSkip_ProcWaitTime),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSkip_ProcWaitTimeMethods>::ctor(this, time);
         this
     }
 }
@@ -1971,6 +1827,150 @@ impl GameSkip {
             )
         });
         <Self as IGameSkipMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameskip")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSkip_ProcWaitTime_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSkip_ProcWaitTime,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSkip_ProcWaitTime, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSkip_ProcWaitTime as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: GameSkip_ProcWaitTime,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSkip_ProcWaitTime, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameskip")]
+pub trait IGameSkip_ProcWaitTimeMethods: IGameSkip_ProcWaitTime {
+    #[doc = "`.ctor(f32)` overload"]
+    fn ctor(self, time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <GameSkip_ProcWaitTime as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameSkip_ProcWaitTime_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = <GameSkip_ProcWaitTime as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameSkip_ProcWaitTime_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameskip")]
+impl<__T: IGameSkip_ProcWaitTime> IGameSkip_ProcWaitTimeMethods for __T {}
+
+#[cfg(feature = "app-gameskip")]
+impl GameSkip_ProcWaitTime {
+    #[doc = "`.ctor(f32)` — overload selector"]
+    pub fn new(time: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSkip_ProcWaitTime),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSkip_ProcWaitTimeMethods>::ctor(this, time);
         this
     }
 }

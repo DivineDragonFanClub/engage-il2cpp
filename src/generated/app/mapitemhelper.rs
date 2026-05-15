@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemhelper/MapItemHelper.md"))]
+    #[::unity2::class(namespace = "App", name = "MapItemHelper")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapItemHelper {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
     #[repr(C)]
     #[derive(
@@ -64,11 +69,6 @@ mod __types {
             Self { value: 16 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemhelper/MapItemHelper.md"))]
-    #[::unity2::class(namespace = "App", name = "MapItemHelper")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapItemHelper {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_BlessFlags.md"))]
     #[repr(C)]

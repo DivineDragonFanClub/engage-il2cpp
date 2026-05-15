@@ -1967,7 +1967,7 @@ impl Enum {
             )
         }
     }
-    fn try_parse<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn try_parse<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
         ignore_case: impl ::core::convert::Into<bool>,
         result: impl ::core::convert::Into<*mut M0>,

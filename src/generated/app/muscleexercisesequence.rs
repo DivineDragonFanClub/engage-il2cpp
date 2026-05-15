@@ -10,6 +10,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleexercisesequence/MuscleExerciseSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MuscleExerciseSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MuscleExerciseSequence {
+        #[rename(name = "m_RootPrefab")]
+        pub m_root_prefab: crate::app::muscleexerciseprefab::MuscleExercisePrefab,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/muscleexercisesequence/MuscleExerciseSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -68,14 +76,6 @@ mod __types {
         pub fn r#final() -> Self {
             Self { value: 5 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleexercisesequence/MuscleExerciseSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MuscleExerciseSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MuscleExerciseSequence {
-        #[rename(name = "m_RootPrefab")]
-        pub m_root_prefab: crate::app::muscleexerciseprefab::MuscleExercisePrefab,
     }
 }
 

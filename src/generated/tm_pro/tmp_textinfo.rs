@@ -660,7 +660,7 @@ mod __TMP_TextInfo_unity2_raw {
 
 #[cfg(feature = "tm_pro-tmp_textinfo")]
 impl TMP_TextInfo {
-    fn resize<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn resize<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
         size: impl ::core::convert::Into<i32>,
     ) -> () {
@@ -712,7 +712,7 @@ impl TMP_TextInfo {
             )
         }
     }
-    fn resize_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn resize_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,
         size: impl ::core::convert::Into<i32>,
         is_block_allocated: impl ::core::convert::Into<bool>,

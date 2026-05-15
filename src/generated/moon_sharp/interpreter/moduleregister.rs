@@ -436,7 +436,7 @@ impl ModuleRegister {
             )
         }
     }
-    fn register_module_type_2<
+    pub fn register_module_type_2<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,

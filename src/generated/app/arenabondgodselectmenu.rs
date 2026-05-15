@@ -17,16 +17,44 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ArenaBondGodSelectMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_StartHelpEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
+        name = "ArenaBondGodSelectMenu.StartHelpEventHandler"
     )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-        #[rename(name = "m_DecideAction")]
-        pub m_decide_action: crate::system::action::Action,
-    }
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ArenaBondGodSelectMenu_StartHelpEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct ArenaBondGodSelectMenu_ConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ArenaBondGodSelectMenu.ChangeUnitEventHandle"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.SelectEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ArenaBondGodSelectMenu_SelectEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu")]
@@ -50,19 +78,6 @@ mod __types {
         pub m_start_help_event_handler:
             crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ArenaBondGodSelectMenu.ChangeUnitEventHandle"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ArenaBondGodSelectMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem.md"))]
     #[::unity2::class(
@@ -94,31 +109,16 @@ mod __types {
             crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
+        name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
     )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ArenaBondGodSelectMenu_SelectEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_StartHelpEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ArenaBondGodSelectMenu.StartHelpEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ArenaBondGodSelectMenu_StartHelpEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct ArenaBondGodSelectMenu_ConfirmDialog {}
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+        #[rename(name = "m_DecideAction")]
+        pub m_decide_action: crate::system::action::Action,
+    }
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu-types")]
@@ -127,7 +127,7 @@ pub use __types::*;
 #[cfg(feature = "app-arenabondgodselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
+mod __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -136,12 +136,28 @@ mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -150,33 +166,49 @@ mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
-        decide_action: crate::system::action::Action,
+        this: ArenaBondGodSelectMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
-            crate::system::action::Action,
+            ArenaBondGodSelectMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, decide_action, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -184,42 +216,583 @@ mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn a_call(
-        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+    pub unsafe fn invoke(
+        this: ArenaBondGodSelectMenu_DecideEventHandler,
+        god: crate::app::godunit::GodUnit,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
+    ) -> () {
         let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+            ArenaBondGodSelectMenu_DecideEventHandler,
+            crate::app::godunit::GodUnit,
+            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, god, r#type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+pub trait IArenaBondGodSelectMenu_DecideEventHandlerMethods:
+    IArenaBondGodSelectMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    fn invoke(
+        self,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        r#type: impl ::core::convert::Into<
+            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl<__T: IArenaBondGodSelectMenu_DecideEventHandler>
+    IArenaBondGodSelectMenu_DecideEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArenaBondGodSelectMenu_StartHelpEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_StartHelpEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ArenaBondGodSelectMenu_StartHelpEventHandler,
+        super_: crate::app::procinst::ProcInst,
+        god: crate::app::goddata::GodData,
+        bond_lv: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_StartHelpEventHandler,
+            crate::app::procinst::ProcInst,
+            crate::app::goddata::GodData,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, super_, god, bond_lv, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+pub trait IArenaBondGodSelectMenu_StartHelpEventHandlerMethods:
+    IArenaBondGodSelectMenu_StartHelpEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_StartHelpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"]
+    fn invoke(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        bond_lv: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_StartHelpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(bond_lv),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl<__T: IArenaBondGodSelectMenu_StartHelpEventHandler>
+    IArenaBondGodSelectMenu_StartHelpEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_StartHelpEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_StartHelpEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_StartHelpEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        decide_action: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, decide_action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArenaBondGodSelectMenu_ConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, menu_item_list, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        decide_action: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(decide_action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+pub trait IArenaBondGodSelectMenu_ConfirmDialogMethods:
+    IArenaBondGodSelectMenu_ConfirmDialog
+{
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl<__T: IArenaBondGodSelectMenu_ConfirmDialog> IArenaBondGodSelectMenu_ConfirmDialogMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArenaBondGodSelectMenu_ChangeUnitEventHandle,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_ChangeUnitEventHandle,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ArenaBondGodSelectMenu_ChangeUnitEventHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_ChangeUnitEventHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:
-    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes
+pub trait IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods:
+    IArenaBondGodSelectMenu_ChangeUnitEventHandle
 {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, decide_action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
         unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::ctor(
+            let __receiver = < ArenaBondGodSelectMenu_ChangeUnitEventHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(decide_action),
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(
+            let __receiver = < ArenaBondGodSelectMenu_ChangeUnitEventHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -228,26 +801,275 @@ pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes>
-    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T
+impl<__T: IArenaBondGodSelectMenu_ChangeUnitEventHandle>
+    IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods for __T
 {
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_action: crate::system::action::Action) -> Self {
+impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle),
                 ::core::stringify!(new),
             )
         });
-        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this,
-            decide_action,
+        <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
         );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods:
+    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl<__T: IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo>
+    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods for __T
+{
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArenaBondGodSelectMenu_SelectEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_SelectEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ArenaBondGodSelectMenu_SelectEventHandler,
+        god: crate::app::godunit::GodUnit,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_SelectEventHandler,
+            crate::app::godunit::GodUnit,
+            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, god, r#type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+pub trait IArenaBondGodSelectMenu_SelectEventHandlerMethods:
+    IArenaBondGodSelectMenu_SelectEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    fn invoke(
+        self,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        r#type: impl ::core::convert::Into<
+            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ArenaBondGodSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl<__T: IArenaBondGodSelectMenu_SelectEventHandler>
+    IArenaBondGodSelectMenu_SelectEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -887,342 +1709,6 @@ impl ArenaBondGodSelectMenu {
             change_unit_to_next_event_handler,
             start_help_event_handler,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_ChangeUnitEventHandle,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ChangeUnitEventHandle,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_ChangeUnitEventHandle as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ArenaBondGodSelectMenu_ChangeUnitEventHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ChangeUnitEventHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods:
-    IArenaBondGodSelectMenu_ChangeUnitEventHandle
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ChangeUnitEventHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ChangeUnitEventHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ChangeUnitEventHandle_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_ChangeUnitEventHandle>
-    IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods for __T
-{
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ArenaBondGodSelectMenu_DecideEventHandler,
-        god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_DecideEventHandler,
-            crate::app::godunit::GodUnit,
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, god, r#type, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_DecideEventHandlerMethods:
-    IArenaBondGodSelectMenu_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    fn invoke(
-        self,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        r#type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_DecideEventHandler>
-    IArenaBondGodSelectMenu_DecideEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1965,492 +2451,8 @@ impl ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem {
 #[cfg(feature = "app-arenabondgodselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo_unity2_raw {
+mod __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods:
-    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo>
-    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_SelectEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_SelectEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ArenaBondGodSelectMenu_SelectEventHandler,
-        god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_SelectEventHandler,
-            crate::app::godunit::GodUnit,
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, god, r#type, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_SelectEventHandlerMethods:
-    IArenaBondGodSelectMenu_SelectEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    fn invoke(
-        self,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        r#type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_SelectEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_SelectEventHandler>
-    IArenaBondGodSelectMenu_SelectEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_StartHelpEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_StartHelpEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_StartHelpEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ArenaBondGodSelectMenu_StartHelpEventHandler,
-        super_: crate::app::procinst::ProcInst,
-        god: crate::app::goddata::GodData,
-        bond_lv: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_StartHelpEventHandler,
-            crate::app::procinst::ProcInst,
-            crate::app::goddata::GodData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, super_, god, bond_lv, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_StartHelpEventHandlerMethods:
-    IArenaBondGodSelectMenu_StartHelpEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_StartHelpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"]
-    fn invoke(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        bond_lv: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_StartHelpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_StartHelpEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(bond_lv),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_StartHelpEventHandler>
-    IArenaBondGodSelectMenu_StartHelpEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_StartHelpEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_StartHelpEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_StartHelpEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        decide_action: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, decide_action, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -2459,27 +2461,11 @@ mod __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2488,62 +2474,77 @@ mod __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ArenaBondGodSelectMenu_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+        decide_action: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ArenaBondGodSelectMenu_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+            crate::system::action::Action,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, menu_item_list, __unity2_method_info)
+        inner(this, decide_action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        decide_action: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
+pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:
+    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes
+{
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    fn ctor(self, decide_action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
         unsafe {
-            __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
+            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::ctor(
+                __receiver,
                 ::core::convert::Into::into(decide_action),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-pub trait IArenaBondGodSelectMenu_ConfirmDialogMethods:
-    IArenaBondGodSelectMenu_ConfirmDialog
-{
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-    ) -> () {
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectMenu_ConfirmDialog_unity2_raw::ctor(
+            let __receiver = < ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(
                 __receiver,
-                ::core::convert::Into::into(menu_item_list),
                 ::core::option::Option::None,
             )
         }
@@ -2551,27 +2552,26 @@ pub trait IArenaBondGodSelectMenu_ConfirmDialogMethods:
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl<__T: IArenaBondGodSelectMenu_ConfirmDialog> IArenaBondGodSelectMenu_ConfirmDialogMethods
-    for __T
+impl<__T: IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes>
+    IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T
 {
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_action: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog),
+                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IArenaBondGodSelectMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
+        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            decide_action,
+        );
         this
     }
 }

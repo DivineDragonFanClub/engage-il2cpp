@@ -16,26 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))]
-    #[::unity2::class(namespace = "App", name = "SkipIndicator")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)]
-    pub struct SkipIndicator {
-        #[rename(name = "m_Skip")]
-        pub m_skip: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Auto")]
-        pub m_auto: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Error")]
-        pub m_error: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CanvasManager")]
-        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::skipindicator::SkipIndicator_Seq,
-        #[rename(name = "m_IsReqClose")]
-        pub m_is_req_close: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator_Seq.md"))]
     #[repr(C)]
     #[derive(
@@ -86,6 +66,26 @@ mod __types {
         pub fn closing() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))]
+    #[::unity2::class(namespace = "App", name = "SkipIndicator")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)]
+    pub struct SkipIndicator {
+        #[rename(name = "m_Skip")]
+        pub m_skip: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Auto")]
+        pub m_auto: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Error")]
+        pub m_error: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CanvasManager")]
+        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::skipindicator::SkipIndicator_Seq,
+        #[rename(name = "m_IsReqClose")]
+        pub m_is_req_close: bool,
     }
 }
 

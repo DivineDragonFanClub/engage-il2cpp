@@ -8,6 +8,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric.md"))]
+    #[::unity2::class(namespace = "App", name = "SortGeneric")]
+    #[parent(crate::app::sortconstant::SortConstant)]
+    pub struct SortGeneric {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric_DelegateComparer_1.md"))]
     #[::unity2::class(namespace = "App", name = "SortGeneric.DelegateComparer`1")]
     #[parent(crate::system::object::Object)]
@@ -15,11 +20,6 @@ mod __types {
         #[rename(name = "m_Comparison")]
         pub m_comparison: crate::system::comparison_1::Comparison_1<T0>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric.md"))]
-    #[::unity2::class(namespace = "App", name = "SortGeneric")]
-    #[parent(crate::app::sortconstant::SortConstant)]
-    pub struct SortGeneric {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric_ElementComparer_1.md"))]
     #[::unity2::class(namespace = "App", name = "SortGeneric.ElementComparer`1")]
@@ -29,34 +29,6 @@ mod __types {
 
 #[cfg(feature = "app-sortgeneric-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-sortgeneric")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
-    #[doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, comparison: crate::system::comparison_1::Comparison_1<T0>) -> ();
-
-    #[doc = "`Compare(T0, T0)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(self, a: T0, b: T0) -> i32;
-}
-
-#[cfg(feature = "app-sortgeneric")]
-impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
-    #[doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` — overload selector"]
-    pub fn new(comparison: crate::system::comparison_1::Comparison_1<T0>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortGeneric_DelegateComparer_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortGeneric_DelegateComparer_1Methods<T0>>::ctor(this, comparison);
-        this
-    }
-}
 
 #[cfg(feature = "app-sortgeneric")]
 #[doc(hidden)]
@@ -109,7 +81,7 @@ mod __SortGeneric_unity2_raw {
 
 #[cfg(feature = "app-sortgeneric")]
 impl SortGeneric {
-    fn insertion_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn insertion_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -166,7 +138,9 @@ impl SortGeneric {
             )
         }
     }
-    fn insertion_sort_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn insertion_sort_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -220,7 +194,9 @@ impl SortGeneric {
             )
         }
     }
-    fn insertion_sort_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn insertion_sort_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -281,7 +257,7 @@ impl SortGeneric {
             )
         }
     }
-    fn insertion_sort_partly<
+    pub fn insertion_sort_partly<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         list: impl ::core::convert::Into<
@@ -350,7 +326,7 @@ impl SortGeneric {
             )
         }
     }
-    fn merge_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn merge_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -407,7 +383,7 @@ impl SortGeneric {
             )
         }
     }
-    fn merge_sort_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn merge_sort_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -461,7 +437,7 @@ impl SortGeneric {
             )
         }
     }
-    fn merge_sort_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn merge_sort_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -522,7 +498,9 @@ impl SortGeneric {
             )
         }
     }
-    fn merge_sort_partly<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn merge_sort_partly<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -592,7 +570,9 @@ impl SortGeneric {
             )
         }
     }
-    fn merge_sort_merge<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn merge_sort_merge<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -695,6 +675,34 @@ impl SortGeneric {
             )
         });
         <Self as ISortGenericMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortgeneric")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
+    #[doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, comparison: crate::system::comparison_1::Comparison_1<T0>) -> ();
+
+    #[doc = "`Compare(T0, T0)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, a: T0, b: T0) -> i32;
+}
+
+#[cfg(feature = "app-sortgeneric")]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
+    #[doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` — overload selector"]
+    pub fn new(comparison: crate::system::comparison_1::Comparison_1<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortGeneric_DelegateComparer_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortGeneric_DelegateComparer_1Methods<T0>>::ctor(this, comparison);
         this
     }
 }

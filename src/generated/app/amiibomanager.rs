@@ -10,6 +10,34 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct AmiiboManager_AmiiboInfo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: amiibomanager :: AmiiboManager >)]
+    pub struct AmiiboManager {
+        #[static_field]
+        #[rename(name = "DeviceCountMax")]
+        pub device_count_max: i32,
+        #[rename(name = "m_DeviceCount")]
+        pub m_device_count: i32,
+        #[rename(name = "m_SelectDeviceIndex")]
+        pub m_select_device_index: i32,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::amiibomanager::AmiiboManager_Sequence,
+        #[rename(name = "m_ActivateEventIndex")]
+        pub m_activate_event_index: u32,
+        #[rename(name = "m_DeactivateEventIndex")]
+        pub m_deactivate_event_index: u32,
+        #[rename(name = "m_AttachedEvent")]
+        pub m_attached_event: bool,
+        #[rename(name = "m_NpadId")]
+        pub m_npad_id: crate::nn::hid::npadid::NpadId,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
     #[repr(C)]
     #[derive(
@@ -68,34 +96,6 @@ mod __types {
         pub fn sequence_deactive() -> Self {
             Self { value: 5 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct AmiiboManager_AmiiboInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: amiibomanager :: AmiiboManager >)]
-    pub struct AmiiboManager {
-        #[static_field]
-        #[rename(name = "DeviceCountMax")]
-        pub device_count_max: i32,
-        #[rename(name = "m_DeviceCount")]
-        pub m_device_count: i32,
-        #[rename(name = "m_SelectDeviceIndex")]
-        pub m_select_device_index: i32,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::amiibomanager::AmiiboManager_Sequence,
-        #[rename(name = "m_ActivateEventIndex")]
-        pub m_activate_event_index: u32,
-        #[rename(name = "m_DeactivateEventIndex")]
-        pub m_deactivate_event_index: u32,
-        #[rename(name = "m_AttachedEvent")]
-        pub m_attached_event: bool,
-        #[rename(name = "m_NpadId")]
-        pub m_npad_id: crate::nn::hid::npadid::NpadId,
     }
 }
 

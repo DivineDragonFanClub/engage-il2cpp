@@ -90,6 +90,34 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DynamicMesh_Scope {
+        pub m_mesh: crate::app::dynamicmesh::DynamicMesh,
+    }
+
+    impl ::unity2::ClassIdentity for DynamicMesh_Scope {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DynamicMesh.Scope";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DynamicMesh_Scope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -112,34 +140,6 @@ mod __types {
     }
 
     impl ::unity2::IlType for DynamicMesh_State {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DynamicMesh_Scope {
-        pub m_mesh: crate::app::dynamicmesh::DynamicMesh,
-    }
-
-    impl ::unity2::ClassIdentity for DynamicMesh_Scope {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DynamicMesh.Scope";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DynamicMesh_Scope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -457,6 +457,140 @@ impl DynamicMesh_StaticIndices {
 #[cfg(feature = "app-dynamicmesh")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DynamicMesh_Scope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::dynamicmesh::DynamicMesh as ::unity2::IlType>::il_type(),
+                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DynamicMesh_Scope,
+        mesh: crate::app::dynamicmesh::DynamicMesh,
+        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+        sub_mesh_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DynamicMesh_Scope,
+            crate::app::dynamicmesh::DynamicMesh,
+            crate::app::dynamicmesh::DynamicMesh_Mode,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, mesh, mode, sub_mesh_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: DynamicMesh_Scope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DynamicMesh_Scope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh_Scope {
+    #[doc = "`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
+    pub fn ctor(
+        self,
+        mesh: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh>,
+        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
+        sub_mesh_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __DynamicMesh_Scope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(sub_mesh_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __DynamicMesh_Scope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DynamicMesh_State_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -637,140 +771,6 @@ impl DynamicMesh_State {
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
         unsafe { __DynamicMesh_State_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_Scope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh as ::unity2::IlType>::il_type(),
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DynamicMesh_Scope,
-        mesh: crate::app::dynamicmesh::DynamicMesh,
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        sub_mesh_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh_Scope,
-            crate::app::dynamicmesh::DynamicMesh,
-            crate::app::dynamicmesh::DynamicMesh_Mode,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, mesh, mode, sub_mesh_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_Scope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_Scope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: DynamicMesh_Scope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DynamicMesh_Scope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_Scope {
-    #[doc = "`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    pub fn ctor(
-        self,
-        mesh: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh>,
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        sub_mesh_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __DynamicMesh_Scope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(mesh),
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(sub_mesh_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __DynamicMesh_Scope_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 

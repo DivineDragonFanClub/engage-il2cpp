@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcDesc")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProcDesc {
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::procdesc::ProcDesc_Type,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -191,6 +183,14 @@ mod __types {
         pub fn pop() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md"))]
+    #[::unity2::class(namespace = "App", name = "ProcDesc")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProcDesc {
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::procdesc::ProcDesc_Type,
     }
 }
 

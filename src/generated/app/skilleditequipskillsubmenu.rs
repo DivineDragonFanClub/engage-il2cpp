@@ -15,6 +15,14 @@ mod __types {
     #[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
     pub struct SkillEditEquipSkillSubMenu_TradeMenuItem {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu.md"))]
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -24,14 +32,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.RemoveMenuItem")]
     #[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
     pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
 }
 
 #[cfg(feature = "app-skilleditequipskillsubmenu-types")]
@@ -296,6 +296,212 @@ impl SkillEditEquipSkillSubMenu_TradeMenuItem {
             )
         });
         <Self as ISkillEditEquipSkillSubMenu_TradeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build_menu_item_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuildMenuItemContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnBuildMenuItemContent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build_menu_item_content(
+        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+pub trait ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods:
+    ISkillEditEquipSkillSubMenu_BaseEquipMenuItem
+{
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::b_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    fn on_build_menu_item_content(self) -> () {
+        unsafe {
+            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::on_build_menu_item_content(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl<__T: ISkillEditEquipSkillSubMenu_BaseEquipMenuItem>
+    ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -811,212 +1017,6 @@ impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
             )
         });
         <Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuildMenuItemContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuildMenuItemContent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_build_menu_item_content(
-        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillEditEquipSkillSubMenu_BaseEquipMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-pub trait ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods:
-    ISkillEditEquipSkillSubMenu_BaseEquipMenuItem
-{
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    fn on_build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::on_build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SkillEditEquipSkillSubMenu_BaseEquipMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl<__T: ISkillEditEquipSkillSubMenu_BaseEquipMenuItem>
-    ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods>::ctor(this);
         this
     }
 }

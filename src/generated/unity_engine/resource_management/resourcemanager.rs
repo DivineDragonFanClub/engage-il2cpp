@@ -38,6 +38,45 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement",
+        name = "ResourceManager.InstanceOperation"
+    )]
+    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: gameobject :: GameObject >)]
+    pub struct ResourceManager_InstanceOperation {
+# [rename (name = "m_dependency")] pub m_dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [rename (name = "m_instantiationParams")] pub m_instantiation_params : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters ,
+# [rename (name = "m_instanceProvider")] pub m_instance_provider : crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface ,
+# [rename (name = "m_instance")] pub m_instance : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_scene")] pub m_scene : crate :: unity_engine :: scene_management :: scene :: Scene ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager.md"))]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct ResourceManager {
+# [rename (name = "postProfilerEvents")] pub post_profiler_events : bool ,
+# [rename (name = "CallbackHooksEnabled")] pub callback_hooks_enabled : bool ,
+# [rename (name = "m_allocator")] pub m_allocator : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy ,
+# [rename (name = "m_UpdateReceiversToRemove")] pub m_update_receivers_to_remove : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: iupdatereceiver :: IUpdateReceiver > ,
+# [rename (name = "m_UpdatingReceivers")] pub m_updating_receivers : bool ,
+# [rename (name = "m_InsideUpdateMethod")] pub m_inside_update_method : bool ,
+# [rename (name = "m_providerMap")] pub m_provider_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider > ,
+# [rename (name = "m_AssetOperationCache")] pub m_asset_operation_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_TrackedInstanceOperations")] pub m_tracked_instance_operations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_InstanceOperation > ,
+# [rename (name = "m_DeferredCompleteCallbacks")] pub m_deferred_complete_callbacks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_obsoleteDiagnosticsHandler")] pub m_obsolete_diagnostics_handler : crate :: system :: action_4 :: Action_4 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , i32 , crate :: system :: object :: Object > ,
+# [rename (name = "m_diagnosticsHandler")] pub m_diagnostics_handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext > ,
+# [rename (name = "m_ReleaseOpNonCached")] pub m_release_op_non_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_ReleaseOpCached")] pub m_release_op_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_ReleaseInstanceOp")] pub m_release_instance_op : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [static_field] # [rename (name = "s_GroupOperationTypeHash")] pub s_group_operation_type_hash : i32 ,
+# [static_field] # [rename (name = "s_InstanceOperationTypeHash")] pub s_instance_operation_type_hash : i32 ,
+# [rename (name = "m_RegisteredForCallbacks")] pub m_registered_for_callbacks : bool ,
+# [rename (name = "m_ProviderOperationTypeCache")] pub m_provider_operation_type_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , :: unity2 :: SystemType > ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_CompletedOperation_1.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.ResourceManagement",
@@ -111,45 +150,6 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement",
-        name = "ResourceManager.InstanceOperation"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: gameobject :: GameObject >)]
-    pub struct ResourceManager_InstanceOperation {
-# [rename (name = "m_dependency")] pub m_dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [rename (name = "m_instantiationParams")] pub m_instantiation_params : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters ,
-# [rename (name = "m_instanceProvider")] pub m_instance_provider : crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface ,
-# [rename (name = "m_instance")] pub m_instance : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_scene")] pub m_scene : crate :: unity_engine :: scene_management :: scene :: Scene ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct ResourceManager {
-# [rename (name = "postProfilerEvents")] pub post_profiler_events : bool ,
-# [rename (name = "CallbackHooksEnabled")] pub callback_hooks_enabled : bool ,
-# [rename (name = "m_allocator")] pub m_allocator : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy ,
-# [rename (name = "m_UpdateReceiversToRemove")] pub m_update_receivers_to_remove : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: iupdatereceiver :: IUpdateReceiver > ,
-# [rename (name = "m_UpdatingReceivers")] pub m_updating_receivers : bool ,
-# [rename (name = "m_InsideUpdateMethod")] pub m_inside_update_method : bool ,
-# [rename (name = "m_providerMap")] pub m_provider_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider > ,
-# [rename (name = "m_AssetOperationCache")] pub m_asset_operation_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
-# [rename (name = "m_TrackedInstanceOperations")] pub m_tracked_instance_operations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_InstanceOperation > ,
-# [rename (name = "m_DeferredCompleteCallbacks")] pub m_deferred_complete_callbacks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
-# [rename (name = "m_obsoleteDiagnosticsHandler")] pub m_obsolete_diagnostics_handler : crate :: system :: action_4 :: Action_4 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , i32 , crate :: system :: object :: Object > ,
-# [rename (name = "m_diagnosticsHandler")] pub m_diagnostics_handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext > ,
-# [rename (name = "m_ReleaseOpNonCached")] pub m_release_op_non_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
-# [rename (name = "m_ReleaseOpCached")] pub m_release_op_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
-# [rename (name = "m_ReleaseInstanceOp")] pub m_release_instance_op : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
-# [static_field] # [rename (name = "s_GroupOperationTypeHash")] pub s_group_operation_type_hash : i32 ,
-# [static_field] # [rename (name = "s_InstanceOperationTypeHash")] pub s_instance_operation_type_hash : i32 ,
-# [rename (name = "m_RegisteredForCallbacks")] pub m_registered_for_callbacks : bool ,
-# [rename (name = "m_ProviderOperationTypeCache")] pub m_provider_operation_type_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , :: unity2 :: SystemType > ,
-}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resourcemanager-types")]
@@ -537,52 +537,6 @@ impl ResourceManager_DiagnosticEventContext {
                 ::core::option::Option::None,
             )
         }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "Init", args = 4)]
-    pub fn init(
-        self,
-        result: T0,
-        success: bool,
-        error_msg: ::unity2::Il2CppString,
-        release_dependencies_on_failure: bool,
-    ) -> ();
-
-    #[doc = "`get_DebugName()` overload"]
-    #[method(name = "get_DebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    #[method(name = "InvokeWaitForCompletion", args = 0)]
-    pub fn invoke_wait_for_completion(self) -> bool;
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceManager_CompletedOperation_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
-        this
     }
 }
 
@@ -4832,6 +4786,52 @@ impl ResourceManager {
             )
         });
         <Self as IResourceManagerMethods>::ctor(this, alloc);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "Init", args = 4)]
+    pub fn init(
+        self,
+        result: T0,
+        success: bool,
+        error_msg: ::unity2::Il2CppString,
+        release_dependencies_on_failure: bool,
+    ) -> ();
+
+    #[doc = "`get_DebugName()` overload"]
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager_CompletedOperation_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
         this
     }
 }

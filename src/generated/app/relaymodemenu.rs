@@ -28,16 +28,6 @@ mod __types {
         pub m_mode: crate::app::relay::Relay_Modes,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_ReplayMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayModeMenu.ReplayMenuItem")]
-    #[parent(crate::app::relaymodemenu::RelayModeMenu_MenuItem)]
-    pub struct RelayModeMenu_ReplayMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayModeMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RelayModeMenu {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaymodemenu/RelayModeMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -89,6 +79,16 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_ReplayMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayModeMenu.ReplayMenuItem")]
+    #[parent(crate::app::relaymodemenu::RelayModeMenu_MenuItem)]
+    pub struct RelayModeMenu_ReplayMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayModeMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RelayModeMenu {}
 }
 
 #[cfg(feature = "app-relaymodemenu-types")]

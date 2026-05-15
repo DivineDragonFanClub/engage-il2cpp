@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Operation")]
-    #[parent(crate::system::object::Object)]
-    pub struct Operation {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
     #[repr(C)]
     #[derive(
@@ -57,6 +52,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Operation")]
+    #[parent(crate::system::object::Object)]
+    pub struct Operation {}
 }
 
 #[cfg(feature = "unity_engine-switch-operation-types")]

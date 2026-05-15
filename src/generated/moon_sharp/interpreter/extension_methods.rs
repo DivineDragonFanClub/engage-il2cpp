@@ -25,7 +25,7 @@ mod __Extension_Methods_unity2_raw {
 
 #[cfg(feature = "moon_sharp-interpreter-extension_methods")]
 impl Extension_Methods {
-    fn get_or_default<
+    pub fn get_or_default<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
@@ -89,7 +89,7 @@ impl Extension_Methods {
             )
         }
     }
-    fn get_or_create<
+    pub fn get_or_create<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(

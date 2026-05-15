@@ -25,7 +25,7 @@ mod __CustomAttributeExtensions_unity2_raw {
 
 #[cfg(feature = "system-reflection-customattributeextensions")]
 impl CustomAttributeExtensions {
-    fn get_custom_attribute<
+    pub fn get_custom_attribute<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         element: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
@@ -79,7 +79,7 @@ impl CustomAttributeExtensions {
             )
         }
     }
-    fn get_custom_attributes<
+    pub fn get_custom_attributes<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         element: impl ::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>,

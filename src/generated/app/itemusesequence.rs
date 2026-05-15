@@ -27,6 +27,11 @@ mod __types {
         pub m_gain_exp: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+    pub struct ItemUseSequence_EnchantedUnitList {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -74,11 +79,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-    pub struct ItemUseSequence_EnchantedUnitList {}
 }
 
 #[cfg(feature = "app-itemusesequence-types")]

@@ -11,18 +11,23 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_GodInfo.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_TrainType.md"))]
     #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ArenaOrderSequence_GodInfo {
-        pub god: crate::app::godunit::GodUnit,
-        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ArenaOrderSequence_TrainType {
+        pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for ArenaOrderSequence_GodInfo {
+    impl ::unity2::ClassIdentity for ArenaOrderSequence_TrainType {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "ArenaOrderSequence.GodInfo";
+        const NAME: &'static str = "ArenaOrderSequence.TrainType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,12 +36,22 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ArenaOrderSequence_GodInfo {
+    impl ::unity2::IlType for ArenaOrderSequence_TrainType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
                 ._1
                 .byval_arg
+        }
+    }
+
+    impl ArenaOrderSequence_TrainType {
+        pub fn random() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn emblem() -> Self {
+            Self { value: 1 }
         }
     }
 
@@ -112,6 +127,35 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_GodInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ArenaOrderSequence_GodInfo {
+        pub god: crate::app::godunit::GodUnit,
+        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    }
+
+    impl ::unity2::ClassIdentity for ArenaOrderSequence_GodInfo {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ArenaOrderSequence.GodInfo";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ArenaOrderSequence_GodInfo {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaordersequence/ArenaOrderSequence.md"))]
     #[::unity2::class(namespace = "App", name = "ArenaOrderSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: arenaordersequence :: ArenaOrderSequence >)]
@@ -137,50 +181,6 @@ mod __types {
         pub m_god_unit: crate::app::godunit::GodUnit,
         #[rename(name = "m_Ring")]
         pub m_ring: crate::app::unitring::UnitRing,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_TrainType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ArenaOrderSequence_TrainType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ArenaOrderSequence_TrainType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ArenaOrderSequence.TrainType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ArenaOrderSequence_TrainType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ArenaOrderSequence_TrainType {
-        pub fn random() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn emblem() -> Self {
-            Self { value: 1 }
-        }
     }
 }
 

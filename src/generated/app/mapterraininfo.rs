@@ -10,38 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrainInfo.MapTerrainInfoSingle")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapTerrainInfo_MapTerrainInfoSingle {
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ElemGameObjects")]
-        pub m_elem_game_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_ElemTitleTextMeshes")]
-        pub m_elem_title_text_meshes:
-            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        #[rename(name = "m_ElemValueTextMeshes")]
-        pub m_elem_value_text_meshes:
-            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        #[rename(name = "m_IsValid")]
-        pub m_is_valid: bool,
-        #[rename(name = "m_IsShow")]
-        pub m_is_show: bool,
-        #[rename(name = "m_IsEventShow")]
-        pub m_is_event_show: bool,
-        #[rename(name = "m_Border")]
-        pub m_border: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_EffectRoot")]
-        pub m_effect_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SkillRoot")]
-        pub m_skill_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Alignment")]
-        pub m_alignment: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment,
-        #[rename(name = "m_Side")]
-        pub m_side: crate::app::mapterraininfo::MapTerrainInfo_Side,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
     #[repr(C)]
     #[derive(
@@ -156,6 +124,38 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 19 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrainInfo.MapTerrainInfoSingle")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapTerrainInfo_MapTerrainInfoSingle {
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ElemGameObjects")]
+        pub m_elem_game_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_ElemTitleTextMeshes")]
+        pub m_elem_title_text_meshes:
+            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[rename(name = "m_ElemValueTextMeshes")]
+        pub m_elem_value_text_meshes:
+            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[rename(name = "m_IsValid")]
+        pub m_is_valid: bool,
+        #[rename(name = "m_IsShow")]
+        pub m_is_show: bool,
+        #[rename(name = "m_IsEventShow")]
+        pub m_is_event_show: bool,
+        #[rename(name = "m_Border")]
+        pub m_border: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_EffectRoot")]
+        pub m_effect_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SkillRoot")]
+        pub m_skill_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Alignment")]
+        pub m_alignment: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment,
+        #[rename(name = "m_Side")]
+        pub m_side: crate::app::mapterraininfo::MapTerrainInfo_Side,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))]

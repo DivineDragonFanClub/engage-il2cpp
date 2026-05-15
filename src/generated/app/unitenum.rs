@@ -8,23 +8,20 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct UnitEnum_TargetEnumerator {
-        pub m_unit_enum: crate::app::unitenum::UnitEnum_Enumerator,
+    pub struct UnitEnum_Enumerator {
+        pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
+        pub m_index: i32,
+        pub m_next: crate::app::unit::Unit,
         pub m_current: crate::app::unit::Unit,
-        pub m_unit: crate::app::unit::Unit,
-        pub m_x: i32,
-        pub m_z: i32,
-        pub m_near: i32,
-        pub m_far: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitEnum_TargetEnumerator {
+    impl ::unity2::ClassIdentity for UnitEnum_Enumerator {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "UnitEnum.TargetEnumerator";
+        const NAME: &'static str = "UnitEnum.Enumerator";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +30,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitEnum_TargetEnumerator {
+    impl ::unity2::IlType for UnitEnum_Enumerator {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -70,20 +67,23 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_Enumerator.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct UnitEnum_Enumerator {
-        pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
-        pub m_index: i32,
-        pub m_next: crate::app::unit::Unit,
+    pub struct UnitEnum_TargetEnumerator {
+        pub m_unit_enum: crate::app::unitenum::UnitEnum_Enumerator,
         pub m_current: crate::app::unit::Unit,
+        pub m_unit: crate::app::unit::Unit,
+        pub m_x: i32,
+        pub m_z: i32,
+        pub m_near: i32,
+        pub m_far: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitEnum_Enumerator {
+    impl ::unity2::ClassIdentity for UnitEnum_TargetEnumerator {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "UnitEnum.Enumerator";
+        const NAME: &'static str = "UnitEnum.TargetEnumerator";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -92,7 +92,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitEnum_Enumerator {
+    impl ::unity2::IlType for UnitEnum_TargetEnumerator {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -108,26 +108,21 @@ pub use __types::*;
 #[cfg(feature = "app-unitenum")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitEnum_TargetEnumerator_unity2_raw {
+mod __UnitEnum_Enumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_setup {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::app::force::Force_Type> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                5,
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
                 param_types,
                 false,
             )
@@ -137,8 +132,8 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -149,29 +144,21 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn setup(
-        this: UnitEnum_TargetEnumerator,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
+    pub unsafe fn ctor(
+        this: UnitEnum_Enumerator,
+        types: ::unity2::Array<crate::app::force::Force_Type>,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
+    ) -> () {
         let inner: extern "C" fn(
-            UnitEnum_TargetEnumerator,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            i32,
-            i32,
+            UnitEnum_Enumerator,
+            ::unity2::Array<crate::app::force::Force_Type>,
             ::unity2::OptionalMethod,
-        ) -> crate::app::unitenum::UnitEnum_TargetEnumerator = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, unit, x, z, near, far, __unity2_method_info)
+        inner(this, types, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -182,7 +169,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
                 "Dispose",
                 0,
                 param_types,
@@ -194,7 +181,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
                     "Dispose",
                     e
                 ),
@@ -207,111 +194,15 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         }
     }
     pub unsafe fn dispose(
-        this: UnitEnum_TargetEnumerator,
+        this: UnitEnum_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
                     .offset(__lookup_dispose::get_offset() as isize),
             );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current(
-        this: UnitEnum_TargetEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            UnitEnum_TargetEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerator.get_Current",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: UnitEnum_TargetEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            UnitEnum_TargetEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
-                ),
-        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -323,7 +214,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
                 "MoveNext",
                 0,
                 param_types,
@@ -335,7 +226,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
                     "MoveNext",
                     e
                 ),
@@ -348,10 +239,10 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         }
     }
     pub unsafe fn move_next(
-        this: UnitEnum_TargetEnumerator,
+        this: UnitEnum_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> bool =
+        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> bool =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -368,7 +259,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -380,7 +271,7 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
                     "Reset",
                     e
                 ),
@@ -393,10 +284,10 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
         }
     }
     pub unsafe fn reset(
-        this: UnitEnum_TargetEnumerator,
+        this: UnitEnum_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -406,15 +297,15 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+    pub mod __lookup_system_collections_i_enumerator_get_current {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerator.get_Current",
                 0,
                 param_types,
                 false,
@@ -425,8 +316,8 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerable.GetEnumerator",
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.IEnumerator.get_Current",
                     e
                 ),
             }
@@ -437,33 +328,33 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: UnitEnum_TargetEnumerator,
+    pub unsafe fn system_collections_i_enumerator_get_current(
+        this: UnitEnum_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
+    ) -> crate::system::object::Object {
         let inner: extern "C" fn(
-            UnitEnum_TargetEnumerator,
+            UnitEnum_Enumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+        ) -> crate::system::object::Object = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(
-                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
+                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
                 ),
         );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
+    pub mod __lookup_get_current {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
+                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
                 0,
                 param_types,
                 false,
@@ -474,8 +365,8 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
+                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    "get_Current",
                     e
                 ),
             }
@@ -486,95 +377,61 @@ mod __UnitEnum_TargetEnumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_enumerator(
-        this: UnitEnum_TargetEnumerator,
+    pub unsafe fn get_current(
+        this: UnitEnum_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
+    ) -> crate::app::unit::Unit {
         let inner: extern "C" fn(
-            UnitEnum_TargetEnumerator,
+            UnitEnum_Enumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::app::unitenum::UnitEnum_TargetEnumerator = ::core::mem::transmute(
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
+                .offset(__lookup_get_current::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitenum")]
-impl UnitEnum_TargetEnumerator {
-    #[doc = "`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    pub fn setup(
+impl UnitEnum_Enumerator {
+    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
+    pub fn ctor(
         self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        near: impl ::core::convert::Into<i32>,
-        far: impl ::core::convert::Into<i32>,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
+        types: impl ::core::convert::Into<::unity2::Array<crate::app::force::Force_Type>>,
+    ) -> () {
         unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::setup(
+            __UnitEnum_Enumerator_unity2_raw::ctor(
                 self,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(near),
-                ::core::convert::Into::into(far),
+                ::core::convert::Into::into(types),
                 ::core::option::Option::None,
             )
         }
     }
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
-        unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::dispose(self, ::core::option::Option::None)
-        }
+        unsafe { __UnitEnum_Enumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::unit::Unit {
-        unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::get_current(self, ::core::option::Option::None)
-        }
+    #[doc = "`MoveNext()` overload"]
+    pub fn move_next(self) -> bool {
+        unsafe { __UnitEnum_Enumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
+    }
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __UnitEnum_Enumerator_unity2_raw::reset(self, ::core::option::Option::None) }
     }
     #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
     pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
         unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::system_collections_i_enumerator_get_current(
+            __UnitEnum_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(
                 self,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::move_next(self, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __UnitEnum_TargetEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    pub fn get_enumerator(self) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
-        unsafe {
-            __UnitEnum_TargetEnumerator_unity2_raw::get_enumerator(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+    #[doc = "`get_Current()` overload"]
+    pub fn get_current(self) -> crate::app::unit::Unit {
+        unsafe { __UnitEnum_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
     }
 }
 
@@ -1501,21 +1358,26 @@ impl UnitEnum {
 #[cfg(feature = "app-unitenum")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitEnum_Enumerator_unity2_raw {
+mod __UnitEnum_TargetEnumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_setup {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::app::force::Force_Type> as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                5,
                 param_types,
                 false,
             )
@@ -1525,8 +1387,8 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
                     e
                 ),
             }
@@ -1537,21 +1399,29 @@ mod __UnitEnum_Enumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: UnitEnum_Enumerator,
-        types: ::unity2::Array<crate::app::force::Force_Type>,
+    pub unsafe fn setup(
+        this: UnitEnum_TargetEnumerator,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        near: i32,
+        far: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
         let inner: extern "C" fn(
-            UnitEnum_Enumerator,
-            ::unity2::Array<crate::app::force::Force_Type>,
+            UnitEnum_TargetEnumerator,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            i32,
+            i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> crate::app::unitenum::UnitEnum_TargetEnumerator = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_setup::get_offset() as isize),
         );
-        inner(this, types, __unity2_method_info)
+        inner(this, unit, x, z, near, far, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1562,7 +1432,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
                 "Dispose",
                 0,
                 param_types,
@@ -1574,7 +1444,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
                     "Dispose",
                     e
                 ),
@@ -1587,15 +1457,111 @@ mod __UnitEnum_Enumerator_unity2_raw {
         }
     }
     pub unsafe fn dispose(
-        this: UnitEnum_Enumerator,
+        this: UnitEnum_TargetEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
                     .offset(__lookup_dispose::get_offset() as isize),
             );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "get_Current",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: UnitEnum_TargetEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            UnitEnum_TargetEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerator_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerator.get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.IEnumerator.get_Current",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerator_get_current(
+        this: UnitEnum_TargetEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            UnitEnum_TargetEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
+                ),
+        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1607,7 +1573,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
                 "MoveNext",
                 0,
                 param_types,
@@ -1619,7 +1585,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
                     "MoveNext",
                     e
                 ),
@@ -1632,10 +1598,10 @@ mod __UnitEnum_Enumerator_unity2_raw {
         }
     }
     pub unsafe fn move_next(
-        this: UnitEnum_Enumerator,
+        this: UnitEnum_TargetEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> bool =
+        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> bool =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -1652,7 +1618,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -1664,7 +1630,7 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
                     "Reset",
                     e
                 ),
@@ -1677,10 +1643,10 @@ mod __UnitEnum_Enumerator_unity2_raw {
         }
     }
     pub unsafe fn reset(
-        this: UnitEnum_Enumerator,
+        this: UnitEnum_TargetEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(UnitEnum_Enumerator, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(UnitEnum_TargetEnumerator, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -1690,15 +1656,15 @@ mod __UnitEnum_Enumerator_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerable.GetEnumerator",
                 0,
                 param_types,
                 false,
@@ -1709,8 +1675,8 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerator.get_Current",
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "System.Collections.IEnumerable.GetEnumerator",
                     e
                 ),
             }
@@ -1721,33 +1687,33 @@ mod __UnitEnum_Enumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: UnitEnum_Enumerator,
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: UnitEnum_TargetEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
+    ) -> crate::system::collections::ienumerator::IEnumerator {
         let inner: extern "C" fn(
-            UnitEnum_Enumerator,
+            UnitEnum_TargetEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(
-                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
+                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
                 ),
         );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
+    pub mod __lookup_get_enumerator {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitEnum_Enumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
+                <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
                 0,
                 param_types,
                 false,
@@ -1758,8 +1724,8 @@ mod __UnitEnum_Enumerator_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitEnum_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
+                    <UnitEnum_TargetEnumerator as ::unity2::ClassIdentity>::NAME,
+                    "GetEnumerator",
                     e
                 ),
             }
@@ -1770,61 +1736,95 @@ mod __UnitEnum_Enumerator_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_current(
-        this: UnitEnum_Enumerator,
+    pub unsafe fn get_enumerator(
+        this: UnitEnum_TargetEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
         let inner: extern "C" fn(
-            UnitEnum_Enumerator,
+            UnitEnum_TargetEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+        ) -> crate::app::unitenum::UnitEnum_TargetEnumerator = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
+                .offset(__lookup_get_enumerator::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitenum")]
-impl UnitEnum_Enumerator {
-    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
-    pub fn ctor(
+impl UnitEnum_TargetEnumerator {
+    #[doc = "`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    pub fn setup(
         self,
-        types: impl ::core::convert::Into<::unity2::Array<crate::app::force::Force_Type>>,
-    ) -> () {
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        near: impl ::core::convert::Into<i32>,
+        far: impl ::core::convert::Into<i32>,
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
         unsafe {
-            __UnitEnum_Enumerator_unity2_raw::ctor(
+            __UnitEnum_TargetEnumerator_unity2_raw::setup(
                 self,
-                ::core::convert::Into::into(types),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(near),
+                ::core::convert::Into::into(far),
                 ::core::option::Option::None,
             )
         }
     }
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
-        unsafe { __UnitEnum_Enumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
+        unsafe {
+            __UnitEnum_TargetEnumerator_unity2_raw::dispose(self, ::core::option::Option::None)
+        }
     }
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __UnitEnum_Enumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
-    }
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __UnitEnum_Enumerator_unity2_raw::reset(self, ::core::option::Option::None) }
+    #[doc = "`get_Current()` overload"]
+    pub fn get_current(self) -> crate::app::unit::Unit {
+        unsafe {
+            __UnitEnum_TargetEnumerator_unity2_raw::get_current(self, ::core::option::Option::None)
+        }
     }
     #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
     pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
         unsafe {
-            __UnitEnum_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(
+            __UnitEnum_TargetEnumerator_unity2_raw::system_collections_i_enumerator_get_current(
                 self,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::unit::Unit {
-        unsafe { __UnitEnum_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
+    #[doc = "`MoveNext()` overload"]
+    pub fn move_next(self) -> bool {
+        unsafe {
+            __UnitEnum_TargetEnumerator_unity2_raw::move_next(self, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __UnitEnum_TargetEnumerator_unity2_raw::reset(self, ::core::option::Option::None) }
+    }
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            __UnitEnum_TargetEnumerator_unity2_raw::system_collections_i_enumerable_get_enumerator(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    pub fn get_enumerator(self) -> crate::app::unitenum::UnitEnum_TargetEnumerator {
+        unsafe {
+            __UnitEnum_TargetEnumerator_unity2_raw::get_enumerator(
+                self,
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

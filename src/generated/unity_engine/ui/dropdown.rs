@@ -15,10 +15,25 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)]
-    pub struct Dropdown_DropdownEvent {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionDataList")]
+    #[parent(crate::system::object::Object)]
+    pub struct Dropdown_OptionDataList {
+        #[rename(name = "m_Options")]
+        pub m_options: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionData")]
+    #[parent(crate::system::object::Object)]
+    pub struct Dropdown_OptionData {
+        #[rename(name = "m_Text")]
+        pub m_text: ::unity2::Il2CppString,
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::sprite::Sprite,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownItem.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownItem")]
@@ -33,6 +48,11 @@ mod __types {
         #[rename(name = "m_Toggle")]
         pub m_toggle: crate::unity_engine::ui::toggle::Toggle,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_DropdownEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.DropdownEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)]
+    pub struct Dropdown_DropdownEvent {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown")]
@@ -75,26 +95,6 @@ mod __types {
         #[rename(name = "s_NoOptionData")]
         pub s_no_option_data: crate::unity_engine::ui::dropdown::Dropdown_OptionData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionDataList")]
-    #[parent(crate::system::object::Object)]
-    pub struct Dropdown_OptionDataList {
-        #[rename(name = "m_Options")]
-        pub m_options: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/dropdown/Dropdown_OptionData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Dropdown.OptionData")]
-    #[parent(crate::system::object::Object)]
-    pub struct Dropdown_OptionData {
-        #[rename(name = "m_Text")]
-        pub m_text: ::unity2::Il2CppString,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::sprite::Sprite,
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-dropdown-types")]
@@ -103,8 +103,115 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-ui-dropdown")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Dropdown_DropdownEvent_unity2_raw {
+mod __Dropdown_OptionDataList_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
+                "get_options",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
+                    "get_options",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_options(
+        this: Dropdown_OptionDataList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+    > {
+        let inner: extern "C" fn(
+            Dropdown_OptionDataList,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_options::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
+                "set_options",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
+                    "set_options",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_options(
+        this: Dropdown_OptionDataList,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionDataList,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_options::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -114,7 +221,7 @@ mod __Dropdown_DropdownEvent_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_DropdownEvent as ::unity2::ClassIdentity>::class(),
+                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -126,7 +233,7 @@ mod __Dropdown_DropdownEvent_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Dropdown_DropdownEvent as ::unity2::ClassIdentity>::NAME,
+                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -139,10 +246,10 @@ mod __Dropdown_DropdownEvent_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: Dropdown_DropdownEvent,
+        this: Dropdown_OptionDataList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(Dropdown_DropdownEvent, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(Dropdown_OptionDataList, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -153,33 +260,634 @@ mod __Dropdown_DropdownEvent_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-ui-dropdown")]
-pub trait IDropdown_DropdownEventMethods: IDropdown_DropdownEvent {
+pub trait IDropdown_OptionDataListMethods: IDropdown_OptionDataList {
+    #[doc = "`get_options()` overload"]
+    fn get_options(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+    > {
+        unsafe {
+            let __receiver =
+                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Dropdown_OptionDataList_unity2_raw::get_options(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]
+    fn set_options(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::ui::dropdown::Dropdown_OptionData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Dropdown_OptionDataList_unity2_raw::set_options(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Dropdown_DropdownEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_DropdownEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Dropdown_OptionDataList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-ui-dropdown")]
-impl<__T: IDropdown_DropdownEvent> IDropdown_DropdownEventMethods for __T {}
+impl<__T: IDropdown_OptionDataList> IDropdown_OptionDataListMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_DropdownEvent {
+impl Dropdown_OptionDataList {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_DropdownEvent),
+                ::core::stringify!(Dropdown_OptionDataList),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDropdown_DropdownEventMethods>::ctor(this);
+        <Self as IDropdown_OptionDataListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Dropdown_OptionData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                "get_text",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    "get_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_text(
+        this: Dropdown_OptionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_text::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                "set_text",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    "set_text",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text(
+        this: Dropdown_OptionData,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                "get_image",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    "get_image",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_image(
+        this: Dropdown_OptionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_image::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                "set_image",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    "set_image",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_image(
+        this: Dropdown_OptionData,
+        value: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_image::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Dropdown_OptionData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Dropdown_OptionData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Dropdown_OptionData,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: Dropdown_OptionData,
+        image: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(this, image, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: Dropdown_OptionData,
+        text: ::unity2::Il2CppString,
+        image: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Dropdown_OptionData,
+            ::unity2::Il2CppString,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_4::get_offset() as isize),
+        );
+        inner(this, text, image, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+pub trait IDropdown_OptionDataMethods: IDropdown_OptionData {
+    #[doc = "`get_text()` overload"]
+    fn get_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::get_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
+    fn set_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::set_text(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_image()` overload"]
+    fn get_image(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::get_image(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_image(crate::unity_engine::sprite::Sprite)` overload"]
+    fn set_image(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::set_image(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor_2(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::sprite::Sprite)` overload"]
+    fn ctor_3(self, image: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]
+    fn ctor_4(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        image: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_OptionData_unity2_raw::ctor_4(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl<__T: IDropdown_OptionData> IDropdown_OptionDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl Dropdown_OptionData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_OptionData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDropdown_OptionDataMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new_2(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_OptionData),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDropdown_OptionDataMethods>::ctor_2(this, text);
+        this
+    }
+
+    #[doc = "`.ctor(crate::unity_engine::sprite::Sprite)` — overload selector"]
+    pub fn new_3(image: crate::unity_engine::sprite::Sprite) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_OptionData),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IDropdown_OptionDataMethods>::ctor_3(this, image);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` — overload selector"]
+    pub fn new_4(text: ::unity2::Il2CppString, image: crate::unity_engine::sprite::Sprite) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_OptionData),
+                ::core::stringify!(new_4),
+            )
+        });
+        <Self as IDropdown_OptionDataMethods>::ctor_4(this, text, image);
         this
     }
 }
@@ -890,6 +1598,90 @@ impl Dropdown_DropdownItem {
             )
         });
         <Self as IDropdown_DropdownItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Dropdown_DropdownEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Dropdown_DropdownEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Dropdown_DropdownEvent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Dropdown_DropdownEvent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Dropdown_DropdownEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+pub trait IDropdown_DropdownEventMethods: IDropdown_DropdownEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Dropdown_DropdownEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Dropdown_DropdownEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl<__T: IDropdown_DropdownEvent> IDropdown_DropdownEventMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-dropdown")]
+impl Dropdown_DropdownEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dropdown_DropdownEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDropdown_DropdownEventMethods>::ctor(this);
         this
     }
 }
@@ -3258,7 +4050,7 @@ mod __Dropdown_unity2_raw {
 
 #[cfg(feature = "unity_engine-ui-dropdown")]
 impl Dropdown {
-    fn get_or_add_component<
+    pub fn get_or_add_component<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
@@ -4009,798 +4801,6 @@ impl Dropdown {
             )
         });
         <Self as IDropdownMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Dropdown_OptionDataList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_options {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                "get_options",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    "get_options",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_options(
-        this: Dropdown_OptionDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-    > {
-        let inner: extern "C" fn(
-            Dropdown_OptionDataList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_options::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_options {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                "set_options",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    "set_options",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_options(
-        this: Dropdown_OptionDataList,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionDataList,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_options::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Dropdown_OptionDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Dropdown_OptionDataList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-pub trait IDropdown_OptionDataListMethods: IDropdown_OptionDataList {
-    #[doc = "`get_options()` overload"]
-    fn get_options(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-    > {
-        unsafe {
-            let __receiver =
-                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Dropdown_OptionDataList_unity2_raw::get_options(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]
-    fn set_options(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::dropdown::Dropdown_OptionData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Dropdown_OptionDataList_unity2_raw::set_options(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Dropdown_OptionDataList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl<__T: IDropdown_OptionDataList> IDropdown_OptionDataListMethods for __T {}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_OptionDataList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDropdown_OptionDataListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Dropdown_OptionData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                "get_text",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    "get_text",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_text(
-        this: Dropdown_OptionData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                "set_text",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    "set_text",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_text(
-        this: Dropdown_OptionData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                "get_image",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    "get_image",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_image(
-        this: Dropdown_OptionData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_image::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                "set_image",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    "set_image",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_image(
-        this: Dropdown_OptionData,
-        value: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_image::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Dropdown_OptionData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Dropdown_OptionData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: Dropdown_OptionData,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: Dropdown_OptionData,
-        image: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(this, image, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Dropdown_OptionData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Dropdown_OptionData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_4(
-        this: Dropdown_OptionData,
-        text: ::unity2::Il2CppString,
-        image: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Dropdown_OptionData,
-            ::unity2::Il2CppString,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_4::get_offset() as isize),
-        );
-        inner(this, text, image, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-pub trait IDropdown_OptionDataMethods: IDropdown_OptionData {
-    #[doc = "`get_text()` overload"]
-    fn get_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::get_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_text(::unity2::Il2CppString)` overload"]
-    fn set_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::set_text(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_image()` overload"]
-    fn get_image(self) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::get_image(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_image(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_image(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::set_image(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor_2(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::sprite::Sprite)` overload"]
-    fn ctor_3(self, image: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(image),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]
-    fn ctor_4(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        image: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Dropdown_OptionData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Dropdown_OptionData_unity2_raw::ctor_4(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(image),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl<__T: IDropdown_OptionData> IDropdown_OptionDataMethods for __T {}
-
-#[cfg(feature = "unity_engine-ui-dropdown")]
-impl Dropdown_OptionData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDropdown_OptionDataMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new_2(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionData),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDropdown_OptionDataMethods>::ctor_2(this, text);
-        this
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::sprite::Sprite)` — overload selector"]
-    pub fn new_3(image: crate::unity_engine::sprite::Sprite) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionData),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IDropdown_OptionDataMethods>::ctor_3(this, image);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` — overload selector"]
-    pub fn new_4(text: ::unity2::Il2CppString, image: crate::unity_engine::sprite::Sprite) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Dropdown_OptionData),
-                ::core::stringify!(new_4),
-            )
-        });
-        <Self as IDropdown_OptionDataMethods>::ctor_4(this, text, image);
         this
     }
 }

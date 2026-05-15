@@ -55,6 +55,11 @@ mod __types {
         pub continue_condition: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
+    pub struct BattleInfoSide_BitFieldStatus {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -226,11 +231,6 @@ mod __types {
             Self { value: 12 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
-    pub struct BattleInfoSide_BitFieldStatus {}
 }
 
 #[cfg(feature = "app-battleinfoside-types")]

@@ -9,7 +9,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -18,14 +18,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MenuItem_Align {
+    pub struct MenuItem_Kind {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MenuItem_Align {
+    impl ::unity2::ClassIdentity for MenuItem_Kind {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MenuItem.Align";
+        const NAME: &'static str = "MenuItem.Kind";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,7 +34,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MenuItem_Align {
+    impl ::unity2::IlType for MenuItem_Kind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -43,30 +43,18 @@ mod __types {
         }
     }
 
-    impl MenuItem_Align {
-        pub fn left() -> Self {
+    impl MenuItem_Kind {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn center() -> Self {
+        pub fn group_begin() -> Self {
             Self { value: 1 }
         }
 
-        pub fn right() -> Self {
+        pub fn group_end() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MenuItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct MenuItem {
-        #[rename(name = "m_Menu")]
-        pub m_menu: crate::app::debugmenu::DebugMenu,
-        #[rename(name = "m_State")]
-        pub m_state: crate::app::menuitem::MenuItem_State,
-        #[rename(name = "m_Bind")]
-        pub m_bind: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
@@ -185,7 +173,19 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MenuItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct MenuItem {
+        #[rename(name = "m_Menu")]
+        pub m_menu: crate::app::debugmenu::DebugMenu,
+        #[rename(name = "m_State")]
+        pub m_state: crate::app::menuitem::MenuItem_State,
+        #[rename(name = "m_Bind")]
+        pub m_bind: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -194,14 +194,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MenuItem_Kind {
+    pub struct MenuItem_Align {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MenuItem_Kind {
+    impl ::unity2::ClassIdentity for MenuItem_Align {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MenuItem.Kind";
+        const NAME: &'static str = "MenuItem.Align";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -210,7 +210,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MenuItem_Kind {
+    impl ::unity2::IlType for MenuItem_Align {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -219,16 +219,16 @@ mod __types {
         }
     }
 
-    impl MenuItem_Kind {
-        pub fn none() -> Self {
+    impl MenuItem_Align {
+        pub fn left() -> Self {
             Self { value: 0 }
         }
 
-        pub fn group_begin() -> Self {
+        pub fn center() -> Self {
             Self { value: 1 }
         }
 
-        pub fn group_end() -> Self {
+        pub fn right() -> Self {
             Self { value: 2 }
         }
     }

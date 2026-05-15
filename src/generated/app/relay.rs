@@ -14,85 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_ChooseAwardeeData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Relay_ChooseAwardeeData {
-        pub unit: crate::app::unit::Unit,
-        pub leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
-        pub count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_ChooseAwardeeData {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.ChooseAwardeeData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_ChooseAwardeeData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_FlagsField.md"))]
-    #[::unity2::class(namespace = "App", name = "Relay.FlagsField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relay :: Relay_Flags >)]
-    pub struct Relay_FlagsField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TakeOverModes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_TakeOverModes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_TakeOverModes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.TakeOverModes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_TakeOverModes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_TakeOverModes {
-        pub fn random() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn data_code() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_DisposPlayerCountsSequence.md"))]
     #[::unity2::class(namespace = "App", name = "Relay.DisposPlayerCountsSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -101,166 +22,6 @@ mod __types {
         pub m_index: i32,
         #[rename(name = "m_Cid")]
         pub m_cid: ::unity2::Il2CppString,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_Flags {
-        pub fn need_to_upload() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn uploaded() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn global_saved() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn show_win_rule() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_CstoResult.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_CstoResult {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_CstoResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.CstoResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_CstoResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_CstoResult {
-        pub fn ok() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn ng_end() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn ng_other_playing() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ng_already_played() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn ng_lack_of_unit() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn ng_unknown() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Modes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Relay_Modes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Relay_Modes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Relay.Modes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Relay_Modes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Relay_Modes {
-        pub fn new() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn take_over() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn replay() -> Self {
-            Self { value: 2 }
-        }
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay.md"))]
@@ -315,6 +76,93 @@ mod __types {
         pub m_pool_gods:
             crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_ChooseAwardeeData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Relay_ChooseAwardeeData {
+        pub unit: crate::app::unit::Unit,
+        pub leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
+        pub count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_ChooseAwardeeData {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.ChooseAwardeeData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_ChooseAwardeeData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_Flags {
+        pub fn need_to_upload() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn uploaded() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn global_saved() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn show_win_rule() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_FlagsField.md"))]
+    #[::unity2::class(namespace = "App", name = "Relay.FlagsField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relay :: Relay_Flags >)]
+    pub struct Relay_FlagsField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]
     #[repr(C)]
@@ -407,658 +255,162 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_CstoResult.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_CstoResult {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_CstoResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.CstoResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_CstoResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_CstoResult {
+        pub fn ok() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn ng_end() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn ng_other_playing() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ng_already_played() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn ng_lack_of_unit() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn ng_unknown() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TakeOverModes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_TakeOverModes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_TakeOverModes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.TakeOverModes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_TakeOverModes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_TakeOverModes {
+        pub fn random() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn data_code() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Modes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Relay_Modes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Relay_Modes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Relay.Modes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Relay_Modes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Relay_Modes {
+        pub fn new() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn take_over() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn replay() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-relay-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-relay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Relay_ChooseAwardeeData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_and_swap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::relayawarddata::RelayAwardData_CompareOp as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "CompareAndSwap",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "CompareAndSwap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_and_swap(
-        this: Relay_ChooseAwardeeData,
-        unit: crate::app::unit::Unit,
-        count: i32,
-        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Relay_ChooseAwardeeData,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::relayawarddata::RelayAwardData_CompareOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_and_swap::get_offset() as isize),
-        );
-        inner(this, unit, count, op, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_and_swap_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayleavingunitdata :: RelayLeavingUnitData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayawarddata :: RelayAwardData_CompareOp as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "CompareAndSwap",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "CompareAndSwap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_and_swap_2(
-        this: Relay_ChooseAwardeeData,
-        leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
-        count: i32,
-        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Relay_ChooseAwardeeData,
-            crate::app::relayleavingunitdata::RelayLeavingUnitData,
-            i32,
-            crate::app::relayawarddata::RelayAwardData_CompareOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_and_swap_2::get_offset() as isize),
-        );
-        inner(this, leaving_unit_data, count, op, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::relayawarddata::RelayAwardData_CompareOp as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: Relay_ChooseAwardeeData,
-        count: i32,
-        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            Relay_ChooseAwardeeData,
-            i32,
-            crate::app::relayawarddata::RelayAwardData_CompareOp,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, count, op, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_greater {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "CompareGreater",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "CompareGreater",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_greater(
-        this: Relay_ChooseAwardeeData,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_compare_greater::get_offset() as isize),
-            );
-        inner(this, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_less {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "CompareLess",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "CompareLess",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_less(
-        this: Relay_ChooseAwardeeData,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_compare_less::get_offset() as isize),
-            );
-        inner(this, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_zero {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "CompareZero",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "CompareZero",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_zero(
-        this: Relay_ChooseAwardeeData,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_compare_zero::get_offset() as isize),
-            );
-        inner(this, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "IsRandom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "IsRandom",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_random(
-        this: Relay_ChooseAwardeeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Relay_ChooseAwardeeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_random::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_valid(
-        this: Relay_ChooseAwardeeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Relay_ChooseAwardeeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relay")]
-impl Relay_ChooseAwardeeData {
-    #[doc = "`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    pub fn compare_and_swap(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        count: impl ::core::convert::Into<i32>,
-        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
-    ) -> () {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare_and_swap(
-                self,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(op),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    pub fn compare_and_swap_2(
-        self,
-        leaving_unit_data: impl ::core::convert::Into<
-            crate::app::relayleavingunitdata::RelayLeavingUnitData,
-        >,
-        count: impl ::core::convert::Into<i32>,
-        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
-    ) -> () {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare_and_swap_2(
-                self,
-                ::core::convert::Into::into(leaving_unit_data),
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(op),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    pub fn compare(
-        self,
-        count: impl ::core::convert::Into<i32>,
-        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
-    ) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare(
-                self,
-                ::core::convert::Into::into(count),
-                ::core::convert::Into::into(op),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareGreater(i32)` overload"]
-    pub fn compare_greater(self, count: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare_greater(
-                self,
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareLess(i32)` overload"]
-    pub fn compare_less(self, count: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare_less(
-                self,
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareZero(i32)` overload"]
-    pub fn compare_zero(self, count: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::compare_zero(
-                self,
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRandom()` overload"]
-    pub fn is_random(self) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::is_random(self, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsValid()` overload"]
-    pub fn is_valid(self) -> bool {
-        unsafe {
-            __Relay_ChooseAwardeeData_unity2_raw::is_valid(self, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Relay_FlagsField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_FlagsField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_FlagsField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: Relay_FlagsField,
-        value: crate::app::relay::Relay_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            Relay_FlagsField,
-            crate::app::relay::Relay_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Relay_FlagsField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Relay_FlagsField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Relay_FlagsField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Relay_FlagsField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relay")]
-pub trait IRelay_FlagsFieldMethods: IRelay_FlagsField {
-    #[doc = "`ToInt(crate::app::relay::Relay_Flags)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::relay::Relay_Flags>) -> i32 {
-        unsafe {
-            let __receiver = <Relay_FlagsField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Relay_FlagsField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Relay_FlagsField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Relay_FlagsField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relay")]
-impl<__T: IRelay_FlagsField> IRelay_FlagsFieldMethods for __T {}
-
-#[cfg(feature = "app-relay")]
-impl Relay_FlagsField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Relay_FlagsField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelay_FlagsFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-relay")]
 #[doc(hidden)]
@@ -5549,6 +4901,654 @@ impl Relay {
             )
         });
         <Self as IRelayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Relay_ChooseAwardeeData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_and_swap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::relayawarddata::RelayAwardData_CompareOp as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "CompareAndSwap",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "CompareAndSwap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_and_swap(
+        this: Relay_ChooseAwardeeData,
+        unit: crate::app::unit::Unit,
+        count: i32,
+        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Relay_ChooseAwardeeData,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::relayawarddata::RelayAwardData_CompareOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_and_swap::get_offset() as isize),
+        );
+        inner(this, unit, count, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_and_swap_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayleavingunitdata :: RelayLeavingUnitData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayawarddata :: RelayAwardData_CompareOp as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "CompareAndSwap",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "CompareAndSwap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_and_swap_2(
+        this: Relay_ChooseAwardeeData,
+        leaving_unit_data: crate::app::relayleavingunitdata::RelayLeavingUnitData,
+        count: i32,
+        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Relay_ChooseAwardeeData,
+            crate::app::relayleavingunitdata::RelayLeavingUnitData,
+            i32,
+            crate::app::relayawarddata::RelayAwardData_CompareOp,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_and_swap_2::get_offset() as isize),
+        );
+        inner(this, leaving_unit_data, count, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::relayawarddata::RelayAwardData_CompareOp as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: Relay_ChooseAwardeeData,
+        count: i32,
+        op: crate::app::relayawarddata::RelayAwardData_CompareOp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            Relay_ChooseAwardeeData,
+            i32,
+            crate::app::relayawarddata::RelayAwardData_CompareOp,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, count, op, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_greater {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "CompareGreater",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "CompareGreater",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_greater(
+        this: Relay_ChooseAwardeeData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compare_greater::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_less {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "CompareLess",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "CompareLess",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_less(
+        this: Relay_ChooseAwardeeData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compare_less::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_zero {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "CompareZero",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "CompareZero",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_zero(
+        this: Relay_ChooseAwardeeData,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Relay_ChooseAwardeeData, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_compare_zero::get_offset() as isize),
+            );
+        inner(this, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_random {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "IsRandom",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "IsRandom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_random(
+        this: Relay_ChooseAwardeeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Relay_ChooseAwardeeData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_random::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_ChooseAwardeeData as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        this: Relay_ChooseAwardeeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Relay_ChooseAwardeeData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relay")]
+impl Relay_ChooseAwardeeData {
+    #[doc = "`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    pub fn compare_and_swap(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        count: impl ::core::convert::Into<i32>,
+        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
+    ) -> () {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare_and_swap(
+                self,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    pub fn compare_and_swap_2(
+        self,
+        leaving_unit_data: impl ::core::convert::Into<
+            crate::app::relayleavingunitdata::RelayLeavingUnitData,
+        >,
+        count: impl ::core::convert::Into<i32>,
+        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
+    ) -> () {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare_and_swap_2(
+                self,
+                ::core::convert::Into::into(leaving_unit_data),
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    pub fn compare(
+        self,
+        count: impl ::core::convert::Into<i32>,
+        op: impl ::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>,
+    ) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare(
+                self,
+                ::core::convert::Into::into(count),
+                ::core::convert::Into::into(op),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareGreater(i32)` overload"]
+    pub fn compare_greater(self, count: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare_greater(
+                self,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareLess(i32)` overload"]
+    pub fn compare_less(self, count: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare_less(
+                self,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareZero(i32)` overload"]
+    pub fn compare_zero(self, count: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::compare_zero(
+                self,
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRandom()` overload"]
+    pub fn is_random(self) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::is_random(self, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsValid()` overload"]
+    pub fn is_valid(self) -> bool {
+        unsafe {
+            __Relay_ChooseAwardeeData_unity2_raw::is_valid(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Relay_FlagsField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relay::Relay_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_FlagsField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_FlagsField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: Relay_FlagsField,
+        value: crate::app::relay::Relay_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            Relay_FlagsField,
+            crate::app::relay::Relay_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Relay_FlagsField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Relay_FlagsField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Relay_FlagsField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Relay_FlagsField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relay")]
+pub trait IRelay_FlagsFieldMethods: IRelay_FlagsField {
+    #[doc = "`ToInt(crate::app::relay::Relay_Flags)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::relay::Relay_Flags>) -> i32 {
+        unsafe {
+            let __receiver = <Relay_FlagsField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Relay_FlagsField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Relay_FlagsField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Relay_FlagsField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relay")]
+impl<__T: IRelay_FlagsField> IRelay_FlagsFieldMethods for __T {}
+
+#[cfg(feature = "app-relay")]
+impl Relay_FlagsField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Relay_FlagsField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelay_FlagsFieldMethods>::ctor(this);
         this
     }
 }

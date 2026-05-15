@@ -290,7 +290,7 @@ impl SubsystemDescriptorStore {
             )
         }
     }
-    fn register_descriptor<
+    pub fn register_descriptor<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(

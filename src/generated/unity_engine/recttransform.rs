@@ -14,13 +14,15 @@ mod __types {
     use crate::unity_engine::transform::{ITransform, Transform};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine",
-        name = "RectTransform.ReapplyDrivenProperties"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RectTransform_ReapplyDrivenProperties {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
+    #[parent(crate::unity_engine::transform::Transform)]
+    pub struct RectTransform {
+        #[static_field]
+        #[rename(name = "reapplyDrivenProperties")]
+        pub reapply_driven_properties:
+            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md"))]
     #[repr(C)]
@@ -118,189 +120,17 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
-    #[parent(crate::unity_engine::transform::Transform)]
-    pub struct RectTransform {
-        #[static_field]
-        #[rename(name = "reapplyDrivenProperties")]
-        pub reapply_driven_properties:
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine",
+        name = "RectTransform.ReapplyDrivenProperties"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RectTransform_ReapplyDrivenProperties {}
 }
 
 #[cfg(feature = "unity_engine-recttransform-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-recttransform")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RectTransform_ReapplyDrivenProperties,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform_ReapplyDrivenProperties,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RectTransform_ReapplyDrivenProperties,
-        driven: crate::unity_engine::recttransform::RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform_ReapplyDrivenProperties,
-            crate::unity_engine::recttransform::RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, driven, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-pub trait IRectTransform_ReapplyDrivenPropertiesMethods:
-    IRectTransform_ReapplyDrivenProperties
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RectTransform_ReapplyDrivenProperties_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn invoke(
-        self,
-        driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RectTransform_ReapplyDrivenProperties_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(driven),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl<__T: IRectTransform_ReapplyDrivenProperties> IRectTransform_ReapplyDrivenPropertiesMethods
-    for __T
-{
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl RectTransform_ReapplyDrivenProperties {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RectTransform_ReapplyDrivenProperties),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRectTransform_ReapplyDrivenPropertiesMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-recttransform")]
 #[doc(hidden)]
@@ -3026,6 +2856,176 @@ impl RectTransform {
             )
         });
         <Self as IRectTransformMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RectTransform_ReapplyDrivenProperties,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RectTransform_ReapplyDrivenProperties,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RectTransform_ReapplyDrivenProperties,
+        driven: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RectTransform_ReapplyDrivenProperties,
+            crate::unity_engine::recttransform::RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, driven, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+pub trait IRectTransform_ReapplyDrivenPropertiesMethods:
+    IRectTransform_ReapplyDrivenProperties
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RectTransform_ReapplyDrivenProperties_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]
+    fn invoke(
+        self,
+        driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RectTransform_ReapplyDrivenProperties_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(driven),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl<__T: IRectTransform_ReapplyDrivenProperties> IRectTransform_ReapplyDrivenPropertiesMethods
+    for __T
+{
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform_ReapplyDrivenProperties {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RectTransform_ReapplyDrivenProperties),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRectTransform_ReapplyDrivenPropertiesMethods>::ctor(this, object, method);
         this
     }
 }

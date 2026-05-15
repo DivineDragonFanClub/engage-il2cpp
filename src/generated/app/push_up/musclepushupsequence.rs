@@ -62,78 +62,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MusclePushupSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MusclePushupSequence_Label {
-        const NAMESPACE: &'static str = "App.PushUp";
-
-        const NAME: &'static str = "MusclePushupSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MusclePushupSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MusclePushupSequence_Label {
-        pub fn init() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn ready_count() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ready_finish() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn result() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mascot_bond() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn prize() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn r#final() -> Self {
-            Self { value: 8 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/push_up/musclepushupsequence/MusclePushupSequence.md"))]
     #[::unity2::class(namespace = "App.PushUp", name = "MusclePushupSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -386,6 +314,78 @@ mod __types {
         pub m_rank_bond: i32,
         #[rename(name = "m_ResultTimer")]
         pub m_result_timer: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MusclePushupSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MusclePushupSequence_Label {
+        const NAMESPACE: &'static str = "App.PushUp";
+
+        const NAME: &'static str = "MusclePushupSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MusclePushupSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MusclePushupSequence_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn ready_count() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ready_finish() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn finish() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn result() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn mascot_bond() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn prize() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn r#final() -> Self {
+            Self { value: 8 }
+        }
     }
 }
 
@@ -4034,7 +4034,7 @@ mod __MusclePushupSequence_unity2_raw {
 
 #[cfg(feature = "app-push_up-musclepushupsequence")]
 impl MusclePushupSequence {
-    fn check_and_load_resource<
+    pub fn check_and_load_resource<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,

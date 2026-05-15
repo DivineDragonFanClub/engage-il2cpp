@@ -1447,7 +1447,7 @@ impl FontEngine {
             )
         }
     }
-    fn generic_list_to_marshalling_array<
+    pub fn generic_list_to_marshalling_array<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         src_list: impl ::core::convert::Into<
@@ -1506,7 +1506,7 @@ impl FontEngine {
             )
         }
     }
-    fn set_marshalling_array_size<
+    pub fn set_marshalling_array_size<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         marshalling_array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,

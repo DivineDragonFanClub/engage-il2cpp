@@ -15,30 +15,13 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_DecideEventHandler.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
-        name = "FoodstuffMenu.FoodstuffMenuItem.OnChangeSelected"
+        name = "FoodstuffMenu.DecideEventHandler"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "FoodstuffMenu.FoodstuffMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct FoodstuffMenu_FoodstuffMenuItem {
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
-        #[rename(name = "m_Foodstuff")]
-        pub m_foodstuff: crate::app::foodstuffdata::FoodstuffData,
-        #[static_field]
-        #[rename(name = "s_SelectedRare")]
-        pub s_selected_rare:
-            crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
-    }
+    pub struct FoodstuffMenu_DecideEventHandler {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_Type.md"))]
     #[repr(C)]
@@ -88,6 +71,31 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App.CookingMenu",
+        name = "FoodstuffMenu.FoodstuffMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct FoodstuffMenu_FoodstuffMenuItem {
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
+        #[rename(name = "m_Foodstuff")]
+        pub m_foodstuff: crate::app::foodstuffdata::FoodstuffData,
+        #[static_field]
+        #[rename(name = "s_SelectedRare")]
+        pub s_selected_rare:
+            crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected.md"))]
+    #[::unity2::class(
+        namespace = "App.CookingMenu",
+        name = "FoodstuffMenu.FoodstuffMenuItem.OnChangeSelected"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffSelectMenuManager.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
@@ -98,14 +106,6 @@ mod __types {
         #[rename(name = "m_Select")]
         pub m_select: crate::app::basicmenuselect::BasicMenuSelect,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "FoodstuffMenu.DecideEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct FoodstuffMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_CancelEventHandler.md"))]
     #[::unity2::class(
@@ -136,7 +136,7 @@ pub use __types::*;
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
+mod __FoodstuffMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -149,10 +149,24 @@ mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -161,13 +175,13 @@ mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+        this: FoodstuffMenu_DecideEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+            FoodstuffMenu_DecideEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -186,11 +200,27 @@ mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,)
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::foodstuffdata::FoodstuffData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -199,27 +229,29 @@ mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
-        is_selected: bool,
+        this: FoodstuffMenu_DecideEventHandler,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<
+            crate::app::foodstuffdata::FoodstuffData,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
-            bool,
+            FoodstuffMenu_DecideEventHandler,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::foodstuffdata::FoodstuffData,
+            >,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, is_selected, __unity2_method_info)
+        inner(this, foodstuffs, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-pub trait IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods:
-    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected
-{
+pub trait IFoodstuffMenu_DecideEventHandlerMethods: IFoodstuffMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
@@ -227,8 +259,11 @@ pub trait IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw::ctor(
+            let __receiver =
+                <FoodstuffMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FoodstuffMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -236,13 +271,23 @@ pub trait IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods:
             )
         }
     }
-    #[doc = "`Invoke(bool)` overload"]
-    fn invoke(self, is_selected: impl ::core::convert::Into<bool>) -> () {
+    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    fn invoke(
+        self,
+        foodstuffs: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::foodstuffdata::FoodstuffData,
+            >,
+        >,
+    ) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw::invoke(
+            let __receiver =
+                <FoodstuffMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FoodstuffMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(is_selected),
+                ::core::convert::Into::into(foodstuffs),
                 ::core::option::Option::None,
             )
         }
@@ -250,25 +295,20 @@ pub trait IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods:
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl<__T: IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected>
-    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods for __T
-{
-}
+impl<__T: IFoodstuffMenu_DecideEventHandler> IFoodstuffMenu_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+impl FoodstuffMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected),
+                ::core::stringify!(FoodstuffMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IFoodstuffMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1086,6 +1126,146 @@ impl FoodstuffMenu_FoodstuffMenuItem {
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+        is_selected: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, is_selected, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+pub trait IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods:
+    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(bool)` overload"]
+    fn invoke(self, is_selected: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = < FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(is_selected),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+impl<__T: IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected>
+    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods for __T
+{
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __FoodstuffMenu_FoodstuffSelectMenuManager_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1354,186 +1534,6 @@ impl FoodstuffMenu_FoodstuffSelectMenuManager {
             )
         });
         <Self as IFoodstuffMenu_FoodstuffSelectMenuManagerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FoodstuffMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FoodstuffMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::foodstuffdata::FoodstuffData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: FoodstuffMenu_DecideEventHandler,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenu_DecideEventHandler,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, foodstuffs, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-pub trait IFoodstuffMenu_DecideEventHandlerMethods: IFoodstuffMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FoodstuffMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    fn invoke(
-        self,
-        foodstuffs: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FoodstuffMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FoodstuffMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl<__T: IFoodstuffMenu_DecideEventHandler> IFoodstuffMenu_DecideEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

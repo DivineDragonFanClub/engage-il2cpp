@@ -376,7 +376,9 @@ mod __Resources_unity2_raw {
 
 #[cfg(feature = "unity_engine-resources")]
 impl Resources {
-    fn convert_objects<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn convert_objects<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         raw_objects: impl ::core::convert::Into<
             ::unity2::Array<crate::unity_engine::object_2::Object_2>,
         >,
@@ -441,7 +443,7 @@ impl Resources {
             )
         }
     }
-    fn load<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn load<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -530,7 +532,7 @@ impl Resources {
             )
         }
     }
-    fn load_all_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn load_all_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -595,7 +597,7 @@ impl Resources {
             )
         }
     }
-    fn get_builtin_resource_2<
+    pub fn get_builtin_resource_2<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,

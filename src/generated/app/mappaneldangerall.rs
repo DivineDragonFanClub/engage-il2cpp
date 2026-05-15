@@ -9,62 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelDangerAll_MeshIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelDangerAll_MeshIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapPanelDangerAll.MeshIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelDangerAll_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelDangerAll_MeshIndex {
-        pub fn attack_panel() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn rod_panel() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn gunner_panel() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn frame_panel_for_gunner() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md"))]
     #[repr(C)]
     #[derive(
@@ -148,6 +92,62 @@ mod __types {
         pub m_rod_color: crate::unity_engine::color::Color,
         #[rename(name = "m_GunnerColor")]
         pub m_gunner_color: crate::unity_engine::color::Color,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelDangerAll_MeshIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelDangerAll_MeshIndex {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapPanelDangerAll.MeshIndex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelDangerAll_MeshIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelDangerAll_MeshIndex {
+        pub fn attack_panel() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn rod_panel() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn gunner_panel() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn frame_panel_for_gunner() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
     }
 }
 

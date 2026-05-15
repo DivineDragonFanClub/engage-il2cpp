@@ -901,7 +901,7 @@ impl _AndroidJNIHelper {
             )
         }
     }
-    fn convert_from_jni_array<
+    pub fn convert_from_jni_array<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         array: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -966,7 +966,7 @@ impl _AndroidJNIHelper {
             )
         }
     }
-    fn get_method_id<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn get_method_id<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         jclass: impl ::core::convert::Into<::unity2::IntPtr>,
         method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,

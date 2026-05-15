@@ -29,15 +29,6 @@ mod __types {
         pub m_title_bar: crate::app::titlebar::TitleBar,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc.md"))]
-    #[::unity2::class(namespace = "App", name = "RingGachaSequence.SkipListenerProc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingGachaSequence_SkipListenerProc {
-        #[rename(name = "m_SkipCallback")]
-        pub m_skip_callback:
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]
     #[::unity2::class(namespace = "App", name = "RingGachaSequence.Result1Proc")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -51,6 +42,54 @@ mod __types {
         pub m_new: bool,
         #[rename(name = "m_TitleBar")]
         pub m_title_bar: crate::app::titlebar::TitleBar,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_Type.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct RingGachaSequence_SkipListenerProc_Type {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingGachaSequence_SkipListenerProc_Type {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RingGachaSequence.SkipListenerProc.Type";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingGachaSequence_SkipListenerProc_Type {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl RingGachaSequence_SkipListenerProc_Type {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn one() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn all() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_Label.md"))]
@@ -108,14 +147,6 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingGachaSequence.SkipListenerProc.SkipCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RingGachaSequence_SkipListenerProc_SkipCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingGachaSequence")]
@@ -178,52 +209,21 @@ mod __types {
         pub m_ring_object: crate::unity_engine::gameobject::GameObject,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_Type.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RingGachaSequence.SkipListenerProc.SkipCallback"
     )]
-    pub struct RingGachaSequence_SkipListenerProc_Type {
-        pub value: i32,
-    }
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RingGachaSequence_SkipListenerProc_SkipCallback {}
 
-    impl ::unity2::ClassIdentity for RingGachaSequence_SkipListenerProc_Type {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingGachaSequence.SkipListenerProc.Type";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingGachaSequence_SkipListenerProc_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RingGachaSequence_SkipListenerProc_Type {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn one() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn all() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc.md"))]
+    #[::unity2::class(namespace = "App", name = "RingGachaSequence.SkipListenerProc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingGachaSequence_SkipListenerProc {
+        #[rename(name = "m_SkipCallback")]
+        pub m_skip_callback:
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
     }
 }
 
@@ -708,474 +708,6 @@ impl RingGachaSequence_Result10Proc {
 #[cfg(feature = "app-ringgachasequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingGachaSequence_SkipListenerProc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_pause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "get_m_Pause",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "get_m_Pause",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_m_pause(
-        this: RingGachaSequence_SkipListenerProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_pause::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_pause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "set_m_Pause",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "set_m_Pause",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_m_pause(
-        this: RingGachaSequence_SkipListenerProc,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_pause::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_pause_one {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "get_m_PauseOne",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "get_m_PauseOne",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_m_pause_one(
-        this: RingGachaSequence_SkipListenerProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_pause_one::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_pause_one {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "set_m_PauseOne",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "set_m_PauseOne",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_m_pause_one(
-        this: RingGachaSequence_SkipListenerProc,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_pause_one::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "Create",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        super_: crate::app::ringgachasequence::RingGachaSequence,
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc {
-        let inner : extern "C" fn (crate :: app :: ringgachasequence :: RingGachaSequence , crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(super_, skip_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingGachaSequence_SkipListenerProc,
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, skip_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_tick(
-        this: RingGachaSequence_SkipListenerProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tick::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_SkipListenerProc {
-    #[doc = "`Create(crate::app::ringgachasequence::RingGachaSequence, crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
-    pub fn create(
-        super_: impl ::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence>,
-        skip_callback: impl ::core::convert::Into<
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
-        >,
-    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc {
-        unsafe {
-            __RingGachaSequence_SkipListenerProc_unity2_raw::create(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(skip_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-pub trait IRingGachaSequence_SkipListenerProcMethods: IRingGachaSequence_SkipListenerProc {
-    #[doc = "`get_m_Pause()` overload"]
-    fn get_m_pause(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::get_m_pause(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_m_Pause(bool)` overload"]
-    fn set_m_pause(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::set_m_pause(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_m_PauseOne()` overload"]
-    fn get_m_pause_one(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::get_m_pause_one(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_m_PauseOne(bool)` overload"]
-    fn set_m_pause_one(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::set_m_pause_one(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
-    fn ctor(
-        self,
-        skip_callback: impl ::core::convert::Into<
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(skip_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingGachaSequence_SkipListenerProc_unity2_raw::on_tick(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl<__T: IRingGachaSequence_SkipListenerProc> IRingGachaSequence_SkipListenerProcMethods for __T {}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_SkipListenerProc {
-    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` — overload selector"]
-    pub fn new(
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_SkipListenerProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_SkipListenerProcMethods>::ctor(this, skip_callback);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RingGachaSequence_Result1Proc_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1638,164 +1170,6 @@ impl RingGachaSequence_Result1Proc {
             )
         });
         <Self as IRingGachaSequence_Result1ProcMethods>::ctor(this, ring_data, new_ring);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc_SkipCallback as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingGachaSequence_SkipListenerProc_SkipCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc_SkipCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_Type as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingGachaSequence_SkipListenerProc_SkipCallback as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RingGachaSequence_SkipListenerProc_SkipCallback,
-        r#type: crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingGachaSequence_SkipListenerProc_SkipCallback,
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, r#type, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-pub trait IRingGachaSequence_SkipListenerProc_SkipCallbackMethods:
-    IRingGachaSequence_SkipListenerProc_SkipCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]
-    fn invoke(
-        self,
-        r#type: impl ::core::convert::Into<
-            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl<__T: IRingGachaSequence_SkipListenerProc_SkipCallback>
-    IRingGachaSequence_SkipListenerProc_SkipCallbackMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_SkipListenerProc_SkipCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods>::ctor(
-            this, object, method,
-        );
         this
     }
 }
@@ -3444,6 +2818,632 @@ impl RingGachaSequence {
             new_list,
             end_callback,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc_SkipCallback as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingGachaSequence_SkipListenerProc_SkipCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc_SkipCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_Type as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc_SkipCallback as ::unity2::ClassIdentity>::class(
+                ),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RingGachaSequence_SkipListenerProc_SkipCallback,
+        r#type: crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc_SkipCallback,
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, r#type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+pub trait IRingGachaSequence_SkipListenerProc_SkipCallbackMethods:
+    IRingGachaSequence_SkipListenerProc_SkipCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]
+    fn invoke(
+        self,
+        r#type: impl ::core::convert::Into<
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RingGachaSequence_SkipListenerProc_SkipCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl<__T: IRingGachaSequence_SkipListenerProc_SkipCallback>
+    IRingGachaSequence_SkipListenerProc_SkipCallbackMethods for __T
+{
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_SkipListenerProc_SkipCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingGachaSequence_SkipListenerProc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "get_m_Pause",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "get_m_Pause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_pause(
+        this: RingGachaSequence_SkipListenerProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_pause::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "set_m_Pause",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "set_m_Pause",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_pause(
+        this: RingGachaSequence_SkipListenerProc,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_pause::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_pause_one {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "get_m_PauseOne",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "get_m_PauseOne",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_m_pause_one(
+        this: RingGachaSequence_SkipListenerProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_m_pause_one::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_pause_one {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "set_m_PauseOne",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "set_m_PauseOne",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_m_pause_one(
+        this: RingGachaSequence_SkipListenerProc,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_m_pause_one::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "Create",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        super_: crate::app::ringgachasequence::RingGachaSequence,
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc {
+        let inner : extern "C" fn (crate :: app :: ringgachasequence :: RingGachaSequence , crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(super_, skip_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingGachaSequence_SkipListenerProc,
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, skip_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RingGachaSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                    "OnTick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_tick(
+        this: RingGachaSequence_SkipListenerProc,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingGachaSequence_SkipListenerProc,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_tick::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_SkipListenerProc {
+    #[doc = "`Create(crate::app::ringgachasequence::RingGachaSequence, crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence>,
+        skip_callback: impl ::core::convert::Into<
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
+        >,
+    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc {
+        unsafe {
+            __RingGachaSequence_SkipListenerProc_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(skip_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+pub trait IRingGachaSequence_SkipListenerProcMethods: IRingGachaSequence_SkipListenerProc {
+    #[doc = "`get_m_Pause()` overload"]
+    fn get_m_pause(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::get_m_pause(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_Pause(bool)` overload"]
+    fn set_m_pause(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::set_m_pause(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_m_PauseOne()` overload"]
+    fn get_m_pause_one(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::get_m_pause_one(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_m_PauseOne(bool)` overload"]
+    fn set_m_pause_one(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::set_m_pause_one(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
+    fn ctor(
+        self,
+        skip_callback: impl ::core::convert::Into<
+            crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(skip_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingGachaSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RingGachaSequence_SkipListenerProc_unity2_raw::on_tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl<__T: IRingGachaSequence_SkipListenerProc> IRingGachaSequence_SkipListenerProcMethods for __T {}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_SkipListenerProc {
+    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` — overload selector"]
+    pub fn new(
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_SkipListenerProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_SkipListenerProcMethods>::ctor(this, skip_callback);
         this
     }
 }

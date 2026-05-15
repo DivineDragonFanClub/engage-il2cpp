@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugMenu_AnchorLocation {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
     #[repr(C)]
     #[derive(
@@ -62,6 +57,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugMenu_AnchorLocation {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu.md"))]
     #[::unity2::class(namespace = "App", name = "DebugMenu")]

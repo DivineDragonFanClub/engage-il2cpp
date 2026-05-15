@@ -10,6 +10,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagWindow")]
+    #[parent(crate::app::talk3_d::talktag::TalkTag)]
+    pub struct TalkTagWindow {
+        #[rename(name = "m_TagID")]
+        pub m_tag_id: crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID,
+        #[rename(name = "m_Pid")]
+        pub m_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_PidForCreate")]
+        pub m_pid_for_create: ::unity2::Il2CppString,
+        #[rename(name = "m_LocationName")]
+        pub m_location_name: ::unity2::Il2CppString,
+        #[rename(name = "m_ReplaceName")]
+        pub m_replace_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md"))]
     #[repr(C)]
     #[derive(
@@ -84,22 +100,6 @@ mod __types {
         pub fn hide_bg() -> Self {
             Self { value: 9 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagWindow")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagWindow {
-        #[rename(name = "m_TagID")]
-        pub m_tag_id: crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID,
-        #[rename(name = "m_Pid")]
-        pub m_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_PidForCreate")]
-        pub m_pid_for_create: ::unity2::Il2CppString,
-        #[rename(name = "m_LocationName")]
-        pub m_location_name: ::unity2::Il2CppString,
-        #[rename(name = "m_ReplaceName")]
-        pub m_replace_name: ::unity2::Il2CppString,
     }
 }
 

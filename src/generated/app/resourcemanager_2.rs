@@ -1131,7 +1131,9 @@ impl ResourceManager_2 {
             )
         }
     }
-    fn load_global_async<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn load_global_async<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
         completed: impl ::core::convert::Into<crate::system::action_1::Action_1<M0>>,
     ) -> () {
@@ -1195,7 +1197,7 @@ impl ResourceManager_2 {
             )
         }
     }
-    fn try_load_global_async<
+    pub fn try_load_global_async<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1261,7 +1263,7 @@ impl ResourceManager_2 {
             )
         }
     }
-    fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

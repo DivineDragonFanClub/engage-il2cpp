@@ -118,7 +118,9 @@ mod __IRewardSequence_unity2_raw {
 
 #[cfg(feature = "app-irewardsequence")]
 impl IRewardSequence {
-    fn create_bind_imp<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn create_bind_imp<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<

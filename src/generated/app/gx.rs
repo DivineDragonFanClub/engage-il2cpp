@@ -10,30 +10,6 @@ mod __types {
     use crate::unity_engine::gui::{GUI, IGUI};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))]
-    #[::unity2::class(namespace = "App", name = "GX")]
-    #[parent(crate::unity_engine::gui::GUI)]
-    pub struct GX {
-        #[static_field]
-        #[rename(name = "scrollBaseColor")]
-        pub scroll_base_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "scrollBarColor")]
-        pub scroll_bar_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "CanvasSizeX")]
-        pub canvas_size_x: f32,
-        #[static_field]
-        #[rename(name = "CanvasSizeY")]
-        pub canvas_size_y: f32,
-        #[static_field]
-        #[rename(name = "CanvasHalfX")]
-        pub canvas_half_x: f32,
-        #[static_field]
-        #[rename(name = "CanvasHalfY")]
-        pub canvas_half_y: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
     #[repr(C)]
     #[derive(
@@ -108,6 +84,30 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 9 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))]
+    #[::unity2::class(namespace = "App", name = "GX")]
+    #[parent(crate::unity_engine::gui::GUI)]
+    pub struct GX {
+        #[static_field]
+        #[rename(name = "scrollBaseColor")]
+        pub scroll_base_color: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "scrollBarColor")]
+        pub scroll_bar_color: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "CanvasSizeX")]
+        pub canvas_size_x: f32,
+        #[static_field]
+        #[rename(name = "CanvasSizeY")]
+        pub canvas_size_y: f32,
+        #[static_field]
+        #[rename(name = "CanvasHalfX")]
+        pub canvas_half_x: f32,
+        #[static_field]
+        #[rename(name = "CanvasHalfY")]
+        pub canvas_half_y: f32,
     }
 }
 

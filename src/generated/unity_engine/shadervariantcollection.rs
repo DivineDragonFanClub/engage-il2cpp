@@ -9,6 +9,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "ShaderVariantCollection")]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    pub struct ShaderVariantCollection {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -38,11 +43,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ShaderVariantCollection")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct ShaderVariantCollection {}
 }
 
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]

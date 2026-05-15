@@ -14,22 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
-        #[rename(name = "m_Enabled")]
-        pub m_enabled: bool,
-        #[rename(name = "m_Usabled")]
-        pub m_usabled: bool,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -74,21 +58,26 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefreshUnitSetDecideMenu.DecideEventHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
+    pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "RefreshUnitSetDecideMenu.KeyDownEventHandler"
+        name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem"
     )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
+        #[rename(name = "m_Enabled")]
+        pub m_enabled: bool,
+        #[rename(name = "m_Usabled")]
+        pub m_usabled: bool,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu")]
@@ -107,14 +96,187 @@ mod __types {
         pub m_closed: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefreshUnitSetDecideMenu.KeyDownEventHandler"
+    )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
+    pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefreshUnitSetDecideMenu.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefreshUnitSetDecideMenu_KeyUpEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetDecideMenu_KeyUpEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefreshUnitSetDecideMenu_KeyUpEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetDecideMenu_KeyUpEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:
+    IRefreshUnitSetDecideMenu_KeyUpEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl<__T: IRefreshUnitSetDecideMenu_KeyUpEventHandler>
+    IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[doc(hidden)]
@@ -661,338 +823,6 @@ impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
             usabled,
             decide_event_handler,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefreshUnitSetDecideMenu_DecideEventHandler,
-        result: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_DecideEventHandler,
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods:
-    IRefreshUnitSetDecideMenu_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_DecideEventHandler>
-    IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyDownEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefreshUnitSetDecideMenu_KeyDownEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyDownEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods:
-    IRefreshUnitSetDecideMenu_KeyDownEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_KeyDownEventHandler>
-    IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyDownEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -2123,7 +1953,7 @@ impl RefreshUnitSetDecideMenu {
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
+mod __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2137,7 +1967,7 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
+                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2149,7 +1979,7 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2162,13 +1992,13 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RefreshUnitSetDecideMenu_KeyUpEventHandler,
+        this: RefreshUnitSetDecideMenu_KeyDownEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyUpEventHandler,
+            RefreshUnitSetDecideMenu_KeyDownEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -2188,7 +2018,7 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::class(),
+                <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 0,
                 param_types,
@@ -2200,7 +2030,7 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetDecideMenu_KeyUpEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <RefreshUnitSetDecideMenu_KeyDownEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -2213,11 +2043,11 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: RefreshUnitSetDecideMenu_KeyUpEventHandler,
+        this: RefreshUnitSetDecideMenu_KeyDownEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefreshUnitSetDecideMenu_KeyUpEventHandler,
+            RefreshUnitSetDecideMenu_KeyDownEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -2229,8 +2059,8 @@ mod __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw {
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:
-    IRefreshUnitSetDecideMenu_KeyUpEventHandler
+pub trait IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods:
+    IRefreshUnitSetDecideMenu_KeyDownEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -2239,8 +2069,8 @@ pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::ctor(
+            let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -2251,8 +2081,8 @@ pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < RefreshUnitSetDecideMenu_KeyUpEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetDecideMenu_KeyUpEventHandler_unity2_raw::invoke(
+            let __receiver = < RefreshUnitSetDecideMenu_KeyDownEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_KeyDownEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2261,23 +2091,193 @@ pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl<__T: IRefreshUnitSetDecideMenu_KeyUpEventHandler>
-    IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T
+impl<__T: IRefreshUnitSetDecideMenu_KeyDownEventHandler>
+    IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
+impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler),
+                ::core::stringify!(RefreshUnitSetDecideMenu_KeyDownEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefreshUnitSetDecideMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetDecideMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetDecideMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefreshUnitSetDecideMenu_DecideEventHandler,
+        result: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetDecideMenu_DecideEventHandler,
+            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods:
+    IRefreshUnitSetDecideMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<
+            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetDecideMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetDecideMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl<__T: IRefreshUnitSetDecideMenu_DecideEventHandler>
+    IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

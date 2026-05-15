@@ -10,6 +10,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemgainsequence/ItemGainSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemGainSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ItemGainSequence {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_UnitItem")]
+        pub m_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_ItemData")]
+        pub m_item_data: crate::app::itemdata::ItemData,
+        #[rename(name = "m_Label")]
+        pub m_label: ::unity2::Il2CppString,
+        #[rename(name = "m_Count")]
+        pub m_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemgainsequence/ItemGainSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -52,22 +68,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemgainsequence/ItemGainSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemGainSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ItemGainSequence {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitItem")]
-        pub m_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_ItemData")]
-        pub m_item_data: crate::app::itemdata::ItemData,
-        #[rename(name = "m_Label")]
-        pub m_label: ::unity2::Il2CppString,
-        #[rename(name = "m_Count")]
-        pub m_count: i32,
     }
 }
 

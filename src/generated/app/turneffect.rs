@@ -441,7 +441,7 @@ mod __TurnEffect_unity2_raw {
 
 #[cfg(feature = "app-turneffect")]
 impl TurnEffect {
-    fn create_bind<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn create_bind<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<

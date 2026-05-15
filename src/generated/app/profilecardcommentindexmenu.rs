@@ -13,6 +13,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardCommentIndexMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ProfileCardCommentIndexMenu {
+# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler ,
+# [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DisposeEventHandler ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardCommentIndexMenu.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardCommentIndexMenu_DecideEventHandler {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -56,22 +72,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardCommentIndexMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ProfileCardCommentIndexMenu {
-# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler ,
-# [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DisposeEventHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardCommentIndexMenu.DecideEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardCommentIndexMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DisposeEventHandler.md"))]
     #[::unity2::class(

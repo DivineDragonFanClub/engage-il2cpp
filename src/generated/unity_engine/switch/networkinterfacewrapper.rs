@@ -59,13 +59,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetworkInterfaceWrapper {
-# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Switch",
@@ -73,10 +66,155 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetworkInterfaceWrapper {
+# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+}
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NetworkInterfaceWrapper_NetworkConnectedHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NetworkInterfaceWrapper_NetworkConnectedHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(
+                ),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn invoke (this : NetworkInterfaceWrapper_NetworkConnectedHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult{
+        let inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_invoke :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods:
+    INetworkInterfaceWrapper_NetworkConnectedHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]    fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult{
+        unsafe {
+            let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+impl<__T: INetworkInterfaceWrapper_NetworkConnectedHandler>
+    INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+impl NetworkInterfaceWrapper_NetworkConnectedHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
 #[doc(hidden)]
@@ -912,144 +1050,6 @@ impl NetworkInterfaceWrapper {
                 ::core::option::Option::None,
             )
         }
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NetworkInterfaceWrapper_NetworkConnectedHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NetworkInterfaceWrapper_NetworkConnectedHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NetworkInterfaceWrapper_NetworkConnectedHandler as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn invoke (this : NetworkInterfaceWrapper_NetworkConnectedHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult{
-        let inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_invoke :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods:
-    INetworkInterfaceWrapper_NetworkConnectedHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]    fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult{
-        unsafe {
-            let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl<__T: INetworkInterfaceWrapper_NetworkConnectedHandler>
-    INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper_NetworkConnectedHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
     }
 }
 

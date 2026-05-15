@@ -11,11 +11,6 @@ mod __types {
     use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "ColorTween.ColorTweenCallback")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
-    pub struct ColorTween_ColorTweenCallback_2 {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md"))]
     #[repr(C)]
     #[derive(
@@ -63,6 +58,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "ColorTween.ColorTweenCallback")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
+    pub struct ColorTween_ColorTweenCallback_2 {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
     #[repr(C)]

@@ -383,7 +383,7 @@ impl ResourceManagerConfig {
             )
         }
     }
-    fn create_array_result_2<
+    pub fn create_array_result_2<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
@@ -450,7 +450,7 @@ impl ResourceManagerConfig {
             )
         }
     }
-    fn create_list_result_2<
+    pub fn create_list_result_2<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
@@ -504,7 +504,7 @@ impl ResourceManagerConfig {
             )
         }
     }
-    fn is_instance<
+    pub fn is_instance<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >() -> bool {

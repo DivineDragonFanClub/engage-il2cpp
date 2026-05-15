@@ -69,55 +69,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldeploy/MapPanelDeploy.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDeploy")]
-    pub struct MapPanelDeploy {
-        #[rename(name = "m_MeshList")]
-        pub m_mesh_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
-        >,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_TempImage")]
-        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_Scale")]
-        pub m_scale: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_Range")]
-        pub m_range: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_MoveColor")]
-        pub m_move_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_HealColor")]
-        pub m_heal_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SupportColor")]
-        pub m_support_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_InterferenceColor")]
-        pub m_interference_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AlphaCurve")]
-        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_IsIntegration")]
-        pub m_is_integration: bool,
-        #[rename(name = "m_IntegrationImage")]
-        pub m_integration_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -248,6 +199,55 @@ mod __types {
         pub fn full_bullet_charge() -> Self {
             Self { value: 23 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldeploy/MapPanelDeploy.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDeploy")]
+    pub struct MapPanelDeploy {
+        #[rename(name = "m_MeshList")]
+        pub m_mesh_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
+        >,
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_TempImage")]
+        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_Scale")]
+        pub m_scale: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_Range")]
+        pub m_range: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_MoveColor")]
+        pub m_move_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_HealColor")]
+        pub m_heal_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_SupportColor")]
+        pub m_support_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_InterferenceColor")]
+        pub m_interference_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AlphaCurve")]
+        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_IsIntegration")]
+        pub m_is_integration: bool,
+        #[rename(name = "m_IntegrationImage")]
+        pub m_integration_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
     }
 }
 

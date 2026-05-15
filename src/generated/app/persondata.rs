@@ -15,77 +15,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PersonData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PersonData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "PersonData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PersonData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PersonData_Flags {
-        pub fn candidate_for_friend() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn belong_name() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn talent() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn ignore_job_skill_remove() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn dark_warp() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn dress_reverse() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn simple_ui() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn derived_hero() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn summon_warp() -> Self {
-            Self { value: 256 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "PersonData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)]
+    pub struct PersonData_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md"))]
     #[repr(C)]
@@ -247,6 +180,15 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md"))]
+    #[::unity2::class(namespace = "App", name = "PersonData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: persondata :: PersonData >)]
+    pub struct PersonData {
+        #[static_field]
+        #[rename(name = "s_Veyre")]
+        pub s_veyre: crate::app::persondata::PersonData,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md"))]
     #[repr(C)]
     #[derive(
@@ -311,18 +253,76 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "PersonData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)]
-    pub struct PersonData_FlagField {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PersonData_Flags {
+        pub value: i32,
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md"))]
-    #[::unity2::class(namespace = "App", name = "PersonData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: persondata :: PersonData >)]
-    pub struct PersonData {
-        #[static_field]
-        #[rename(name = "s_Veyre")]
-        pub s_veyre: crate::app::persondata::PersonData,
+    impl ::unity2::ClassIdentity for PersonData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "PersonData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PersonData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PersonData_Flags {
+        pub fn candidate_for_friend() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn belong_name() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn talent() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn ignore_job_skill_remove() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn dark_warp() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn dress_reverse() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn simple_ui() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn derived_hero() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn summon_warp() -> Self {
+            Self { value: 256 }
+        }
     }
 }
 

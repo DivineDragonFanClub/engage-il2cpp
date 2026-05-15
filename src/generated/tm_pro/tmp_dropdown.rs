@@ -3352,7 +3352,7 @@ mod __TMP_Dropdown_unity2_raw {
 
 #[cfg(feature = "tm_pro-tmp_dropdown")]
 impl TMP_Dropdown {
-    fn get_or_add_component<
+    pub fn get_or_add_component<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,

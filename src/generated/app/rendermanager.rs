@@ -1456,7 +1456,7 @@ impl RenderManager {
             )
         }
     }
-    fn get_stack_peek<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    pub fn get_stack_peek<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         stack: impl ::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<M0>>,
         def: impl ::core::convert::Into<M0>,
     ) -> M0 {
