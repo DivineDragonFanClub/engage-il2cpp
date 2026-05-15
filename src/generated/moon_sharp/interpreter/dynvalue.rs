@@ -3992,7 +3992,9 @@ pub trait IDynValueMethods: IDynValue {
             )
         }
     }
-    pub fn check_user_data_type<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn check_user_data_type<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         arg_num: impl ::core::convert::Into<i32>,

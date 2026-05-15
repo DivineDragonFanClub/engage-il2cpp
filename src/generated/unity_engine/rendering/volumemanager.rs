@@ -1479,7 +1479,9 @@ pub trait IVolumeManagerMethods: IVolumeManager {
             )
         }
     }
-    pub fn is_component_active_in_mask<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn is_component_active_in_mask<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
     ) -> bool {

@@ -3,7 +3,7 @@
 #[cfg(any(feature = "combat-__skillstackex-types"))]
 pub mod __skillstackex;
 #[cfg(feature = "combat-__skillstackex-types")]
-pub use __skillstackex::{I__SkillStackEx, __SkillStackEx};
+pub use __skillstackex::{__SkillStackEx, I__SkillStackEx};
 #[cfg(any(feature = "combat-actionattack-types"))]
 pub mod actionattack;
 #[cfg(feature = "combat-actionattack")]

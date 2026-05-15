@@ -14,18 +14,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_SortieCountInfo {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_SortieCount")]
-        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    pub struct ProfileCardRoot_AchievementInfo {
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Caption")]
+        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Count")]
+        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BgImage")]
         pub m_bg_image: crate::unity_engine::ui::image::Image,
     }
@@ -34,37 +32,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardRoot_StartHandler {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ProfileCardRoot_RectInfo {
-        pub pos: crate::unity_engine::vector2::Vector2,
-        pub harf_size: crate::unity_engine::vector2::Vector2,
-        pub x_axis: crate::unity_engine::vector2::Vector2,
-        pub y_axis: crate::unity_engine::vector2::Vector2,
-    }
-
-    impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ProfileCardRoot.RectInfo";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ProfileCardRoot_RectInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardRoot")]
@@ -250,16 +217,49 @@ mod __types {
         pub m_start_handler: crate::app::profilecardroot::ProfileCardRoot_StartHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ProfileCardRoot_RectInfo {
+        pub pos: crate::unity_engine::vector2::Vector2,
+        pub harf_size: crate::unity_engine::vector2::Vector2,
+        pub x_axis: crate::unity_engine::vector2::Vector2,
+        pub y_axis: crate::unity_engine::vector2::Vector2,
+    }
+
+    impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ProfileCardRoot.RectInfo";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ProfileCardRoot_RectInfo {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_AchievementInfo {
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Caption")]
-        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Count")]
-        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    pub struct ProfileCardRoot_SortieCountInfo {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_SortieCount")]
+        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BgImage")]
         pub m_bg_image: crate::unity_engine::ui::image::Image,
     }
@@ -271,7 +271,7 @@ pub use __types::*;
 #[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
+mod __ProfileCardRoot_AchievementInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -282,7 +282,7 @@ mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::class(),
+                <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -294,7 +294,7 @@ mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -307,10 +307,10 @@ mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardRoot_SortieCountInfo,
+        this: ProfileCardRoot_AchievementInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ProfileCardRoot_SortieCountInfo, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(ProfileCardRoot_AchievementInfo, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -321,15 +321,15 @@ mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountInfo {
+pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardRoot_SortieCountInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <ProfileCardRoot_AchievementInfo as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ProfileCardRoot_SortieCountInfo_unity2_raw::ctor(
+            __ProfileCardRoot_AchievementInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -338,20 +338,20 @@ pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountI
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl<__T: IProfileCardRoot_SortieCountInfo> IProfileCardRoot_SortieCountInfoMethods for __T {}
+impl<__T: IProfileCardRoot_AchievementInfo> IProfileCardRoot_AchievementInfoMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_SortieCountInfo {
+impl ProfileCardRoot_AchievementInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
+                ::core::stringify!(ProfileCardRoot_AchievementInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
+        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
         this
     }
 }
@@ -514,289 +514,6 @@ impl ProfileCardRoot_StartHandler {
         });
         <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
         this
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_RectInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardRoot_RectInfo,
-        pos: crate::unity_engine::vector2::Vector2,
-        harf_size: crate::unity_engine::vector2::Vector2,
-        x_axis: crate::unity_engine::vector2::Vector2,
-        y_axis: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardRoot_RectInfo,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, pos, harf_size, x_axis, y_axis, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_abs_dot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
-                "GetAbsDot",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetAbsDot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_abs_dot(
-        v1: crate::unity_engine::vector2::Vector2,
-        v2: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_abs_dot::get_offset() as isize),
-        );
-        inner(v1, v2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_overlap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
-                "IsOverlap",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
-                    "IsOverlap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_overlap(
-        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_overlap::get_offset() as isize),
-        );
-        inner(rect1, rect2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
-                "GetDistance",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetDistance",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_distance(
-        pos: crate::unity_engine::vector2::Vector2,
-        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_distance::get_offset() as isize),
-        );
-        inner(pos, rect, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_RectInfo {
-    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn get_abs_dot(
-        v1: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        v2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> f32 {
-        unsafe {
-            __ProfileCardRoot_RectInfo_unity2_raw::get_abs_dot(
-                ::core::convert::Into::into(v1),
-                ::core::convert::Into::into(v2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    pub fn is_overlap(
-        rect1: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
-        rect2: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
-    ) -> bool {
-        unsafe {
-            __ProfileCardRoot_RectInfo_unity2_raw::is_overlap(
-                ::core::convert::Into::into(rect1),
-                ::core::convert::Into::into(rect2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
-    pub fn get_distance(
-        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
-    ) -> f32 {
-        unsafe {
-            __ProfileCardRoot_RectInfo_unity2_raw::get_distance(
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_RectInfo {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn ctor(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        harf_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        x_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        y_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            __ProfileCardRoot_RectInfo_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(harf_size),
-                ::core::convert::Into::into(x_axis),
-                ::core::convert::Into::into(y_axis),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 
@@ -4849,7 +4566,7 @@ impl ProfileCardRoot {
 #[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_AchievementInfo_unity2_raw {
+mod __ProfileCardRoot_RectInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4858,11 +4575,16 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::class(),
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                4,
                 param_types,
                 false,
             )
@@ -4872,7 +4594,7 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -4885,10 +4607,288 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardRoot_AchievementInfo,
+        this: ProfileCardRoot_RectInfo,
+        pos: crate::unity_engine::vector2::Vector2,
+        harf_size: crate::unity_engine::vector2::Vector2,
+        x_axis: crate::unity_engine::vector2::Vector2,
+        y_axis: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ProfileCardRoot_AchievementInfo, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(
+            ProfileCardRoot_RectInfo,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, pos, harf_size, x_axis, y_axis, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_abs_dot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "GetAbsDot",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetAbsDot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_abs_dot(
+        v1: crate::unity_engine::vector2::Vector2,
+        v2: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_abs_dot::get_offset() as isize),
+        );
+        inner(v1, v2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_overlap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "IsOverlap",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "IsOverlap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_overlap(
+        rect1: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        rect2: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_overlap::get_offset() as isize),
+        );
+        inner(rect1, rect2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::class(),
+                "GetDistance",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_RectInfo as ::unity2::ClassIdentity>::NAME,
+                    "GetDistance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_distance(
+        pos: crate::unity_engine::vector2::Vector2,
+        rect: crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            crate::app::profilecardroot::ProfileCardRoot_RectInfo,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_distance::get_offset() as isize),
+        );
+        inner(pos, rect, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo {
+    #[doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn get_abs_dot(
+        v1: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        v2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> f32 {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::get_abs_dot(
+                ::core::convert::Into::into(v1),
+                ::core::convert::Into::into(v2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    pub fn is_overlap(
+        rect1: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+        rect2: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> bool {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::is_overlap(
+                ::core::convert::Into::into(rect1),
+                ::core::convert::Into::into(rect2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]
+    pub fn get_distance(
+        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        rect: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>,
+    ) -> f32 {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::get_distance(
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(rect),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
+    pub fn ctor(
+        self,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        harf_size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        x_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        y_axis: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+    ) -> () {
+        unsafe {
+            __ProfileCardRoot_RectInfo_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(harf_size),
+                ::core::convert::Into::into(x_axis),
+                ::core::convert::Into::into(y_axis),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_SortieCountInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot_SortieCountInfo, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -4899,15 +4899,15 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementInfo {
+pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardRoot_AchievementInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <ProfileCardRoot_SortieCountInfo as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ProfileCardRoot_AchievementInfo_unity2_raw::ctor(
+            __ProfileCardRoot_SortieCountInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -4916,20 +4916,20 @@ pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementI
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl<__T: IProfileCardRoot_AchievementInfo> IProfileCardRoot_AchievementInfoMethods for __T {}
+impl<__T: IProfileCardRoot_SortieCountInfo> IProfileCardRoot_SortieCountInfoMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo {
+impl ProfileCardRoot_SortieCountInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_AchievementInfo),
+                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
+        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
         this
     }
 }

@@ -7,6 +7,24 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "XRSystem.XRShaderIDs"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct XRSystem_XRShaderIDs {
+        #[static_field]
+        #[rename(name = "_SourceTexArraySlice")]
+        pub source_tex_array_slice: i32,
+        #[static_field]
+        #[rename(name = "_SRGBRead")]
+        pub srgb_read: i32,
+        #[static_field]
+        #[rename(name = "_SRGBWrite")]
+        pub srgb_write: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
     #[parent(crate::system::object::Object)]
@@ -44,28 +62,66 @@ mod __types {
         pub xr_mirror_profiling_sampler:
             crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "XRSystem.XRShaderIDs"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct XRSystem_XRShaderIDs {
-        #[static_field]
-        #[rename(name = "_SourceTexArraySlice")]
-        pub source_tex_array_slice: i32,
-        #[static_field]
-        #[rename(name = "_SRGBRead")]
-        pub srgb_read: i32,
-        #[static_field]
-        #[rename(name = "_SRGBWrite")]
-        pub srgb_write: i32,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRSystem_XRShaderIDs_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
+impl XRSystem_XRShaderIDs {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __XRSystem_XRShaderIDs_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
 #[doc(hidden)]
@@ -1144,62 +1200,6 @@ impl XRSystem {
         });
         <Self as IXRSystemMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRSystem_XRShaderIDs_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
-impl XRSystem_XRShaderIDs {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __XRSystem_XRShaderIDs_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 

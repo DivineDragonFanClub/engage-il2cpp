@@ -11,6 +11,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalsequence/AnimalSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)]
+    pub struct AnimalSequence {
+        #[rename(name = "AnimalList")]
+        pub animal_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "AnimalLoadingCount")]
+        pub animal_loading_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,16 +71,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalsequence/AnimalSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)]
-    pub struct AnimalSequence {
-        #[rename(name = "AnimalList")]
-        pub animal_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "AnimalLoadingCount")]
-        pub animal_loading_count: i32,
     }
 }
 

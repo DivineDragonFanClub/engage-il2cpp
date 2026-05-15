@@ -12,6 +12,46 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventContext.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ResourceManager_DiagnosticEventContext {}
+
+    impl ::unity2::ClassIdentity for ResourceManager_DiagnosticEventContext {
+        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement";
+
+        const NAME: &'static str = "ResourceManager.DiagnosticEventContext";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ResourceManager_DiagnosticEventContext {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_CompletedOperation_1.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.ResourceManagement",
+        name = "ResourceManager.CompletedOperation`1"
+    )]
+    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 >)]
+    #[parent(crate::system::object::Object)]
+    pub struct ResourceManager_CompletedOperation_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Success")]
+        pub m_success: bool,
+        #[rename(name = "m_ReleaseDependenciesOnFailure")]
+        pub m_release_dependencies_on_failure: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventType.md"))]
     #[repr(C)]
     #[derive(
@@ -72,46 +112,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_CompletedOperation_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement",
-        name = "ResourceManager.CompletedOperation`1"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 >)]
-    #[parent(crate::system::object::Object)]
-    pub struct ResourceManager_CompletedOperation_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Success")]
-        pub m_success: bool,
-        #[rename(name = "m_ReleaseDependenciesOnFailure")]
-        pub m_release_dependencies_on_failure: bool,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventContext.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ResourceManager_DiagnosticEventContext {}
-
-    impl ::unity2::ClassIdentity for ResourceManager_DiagnosticEventContext {
-        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement";
-
-        const NAME: &'static str = "ResourceManager.DiagnosticEventContext";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ResourceManager_DiagnosticEventContext {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.ResourceManagement",
@@ -154,52 +154,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-resource_management-resourcemanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "Init", args = 4)]
-    pub fn init(
-        self,
-        result: T0,
-        success: bool,
-        error_msg: ::unity2::Il2CppString,
-        release_dependencies_on_failure: bool,
-    ) -> ();
-
-    #[doc = "`get_DebugName()` overload"]
-    #[method(name = "get_DebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    #[method(name = "InvokeWaitForCompletion", args = 0)]
-    pub fn invoke_wait_for_completion(self) -> bool;
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceManager_CompletedOperation_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-resource_management-resourcemanager")]
 #[doc(hidden)]
@@ -583,6 +537,52 @@ impl ResourceManager_DiagnosticEventContext {
                 ::core::option::Option::None,
             )
         }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "Init", args = 4)]
+    pub fn init(
+        self,
+        result: T0,
+        success: bool,
+        error_msg: ::unity2::Il2CppString,
+        release_dependencies_on_failure: bool,
+    ) -> ();
+
+    #[doc = "`get_DebugName()` overload"]
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager_CompletedOperation_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
+        this
     }
 }
 
@@ -3860,7 +3860,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn provide_resource_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn provide_resource_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -3910,7 +3910,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn start_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , operation : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < M0 > > , dependency : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn start_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , operation : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < M0 > > , dependency : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4023,7 +4023,7 @@ pub trait IResourceManagerMethods: IResourceManager {
             )
         }
     }
-    pub fn create_operation<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_operation<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         actual_type: impl ::core::convert::Into<::unity2::SystemType>,
         type_hash: impl ::core::convert::Into<i32>,
@@ -4152,7 +4152,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn create_completed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , result : impl :: core :: convert :: Into < M0 > , error_msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn create_completed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , result : impl :: core :: convert :: Into < M0 > , error_msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4254,7 +4254,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn create_group_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >{
+    }    fn create_group_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4304,7 +4304,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn create_group_operation_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , allow_failed_dependencies : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >{
+    }    fn create_group_operation_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , allow_failed_dependencies : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4384,7 +4384,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn provide_resources < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn provide_resources < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4435,7 +4435,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn provide_resources_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn provide_resources_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4487,7 +4487,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn create_chain_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy , M1 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn create_chain_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4542,7 +4542,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn create_chain_operation_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn create_chain_operation_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4593,7 +4593,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn create_chain_operation_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy , M1 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn create_chain_operation_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M1 > , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4649,7 +4649,7 @@ pub trait IResourceManagerMethods: IResourceManager {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn create_chain_operation_4 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn create_chain_operation_4 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dependent_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , callback : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

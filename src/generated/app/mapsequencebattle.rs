@@ -16,6 +16,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceBattle.RangeWarpTargets")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+    pub struct MapSequenceBattle_RangeWarpTargets {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceBattle.BitFieldStatus")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)]
+    pub struct MapSequenceBattle_BitFieldStatus {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -68,10 +78,97 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceBattle.RangeWarpTargets")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-    pub struct MapSequenceBattle_RangeWarpTargets {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceBattle")]
+    # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)]
+    pub struct MapSequenceBattle {
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::mapsequencebattle::MapSequenceBattle_Kinds,
+        #[rename(name = "m_TargetIndex")]
+        pub m_target_index: i32,
+        #[rename(name = "m_BattleCount")]
+        pub m_battle_count: i32,
+        #[rename(name = "m_GainExp")]
+        pub m_gain_exp: i32,
+        #[rename(name = "m_ExpStatus")]
+        pub m_exp_status: crate::app::battleinfoside::BattleInfoSide_Status,
+        #[rename(name = "m_ExpendCount")]
+        pub m_expend_count: i32,
+        #[rename(name = "m_StartX")]
+        pub m_start_x: i32,
+        #[rename(name = "m_StartZ")]
+        pub m_start_z: i32,
+        #[rename(name = "m_GrowTalk")]
+        pub m_grow_talk: bool,
+        #[rename(name = "m_Defender")]
+        pub m_defender: crate::app::unit::Unit,
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::mapsequencebattle::MapSequenceBattle_BitFieldStatus,
+        #[rename(name = "m_DeadUnits")]
+        pub m_dead_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+        #[rename(name = "m_DieEvents")]
+        pub m_die_events: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+        #[rename(name = "m_FadeUnits")]
+        pub m_fade_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+        #[rename(name = "m_DropUnits")]
+        pub m_drop_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapSequenceBattle_Status {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSequenceBattle_Status {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapSequenceBattle.Status";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSequenceBattle_Status {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapSequenceBattle_Status {
+        pub fn multi_battle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn single_rod() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn used_rod() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn used_move() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn last_boss_die() -> Self {
+            Self { value: 16 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceBattle.UnitList")]
@@ -105,11 +202,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceBattle.BitFieldStatus")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)]
-    pub struct MapSequenceBattle_BitFieldStatus {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Label.md"))]
     #[repr(C)]
@@ -220,98 +312,6 @@ mod __types {
 
         pub fn end() -> Self {
             Self { value: 18 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceBattle")]
-    # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)]
-    pub struct MapSequenceBattle {
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::mapsequencebattle::MapSequenceBattle_Kinds,
-        #[rename(name = "m_TargetIndex")]
-        pub m_target_index: i32,
-        #[rename(name = "m_BattleCount")]
-        pub m_battle_count: i32,
-        #[rename(name = "m_GainExp")]
-        pub m_gain_exp: i32,
-        #[rename(name = "m_ExpStatus")]
-        pub m_exp_status: crate::app::battleinfoside::BattleInfoSide_Status,
-        #[rename(name = "m_ExpendCount")]
-        pub m_expend_count: i32,
-        #[rename(name = "m_StartX")]
-        pub m_start_x: i32,
-        #[rename(name = "m_StartZ")]
-        pub m_start_z: i32,
-        #[rename(name = "m_GrowTalk")]
-        pub m_grow_talk: bool,
-        #[rename(name = "m_Defender")]
-        pub m_defender: crate::app::unit::Unit,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::mapsequencebattle::MapSequenceBattle_BitFieldStatus,
-        #[rename(name = "m_DeadUnits")]
-        pub m_dead_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
-        #[rename(name = "m_DieEvents")]
-        pub m_die_events: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
-        #[rename(name = "m_FadeUnits")]
-        pub m_fade_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
-        #[rename(name = "m_DropUnits")]
-        pub m_drop_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapSequenceBattle_Status {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSequenceBattle_Status {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapSequenceBattle.Status";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSequenceBattle_Status {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapSequenceBattle_Status {
-        pub fn multi_battle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn single_rod() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn used_rod() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn used_move() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn last_boss_die() -> Self {
-            Self { value: 16 }
         }
     }
 }
@@ -517,282 +517,6 @@ impl MapSequenceBattle_RangeWarpTargets {
             this, rod_unit, unit, range, warp_x, warp_z, can_self,
         );
         this
-    }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceBattle_UnitList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::class(),
-                "TryAdd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::NAME,
-                    "TryAdd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_add(
-        this: MapSequenceBattle_UnitList,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapSequenceBattle_UnitList,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add::get_offset() as isize),
-        );
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceBattle_UnitList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceBattle_UnitList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-pub trait IMapSequenceBattle_UnitListMethods: IMapSequenceBattle_UnitList {
-    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
-    fn try_add(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceBattle_UnitList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceBattle_UnitList_unity2_raw::try_add(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceBattle_UnitList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceBattle_UnitList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl<__T: IMapSequenceBattle_UnitList> IMapSequenceBattle_UnitListMethods for __T {}
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_UnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceBattle_UnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceBattle_UnitListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceBattle_BattleUnitScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceBattle_BattleUnitScope,
-        info: crate::app::battleinfo::BattleInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceBattle_BattleUnitScope,
-            crate::app::battleinfo::BattleInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: MapSequenceBattle_BattleUnitScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceBattle_BattleUnitScope,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_BattleUnitScope {
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
-    pub fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
-        unsafe {
-            __MapSequenceBattle_BattleUnitScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __MapSequenceBattle_BattleUnitScope_unity2_raw::dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 
@@ -5904,6 +5628,282 @@ impl MapSequenceBattle {
         });
         <Self as IMapSequenceBattleMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceBattle_UnitList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::class(),
+                "TryAdd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::NAME,
+                    "TryAdd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_add(
+        this: MapSequenceBattle_UnitList,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapSequenceBattle_UnitList,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_add::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceBattle_UnitList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSequenceBattle_UnitList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceBattle_UnitList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+pub trait IMapSequenceBattle_UnitListMethods: IMapSequenceBattle_UnitList {
+    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
+    fn try_add(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceBattle_UnitList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceBattle_UnitList_unity2_raw::try_add(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceBattle_UnitList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceBattle_UnitList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl<__T: IMapSequenceBattle_UnitList> IMapSequenceBattle_UnitListMethods for __T {}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_UnitList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle_UnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattle_UnitListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceBattle_BattleUnitScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSequenceBattle_BattleUnitScope,
+        info: crate::app::battleinfo::BattleInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSequenceBattle_BattleUnitScope,
+            crate::app::battleinfo::BattleInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceBattle_BattleUnitScope as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: MapSequenceBattle_BattleUnitScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSequenceBattle_BattleUnitScope,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_BattleUnitScope {
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
+    pub fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
+        unsafe {
+            __MapSequenceBattle_BattleUnitScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe {
+            __MapSequenceBattle_BattleUnitScope_unity2_raw::dispose(
+                self,
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

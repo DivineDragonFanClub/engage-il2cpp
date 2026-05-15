@@ -12,50 +12,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MyRoomEventClip_EventClipType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MyRoomEventClip_EventClipType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MyRoomEventClip.EventClipType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MyRoomEventClip_EventClipType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MyRoomEventClip_EventClipType {
-        pub fn effect() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn sound() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomEventClip")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -110,6 +66,50 @@ mod __types {
         }
 
         pub fn foreground() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MyRoomEventClip_EventClipType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MyRoomEventClip_EventClipType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MyRoomEventClip.EventClipType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MyRoomEventClip_EventClipType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MyRoomEventClip_EventClipType {
+        pub fn effect() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn sound() -> Self {
             Self { value: 1 }
         }
     }

@@ -18,6 +18,65 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceeditor/MapSequenceEditor_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapSequenceEditor_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSequenceEditor_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapSequenceEditor.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSequenceEditor_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapSequenceEditor_Label {
+        pub fn main_menu() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn free_cursor() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MapSequenceEditor.SaveSequence.EndConfirmDialog.ConfirmYesDialogItem"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem {
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::system::action::Action,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -27,6 +86,47 @@ mod __types {
     pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog {
         #[rename(name = "m_CancelCallback")]
         pub m_cancel_callback: crate::system::action::Action,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceEditor.SaveSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceEditor_SaveSequence {
+        #[static_field]
+        #[rename(name = "s_IsEndEdit")]
+        pub s_is_end_edit: bool,
+        #[rename(name = "m_ParentMenu")]
+        pub m_parent_menu: crate::app::basicmenu::BasicMenu,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog"
+    )]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MapSequenceEditor.SaveSequence.UploadConfirmDialog.DialogItemNo"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo {
+        #[rename(name = "ACallback")]
+        pub a_callback: crate::system::action::Action,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog"
+    )]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog {
+        #[rename(name = "m_BCallback")]
+        pub m_b_callback: crate::system::action::Action,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_Label.md"))]
@@ -77,37 +177,15 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "MapSequenceEditor.SaveSequence.EndConfirmDialog.ConfirmYesDialogItem"
+        name = "MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog.DialogItemNo"
     )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem {
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog.YesItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem {
-        #[rename(name = "m_ACallback")]
-        pub m_a_callback: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog"
-    )]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog {
-        #[rename(name = "m_BCallback")]
-        pub m_b_callback: crate::system::action::Action,
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo {
+        #[rename(name = "ACallback")]
+        pub a_callback: crate::system::action::Action,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor.md"))]
@@ -137,77 +215,10 @@ mod __types {
         pub m_is_playable_failure: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceEditor.SaveSequence.UploadConfirmDialog.DialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo {
-        #[rename(name = "ACallback")]
-        pub a_callback: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog"
-    )]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceEditor.ClearObjectsSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MapSequenceEditor_ClearObjectsSequence {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceeditor/MapSequenceEditor_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapSequenceEditor_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSequenceEditor_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapSequenceEditor.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSequenceEditor_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapSequenceEditor_Label {
-        pub fn main_menu() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn free_cursor() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog.md"))]
     #[::unity2::class(
@@ -217,31 +228,156 @@ mod __types {
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog.DialogItemNo"
+        name = "MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog.YesItem"
     )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo {
-        #[rename(name = "ACallback")]
-        pub a_callback: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceEditor.SaveSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceEditor_SaveSequence {
-        #[static_field]
-        #[rename(name = "s_IsEndEdit")]
-        pub s_is_end_edit: bool,
-        #[rename(name = "m_ParentMenu")]
-        pub m_parent_menu: crate::app::basicmenu::BasicMenu,
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem {
+        #[rename(name = "m_ACallback")]
+        pub m_a_callback: crate::system::action::Action,
     }
 }
 
 #[cfg(feature = "app-mapsequenceeditor-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapsequenceeditor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
+        text: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
+            ::unity2::Il2CppString,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, text, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+pub trait IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods:
+    IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    fn ctor(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            let __receiver = < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl<__T: IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem>
+    IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        text: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods > :: ctor (this , text , decide_callback) ;
+        this
+    }
+}
 
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
@@ -454,8 +590,504 @@ impl MapSequenceEditor_SaveSequence_UploadConfirmDialog {
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw {
+mod __MapSequenceEditor_SaveSequence_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_theme_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "OpenThemeMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "OpenThemeMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_theme_menu(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open_theme_menu::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "SaveMap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "SaveMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn save_map(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_save_map::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid_sortie {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "IsValidSortie",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsValidSortie",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid_sortie(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid_sortie::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid_absent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "IsValidAbsent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsValidAbsent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid_absent(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid_absent::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_edit_rule_check {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "IsEditRuleCheck",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsEditRuleCheck",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_edit_rule_check(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_edit_rule_check::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_upload_dialog {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "OpenUploadDialog",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "OpenUploadDialog",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_upload_dialog(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open_upload_dialog::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "UploadMap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_map(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_map::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_confirm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "EndConfirm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "EndConfirm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn end_confirm(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_end_confirm::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_create(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    "OnDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_dispose(
+        this: MapSequenceEditor_SaveSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -463,14 +1095,25 @@ mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -479,35 +1122,43 @@ mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity
         }
     }
     pub unsafe fn ctor(
-        this: MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
-        text: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
+        this: MapSequenceEditor_SaveSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
-            ::unity2::Il2CppString,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, text, decide_callback, __unity2_method_info)
+        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_cctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -515,74 +1166,195 @@ mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn a_call(
-        this: MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
+                .offset(__lookup_cctor::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods:
-    IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem
-{
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    fn ctor(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
+impl MapSequenceEditor_SaveSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(decide_callback),
+            __MapSequenceEditor_SaveSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __MapSequenceEditor_SaveSequence_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+pub trait IMapSequenceEditor_SaveSequenceMethods: IMapSequenceEditor_SaveSequence {
+    #[doc = "`OpenThemeMenu()` overload"]
+    fn open_theme_menu(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::open_theme_menu(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveMap()` overload"]
+    fn save_map(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::save_map(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsValidSortie()` overload"]
+    fn is_valid_sortie(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::is_valid_sortie(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsValidAbsent()` overload"]
+    fn is_valid_absent(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::is_valid_absent(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEditRuleCheck()` overload"]
+    fn is_edit_rule_check(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::is_edit_rule_check(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OpenUploadDialog()` overload"]
+    fn open_upload_dialog(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::open_upload_dialog(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadMap()` overload"]
+    fn upload_map(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::upload_map(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EndConfirm()` overload"]
+    fn end_confirm(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::end_confirm(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::on_create(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::on_dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSequenceEditor_SaveSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem>
-    IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods for __T
-{
-}
+impl<__T: IMapSequenceEditor_SaveSequence> IMapSequenceEditor_SaveSequenceMethods for __T {}
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        text: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-    ) -> Self {
+impl MapSequenceEditor_SaveSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem
-                ),
+                ::core::stringify!(MapSequenceEditor_SaveSequence),
                 ::core::stringify!(new),
             )
         });
-        < Self as IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods > :: ctor (this , text , decide_callback) ;
+        <Self as IMapSequenceEditor_SaveSequenceMethods>::ctor(this);
         this
     }
 }
@@ -590,7 +1362,7 @@ impl MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem {
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw {
+mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -600,11 +1372,13 @@ mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_u
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::basicmenuitem::BasicMenuItem,
+                > as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -613,20 +1387,177 @@ mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_u
         }
     }
     pub unsafe fn ctor(
-        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
-        a_callback: crate::system::action::Action,
+        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
-            crate::system::action::Action,
+            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, a_callback, __unity2_method_info)
+        inner(this, menu_item_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        a_callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, a_callback, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        a_callback: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (a_callback) , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods:
+    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog
+{
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl<__T: IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog>
+    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods for __T
+{
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
+        action: crate::system::action::Action,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
+            crate::system::action::Action,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, action, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -636,10 +1567,10 @@ mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_u
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -648,11 +1579,11 @@ mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_u
         }
     }
     pub unsafe fn a_call(
-        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
+        this: MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
+            MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -664,45 +1595,57 @@ mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_u
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods:
-    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem
+pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods:
+    IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo
 {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, a_callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        action: impl ::core::convert::Into<crate::system::action::Action>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
         unsafe {
-            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (a_callback) , :: core :: option :: Option :: None)
+            let __receiver = < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+            let __receiver = < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem>
-    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods for __T
+impl<__T: IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo>
+    IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods for __T
 {
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(a_callback: crate::system::action::Action) -> Self {
+impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem
-                ),
+                ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo),
                 ::core::stringify!(new),
             )
         });
-        < Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods > :: ctor (this , a_callback) ;
+        <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods>::ctor(
+            this, action, text,
+        );
         this
     }
 }
@@ -911,6 +1854,126 @@ impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog {
             menu_item_list,
             action,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+        action: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+pub trait IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods:
+    IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo
+{
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+        unsafe {
+            let __receiver = < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl<__T: IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo>
+    IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods for __T
+{
+}
+
+#[cfg(feature = "app-mapsequenceeditor")]
+impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods > :: ctor (this , action) ;
         this
     }
 }
@@ -3612,297 +4675,6 @@ impl MapSequenceEditor {
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
-        action: crate::system::action::Action,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
-            crate::system::action::Action,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, action, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods:
-    IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo
-{
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        action: impl ::core::convert::Into<crate::system::action::Action>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo>
-    IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods>::ctor(
-            this, action, text,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        a_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, a_callback, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        a_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (a_callback) , :: core :: option :: Option :: None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods:
-    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog
-{
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog>
-    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods>::ctor(
-            this,
-            menu_item_list,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapSequenceEditor_ClearObjectsSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4339,7 +5111,7 @@ impl MapSequenceEditor_SaveSequence_EndConfirmDialog {
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw {
+mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4350,10 +5122,10 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -4362,12 +5134,12 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
         }
     }
     pub unsafe fn ctor(
-        this: MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
-        action: crate::system::action::Action,
+        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
+        a_callback: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
             crate::system::action::Action,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -4375,7 +5147,7 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, action, __unity2_method_info)
+        inner(this, a_callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4385,10 +5157,10 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -4397,11 +5169,11 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
         }
     }
     pub unsafe fn a_call(
-        this: MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+        this: MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,
+            MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -4413,817 +5185,45 @@ mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_u
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods:
-    IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo
+pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods:
+    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem
 {
     #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+    fn ctor(self, a_callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
         unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None)
+            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (a_callback) , :: core :: option :: Option :: None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+            let __receiver = < MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo>
-    IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods for __T
+impl<__T: IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem>
+    IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo {
+impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem {
     #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(action: crate::system::action::Action) -> Self {
+    pub fn new(a_callback: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
                 ::core::stringify!(
-                    MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo
+                    MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem
                 ),
                 ::core::stringify!(new),
             )
         });
-        < Self as IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods > :: ctor (this , action) ;
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceEditor_SaveSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_theme_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "OpenThemeMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenThemeMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_theme_menu(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_theme_menu::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "SaveMap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "SaveMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_map(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_map::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid_sortie {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "IsValidSortie",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsValidSortie",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_valid_sortie(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid_sortie::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid_absent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "IsValidAbsent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsValidAbsent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_valid_absent(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid_absent::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_edit_rule_check {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "IsEditRuleCheck",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsEditRuleCheck",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_edit_rule_check(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_edit_rule_check::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_upload_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "OpenUploadDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenUploadDialog",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_upload_dialog(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_upload_dialog::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "UploadMap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "UploadMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_map(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upload_map::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_confirm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "EndConfirm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndConfirm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_confirm(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_confirm::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceEditor_SaveSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceEditor_SaveSequence as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_SaveSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapSequenceEditor_SaveSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapSequenceEditor_SaveSequence_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-pub trait IMapSequenceEditor_SaveSequenceMethods: IMapSequenceEditor_SaveSequence {
-    #[doc = "`OpenThemeMenu()` overload"]
-    fn open_theme_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::open_theme_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SaveMap()` overload"]
-    fn save_map(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::save_map(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsValidSortie()` overload"]
-    fn is_valid_sortie(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::is_valid_sortie(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsValidAbsent()` overload"]
-    fn is_valid_absent(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::is_valid_absent(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEditRuleCheck()` overload"]
-    fn is_edit_rule_check(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::is_edit_rule_check(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenUploadDialog()` overload"]
-    fn open_upload_dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::open_upload_dialog(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadMap()` overload"]
-    fn upload_map(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::upload_map(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EndConfirm()` overload"]
-    fn end_confirm(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::end_confirm(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceEditor_SaveSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceEditor_SaveSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl<__T: IMapSequenceEditor_SaveSequence> IMapSequenceEditor_SaveSequenceMethods for __T {}
-
-#[cfg(feature = "app-mapsequenceeditor")]
-impl MapSequenceEditor_SaveSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceEditor_SaveSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceEditor_SaveSequenceMethods>::ctor(this);
+        < Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods > :: ctor (this , a_callback) ;
         this
     }
 }

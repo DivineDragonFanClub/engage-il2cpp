@@ -1136,7 +1136,9 @@ pub trait IAssetBundleMethods: IAssetBundle {
             )
         }
     }
-    pub fn load_all_assets_async<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn load_all_assets_async<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
     ) -> crate::unity_engine::assetbundlerequest::AssetBundleRequest {
         static OPEN: ::std::sync::LazyLock<

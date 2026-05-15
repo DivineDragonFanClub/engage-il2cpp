@@ -4401,7 +4401,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn track_handle_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn track_handle_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4475,7 +4475,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn load_asset_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn load_asset_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4525,7 +4525,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_asset_with_chain < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn load_asset_with_chain < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4576,7 +4576,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_asset_async_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn load_asset_async_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4682,7 +4682,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn load_assets_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn load_assets_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4734,7 +4734,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_assets_with_chain < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , keys : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerable :: IEnumerable > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn load_assets_with_chain < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , keys : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerable :: IEnumerable > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4788,7 +4788,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_assets_async_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , keys : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerable :: IEnumerable > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn load_assets_async_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , keys : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerable :: IEnumerable > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4841,7 +4841,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_assets_with_chain_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn load_assets_with_chain_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , dep : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4894,7 +4894,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
                 ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }    pub fn load_assets_async_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
+    }    fn load_assets_async_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , release_dependencies_on_failure : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -4995,7 +4995,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
             )
         }
     }
-    pub fn release<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn release<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         obj: impl ::core::convert::Into<M0>,
     ) -> () {
@@ -5050,7 +5050,7 @@ pub trait IAddressablesImplMethods: IAddressablesImpl {
             )
         }
     }
-    pub fn release_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn release_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > >,
     ) -> () {

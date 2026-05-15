@@ -17,17 +17,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -94,13 +83,13 @@ mod __types {
         pub m_is_reported: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes"
+        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo"
     )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
         #[rename(name = "m_Action")]
         pub m_action: crate::system::action::Action,
     }
@@ -112,137 +101,21 @@ mod __types {
         #[rename(name = "m_CancelCallback")]
         pub m_cancel_callback: crate::system::action::Action,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+        #[rename(name = "m_Action")]
+        pub m_action: crate::system::action::Action,
+    }
 }
 
 #[cfg(feature = "app-versusreportsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-versusreportsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-        action: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, action, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods:
-    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo
-{
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo>
-    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(
-            this, action,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-versusreportsequence")]
 #[doc(hidden)]
@@ -1230,7 +1103,7 @@ impl VersusReportSequence {
 #[cfg(feature = "app-versusreportsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
+mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1239,14 +1112,12 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1255,14 +1126,12 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-        text: ::unity2::Il2CppString,
+        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
         action: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
-            ::unity2::Il2CppString,
+            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
             crate::system::action::Action,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -1270,7 +1139,7 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, text, action, __unity2_method_info)
+        inner(this, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1280,10 +1149,10 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1292,11 +1161,11 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+            VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1308,20 +1177,15 @@ mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
 }
 
 #[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:
-    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes
+pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods:
+    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo
 {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    fn ctor(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        action: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>) -> () {
         unsafe {
-            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::ctor(
+            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(text),
                 ::core::convert::Into::into(action),
                 ::core::option::Option::None,
             )
@@ -1330,8 +1194,8 @@ pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(
+            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1340,24 +1204,24 @@ pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:
 }
 
 #[cfg(feature = "app-versusreportsequence")]
-impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes>
-    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T
+impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo>
+    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T
 {
 }
 
 #[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(action: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this, text, action,
+        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(
+            this, action,
         );
         this
     }
@@ -1619,6 +1483,142 @@ impl VersusReportSequence_ConfirmDialog {
             this,
             menu_item_list,
             cancel_callback,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+        text: ::unity2::Il2CppString,
+        action: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+            ::unity2::Il2CppString,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, text, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:
+    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    fn ctor(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        action: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl<__T: IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes>
+    IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T
+{
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this, text, action,
         );
         this
     }

@@ -20,43 +20,6 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ResourceObject_Coroutine {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ResourceObject_Callback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ResourceObject {
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "m_StartCallback")]
-        pub m_start_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_TickCallback")]
-        pub m_tick_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_Coroutine")]
-        pub m_coroutine: crate::app::resourceobject::ResourceObject_Coroutine,
-        #[rename(name = "m_BindProc")]
-        pub m_bind_proc: crate::app::procinst::ProcInst,
-        #[rename(name = "m_BindHolder")]
-        pub m_bind_holder: crate::app::bindholder::BindHolder,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::resourceobject::ResourceObject_Sequence,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::resourceobject::ResourceObject_Flags,
-        #[rename(name = "m_DelayTime")]
-        pub m_delay_time: f32,
-        #[rename(name = "m_BindTime")]
-        pub m_bind_time: f32,
-        #[rename(name = "m_LifeTime")]
-        pub m_life_time: f32,
-        #[rename(name = "m_SoundLabel")]
-        pub m_sound_label: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
     #[repr(C)]
     #[derive(
@@ -103,6 +66,43 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ResourceObject_Callback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ResourceObject {
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "m_StartCallback")]
+        pub m_start_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_TickCallback")]
+        pub m_tick_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_Coroutine")]
+        pub m_coroutine: crate::app::resourceobject::ResourceObject_Coroutine,
+        #[rename(name = "m_BindProc")]
+        pub m_bind_proc: crate::app::procinst::ProcInst,
+        #[rename(name = "m_BindHolder")]
+        pub m_bind_holder: crate::app::bindholder::BindHolder,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::resourceobject::ResourceObject_Sequence,
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::resourceobject::ResourceObject_Flags,
+        #[rename(name = "m_DelayTime")]
+        pub m_delay_time: f32,
+        #[rename(name = "m_BindTime")]
+        pub m_bind_time: f32,
+        #[rename(name = "m_LifeTime")]
+        pub m_life_time: f32,
+        #[rename(name = "m_SoundLabel")]
+        pub m_sound_label: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Flags.md"))]
@@ -2653,7 +2653,7 @@ pub trait IResourceObjectMethods: IResourceObject {
             __ResourceObject_unity2_raw::is_terminated(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn load_async<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn load_async<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {

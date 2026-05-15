@@ -546,7 +546,7 @@ impl DataTypesExtension {
             )
         }
     }
-    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -598,7 +598,9 @@ impl DataTypesExtension {
             )
         }
     }
-    pub fn try_get_component_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_component_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         component: impl ::core::convert::Into<crate::unity_engine::component::Component>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

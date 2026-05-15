@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData_SampleClass.md"))]
+    #[::unity2::class(namespace = "App", name = "TemplateOneData.SampleClass")]
+    #[parent(crate::system::object::Object)]
+    pub struct TemplateOneData_SampleClass {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/templateonedata/TemplateOneData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -63,11 +68,6 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData_SampleClass.md"))]
-    #[::unity2::class(namespace = "App", name = "TemplateOneData.SampleClass")]
-    #[parent(crate::system::object::Object)]
-    pub struct TemplateOneData_SampleClass {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData.md"))]
     #[::unity2::class(namespace = "App", name = "TemplateOneData")]

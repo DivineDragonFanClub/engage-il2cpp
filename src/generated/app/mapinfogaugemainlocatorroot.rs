@@ -14,6 +14,14 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
+    #[parent(crate::app::mapinfobase::MapInfoBase)]
+    pub struct MapInfoGaugeMainLocatorRoot {
+        #[rename(name = "m_MainLocatorRoot")]
+        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]
     #[repr(C)]
     #[derive(
@@ -68,14 +76,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
-    #[parent(crate::app::mapinfobase::MapInfoBase)]
-    pub struct MapInfoGaugeMainLocatorRoot {
-        #[rename(name = "m_MainLocatorRoot")]
-        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
     }
 }
 

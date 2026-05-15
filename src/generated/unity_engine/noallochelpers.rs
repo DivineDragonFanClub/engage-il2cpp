@@ -171,7 +171,7 @@ mod __NoAllocHelpers_unity2_raw {
 
 #[cfg(feature = "unity_engine-noallochelpers")]
 impl NoAllocHelpers {
-    pub fn resize_list<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn resize_list<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         size: impl ::core::convert::Into<i32>,
     ) -> () {
@@ -226,7 +226,9 @@ impl NoAllocHelpers {
             )
         }
     }
-    pub fn ensure_list_elem_count<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn ensure_list_elem_count<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         count: impl ::core::convert::Into<i32>,
     ) -> () {
@@ -290,7 +292,7 @@ impl NoAllocHelpers {
             )
         }
     }
-    pub fn safe_length_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn safe_length_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> i32 {
         static OPEN: ::std::sync::LazyLock<
@@ -342,7 +344,9 @@ impl NoAllocHelpers {
             )
         }
     }
-    pub fn extract_array_from_list_t<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn extract_array_from_list_t<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<

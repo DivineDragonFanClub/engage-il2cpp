@@ -10,6 +10,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md"))]
+    #[::unity2::class(namespace = "App", name = "Map.CellMesh")]
+    #[parent(crate::app::dynamicmesh::DynamicMesh)]
+    pub struct Map_CellMesh {
+        #[rename(name = "m_CellVertex")]
+        pub m_cell_vertex: crate::app::map::Map_CellVertex,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/map/Map_Pos.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -133,18 +141,956 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "Map.FillList")]
     # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: map :: Map_Pos >)]
     pub struct Map_FillList {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md"))]
-    #[::unity2::class(namespace = "App", name = "Map.CellMesh")]
-    #[parent(crate::app::dynamicmesh::DynamicMesh)]
-    pub struct Map_CellMesh {
-        #[rename(name = "m_CellVertex")]
-        pub m_cell_vertex: crate::app::map::Map_CellVertex,
-    }
 }
 
 #[cfg(feature = "app-map-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-map")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Map_CellMesh_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Map_CellMesh,
+        go: crate::unity_engine::gameobject::GameObject,
+        sub_mesh_count: i32,
+        vertex_capacity: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            crate::unity_engine::gameobject::GameObject,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            go,
+            sub_mesh_count,
+            vertex_capacity,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_tangents5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddTangents5",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddTangents5",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_tangents5(
+        this: Map_CellMesh,
+        tangent: *mut crate::unity_engine::vector4::Vector4,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            *mut crate::unity_engine::vector4::Vector4,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_tangents5::get_offset() as isize),
+        );
+        inner(this, tangent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell::get_offset() as isize),
+        );
+        inner(this, x, z, color, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell_2(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        rotation: i32,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            i32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            x,
+            z,
+            color,
+            uv0,
+            uv2,
+            rotation,
+            distance,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell_3(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell_3::get_offset() as isize),
+        );
+        inner(this, x, z, uv0, uv2, distance, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell_4(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell_4::get_offset() as isize),
+        );
+        inner(
+            this,
+            x,
+            z,
+            color0,
+            color1,
+            color2,
+            color3,
+            distance,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell_5(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell_5::get_offset() as isize),
+        );
+        inner(
+            this,
+            x,
+            z,
+            color0,
+            color1,
+            color2,
+            color3,
+            uv0,
+            uv2,
+            distance,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell_6(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        dir: crate::app::dir_2::Dir_Type,
+        color: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::app::dir_2::Dir_Type,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::vector2::Vector2,
+            crate::unity_engine::vector2::Vector2,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell_6::get_offset() as isize),
+        );
+        inner(
+            this,
+            x,
+            z,
+            dir,
+            color,
+            uv0,
+            uv2,
+            distance,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_straddle_cell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddStraddleCell",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddStraddleCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_straddle_cell(
+        this: Map_CellMesh,
+        unit: crate::app::unit::Unit,
+        color: crate::unity_engine::color::Color,
+        uv_rotate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            crate::app::unit::Unit,
+            crate::unity_engine::color::Color,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_straddle_cell::get_offset() as isize),
+        );
+        inner(this, unit, color, uv_rotate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_event_cell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
+                "AddEventCell",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
+                    "AddEventCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_event_cell(
+        this: Map_CellMesh,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Map_CellMesh,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_event_cell::get_offset() as isize),
+        );
+        inner(this, x, z, color, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-map")]
+pub trait IMap_CellMeshMethods: IMap_CellMesh {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
+    fn ctor(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        sub_mesh_count: impl ::core::convert::Into<i32>,
+        vertex_capacity: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(sub_mesh_count),
+                ::core::convert::Into::into(vertex_capacity),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddTangents5(*mutcrate::unity_engine::vector4::Vector4)` overload"]
+    fn add_tangents5(self) -> crate::unity_engine::vector4::Vector4 {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            __Map_CellMesh_unity2_raw::add_tangents5(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]
+    fn add_cell(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]
+    fn add_cell_2(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        rotation: impl ::core::convert::Into<i32>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell_2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv2),
+                ::core::convert::Into::into(rotation),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    fn add_cell_3(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell_3(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv2),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]
+    fn add_cell_4(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color0: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color2: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color3: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell_4(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color0),
+                ::core::convert::Into::into(color1),
+                ::core::convert::Into::into(color2),
+                ::core::convert::Into::into(color3),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    fn add_cell_5(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color0: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color2: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color3: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell_5(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color0),
+                ::core::convert::Into::into(color1),
+                ::core::convert::Into::into(color2),
+                ::core::convert::Into::into(color3),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv2),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    fn add_cell_6(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        distance: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_cell_6(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(dir),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv0),
+                ::core::convert::Into::into(uv2),
+                ::core::convert::Into::into(distance),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]
+    fn add_straddle_cell(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        uv_rotate: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_straddle_cell(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(uv_rotate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]
+    fn add_event_cell(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Map_CellMesh_unity2_raw::add_event_cell(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-map")]
+impl<__T: IMap_CellMesh> IMap_CellMeshMethods for __T {}
+
+#[cfg(feature = "app-map")]
+impl Map_CellMesh {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
+    pub fn new(
+        go: crate::unity_engine::gameobject::GameObject,
+        sub_mesh_count: i32,
+        vertex_capacity: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Map_CellMesh),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMap_CellMeshMethods>::ctor(this, go, sub_mesh_count, vertex_capacity);
+        this
+    }
+}
 
 #[cfg(feature = "app-map")]
 #[doc(hidden)]
@@ -7484,952 +8430,6 @@ impl Map_FillList {
             )
         });
         <Self as IMap_FillListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-map")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Map_CellMesh_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Map_CellMesh,
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            crate::unity_engine::gameobject::GameObject,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            go,
-            sub_mesh_count,
-            vertex_capacity,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_tangents5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddTangents5",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddTangents5",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_tangents5(
-        this: Map_CellMesh,
-        tangent: *mut crate::unity_engine::vector4::Vector4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            *mut crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_tangents5::get_offset() as isize),
-        );
-        inner(this, tangent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        color: crate::unity_engine::color::Color,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::color::Color,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell::get_offset() as isize),
-        );
-        inner(this, x, z, color, distance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell_2(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        color: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        rotation: i32,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            i32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            color,
-            uv0,
-            uv2,
-            rotation,
-            distance,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell_3(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell_3::get_offset() as isize),
-        );
-        inner(this, x, z, uv0, uv2, distance, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell_4(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        color0: crate::unity_engine::color::Color,
-        color1: crate::unity_engine::color::Color,
-        color2: crate::unity_engine::color::Color,
-        color3: crate::unity_engine::color::Color,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell_4::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            color0,
-            color1,
-            color2,
-            color3,
-            distance,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell_5(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        color0: crate::unity_engine::color::Color,
-        color1: crate::unity_engine::color::Color,
-        color2: crate::unity_engine::color::Color,
-        color3: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell_5::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            color0,
-            color1,
-            color2,
-            color3,
-            uv0,
-            uv2,
-            distance,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_cell_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddCell",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_cell_6(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        dir: crate::app::dir_2::Dir_Type,
-        color: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::app::dir_2::Dir_Type,
-            crate::unity_engine::color::Color,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::vector2::Vector2,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_cell_6::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            dir,
-            color,
-            uv0,
-            uv2,
-            distance,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_straddle_cell {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddStraddleCell",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddStraddleCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_straddle_cell(
-        this: Map_CellMesh,
-        unit: crate::app::unit::Unit,
-        color: crate::unity_engine::color::Color,
-        uv_rotate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            crate::app::unit::Unit,
-            crate::unity_engine::color::Color,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_straddle_cell::get_offset() as isize),
-        );
-        inner(this, unit, color, uv_rotate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_event_cell {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Map_CellMesh as ::unity2::ClassIdentity>::class(),
-                "AddEventCell",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Map_CellMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddEventCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_event_cell(
-        this: Map_CellMesh,
-        x: i32,
-        z: i32,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Map_CellMesh,
-            i32,
-            i32,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_event_cell::get_offset() as isize),
-        );
-        inner(this, x, z, color, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-map")]
-pub trait IMap_CellMeshMethods: IMap_CellMesh {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
-    fn ctor(
-        self,
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        sub_mesh_count: impl ::core::convert::Into<i32>,
-        vertex_capacity: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(go),
-                ::core::convert::Into::into(sub_mesh_count),
-                ::core::convert::Into::into(vertex_capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddTangents5(*mutcrate::unity_engine::vector4::Vector4)` overload"]
-    fn add_tangents5(self) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
-            __Map_CellMesh_unity2_raw::add_tangents5(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]
-    fn add_cell(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]
-    fn add_cell_2(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        rotation: impl ::core::convert::Into<i32>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell_2(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(uv0),
-                ::core::convert::Into::into(uv2),
-                ::core::convert::Into::into(rotation),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    fn add_cell_3(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell_3(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(uv0),
-                ::core::convert::Into::into(uv2),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]
-    fn add_cell_4(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        color0: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color2: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color3: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell_4(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(color0),
-                ::core::convert::Into::into(color1),
-                ::core::convert::Into::into(color2),
-                ::core::convert::Into::into(color3),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    fn add_cell_5(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        color0: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color2: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        color3: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell_5(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(color0),
-                ::core::convert::Into::into(color1),
-                ::core::convert::Into::into(color2),
-                ::core::convert::Into::into(color3),
-                ::core::convert::Into::into(uv0),
-                ::core::convert::Into::into(uv2),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    fn add_cell_6(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        uv0: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        distance: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_cell_6(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(dir),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(uv0),
-                ::core::convert::Into::into(uv2),
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]
-    fn add_straddle_cell(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        uv_rotate: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_straddle_cell(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(uv_rotate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]
-    fn add_event_cell(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Map_CellMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Map_CellMesh_unity2_raw::add_event_cell(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-map")]
-impl<__T: IMap_CellMesh> IMap_CellMeshMethods for __T {}
-
-#[cfg(feature = "app-map")]
-impl Map_CellMesh {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
-    pub fn new(
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Map_CellMesh),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMap_CellMeshMethods>::ctor(this, go, sub_mesh_count, vertex_capacity);
         this
     }
 }

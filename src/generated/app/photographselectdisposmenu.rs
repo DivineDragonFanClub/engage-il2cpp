@@ -28,41 +28,10 @@ mod __types {
             crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "PhotographSelectDisposMenu.ConfirmDialog.NoHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographSelectDisposMenu_ConfirmDialog_NoHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "PhotographSelectDisposMenu.ConfirmDialog.YesHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographSelectDisposMenu_ConfirmDialog_YesHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenu.ConfirmDialog")]
     #[parent(crate::system::object::Object)]
     pub struct PhotographSelectDisposMenu_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "PhotographSelectDisposMenu.ConfirmDialog.NoMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem {
-# [rename (name = "m_NoHandler")] pub m_no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ReturnHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenu.ReturnHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographSelectDisposMenu_ReturnHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem.md"))]
     #[::unity2::class(
@@ -72,6 +41,37 @@ mod __types {
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem {
 # [rename (name = "m_YesHandler")] pub m_yes_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler ,
+# [rename (name = "m_NoHandler")] pub m_no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "PhotographSelectDisposMenu.ConfirmDialog.NoHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PhotographSelectDisposMenu_ConfirmDialog_NoHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ReturnHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenu.ReturnHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PhotographSelectDisposMenu_ReturnHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "PhotographSelectDisposMenu.ConfirmDialog.YesHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PhotographSelectDisposMenu_ConfirmDialog_YesHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "PhotographSelectDisposMenu.ConfirmDialog.NoMenuItem"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem {
 # [rename (name = "m_NoHandler")] pub m_no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler ,
 }
 }
@@ -806,278 +806,6 @@ impl PhotographSelectDisposMenu {
 #[cfg(feature = "app-photographselectdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods:
-    IPhotographSelectDisposMenu_ConfirmDialog_NoHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_NoHandler>
-    IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods:
-    IPhotographSelectDisposMenu_ConfirmDialog_YesHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_YesHandler>
-    IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-impl PhotographSelectDisposMenu_ConfirmDialog_YesHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-photographselectdisposmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __PhotographSelectDisposMenu_ConfirmDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1231,7 +959,7 @@ impl PhotographSelectDisposMenu_ConfirmDialog {
 #[cfg(feature = "app-photographselectdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
+mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1240,11 +968,11 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1253,12 +981,13 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
+        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
+        yes_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
         no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, no_handler, __unity2_method_info)
+        let inner : extern "C" fn (PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, yes_handler, no_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1268,10 +997,10 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1280,11 +1009,11 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
+        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
+            PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1301,10 +1030,10 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1313,11 +1042,11 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn b_call(
-        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
+        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
+            PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1329,18 +1058,20 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:
-    IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem
+pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:
+    IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem
 {
-    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]
+    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]
     fn ctor(
         self,
+        yes_handler : impl :: core :: convert :: Into < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler >,
         no_handler : impl :: core :: convert :: Into < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler >,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::ctor(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(yes_handler),
                 ::core::convert::Into::into(no_handler),
                 ::core::option::Option::None,
             )
@@ -1349,8 +1080,8 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::a_call(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1359,8 +1090,8 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::b_call(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::b_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1369,26 +1100,165 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem>
-    IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods for __T
+impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem>
+    IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-impl PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem {
-    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]
+impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]
     pub fn new(
+        yes_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
         no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem),
+                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods>::ctor(
-            this, no_handler,
+        <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods>::ctor(
+            this,
+            yes_handler,
+            no_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods:
+    IPhotographSelectDisposMenu_ConfirmDialog_NoHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_NoHandler>
+    IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods>::ctor(
+            this, object, method,
         );
         this
     }
@@ -1565,7 +1435,7 @@ impl PhotographSelectDisposMenu_ReturnHandler {
 #[cfg(feature = "app-photographselectdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
+mod __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1574,11 +1444,14 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1587,13 +1460,145 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
-        yes_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
+        this: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods:
+    IPhotographSelectDisposMenu_ConfirmDialog_YesHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_YesHandler>
+    IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+impl PhotographSelectDisposMenu_ConfirmDialog_YesHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-photographselectdisposmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
         no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, yes_handler, no_handler, __unity2_method_info)
+        let inner : extern "C" fn (PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem , crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, no_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1603,10 +1608,10 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1615,11 +1620,11 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
+        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
+            PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1636,10 +1641,10 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1648,11 +1653,11 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
         }
     }
     pub unsafe fn b_call(
-        this: PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
+        this: PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,
+            PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1664,20 +1669,18 @@ mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:
-    IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem
+pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:
+    IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem
 {
-    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]
+    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]
     fn ctor(
         self,
-        yes_handler : impl :: core :: convert :: Into < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler >,
         no_handler : impl :: core :: convert :: Into < crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler >,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(yes_handler),
                 ::core::convert::Into::into(no_handler),
                 ::core::option::Option::None,
             )
@@ -1686,8 +1689,8 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::a_call(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1696,8 +1699,8 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::b_call(
+            let __receiver = < PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::b_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1706,29 +1709,26 @@ pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem>
-    IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods for __T
+impl<__T: IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem>
+    IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-photographselectdisposmenu")]
-impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]
+impl PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem {
+    #[doc = "`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]
     pub fn new(
-        yes_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_YesHandler,
         no_handler : crate :: app :: photographselectdisposmenu :: PhotographSelectDisposMenu_ConfirmDialog_NoHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem),
+                ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods>::ctor(
-            this,
-            yes_handler,
-            no_handler,
+        <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods>::ctor(
+            this, no_handler,
         );
         this
     }

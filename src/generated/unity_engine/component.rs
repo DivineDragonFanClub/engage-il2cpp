@@ -686,7 +686,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_component_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -734,7 +736,7 @@ pub trait IComponentMethods: IComponent {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         component: impl ::core::convert::Into<*mut M0>,
     ) -> bool {
@@ -807,7 +809,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_component_in_children_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_component_in_children_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> M0 {
@@ -862,7 +866,11 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_component_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component_in_children_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -910,7 +918,9 @@ pub trait IComponentMethods: IComponent {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_components_in_children<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> ::unity2::Array<M0> {
@@ -968,7 +978,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_in_children_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
         result: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
@@ -1029,7 +1041,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -1079,7 +1093,9 @@ pub trait IComponentMethods: IComponent {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_components_in_children_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
@@ -1153,7 +1169,11 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_component_in_parent_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component_in_parent_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -1201,7 +1221,9 @@ pub trait IComponentMethods: IComponent {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_components_in_parent<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> ::unity2::Array<M0> {
@@ -1259,7 +1281,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_in_parent_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
@@ -1320,7 +1344,9 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_in_parent_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -1410,7 +1436,7 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
@@ -1490,7 +1516,7 @@ pub trait IComponentMethods: IComponent {
             )
         }
     }
-    pub fn get_components_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<

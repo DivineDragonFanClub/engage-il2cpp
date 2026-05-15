@@ -25,7 +25,7 @@ mod __ListBufferExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-rendering-listbufferextensions")]
 impl ListBufferExtensions {
-    pub fn quick_sort<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn quick_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self_: impl ::core::convert::Into<
             crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<M0>,
         >,

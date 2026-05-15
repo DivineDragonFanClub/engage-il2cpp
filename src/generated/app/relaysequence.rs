@@ -11,6 +11,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
+    pub struct RelaySequence_IRelaySequenceBase {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceBase`1")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
@@ -41,23 +45,15 @@ mod __types {
         pub m_bg: crate::app::menubg::MenuBg,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
-    pub struct RelaySequence_RelaySequenceNet {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceLocal >)]
-    pub struct RelaySequence_RelaySequenceLocal {
-        #[rename(name = "m_RootPath")]
-        pub m_root_path: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence")]
     #[parent(crate::system::object::Object)]
     pub struct RelaySequence {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
+    pub struct RelaySequence_RelaySequenceNet {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysequence/RelaySequence_Label.md"))]
     #[repr(C)]
@@ -271,13 +267,357 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
-    pub struct RelaySequence_IRelaySequenceBase {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceLocal >)]
+    pub struct RelaySequence_RelaySequenceLocal {
+        #[rename(name = "m_RootPath")]
+        pub m_root_path: ::unity2::Il2CppString,
+    }
 }
 
 #[cfg(feature = "app-relaysequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaysequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelaySequence_IRelaySequenceBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relaysequence::RelaySequence_Label as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
+                "JumpTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "JumpTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to(
+        this: RelaySequence_IRelaySequenceBase,
+        label: crate::app::relaysequence::RelaySequence_Label,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelaySequence_IRelaySequenceBase,
+            crate::app::relaysequence::RelaySequence_Label,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to::get_offset() as isize),
+        );
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
+                "SelectMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SelectMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_mode(
+        this: RelaySequence_IRelaySequenceBase,
+        mode: crate::app::relay::Relay_Modes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelaySequence_IRelaySequenceBase,
+            crate::app::relay::Relay_Modes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_select_mode::get_offset() as isize),
+        );
+        inner(this, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
+                "SelectMap",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SelectMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_map(
+        this: RelaySequence_IRelaySequenceBase,
+        cid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelaySequence_IRelaySequenceBase,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_select_map::get_offset() as isize),
+        );
+        inner(this, cid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_take_over_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
+                "SelectTakeOverMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SelectTakeOverMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_take_over_mode(
+        this: RelaySequence_IRelaySequenceBase,
+        mode: crate::app::relay::Relay_TakeOverModes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelaySequence_IRelaySequenceBase,
+            crate::app::relay::Relay_TakeOverModes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_select_take_over_mode::get_offset() as isize),
+        );
+        inner(this, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_public {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetPublic",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetPublic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_public(
+        this: RelaySequence_IRelaySequenceBase,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelaySequence_IRelaySequenceBase,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_public::get_offset() as isize),
+        );
+        inner(this, enable, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+pub trait IRelaySequence_IRelaySequenceBaseMethods: IRelaySequence_IRelaySequenceBase {
+    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
+    fn jump_to(
+        self,
+        label: impl ::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelaySequence_IRelaySequenceBase_unity2_raw::jump_to(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    fn select_mode(self, mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelaySequence_IRelaySequenceBase_unity2_raw::select_mode(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    fn select_map(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelaySequence_IRelaySequenceBase_unity2_raw::select_map(
+                __receiver,
+                ::core::convert::Into::into(cid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    fn select_take_over_mode(
+        self,
+        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelaySequence_IRelaySequenceBase_unity2_raw::select_take_over_mode(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPublic(bool)` overload"]
+    fn set_public(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelaySequence_IRelaySequenceBase_unity2_raw::set_public(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl<__T: IRelaySequence_IRelaySequenceBase> IRelaySequence_IRelaySequenceBaseMethods for __T {}
 
 #[cfg(feature = "app-relaysequence")]
 #[::unity2::methods]
@@ -687,6 +1027,583 @@ impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
         });
         <Self as IRelaySequence_RelaySequenceBase_1Methods<T0>>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelaySequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "SelectMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_mode(
+        mode: crate::app::relay::Relay_Modes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_select_mode::get_offset() as isize),
+            );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_take_over_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectTakeOverMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "SelectTakeOverMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_take_over_mode(
+        mode: crate::app::relay::Relay_TakeOverModes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::relay::Relay_TakeOverModes,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_select_take_over_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectMap",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "SelectMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn select_map(
+        cid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_select_map::get_offset() as isize),
+            );
+        inner(cid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_no_selectable_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "NoSelectableMap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "NoSelectableMap",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn no_selectable_map(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_no_selectable_map::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_take_over_mode_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToTakeOverModeSelect",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "JumpToTakeOverModeSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to_take_over_mode_select(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to_take_over_mode_select::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_take_over_predownload_meta_with_data_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToTakeOverPredownloadMetaWithDataCode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "JumpToTakeOverPredownloadMetaWithDataCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_jump_to_take_over_predownload_meta_with_data_code::get_offset()
+                        as isize,
+                ),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_replay_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToReplayDownload",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "JumpToReplayDownload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to_replay_download(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to_replay_download::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_award {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToAward",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "JumpToAward",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn jump_to_award(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_jump_to_award::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_public {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SetPublic",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "SetPublic",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_public(
+        is_public: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_public::get_offset() as isize),
+        );
+        inner(is_public, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "GetSequence",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSequence",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sequence(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sequence::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    pub fn select_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::select_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    pub fn select_take_over_mode(
+        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
+    ) -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::select_take_over_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    pub fn select_map(cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::select_map(
+                ::core::convert::Into::into(cid),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`NoSelectableMap()` overload"]
+    pub fn no_selectable_map() -> () {
+        unsafe { __RelaySequence_unity2_raw::no_selectable_map(::core::option::Option::None) }
+    }
+    #[doc = "`JumpToTakeOverModeSelect()` overload"]
+    pub fn jump_to_take_over_mode_select() -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None)
+        }
+    }
+    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
+    pub fn jump_to_take_over_predownload_meta_with_data_code() -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`JumpToReplayDownload()` overload"]
+    pub fn jump_to_replay_download() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_replay_download(::core::option::Option::None) }
+    }
+    #[doc = "`JumpToAward()` overload"]
+    pub fn jump_to_award() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_award(::core::option::Option::None) }
+    }
+    #[doc = "`SetPublic(bool)` overload"]
+    pub fn set_public(is_public: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __RelaySequence_unity2_raw::set_public(
+                ::core::convert::Into::into(is_public),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSequence()` overload"]
+    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
+        unsafe { __RelaySequence_unity2_raw::get_sequence(::core::option::Option::None) }
     }
 }
 
@@ -3219,923 +4136,6 @@ impl RelaySequence_RelaySequenceLocal {
         this
     }
 }
-
-#[cfg(feature = "app-relaysequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelaySequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_mode(
-        mode: crate::app::relay::Relay_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_mode::get_offset() as isize),
-            );
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_take_over_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectTakeOverMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectTakeOverMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_take_over_mode(
-        mode: crate::app::relay::Relay_TakeOverModes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::relay::Relay_TakeOverModes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_take_over_mode::get_offset() as isize),
-        );
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectMap",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_map(
-        cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_map::get_offset() as isize),
-            );
-        inner(cid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_no_selectable_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "NoSelectableMap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "NoSelectableMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn no_selectable_map(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_no_selectable_map::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_take_over_mode_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToTakeOverModeSelect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToTakeOverModeSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn jump_to_take_over_mode_select(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_take_over_mode_select::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_take_over_predownload_meta_with_data_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToTakeOverPredownloadMetaWithDataCode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToTakeOverPredownloadMetaWithDataCode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_jump_to_take_over_predownload_meta_with_data_code::get_offset()
-                        as isize,
-                ),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_replay_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToReplayDownload",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToReplayDownload",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn jump_to_replay_download(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_replay_download::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_award {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToAward",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToAward",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn jump_to_award(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_award::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_public {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SetPublic",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SetPublic",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_public(
-        is_public: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_public::get_offset() as isize),
-        );
-        inner(is_public, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "GetSequence",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSequence",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sequence(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sequence::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    pub fn select_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    pub fn select_take_over_mode(
-        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
-    ) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_take_over_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    pub fn select_map(cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_map(
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`NoSelectableMap()` overload"]
-    pub fn no_selectable_map() -> () {
-        unsafe { __RelaySequence_unity2_raw::no_selectable_map(::core::option::Option::None) }
-    }
-    #[doc = "`JumpToTakeOverModeSelect()` overload"]
-    pub fn jump_to_take_over_mode_select() -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None)
-        }
-    }
-    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
-    pub fn jump_to_take_over_predownload_meta_with_data_code() -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`JumpToReplayDownload()` overload"]
-    pub fn jump_to_replay_download() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_replay_download(::core::option::Option::None) }
-    }
-    #[doc = "`JumpToAward()` overload"]
-    pub fn jump_to_award() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_award(::core::option::Option::None) }
-    }
-    #[doc = "`SetPublic(bool)` overload"]
-    pub fn set_public(is_public: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::set_public(
-                ::core::convert::Into::into(is_public),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSequence()` overload"]
-    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
-        unsafe { __RelaySequence_unity2_raw::get_sequence(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelaySequence_IRelaySequenceBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relaysequence::RelaySequence_Label as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
-                "JumpTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "JumpTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn jump_to(
-        this: RelaySequence_IRelaySequenceBase,
-        label: crate::app::relaysequence::RelaySequence_Label,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relaysequence::RelaySequence_Label,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to::get_offset() as isize),
-        );
-        inner(this, label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
-                "SelectMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_mode(
-        this: RelaySequence_IRelaySequenceBase,
-        mode: crate::app::relay::Relay_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relay::Relay_Modes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_mode::get_offset() as isize),
-        );
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
-                "SelectMap",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_map(
-        this: RelaySequence_IRelaySequenceBase,
-        cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_map::get_offset() as isize),
-        );
-        inner(this, cid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_take_over_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
-                "SelectTakeOverMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectTakeOverMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_take_over_mode(
-        this: RelaySequence_IRelaySequenceBase,
-        mode: crate::app::relay::Relay_TakeOverModes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relay::Relay_TakeOverModes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_take_over_mode::get_offset() as isize),
-        );
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_public {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetPublic",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetPublic",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_public(
-        this: RelaySequence_IRelaySequenceBase,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_public::get_offset() as isize),
-        );
-        inner(this, enable, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-pub trait IRelaySequence_IRelaySequenceBaseMethods: IRelaySequence_IRelaySequenceBase {
-    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
-    fn jump_to(
-        self,
-        label: impl ::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::jump_to(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    fn select_mode(self, mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::select_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    fn select_map(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::select_map(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    fn select_take_over_mode(
-        self,
-        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::select_take_over_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetPublic(bool)` overload"]
-    fn set_public(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::set_public(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl<__T: IRelaySequence_IRelaySequenceBase> IRelaySequence_IRelaySequenceBaseMethods for __T {}
 
 #[cfg(feature = "app-relaysequence")]
 pub mod prelude {

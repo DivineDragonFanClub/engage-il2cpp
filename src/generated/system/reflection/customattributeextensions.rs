@@ -25,7 +25,9 @@ mod __CustomAttributeExtensions_unity2_raw {
 
 #[cfg(feature = "system-reflection-customattributeextensions")]
 impl CustomAttributeExtensions {
-    pub fn get_custom_attribute<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_custom_attribute<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         element: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -77,7 +79,9 @@ impl CustomAttributeExtensions {
             )
         }
     }
-    pub fn get_custom_attributes<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_custom_attributes<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         element: impl ::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>,
     ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0> {
         static OPEN: ::std::sync::LazyLock<

@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance.Debug")]
+    #[parent(crate::system::object::Object)]
+    pub struct Performance_Debug {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
     #[repr(C)]
     #[derive(
@@ -101,10 +106,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance.Debug")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
     #[parent(crate::system::object::Object)]
-    pub struct Performance_Debug {}
+    pub struct Performance {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]
     #[repr(C)]
@@ -157,11 +162,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
-    #[parent(crate::system::object::Object)]
-    pub struct Performance {}
 }
 
 #[cfg(feature = "unity_engine-switch-performance-types")]

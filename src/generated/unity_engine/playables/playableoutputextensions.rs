@@ -25,7 +25,9 @@ mod __PlayableOutputExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-playables-playableoutputextensions")]
 impl PlayableOutputExtensions {
-    pub fn set_reference_object<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_reference_object<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
@@ -80,7 +82,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn set_user_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_user_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
@@ -135,7 +137,9 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn get_source_playable<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_source_playable<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         output: impl ::core::convert::Into<M0>,
     ) -> crate::unity_engine::playables::playable::Playable {
         static OPEN: ::std::sync::LazyLock<
@@ -189,9 +193,9 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn set_source_playable<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn set_source_playable<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<M1>,
@@ -250,7 +254,9 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn get_source_output_port<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_source_output_port<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         output: impl ::core::convert::Into<M0>,
     ) -> i32 {
         static OPEN: ::std::sync::LazyLock<
@@ -300,7 +306,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn set_weight<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_weight<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         output: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<f32>,
     ) -> () {
@@ -352,7 +358,7 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn push_notification<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn push_notification<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         output: impl ::core::convert::Into<M0>,
         origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         notification: impl ::core::convert::Into<
@@ -415,7 +421,9 @@ impl PlayableOutputExtensions {
             )
         }
     }
-    pub fn add_notification_receiver<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn add_notification_receiver<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         output: impl ::core::convert::Into<M0>,
         receiver: impl ::core::convert::Into<
             crate::unity_engine::playables::inotificationreceiver::INotificationReceiver,

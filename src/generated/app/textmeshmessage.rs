@@ -13,18 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshmessage/TextMeshMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshMessage")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TextMeshMessage {
-        #[rename(name = "m_Target")]
-        pub m_target: crate::app::textmeshmessage::TextMeshMessage_Targets,
-        #[rename(name = "m_Label")]
-        pub m_label: ::unity2::Il2CppString,
-        #[rename(name = "m_File")]
-        pub m_file: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshmessage/TextMeshMessage_Targets.md"))]
     #[repr(C)]
     #[derive(
@@ -67,6 +55,18 @@ mod __types {
         pub fn children() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshmessage/TextMeshMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshMessage")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TextMeshMessage {
+        #[rename(name = "m_Target")]
+        pub m_target: crate::app::textmeshmessage::TextMeshMessage_Targets,
+        #[rename(name = "m_Label")]
+        pub m_label: ::unity2::Il2CppString,
+        #[rename(name = "m_File")]
+        pub m_file: ::unity2::Il2CppString,
     }
 }
 

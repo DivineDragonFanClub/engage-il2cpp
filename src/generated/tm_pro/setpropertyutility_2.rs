@@ -94,7 +94,9 @@ impl SetPropertyUtility_2 {
             (__ret, __out_0.assume_init())
         }
     }
-    pub fn set_equatable_struct<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_equatable_struct<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         current_value: impl ::core::convert::Into<*mut M0>,
         new_value: impl ::core::convert::Into<M0>,
     ) -> bool {
@@ -146,7 +148,7 @@ impl SetPropertyUtility_2 {
             )
         }
     }
-    pub fn set_struct<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_struct<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         current_value: impl ::core::convert::Into<*mut M0>,
         new_value: impl ::core::convert::Into<M0>,
     ) -> bool {
@@ -198,7 +200,7 @@ impl SetPropertyUtility_2 {
             )
         }
     }
-    pub fn set_class<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         current_value: impl ::core::convert::Into<*mut M0>,
         new_value: impl ::core::convert::Into<M0>,
     ) -> bool {

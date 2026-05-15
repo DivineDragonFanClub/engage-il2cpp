@@ -267,7 +267,7 @@ pub trait IIPropertyCollectorMethods: IIPropertyCollector {
             )
         }
     }
-    pub fn add_from_name<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn add_from_name<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {

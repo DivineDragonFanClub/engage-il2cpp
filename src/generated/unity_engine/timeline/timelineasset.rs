@@ -12,6 +12,50 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TimelineAsset_DurationMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        const NAME: &'static str = "TimelineAsset.DurationMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TimelineAsset_DurationMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TimelineAsset_DurationMode {
+        pub fn based_on_clips() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fixed_length() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -68,50 +112,6 @@ mod __types {
         pub m_framerate: f32,
         #[rename(name = "m_ScenePreview")]
         pub m_scene_preview: bool,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TimelineAsset_DurationMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TimelineAsset.DurationMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TimelineAsset_DurationMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TimelineAsset_DurationMode {
-        pub fn based_on_clips() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fixed_length() -> Self {
-            Self { value: 1 }
-        }
     }
 }
 
@@ -2542,7 +2542,7 @@ pub trait ITimelineAssetMethods: ITimelineAsset {
             )
         }
     }
-    pub fn create_track_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_track_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         parent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
         track_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -2603,7 +2603,7 @@ pub trait ITimelineAssetMethods: ITimelineAsset {
             )
         }
     }
-    pub fn create_track_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_track_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         track_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {
@@ -2661,7 +2661,9 @@ pub trait ITimelineAssetMethods: ITimelineAsset {
             )
         }
     }
-    pub fn create_track_4<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn create_track_4<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

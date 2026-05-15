@@ -11,6 +11,17 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))]
+    #[::unity2::class(
+        namespace = "App.Gmap",
+        name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
+        #[rename(name = "m_Callback")]
+        pub m_callback: crate::system::action::Action,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))]
     #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelConfirmDialog")]
     #[parent(crate::system::object::Object)]
@@ -28,21 +39,189 @@ mod __types {
         #[rename(name = "m_CancelCallback")]
         pub m_cancel_callback: crate::system::action::Action,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App.Gmap",
-        name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-        #[rename(name = "m_Callback")]
-        pub m_callback: crate::system::action::Action,
-    }
 }
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+        callback: crate::system::action::Action,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+            crate::system::action::Action,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, callback, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods:
+    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo
+{
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        callback: impl ::core::convert::Into<crate::system::action::Action>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::b_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+impl<__T: IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo>
+    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods for __T
+{
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods>::ctor(
+            this, callback, text,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
 #[doc(hidden)]
@@ -395,185 +574,6 @@ impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes {
             decide_callback,
             cancel_callback,
             text,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-        callback: crate::system::action::Action,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-            crate::system::action::Action,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, callback, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods:
-    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo
-{
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        callback: impl ::core::convert::Into<crate::system::action::Action>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl<__T: IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo>
-    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods>::ctor(
-            this, callback, text,
         );
         this
     }

@@ -550,7 +550,7 @@ impl PlayReportEvent {
     pub fn end() -> () {
         unsafe { __PlayReportEvent_unity2_raw::end(::core::option::Option::None) }
     }
-    pub fn add<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn add<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         key: impl ::core::convert::Into<::unity2::Il2CppString>,
         val: impl ::core::convert::Into<i64>,
     ) -> () {
@@ -693,7 +693,7 @@ impl PlayReportEvent {
     pub fn prepare_add_report() -> () {
         unsafe { __PlayReportEvent_unity2_raw::prepare_add_report(::core::option::Option::None) }
     }
-    pub fn to_bytes<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn to_bytes<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         data: impl ::core::convert::Into<M0>,
     ) -> ::unity2::Array<u8> {
         static OPEN: ::std::sync::LazyLock<
@@ -743,7 +743,7 @@ impl PlayReportEvent {
             )
         }
     }
-    pub fn from_bytes<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn from_bytes<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

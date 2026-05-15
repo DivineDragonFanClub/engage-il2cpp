@@ -1901,8 +1901,8 @@ impl PlayableGraph {
 #[cfg(feature = "unity_engine-playables-playablegraph")]
 impl PlayableGraph {
     pub fn connect<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         self,
         source: impl ::core::convert::Into<M0>,
@@ -1971,7 +1971,7 @@ impl PlayableGraph {
             )
         }
     }
-    pub fn disconnect<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn disconnect<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         input: impl ::core::convert::Into<M0>,
         input_port: impl ::core::convert::Into<i32>,
@@ -2025,7 +2025,9 @@ impl PlayableGraph {
             )
         }
     }
-    pub fn destroy_playable<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn destroy_playable<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         playable: impl ::core::convert::Into<M0>,
     ) -> () {
@@ -2077,7 +2079,9 @@ impl PlayableGraph {
             )
         }
     }
-    pub fn destroy_subgraph<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn destroy_subgraph<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         playable: impl ::core::convert::Into<M0>,
     ) -> () {

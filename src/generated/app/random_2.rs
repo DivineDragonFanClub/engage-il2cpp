@@ -1820,7 +1820,7 @@ pub trait IRandom_2Methods: IRandom_2 {
             )
         }
     }
-    pub fn shuffle<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn shuffle<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {

@@ -512,7 +512,7 @@ impl TableConversions {
             )
         }
     }
-    pub fn table_to_list<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn table_to_list<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
         converter: impl ::core::convert::Into<
             crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>,
@@ -574,9 +574,9 @@ impl TableConversions {
             )
         }
     }
-    pub fn table_to_dictionary<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn table_to_dictionary<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
         keyconverter: impl ::core::convert::Into<

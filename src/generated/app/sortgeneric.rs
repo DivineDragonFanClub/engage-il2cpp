@@ -109,7 +109,7 @@ mod __SortGeneric_unity2_raw {
 
 #[cfg(feature = "app-sortgeneric")]
 impl SortGeneric {
-    pub fn insertion_sort<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn insertion_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -166,7 +166,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn insertion_sort_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn insertion_sort_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -220,7 +220,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn insertion_sort_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn insertion_sort_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -281,7 +281,9 @@ impl SortGeneric {
             )
         }
     }
-    pub fn insertion_sort_partly<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn insertion_sort_partly<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -348,7 +350,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn merge_sort<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn merge_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -405,7 +407,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn merge_sort_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn merge_sort_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -459,7 +461,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn merge_sort_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn merge_sort_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -520,7 +522,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn merge_sort_partly<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn merge_sort_partly<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,
@@ -590,7 +592,7 @@ impl SortGeneric {
             )
         }
     }
-    pub fn merge_sort_merge<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn merge_sort_merge<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0>,
         >,

@@ -383,7 +383,9 @@ impl ResourceManagerConfig {
             )
         }
     }
-    pub fn create_array_result_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_array_result_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -448,7 +450,9 @@ impl ResourceManagerConfig {
             )
         }
     }
-    pub fn create_list_result_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_list_result_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         all_assets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::object_2::Object_2>>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -500,9 +504,9 @@ impl ResourceManagerConfig {
             )
         }
     }
-    pub fn is_instance<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn is_instance<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >() -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,

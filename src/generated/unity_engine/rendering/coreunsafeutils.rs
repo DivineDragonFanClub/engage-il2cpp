@@ -8,68 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_IKeyGetter_2.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering",
-        name = "CoreUnsafeUtils.IKeyGetter`2"
-    )]
-    pub struct CoreUnsafeUtils_IKeyGetter_2<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-    > {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct CoreUnsafeUtils_UintKeyGetter {}
-
-    impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-        const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_FixedBufferStringQueue.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct CoreUnsafeUtils_FixedBufferStringQueue {}
-
-    impl ::unity2::ClassIdentity for CoreUnsafeUtils_FixedBufferStringQueue {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-        const NAME: &'static str = "CoreUnsafeUtils.FixedBufferStringQueue";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CoreUnsafeUtils_FixedBufferStringQueue {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CoreUnsafeUtils")]
     #[parent(crate::system::object::Object)]
@@ -108,41 +46,96 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_IKeyGetter_2.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering",
+        name = "CoreUnsafeUtils.IKeyGetter`2"
+    )]
+    pub struct CoreUnsafeUtils_IKeyGetter_2<
+        T0: ::unity2::ClassIdentity,
+        T1: ::unity2::ClassIdentity,
+    > {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_FixedBufferStringQueue.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct CoreUnsafeUtils_FixedBufferStringQueue {}
+
+    impl ::unity2::ClassIdentity for CoreUnsafeUtils_FixedBufferStringQueue {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+        const NAME: &'static str = "CoreUnsafeUtils.FixedBufferStringQueue";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CoreUnsafeUtils_FixedBufferStringQueue {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct CoreUnsafeUtils_UintKeyGetter {}
+
+    impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+        const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    CoreUnsafeUtils_IKeyGetter_2<T0, T1>
-{
-    #[doc = "`Get(*mutT0)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, v: *mut T0) -> T1;
-}
-
-#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CoreUnsafeUtils_UintKeyGetter_unity2_raw {
+mod __CoreUnsafeUtils_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get {
+    pub mod __lookup_quick_sort {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut u32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CoreUnsafeUtils_UintKeyGetter as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
+                <CoreUnsafeUtils as ::unity2::ClassIdentity>::class(),
+                "QuickSort",
+                3,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -150,8 +143,8 @@ mod __CoreUnsafeUtils_UintKeyGetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CoreUnsafeUtils_UintKeyGetter as ::unity2::ClassIdentity>::NAME,
-                    "Get",
+                    <CoreUnsafeUtils as ::unity2::ClassIdentity>::NAME,
+                    "QuickSort",
                     e
                 ),
             }
@@ -162,40 +155,112 @@ mod __CoreUnsafeUtils_UintKeyGetter_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get(
-        this: CoreUnsafeUtils_UintKeyGetter,
-        v: *mut u32,
+    pub unsafe fn quick_sort(
+        arr: ::unity2::Array<u32>,
+        left: i32,
+        right: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(
-            CoreUnsafeUtils_UintKeyGetter,
-            *mut u32,
-            ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
-        inner(this, v, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Array<u32>, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_quick_sort::get_offset() as isize),
+            );
+        inner(arr, left, right, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_have_duplicates {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CoreUnsafeUtils as ::unity2::ClassIdentity>::class(),
+                "HaveDuplicates",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CoreUnsafeUtils as ::unity2::ClassIdentity>::NAME,
+                    "HaveDuplicates",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn have_duplicates(
+        arr: ::unity2::Array<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Array<i32>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_have_duplicates::get_offset() as isize),
+            );
+        inner(arr, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-impl CoreUnsafeUtils_UintKeyGetter {
-    #[doc = "`Get(*mutu32)` overload"]
-    pub fn get(self) -> (u32, u32) {
+impl CoreUnsafeUtils {
+    #[doc = "`QuickSort(::unity2::Array<u32>, i32, i32)` overload"]
+    pub fn quick_sort(
+        arr: impl ::core::convert::Into<::unity2::Array<u32>>,
+        left: impl ::core::convert::Into<i32>,
+        right: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
-            let __ret = {
-                __CoreUnsafeUtils_UintKeyGetter_unity2_raw::get(
-                    self,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
+            __CoreUnsafeUtils_unity2_raw::quick_sort(
+                ::core::convert::Into::into(arr),
+                ::core::convert::Into::into(left),
+                ::core::convert::Into::into(right),
+                ::core::option::Option::None,
+            )
         }
     }
+    #[doc = "`HaveDuplicates(::unity2::Array<i32>)` overload"]
+    pub fn have_duplicates(arr: impl ::core::convert::Into<::unity2::Array<i32>>) -> bool {
+        unsafe {
+            __CoreUnsafeUtils_unity2_raw::have_duplicates(
+                ::core::convert::Into::into(arr),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> CoreUnsafeUtils_DefaultKeyGetter_1<T0> {
+    #[doc = "`Get(*mutT0)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, v: *mut T0) -> T0;
+}
+
+#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    CoreUnsafeUtils_IKeyGetter_2<T0, T1>
+{
+    #[doc = "`Get(*mutT0)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, v: *mut T0) -> T1;
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
@@ -508,74 +573,23 @@ impl CoreUnsafeUtils_FixedBufferStringQueue {
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CoreUnsafeUtils_unity2_raw {
+mod __CoreUnsafeUtils_UintKeyGetter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_quick_sort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CoreUnsafeUtils as ::unity2::ClassIdentity>::class(),
-                "QuickSort",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreUnsafeUtils as ::unity2::ClassIdentity>::NAME,
-                    "QuickSort",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn quick_sort(
-        arr: ::unity2::Array<u32>,
-        left: i32,
-        right: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Array<u32>, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_quick_sort::get_offset() as isize),
-            );
-        inner(arr, left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_have_duplicates {
+    pub mod __lookup_get {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+                &[<*mut u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CoreUnsafeUtils as ::unity2::ClassIdentity>::class(),
-                "HaveDuplicates",
+                <CoreUnsafeUtils_UintKeyGetter as ::unity2::ClassIdentity>::class(),
+                "Get",
                 1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -583,8 +597,8 @@ mod __CoreUnsafeUtils_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CoreUnsafeUtils as ::unity2::ClassIdentity>::NAME,
-                    "HaveDuplicates",
+                    <CoreUnsafeUtils_UintKeyGetter as ::unity2::ClassIdentity>::NAME,
+                    "Get",
                     e
                 ),
             }
@@ -595,54 +609,40 @@ mod __CoreUnsafeUtils_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn have_duplicates(
-        arr: ::unity2::Array<i32>,
+    pub unsafe fn get(
+        this: CoreUnsafeUtils_UintKeyGetter,
+        v: *mut u32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Array<i32>, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_have_duplicates::get_offset() as isize),
-            );
-        inner(arr, __unity2_method_info)
+    ) -> u32 {
+        let inner: extern "C" fn(
+            CoreUnsafeUtils_UintKeyGetter,
+            *mut u32,
+            ::unity2::OptionalMethod,
+        ) -> u32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, v, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-impl CoreUnsafeUtils {
-    #[doc = "`QuickSort(::unity2::Array<u32>, i32, i32)` overload"]
-    pub fn quick_sort(
-        arr: impl ::core::convert::Into<::unity2::Array<u32>>,
-        left: impl ::core::convert::Into<i32>,
-        right: impl ::core::convert::Into<i32>,
-    ) -> () {
+impl CoreUnsafeUtils_UintKeyGetter {
+    #[doc = "`Get(*mutu32)` overload"]
+    pub fn get(self) -> (u32, u32) {
         unsafe {
-            __CoreUnsafeUtils_unity2_raw::quick_sort(
-                ::core::convert::Into::into(arr),
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
+            let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
+            let __ret = {
+                __CoreUnsafeUtils_UintKeyGetter_unity2_raw::get(
+                    self,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
         }
     }
-    #[doc = "`HaveDuplicates(::unity2::Array<i32>)` overload"]
-    pub fn have_duplicates(arr: impl ::core::convert::Into<::unity2::Array<i32>>) -> bool {
-        unsafe {
-            __CoreUnsafeUtils_unity2_raw::have_duplicates(
-                ::core::convert::Into::into(arr),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> CoreUnsafeUtils_DefaultKeyGetter_1<T0> {
-    #[doc = "`Get(*mutT0)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, v: *mut T0) -> T0;
 }
 
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils")]

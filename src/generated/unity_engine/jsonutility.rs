@@ -336,7 +336,7 @@ impl JsonUtility {
             )
         }
     }
-    pub fn from_json<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn from_json<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         json: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

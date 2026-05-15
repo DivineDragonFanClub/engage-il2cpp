@@ -25,7 +25,7 @@ mod __PlayableExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-playables-playableextensions")]
 impl PlayableExtensions {
-    pub fn is_valid<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn is_valid<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> bool {
         static OPEN: ::std::sync::LazyLock<
@@ -75,7 +75,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_graph<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_graph<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         static OPEN: ::std::sync::LazyLock<
@@ -129,7 +129,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_play_state<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_play_state<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> crate::unity_engine::playables::playstate::PlayState {
         static OPEN: ::std::sync::LazyLock<
@@ -183,7 +183,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn play<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn play<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<
@@ -233,7 +233,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn pause<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn pause<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<
@@ -283,7 +283,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_speed<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_speed<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<f64>,
     ) -> () {
@@ -335,7 +335,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_speed<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_speed<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> f64 {
         static OPEN: ::std::sync::LazyLock<
@@ -385,7 +385,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_duration<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_duration<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<f64>,
     ) -> () {
@@ -437,7 +437,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_duration<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_duration<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> f64 {
         static OPEN: ::std::sync::LazyLock<
@@ -487,7 +487,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_time<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_time<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<f64>,
     ) -> () {
@@ -539,7 +539,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_time<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_time<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> f64 {
         static OPEN: ::std::sync::LazyLock<
@@ -589,7 +589,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_previous_time<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_previous_time<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> f64 {
         static OPEN: ::std::sync::LazyLock<
@@ -639,7 +639,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_done<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_done<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
@@ -691,7 +691,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn is_done<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn is_done<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> bool {
         static OPEN: ::std::sync::LazyLock<
@@ -741,7 +741,9 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_propagate_set_time<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_propagate_set_time<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
@@ -793,7 +795,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_input_count<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_input_count<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<i32>,
     ) -> () {
@@ -845,7 +847,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_input_count<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_input_count<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> i32 {
         static OPEN: ::std::sync::LazyLock<
@@ -895,7 +897,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_input<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_input<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         input_port: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::playables::playable::Playable {
@@ -952,7 +954,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_input_weight<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_input_weight<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         input_index: impl ::core::convert::Into<i32>,
         weight: impl ::core::convert::Into<f32>,
@@ -1006,9 +1008,9 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_input_weight_2<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn set_input_weight_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         playable: impl ::core::convert::Into<M0>,
         input: impl ::core::convert::Into<M1>,
@@ -1067,7 +1069,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_input_weight<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_input_weight<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         input_index: impl ::core::convert::Into<i32>,
     ) -> f32 {
@@ -1119,7 +1121,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_traversal_mode<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_traversal_mode<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         mode: impl ::core::convert::Into<
             crate::unity_engine::playables::playabletraversalmode::PlayableTraversalMode,
@@ -1176,7 +1178,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn get_time_wrap_mode<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_time_wrap_mode<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
     ) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
         static OPEN: ::std::sync::LazyLock<
@@ -1225,7 +1227,7 @@ impl PlayableExtensions {
             )
         }
     }
-    pub fn set_time_wrap_mode<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_time_wrap_mode<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         value: impl ::core::convert::Into<
             crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,

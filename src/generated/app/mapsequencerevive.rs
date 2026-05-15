@@ -10,16 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceRevive")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceRevive {
-        #[rename(name = "m_Units")]
-        pub m_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -58,6 +48,16 @@ mod __types {
         pub fn revive() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceRevive")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceRevive {
+        #[rename(name = "m_Units")]
+        pub m_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
     }
 }
 

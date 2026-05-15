@@ -13,50 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Light2D_PointLightQuality {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Light2D_PointLightQuality {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-        const NAME: &'static str = "Light2D.PointLightQuality";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Light2D_PointLightQuality {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Light2D_PointLightQuality {
-        pub fn fast() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn accurate() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_2.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.Universal",
@@ -151,6 +107,50 @@ mod __types {
 
         pub fn global() -> Self {
             Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Light2D_PointLightQuality {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Light2D_PointLightQuality {
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+        const NAME: &'static str = "Light2D.PointLightQuality";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Light2D_PointLightQuality {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Light2D_PointLightQuality {
+        pub fn fast() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn accurate() -> Self {
+            Self { value: 1 }
         }
     }
 }

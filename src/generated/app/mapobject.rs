@@ -31,151 +31,6 @@ mod __types {
         pub m_alpha: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
-    pub struct MapObject_RigidList {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapObject {
-        #[static_field]
-        #[rename(name = "InvalidState")]
-        pub invalid_state: i32,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::mapobject::MapObject_Kinds,
-        #[rename(name = "m_Lods")]
-        pub m_lods: crate::app::mapobject::MapObject_Lods,
-        #[rename(name = "m_LodManual")]
-        pub m_lod_manual: bool,
-        #[rename(name = "m_LodAssign")]
-        pub m_lod_assign: bool,
-        #[rename(name = "m_DisableBake")]
-        pub m_disable_bake: bool,
-        #[rename(name = "m_DisableOccluder")]
-        pub m_disable_occluder: bool,
-        #[rename(name = "m_BakeTypes")]
-        pub m_bake_types: crate::app::mapobject::MapObject_BakeTypes,
-        #[rename(name = "エフェクト発生位置")]
-        pub エフェクト発生位置: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "停止エフェクト")]
-        pub 停止エフェクト: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "起動エフェクト")]
-        pub 起動エフェクト: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "破壊エフェクト")]
-        pub 破壊エフェクト: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "動作透過無効化")]
-        pub 動作透過無効化: bool,
-        #[rename(name = "動作透過遅延")]
-        pub 動作透過遅延: f32,
-        #[rename(name = "動作透過時間")]
-        pub 動作透過時間: f32,
-        #[rename(name = "状態変化")]
-        pub 状態変化: ::unity2::Array<crate::app::mapobject::MapObject_State>,
-        #[rename(name = "破壊前オブジェクト")]
-        pub 破壊前オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "破壊後オブジェクト")]
-        pub 破壊後オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_LightmapPairs")]
-        pub m_lightmap_pairs: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapobject::MapObject_Pair,
-        >,
-        #[rename(name = "m_LightmapScale")]
-        pub m_lightmap_scale: crate::app::mapobject::MapObject_LightmapScales,
-        #[rename(name = "m_ViewDistance")]
-        pub m_view_distance: f32,
-        #[rename(name = "m_EditAlpha")]
-        pub m_edit_alpha: f32,
-        #[rename(name = "m_Terrain")]
-        pub m_terrain: ::unity2::Il2CppString,
-        #[rename(name = "m_FadeAlpha")]
-        pub m_fade_alpha: f32,
-        #[rename(name = "m_ActionAlpha")]
-        pub m_action_alpha: f32,
-        #[rename(name = "m_TransparentAlpha")]
-        pub m_transparent_alpha: f32,
-        #[rename(name = "m_DestructoniAlpha")]
-        pub m_destructoni_alpha: f32,
-        #[rename(name = "m_Action")]
-        pub m_action: crate::app::mapobject::MapObject_Actions,
-        #[rename(name = "m_PreviwAction")]
-        pub m_previw_action: crate::app::mapobject::MapObject_Actions,
-        #[rename(name = "m_State")]
-        pub m_state: i32,
-        #[rename(name = "m_PreviwState")]
-        pub m_previw_state: i32,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_MapMaterial")]
-        pub m_map_material: crate::app::mapmaterial::MapMaterial,
-        #[rename(name = "m_IsBroken")]
-        pub m_is_broken: bool,
-        #[rename(name = "m_BrokenList")]
-        pub m_broken_list: crate::app::mapobject::MapObject_RigidList,
-        #[rename(name = "m_DitherManager")]
-        pub m_dither_manager: crate::app::mapobject::MapObject_DitherManager,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_BakeTypes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapObject_BakeTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapObject_BakeTypes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapObject.BakeTypes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapObject_BakeTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapObject_BakeTypes {
-        pub fn 通常() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn 変化前をベイク() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn 変化後をベイク() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn 変化前を強制ベイク() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn 変化後を強制ベイク() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Lods.md"))]
     #[repr(C)]
     #[derive(
@@ -226,6 +81,75 @@ mod __types {
         pub fn 切替早_cull() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
+    pub struct MapObject_RigidList {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapObject_Actions {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapObject_Actions {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapObject.Actions";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapObject_Actions {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapObject_Actions {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn idle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn done() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapObject_RigidInfo {
+        #[rename(name = "transform")]
+        pub transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "position")]
+        pub position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "scale")]
+        pub scale: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "rotation")]
+        pub rotation: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "rigidbody")]
+        pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_Pair.md"))]
@@ -326,6 +250,22 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherPair.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.DitherPair")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapObject_DitherPair {
+        #[rename(name = "m_Render")]
+        pub m_render: crate::unity_engine::renderer::Renderer,
+        #[rename(name = "m_Shareds")]
+        pub m_shareds: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_Dithers")]
+        pub m_dithers: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_Manager")]
+        pub m_manager: crate::app::mapobject::MapObject_DitherManager,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: f32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_State.md"))]
     #[::unity2::class(namespace = "App", name = "MapObject.State")]
     #[parent(crate::system::object::Object)]
@@ -334,6 +274,62 @@ mod __types {
         pub 対象オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "エフェクト")]
         pub エフェクト: crate::unity_engine::gameobject::GameObject,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_BakeTypes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapObject_BakeTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapObject_BakeTypes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapObject.BakeTypes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapObject_BakeTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapObject_BakeTypes {
+        pub fn 通常() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn 変化前をベイク() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn 変化後をベイク() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn 変化前を強制ベイク() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn 変化後を強制ベイク() -> Self {
+            Self { value: 4 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_LightmapScales.md"))]
@@ -396,84 +392,88 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapObject_RigidInfo {
-        #[rename(name = "transform")]
-        pub transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "position")]
-        pub position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "scale")]
-        pub scale: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "rotation")]
-        pub rotation: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "rigidbody")]
-        pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherPair.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.DitherPair")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapObject_DitherPair {
-        #[rename(name = "m_Render")]
-        pub m_render: crate::unity_engine::renderer::Renderer,
-        #[rename(name = "m_Shareds")]
-        pub m_shareds: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_Dithers")]
-        pub m_dithers: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_Manager")]
-        pub m_manager: crate::app::mapobject::MapObject_DitherManager,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapObject_Actions {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapObject_Actions {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapObject.Actions";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapObject_Actions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapObject_Actions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn idle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn done() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapObject {
+        #[static_field]
+        #[rename(name = "InvalidState")]
+        pub invalid_state: i32,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::mapobject::MapObject_Kinds,
+        #[rename(name = "m_Lods")]
+        pub m_lods: crate::app::mapobject::MapObject_Lods,
+        #[rename(name = "m_LodManual")]
+        pub m_lod_manual: bool,
+        #[rename(name = "m_LodAssign")]
+        pub m_lod_assign: bool,
+        #[rename(name = "m_DisableBake")]
+        pub m_disable_bake: bool,
+        #[rename(name = "m_DisableOccluder")]
+        pub m_disable_occluder: bool,
+        #[rename(name = "m_BakeTypes")]
+        pub m_bake_types: crate::app::mapobject::MapObject_BakeTypes,
+        #[rename(name = "エフェクト発生位置")]
+        pub エフェクト発生位置: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "停止エフェクト")]
+        pub 停止エフェクト: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "起動エフェクト")]
+        pub 起動エフェクト: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "破壊エフェクト")]
+        pub 破壊エフェクト: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "動作透過無効化")]
+        pub 動作透過無効化: bool,
+        #[rename(name = "動作透過遅延")]
+        pub 動作透過遅延: f32,
+        #[rename(name = "動作透過時間")]
+        pub 動作透過時間: f32,
+        #[rename(name = "状態変化")]
+        pub 状態変化: ::unity2::Array<crate::app::mapobject::MapObject_State>,
+        #[rename(name = "破壊前オブジェクト")]
+        pub 破壊前オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "破壊後オブジェクト")]
+        pub 破壊後オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_LightmapPairs")]
+        pub m_lightmap_pairs: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapobject::MapObject_Pair,
+        >,
+        #[rename(name = "m_LightmapScale")]
+        pub m_lightmap_scale: crate::app::mapobject::MapObject_LightmapScales,
+        #[rename(name = "m_ViewDistance")]
+        pub m_view_distance: f32,
+        #[rename(name = "m_EditAlpha")]
+        pub m_edit_alpha: f32,
+        #[rename(name = "m_Terrain")]
+        pub m_terrain: ::unity2::Il2CppString,
+        #[rename(name = "m_FadeAlpha")]
+        pub m_fade_alpha: f32,
+        #[rename(name = "m_ActionAlpha")]
+        pub m_action_alpha: f32,
+        #[rename(name = "m_TransparentAlpha")]
+        pub m_transparent_alpha: f32,
+        #[rename(name = "m_DestructoniAlpha")]
+        pub m_destructoni_alpha: f32,
+        #[rename(name = "m_Action")]
+        pub m_action: crate::app::mapobject::MapObject_Actions,
+        #[rename(name = "m_PreviwAction")]
+        pub m_previw_action: crate::app::mapobject::MapObject_Actions,
+        #[rename(name = "m_State")]
+        pub m_state: i32,
+        #[rename(name = "m_PreviwState")]
+        pub m_previw_state: i32,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_MapMaterial")]
+        pub m_map_material: crate::app::mapmaterial::MapMaterial,
+        #[rename(name = "m_IsBroken")]
+        pub m_is_broken: bool,
+        #[rename(name = "m_BrokenList")]
+        pub m_broken_list: crate::app::mapobject::MapObject_RigidList,
+        #[rename(name = "m_DitherManager")]
+        pub m_dither_manager: crate::app::mapobject::MapObject_DitherManager,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
     }
 }
 
@@ -1300,6 +1300,591 @@ impl MapObject_RigidList {
             )
         });
         <Self as IMapObject_RigidListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapObject_RigidInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_RigidInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_RigidInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapObject_RigidInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapObject_RigidInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+pub trait IMapObject_RigidInfoMethods: IMapObject_RigidInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapObject_RigidInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_RigidInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+impl<__T: IMapObject_RigidInfo> IMapObject_RigidInfoMethods for __T {}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_RigidInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_RigidInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_RigidInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapObject_Pair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_Pair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_Pair as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapObject_Pair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_Pair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+pub trait IMapObject_PairMethods: IMapObject_Pair {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapObject_Pair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_Pair_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+impl<__T: IMapObject_Pair> IMapObject_PairMethods for __T {}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_Pair {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_Pair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_PairMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapObject_DitherPair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapobject::MapObject_DitherManager as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapObject_DitherPair,
+        maanger: crate::app::mapobject::MapObject_DitherManager,
+        render: crate::unity_engine::renderer::Renderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapObject_DitherPair,
+            crate::app::mapobject::MapObject_DitherManager,
+            crate::unity_engine::renderer::Renderer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, maanger, render, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "CommitAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                    "CommitAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn commit_alpha(
+        this: MapObject_DitherPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_commit_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "SetAlpha",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                    "SetAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha(
+        this: MapObject_DitherPair,
+        alpha: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapObject_DitherPair, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha::get_offset() as isize),
+            );
+        inner(this, alpha, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "GetAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                    "GetAlpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alpha(
+        this: MapObject_DitherPair,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+pub trait IMapObject_DitherPairMethods: IMapObject_DitherPair {
+    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` overload"]
+    fn ctor(
+        self,
+        maanger: impl ::core::convert::Into<crate::app::mapobject::MapObject_DitherManager>,
+        render: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_DitherPair_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(maanger),
+                ::core::convert::Into::into(render),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CommitAlpha()` overload"]
+    fn commit_alpha(self) -> () {
+        unsafe {
+            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_DitherPair_unity2_raw::commit_alpha(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetAlpha(f32)` overload"]
+    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_DitherPair_unity2_raw::set_alpha(
+                __receiver,
+                ::core::convert::Into::into(alpha),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAlpha()` overload"]
+    fn get_alpha(self) -> f32 {
+        unsafe {
+            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_DitherPair_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+impl<__T: IMapObject_DitherPair> IMapObject_DitherPairMethods for __T {}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_DitherPair {
+    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` — overload selector"]
+    pub fn new(
+        maanger: crate::app::mapobject::MapObject_DitherManager,
+        render: crate::unity_engine::renderer::Renderer,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_DitherPair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_DitherPairMethods>::ctor(this, maanger, render);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapObject_State_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_State as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
+                    "SetActive",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_active(
+        this: MapObject_State,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapObject_State, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_active::get_offset() as isize),
+            );
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_State as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapObject_State,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapObject_State, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+pub trait IMapObject_StateMethods: IMapObject_State {
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_State_unity2_raw::set_active(
+                __receiver,
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapObject_State_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+impl<__T: IMapObject_State> IMapObject_StateMethods for __T {}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_State {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_State),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_StateMethods>::ctor(this);
         this
     }
 }
@@ -5834,591 +6419,6 @@ impl MapObject {
             )
         });
         <Self as IMapObjectMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_Pair_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_Pair as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_Pair as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: MapObject_Pair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapObject_Pair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-pub trait IMapObject_PairMethods: IMapObject_Pair {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_Pair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_Pair_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_Pair> IMapObject_PairMethods for __T {}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_Pair {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_Pair),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_PairMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_State_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_State as ::unity2::ClassIdentity>::class(),
-                "SetActive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_active(
-        this: MapObject_State,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_State, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_active::get_offset() as isize),
-            );
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_State as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapObject_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_State, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-pub trait IMapObject_StateMethods: IMapObject_State {
-    #[doc = "`SetActive(bool)` overload"]
-    fn set_active(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_State_unity2_raw::set_active(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_State_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_State> IMapObject_StateMethods for __T {}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_State {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_State),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_StateMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_RigidInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_RigidInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapObject_RigidInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_RigidInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-pub trait IMapObject_RigidInfoMethods: IMapObject_RigidInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_RigidInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_RigidInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_RigidInfo> IMapObject_RigidInfoMethods for __T {}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_RigidInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_RigidInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_RigidInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_DitherPair_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapobject::MapObject_DitherManager as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapObject_DitherPair,
-        maanger: crate::app::mapobject::MapObject_DitherManager,
-        render: crate::unity_engine::renderer::Renderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject_DitherPair,
-            crate::app::mapobject::MapObject_DitherManager,
-            crate::unity_engine::renderer::Renderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, maanger, render, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "CommitAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "CommitAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_alpha(
-        this: MapObject_DitherPair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "SetAlpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "SetAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_alpha(
-        this: MapObject_DitherPair,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_DitherPair, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_alpha::get_offset() as isize),
-            );
-        inner(this, alpha, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "GetAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "GetAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_alpha(
-        this: MapObject_DitherPair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-pub trait IMapObject_DitherPairMethods: IMapObject_DitherPair {
-    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` overload"]
-    fn ctor(
-        self,
-        maanger: impl ::core::convert::Into<crate::app::mapobject::MapObject_DitherManager>,
-        render: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(maanger),
-                ::core::convert::Into::into(render),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CommitAlpha()` overload"]
-    fn commit_alpha(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::commit_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetAlpha(f32)` overload"]
-    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::set_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAlpha()` overload"]
-    fn get_alpha(self) -> f32 {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_DitherPair> IMapObject_DitherPairMethods for __T {}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_DitherPair {
-    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` — overload selector"]
-    pub fn new(
-        maanger: crate::app::mapobject::MapObject_DitherManager,
-        render: crate::unity_engine::renderer::Renderer,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_DitherPair),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_DitherPairMethods>::ctor(this, maanger, render);
         this
     }
 }

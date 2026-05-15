@@ -259,7 +259,7 @@ mod __HubResource_unity2_raw {
 
 #[cfg(feature = "app-hubresource")]
 pub trait IHubResourceMethods: IHubResource {
-    pub fn get<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {

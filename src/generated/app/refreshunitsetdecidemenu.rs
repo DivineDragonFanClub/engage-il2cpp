@@ -14,6 +14,22 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
+        #[rename(name = "m_Enabled")]
+        pub m_enabled: bool,
+        #[rename(name = "m_Usabled")]
+        pub m_usabled: bool,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -56,22 +72,6 @@ mod __types {
         pub fn cancel() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
-        #[rename(name = "m_Enabled")]
-        pub m_enabled: bool,
-        #[rename(name = "m_Usabled")]
-        pub m_usabled: bool,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]

@@ -11,6 +11,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ConfigBgmSelectSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: configbgmselectsequence :: ConfigBgmSelectSequence >)]
+    pub struct ConfigBgmSelectSequence {
+        #[rename(name = "m_selectBgm")]
+        pub m_select_bgm: ::unity2::Il2CppString,
+        #[rename(name = "m_callback")]
+        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/configbgmselectsequence/ConfigBgmSelectSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -57,16 +67,6 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ConfigBgmSelectSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: configbgmselectsequence :: ConfigBgmSelectSequence >)]
-    pub struct ConfigBgmSelectSequence {
-        #[rename(name = "m_selectBgm")]
-        pub m_select_bgm: ::unity2::Il2CppString,
-        #[rename(name = "m_callback")]
-        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
     }
 }
 

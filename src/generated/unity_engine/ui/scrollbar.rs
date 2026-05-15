@@ -47,6 +47,50 @@ mod __types {
         pub m_delayed_update_visuals: bool,
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Scrollbar_Axis {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Scrollbar_Axis {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Scrollbar.Axis";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Scrollbar_Axis {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Scrollbar_Axis {
+        pub fn horizontal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn vertical() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
     #[repr(C)]
     #[derive(
@@ -103,50 +147,6 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar.ScrollEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
     pub struct Scrollbar_ScrollEvent {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Scrollbar_Axis {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Scrollbar_Axis {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Scrollbar.Axis";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Scrollbar_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Scrollbar_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]

@@ -296,7 +296,9 @@ impl ObjectInitializationData {
             __ObjectInitializationData_unity2_raw::to_string(self, ::core::option::Option::None)
         }
     }
-    pub fn create_instance<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn create_instance<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         id_override: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {

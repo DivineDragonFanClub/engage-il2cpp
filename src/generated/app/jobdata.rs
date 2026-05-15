@@ -15,6 +15,154 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct JobData_WeaponValues {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_WeaponValues {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "JobData.WeaponValues";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_WeaponValues {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl JobData_WeaponValues {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn equippable() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn selectable1() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn selectable2() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct JobData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "JobData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl JobData_Flags {
+        pub fn can_cc() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn anyone_cc() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn female_only() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn encount_map() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct JobData_Ranks {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_Ranks {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "JobData.Ranks";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_Ranks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl JobData_Ranks {
+        pub fn low() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn high() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md"))]
     #[repr(C)]
     #[derive(
@@ -79,58 +227,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct JobData_WeaponValues {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_WeaponValues {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "JobData.WeaponValues";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_WeaponValues {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl JobData_WeaponValues {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn equippable() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn selectable1() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn selectable2() -> Self {
-            Self { value: 3 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
     #[::unity2::class(namespace = "App", name = "JobData.FlagField")]
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
@@ -159,102 +255,6 @@ mod __types {
         pub weapon_level_plus_mask: crate::app::weaponmask::WeaponMask,
         #[rename(name = "HighJobs")]
         pub high_jobs: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct JobData_Ranks {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_Ranks {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "JobData.Ranks";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_Ranks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl JobData_Ranks {
-        pub fn low() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn high() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct JobData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "JobData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl JobData_Flags {
-        pub fn can_cc() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn anyone_cc() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn female_only() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn encount_map() -> Self {
-            Self { value: 8 }
-        }
     }
 }
 

@@ -12,27 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
-    #[::unity2::class(namespace = "App", name = "AchieveData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
-    pub struct AchieveData {
-        #[rename(name = "m_FlagName")]
-        pub m_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_KindDictionary")]
-        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::achievedata::AchieveData,
-            >,
-        >,
-        #[static_field]
-        #[rename(name = "s_ShowQueue")]
-        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
-            crate::app::achievedata::AchieveData,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
     #[repr(C)]
     #[derive(
@@ -93,7 +72,28 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
+    #[::unity2::class(namespace = "App", name = "AchieveData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
+    pub struct AchieveData {
+        #[rename(name = "m_FlagName")]
+        pub m_flag_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_KindDictionary")]
+        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::achievedata::AchieveData,
+            >,
+        >,
+        #[static_field]
+        #[rename(name = "s_ShowQueue")]
+        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
+            crate::app::achievedata::AchieveData,
+        >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -102,14 +102,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct AchieveData_Status {
+    pub struct AchieveData_Categories {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_Status {
+    impl ::unity2::ClassIdentity for AchieveData_Categories {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "AchieveData.Status";
+        const NAME: &'static str = "AchieveData.Categories";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -118,7 +118,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AchieveData_Status {
+    impl ::unity2::IlType for AchieveData_Categories {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -127,25 +127,33 @@ mod __types {
         }
     }
 
-    impl AchieveData_Status {
-        pub fn none() -> Self {
+    impl AchieveData_Categories {
+        pub fn unit() -> Self {
             Self { value: 0 }
         }
 
-        pub fn cleared() -> Self {
+        pub fn battle() -> Self {
             Self { value: 1 }
         }
 
-        pub fn showed() -> Self {
+        pub fn solanel() -> Self {
             Self { value: 2 }
         }
 
-        pub fn completed() -> Self {
+        pub fn shop() -> Self {
             Self { value: 3 }
         }
 
-        pub fn num() -> Self {
+        pub fn system() -> Self {
             Self { value: 4 }
+        }
+
+        pub fn play_report() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 5 }
         }
     }
 
@@ -737,7 +745,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -746,14 +754,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct AchieveData_Categories {
+    pub struct AchieveData_Status {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_Categories {
+    impl ::unity2::ClassIdentity for AchieveData_Status {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "AchieveData.Categories";
+        const NAME: &'static str = "AchieveData.Status";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -762,7 +770,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AchieveData_Categories {
+    impl ::unity2::IlType for AchieveData_Status {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -771,33 +779,25 @@ mod __types {
         }
     }
 
-    impl AchieveData_Categories {
-        pub fn unit() -> Self {
+    impl AchieveData_Status {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn battle() -> Self {
+        pub fn cleared() -> Self {
             Self { value: 1 }
         }
 
-        pub fn solanel() -> Self {
+        pub fn showed() -> Self {
             Self { value: 2 }
         }
 
-        pub fn shop() -> Self {
+        pub fn completed() -> Self {
             Self { value: 3 }
         }
 
-        pub fn system() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn play_report() -> Self {
-            Self { value: 5 }
-        }
-
         pub fn num() -> Self {
-            Self { value: 5 }
+            Self { value: 4 }
         }
     }
 }

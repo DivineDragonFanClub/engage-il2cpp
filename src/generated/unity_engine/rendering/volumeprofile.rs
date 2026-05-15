@@ -466,7 +466,7 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             __VolumeProfile_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn add<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn add<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         overrides: impl ::core::convert::Into<bool>,
     ) -> M0 {
@@ -539,7 +539,7 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn remove<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> () {
+    fn remove<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self) -> () {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -600,7 +600,7 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn has<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> bool {
+    fn has<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self) -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -674,7 +674,7 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn try_get<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         component: impl ::core::convert::Into<*mut M0>,
     ) -> bool {
@@ -729,7 +729,7 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn try_get_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
         component: impl ::core::convert::Into<*mut M0>,
@@ -790,7 +790,9 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn try_get_subclass_of<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_subclass_of<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
         component: impl ::core::convert::Into<*mut M0>,
@@ -851,7 +853,9 @@ pub trait IVolumeProfileMethods: IVolumeProfile {
             )
         }
     }
-    pub fn try_get_all_subclass_of<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_all_subclass_of<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
         result: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,

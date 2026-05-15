@@ -2236,7 +2236,7 @@ pub trait ITableMethods: ITable {
             )
         }
     }
-    pub fn perform_table_set<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn perform_table_set<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         list_index: impl ::core::convert::Into<
             crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
@@ -2567,7 +2567,9 @@ pub trait ITableMethods: ITable {
             )
         }
     }
-    pub fn perform_table_remove<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn perform_table_remove<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         list_index: impl ::core::convert::Into<
             crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<

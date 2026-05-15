@@ -991,7 +991,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
             __ComputeBuffer_unity2_raw::get_stride(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn set_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         data: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         managed_buffer_start_index: impl ::core::convert::Into<i32>,

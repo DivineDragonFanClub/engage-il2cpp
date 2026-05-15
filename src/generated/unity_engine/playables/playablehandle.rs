@@ -3757,7 +3757,9 @@ impl PlayableHandle {
 
 #[cfg(feature = "unity_engine-playables-playablehandle")]
 impl PlayableHandle {
-    pub fn get_object<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    pub fn get_object<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -3802,7 +3804,11 @@ impl PlayableHandle {
             __f(self, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn is_playable_of_type<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> bool {
+    pub fn is_playable_of_type<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

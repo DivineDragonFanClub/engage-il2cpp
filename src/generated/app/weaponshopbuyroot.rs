@@ -13,18 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_EquipableWeaponInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.EquipableWeaponInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct WeaponShopBuyRoot_EquipableWeaponInfo {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IconImage")]
-        pub m_icon_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_LevelText")]
-        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot.md"))]
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -93,6 +81,18 @@ mod __types {
         pub m_item_detail_display_with_unit: bool,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_EquipableWeaponInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.EquipableWeaponInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct WeaponShopBuyRoot_EquipableWeaponInfo {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IconImage")]
+        pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_LevelText")]
+        pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_ReturnEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.ReturnEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -101,179 +101,6 @@ mod __types {
 
 #[cfg(feature = "app-weaponshopbuyroot-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
-                <crate::app::weaponlevel::WeaponLevel_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::class(),
-                "Set",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set(
-        this: WeaponShopBuyRoot_EquipableWeaponInfo,
-        item_kinds: crate::app::itemdata::ItemData_Kinds,
-        weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
-        job_data: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyRoot_EquipableWeaponInfo,
-            crate::app::itemdata::ItemData_Kinds,
-            crate::app::weaponlevel::WeaponLevel_Kind,
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
-        inner(
-            this,
-            item_kinds,
-            weapon_level,
-            job_data,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WeaponShopBuyRoot_EquipableWeaponInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyRoot_EquipableWeaponInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-pub trait IWeaponShopBuyRoot_EquipableWeaponInfoMethods:
-    IWeaponShopBuyRoot_EquipableWeaponInfo
-{
-    #[doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, crate::app::jobdata::JobData)` overload"]
-    fn set(
-        self,
-        item_kinds: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        weapon_level: impl ::core::convert::Into<crate::app::weaponlevel::WeaponLevel_Kind>,
-        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyRoot_EquipableWeaponInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(item_kinds),
-                ::core::convert::Into::into(weapon_level),
-                ::core::convert::Into::into(job_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyRoot_EquipableWeaponInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-impl<__T: IWeaponShopBuyRoot_EquipableWeaponInfo> IWeaponShopBuyRoot_EquipableWeaponInfoMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-impl WeaponShopBuyRoot_EquipableWeaponInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyRoot_EquipableWeaponInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopBuyRoot_EquipableWeaponInfoMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-weaponshopbuyroot")]
 #[doc(hidden)]
@@ -1746,6 +1573,179 @@ impl WeaponShopBuyRoot {
             )
         });
         <Self as IWeaponShopBuyRootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::weaponlevel::WeaponLevel_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::class(),
+                "Set",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: WeaponShopBuyRoot_EquipableWeaponInfo,
+        item_kinds: crate::app::itemdata::ItemData_Kinds,
+        weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
+        job_data: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WeaponShopBuyRoot_EquipableWeaponInfo,
+            crate::app::itemdata::ItemData_Kinds,
+            crate::app::weaponlevel::WeaponLevel_Kind,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(
+            this,
+            item_kinds,
+            weapon_level,
+            job_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WeaponShopBuyRoot_EquipableWeaponInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WeaponShopBuyRoot_EquipableWeaponInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WeaponShopBuyRoot_EquipableWeaponInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+pub trait IWeaponShopBuyRoot_EquipableWeaponInfoMethods:
+    IWeaponShopBuyRoot_EquipableWeaponInfo
+{
+    #[doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, crate::app::jobdata::JobData)` overload"]
+    fn set(
+        self,
+        item_kinds: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
+        weapon_level: impl ::core::convert::Into<crate::app::weaponlevel::WeaponLevel_Kind>,
+        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            let __receiver = < WeaponShopBuyRoot_EquipableWeaponInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(item_kinds),
+                ::core::convert::Into::into(weapon_level),
+                ::core::convert::Into::into(job_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < WeaponShopBuyRoot_EquipableWeaponInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyRoot_EquipableWeaponInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl<__T: IWeaponShopBuyRoot_EquipableWeaponInfo> IWeaponShopBuyRoot_EquipableWeaponInfoMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl WeaponShopBuyRoot_EquipableWeaponInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyRoot_EquipableWeaponInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyRoot_EquipableWeaponInfoMethods>::ctor(this);
         this
     }
 }

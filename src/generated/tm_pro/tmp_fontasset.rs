@@ -6043,7 +6043,9 @@ pub trait ITMP_FontAssetMethods: ITMP_FontAsset {
             )
         }
     }
-    pub fn copy_list_data_to_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn copy_list_data_to_array<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         src_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         dst_array: impl ::core::convert::Into<*mut ::unity2::Array<M0>>,

@@ -727,7 +727,7 @@ pub trait IAndroidJavaObjectMethods: IAndroidJavaObject {
             __AndroidJavaObject_unity2_raw::get_raw_class(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn call<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn call<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
@@ -788,7 +788,7 @@ pub trait IAndroidJavaObjectMethods: IAndroidJavaObject {
             )
         }
     }
-    pub fn call_static<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn call_static<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,

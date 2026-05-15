@@ -14,30 +14,19 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_ChallengeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.ChallengeMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct CapeTowerTopMenu_ChallengeMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct CapeTowerTopMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.RelayMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct CapeTowerTopMenu_RelayMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct CapeTowerTopMenu {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_Result2.md"))]
     #[repr(C)]
@@ -91,6 +80,17 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct CapeTowerTopMenu {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.VersusMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -100,10 +100,10 @@ mod __types {
             crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_ChallengeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.ChallengeMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.RelayMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct CapeTowerTopMenu_ChallengeMenuItem {
+    pub struct CapeTowerTopMenu_RelayMenuItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
@@ -112,6 +112,346 @@ mod __types {
 
 #[cfg(feature = "app-capetowertopmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capetowertopmenu :: CapeTowerTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CapeTowerTopMenu_ChallengeMenuItem,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CapeTowerTopMenu_ChallengeMenuItem,
+            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, decide_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: CapeTowerTopMenu_ChallengeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            CapeTowerTopMenu_ChallengeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: CapeTowerTopMenu_ChallengeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CapeTowerTopMenu_ChallengeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_select::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnBuild",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build(
+        this: CapeTowerTopMenu_ChallengeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CapeTowerTopMenu_ChallengeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_build::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: CapeTowerTopMenu_ChallengeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            CapeTowerTopMenu_ChallengeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_ChallengeMenuItem {
+    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver =
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::on_select(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnBuild()` overload"]
+    fn on_build(self) -> () {
+        unsafe {
+            let __receiver =
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::on_build(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl<__T: ICapeTowerTopMenu_ChallengeMenuItem> ICapeTowerTopMenu_ChallengeMenuItemMethods for __T {}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_ChallengeMenuItem {
+    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu_ChallengeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenu_ChallengeMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
 
 #[cfg(feature = "app-capetowertopmenu")]
 #[doc(hidden)]
@@ -283,282 +623,6 @@ impl CapeTowerTopMenu_DecideEventHandler {
             )
         });
         <Self as ICapeTowerTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-capetowertopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CapeTowerTopMenu_RelayMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capetowertopmenu :: CapeTowerTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CapeTowerTopMenu_RelayMenuItem,
-        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerTopMenu_RelayMenuItem,
-            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: CapeTowerTopMenu_RelayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CapeTowerTopMenu_RelayMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_build(
-        this: CapeTowerTopMenu_RelayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(CapeTowerTopMenu_RelayMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: CapeTowerTopMenu_RelayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            CapeTowerTopMenu_RelayMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-capetowertopmenu")]
-pub trait ICapeTowerTopMenu_RelayMenuItemMethods: ICapeTowerTopMenu_RelayMenuItem {
-    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver =
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver =
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::on_build(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-capetowertopmenu")]
-impl<__T: ICapeTowerTopMenu_RelayMenuItem> ICapeTowerTopMenu_RelayMenuItemMethods for __T {}
-
-#[cfg(feature = "app-capetowertopmenu")]
-impl CapeTowerTopMenu_RelayMenuItem {
-    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerTopMenu_RelayMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICapeTowerTopMenu_RelayMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }
@@ -1361,7 +1425,7 @@ impl CapeTowerTopMenu_VersusMenuItem {
 #[cfg(feature = "app-capetowertopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
+mod __CapeTowerTopMenu_RelayMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1372,7 +1436,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capetowertopmenu :: CapeTowerTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -1384,7 +1448,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1397,12 +1461,12 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: CapeTowerTopMenu_ChallengeMenuItem,
+        this: CapeTowerTopMenu_RelayMenuItem,
         decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            CapeTowerTopMenu_ChallengeMenuItem,
+            CapeTowerTopMenu_RelayMenuItem,
             crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -1414,53 +1478,6 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: CapeTowerTopMenu_ChallengeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            CapeTowerTopMenu_ChallengeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -1468,7 +1485,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
                 "OnSelect",
                 0,
                 param_types,
@@ -1480,7 +1497,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
                     "OnSelect",
                     e
                 ),
@@ -1493,17 +1510,15 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn on_select(
-        this: CapeTowerTopMenu_ChallengeMenuItem,
+        this: CapeTowerTopMenu_RelayMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerTopMenu_ChallengeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CapeTowerTopMenu_RelayMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_select::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1515,7 +1530,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
                 "OnBuild",
                 0,
                 param_types,
@@ -1527,7 +1542,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
                     "OnBuild",
                     e
                 ),
@@ -1540,17 +1555,15 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn on_build(
-        this: CapeTowerTopMenu_ChallengeMenuItem,
+        this: CapeTowerTopMenu_RelayMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerTopMenu_ChallengeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CapeTowerTopMenu_RelayMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_on_build::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1562,7 +1575,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::class(),
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -1574,7 +1587,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <CapeTowerTopMenu_RelayMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -1587,11 +1600,11 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: CapeTowerTopMenu_ChallengeMenuItem,
+        this: CapeTowerTopMenu_RelayMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            CapeTowerTopMenu_ChallengeMenuItem,
+            CapeTowerTopMenu_RelayMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1603,7 +1616,7 @@ mod __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
-pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_ChallengeMenuItem {
+pub trait ICapeTowerTopMenu_RelayMenuItemMethods: ICapeTowerTopMenu_RelayMenuItem {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
@@ -1613,25 +1626,12 @@ pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_Challeng
     ) -> () {
         unsafe {
             let __receiver =
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::ctor(
+            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::build_attribute(
-                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -1640,10 +1640,10 @@ pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_Challeng
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::on_select(
+            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::on_select(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1653,10 +1653,10 @@ pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_Challeng
     fn on_build(self) -> () {
         unsafe {
             let __receiver =
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::on_build(
+            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::on_build(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1666,10 +1666,10 @@ pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_Challeng
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <CapeTowerTopMenu_ChallengeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <CapeTowerTopMenu_RelayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CapeTowerTopMenu_ChallengeMenuItem_unity2_raw::a_call(
+            __CapeTowerTopMenu_RelayMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1678,10 +1678,10 @@ pub trait ICapeTowerTopMenu_ChallengeMenuItemMethods: ICapeTowerTopMenu_Challeng
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
-impl<__T: ICapeTowerTopMenu_ChallengeMenuItem> ICapeTowerTopMenu_ChallengeMenuItemMethods for __T {}
+impl<__T: ICapeTowerTopMenu_RelayMenuItem> ICapeTowerTopMenu_RelayMenuItemMethods for __T {}
 
 #[cfg(feature = "app-capetowertopmenu")]
-impl CapeTowerTopMenu_ChallengeMenuItem {
+impl CapeTowerTopMenu_RelayMenuItem {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
@@ -1689,11 +1689,11 @@ impl CapeTowerTopMenu_ChallengeMenuItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerTopMenu_ChallengeMenuItem),
+                ::core::stringify!(CapeTowerTopMenu_RelayMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICapeTowerTopMenu_ChallengeMenuItemMethods>::ctor(this, decide_event_handler);
+        <Self as ICapeTowerTopMenu_RelayMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }

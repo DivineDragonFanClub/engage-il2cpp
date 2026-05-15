@@ -9,27 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))]
-    #[::unity2::class(namespace = "App", name = "CapabilityDefinition")]
-    #[parent(crate::system::object::Object)]
-    pub struct CapabilityDefinition {
-        #[static_field]
-        #[rename(name = "Num")]
-        pub num: i32,
-        #[static_field]
-        #[rename(name = "CcNum")]
-        pub cc_num: i32,
-        #[static_field]
-        #[rename(name = "GrowNum")]
-        pub grow_num: i32,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "Helps")]
-        pub helps: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -124,6 +103,27 @@ mod __types {
         pub fn grow_num() -> Self {
             Self { value: 9 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))]
+    #[::unity2::class(namespace = "App", name = "CapabilityDefinition")]
+    #[parent(crate::system::object::Object)]
+    pub struct CapabilityDefinition {
+        #[static_field]
+        #[rename(name = "Num")]
+        pub num: i32,
+        #[static_field]
+        #[rename(name = "CcNum")]
+        pub cc_num: i32,
+        #[static_field]
+        #[rename(name = "GrowNum")]
+        pub grow_num: i32,
+        #[static_field]
+        #[rename(name = "Names")]
+        pub names: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "Helps")]
+        pub helps: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

@@ -13,6 +13,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.EventSystems",
+        name = "PhysicsRaycaster.RaycastHitComparer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct PhysicsRaycaster_RaycastHitComparer {
+# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PhysicsRaycaster")]
     #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
@@ -31,20 +41,229 @@ mod __types {
         #[rename(name = "m_Hits")]
         pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "PhysicsRaycaster.RaycastHitComparer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct PhysicsRaycaster_RaycastHitComparer {
-# [static_field] # [rename (name = "instance")] pub instance : crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster_RaycastHitComparer ,
-}
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhysicsRaycaster_RaycastHitComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: PhysicsRaycaster_RaycastHitComparer,
+        x: crate::unity_engine::raycasthit::RaycastHit,
+        y: crate::unity_engine::raycasthit::RaycastHit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhysicsRaycaster_RaycastHitComparer,
+            crate::unity_engine::raycasthit::RaycastHit,
+            crate::unity_engine::raycasthit::RaycastHit,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhysicsRaycaster_RaycastHitComparer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhysicsRaycaster_RaycastHitComparer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster_RaycastHitComparer {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::cctor(::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+pub trait IPhysicsRaycaster_RaycastHitComparerMethods:
+    IPhysicsRaycaster_RaycastHitComparer
+{
+    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
+    fn compare(
+        self,
+        x: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
+        y: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl<__T: IPhysicsRaycaster_RaycastHitComparer> IPhysicsRaycaster_RaycastHitComparerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster_RaycastHitComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhysicsRaycaster_RaycastHitComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysicsRaycaster_RaycastHitComparerMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
 #[doc(hidden)]
@@ -708,225 +927,6 @@ impl PhysicsRaycaster {
             )
         });
         <Self as IPhysicsRaycasterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhysicsRaycaster_RaycastHitComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: PhysicsRaycaster_RaycastHitComparer,
-        x: crate::unity_engine::raycasthit::RaycastHit,
-        y: crate::unity_engine::raycasthit::RaycastHit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            PhysicsRaycaster_RaycastHitComparer,
-            crate::unity_engine::raycasthit::RaycastHit,
-            crate::unity_engine::raycasthit::RaycastHit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhysicsRaycaster_RaycastHitComparer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhysicsRaycaster_RaycastHitComparer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsRaycaster_RaycastHitComparer as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-impl PhysicsRaycaster_RaycastHitComparer {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::cctor(::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-pub trait IPhysicsRaycaster_RaycastHitComparerMethods:
-    IPhysicsRaycaster_RaycastHitComparer
-{
-    #[doc = "`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]
-    fn compare(
-        self,
-        x: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
-        y: impl ::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhysicsRaycaster_RaycastHitComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhysicsRaycaster_RaycastHitComparer_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-impl<__T: IPhysicsRaycaster_RaycastHitComparer> IPhysicsRaycaster_RaycastHitComparerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
-impl PhysicsRaycaster_RaycastHitComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhysicsRaycaster_RaycastHitComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhysicsRaycaster_RaycastHitComparerMethods>::ctor(this);
         this
     }
 }

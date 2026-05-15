@@ -918,7 +918,9 @@ impl RenderGraphBuilder {
             (__ret, __out_0.assume_init())
         }
     }
-    pub fn set_render_func<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn set_render_func<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         render_func : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < M0 > >,
     ) -> () {

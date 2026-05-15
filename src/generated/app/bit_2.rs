@@ -2293,7 +2293,7 @@ impl Bit_2 {
             )
         }
     }
-    pub fn test_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn test_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         a: impl ::core::convert::Into<M0>,
         b: impl ::core::convert::Into<M0>,
     ) -> bool {
@@ -2345,7 +2345,7 @@ impl Bit_2 {
             )
         }
     }
-    pub fn not_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn not_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         a: impl ::core::convert::Into<M0>,
         b: impl ::core::convert::Into<M0>,
     ) -> bool {
@@ -2397,7 +2397,7 @@ impl Bit_2 {
             )
         }
     }
-    pub fn r#match_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn r#match_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         a: impl ::core::convert::Into<M0>,
         b: impl ::core::convert::Into<M0>,
     ) -> bool {

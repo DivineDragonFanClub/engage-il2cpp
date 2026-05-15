@@ -13,6 +13,58 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FaceImagesController_PlayPattern {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FaceImagesController_PlayPattern {
+        const NAMESPACE: &'static str = "App.RingCleaning";
+
+        const NAME: &'static str = "FaceImagesController.PlayPattern";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FaceImagesController_PlayPattern {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FaceImagesController_PlayPattern {
+        pub fn anything() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn hit_weak() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn hit_strong() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn clear() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md"))]
     #[repr(C)]
     #[derive(
@@ -74,58 +126,6 @@ mod __types {
 
         pub fn shy() -> Self {
             Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FaceImagesController_PlayPattern {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FaceImagesController_PlayPattern {
-        const NAMESPACE: &'static str = "App.RingCleaning";
-
-        const NAME: &'static str = "FaceImagesController.PlayPattern";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FaceImagesController_PlayPattern {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FaceImagesController_PlayPattern {
-        pub fn anything() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn hit_weak() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn hit_strong() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn clear() -> Self {
-            Self { value: 3 }
         }
     }
 

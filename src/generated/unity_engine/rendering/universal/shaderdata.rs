@@ -544,7 +544,9 @@ pub trait IShaderDataMethods: IShaderData {
             )
         }
     }
-    pub fn get_or_update_buffer<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_or_update_buffer<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         buffer: impl ::core::convert::Into<*mut crate::unity_engine::computebuffer::ComputeBuffer>,
         size: impl ::core::convert::Into<i32>,

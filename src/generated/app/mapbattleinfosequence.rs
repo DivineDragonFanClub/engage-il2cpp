@@ -13,24 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleInfoSequence {
-        #[rename(name = "m_AttackList")]
-        pub m_attack_list:
-            ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
-        #[rename(name = "m_HealRoot")]
-        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Heal")]
-        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence.AttackInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapBattleInfoSequence_AttackInfo {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo_SceneResult.md"))]
     #[repr(C)]
     #[derive(
@@ -86,583 +68,28 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence.AttackInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapBattleInfoSequence_AttackInfo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapBattleInfoSequence {
+        #[rename(name = "m_AttackList")]
+        pub m_attack_list:
+            ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
+        #[rename(name = "m_HealRoot")]
+        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Heal")]
+        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
 }
 
 #[cfg(feature = "app-mapbattleinfosequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapbattleinfosequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapBattleInfoSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_battle_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "SetBattleInfo",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetBattleInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_battle_info(
-        this: MapBattleInfoSequence,
-        b_show_wdw: bool,
-        info: crate::app::battleinfo::BattleInfo,
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapBattleInfoSequence,
-            bool,
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battlescenelist::BattleSceneList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_battle_info::get_offset() as isize),
-        );
-        inner(this, b_show_wdw, info, scene_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sequence_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-                <*mut crate::system::collections::generic::list_1::List_1<
-                    crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-                > as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "GetSequenceAttack",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSequenceAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sequence_attack(
-        info: crate::app::battleinfo::BattleInfo,
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        attacks: *mut crate::system::collections::generic::list_1::List_1<
-            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-        >,
-        is_separator: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battlescenelist::BattleSceneList,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-            >,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sequence_attack::get_offset() as isize),
-        );
-        inner(
-            info,
-            scene_list,
-            attacks,
-            is_separator,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescenelist :: BattleSceneList as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "SetAttackInfo",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetAttackInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_attack_info(
-        info: crate::app::battleinfo::BattleInfo,
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        scene_idx: *mut i32,
-        first_offense_damage: *mut i32,
-        first_defense_damage: *mut i32,
-        attack_info: *mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battlescenelist::BattleSceneList,
-            *mut i32,
-            *mut i32,
-            *mut i32,
-            *mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_attack_info::get_offset() as isize),
-        );
-        inner(
-            info,
-            scene_list,
-            scene_idx,
-            first_offense_damage,
-            first_defense_damage,
-            attack_info,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chain_attack_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "GetChainAttackCount",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetChainAttackCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_chain_attack_count(
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        idx: *mut i32,
-        is_dead: *mut bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::battlescenelist::BattleSceneList,
-            *mut i32,
-            *mut bool,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chain_attack_count::get_offset() as isize),
-        );
-        inner(scene_list, idx, is_dead, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_push_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "NextPushAttack",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "NextPushAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn next_push_attack(
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        start_idx: i32,
-        is_dead: *mut bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::battlescenelist::BattleSceneList,
-            i32,
-            *mut bool,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next_push_attack::get_offset() as isize),
-        );
-        inner(scene_list, start_idx, is_dead, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pre_pop_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                "PrePopOrder",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "PrePopOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn pre_pop_order(
-        scene_list: crate::app::battlescenelist::BattleSceneList,
-        start_idx: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::battlescenelist::BattleSceneList,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pre_pop_order::get_offset() as isize),
-        );
-        inner(scene_list, start_idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapBattleInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapBattleInfoSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapbattleinfosequence")]
-impl MapBattleInfoSequence {
-    #[doc = "`GetSequenceAttack(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *mutcrate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>, bool)` overload"]
-    pub fn get_sequence_attack(
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-        is_separator: impl ::core::convert::Into<bool>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-    > {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-                >,
-            >::uninit();
-            __MapBattleInfoSequence_unity2_raw::get_sequence_attack(
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(scene_list),
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(is_separator),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`SetAttackInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *muti32, *muti32, *muti32, *mutcrate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)` overload"]
-    pub fn set_attack_info(
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-    ) -> (
-        bool,
-        i32,
-        i32,
-        i32,
-        crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
-            >::uninit();
-            let __ret = {
-                __MapBattleInfoSequence_unity2_raw::set_attack_info(
-                    ::core::convert::Into::into(info),
-                    ::core::convert::Into::into(scene_list),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    __out_2.as_mut_ptr(),
-                    __out_3.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
-        }
-    }
-    #[doc = "`GetChainAttackCount(crate::app::battlescenelist::BattleSceneList, *muti32, *mutbool)` overload"]
-    pub fn get_chain_attack_count(
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-    ) -> (i32, i32, bool) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<bool>::uninit();
-            let __ret = {
-                __MapBattleInfoSequence_unity2_raw::get_chain_attack_count(
-                    ::core::convert::Into::into(scene_list),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`NextPushAttack(crate::app::battlescenelist::BattleSceneList, i32, *mutbool)` overload"]
-    pub fn next_push_attack(
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-        start_idx: impl ::core::convert::Into<i32>,
-    ) -> (i32, bool) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
-            let __ret = {
-                __MapBattleInfoSequence_unity2_raw::next_push_attack(
-                    ::core::convert::Into::into(scene_list),
-                    ::core::convert::Into::into(start_idx),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`PrePopOrder(crate::app::battlescenelist::BattleSceneList, i32)` overload"]
-    pub fn pre_pop_order(
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-        start_idx: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            __MapBattleInfoSequence_unity2_raw::pre_pop_order(
-                ::core::convert::Into::into(scene_list),
-                ::core::convert::Into::into(start_idx),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapbattleinfosequence")]
-pub trait IMapBattleInfoSequenceMethods: IMapBattleInfoSequence {
-    #[doc = "`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]
-    fn set_battle_info(
-        self,
-        b_show_wdw: impl ::core::convert::Into<bool>,
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapBattleInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapBattleInfoSequence_unity2_raw::set_battle_info(
-                __receiver,
-                ::core::convert::Into::into(b_show_wdw),
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(scene_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapBattleInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapBattleInfoSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapbattleinfosequence")]
-impl<__T: IMapBattleInfoSequence> IMapBattleInfoSequenceMethods for __T {}
-
-#[cfg(feature = "app-mapbattleinfosequence")]
-impl MapBattleInfoSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapBattleInfoSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapBattleInfoSequenceMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapbattleinfosequence")]
 #[doc(hidden)]
@@ -2241,6 +1668,579 @@ impl MapBattleInfoSequence_AttackInfo {
             )
         });
         <Self as IMapBattleInfoSequence_AttackInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapBattleInfoSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_battle_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
+                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "SetBattleInfo",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetBattleInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_battle_info(
+        this: MapBattleInfoSequence,
+        b_show_wdw: bool,
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapBattleInfoSequence,
+            bool,
+            crate::app::battleinfo::BattleInfo,
+            crate::app::battlescenelist::BattleSceneList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_battle_info::get_offset() as isize),
+        );
+        inner(this, b_show_wdw, info, scene_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sequence_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
+                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
+                <*mut crate::system::collections::generic::list_1::List_1<
+                    crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+                > as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "GetSequenceAttack",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSequenceAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sequence_attack(
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        attacks: *mut crate::system::collections::generic::list_1::List_1<
+            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+        >,
+        is_separator: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::battleinfo::BattleInfo,
+            crate::app::battlescenelist::BattleSceneList,
+            *mut crate::system::collections::generic::list_1::List_1<
+                crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+            >,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sequence_attack::get_offset() as isize),
+        );
+        inner(
+            info,
+            scene_list,
+            attacks,
+            is_separator,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescenelist :: BattleSceneList as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "SetAttackInfo",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetAttackInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_attack_info(
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        scene_idx: *mut i32,
+        first_offense_damage: *mut i32,
+        first_defense_damage: *mut i32,
+        attack_info: *mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::battleinfo::BattleInfo,
+            crate::app::battlescenelist::BattleSceneList,
+            *mut i32,
+            *mut i32,
+            *mut i32,
+            *mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_attack_info::get_offset() as isize),
+        );
+        inner(
+            info,
+            scene_list,
+            scene_idx,
+            first_offense_damage,
+            first_defense_damage,
+            attack_info,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chain_attack_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "GetChainAttackCount",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetChainAttackCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chain_attack_count(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        idx: *mut i32,
+        is_dead: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::battlescenelist::BattleSceneList,
+            *mut i32,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chain_attack_count::get_offset() as isize),
+        );
+        inner(scene_list, idx, is_dead, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next_push_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "NextPushAttack",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "NextPushAttack",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn next_push_attack(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        start_idx: i32,
+        is_dead: *mut bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::battlescenelist::BattleSceneList,
+            i32,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_next_push_attack::get_offset() as isize),
+        );
+        inner(scene_list, start_idx, is_dead, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pre_pop_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                "PrePopOrder",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    "PrePopOrder",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pre_pop_order(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        start_idx: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::battlescenelist::BattleSceneList,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pre_pop_order::get_offset() as isize),
+        );
+        inner(scene_list, start_idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapBattleInfoSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapBattleInfoSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapBattleInfoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapBattleInfoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+impl MapBattleInfoSequence {
+    #[doc = "`GetSequenceAttack(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *mutcrate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>, bool)` overload"]
+    pub fn get_sequence_attack(
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+        is_separator: impl ::core::convert::Into<bool>,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+    > {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+                >,
+            >::uninit();
+            __MapBattleInfoSequence_unity2_raw::get_sequence_attack(
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(scene_list),
+                __out_0.as_mut_ptr(),
+                ::core::convert::Into::into(is_separator),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`SetAttackInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *muti32, *muti32, *muti32, *mutcrate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)` overload"]
+    pub fn set_attack_info(
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+    ) -> (
+        bool,
+        i32,
+        i32,
+        i32,
+        crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+            >::uninit();
+            let __ret = {
+                __MapBattleInfoSequence_unity2_raw::set_attack_info(
+                    ::core::convert::Into::into(info),
+                    ::core::convert::Into::into(scene_list),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (
+                __ret,
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`GetChainAttackCount(crate::app::battlescenelist::BattleSceneList, *muti32, *mutbool)` overload"]
+    pub fn get_chain_attack_count(
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+    ) -> (i32, i32, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __MapBattleInfoSequence_unity2_raw::get_chain_attack_count(
+                    ::core::convert::Into::into(scene_list),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`NextPushAttack(crate::app::battlescenelist::BattleSceneList, i32, *mutbool)` overload"]
+    pub fn next_push_attack(
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+        start_idx: impl ::core::convert::Into<i32>,
+    ) -> (i32, bool) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
+            let __ret = {
+                __MapBattleInfoSequence_unity2_raw::next_push_attack(
+                    ::core::convert::Into::into(scene_list),
+                    ::core::convert::Into::into(start_idx),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`PrePopOrder(crate::app::battlescenelist::BattleSceneList, i32)` overload"]
+    pub fn pre_pop_order(
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+        start_idx: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            __MapBattleInfoSequence_unity2_raw::pre_pop_order(
+                ::core::convert::Into::into(scene_list),
+                ::core::convert::Into::into(start_idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+pub trait IMapBattleInfoSequenceMethods: IMapBattleInfoSequence {
+    #[doc = "`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]
+    fn set_battle_info(
+        self,
+        b_show_wdw: impl ::core::convert::Into<bool>,
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+        scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapBattleInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapBattleInfoSequence_unity2_raw::set_battle_info(
+                __receiver,
+                ::core::convert::Into::into(b_show_wdw),
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(scene_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapBattleInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapBattleInfoSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+impl<__T: IMapBattleInfoSequence> IMapBattleInfoSequenceMethods for __T {}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+impl MapBattleInfoSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleInfoSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleInfoSequenceMethods>::ctor(this);
         this
     }
 }

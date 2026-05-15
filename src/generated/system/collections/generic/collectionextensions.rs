@@ -28,9 +28,9 @@ mod __CollectionExtensions_unity2_raw {
 
 #[cfg(feature = "system-collections-generic-collectionextensions")]
 impl CollectionExtensions {
-    pub fn get_value_or_default<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn get_value_or_default<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         dictionary: impl ::core::convert::Into<
             crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<
@@ -98,9 +98,9 @@ impl CollectionExtensions {
             )
         }
     }
-    pub fn get_value_or_default_2<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn get_value_or_default_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         dictionary: impl ::core::convert::Into<
             crate::system::collections::generic::ireadonlydictionary_2::IReadOnlyDictionary_2<

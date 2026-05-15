@@ -2231,7 +2231,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
             )
         }
     }
-    pub fn set_property<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_property<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         current_value: impl ::core::convert::Into<*mut M0>,
         new_value: impl ::core::convert::Into<M0>,

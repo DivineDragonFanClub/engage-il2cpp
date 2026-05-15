@@ -188,7 +188,7 @@ pub trait IRenderGraphObjectPoolMethods: IRenderGraphObjectPool {
             __RenderGraphObjectPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn get_temp_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_temp_array<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         size: impl ::core::convert::Into<i32>,
     ) -> ::unity2::Array<M0> {
@@ -272,7 +272,7 @@ pub trait IRenderGraphObjectPoolMethods: IRenderGraphObjectPool {
             )
         }
     }
-    pub fn get<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -320,7 +320,7 @@ pub trait IRenderGraphObjectPoolMethods: IRenderGraphObjectPool {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn release<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn release<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         value: impl ::core::convert::Into<M0>,
     ) -> () {

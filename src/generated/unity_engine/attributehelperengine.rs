@@ -367,7 +367,9 @@ impl AttributeHelperEngine {
             )
         }
     }
-    pub fn get_custom_attribute_of_type<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_custom_attribute_of_type<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         klass: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

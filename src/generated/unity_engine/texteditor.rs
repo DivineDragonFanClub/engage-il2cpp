@@ -9,6 +9,44 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
+    #[parent(crate::system::object::Object)]
+    pub struct TextEditor {
+        #[rename(name = "keyboardOnScreen")]
+        pub keyboard_on_screen: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
+        #[rename(name = "controlID")]
+        pub control_id: i32,
+        #[rename(name = "style")]
+        pub style: crate::unity_engine::guistyle::GUIStyle,
+        #[rename(name = "multiline")]
+        pub multiline: bool,
+        #[rename(name = "hasHorizontalCursorPos")]
+        pub has_horizontal_cursor_pos: bool,
+        #[rename(name = "isPasswordField")]
+        pub is_password_field: bool,
+        #[rename(name = "scrollOffset")]
+        pub scroll_offset: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Content")]
+        pub m_content: crate::unity_engine::guicontent::GUIContent,
+        #[rename(name = "m_CursorIndex")]
+        pub m_cursor_index: i32,
+        #[rename(name = "m_SelectIndex")]
+        pub m_select_index: i32,
+        #[rename(name = "m_RevealCursor")]
+        pub m_reveal_cursor: bool,
+        #[rename(name = "m_MouseDragSelectsWholeWords")]
+        pub m_mouse_drag_selects_whole_words: bool,
+        #[rename(name = "m_DblClickInitPos")]
+        pub m_dbl_click_init_pos: i32,
+        #[rename(name = "m_DblClickSnap")]
+        pub m_dbl_click_snap: crate::unity_engine::texteditor::TextEditor_DblClickSnapping,
+        #[rename(name = "m_bJustSelected")]
+        pub m_b_just_selected: bool,
+        #[rename(name = "m_iAltCursorPos")]
+        pub m_i_alt_cursor_pos: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md"))]
     #[repr(C)]
     #[derive(
@@ -51,44 +89,6 @@ mod __types {
         pub fn paragraphs() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextEditor {
-        #[rename(name = "keyboardOnScreen")]
-        pub keyboard_on_screen: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
-        #[rename(name = "controlID")]
-        pub control_id: i32,
-        #[rename(name = "style")]
-        pub style: crate::unity_engine::guistyle::GUIStyle,
-        #[rename(name = "multiline")]
-        pub multiline: bool,
-        #[rename(name = "hasHorizontalCursorPos")]
-        pub has_horizontal_cursor_pos: bool,
-        #[rename(name = "isPasswordField")]
-        pub is_password_field: bool,
-        #[rename(name = "scrollOffset")]
-        pub scroll_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Content")]
-        pub m_content: crate::unity_engine::guicontent::GUIContent,
-        #[rename(name = "m_CursorIndex")]
-        pub m_cursor_index: i32,
-        #[rename(name = "m_SelectIndex")]
-        pub m_select_index: i32,
-        #[rename(name = "m_RevealCursor")]
-        pub m_reveal_cursor: bool,
-        #[rename(name = "m_MouseDragSelectsWholeWords")]
-        pub m_mouse_drag_selects_whole_words: bool,
-        #[rename(name = "m_DblClickInitPos")]
-        pub m_dbl_click_init_pos: i32,
-        #[rename(name = "m_DblClickSnap")]
-        pub m_dbl_click_snap: crate::unity_engine::texteditor::TextEditor_DblClickSnapping,
-        #[rename(name = "m_bJustSelected")]
-        pub m_b_just_selected: bool,
-        #[rename(name = "m_iAltCursorPos")]
-        pub m_i_alt_cursor_pos: i32,
     }
 }
 

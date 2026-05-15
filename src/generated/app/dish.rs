@@ -9,42 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Dish_RelianceResult {
-        pub hero_unit_a: i32,
-        pub hero_unit_b: i32,
-        pub unit_a_unit_b: i32,
-        pub hero_unit_a_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub hero_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub unit_a_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
-        pub hero: crate::app::unit::Unit,
-        pub unit_a: crate::app::unit::Unit,
-        pub unit_b: crate::app::unit::Unit,
-    }
-
-    impl ::unity2::ClassIdentity for Dish_RelianceResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Dish.RelianceResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Dish_RelianceResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult_TryResult.md"))]
     #[repr(C)]
     #[derive(
@@ -94,6 +58,42 @@ mod __types {
 
         pub fn not_exists() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Dish_RelianceResult {
+        pub hero_unit_a: i32,
+        pub hero_unit_b: i32,
+        pub unit_a_unit_b: i32,
+        pub hero_unit_a_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub hero_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub unit_a_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        pub hero: crate::app::unit::Unit,
+        pub unit_a: crate::app::unit::Unit,
+        pub unit_b: crate::app::unit::Unit,
+    }
+
+    impl ::unity2::ClassIdentity for Dish_RelianceResult {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Dish.RelianceResult";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Dish_RelianceResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
         }
     }
 

@@ -3014,7 +3014,7 @@ pub trait ICubemapMethods: ICubemap {
             )
         }
     }
-    pub fn set_pixel_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_pixel_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         data: impl ::core::convert::Into<::unity2::Array<M0>>,
         mip_level: impl ::core::convert::Into<i32>,

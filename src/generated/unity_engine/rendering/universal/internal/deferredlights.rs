@@ -9,6 +9,67 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_CullLightsJob {}
+
+    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.CullLightsJob";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_CullLightsJob {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DeferredLights_DrawCall {
+        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
+        pub tile_list_size: i32,
+        pub punctual_light_buffer_size: i32,
+        pub rel_light_list_size: i32,
+        pub instance_offset: i32,
+        pub instance_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "DeferredLights.DrawCall";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DeferredLights_DrawCall {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
     #[repr(C)]
     #[derive(
@@ -72,85 +133,6 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_DrawCall {
-        pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
-        pub tile_list_size: i32,
-        pub punctual_light_buffer_size: i32,
-        pub rel_light_list_size: i32,
-        pub instance_offset: i32,
-        pub instance_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.DrawCall";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_DrawCall {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "DeferredLights"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct DeferredLights {
-# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
-# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
-# [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
-# [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
-# [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
-# [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
-# [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
-# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
-# [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
-# [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
-# [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
-# [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
-# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-# [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md"))]
     #[::unity2::class(
@@ -347,35 +329,171 @@ mod __types {
         pub shadow_light_index: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DeferredLights_CullLightsJob {}
-
-    impl ::unity2::ClassIdentity for DeferredLights_CullLightsJob {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "DeferredLights.CullLightsJob";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DeferredLights_CullLightsJob {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "DeferredLights"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct DeferredLights {
+# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
+# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
+# [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
+# [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
+# [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
+# [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
+# [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
+# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
+# [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
+# [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
+# [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
+# [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
+# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
+# [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeferredLights_CullLightsJob_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute(
+        this: DeferredLights_CullLightsJob,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeferredLights_CullLightsJob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_execute::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights_CullLightsJob {
+    #[doc = "`Execute()` overload"]
+    pub fn execute(self) -> () {
+        unsafe {
+            __DeferredLights_CullLightsJob_unity2_raw::execute(self, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeferredLights_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DeferredLights_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
 #[doc(hidden)]
@@ -5213,124 +5331,6 @@ impl DeferredLights {
             stencil_deferred_material,
         );
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeferredLights_ShaderConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeferredLights_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-impl DeferredLights_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __DeferredLights_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeferredLights_CullLightsJob_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeferredLights_CullLightsJob as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        this: DeferredLights_CullLightsJob,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeferredLights_CullLightsJob, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-impl DeferredLights_CullLightsJob {
-    #[doc = "`Execute()` overload"]
-    pub fn execute(self) -> () {
-        unsafe {
-            __DeferredLights_CullLightsJob_unity2_raw::execute(self, ::core::option::Option::None)
-        }
     }
 }
 

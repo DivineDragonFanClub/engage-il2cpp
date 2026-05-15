@@ -12,6 +12,34 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "RenderObjects.CustomCameraSettings"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderObjects_CustomCameraSettings {
+        #[rename(name = "overrideCamera")]
+        pub override_camera: bool,
+        #[rename(name = "restoreCamera")]
+        pub restore_camera: bool,
+        #[rename(name = "offset")]
+        pub offset: crate::unity_engine::vector4::Vector4,
+        #[rename(name = "cameraFieldOfView")]
+        pub camera_field_of_view: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "RenderObjects"
+    )]
+    # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)]
+    pub struct RenderObjects {
+# [rename (name = "settings")] pub settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_RenderObjectsSettings ,
+# [rename (name = "renderObjectsPass")] pub render_objects_pass : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjectspass :: RenderObjectsPass ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.Universal",
@@ -42,34 +70,6 @@ mod __types {
 # [rename (name = "LayerMask")] pub layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
 # [rename (name = "PassNames")] pub pass_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RenderObjects"
-    )]
-    # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)]
-    pub struct RenderObjects {
-# [rename (name = "settings")] pub settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_RenderObjectsSettings ,
-# [rename (name = "renderObjectsPass")] pub render_objects_pass : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjectspass :: RenderObjectsPass ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RenderObjects.CustomCameraSettings"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderObjects_CustomCameraSettings {
-        #[rename(name = "overrideCamera")]
-        pub override_camera: bool,
-        #[rename(name = "restoreCamera")]
-        pub restore_camera: bool,
-        #[rename(name = "offset")]
-        pub offset: crate::unity_engine::vector4::Vector4,
-        #[rename(name = "cameraFieldOfView")]
-        pub camera_field_of_view: f32,
-    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
@@ -78,7 +78,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_RenderObjectsSettings_unity2_raw {
+mod __RenderObjects_CustomCameraSettings_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -89,7 +89,7 @@ mod __RenderObjects_RenderObjectsSettings_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::class(),
+                <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -101,7 +101,7 @@ mod __RenderObjects_RenderObjectsSettings_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::NAME,
+                    <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -114,11 +114,11 @@ mod __RenderObjects_RenderObjectsSettings_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RenderObjects_RenderObjectsSettings,
+        this: RenderObjects_CustomCameraSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RenderObjects_RenderObjectsSettings,
+            RenderObjects_CustomCameraSettings,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -130,17 +130,15 @@ mod __RenderObjects_RenderObjectsSettings_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_RenderObjectsSettingsMethods:
-    IRenderObjects_RenderObjectsSettings
-{
+pub trait IRenderObjects_CustomCameraSettingsMethods: IRenderObjects_CustomCameraSettings {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RenderObjects_RenderObjectsSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <RenderObjects_CustomCameraSettings as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RenderObjects_RenderObjectsSettings_unity2_raw::ctor(
+            __RenderObjects_CustomCameraSettings_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -149,111 +147,20 @@ pub trait IRenderObjects_RenderObjectsSettingsMethods:
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_RenderObjectsSettings> IRenderObjects_RenderObjectsSettingsMethods
-    for __T
-{
-}
+impl<__T: IRenderObjects_CustomCameraSettings> IRenderObjects_CustomCameraSettingsMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_RenderObjectsSettings {
+impl RenderObjects_CustomCameraSettings {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_RenderObjectsSettings),
+                ::core::stringify!(RenderObjects_CustomCameraSettings),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_FilterSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RenderObjects_FilterSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderObjects_FilterSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_FilterSettingsMethods: IRenderObjects_FilterSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderObjects_FilterSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RenderObjects_FilterSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_FilterSettings> IRenderObjects_FilterSettingsMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_FilterSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_FilterSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderObjects_FilterSettingsMethods>::ctor(this);
+        <Self as IRenderObjects_CustomCameraSettingsMethods>::ctor(this);
         this
     }
 }
@@ -470,7 +377,7 @@ impl RenderObjects {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderObjects_CustomCameraSettings_unity2_raw {
+mod __RenderObjects_RenderObjectsSettings_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -481,7 +388,7 @@ mod __RenderObjects_CustomCameraSettings_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::class(),
+                <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -493,7 +400,7 @@ mod __RenderObjects_CustomCameraSettings_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RenderObjects_CustomCameraSettings as ::unity2::ClassIdentity>::NAME,
+                    <RenderObjects_RenderObjectsSettings as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -506,11 +413,11 @@ mod __RenderObjects_CustomCameraSettings_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RenderObjects_CustomCameraSettings,
+        this: RenderObjects_RenderObjectsSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RenderObjects_CustomCameraSettings,
+            RenderObjects_RenderObjectsSettings,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -522,15 +429,17 @@ mod __RenderObjects_CustomCameraSettings_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-pub trait IRenderObjects_CustomCameraSettingsMethods: IRenderObjects_CustomCameraSettings {
+pub trait IRenderObjects_RenderObjectsSettingsMethods:
+    IRenderObjects_RenderObjectsSettings
+{
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RenderObjects_CustomCameraSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <RenderObjects_RenderObjectsSettings as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RenderObjects_CustomCameraSettings_unity2_raw::ctor(
+            __RenderObjects_RenderObjectsSettings_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -539,20 +448,111 @@ pub trait IRenderObjects_CustomCameraSettingsMethods: IRenderObjects_CustomCamer
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl<__T: IRenderObjects_CustomCameraSettings> IRenderObjects_CustomCameraSettingsMethods for __T {}
+impl<__T: IRenderObjects_RenderObjectsSettings> IRenderObjects_RenderObjectsSettingsMethods
+    for __T
+{
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_CustomCameraSettings {
+impl RenderObjects_RenderObjectsSettings {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_CustomCameraSettings),
+                ::core::stringify!(RenderObjects_RenderObjectsSettings),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderObjects_CustomCameraSettingsMethods>::ctor(this);
+        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderObjects_FilterSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderObjects_FilterSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderObjects_FilterSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderObjects_FilterSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+pub trait IRenderObjects_FilterSettingsMethods: IRenderObjects_FilterSettings {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RenderObjects_FilterSettings as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderObjects_FilterSettings_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl<__T: IRenderObjects_FilterSettings> IRenderObjects_FilterSettingsMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
+impl RenderObjects_FilterSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderObjects_FilterSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderObjects_FilterSettingsMethods>::ctor(this);
         this
     }
 }

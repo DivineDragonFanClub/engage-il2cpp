@@ -125,22 +125,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))]
-    #[::unity2::class(namespace = "App", name = "TroopListSortMenu.SortTitle")]
-    #[parent(crate::system::object::Object)]
-    pub struct TroopListSortMenu_SortTitle {
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_page")]
-        pub m_page: i32,
-        #[rename(name = "m_sortType")]
-        pub m_sort_type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
-        #[rename(name = "m_title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_arrow")]
-        pub m_arrow: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
     #[repr(C)]
     #[derive(
@@ -250,537 +234,26 @@ mod __types {
         #[rename(name = "m_sortType")]
         pub m_sort_type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))]
+    #[::unity2::class(namespace = "App", name = "TroopListSortMenu.SortTitle")]
+    #[parent(crate::system::object::Object)]
+    pub struct TroopListSortMenu_SortTitle {
+        #[rename(name = "m_root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_page")]
+        pub m_page: i32,
+        #[rename(name = "m_sortType")]
+        pub m_sort_type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
+        #[rename(name = "m_title")]
+        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_arrow")]
+        pub m_arrow: crate::unity_engine::gameobject::GameObject,
+    }
 }
 
 #[cfg(feature = "app-trooplistsortmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-trooplistsortmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TroopListSortMenu_SortTitle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup(
-        this: TroopListSortMenu_SortTitle,
-        page: i32,
-        title: ::unity2::Il2CppString,
-        r#type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TroopListSortMenu_SortTitle,
-            i32,
-            ::unity2::Il2CppString,
-            crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
-        inner(this, page, title, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_arrow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "SetArrow",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "SetArrow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_arrow(
-        this: TroopListSortMenu_SortTitle,
-        set_arrow: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TroopListSortMenu_SortTitle,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arrow::get_offset() as isize),
-        );
-        inner(this, set_arrow, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_arrow_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "SetArrowHide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "SetArrowHide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_arrow_hide(
-        this: TroopListSortMenu_SortTitle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_arrow_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_page {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "GetPage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "GetPage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_page(
-        this: TroopListSortMenu_SortTitle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_page::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sort_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "GetSortType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "GetSortType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sort_type(
-        this: TroopListSortMenu_SortTitle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType {
-        let inner: extern "C" fn(
-            TroopListSortMenu_SortTitle,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sort_type::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cursor_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "GetCursorRectTransform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "GetCursorRectTransform",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_cursor_rect_transform(
-        this: TroopListSortMenu_SortTitle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(
-            TroopListSortMenu_SortTitle,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cursor_rect_transform::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                "SetTextColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    "SetTextColor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_text_color(
-        this: TroopListSortMenu_SortTitle,
-        is_active: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TroopListSortMenu_SortTitle,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_color::get_offset() as isize),
-        );
-        inner(this, is_active, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TroopListSortMenu_SortTitle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-trooplistsortmenu")]
-pub trait ITroopListSortMenu_SortTitleMethods: ITroopListSortMenu_SortTitle {
-    #[doc = "`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]
-    fn setup(
-        self,
-        page: impl ::core::convert::Into<i32>,
-        title: impl ::core::convert::Into<::unity2::Il2CppString>,
-        r#type: impl ::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu_SortType>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(page),
-                ::core::convert::Into::into(title),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetArrow(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_arrow(
-        self,
-        set_arrow: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::set_arrow(
-                __receiver,
-                ::core::convert::Into::into(set_arrow),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetArrowHide()` overload"]
-    fn set_arrow_hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::set_arrow_hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetPage()` overload"]
-    fn get_page(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::get_page(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSortType()` overload"]
-    fn get_sort_type(self) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::get_sort_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCursorRectTransform()` overload"]
-    fn get_cursor_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::get_cursor_rect_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetTextColor(bool)` overload"]
-    fn set_text_color(self, is_active: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::set_text_color(
-                __receiver,
-                ::core::convert::Into::into(is_active),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TroopListSortMenu_SortTitle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-trooplistsortmenu")]
-impl<__T: ITroopListSortMenu_SortTitle> ITroopListSortMenu_SortTitleMethods for __T {}
-
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu_SortTitle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TroopListSortMenu_SortTitle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITroopListSortMenu_SortTitleMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-trooplistsortmenu")]
 #[doc(hidden)]
@@ -2001,6 +1474,533 @@ impl TroopListSortMenu {
             )
         });
         <Self as ITroopListSortMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-trooplistsortmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TroopListSortMenu_SortTitle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: TroopListSortMenu_SortTitle,
+        page: i32,
+        title: ::unity2::Il2CppString,
+        r#type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TroopListSortMenu_SortTitle,
+            i32,
+            ::unity2::Il2CppString,
+            crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_setup::get_offset() as isize),
+        );
+        inner(this, page, title, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_arrow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "SetArrow",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "SetArrow",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_arrow(
+        this: TroopListSortMenu_SortTitle,
+        set_arrow: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TroopListSortMenu_SortTitle,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_arrow::get_offset() as isize),
+        );
+        inner(this, set_arrow, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_arrow_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "SetArrowHide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "SetArrowHide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_arrow_hide(
+        this: TroopListSortMenu_SortTitle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_arrow_hide::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_page {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "GetPage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "GetPage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_page(
+        this: TroopListSortMenu_SortTitle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_page::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sort_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "GetSortType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "GetSortType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sort_type(
+        this: TroopListSortMenu_SortTitle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType {
+        let inner: extern "C" fn(
+            TroopListSortMenu_SortTitle,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sort_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cursor_rect_transform {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "GetCursorRectTransform",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "GetCursorRectTransform",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_cursor_rect_transform(
+        this: TroopListSortMenu_SortTitle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::recttransform::RectTransform {
+        let inner: extern "C" fn(
+            TroopListSortMenu_SortTitle,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_cursor_rect_transform::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                "SetTextColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    "SetTextColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_text_color(
+        this: TroopListSortMenu_SortTitle,
+        is_active: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TroopListSortMenu_SortTitle,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_text_color::get_offset() as isize),
+        );
+        inner(this, is_active, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TroopListSortMenu_SortTitle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TroopListSortMenu_SortTitle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TroopListSortMenu_SortTitle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-trooplistsortmenu")]
+pub trait ITroopListSortMenu_SortTitleMethods: ITroopListSortMenu_SortTitle {
+    #[doc = "`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]
+    fn setup(
+        self,
+        page: impl ::core::convert::Into<i32>,
+        title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu_SortType>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::setup(
+                __receiver,
+                ::core::convert::Into::into(page),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetArrow(crate::unity_engine::sprite::Sprite)` overload"]
+    fn set_arrow(
+        self,
+        set_arrow: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::set_arrow(
+                __receiver,
+                ::core::convert::Into::into(set_arrow),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetArrowHide()` overload"]
+    fn set_arrow_hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::set_arrow_hide(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetPage()` overload"]
+    fn get_page(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::get_page(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSortType()` overload"]
+    fn get_sort_type(self) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::get_sort_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCursorRectTransform()` overload"]
+    fn get_cursor_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::get_cursor_rect_transform(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTextColor(bool)` overload"]
+    fn set_text_color(self, is_active: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::set_text_color(
+                __receiver,
+                ::core::convert::Into::into(is_active),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TroopListSortMenu_SortTitle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TroopListSortMenu_SortTitle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-trooplistsortmenu")]
+impl<__T: ITroopListSortMenu_SortTitle> ITroopListSortMenu_SortTitleMethods for __T {}
+
+#[cfg(feature = "app-trooplistsortmenu")]
+impl TroopListSortMenu_SortTitle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TroopListSortMenu_SortTitle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITroopListSortMenu_SortTitleMethods>::ctor(this);
         this
     }
 }

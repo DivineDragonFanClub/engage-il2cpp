@@ -789,7 +789,7 @@ pub trait ICallbackArgumentsMethods: ICallbackArguments {
             )
         }
     }
-    pub fn as_user_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn as_user_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         arg_num: impl ::core::convert::Into<i32>,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,

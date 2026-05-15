@@ -9,16 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_List.md"))]
-    #[::unity2::class(namespace = "App", name = "MapLayer.List")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: maplayer :: MapLayer_Data >)]
-    pub struct MapLayer_List {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_Data.md"))]
-    #[::unity2::class(namespace = "App", name = "MapLayer.Data")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapLayer_Data {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer.md"))]
     #[::unity2::class(namespace = "App", name = "MapLayer")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maplayer :: MapLayer >)]
@@ -26,6 +16,16 @@ mod __types {
         #[rename(name = "m_List")]
         pub m_list: crate::app::maplayer::MapLayer_List,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_Data.md"))]
+    #[::unity2::class(namespace = "App", name = "MapLayer.Data")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapLayer_Data {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_List.md"))]
+    #[::unity2::class(namespace = "App", name = "MapLayer.List")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: maplayer :: MapLayer_Data >)]
+    pub struct MapLayer_List {}
 }
 
 #[cfg(feature = "app-maplayer-types")]
@@ -34,21 +34,20 @@ pub use __types::*;
 #[cfg(feature = "app-maplayer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapLayer_List_unity2_raw {
+mod __MapLayer_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_exists {
+    pub mod __lookup_get_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::maplayer::MapLayer_Data as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer_List as ::unity2::ClassIdentity>::class(),
-                "Exists",
-                1,
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
                 param_types,
                 false,
             )
@@ -58,8 +57,8 @@ mod __MapLayer_List_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
-                    "Exists",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "get_Count",
                     e
                 ),
             }
@@ -70,35 +69,176 @@ mod __MapLayer_List_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn exists(
-        this: MapLayer_List,
-        data: crate::app::maplayer::MapLayer_Data,
+    pub unsafe fn get_count(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "get_Item",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_item(
+        this: MapLayer,
+        i: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    ) -> crate::app::maplayer::MapLayer_Data {
         let inner: extern "C" fn(
-            MapLayer_List,
-            crate::app::maplayer::MapLayer_Data,
+            MapLayer,
+            i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
+        ) -> crate::app::maplayer::MapLayer_Data = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_exists::get_offset() as isize),
+                .offset(__lookup_get_item::get_offset() as isize),
+        );
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_clear::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::maplayer::MapLayer_Data as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: MapLayer,
+        data: crate::app::maplayer::MapLayer_Data,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapLayer,
+            crate::app::maplayer::MapLayer_Data,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
         );
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_is_connect {
+    pub mod __lookup_add_2 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::maplayer::MapLayer_Data as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer_List as ::unity2::ClassIdentity>::class(),
-                "IsConnect",
-                1,
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "Add",
+                7,
                 param_types,
                 false,
             )
@@ -108,8 +248,8 @@ mod __MapLayer_List_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
-                    "IsConnect",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "Add",
                     e
                 ),
             }
@@ -120,21 +260,338 @@ mod __MapLayer_List_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn is_connect(
-        this: MapLayer_List,
-        data: crate::app::maplayer::MapLayer_Data,
+    pub unsafe fn add_2(
+        this: MapLayer,
+        x: i32,
+        z: i32,
+        w: i32,
+        h: i32,
+        group: i32,
+        tid: ::unity2::Il2CppString,
+        enable: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    ) -> () {
         let inner: extern "C" fn(
-            MapLayer_List,
-            crate::app::maplayer::MapLayer_Data,
+            MapLayer,
+            i32,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::Il2CppString,
+            bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_is_connect::get_offset() as isize),
+                .offset(__lookup_add_2::get_offset() as isize),
         );
-        inner(this, data, __unity2_method_info)
+        inner(this, x, z, w, h, group, tid, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "SetEnable",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "SetEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable(
+        this: MapLayer,
+        x: i32,
+        z: i32,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapLayer, i32, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable::get_offset() as isize),
+            );
+        inner(this, x, z, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enable_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "SetEnable",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "SetEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_enable_2(
+        this: MapLayer,
+        group: i32,
+        enable: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapLayer, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_enable_2::get_offset() as isize),
+            );
+        inner(this, group, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "Find",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "Find",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn find(
+        this: MapLayer,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::maplayer::MapLayer_Data {
+        let inner: extern "C" fn(
+            MapLayer,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::maplayer::MapLayer_Data = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_find::get_offset() as isize),
+        );
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "get_Version",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_version(
+        this: MapLayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_version::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "OnSerialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "OnSerialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_serialize(
+        this: MapLayer,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapLayer,
+            crate::app::stream_2::Stream_2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_serialize::get_offset() as isize),
+        );
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapLayer as ::unity2::ClassIdentity>::class(),
+                "OnDeserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    "OnDeserialize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_deserialize(
+        this: MapLayer,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapLayer,
+            crate::app::stream_2::Stream_2,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_deserialize::get_offset() as isize),
+        );
+        inner(this, stream, version, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -145,7 +602,7 @@ mod __MapLayer_List_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer_List as ::unity2::ClassIdentity>::class(),
+                <MapLayer as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -157,7 +614,7 @@ mod __MapLayer_List_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
+                    <MapLayer as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -169,44 +626,185 @@ mod __MapLayer_List_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(this: MapLayer_List, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapLayer_List, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-maplayer")]
-pub trait IMapLayer_ListMethods: IMapLayer_List {
-    #[doc = "`Exists(crate::app::maplayer::MapLayer_Data)` overload"]
-    fn exists(self, data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>) -> bool {
+pub trait IMapLayerMethods: IMapLayer {
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
         unsafe {
-            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_List_unity2_raw::exists(
+            __MapLayer_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::app::maplayer::MapLayer_Data {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::get_item(
+                __receiver,
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::maplayer::MapLayer_Data)` overload"]
+    fn add(self, data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::add(
                 __receiver,
                 ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]
-    fn is_connect(
+    #[doc = "`Add(i32, i32, i32, i32, i32, ::unity2::Il2CppString, bool)` overload"]
+    fn add_2(
         self,
-        data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>,
-    ) -> bool {
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        w: impl ::core::convert::Into<i32>,
+        h: impl ::core::convert::Into<i32>,
+        group: impl ::core::convert::Into<i32>,
+        tid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> () {
         unsafe {
-            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_List_unity2_raw::is_connect(
+            __MapLayer_unity2_raw::add_2(
                 __receiver,
-                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(w),
+                ::core::convert::Into::into(h),
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(tid),
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEnable(i32, i32, bool)` overload"]
+    fn set_enable(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::set_enable(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetEnable(i32, bool)` overload"]
+    fn set_enable_2(
+        self,
+        group: impl ::core::convert::Into<i32>,
+        enable: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::set_enable_2(
+                __receiver,
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(enable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Find(i32, i32)` overload"]
+    fn find(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> crate::app::maplayer::MapLayer_Data {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::find(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Version()` overload"]
+    fn get_version(self) -> i32 {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    fn on_serialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::on_serialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn on_deserialize(
+        self,
+        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
+        version: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapLayer_unity2_raw::on_deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
                 ::core::option::Option::None,
             )
         }
@@ -214,29 +812,29 @@ pub trait IMapLayer_ListMethods: IMapLayer_List {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_List_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __MapLayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-maplayer")]
-impl<__T: IMapLayer_List> IMapLayer_ListMethods for __T {}
+impl<__T: IMapLayer> IMapLayerMethods for __T {}
 
 #[cfg(feature = "app-maplayer")]
-impl MapLayer_List {
+impl MapLayer {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapLayer_List),
+                ::core::stringify!(MapLayer),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapLayer_ListMethods>::ctor(this);
+        <Self as IMapLayerMethods>::ctor(this);
         this
     }
 }
@@ -1554,144 +2152,11 @@ impl MapLayer_Data {
 #[cfg(feature = "app-maplayer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapLayer_unity2_raw {
+mod __MapLayer_List_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_item(
-        this: MapLayer,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::maplayer::MapLayer_Data {
-        let inner: extern "C" fn(
-            MapLayer,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::maplayer::MapLayer_Data = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
-        inner(this, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
+    pub mod __lookup_exists {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -1699,8 +2164,8 @@ mod __MapLayer_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::maplayer::MapLayer_Data as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "Add",
+                <MapLayer_List as ::unity2::ClassIdentity>::class(),
+                "Exists",
                 1,
                 param_types,
                 false,
@@ -1711,8 +2176,8 @@ mod __MapLayer_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "Add",
+                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
+                    "Exists",
                     e
                 ),
             }
@@ -1723,304 +2188,34 @@ mod __MapLayer_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn add(
-        this: MapLayer,
+    pub unsafe fn exists(
+        this: MapLayer_List,
         data: crate::app::maplayer::MapLayer_Data,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> bool {
         let inner: extern "C" fn(
-            MapLayer,
+            MapLayer_List,
             crate::app::maplayer::MapLayer_Data,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
+                .offset(__lookup_exists::get_offset() as isize),
         );
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "Add",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_2(
-        this: MapLayer,
-        x: i32,
-        z: i32,
-        w: i32,
-        h: i32,
-        group: i32,
-        tid: ::unity2::Il2CppString,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapLayer,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
-        inner(this, x, z, w, h, group, tid, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "SetEnable",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "SetEnable",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_enable(
-        this: MapLayer,
-        x: i32,
-        z: i32,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapLayer, i32, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enable::get_offset() as isize),
-            );
-        inner(this, x, z, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enable_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "SetEnable",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "SetEnable",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_enable_2(
-        this: MapLayer,
-        group: i32,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapLayer, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enable_2::get_offset() as isize),
-            );
-        inner(this, group, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "Find",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn find(
-        this: MapLayer,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::maplayer::MapLayer_Data {
-        let inner: extern "C" fn(
-            MapLayer,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::maplayer::MapLayer_Data = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "get_Version",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_version(
-        this: MapLayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_serialize {
+    pub mod __lookup_is_connect {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+                &[<crate::app::maplayer::MapLayer_Data as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "OnSerialize",
+                <MapLayer_List as ::unity2::ClassIdentity>::class(),
+                "IsConnect",
                 1,
                 param_types,
                 false,
@@ -2031,8 +2226,8 @@ mod __MapLayer_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "OnSerialize",
+                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
+                    "IsConnect",
                     e
                 ),
             }
@@ -2043,75 +2238,21 @@ mod __MapLayer_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn on_serialize(
-        this: MapLayer,
-        stream: crate::app::stream_2::Stream_2,
+    pub unsafe fn is_connect(
+        this: MapLayer_List,
+        data: crate::app::maplayer::MapLayer_Data,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> bool {
         let inner: extern "C" fn(
-            MapLayer,
-            crate::app::stream_2::Stream_2,
+            MapLayer_List,
+            crate::app::maplayer::MapLayer_Data,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_on_serialize::get_offset() as isize),
+                .offset(__lookup_is_connect::get_offset() as isize),
         );
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
-                "OnDeserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
-                    "OnDeserialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_deserialize(
-        this: MapLayer,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapLayer,
-            crate::app::stream_2::Stream_2,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deserialize::get_offset() as isize),
-        );
-        inner(this, stream, version, __unity2_method_info)
+        inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2122,7 +2263,7 @@ mod __MapLayer_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapLayer as ::unity2::ClassIdentity>::class(),
+                <MapLayer_List as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -2134,7 +2275,7 @@ mod __MapLayer_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapLayer as ::unity2::ClassIdentity>::NAME,
+                    <MapLayer_List as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2146,185 +2287,44 @@ mod __MapLayer_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(this: MapLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapLayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapLayer_List, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapLayer_List, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-maplayer")]
-pub trait IMapLayerMethods: IMapLayer {
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
+pub trait IMapLayer_ListMethods: IMapLayer_List {
+    #[doc = "`Exists(crate::app::maplayer::MapLayer_Data)` overload"]
+    fn exists(self, data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>) -> bool {
         unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::app::maplayer::MapLayer_Data {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::maplayer::MapLayer_Data)` overload"]
-    fn add(self, data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::add(
+            __MapLayer_List_unity2_raw::exists(
                 __receiver,
                 ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Add(i32, i32, i32, i32, i32, ::unity2::Il2CppString, bool)` overload"]
-    fn add_2(
+    #[doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]
+    fn is_connect(
         self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        w: impl ::core::convert::Into<i32>,
-        h: impl ::core::convert::Into<i32>,
-        group: impl ::core::convert::Into<i32>,
-        tid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
+        data: impl ::core::convert::Into<crate::app::maplayer::MapLayer_Data>,
+    ) -> bool {
         unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_unity2_raw::add_2(
+            __MapLayer_List_unity2_raw::is_connect(
                 __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(w),
-                ::core::convert::Into::into(h),
-                ::core::convert::Into::into(group),
-                ::core::convert::Into::into(tid),
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetEnable(i32, i32, bool)` overload"]
-    fn set_enable(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::set_enable(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetEnable(i32, bool)` overload"]
-    fn set_enable_2(
-        self,
-        group: impl ::core::convert::Into<i32>,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::set_enable_2(
-                __receiver,
-                ::core::convert::Into::into(group),
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Find(i32, i32)` overload"]
-    fn find(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::maplayer::MapLayer_Data {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::find(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Version()` overload"]
-    fn get_version(self) -> i32 {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::get_version(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::on_serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-        version: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapLayer_unity2_raw::on_deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
+                ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
@@ -2332,29 +2332,29 @@ pub trait IMapLayerMethods: IMapLayer {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapLayer as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <MapLayer_List as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapLayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __MapLayer_List_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-maplayer")]
-impl<__T: IMapLayer> IMapLayerMethods for __T {}
+impl<__T: IMapLayer_List> IMapLayer_ListMethods for __T {}
 
 #[cfg(feature = "app-maplayer")]
-impl MapLayer {
+impl MapLayer_List {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapLayer),
+                ::core::stringify!(MapLayer_List),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapLayerMethods>::ctor(this);
+        <Self as IMapLayer_ListMethods>::ctor(this);
         this
     }
 }

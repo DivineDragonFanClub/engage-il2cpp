@@ -540,7 +540,9 @@ pub trait ICustomConvertersCollectionMethods: ICustomConvertersCollection {
             )
         }
     }
-    pub fn set_clr_to_script_custom_conversion_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_clr_to_script_custom_conversion_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         converter: impl ::core::convert::Into<
             crate::system::func_3::Func_3<
@@ -654,7 +656,9 @@ pub trait ICustomConvertersCollectionMethods: ICustomConvertersCollection {
             )
         }
     }
-    pub fn set_clr_to_script_custom_conversion_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_clr_to_script_custom_conversion_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         converter: impl ::core::convert::Into<
             crate::system::func_2::Func_2<M0, crate::moon_sharp::interpreter::dynvalue::DynValue>,

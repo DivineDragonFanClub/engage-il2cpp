@@ -878,7 +878,7 @@ mod __ProfilingSampler_unity2_raw {
 
 #[cfg(feature = "unity_engine-rendering-profilingsampler")]
 impl ProfilingSampler {
-    pub fn get<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         marker: impl ::core::convert::Into<M0>,
     ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
         static OPEN: ::std::sync::LazyLock<

@@ -13,18 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapLineRenderer_LinePoint {
-        #[rename(name = "vtxOffsets")]
-        pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "uv_table")]
-        pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md"))]
     #[repr(C)]
     #[derive(
@@ -106,868 +94,22 @@ mod __types {
         #[rename(name = "m_LineAppearSpeed")]
         pub m_line_appear_speed: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapLineRenderer_LinePoint {
+        #[rename(name = "vtxOffsets")]
+        pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "uv_table")]
+        pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        #[rename(name = "m_Color")]
+        pub m_color: crate::unity_engine::color::Color,
+    }
 }
 
 #[cfg(feature = "app-gmaplinerenderer-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gmaplinerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapLineRenderer_LinePoint_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapLineRenderer_LinePoint,
-        index: i32,
-        pos: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            i32,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, index, pos, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "get_index",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "get_index",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_index(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "get_position",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "get_position",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_position(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "get_color",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "get_color",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_color(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_color::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "set_color",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "set_color",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_color(
-        this: GmapLineRenderer_LinePoint,
-        value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_color::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "get_alpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "get_alpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_alpha(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "set_alpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "set_alpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_alpha(
-        this: GmapLineRenderer_LinePoint,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_alpha::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_apperd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "get_isApperd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "get_isApperd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_apperd(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_apperd::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_apperd {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "set_isApperd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "set_isApperd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_is_apperd(
-        this: GmapLineRenderer_LinePoint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_apperd::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "Add",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: GmapLineRenderer_LinePoint,
-        vertices: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
-        colors: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::color::Color,
-        >,
-        uvs: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector2::Vector2,
-        >,
-        indices: *mut crate::system::collections::generic::list_1::List_1<i32>,
-        size: f32,
-        rotate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector3::Vector3,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::color::Color,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector2::Vector2,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<i32>,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(
-            this,
-            vertices,
-            colors,
-            uvs,
-            indices,
-            size,
-            rotate,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::color::Color,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "UpdateColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "UpdateColor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_color(
-        this: GmapLineRenderer_LinePoint,
-        colors: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::color::Color,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapLineRenderer_LinePoint,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::color::Color,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_color::get_offset() as isize),
-        );
-        inner(this, colors, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn tick(
-        this: GmapLineRenderer_LinePoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmaplinerenderer")]
-pub trait IGmapLineRenderer_LinePointMethods: IGmapLineRenderer_LinePoint {
-    #[doc = "`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
-    fn ctor(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_index()` overload"]
-    fn get_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::get_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_position()` overload"]
-    fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::get_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_color()` overload"]
-    fn get_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::get_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
-    fn set_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::set_color(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_alpha()` overload"]
-    fn get_alpha(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::get_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_alpha(f32)` overload"]
-    fn set_alpha(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::set_alpha(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_isApperd()` overload"]
-    fn get_is_apperd(self) -> bool {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::get_is_apperd(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_isApperd(bool)` overload"]
-    fn set_is_apperd(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::set_is_apperd(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, *mutcrate::system::collections::generic::list_1::List_1<i32>, f32, f32)` overload"]
-    fn add(
-        self,
-        size: impl ::core::convert::Into<f32>,
-        rotate: impl ::core::convert::Into<f32>,
-    ) -> (
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
-        crate::system::collections::generic::list_1::List_1<i32>,
-    ) {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector3::Vector3,
-                >,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::color::Color,
-                >,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector2::Vector2,
-                >,
-            >::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<i32>,
-            >::uninit();
-            __GmapLineRenderer_LinePoint_unity2_raw::add(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                __out_2.as_mut_ptr(),
-                __out_3.as_mut_ptr(),
-                ::core::convert::Into::into(size),
-                ::core::convert::Into::into(rotate),
-                ::core::option::Option::None,
-            );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
-        }
-    }
-    #[doc = "`UpdateColor(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
-    fn update_color(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>
-    {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::color::Color,
-                >,
-            >::uninit();
-            __GmapLineRenderer_LinePoint_unity2_raw::update_color(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapLineRenderer_LinePoint_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gmaplinerenderer")]
-impl<__T: IGmapLineRenderer_LinePoint> IGmapLineRenderer_LinePointMethods for __T {}
-
-#[cfg(feature = "app-gmaplinerenderer")]
-impl GmapLineRenderer_LinePoint {
-    #[doc = "`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]
-    pub fn new(
-        index: i32,
-        pos: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapLineRenderer_LinePoint),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapLineRenderer_LinePointMethods>::ctor(this, index, pos, color);
-        this
-    }
-}
 
 #[cfg(feature = "app-gmaplinerenderer")]
 #[doc(hidden)]
@@ -1839,6 +981,864 @@ impl GmapLineRenderer {
             )
         });
         <Self as IGmapLineRendererMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GmapLineRenderer_LinePoint_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GmapLineRenderer_LinePoint,
+        index: i32,
+        pos: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            i32,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, index, pos, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "get_index",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "get_index",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_index(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "get_position",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "get_position",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_position(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_position::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "get_color",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "get_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_color(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_color::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "set_color",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "set_color",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_color(
+        this: GmapLineRenderer_LinePoint,
+        value: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_color::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "get_alpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "get_alpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_alpha(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_alpha::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "set_alpha",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "set_alpha",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_alpha(
+        this: GmapLineRenderer_LinePoint,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_alpha::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_apperd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "get_isApperd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "get_isApperd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_apperd(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_apperd::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_apperd {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "set_isApperd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "set_isApperd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_apperd(
+        this: GmapLineRenderer_LinePoint,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_is_apperd::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "Add",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: GmapLineRenderer_LinePoint,
+        vertices: *mut crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        colors: *mut crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::color::Color,
+        >,
+        uvs: *mut crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector2::Vector2,
+        >,
+        indices: *mut crate::system::collections::generic::list_1::List_1<i32>,
+        size: f32,
+        rotate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            *mut crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector3::Vector3,
+            >,
+            *mut crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color::Color,
+            >,
+            *mut crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::vector2::Vector2,
+            >,
+            *mut crate::system::collections::generic::list_1::List_1<i32>,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(
+            this,
+            vertices,
+            colors,
+            uvs,
+            indices,
+            size,
+            rotate,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<*mut crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "UpdateColor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "UpdateColor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_color(
+        this: GmapLineRenderer_LinePoint,
+        colors: *mut crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::color::Color,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapLineRenderer_LinePoint,
+            *mut crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::color::Color,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update_color::get_offset() as isize),
+        );
+        inner(this, colors, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapLineRenderer_LinePoint as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn tick(
+        this: GmapLineRenderer_LinePoint,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GmapLineRenderer_LinePoint, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+pub trait IGmapLineRenderer_LinePointMethods: IGmapLineRenderer_LinePoint {
+    #[doc = "`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
+    fn ctor(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_index()` overload"]
+    fn get_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::get_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_position()` overload"]
+    fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::get_position(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_color()` overload"]
+    fn get_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::get_color(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_color(crate::unity_engine::color::Color)` overload"]
+    fn set_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::set_color(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_alpha()` overload"]
+    fn get_alpha(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::get_alpha(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_alpha(f32)` overload"]
+    fn set_alpha(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::set_alpha(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_isApperd()` overload"]
+    fn get_is_apperd(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::get_is_apperd(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_isApperd(bool)` overload"]
+    fn set_is_apperd(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::set_is_apperd(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, *mutcrate::system::collections::generic::list_1::List_1<i32>, f32, f32)` overload"]
+    fn add(
+        self,
+        size: impl ::core::convert::Into<f32>,
+        rotate: impl ::core::convert::Into<f32>,
+    ) -> (
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
+        crate::system::collections::generic::list_1::List_1<i32>,
+    ) {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector3::Vector3,
+                >,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                >,
+            >::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::vector2::Vector2,
+                >,
+            >::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<i32>,
+            >::uninit();
+            __GmapLineRenderer_LinePoint_unity2_raw::add(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                __out_2.as_mut_ptr(),
+                __out_3.as_mut_ptr(),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(rotate),
+                ::core::option::Option::None,
+            );
+            (
+                __out_0.assume_init(),
+                __out_1.assume_init(),
+                __out_2.assume_init(),
+                __out_3.assume_init(),
+            )
+        }
+    }
+    #[doc = "`UpdateColor(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]
+    fn update_color(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>
+    {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::color::Color,
+                >,
+            >::uninit();
+            __GmapLineRenderer_LinePoint_unity2_raw::update_color(
+                __receiver,
+                __out_0.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapLineRenderer_LinePoint as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapLineRenderer_LinePoint_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+impl<__T: IGmapLineRenderer_LinePoint> IGmapLineRenderer_LinePointMethods for __T {}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+impl GmapLineRenderer_LinePoint {
+    #[doc = "`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]
+    pub fn new(
+        index: i32,
+        pos: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapLineRenderer_LinePoint),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapLineRenderer_LinePointMethods>::ctor(this, index, pos, color);
         this
     }
 }

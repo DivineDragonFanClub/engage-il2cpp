@@ -9,6 +9,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))]
+    #[::unity2::class(namespace = "App", name = "QualitySettingsStack")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)]
+    pub struct QualitySettingsStack {
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::qualitysettingsstack::QualitySettingsStack_Settings,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/qualitysettingsstack/QualitySettingsStack_Settings.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,16 +51,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))]
-    #[::unity2::class(namespace = "App", name = "QualitySettingsStack")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)]
-    pub struct QualitySettingsStack {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::qualitysettingsstack::QualitySettingsStack_Settings,
-        >,
     }
 }
 

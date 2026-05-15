@@ -9,32 +9,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mesh_MeshDataArray {}
-
-    impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Mesh.MeshDataArray";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mesh_MeshDataArray {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -55,6 +29,32 @@ mod __types {
     }
 
     impl ::unity2::IlType for Mesh_MeshData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Mesh_MeshDataArray {}
+
+    impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Mesh.MeshDataArray";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mesh_MeshDataArray {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -16044,7 +16044,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn get_alloc_array_from_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_alloc_array_from_channel<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16112,7 +16114,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn get_alloc_array_from_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_alloc_array_from_channel_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16244,7 +16248,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_array_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_array_for_channel<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16320,7 +16326,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_array_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_array_for_channel_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16388,7 +16396,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_list_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_list_for_channel<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16470,7 +16480,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_list_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_list_for_channel_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         channel: impl ::core::convert::Into<
             crate::unity_engine::rendering::vertexattribute::VertexAttribute,
@@ -16544,7 +16556,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn get_list_for_channel<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_list_for_channel<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         buffer: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         capacity: impl ::core::convert::Into<i32>,
@@ -16613,7 +16627,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn get_list_for_channel_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_list_for_channel_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         buffer: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         capacity: impl ::core::convert::Into<i32>,
@@ -17700,7 +17716,7 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_uvs_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_uvs_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         uv_index: impl ::core::convert::Into<i32>,
         dim: impl ::core::convert::Into<i32>,
@@ -18235,7 +18251,7 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn get_u_vs_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_u_vs_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         uv_index: impl ::core::convert::Into<i32>,
         uvs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
@@ -18437,7 +18453,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_vertex_buffer_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_vertex_buffer_data<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         data: impl ::core::convert::Into<::unity2::Array<M0>>,
         data_start: impl ::core::convert::Into<i32>,
@@ -18512,7 +18530,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_vertex_buffer_data_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_vertex_buffer_data_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         data: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         data_start: impl ::core::convert::Into<i32>,
@@ -18843,7 +18863,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_index_buffer_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_index_buffer_data<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         data: impl ::core::convert::Into<::unity2::Array<M0>>,
         data_start: impl ::core::convert::Into<i32>,
@@ -18915,7 +18937,9 @@ pub trait IMeshMethods: IMesh {
             )
         }
     }
-    pub fn set_index_buffer_data_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_index_buffer_data_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         data: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         data_start: impl ::core::convert::Into<i32>,

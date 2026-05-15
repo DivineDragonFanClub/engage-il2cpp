@@ -511,7 +511,9 @@ pub trait IVolumeParameterMethods: IVolumeParameter {
             )
         }
     }
-    pub fn get_value<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_value<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

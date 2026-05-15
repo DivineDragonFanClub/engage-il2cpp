@@ -9,6 +9,37 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimage/MapImage_BackupTerrain.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapImage_BackupTerrain {
+        pub x: i32,
+        pub z: i32,
+        pub hash: i32,
+        pub index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapImage_BackupTerrain {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapImage.BackupTerrain";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapImage_BackupTerrain {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimage/MapImage.md"))]
     #[::unity2::class(namespace = "App", name = "MapImage")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapimage :: MapImage >)]
@@ -51,37 +82,6 @@ mod __types {
         pub m_backup_terrains: crate::system::collections::generic::list_1::List_1<
             crate::app::mapimage::MapImage_BackupTerrain,
         >,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimage/MapImage_BackupTerrain.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapImage_BackupTerrain {
-        pub x: i32,
-        pub z: i32,
-        pub hash: i32,
-        pub index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapImage_BackupTerrain {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapImage.BackupTerrain";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapImage_BackupTerrain {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
     }
 }
 

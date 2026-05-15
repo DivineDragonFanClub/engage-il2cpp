@@ -57,6 +57,17 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/notification/Notification.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Notification")]
+    #[parent(crate::system::object::Object)]
+    pub struct Notification {
+        #[static_field]
+        #[rename(name = "notificationMessageReceived")]
+        pub notification_message_received: crate::system::action_1::Action_1<
+            crate::unity_engine::switch::notification::Notification_Message,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/notification/Notification_FocusHandlingMode.md"))]
     #[repr(C)]
     #[derive(
@@ -107,17 +118,6 @@ mod __types {
         pub fn in_focus_only() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/notification/Notification.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Notification")]
-    #[parent(crate::system::object::Object)]
-    pub struct Notification {
-        #[static_field]
-        #[rename(name = "notificationMessageReceived")]
-        pub notification_message_received: crate::system::action_1::Action_1<
-            crate::unity_engine::switch::notification::Notification_Message,
-        >,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/notification/Notification_Message.md"))]

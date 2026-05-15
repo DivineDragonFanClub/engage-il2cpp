@@ -14,58 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_Transition.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Selectable_Transition {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Selectable_Transition {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Selectable.Transition";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Selectable_Transition {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Selectable_Transition {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn color_tint() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn sprite_swap() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn animation() -> Self {
-            Self { value: 3 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]
     #[repr(C)]
     #[derive(
@@ -119,6 +67,58 @@ mod __types {
 
         pub fn disabled() -> Self {
             Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_Transition.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Selectable_Transition {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Selectable_Transition {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Selectable.Transition";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Selectable_Transition {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Selectable_Transition {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn color_tint() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn sprite_swap() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn animation() -> Self {
+            Self { value: 3 }
         }
     }
 

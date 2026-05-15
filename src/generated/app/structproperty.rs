@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))]
+    #[::unity2::class(namespace = "App", name = "StructProperty")]
+    #[parent(crate::system::object::Object)]
+    pub struct StructProperty {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -152,11 +157,6 @@ mod __types {
             Self { value: 26 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))]
-    #[::unity2::class(namespace = "App", name = "StructProperty")]
-    #[parent(crate::system::object::Object)]
-    pub struct StructProperty {}
 }
 
 #[cfg(feature = "app-structproperty-types")]
@@ -1321,9 +1321,9 @@ pub trait IStructPropertyMethods: IStructProperty {
             )
         }
     }
-    pub fn set_value<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn set_value<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         self,
         obj: impl ::core::convert::Into<crate::system::object::Object>,

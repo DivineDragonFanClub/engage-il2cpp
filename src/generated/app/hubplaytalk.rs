@@ -22,6 +22,16 @@ mod __types {
         pub give_accessory_flag2: ::unity2::Il2CppString,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubPlayTalk_CallPuppetEvent {
+        #[rename(name = "File")]
+        pub file: ::unity2::Il2CppString,
+        #[rename(name = "Mid")]
+        pub mid: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalk/HubPlayTalk_TalkType.md"))]
     #[repr(C)]
     #[derive(
@@ -68,16 +78,6 @@ mod __types {
         pub fn event() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayTalk_CallPuppetEvent {
-        #[rename(name = "File")]
-        pub file: ::unity2::Il2CppString,
-        #[rename(name = "Mid")]
-        pub mid: ::unity2::Il2CppString,
     }
 }
 

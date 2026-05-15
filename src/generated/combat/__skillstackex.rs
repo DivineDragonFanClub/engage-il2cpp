@@ -545,8 +545,8 @@ impl __SkillStackEx {
 
 #[cfg(feature = "combat-__skillstackex")]
 pub mod prelude {
-    pub use super::I__SkillStackEx;
     pub use super::__SkillStackEx;
+    pub use super::I__SkillStackEx;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

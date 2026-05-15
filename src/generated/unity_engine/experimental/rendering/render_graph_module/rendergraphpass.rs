@@ -1533,7 +1533,7 @@ mod __RenderGraphPass_unity2_raw {
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]
 pub trait IRenderGraphPassMethods: IRenderGraphPass {
-    pub fn get_execute_delegate < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < M0 >{
+    fn get_execute_delegate < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

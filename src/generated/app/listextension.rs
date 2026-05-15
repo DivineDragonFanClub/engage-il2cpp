@@ -25,7 +25,7 @@ mod __ListExtension_unity2_raw {
 
 #[cfg(feature = "app-listextension")]
 impl ListExtension {
-    pub fn shuffle<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn shuffle<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         rand: impl ::core::convert::Into<crate::app::random_2::Random_2>,
     ) -> crate::system::collections::generic::list_1::List_1<M0> {

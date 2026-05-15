@@ -1311,7 +1311,7 @@ pub trait IStructHeaderMethods: IStructHeader {
             __StructHeader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn get_propertys<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_propertys<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::app::structproperty::StructProperty,

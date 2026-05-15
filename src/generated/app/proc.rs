@@ -18,6 +18,15 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity> {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
+    #[::unity2::class(namespace = "App", name = "Proc")]
+    #[parent(crate::system::object::Object)]
+    pub struct Proc {
+        #[static_field]
+        #[rename(name = "s_Roots")]
+        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
     #[repr(C)]
     #[derive(
@@ -68,15 +77,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
-    #[::unity2::class(namespace = "App", name = "Proc")]
-    #[parent(crate::system::object::Object)]
-    pub struct Proc {
-        #[static_field]
-        #[rename(name = "s_Roots")]
-        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
     }
 }
 
@@ -2582,7 +2582,8 @@ impl Proc {
             )
         }
     }
-    pub fn find_by_class<M0: ::unity2::IlType + ::core::marker::Copy>() -> M0 {
+    fn find_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> M0
+    {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -2627,7 +2628,8 @@ impl Proc {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn kill_by_class<M0: ::unity2::IlType + ::core::marker::Copy>() -> () {
+    fn kill_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> ()
+    {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -2672,7 +2674,7 @@ impl Proc {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn callback_by_class<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn callback_by_class<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         callback: impl ::core::convert::Into<crate::app::proc::Proc_ProcCallback_1<M0>>,
     ) -> bool {
         static OPEN: ::std::sync::LazyLock<
@@ -2898,7 +2900,7 @@ impl Proc {
             )
         }
     }
-    pub fn call_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn call_5<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         function: impl ::core::convert::Into<
             crate::system::action_2::Action_2<crate::app::procinst::ProcInst, M0>,
         >,
@@ -2955,7 +2957,7 @@ impl Proc {
             )
         }
     }
-    pub fn call_6<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn call_6<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         function: impl ::core::convert::Into<crate::system::action_1::Action_1<M0>>,
         arg: impl ::core::convert::Into<M0>,
     ) -> crate::app::procdesc::ProcDesc {
@@ -3252,7 +3254,7 @@ impl Proc {
     pub fn wait_is_loading() -> crate::app::procdesc::ProcDesc {
         unsafe { __Proc_unity2_raw::wait_is_loading(::core::option::Option::None) }
     }
-    pub fn create_no_desc<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_no_desc<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -3302,7 +3304,9 @@ impl Proc {
             )
         }
     }
-    pub fn create_bind_no_desc<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_bind_no_desc<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

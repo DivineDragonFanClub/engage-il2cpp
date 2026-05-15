@@ -9,6 +9,30 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleparam/BattleParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleParam {
+        #[static_field]
+        #[rename(name = "INVALID")]
+        pub invalid: f32,
+        #[static_field]
+        #[rename(name = "Mins")]
+        pub mins: ::unity2::Array<f32>,
+        #[static_field]
+        #[rename(name = "Maxs")]
+        pub maxs: ::unity2::Array<f32>,
+        #[static_field]
+        #[rename(name = "Clamps")]
+        pub clamps: ::unity2::Array<f32>,
+        #[rename(name = "Add")]
+        pub add: f32,
+        #[rename(name = "Scale")]
+        pub scale: f32,
+        #[rename(name = "Value")]
+        pub value: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleparam/BattleParam_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -55,30 +79,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleparam/BattleParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleParam {
-        #[static_field]
-        #[rename(name = "INVALID")]
-        pub invalid: f32,
-        #[static_field]
-        #[rename(name = "Mins")]
-        pub mins: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "Maxs")]
-        pub maxs: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "Clamps")]
-        pub clamps: ::unity2::Array<f32>,
-        #[rename(name = "Add")]
-        pub add: f32,
-        #[rename(name = "Scale")]
-        pub scale: f32,
-        #[rename(name = "Value")]
-        pub value: f32,
     }
 }
 

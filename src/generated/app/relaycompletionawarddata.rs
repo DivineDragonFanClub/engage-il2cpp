@@ -15,6 +15,83 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcWork.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct RelayCompletionAwardData_CalcWork {
+        pub results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+        pub awards: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData,
+        >,
+        pub max_count: i32,
+        pub min_count: i32,
+        pub count: i32,
+        pub is_copied: bool,
+        pub random: crate::app::random_2::Random_2,
+    }
+
+    impl ::unity2::ClassIdentity for RelayCompletionAwardData_CalcWork {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RelayCompletionAwardData.CalcWork";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RelayCompletionAwardData_CalcWork {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags >)]
+    pub struct RelayCompletionAwardData_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ShowComparer")]
+    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
+    pub struct RelayCompletionAwardData_ShowComparer {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult.Item")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayCompletionAwardData_CalcResult_Item {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData >)]
+    pub struct RelayCompletionAwardData {
+        #[static_field]
+        #[rename(name = "s_ShowComparer")]
+        pub s_show_comparer:
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer,
+        #[static_field]
+        #[rename(name = "s_CalcComparer")]
+        pub s_calc_comparer:
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ComparerBase")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayCompletionAwardData_ComparerBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcComparer")]
+    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
+    pub struct RelayCompletionAwardData_CalcComparer {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult.md"))]
     #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult")]
     #[parent(crate::system::object::Object)]
@@ -59,83 +136,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData >)]
-    pub struct RelayCompletionAwardData {
-        #[static_field]
-        #[rename(name = "s_ShowComparer")]
-        pub s_show_comparer:
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer,
-        #[static_field]
-        #[rename(name = "s_CalcComparer")]
-        pub s_calc_comparer:
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcWork.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct RelayCompletionAwardData_CalcWork {
-        pub results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-        pub awards: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData,
-        >,
-        pub max_count: i32,
-        pub min_count: i32,
-        pub count: i32,
-        pub is_copied: bool,
-        pub random: crate::app::random_2::Random_2,
-    }
-
-    impl ::unity2::ClassIdentity for RelayCompletionAwardData_CalcWork {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RelayCompletionAwardData.CalcWork";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RelayCompletionAwardData_CalcWork {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcComparer")]
-    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
-    pub struct RelayCompletionAwardData_CalcComparer {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ComparerBase")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayCompletionAwardData_ComparerBase {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags >)]
-    pub struct RelayCompletionAwardData_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.ShowComparer")]
-    #[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]
-    pub struct RelayCompletionAwardData_ShowComparer {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayCompletionAwardData.CalcResult.Item")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayCompletionAwardData_CalcResult_Item {}
 }
 
 #[cfg(feature = "app-relaycompletionawarddata-types")]
@@ -144,222 +144,8 @@ pub use __types::*;
 #[cfg(feature = "app-relaycompletionawarddata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayCompletionAwardData_CalcResult_unity2_raw {
+mod __RelayCompletionAwardData_FlagField_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_main_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
-                "get_MainItems",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
-                    "get_MainItems",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_main_items(
-        this: RelayCompletionAwardData_CalcResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    > {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_main_items::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_main_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
-                "set_MainItems",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
-                    "set_MainItems",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_main_items(
-        this: RelayCompletionAwardData_CalcResult,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_main_items::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sub_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
-                "get_SubItems",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
-                    "get_SubItems",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sub_items(
-        this: RelayCompletionAwardData_CalcResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    > {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sub_items::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sub_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
-                "set_SubItems",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
-                    "set_SubItems",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_sub_items(
-        this: RelayCompletionAwardData_CalcResult,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sub_items::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -367,14 +153,12 @@ mod __RelayCompletionAwardData_CalcResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
+                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -384,7 +168,7 @@ mod __RelayCompletionAwardData_CalcResult_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
+                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -397,14 +181,12 @@ mod __RelayCompletionAwardData_CalcResult_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RelayCompletionAwardData_CalcResult,
-        main_max_count: i32,
-        sub_max_count: i32,
+        this: RelayCompletionAwardData_FlagField,
+        f: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult,
-            i32,
+            RelayCompletionAwardData_FlagField,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -412,105 +194,330 @@ mod __RelayCompletionAwardData_CalcResult_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, main_max_count, sub_max_count, __unity2_method_info)
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: RelayCompletionAwardData_FlagField,
+        f: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_FlagField,
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: RelayCompletionAwardData_FlagField,
+        value: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_FlagField,
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-pub trait IRelayCompletionAwardData_CalcResultMethods:
-    IRelayCompletionAwardData_CalcResult
+pub trait IRelayCompletionAwardData_FlagFieldMethods: IRelayCompletionAwardData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_FlagField_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(f),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]
+    fn ctor_2(
+        self,
+        f: impl ::core::convert::Into<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_FlagField_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(f),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToInt(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_FlagField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl<__T: IRelayCompletionAwardData_FlagField> IRelayCompletionAwardData_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IRelayCompletionAwardData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayCompletionAwardData_ShowComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: RelayCompletionAwardData_ShowComparer,
+        a: crate::app::itemdata::ItemData,
+        b: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_ShowComparer,
+            crate::app::itemdata::ItemData,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayCompletionAwardData_ShowComparer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_ShowComparer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+pub trait IRelayCompletionAwardData_ShowComparerMethods:
+    IRelayCompletionAwardData_ShowComparer
 {
-    #[doc = "`get_MainItems()` overload"]
-    fn get_main_items(
+    #[doc = "`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
+    fn compare(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    > {
+        a: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        b: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> i32 {
         unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_CalcResult_unity2_raw::get_main_items(
+            let __receiver = < RelayCompletionAwardData_ShowComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_ShowComparer_unity2_raw::compare(
                 __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
-    fn set_main_items(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-            >,
-        >,
-    ) -> () {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_CalcResult_unity2_raw::set_main_items(
+            let __receiver = < RelayCompletionAwardData_ShowComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_ShowComparer_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_SubItems()` overload"]
-    fn get_sub_items(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-    > {
-        unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_CalcResult_unity2_raw::get_sub_items(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
-    fn set_sub_items(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_CalcResult_unity2_raw::set_sub_items(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor(
-        self,
-        main_max_count: impl ::core::convert::Into<i32>,
-        sub_max_count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_CalcResult_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(main_max_count),
-                ::core::convert::Into::into(sub_max_count),
                 ::core::option::Option::None,
             )
         }
@@ -518,27 +525,412 @@ pub trait IRelayCompletionAwardData_CalcResultMethods:
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-impl<__T: IRelayCompletionAwardData_CalcResult> IRelayCompletionAwardData_CalcResultMethods
+impl<__T: IRelayCompletionAwardData_ShowComparer> IRelayCompletionAwardData_ShowComparerMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_CalcResult {
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new(main_max_count: i32, sub_max_count: i32) -> Self {
+impl RelayCompletionAwardData_ShowComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_CalcResult),
+                ::core::stringify!(RelayCompletionAwardData_ShowComparer),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayCompletionAwardData_CalcResultMethods>::ctor(
-            this,
-            main_max_count,
-            sub_max_count,
+        <Self as IRelayCompletionAwardData_ShowComparerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayCompletionAwardData_CalcResult_Item_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
         );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                "set_Data",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    "set_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        value: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_count::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                "set_Count",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    "set_Count",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_count(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_count::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
+                "Add",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: RelayCompletionAwardData_CalcResult_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult_Item,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+pub trait IRelayCompletionAwardData_CalcResult_ItemMethods:
+    IRelayCompletionAwardData_CalcResult_Item
+{
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::itemdata::ItemData {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::get_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Data(crate::app::itemdata::ItemData)` overload"]
+    fn set_data(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::get_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Count(i32)` overload"]
+    fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::set_count(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::itemdata::ItemData)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add()` overload"]
+    fn add(self) -> () {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::add(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl<__T: IRelayCompletionAwardData_CalcResult_Item>
+    IRelayCompletionAwardData_CalcResult_ItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_CalcResult_Item {
+    #[doc = "`.ctor(crate::app::itemdata::ItemData)` — overload selector"]
+    pub fn new(data: crate::app::itemdata::ItemData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_CalcResult_Item),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_CalcResult_ItemMethods>::ctor(this, data);
         this
     }
 }
@@ -2018,6 +2410,168 @@ impl RelayCompletionAwardData {
 #[cfg(feature = "app-relaycompletionawarddata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayCompletionAwardData_ComparerBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_item_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::class(),
+                "CompareItemData",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::NAME,
+                    "CompareItemData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_item_data(
+        this: RelayCompletionAwardData_ComparerBase,
+        a: crate::app::itemdata::ItemData,
+        b: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_ComparerBase,
+            crate::app::itemdata::ItemData,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_item_data::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayCompletionAwardData_ComparerBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_ComparerBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+pub trait IRelayCompletionAwardData_ComparerBaseMethods:
+    IRelayCompletionAwardData_ComparerBase
+{
+    #[doc = "`CompareItemData(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
+    fn compare_item_data(
+        self,
+        a: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        b: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_ComparerBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_ComparerBase_unity2_raw::compare_item_data(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RelayCompletionAwardData_ComparerBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RelayCompletionAwardData_ComparerBase_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl<__T: IRelayCompletionAwardData_ComparerBase> IRelayCompletionAwardData_ComparerBaseMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+impl RelayCompletionAwardData_ComparerBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayCompletionAwardData_ComparerBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayCompletionAwardData_ComparerBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaycompletionawarddata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RelayCompletionAwardData_CalcComparer_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2181,73 +2735,19 @@ impl RelayCompletionAwardData_CalcComparer {
 #[cfg(feature = "app-relaycompletionawarddata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayCompletionAwardData_ComparerBase_unity2_raw {
+mod __RelayCompletionAwardData_CalcResult_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_compare_item_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::class(),
-                "CompareItemData",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::NAME,
-                    "CompareItemData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_item_data(
-        this: RelayCompletionAwardData_ComparerBase,
-        a: crate::app::itemdata::ItemData,
-        b: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_ComparerBase,
-            crate::app::itemdata::ItemData,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_item_data::get_offset() as isize),
-        );
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_get_main_items {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
+                "get_MainItems",
                 0,
                 param_types,
                 false,
@@ -2258,8 +2758,8 @@ mod __RelayCompletionAwardData_ComparerBase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_ComparerBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
+                    "get_MainItems",
                     e
                 ),
             }
@@ -2270,81 +2770,187 @@ mod __RelayCompletionAwardData_ComparerBase_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: RelayCompletionAwardData_ComparerBase,
+    pub unsafe fn get_main_items(
+        this: RelayCompletionAwardData_CalcResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    > {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_main_items::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_main_items {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
+                "set_MainItems",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
+                    "set_MainItems",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_main_items(
+        this: RelayCompletionAwardData_CalcResult,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RelayCompletionAwardData_ComparerBase,
+            RelayCompletionAwardData_CalcResult,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_set_main_items::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_items {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
+                "get_SubItems",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
+                    "get_SubItems",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_items(
+        this: RelayCompletionAwardData_CalcResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    > {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sub_items::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-pub trait IRelayCompletionAwardData_ComparerBaseMethods:
-    IRelayCompletionAwardData_ComparerBase
-{
-    #[doc = "`CompareItemData(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
-    fn compare_item_data(
-        self,
-        a: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-        b: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_ComparerBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_ComparerBase_unity2_raw::compare_item_data(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_ComparerBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_ComparerBase_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl<__T: IRelayCompletionAwardData_ComparerBase> IRelayCompletionAwardData_ComparerBaseMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_ComparerBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_ComparerBase),
-                ::core::stringify!(new),
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sub_items {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
+                "set_SubItems",
+                1,
+                param_types,
+                false,
             )
         });
-        <Self as IRelayCompletionAwardData_ComparerBaseMethods>::ctor(this);
-        this
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
+                    "set_SubItems",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
     }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayCompletionAwardData_FlagField_unity2_raw {
-    use super::*;
+    pub unsafe fn set_sub_items(
+        this: RelayCompletionAwardData_CalcResult,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayCompletionAwardData_CalcResult,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_sub_items::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -2352,12 +2958,14 @@ mod __RelayCompletionAwardData_FlagField_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
+                <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -2367,7 +2975,7 @@ mod __RelayCompletionAwardData_FlagField_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    <RelayCompletionAwardData_CalcResult as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2380,12 +2988,14 @@ mod __RelayCompletionAwardData_FlagField_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RelayCompletionAwardData_FlagField,
-        f: i32,
+        this: RelayCompletionAwardData_CalcResult,
+        main_max_count: i32,
+        sub_max_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RelayCompletionAwardData_FlagField,
+            RelayCompletionAwardData_CalcResult,
+            i32,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -2393,330 +3003,105 @@ mod __RelayCompletionAwardData_FlagField_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: RelayCompletionAwardData_FlagField,
-        f: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_FlagField,
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_Flags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_FlagField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: RelayCompletionAwardData_FlagField,
-        value: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_FlagField,
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
+        inner(this, main_max_count, sub_max_count, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-pub trait IRelayCompletionAwardData_FlagFieldMethods: IRelayCompletionAwardData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayCompletionAwardData_FlagField_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]
-    fn ctor_2(
+pub trait IRelayCompletionAwardData_CalcResultMethods:
+    IRelayCompletionAwardData_CalcResult
+{
+    #[doc = "`get_MainItems()` overload"]
+    fn get_main_items(
         self,
-        f: impl ::core::convert::Into<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
-        >,
-    ) -> () {
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    > {
         unsafe {
             let __receiver =
-                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RelayCompletionAwardData_FlagField_unity2_raw::ctor_2(
+            __RelayCompletionAwardData_CalcResult_unity2_raw::get_main_items(
                 __receiver,
-                ::core::convert::Into::into(f),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ToInt(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]
-    fn to_int(
+    #[doc = "`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
+    fn set_main_items(
         self,
         value: impl ::core::convert::Into<
-            crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
         >,
-    ) -> i32 {
+    ) -> () {
         unsafe {
             let __receiver =
-                <RelayCompletionAwardData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RelayCompletionAwardData_FlagField_unity2_raw::to_int(
+            __RelayCompletionAwardData_CalcResult_unity2_raw::set_main_items(
                 __receiver,
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl<__T: IRelayCompletionAwardData_FlagField> IRelayCompletionAwardData_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayCompletionAwardData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IRelayCompletionAwardData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayCompletionAwardData_ShowComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: RelayCompletionAwardData_ShowComparer,
-        a: crate::app::itemdata::ItemData,
-        b: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_ShowComparer,
-            crate::app::itemdata::ItemData,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_ShowComparer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayCompletionAwardData_ShowComparer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_ShowComparer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-pub trait IRelayCompletionAwardData_ShowComparerMethods:
-    IRelayCompletionAwardData_ShowComparer
-{
-    #[doc = "`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]
-    fn compare(
+    #[doc = "`get_SubItems()` overload"]
+    fn get_sub_items(
         self,
-        a: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-        b: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> i32 {
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+    > {
         unsafe {
-            let __receiver = < RelayCompletionAwardData_ShowComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_ShowComparer_unity2_raw::compare(
+            let __receiver =
+                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_CalcResult_unity2_raw::get_sub_items(
                 __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]
+    fn set_sub_items(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+            >,
+        >,
+    ) -> () {
         unsafe {
-            let __receiver = < RelayCompletionAwardData_ShowComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_ShowComparer_unity2_raw::ctor(
+            let __receiver =
+                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_CalcResult_unity2_raw::set_sub_items(
                 __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32, i32)` overload"]
+    fn ctor(
+        self,
+        main_max_count: impl ::core::convert::Into<i32>,
+        sub_max_count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelayCompletionAwardData_CalcResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayCompletionAwardData_CalcResult_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(main_max_count),
+                ::core::convert::Into::into(sub_max_count),
                 ::core::option::Option::None,
             )
         }
@@ -2724,412 +3109,27 @@ pub trait IRelayCompletionAwardData_ShowComparerMethods:
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-impl<__T: IRelayCompletionAwardData_ShowComparer> IRelayCompletionAwardData_ShowComparerMethods
+impl<__T: IRelayCompletionAwardData_CalcResult> IRelayCompletionAwardData_CalcResultMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_ShowComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RelayCompletionAwardData_CalcResult {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(main_max_count: i32, sub_max_count: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_ShowComparer),
+                ::core::stringify!(RelayCompletionAwardData_CalcResult),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayCompletionAwardData_ShowComparerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayCompletionAwardData_CalcResult_Item_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
+        <Self as IRelayCompletionAwardData_CalcResultMethods>::ctor(
+            this,
+            main_max_count,
+            sub_max_count,
         );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                "set_Data",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        value: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_count::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                "set_Count",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    "set_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_count(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_count::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::class(),
-                "Add",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayCompletionAwardData_CalcResult_Item as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: RelayCompletionAwardData_CalcResult_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayCompletionAwardData_CalcResult_Item,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-pub trait IRelayCompletionAwardData_CalcResult_ItemMethods:
-    IRelayCompletionAwardData_CalcResult_Item
-{
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::itemdata::ItemData {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Data(crate::app::itemdata::ItemData)` overload"]
-    fn set_data(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Count(i32)` overload"]
-    fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::set_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::itemdata::ItemData)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add()` overload"]
-    fn add(self) -> () {
-        unsafe {
-            let __receiver = < RelayCompletionAwardData_CalcResult_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayCompletionAwardData_CalcResult_Item_unity2_raw::add(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl<__T: IRelayCompletionAwardData_CalcResult_Item>
-    IRelayCompletionAwardData_CalcResult_ItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-relaycompletionawarddata")]
-impl RelayCompletionAwardData_CalcResult_Item {
-    #[doc = "`.ctor(crate::app::itemdata::ItemData)` — overload selector"]
-    pub fn new(data: crate::app::itemdata::ItemData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayCompletionAwardData_CalcResult_Item),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayCompletionAwardData_CalcResult_ItemMethods>::ctor(this, data);
         this
     }
 }

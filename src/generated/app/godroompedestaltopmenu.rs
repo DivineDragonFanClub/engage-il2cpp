@@ -14,13 +14,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_SkillInheritanceItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GodRoomPedestalTopMenu.SkillInheritanceItem"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RefineGodWeaponItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RefineGodWeaponItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_SkillInheritanceItem {
+    pub struct GodRoomPedestalTopMenu_RefineGodWeaponItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
@@ -30,15 +27,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingMergeItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct GodRoomPedestalTopMenu_RingMergeItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RefineGodWeaponItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RefineGodWeaponItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_RefineGodWeaponItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
@@ -104,14 +92,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingGachaItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GodRoomPedestalTopMenu_RingGachaItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GodRoomPedestalTopMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingCleaningItem.md"))]
     #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingCleaningItem")]
@@ -122,15 +106,31 @@ mod __types {
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_SkillInheritanceItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GodRoomPedestalTopMenu.SkillInheritanceItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct GodRoomPedestalTopMenu_SkillInheritanceItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.RingGachaItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct GodRoomPedestalTopMenu_RingGachaItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu.md"))]
     #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct GodRoomPedestalTopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "GodRoomPedestalTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GodRoomPedestalTopMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu-types")]
@@ -139,7 +139,7 @@ pub use __types::*;
 #[cfg(feature = "app-godroompedestaltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
+mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -150,7 +150,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -162,7 +162,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -175,12 +175,12 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
         event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            GodRoomPedestalTopMenu_RefineGodWeaponItem,
             crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -199,7 +199,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -211,7 +211,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -224,11 +224,11 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            GodRoomPedestalTopMenu_RefineGodWeaponItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -246,7 +246,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -258,7 +258,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -271,11 +271,11 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            GodRoomPedestalTopMenu_RefineGodWeaponItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -293,7 +293,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -305,7 +305,7 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -318,11 +318,11 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            GodRoomPedestalTopMenu_RefineGodWeaponItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -334,8 +334,8 @@ mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
-    IGodRoomPedestalTopMenu_SkillInheritanceItem
+pub trait IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods:
+    IGodRoomPedestalTopMenu_RefineGodWeaponItem
 {
     #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
     fn ctor(
@@ -345,8 +345,8 @@ pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
         >,
     ) -> () {
         unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::ctor(
+            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
@@ -356,8 +356,8 @@ pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::get_name(
+            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -366,8 +366,8 @@ pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::build_attribute(
+            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -376,8 +376,8 @@ pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::a_call(
+            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -386,13 +386,13 @@ pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-impl<__T: IGodRoomPedestalTopMenu_SkillInheritanceItem>
-    IGodRoomPedestalTopMenu_SkillInheritanceItemMethods for __T
+impl<__T: IGodRoomPedestalTopMenu_RefineGodWeaponItem>
+    IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu_SkillInheritanceItem {
+impl GodRoomPedestalTopMenu_RefineGodWeaponItem {
     #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
@@ -400,11 +400,11 @@ impl GodRoomPedestalTopMenu_SkillInheritanceItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu_SkillInheritanceItem),
+                ::core::stringify!(GodRoomPedestalTopMenu_RefineGodWeaponItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodRoomPedestalTopMenu_SkillInheritanceItemMethods>::ctor(this, event_handler);
+        <Self as IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -685,7 +685,7 @@ impl GodRoomPedestalTopMenu_RingMergeItem {
 #[cfg(feature = "app-godroompedestaltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw {
+mod __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -694,11 +694,14 @@ mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
+                <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -708,7 +711,7 @@ mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
+                    <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -721,256 +724,34 @@ mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+        this: GodRoomPedestalTopMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RefineGodWeaponItem,
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+            GodRoomPedestalTopMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, event_handler, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RefineGodWeaponItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RefineGodWeaponItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RefineGodWeaponItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GodRoomPedestalTopMenu_RefineGodWeaponItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RefineGodWeaponItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-pub trait IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods:
-    IGodRoomPedestalTopMenu_RefineGodWeaponItem
-{
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RefineGodWeaponItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-impl<__T: IGodRoomPedestalTopMenu_RefineGodWeaponItem>
-    IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu_RefineGodWeaponItem {
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu_RefineGodWeaponItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
                 1,
                 param_types,
                 false,
@@ -981,8 +762,8 @@ mod __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
                     e
                 ),
             }
@@ -993,211 +774,56 @@ mod __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: GodRoomPedestalTopMenu_RingGachaItem,
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    pub unsafe fn invoke(
+        this: GodRoomPedestalTopMenu_DecideEventHandler,
+        result: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RingGachaItem,
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+            GodRoomPedestalTopMenu_DecideEventHandler,
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GodRoomPedestalTopMenu_RingGachaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RingGachaItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: GodRoomPedestalTopMenu_RingGachaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RingGachaItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GodRoomPedestalTopMenu_RingGachaItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_RingGachaItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-pub trait IGodRoomPedestalTopMenu_RingGachaItemMethods:
-    IGodRoomPedestalTopMenu_RingGachaItem
+pub trait IGodRoomPedestalTopMenu_DecideEventHandlerMethods:
+    IGodRoomPedestalTopMenu_DecideEventHandler
 {
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
         >,
     ) -> () {
         unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::ctor(
+            let __receiver = < GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::a_call(
-                __receiver,
+                ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
         }
@@ -1205,25 +831,23 @@ pub trait IGodRoomPedestalTopMenu_RingGachaItemMethods:
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-impl<__T: IGodRoomPedestalTopMenu_RingGachaItem> IGodRoomPedestalTopMenu_RingGachaItemMethods
-    for __T
+impl<__T: IGodRoomPedestalTopMenu_DecideEventHandler>
+    IGodRoomPedestalTopMenu_DecideEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu_RingGachaItem {
-    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
-    ) -> Self {
+impl GodRoomPedestalTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem),
+                ::core::stringify!(GodRoomPedestalTopMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods>::ctor(this, event_handler);
+        <Self as IGodRoomPedestalTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1497,6 +1121,552 @@ impl GodRoomPedestalTopMenu_RingCleaningItem {
             )
         });
         <Self as IGodRoomPedestalTopMenu_RingCleaningItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_SkillInheritanceItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: GodRoomPedestalTopMenu_SkillInheritanceItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_SkillInheritanceItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:
+    IGodRoomPedestalTopMenu_SkillInheritanceItem
+{
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        event_handler: impl ::core::convert::Into<
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_SkillInheritanceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+impl<__T: IGodRoomPedestalTopMenu_SkillInheritanceItem>
+    IGodRoomPedestalTopMenu_SkillInheritanceItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+impl GodRoomPedestalTopMenu_SkillInheritanceItem {
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodRoomPedestalTopMenu_SkillInheritanceItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodRoomPedestalTopMenu_SkillInheritanceItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GodRoomPedestalTopMenu_RingGachaItem,
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_RingGachaItem,
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: GodRoomPedestalTopMenu_RingGachaItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_RingGachaItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: GodRoomPedestalTopMenu_RingGachaItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_RingGachaItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GodRoomPedestalTopMenu_RingGachaItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: GodRoomPedestalTopMenu_RingGachaItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GodRoomPedestalTopMenu_RingGachaItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+pub trait IGodRoomPedestalTopMenu_RingGachaItemMethods:
+    IGodRoomPedestalTopMenu_RingGachaItem
+{
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        event_handler: impl ::core::convert::Into<
+            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GodRoomPedestalTopMenu_RingGachaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+impl<__T: IGodRoomPedestalTopMenu_RingGachaItem> IGodRoomPedestalTopMenu_RingGachaItemMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-godroompedestaltopmenu")]
+impl GodRoomPedestalTopMenu_RingGachaItem {
+    #[doc = "`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -1948,176 +2118,6 @@ impl GodRoomPedestalTopMenu {
             initial_selected,
             event_handler,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GodRoomPedestalTopMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: GodRoomPedestalTopMenu_DecideEventHandler,
-        result: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodRoomPedestalTopMenu_DecideEventHandler,
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-pub trait IGodRoomPedestalTopMenu_DecideEventHandlerMethods:
-    IGodRoomPedestalTopMenu_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<
-            crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < GodRoomPedestalTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-impl<__T: IGodRoomPedestalTopMenu_DecideEventHandler>
-    IGodRoomPedestalTopMenu_DecideEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-godroompedestaltopmenu")]
-impl GodRoomPedestalTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomPedestalTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodRoomPedestalTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

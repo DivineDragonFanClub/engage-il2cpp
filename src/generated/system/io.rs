@@ -3,7 +3,7 @@
 #[cfg(any(feature = "system-io-__error-types"))]
 pub mod __error;
 #[cfg(feature = "system-io-__error-types")]
-pub use __error::{I__Error, __Error};
+pub use __error::{__Error, I__Error};
 #[cfg(any(feature = "system-io-binaryreader-types"))]
 pub mod binaryreader;
 #[cfg(feature = "system-io-binaryreader")]

@@ -7,6 +7,16 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo.md"))]
+    #[::unity2::class(namespace = "Combat", name = "BufferedGizmo")]
+    #[parent(crate::system::object::Object)]
+    pub struct BufferedGizmo {
+        #[rename(name = "segments")]
+        pub segments: crate::system::collections::generic::list_1::List_1<
+            crate::combat::bufferedgizmo::BufferedGizmo_Segment,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo_Segment.md"))]
     #[::unity2::class(namespace = "Combat", name = "BufferedGizmo.Segment")]
     #[parent(crate::system::object::Object)]
@@ -18,131 +28,10 @@ mod __types {
         #[rename(name = "color")]
         pub color: crate::unity_engine::color::Color,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo.md"))]
-    #[::unity2::class(namespace = "Combat", name = "BufferedGizmo")]
-    #[parent(crate::system::object::Object)]
-    pub struct BufferedGizmo {
-        #[rename(name = "segments")]
-        pub segments: crate::system::collections::generic::list_1::List_1<
-            crate::combat::bufferedgizmo::BufferedGizmo_Segment,
-        >,
-    }
 }
 
 #[cfg(feature = "combat-bufferedgizmo-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-bufferedgizmo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BufferedGizmo_Segment_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BufferedGizmo_Segment as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BufferedGizmo_Segment as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BufferedGizmo_Segment,
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BufferedGizmo_Segment,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, a, b, color, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-bufferedgizmo")]
-pub trait IBufferedGizmo_SegmentMethods: IBufferedGizmo_Segment {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
-    fn ctor(
-        self,
-        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BufferedGizmo_Segment as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BufferedGizmo_Segment_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl<__T: IBufferedGizmo_Segment> IBufferedGizmo_SegmentMethods for __T {}
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo_Segment {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]
-    pub fn new(
-        a: crate::unity_engine::vector3::Vector3,
-        b: crate::unity_engine::vector3::Vector3,
-        color: crate::unity_engine::color::Color,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BufferedGizmo_Segment),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBufferedGizmo_SegmentMethods>::ctor(this, a, b, color);
-        this
-    }
-}
 
 #[cfg(feature = "combat-bufferedgizmo")]
 #[doc(hidden)]
@@ -349,6 +238,117 @@ impl BufferedGizmo {
             )
         });
         <Self as IBufferedGizmoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BufferedGizmo_Segment_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BufferedGizmo_Segment as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BufferedGizmo_Segment as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BufferedGizmo_Segment,
+        a: crate::unity_engine::vector3::Vector3,
+        b: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BufferedGizmo_Segment,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, a, b, color, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+pub trait IBufferedGizmo_SegmentMethods: IBufferedGizmo_Segment {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]
+    fn ctor(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        b: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BufferedGizmo_Segment as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BufferedGizmo_Segment_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+impl<__T: IBufferedGizmo_Segment> IBufferedGizmo_SegmentMethods for __T {}
+
+#[cfg(feature = "combat-bufferedgizmo")]
+impl BufferedGizmo_Segment {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]
+    pub fn new(
+        a: crate::unity_engine::vector3::Vector3,
+        b: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BufferedGizmo_Segment),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBufferedGizmo_SegmentMethods>::ctor(this, a, b, color);
         this
     }
 }

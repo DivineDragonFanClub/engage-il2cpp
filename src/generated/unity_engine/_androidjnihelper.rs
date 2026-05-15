@@ -901,7 +901,9 @@ impl _AndroidJNIHelper {
             )
         }
     }
-    pub fn convert_from_jni_array<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn convert_from_jni_array<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         array: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -964,7 +966,7 @@ impl _AndroidJNIHelper {
             )
         }
     }
-    pub fn get_method_id<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_method_id<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         jclass: impl ::core::convert::Into<::unity2::IntPtr>,
         method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
@@ -1098,8 +1100,8 @@ impl _AndroidJNIHelper {
 
 #[cfg(feature = "unity_engine-_androidjnihelper")]
 pub mod prelude {
-    pub use super::I_AndroidJNIHelper;
     pub use super::_AndroidJNIHelper;
+    pub use super::I_AndroidJNIHelper;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

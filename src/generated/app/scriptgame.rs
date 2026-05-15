@@ -1259,7 +1259,7 @@ impl ScriptGame {
             )
         }
     }
-    pub fn get_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         index: impl ::core::convert::Into<i32>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<

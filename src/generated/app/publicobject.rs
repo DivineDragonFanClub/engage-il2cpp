@@ -443,7 +443,7 @@ impl PublicObject {
     pub fn warm_up() -> () {
         unsafe { __PublicObject_unity2_raw::warm_up(::core::option::Option::None) }
     }
-    pub fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
@@ -493,7 +493,7 @@ impl PublicObject {
             )
         }
     }
-    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> M0 {
@@ -548,7 +548,7 @@ impl PublicObject {
             )
         }
     }
-    pub fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
@@ -603,7 +603,7 @@ impl PublicObject {
             )
         }
     }
-    pub fn for_each<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn for_each<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
     ) -> () {
         static OPEN: ::std::sync::LazyLock<
@@ -667,7 +667,7 @@ impl PublicObject {
 
 #[cfg(feature = "app-publicobject")]
 pub trait IPublicObjectMethods: IPublicObject {
-    pub fn for_each_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn for_each_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
     ) -> () {
@@ -746,7 +746,7 @@ pub trait IPublicObjectMethods: IPublicObject {
             )
         }
     }
-    pub fn get_asset_impl<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_asset_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> M0 {

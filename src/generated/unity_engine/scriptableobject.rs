@@ -233,7 +233,8 @@ impl ScriptableObject {
             )
         }
     }
-    pub fn create_instance_2<M0: ::unity2::IlType + ::core::marker::Copy>() -> M0 {
+    fn create_instance_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

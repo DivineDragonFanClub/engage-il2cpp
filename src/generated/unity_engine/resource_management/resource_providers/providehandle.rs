@@ -534,7 +534,7 @@ impl ProvideHandle {
             __ProvideHandle_unity2_raw::get_dependency_count(self, ::core::option::Option::None)
         }
     }
-    pub fn get_dependency<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn get_dependency<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         index: impl ::core::convert::Into<i32>,
     ) -> M0 {

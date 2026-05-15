@@ -2033,7 +2033,7 @@ impl ScriptUtil {
             )
         }
     }
-    pub fn try_get_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         >,
@@ -2206,7 +2206,7 @@ impl ScriptUtil {
             )
         }
     }
-    pub fn try_get_index<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_index<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         >,
@@ -2263,7 +2263,7 @@ impl ScriptUtil {
             )
         }
     }
-    pub fn try_get_user_data<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_user_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         >,
@@ -2335,7 +2335,7 @@ impl ScriptUtil {
             )
         }
     }
-    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         >,
@@ -2392,7 +2392,7 @@ impl ScriptUtil {
             )
         }
     }
-    pub fn try_get_components<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_components<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         >,

@@ -25,9 +25,9 @@ mod __Extension_Methods_unity2_raw {
 
 #[cfg(feature = "moon_sharp-interpreter-extension_methods")]
 impl Extension_Methods {
-    pub fn get_or_default<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn get_or_default<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         dictionary: impl ::core::convert::Into<
             crate::system::collections::generic::dictionary_2::Dictionary_2<M0, M1>,
@@ -89,9 +89,9 @@ impl Extension_Methods {
             )
         }
     }
-    pub fn get_or_create<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn get_or_create<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         dictionary: impl ::core::convert::Into<
             crate::system::collections::generic::dictionary_2::Dictionary_2<M0, M1>,

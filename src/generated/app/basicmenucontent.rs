@@ -11,26 +11,64 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Cursor.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Cursor")]
     #[parent(crate::system::object::Object)]
-    pub struct BasicMenuContent_Scroll {
+    pub struct BasicMenuContent_Cursor {
         #[rename(name = "m_menuContent")]
         pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        #[rename(name = "m_objScrollBar")]
-        pub m_obj_scroll_bar: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_scrollBar")]
-        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
-        #[rename(name = "m_scrollNow")]
-        pub m_scroll_now: f32,
-        #[rename(name = "m_scrollOld")]
-        pub m_scroll_old: f32,
-        #[rename(name = "m_scrollFrom")]
-        pub m_scroll_from: f32,
-        #[rename(name = "m_scrollTick")]
-        pub m_scroll_tick: f32,
-        #[rename(name = "m_scrollFrame")]
-        pub m_scroll_frame: f32,
+        #[rename(name = "m_objFrontCursor")]
+        pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objBackCursor")]
+        pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_objFrontCursorBase")]
+        pub m_obj_front_cursor_base: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_backCursorRect")]
+        pub m_back_cursor_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_backCursorImage")]
+        pub m_back_cursor_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_backCursorAnimator")]
+        pub m_back_cursor_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_frontCursorAnimator")]
+        pub m_front_cursor_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_frontCursorBaseRect")]
+        pub m_front_cursor_base_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_frontCursorBaseParentRect")]
+        pub m_front_cursor_base_parent_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_posX")]
+        pub m_pos_x: f32,
+        #[rename(name = "m_posY")]
+        pub m_pos_y: f32,
+        #[rename(name = "m_fromX")]
+        pub m_from_x: f32,
+        #[rename(name = "m_fromY")]
+        pub m_from_y: f32,
+        #[rename(name = "m_fromW")]
+        pub m_from_w: f32,
+        #[rename(name = "m_fromH")]
+        pub m_from_h: f32,
+        #[rename(name = "m_moveTick")]
+        pub m_move_tick: f32,
+        #[rename(name = "m_moveFrame")]
+        pub m_move_frame: f32,
+        #[rename(name = "m_fixed")]
+        pub m_fixed: bool,
+        #[rename(name = "m_fixedWH")]
+        pub m_fixed_wh: bool,
+        #[rename(name = "m_firstTick")]
+        pub m_first_tick: bool,
+        #[rename(name = "m_lastVisibility")]
+        pub m_last_visibility: bool,
+        #[rename(name = "m_frontCursorVisibility")]
+        pub m_front_cursor_visibility: bool,
+        #[rename(name = "m_frontCursorMoveTick")]
+        pub m_front_cursor_move_tick: f32,
+        #[rename(name = "m_frontCursorMoveFrame")]
+        pub m_front_cursor_move_frame: f32,
+        #[rename(name = "m_frontCursorFromX")]
+        pub m_front_cursor_from_x: f32,
+        #[rename(name = "m_frontCursorFromY")]
+        pub m_front_cursor_from_y: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent.md"))]
@@ -92,64 +130,26 @@ mod __types {
         pub m_request_adjust: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Cursor.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Cursor")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
     #[parent(crate::system::object::Object)]
-    pub struct BasicMenuContent_Cursor {
+    pub struct BasicMenuContent_Scroll {
         #[rename(name = "m_menuContent")]
         pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        #[rename(name = "m_objFrontCursor")]
-        pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objBackCursor")]
-        pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_objFrontCursorBase")]
-        pub m_obj_front_cursor_base: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_backCursorRect")]
-        pub m_back_cursor_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_backCursorImage")]
-        pub m_back_cursor_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_backCursorAnimator")]
-        pub m_back_cursor_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_frontCursorAnimator")]
-        pub m_front_cursor_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_frontCursorBaseRect")]
-        pub m_front_cursor_base_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_frontCursorBaseParentRect")]
-        pub m_front_cursor_base_parent_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_posX")]
-        pub m_pos_x: f32,
-        #[rename(name = "m_posY")]
-        pub m_pos_y: f32,
-        #[rename(name = "m_fromX")]
-        pub m_from_x: f32,
-        #[rename(name = "m_fromY")]
-        pub m_from_y: f32,
-        #[rename(name = "m_fromW")]
-        pub m_from_w: f32,
-        #[rename(name = "m_fromH")]
-        pub m_from_h: f32,
-        #[rename(name = "m_moveTick")]
-        pub m_move_tick: f32,
-        #[rename(name = "m_moveFrame")]
-        pub m_move_frame: f32,
-        #[rename(name = "m_fixed")]
-        pub m_fixed: bool,
-        #[rename(name = "m_fixedWH")]
-        pub m_fixed_wh: bool,
-        #[rename(name = "m_firstTick")]
-        pub m_first_tick: bool,
-        #[rename(name = "m_lastVisibility")]
-        pub m_last_visibility: bool,
-        #[rename(name = "m_frontCursorVisibility")]
-        pub m_front_cursor_visibility: bool,
-        #[rename(name = "m_frontCursorMoveTick")]
-        pub m_front_cursor_move_tick: f32,
-        #[rename(name = "m_frontCursorMoveFrame")]
-        pub m_front_cursor_move_frame: f32,
-        #[rename(name = "m_frontCursorFromX")]
-        pub m_front_cursor_from_x: f32,
-        #[rename(name = "m_frontCursorFromY")]
-        pub m_front_cursor_from_y: f32,
+        #[rename(name = "m_objScrollBar")]
+        pub m_obj_scroll_bar: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_scrollBar")]
+        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[rename(name = "m_scrollNow")]
+        pub m_scroll_now: f32,
+        #[rename(name = "m_scrollOld")]
+        pub m_scroll_old: f32,
+        #[rename(name = "m_scrollFrom")]
+        pub m_scroll_from: f32,
+        #[rename(name = "m_scrollTick")]
+        pub m_scroll_tick: f32,
+        #[rename(name = "m_scrollFrame")]
+        pub m_scroll_frame: f32,
     }
 }
 
@@ -159,7 +159,7 @@ pub use __types::*;
 #[cfg(feature = "app-basicmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BasicMenuContent_Scroll_unity2_raw {
+mod __BasicMenuContent_Cursor_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -171,11 +171,12 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                3,
                 param_types,
                 false,
             )
@@ -185,7 +186,7 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -198,14 +199,16 @@ mod __BasicMenuContent_Scroll_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BasicMenuContent_Scroll,
+        this: BasicMenuContent_Cursor,
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        scroll_bar: crate::unity_engine::gameobject::GameObject,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BasicMenuContent_Scroll,
+            BasicMenuContent_Cursor,
             crate::app::basicmenucontent::BasicMenuContent,
+            crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -213,19 +216,25 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, menu_content, scroll_bar, __unity2_method_info)
+        inner(
+            this,
+            menu_content,
+            obj_front_cursor,
+            obj_back_cursor,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll {
+    pub mod __lookup_get_pos_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "GetScroll",
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "GetPosX",
                 0,
                 param_types,
                 false,
@@ -236,8 +245,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "GetScroll",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "GetPosX",
                     e
                 ),
             }
@@ -248,29 +257,29 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_scroll(
-        this: BasicMenuContent_Scroll,
+    pub unsafe fn get_pos_x(
+        this: BasicMenuContent_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> f32 =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_scroll::get_offset() as isize),
+                    .offset(__lookup_get_pos_x::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll_old {
+    pub mod __lookup_get_pos_y {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "GetScrollOld",
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "GetPosY",
                 0,
                 param_types,
                 false,
@@ -281,8 +290,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "GetScrollOld",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "GetPosY",
                     e
                 ),
             }
@@ -293,60 +302,15 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_scroll_old(
-        this: BasicMenuContent_Scroll,
+    pub unsafe fn get_pos_y(
+        this: BasicMenuContent_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> f32 =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_scroll_old::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll_from {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "GetScrollFrom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "GetScrollFrom",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scroll_from(
-        this: BasicMenuContent_Scroll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_scroll_from::get_offset() as isize),
+                    .offset(__lookup_get_pos_y::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -357,11 +321,11 @@ mod __BasicMenuContent_Scroll_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenucontent :: BasicMenuContent_Scroll as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
                 "Tick",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -371,7 +335,7 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
                     "Tick",
                     e
                 ),
@@ -384,28 +348,32 @@ mod __BasicMenuContent_Scroll_unity2_raw {
         }
     }
     pub unsafe fn tick(
-        this: BasicMenuContent_Scroll,
+        this: BasicMenuContent_Cursor,
+        scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            BasicMenuContent_Cursor,
+            crate::app::basicmenucontent::BasicMenuContent_Scroll,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_tick::get_offset() as isize),
+        );
+        inner(this, scroll, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_scroll_instant {
+    pub mod __lookup_update_visibility {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "ScrollInstant",
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "UpdateVisibility",
                 0,
                 param_types,
                 false,
@@ -416,8 +384,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "ScrollInstant",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "UpdateVisibility",
                     e
                 ),
             }
@@ -428,29 +396,29 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn scroll_instant(
-        this: BasicMenuContent_Scroll,
+    pub unsafe fn update_visibility(
+        this: BasicMenuContent_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_scroll_instant::get_offset() as isize),
+                    .offset(__lookup_update_visibility::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_reset {
+    pub mod __lookup_move_instant {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "Reset",
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "MoveInstant",
                 0,
                 param_types,
                 false,
@@ -461,8 +429,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "MoveInstant",
                     e
                 ),
             }
@@ -473,21 +441,21 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn reset(
-        this: BasicMenuContent_Scroll,
+    pub unsafe fn move_instant(
+        this: BasicMenuContent_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
+                    .offset(__lookup_move_instant::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_scroll_frame {
+    pub mod __lookup_set_move_frame {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -495,8 +463,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "SetScrollFrame",
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "SetMoveFrame",
                 1,
                 param_types,
                 false,
@@ -507,8 +475,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "SetScrollFrame",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "SetMoveFrame",
                     e
                 ),
             }
@@ -519,32 +487,31 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_scroll_frame(
-        this: BasicMenuContent_Scroll,
+    pub unsafe fn set_move_frame(
+        this: BasicMenuContent_Cursor,
         frame: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, f32, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, f32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_set_scroll_frame::get_offset() as isize),
+                    .offset(__lookup_set_move_frame::get_offset() as isize),
             );
         inner(this, frame, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_scroll_bar_handle_size {
+    pub mod __lookup_pause_anim {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
-                "SetScrollBarHandleSize",
-                1,
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "PauseAnim",
+                0,
                 param_types,
                 false,
             )
@@ -554,8 +521,8 @@ mod __BasicMenuContent_Scroll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
-                    "SetScrollBarHandleSize",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "PauseAnim",
                     e
                 ),
             }
@@ -566,138 +533,573 @@ mod __BasicMenuContent_Scroll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_scroll_bar_handle_size(
-        this: BasicMenuContent_Scroll,
-        size: f32,
+    pub unsafe fn pause_anim(
+        this: BasicMenuContent_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Scroll, f32, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_set_scroll_bar_handle_size::get_offset() as isize),
+                    .offset(__lookup_pause_anim::get_offset() as isize),
             );
-        inner(this, size, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resume_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "ResumeAnim",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "ResumeAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resume_anim(
+        this: BasicMenuContent_Cursor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_resume_anim::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_restart_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "RestartAnim",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "RestartAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn restart_anim(
+        this: BasicMenuContent_Cursor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_restart_anim::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_sibling_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "SetSiblingIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "SetSiblingIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_sibling_index(
+        this: BasicMenuContent_Cursor,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_sibling_index::get_offset() as isize),
+            );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_back_cursor_image_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "SetBackCursorImageEnabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "SetBackCursorImageEnabled",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_back_cursor_image_enabled(
+        this: BasicMenuContent_Cursor,
+        enabled: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_back_cursor_image_enabled::get_offset() as isize),
+            );
+        inner(this, enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_to_keep_animator_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "SetToKeepAnimatorState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "SetToKeepAnimatorState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_to_keep_animator_state(
+        this: BasicMenuContent_Cursor,
+        keep: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_to_keep_animator_state::get_offset() as isize),
+            );
+        inner(this, keep, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_front_cursor_from {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "MoveFrontCursorFrom",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "MoveFrontCursorFrom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_front_cursor_from(
+        this: BasicMenuContent_Cursor,
+        from_x: f32,
+        from_y: f32,
+        frame: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BasicMenuContent_Cursor,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_front_cursor_from::get_offset() as isize),
+        );
+        inner(this, from_x, from_y, frame, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_front_cursor_visibility {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                "SetFrontCursorVisibility",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "SetFrontCursorVisibility",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_front_cursor_visibility(
+        this: BasicMenuContent_Cursor,
+        visibility: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_front_cursor_visibility::get_offset() as isize),
+            );
+        inner(this, visibility, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-basicmenucontent")]
-pub trait IBasicMenuContent_ScrollMethods: IBasicMenuContent_Scroll {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
+pub trait IBasicMenuContent_CursorMethods: IBasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
         menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        scroll_bar: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        obj_front_cursor: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        obj_back_cursor: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::ctor(
+            __BasicMenuContent_Cursor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(scroll_bar),
+                ::core::convert::Into::into(obj_front_cursor),
+                ::core::convert::Into::into(obj_back_cursor),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetScroll()` overload"]
-    fn get_scroll(self) -> f32 {
+    #[doc = "`GetPosX()` overload"]
+    fn get_pos_x(self) -> f32 {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::get_scroll(
+            __BasicMenuContent_Cursor_unity2_raw::get_pos_x(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetScrollOld()` overload"]
-    fn get_scroll_old(self) -> f32 {
+    #[doc = "`GetPosY()` overload"]
+    fn get_pos_y(self) -> f32 {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::get_scroll_old(
+            __BasicMenuContent_Cursor_unity2_raw::get_pos_y(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetScrollFrom()` overload"]
-    fn get_scroll_from(self) -> f32 {
+    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
+    fn tick(
+        self,
+        scroll: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent_Scroll>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::get_scroll_from(
+            __BasicMenuContent_Cursor_unity2_raw::tick(
+                __receiver,
+                ::core::convert::Into::into(scroll),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateVisibility()` overload"]
+    fn update_visibility(self) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::update_visibility(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
+    #[doc = "`MoveInstant()` overload"]
+    fn move_instant(self) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ScrollInstant()` overload"]
-    fn scroll_instant(self) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Scroll_unity2_raw::scroll_instant(
+            __BasicMenuContent_Cursor_unity2_raw::move_instant(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
+    #[doc = "`SetMoveFrame(f32)` overload"]
+    fn set_move_frame(self, frame: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetScrollFrame(f32)` overload"]
-    fn set_scroll_frame(self, frame: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Scroll_unity2_raw::set_scroll_frame(
+            __BasicMenuContent_Cursor_unity2_raw::set_move_frame(
                 __receiver,
                 ::core::convert::Into::into(frame),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetScrollBarHandleSize(f32)` overload"]
-    fn set_scroll_bar_handle_size(self, size: impl ::core::convert::Into<f32>) -> () {
+    #[doc = "`PauseAnim()` overload"]
+    fn pause_anim(self) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Scroll_unity2_raw::set_scroll_bar_handle_size(
+            __BasicMenuContent_Cursor_unity2_raw::pause_anim(
                 __receiver,
-                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResumeAnim()` overload"]
+    fn resume_anim(self) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::resume_anim(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RestartAnim()` overload"]
+    fn restart_anim(self) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::restart_anim(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSiblingIndex(i32)` overload"]
+    fn set_sibling_index(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::set_sibling_index(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
+    fn set_back_cursor_image_enabled(self, enabled: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::set_back_cursor_image_enabled(
+                __receiver,
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
+    fn set_to_keep_animator_state(self, keep: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::set_to_keep_animator_state(
+                __receiver,
+                ::core::convert::Into::into(keep),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
+    fn move_front_cursor_from(
+        self,
+        from_x: impl ::core::convert::Into<f32>,
+        from_y: impl ::core::convert::Into<f32>,
+        frame: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::move_front_cursor_from(
+                __receiver,
+                ::core::convert::Into::into(from_x),
+                ::core::convert::Into::into(from_y),
+                ::core::convert::Into::into(frame),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
+    fn set_front_cursor_visibility(self, visibility: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Cursor_unity2_raw::set_front_cursor_visibility(
+                __receiver,
+                ::core::convert::Into::into(visibility),
                 ::core::option::Option::None,
             )
         }
@@ -705,23 +1107,29 @@ pub trait IBasicMenuContent_ScrollMethods: IBasicMenuContent_Scroll {
 }
 
 #[cfg(feature = "app-basicmenucontent")]
-impl<__T: IBasicMenuContent_Scroll> IBasicMenuContent_ScrollMethods for __T {}
+impl<__T: IBasicMenuContent_Cursor> IBasicMenuContent_CursorMethods for __T {}
 
 #[cfg(feature = "app-basicmenucontent")]
-impl BasicMenuContent_Scroll {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+impl BasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        scroll_bar: crate::unity_engine::gameobject::GameObject,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BasicMenuContent_Scroll),
+                ::core::stringify!(BasicMenuContent_Cursor),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBasicMenuContent_ScrollMethods>::ctor(this, menu_content, scroll_bar);
+        <Self as IBasicMenuContent_CursorMethods>::ctor(
+            this,
+            menu_content,
+            obj_front_cursor,
+            obj_back_cursor,
+        );
         this
     }
 }
@@ -4622,7 +5030,7 @@ impl BasicMenuContent {
             )
         }
     }
-    pub fn create_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
         parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
@@ -4677,7 +5085,7 @@ impl BasicMenuContent {
             )
         }
     }
-    pub fn create_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         src_obj_menu: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
@@ -5629,7 +6037,7 @@ impl BasicMenuContent {
 #[cfg(feature = "app-basicmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BasicMenuContent_Cursor_unity2_raw {
+mod __BasicMenuContent_Scroll_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -5641,12 +6049,11 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                2,
                 param_types,
                 false,
             )
@@ -5656,7 +6063,7 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -5669,16 +6076,14 @@ mod __BasicMenuContent_Cursor_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BasicMenuContent_Cursor,
+        this: BasicMenuContent_Scroll,
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        scroll_bar: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BasicMenuContent_Cursor,
+            BasicMenuContent_Scroll,
             crate::app::basicmenucontent::BasicMenuContent,
-            crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -5686,25 +6091,19 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(
-            this,
-            menu_content,
-            obj_front_cursor,
-            obj_back_cursor,
-            __unity2_method_info,
-        )
+        inner(this, menu_content, scroll_bar, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_pos_x {
+    pub mod __lookup_get_scroll {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "GetPosX",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "GetScroll",
                 0,
                 param_types,
                 false,
@@ -5715,8 +6114,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "GetPosX",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "GetScroll",
                     e
                 ),
             }
@@ -5727,29 +6126,29 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_pos_x(
-        this: BasicMenuContent_Cursor,
+    pub unsafe fn get_scroll(
+        this: BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> f32 =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_pos_x::get_offset() as isize),
+                    .offset(__lookup_get_scroll::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_pos_y {
+    pub mod __lookup_get_scroll_old {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "GetPosY",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "GetScrollOld",
                 0,
                 param_types,
                 false,
@@ -5760,8 +6159,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "GetPosY",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "GetScrollOld",
                     e
                 ),
             }
@@ -5772,15 +6171,60 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_pos_y(
-        this: BasicMenuContent_Cursor,
+    pub unsafe fn get_scroll_old(
+        this: BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> f32 =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_pos_y::get_offset() as isize),
+                    .offset(__lookup_get_scroll_old::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scroll_from {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "GetScrollFrom",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "GetScrollFrom",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_scroll_from(
+        this: BasicMenuContent_Scroll,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_scroll_from::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -5791,11 +6235,11 @@ mod __BasicMenuContent_Cursor_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenucontent :: BasicMenuContent_Scroll as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
                 "Tick",
-                1,
+                0,
                 param_types,
                 false,
             )
@@ -5805,7 +6249,7 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
                     "Tick",
                     e
                 ),
@@ -5818,32 +6262,28 @@ mod __BasicMenuContent_Cursor_unity2_raw {
         }
     }
     pub unsafe fn tick(
-        this: BasicMenuContent_Cursor,
-        scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll,
+        this: BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BasicMenuContent_Cursor,
-            crate::app::basicmenucontent::BasicMenuContent_Scroll,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick::get_offset() as isize),
-        );
-        inner(this, scroll, __unity2_method_info)
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_tick::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_update_visibility {
+    pub mod __lookup_scroll_instant {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "UpdateVisibility",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "ScrollInstant",
                 0,
                 param_types,
                 false,
@@ -5854,8 +6294,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisibility",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "ScrollInstant",
                     e
                 ),
             }
@@ -5866,29 +6306,29 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn update_visibility(
-        this: BasicMenuContent_Cursor,
+    pub unsafe fn scroll_instant(
+        this: BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_update_visibility::get_offset() as isize),
+                    .offset(__lookup_scroll_instant::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_move_instant {
+    pub mod __lookup_reset {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "MoveInstant",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "Reset",
                 0,
                 param_types,
                 false,
@@ -5899,8 +6339,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "MoveInstant",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
                     e
                 ),
             }
@@ -5911,21 +6351,21 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn move_instant(
-        this: BasicMenuContent_Cursor,
+    pub unsafe fn reset(
+        this: BasicMenuContent_Scroll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_move_instant::get_offset() as isize),
+                    .offset(__lookup_reset::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_move_frame {
+    pub mod __lookup_set_scroll_frame {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -5933,8 +6373,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "SetMoveFrame",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "SetScrollFrame",
                 1,
                 param_types,
                 false,
@@ -5945,8 +6385,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "SetMoveFrame",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "SetScrollFrame",
                     e
                 ),
             }
@@ -5957,166 +6397,31 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_move_frame(
-        this: BasicMenuContent_Cursor,
+    pub unsafe fn set_scroll_frame(
+        this: BasicMenuContent_Scroll,
         frame: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, f32, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, f32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_set_move_frame::get_offset() as isize),
+                    .offset(__lookup_set_scroll_frame::get_offset() as isize),
             );
         inner(this, frame, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_pause_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "PauseAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "PauseAnim",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn pause_anim(
-        this: BasicMenuContent_Cursor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pause_anim::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resume_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "ResumeAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "ResumeAnim",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn resume_anim(
-        this: BasicMenuContent_Cursor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resume_anim::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_restart_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "RestartAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "RestartAnim",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn restart_anim(
-        this: BasicMenuContent_Cursor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_restart_anim::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sibling_index {
+    pub mod __lookup_set_scroll_bar_handle_size {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+                &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "SetSiblingIndex",
+                <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::class(),
+                "SetScrollBarHandleSize",
                 1,
                 param_types,
                 false,
@@ -6127,8 +6432,8 @@ mod __BasicMenuContent_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "SetSiblingIndex",
+                    <BasicMenuContent_Scroll as ::unity2::ClassIdentity>::NAME,
+                    "SetScrollBarHandleSize",
                     e
                 ),
             }
@@ -6139,437 +6444,138 @@ mod __BasicMenuContent_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_sibling_index(
-        this: BasicMenuContent_Cursor,
-        index: i32,
+    pub unsafe fn set_scroll_bar_handle_size(
+        this: BasicMenuContent_Scroll,
+        size: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, i32, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BasicMenuContent_Scroll, f32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_set_sibling_index::get_offset() as isize),
+                    .offset(__lookup_set_scroll_bar_handle_size::get_offset() as isize),
             );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_back_cursor_image_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "SetBackCursorImageEnabled",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "SetBackCursorImageEnabled",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_back_cursor_image_enabled(
-        this: BasicMenuContent_Cursor,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_back_cursor_image_enabled::get_offset() as isize),
-            );
-        inner(this, enabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_to_keep_animator_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "SetToKeepAnimatorState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "SetToKeepAnimatorState",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_to_keep_animator_state(
-        this: BasicMenuContent_Cursor,
-        keep: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_to_keep_animator_state::get_offset() as isize),
-            );
-        inner(this, keep, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_front_cursor_from {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "MoveFrontCursorFrom",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "MoveFrontCursorFrom",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_front_cursor_from(
-        this: BasicMenuContent_Cursor,
-        from_x: f32,
-        from_y: f32,
-        frame: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BasicMenuContent_Cursor,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_front_cursor_from::get_offset() as isize),
-        );
-        inner(this, from_x, from_y, frame, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_front_cursor_visibility {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::class(),
-                "SetFrontCursorVisibility",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicMenuContent_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "SetFrontCursorVisibility",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_front_cursor_visibility(
-        this: BasicMenuContent_Cursor,
-        visibility: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BasicMenuContent_Cursor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_front_cursor_visibility::get_offset() as isize),
-            );
-        inner(this, visibility, __unity2_method_info)
+        inner(this, size, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-basicmenucontent")]
-pub trait IBasicMenuContent_CursorMethods: IBasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+pub trait IBasicMenuContent_ScrollMethods: IBasicMenuContent_Scroll {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
         menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        obj_front_cursor: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        obj_back_cursor: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        scroll_bar: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::ctor(
+            __BasicMenuContent_Scroll_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(obj_front_cursor),
-                ::core::convert::Into::into(obj_back_cursor),
+                ::core::convert::Into::into(scroll_bar),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetPosX()` overload"]
-    fn get_pos_x(self) -> f32 {
+    #[doc = "`GetScroll()` overload"]
+    fn get_scroll(self) -> f32 {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::get_pos_x(
+            __BasicMenuContent_Scroll_unity2_raw::get_scroll(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetPosY()` overload"]
-    fn get_pos_y(self) -> f32 {
+    #[doc = "`GetScrollOld()` overload"]
+    fn get_scroll_old(self) -> f32 {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::get_pos_y(
+            __BasicMenuContent_Scroll_unity2_raw::get_scroll_old(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
-    fn tick(
-        self,
-        scroll: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent_Scroll>,
-    ) -> () {
+    #[doc = "`GetScrollFrom()` overload"]
+    fn get_scroll_from(self) -> f32 {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::tick(
-                __receiver,
-                ::core::convert::Into::into(scroll),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateVisibility()` overload"]
-    fn update_visibility(self) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::update_visibility(
+            __BasicMenuContent_Scroll_unity2_raw::get_scroll_from(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`MoveInstant()` overload"]
-    fn move_instant(self) -> () {
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::move_instant(
+            __BasicMenuContent_Scroll_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ScrollInstant()` overload"]
+    fn scroll_instant(self) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Scroll_unity2_raw::scroll_instant(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetMoveFrame(f32)` overload"]
-    fn set_move_frame(self, frame: impl ::core::convert::Into<f32>) -> () {
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::set_move_frame(
+            __BasicMenuContent_Scroll_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetScrollFrame(f32)` overload"]
+    fn set_scroll_frame(self, frame: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BasicMenuContent_Scroll_unity2_raw::set_scroll_frame(
                 __receiver,
                 ::core::convert::Into::into(frame),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`PauseAnim()` overload"]
-    fn pause_anim(self) -> () {
+    #[doc = "`SetScrollBarHandleSize(f32)` overload"]
+    fn set_scroll_bar_handle_size(self, size: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <BasicMenuContent_Scroll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BasicMenuContent_Cursor_unity2_raw::pause_anim(
+            __BasicMenuContent_Scroll_unity2_raw::set_scroll_bar_handle_size(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResumeAnim()` overload"]
-    fn resume_anim(self) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::resume_anim(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RestartAnim()` overload"]
-    fn restart_anim(self) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::restart_anim(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSiblingIndex(i32)` overload"]
-    fn set_sibling_index(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::set_sibling_index(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
-    fn set_back_cursor_image_enabled(self, enabled: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::set_back_cursor_image_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
-    fn set_to_keep_animator_state(self, keep: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::set_to_keep_animator_state(
-                __receiver,
-                ::core::convert::Into::into(keep),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
-    fn move_front_cursor_from(
-        self,
-        from_x: impl ::core::convert::Into<f32>,
-        from_y: impl ::core::convert::Into<f32>,
-        frame: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::move_front_cursor_from(
-                __receiver,
-                ::core::convert::Into::into(from_x),
-                ::core::convert::Into::into(from_y),
-                ::core::convert::Into::into(frame),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
-    fn set_front_cursor_visibility(self, visibility: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <BasicMenuContent_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicMenuContent_Cursor_unity2_raw::set_front_cursor_visibility(
-                __receiver,
-                ::core::convert::Into::into(visibility),
+                ::core::convert::Into::into(size),
                 ::core::option::Option::None,
             )
         }
@@ -6577,29 +6583,23 @@ pub trait IBasicMenuContent_CursorMethods: IBasicMenuContent_Cursor {
 }
 
 #[cfg(feature = "app-basicmenucontent")]
-impl<__T: IBasicMenuContent_Cursor> IBasicMenuContent_CursorMethods for __T {}
+impl<__T: IBasicMenuContent_Scroll> IBasicMenuContent_ScrollMethods for __T {}
 
 #[cfg(feature = "app-basicmenucontent")]
-impl BasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+impl BasicMenuContent_Scroll {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        scroll_bar: crate::unity_engine::gameobject::GameObject,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BasicMenuContent_Cursor),
+                ::core::stringify!(BasicMenuContent_Scroll),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBasicMenuContent_CursorMethods>::ctor(
-            this,
-            menu_content,
-            obj_front_cursor,
-            obj_back_cursor,
-        );
+        <Self as IBasicMenuContent_ScrollMethods>::ctor(this, menu_content, scroll_bar);
         this
     }
 }

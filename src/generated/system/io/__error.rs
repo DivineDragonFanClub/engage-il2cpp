@@ -653,8 +653,8 @@ impl __Error {
 
 #[cfg(feature = "system-io-__error")]
 pub mod prelude {
-    pub use super::I__Error;
     pub use super::__Error;
+    pub use super::I__Error;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

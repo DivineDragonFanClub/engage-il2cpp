@@ -16,6 +16,24 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeManager")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)]
+    pub struct NoticeManager {
+        #[rename(name = "m_AchievementPopUp")]
+        pub m_achievement_pop_up: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_TextMesh")]
+        pub m_text_mesh: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ClearObject")]
+        pub m_clear_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Queues")]
+        pub m_queues: ::unity2::Array<
+            crate::system::collections::generic::queue_1::Queue_1<::unity2::Il2CppString>,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -78,24 +96,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 6 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)]
-    pub struct NoticeManager {
-        #[rename(name = "m_AchievementPopUp")]
-        pub m_achievement_pop_up: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_TextMesh")]
-        pub m_text_mesh: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ClearObject")]
-        pub m_clear_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Queues")]
-        pub m_queues: ::unity2::Array<
-            crate::system::collections::generic::queue_1::Queue_1<::unity2::Il2CppString>,
-        >,
     }
 }
 

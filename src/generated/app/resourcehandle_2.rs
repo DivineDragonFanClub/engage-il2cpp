@@ -542,7 +542,7 @@ pub trait IResourceHandle_2Methods: IResourceHandle_2 {
             __ResourceHandle_2_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn load_async<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn load_async<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
         completed: impl ::core::convert::Into<crate::system::action_1::Action_1<M0>>,
@@ -662,7 +662,9 @@ pub trait IResourceHandle_2Methods: IResourceHandle_2 {
             __ResourceHandle_2_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -710,7 +712,7 @@ pub trait IResourceHandle_2Methods: IResourceHandle_2 {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
@@ -768,7 +770,7 @@ pub trait IResourceHandle_2Methods: IResourceHandle_2 {
             )
         }
     }
-    pub fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> M0 {

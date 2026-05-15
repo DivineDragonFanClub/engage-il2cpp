@@ -935,7 +935,9 @@ pub trait IDebugUIHandlerWidgetMethods: IDebugUIHandlerWidget {
             __DebugUIHandlerWidget_unity2_raw::get_widget(__receiver, ::core::option::Option::None)
         }
     }
-    pub fn cast_widget<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn cast_widget<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

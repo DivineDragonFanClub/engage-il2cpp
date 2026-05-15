@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/curve/Curve.md"))]
-    #[::unity2::class(namespace = "App", name = "Curve")]
-    #[parent(crate::system::object::Object)]
-    pub struct Curve {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/curve/Curve_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -85,6 +80,11 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/curve/Curve.md"))]
+    #[::unity2::class(namespace = "App", name = "Curve")]
+    #[parent(crate::system::object::Object)]
+    pub struct Curve {}
 }
 
 #[cfg(feature = "app-curve-types")]

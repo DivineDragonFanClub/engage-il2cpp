@@ -472,7 +472,7 @@ impl InstantiationParameters {
             )
         }
     }
-    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy>(
+    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         source: impl ::core::convert::Into<M0>,
     ) -> M0 {

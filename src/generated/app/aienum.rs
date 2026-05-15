@@ -8,15 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))]
-    #[::unity2::class(namespace = "App", name = "AIEnum")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIEnum {
-        #[static_field]
-        #[rename(name = "s_SkillRangeEnemyEnumerator")]
-        pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -82,106 +73,19 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))]
+    #[::unity2::class(namespace = "App", name = "AIEnum")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIEnum {
+        #[static_field]
+        #[rename(name = "s_SkillRangeEnemyEnumerator")]
+        pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
+    }
 }
 
 #[cfg(feature = "app-aienum-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-aienum")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIEnum_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_range_enemy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIEnum as ::unity2::ClassIdentity>::class(),
-                "GetSkillRangeEnemy",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIEnum as ::unity2::ClassIdentity>::NAME,
-                    "GetSkillRangeEnemy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_skill_range_enemy(
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-        x: i32,
-        z: i32,
-        target_x: i32,
-        target_z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::skilldata::SkillData,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_skill_range_enemy::get_offset() as isize),
-        );
-        inner(unit, skill, x, z, target_x, target_z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aienum")]
-impl AIEnum {
-    #[doc = "`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
-    pub fn get_skill_range_enemy(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        target_x: impl ::core::convert::Into<i32>,
-        target_z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator {
-        unsafe {
-            __AIEnum_unity2_raw::get_skill_range_enemy(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(target_x),
-                ::core::convert::Into::into(target_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "app-aienum")]
 #[doc(hidden)]
@@ -671,6 +575,102 @@ impl AIEnum_SkillRangeEnemyEnumerator {
         unsafe {
             __AIEnum_SkillRangeEnemyEnumerator_unity2_raw::get_enumerator(
                 self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aienum")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIEnum_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_range_enemy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIEnum as ::unity2::ClassIdentity>::class(),
+                "GetSkillRangeEnemy",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIEnum as ::unity2::ClassIdentity>::NAME,
+                    "GetSkillRangeEnemy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_skill_range_enemy(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        x: i32,
+        z: i32,
+        target_x: i32,
+        target_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::skilldata::SkillData,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_skill_range_enemy::get_offset() as isize),
+        );
+        inner(unit, skill, x, z, target_x, target_z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aienum")]
+impl AIEnum {
+    #[doc = "`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
+    pub fn get_skill_range_enemy(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        target_x: impl ::core::convert::Into<i32>,
+        target_z: impl ::core::convert::Into<i32>,
+    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator {
+        unsafe {
+            __AIEnum_unity2_raw::get_skill_range_enemy(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(target_x),
+                ::core::convert::Into::into(target_z),
                 ::core::option::Option::None,
             )
         }

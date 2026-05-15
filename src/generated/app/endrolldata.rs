@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endrolldata/EndRollData.md"))]
-    #[::unity2::class(namespace = "App", name = "EndRollData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: endrolldata :: EndRollData >)]
-    pub struct EndRollData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endrolldata/EndRollData_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -104,6 +99,11 @@ mod __types {
             Self { value: 12 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endrolldata/EndRollData.md"))]
+    #[::unity2::class(namespace = "App", name = "EndRollData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: endrolldata :: EndRollData >)]
+    pub struct EndRollData {}
 }
 
 #[cfg(feature = "app-endrolldata-types")]

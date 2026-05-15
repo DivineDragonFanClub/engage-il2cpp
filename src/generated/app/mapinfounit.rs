@@ -56,91 +56,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoUnit")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)]
-    pub struct MapInfoUnit {
-        #[static_field]
-        #[rename(name = "BeginPage")]
-        pub begin_page: i32,
-        #[static_field]
-        #[rename(name = "EndPage")]
-        pub end_page: i32,
-        #[rename(name = "m_ScaleCurve")]
-        pub m_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_Input")]
-        pub m_input: crate::app::mapinfounit::MapInfoUnit_InputState,
-        #[rename(name = "m_IsOpenMapNavigation")]
-        pub m_is_open_map_navigation: bool,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[rename(name = "m_IsSuppress")]
-        pub m_is_suppress: bool,
-        #[rename(name = "m_SuppressFlag")]
-        pub m_suppress_flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
-        #[rename(name = "m_AlphaChangeRatio")]
-        pub m_alpha_change_ratio: f32,
-        #[rename(name = "m_WaitFrame")]
-        pub m_wait_frame: i32,
-        #[rename(name = "m_Count")]
-        pub m_count: i32,
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[static_field]
-        #[rename(name = "SpriteNames")]
-        pub sprite_names: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapInfoUnit_InputState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapInfoUnit.InputState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoUnit_InputState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapInfoUnit_InputState {
-        pub fn neutral() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn switch() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn select() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md"))]
     #[repr(C)]
     #[derive(
@@ -315,6 +230,91 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 34 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapInfoUnit_InputState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapInfoUnit.InputState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoUnit_InputState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapInfoUnit_InputState {
+        pub fn neutral() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn switch() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn select() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoUnit")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)]
+    pub struct MapInfoUnit {
+        #[static_field]
+        #[rename(name = "BeginPage")]
+        pub begin_page: i32,
+        #[static_field]
+        #[rename(name = "EndPage")]
+        pub end_page: i32,
+        #[rename(name = "m_ScaleCurve")]
+        pub m_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_Input")]
+        pub m_input: crate::app::mapinfounit::MapInfoUnit_InputState,
+        #[rename(name = "m_IsOpenMapNavigation")]
+        pub m_is_open_map_navigation: bool,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+        #[rename(name = "m_IsSuppress")]
+        pub m_is_suppress: bool,
+        #[rename(name = "m_SuppressFlag")]
+        pub m_suppress_flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
+        #[rename(name = "m_AlphaChangeRatio")]
+        pub m_alpha_change_ratio: f32,
+        #[rename(name = "m_WaitFrame")]
+        pub m_wait_frame: i32,
+        #[rename(name = "m_Count")]
+        pub m_count: i32,
+        #[rename(name = "m_SpriteAtlas")]
+        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_Sprites")]
+        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[static_field]
+        #[rename(name = "SpriteNames")]
+        pub sprite_names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

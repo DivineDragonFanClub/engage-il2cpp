@@ -923,7 +923,7 @@ pub trait IObjectEnumeratorMethods: IObjectEnumerator {
             )
         }
     }
-    pub fn set_enable<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_enable<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         enabled: impl ::core::convert::Into<bool>,
     ) -> crate::app::objectenumerator::ObjectEnumerator {
@@ -982,7 +982,9 @@ pub trait IObjectEnumeratorMethods: IObjectEnumerator {
             )
         }
     }
-    pub fn is_component<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> bool {
+    fn is_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
+    #[::unity2::class(namespace = "App", name = "EventData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
+    pub struct EventData {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData_Commands.md"))]
     #[repr(C)]
     #[derive(
@@ -167,11 +172,6 @@ mod __types {
             Self { value: 102 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
-    #[::unity2::class(namespace = "App", name = "EventData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
-    pub struct EventData {}
 }
 
 #[cfg(feature = "app-eventdata-types")]

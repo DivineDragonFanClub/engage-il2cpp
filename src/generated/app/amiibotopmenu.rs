@@ -14,23 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_SoundMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.SoundMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct AmiiboTopMenu_SoundMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct AmiiboTopMenu {
-        #[static_field]
-        #[rename(name = "AmiiboHelpPrefabPath")]
-        pub amiibo_help_prefab_path: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopmenu/AmiiboTopMenu_MenuResult.md"))]
     #[repr(C)]
     #[derive(
@@ -91,10 +74,14 @@ mod __types {
         pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AmiiboTopMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct AmiiboTopMenu {
+        #[static_field]
+        #[rename(name = "AmiiboHelpPrefabPath")]
+        pub amiibo_help_prefab_path: ::unity2::Il2CppString,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_AmiiboMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.AmiiboMenuItem")]
@@ -105,6 +92,19 @@ mod __types {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_SoundMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.SoundMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct AmiiboTopMenu_SoundMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AmiiboTopMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-amiibotopmenu-types")]
@@ -113,7 +113,7 @@ pub use __types::*;
 #[cfg(feature = "app-amiibotopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
+mod __AmiiboTopMenu_AccessoryMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -124,7 +124,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: amiibotopmenu :: AmiiboTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -136,7 +136,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -149,12 +149,12 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: AmiiboTopMenu_SoundMenuItem,
+        this: AmiiboTopMenu_AccessoryMenuItem,
         event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            AmiiboTopMenu_SoundMenuItem,
+            AmiiboTopMenu_AccessoryMenuItem,
             crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -173,7 +173,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -185,7 +185,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -198,11 +198,11 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: AmiiboTopMenu_SoundMenuItem,
+        this: AmiiboTopMenu_AccessoryMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            AmiiboTopMenu_SoundMenuItem,
+            AmiiboTopMenu_AccessoryMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -220,7 +220,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -232,7 +232,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -245,11 +245,11 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: AmiiboTopMenu_SoundMenuItem,
+        this: AmiiboTopMenu_AccessoryMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            AmiiboTopMenu_SoundMenuItem,
+            AmiiboTopMenu_AccessoryMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -267,7 +267,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -279,7 +279,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -292,11 +292,11 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: AmiiboTopMenu_SoundMenuItem,
+        this: AmiiboTopMenu_AccessoryMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            AmiiboTopMenu_SoundMenuItem,
+            AmiiboTopMenu_AccessoryMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -314,7 +314,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
                 "BCall",
                 0,
                 param_types,
@@ -326,7 +326,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BCall",
                     e
                 ),
@@ -339,11 +339,11 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
         }
     }
     pub unsafe fn b_call(
-        this: AmiiboTopMenu_SoundMenuItem,
+        this: AmiiboTopMenu_AccessoryMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            AmiiboTopMenu_SoundMenuItem,
+            AmiiboTopMenu_AccessoryMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -355,7 +355,7 @@ mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-amiibotopmenu")]
-pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
+pub trait IAmiiboTopMenu_AccessoryMenuItemMethods: IAmiiboTopMenu_AccessoryMenuItem {
     #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
@@ -365,10 +365,10 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __AmiiboTopMenu_SoundMenuItem_unity2_raw::ctor(
+            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
@@ -379,10 +379,10 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __AmiiboTopMenu_SoundMenuItem_unity2_raw::get_name(
+            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -392,10 +392,10 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __AmiiboTopMenu_SoundMenuItem_unity2_raw::build_attribute(
+            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -405,10 +405,10 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __AmiiboTopMenu_SoundMenuItem_unity2_raw::a_call(
+            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -418,10 +418,10 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __AmiiboTopMenu_SoundMenuItem_unity2_raw::b_call(
+            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::b_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -430,20 +430,20 @@ pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
 }
 
 #[cfg(feature = "app-amiibotopmenu")]
-impl<__T: IAmiiboTopMenu_SoundMenuItem> IAmiiboTopMenu_SoundMenuItemMethods for __T {}
+impl<__T: IAmiiboTopMenu_AccessoryMenuItem> IAmiiboTopMenu_AccessoryMenuItemMethods for __T {}
 
 #[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_SoundMenuItem {
+impl AmiiboTopMenu_AccessoryMenuItem {
     #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_SoundMenuItem),
+                ::core::stringify!(AmiiboTopMenu_AccessoryMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAmiiboTopMenu_SoundMenuItemMethods>::ctor(this, event_handler);
+        <Self as IAmiiboTopMenu_AccessoryMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -962,516 +962,6 @@ impl AmiiboTopMenu {
 #[cfg(feature = "app-amiibotopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AmiiboTopMenu_AccessoryMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: amiibotopmenu :: AmiiboTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AmiiboTopMenu_AccessoryMenuItem,
-        event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_AccessoryMenuItem,
-            crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: AmiiboTopMenu_AccessoryMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_AccessoryMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: AmiiboTopMenu_AccessoryMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_AccessoryMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: AmiiboTopMenu_AccessoryMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_AccessoryMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_AccessoryMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: AmiiboTopMenu_AccessoryMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_AccessoryMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-pub trait IAmiiboTopMenu_AccessoryMenuItemMethods: IAmiiboTopMenu_AccessoryMenuItem {
-    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_AccessoryMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_AccessoryMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl<__T: IAmiiboTopMenu_AccessoryMenuItem> IAmiiboTopMenu_AccessoryMenuItemMethods for __T {}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_AccessoryMenuItem {
-    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_AccessoryMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboTopMenu_AccessoryMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AmiiboTopMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AmiiboTopMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AmiiboTopMenu_DecideEventHandler,
-        result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AmiiboTopMenu_DecideEventHandler,
-            crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-pub trait IAmiiboTopMenu_DecideEventHandlerMethods: IAmiiboTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AmiiboTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AmiiboTopMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl<__T: IAmiiboTopMenu_DecideEventHandler> IAmiiboTopMenu_DecideEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AmiiboTopMenu_AmiiboMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1919,6 +1409,516 @@ impl AmiiboTopMenu_AmiiboMenuItem {
             )
         });
         <Self as IAmiiboTopMenu_AmiiboMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AmiiboTopMenu_SoundMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: amiibotopmenu :: AmiiboTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AmiiboTopMenu_SoundMenuItem,
+        event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_SoundMenuItem,
+            crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: AmiiboTopMenu_SoundMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_SoundMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: AmiiboTopMenu_SoundMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_SoundMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: AmiiboTopMenu_SoundMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_SoundMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_SoundMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: AmiiboTopMenu_SoundMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_SoundMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+pub trait IAmiiboTopMenu_SoundMenuItemMethods: IAmiiboTopMenu_SoundMenuItem {
+    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        event_handler: impl ::core::convert::Into<
+            crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_SoundMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_SoundMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_SoundMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_SoundMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_SoundMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_SoundMenuItem_unity2_raw::b_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl<__T: IAmiiboTopMenu_SoundMenuItem> IAmiiboTopMenu_SoundMenuItemMethods for __T {}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl AmiiboTopMenu_SoundMenuItem {
+    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboTopMenu_SoundMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboTopMenu_SoundMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AmiiboTopMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AmiiboTopMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AmiiboTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AmiiboTopMenu_DecideEventHandler,
+        result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AmiiboTopMenu_DecideEventHandler,
+            crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+pub trait IAmiiboTopMenu_DecideEventHandlerMethods: IAmiiboTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AmiiboTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AmiiboTopMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl<__T: IAmiiboTopMenu_DecideEventHandler> IAmiiboTopMenu_DecideEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl AmiiboTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -3129,7 +3129,9 @@ impl GameObject {
 
 #[cfg(feature = "unity_engine-gameobject")]
 pub trait IGameObjectMethods: IGameObject {
-    pub fn get_component<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -3277,7 +3279,11 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_component_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component_in_children_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -3325,7 +3331,9 @@ pub trait IGameObjectMethods: IGameObject {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_component_in_children_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_component_in_children_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> M0 {
@@ -3414,7 +3422,11 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_component_in_parent_3<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_component_in_parent_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -3462,7 +3474,9 @@ pub trait IGameObjectMethods: IGameObject {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_component_in_parent_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_component_in_parent_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> M0 {
@@ -3559,7 +3573,7 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_2<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -3631,7 +3645,7 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_4<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
@@ -3723,7 +3737,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_children_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> ::unity2::Array<M0> {
@@ -3781,7 +3797,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_children_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
@@ -3842,7 +3860,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_children_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_5<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -3892,7 +3912,9 @@ pub trait IGameObjectMethods: IGameObject {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_components_in_children_6<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_children_6<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
     ) -> () {
@@ -3984,7 +4006,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_parent_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent_3<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
         results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
@@ -4045,7 +4069,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_parent_4<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent_4<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
         include_inactive: impl ::core::convert::Into<bool>,
     ) -> ::unity2::Array<M0> {
@@ -4103,7 +4129,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn get_components_in_parent_5<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_components_in_parent_5<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<
@@ -4153,7 +4181,7 @@ pub trait IGameObjectMethods: IGameObject {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         component: impl ::core::convert::Into<*mut M0>,
     ) -> bool {
@@ -4366,7 +4394,9 @@ pub trait IGameObjectMethods: IGameObject {
             )
         }
     }
-    pub fn add_component_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn add_component_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

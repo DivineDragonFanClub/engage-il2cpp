@@ -609,7 +609,7 @@ pub trait IIGenericProviderOperationMethods: IIGenericProviderOperation {
             )
         }
     }
-    pub fn get_dependency<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_dependency<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         index: impl ::core::convert::Into<i32>,
     ) -> M0 {

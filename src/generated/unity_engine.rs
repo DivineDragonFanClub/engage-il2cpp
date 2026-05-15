@@ -3,7 +3,7 @@
 #[cfg(any(feature = "unity_engine-_androidjnihelper-types"))]
 pub mod _androidjnihelper;
 #[cfg(feature = "unity_engine-_androidjnihelper-types")]
-pub use _androidjnihelper::{I_AndroidJNIHelper, _AndroidJNIHelper};
+pub use _androidjnihelper::{_AndroidJNIHelper, I_AndroidJNIHelper};
 #[cfg(any(feature = "unity_engine-addcomponentmenu-types"))]
 pub mod addcomponentmenu;
 #[cfg(feature = "unity_engine-addcomponentmenu")]

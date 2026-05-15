@@ -12,6 +12,19 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "JobIntroSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)]
+    pub struct JobIntroSequence {
+        #[rename(name = "m_JobDataList")]
+        pub m_job_data_list:
+            crate::app::structlist_1::StructList_1<crate::app::jobintrodata::JobIntroData>,
+        #[rename(name = "m_CurrentIndex")]
+        pub m_current_index: i32,
+        #[rename(name = "m_WaitTime")]
+        pub m_wait_time: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrosequence/JobIntroSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -54,19 +67,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "JobIntroSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)]
-    pub struct JobIntroSequence {
-        #[rename(name = "m_JobDataList")]
-        pub m_job_data_list:
-            crate::app::structlist_1::StructList_1<crate::app::jobintrodata::JobIntroData>,
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
     }
 }
 

@@ -73,7 +73,11 @@ mod __GameCalculator_unity2_raw {
 
 #[cfg(feature = "app-gamecalculator")]
 pub trait IGameCalculatorMethods: IGameCalculator {
-    pub fn add_command_with_reverse<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> () {
+    fn add_command_with_reverse<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> () {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

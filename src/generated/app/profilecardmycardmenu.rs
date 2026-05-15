@@ -12,25 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardMyCardMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProfileCardMyCardMenu {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler,
-        #[rename(name = "m_Root")]
-        pub m_root: crate::app::profilecardroot::ProfileCardRoot,
-        #[rename(name = "m_MyProfileCardTemp")]
-        pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
-        #[rename(name = "m_result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_NeededUpdateCardOnBuild")]
-        pub m_needed_update_card_on_build: bool,
-        #[rename(name = "m_CloseCalled")]
-        pub m_close_called: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +58,25 @@ mod __types {
         pub fn cancel() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardMyCardMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ProfileCardMyCardMenu {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler,
+        #[rename(name = "m_Root")]
+        pub m_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[rename(name = "m_MyProfileCardTemp")]
+        pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        #[rename(name = "m_result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_NeededUpdateCardOnBuild")]
+        pub m_needed_update_card_on_build: bool,
+        #[rename(name = "m_CloseCalled")]
+        pub m_close_called: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))]

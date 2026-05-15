@@ -290,9 +290,9 @@ impl SubsystemDescriptorStore {
             )
         }
     }
-    pub fn register_descriptor<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn register_descriptor<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         descriptor: impl ::core::convert::Into<M0>,
         store_in_list: impl ::core::convert::Into<

@@ -9,6 +9,86 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct FrameData {
+        pub m_frame_id: u64,
+        pub m_delta_time: f64,
+        pub m_weight: f32,
+        pub m_effective_weight: f32,
+        pub m_effective_parent_delay: f64,
+        pub m_effective_parent_speed: f32,
+        pub m_effective_speed: f32,
+        pub m_flags: crate::unity_engine::playables::framedata::FrameData_Flags,
+        pub m_output: crate::unity_engine::playables::playableoutput::PlayableOutput,
+    }
+
+    impl ::unity2::ClassIdentity for FrameData {
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
+
+        const NAME: &'static str = "FrameData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FrameData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FrameData_EvaluationType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FrameData_EvaluationType {
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
+
+        const NAME: &'static str = "FrameData.EvaluationType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FrameData_EvaluationType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FrameData_EvaluationType {
+        pub fn evaluate() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn playback() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -66,86 +146,6 @@ mod __types {
 
         pub fn effective_play_state_playing() -> Self {
             Self { value: 32 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FrameData_EvaluationType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FrameData_EvaluationType {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-        const NAME: &'static str = "FrameData.EvaluationType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FrameData_EvaluationType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FrameData_EvaluationType {
-        pub fn evaluate() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn playback() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FrameData {
-        pub m_frame_id: u64,
-        pub m_delta_time: f64,
-        pub m_weight: f32,
-        pub m_effective_weight: f32,
-        pub m_effective_parent_delay: f64,
-        pub m_effective_parent_speed: f32,
-        pub m_effective_speed: f32,
-        pub m_flags: crate::unity_engine::playables::framedata::FrameData_Flags,
-        pub m_output: crate::unity_engine::playables::playableoutput::PlayableOutput,
-    }
-
-    impl ::unity2::ClassIdentity for FrameData {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-        const NAME: &'static str = "FrameData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FrameData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
         }
     }
 }

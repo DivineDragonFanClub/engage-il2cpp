@@ -7,11 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Directory")]
-    #[parent(crate::system::object::Object)]
-    pub struct Directory {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory_SearchData.md"))]
     #[::unity2::class(namespace = "System.IO", name = "Directory.SearchData")]
     #[parent(crate::system::object::Object)]
@@ -23,10 +18,132 @@ mod __types {
         #[rename(name = "searchOption")]
         pub search_option: crate::system::io::searchoption::SearchOption,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Directory")]
+    #[parent(crate::system::object::Object)]
+    pub struct Directory {}
 }
 
 #[cfg(feature = "system-io-directory-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-io-directory")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Directory_SearchData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory_SearchData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Directory_SearchData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Directory_SearchData,
+        full_path: ::unity2::Il2CppString,
+        user_path: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Directory_SearchData,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            full_path,
+            user_path,
+            search_option,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "system-io-directory")]
+pub trait IDirectory_SearchDataMethods: IDirectory_SearchData {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
+    fn ctor(
+        self,
+        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        user_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Directory_SearchData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Directory_SearchData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(full_path),
+                ::core::convert::Into::into(user_path),
+                ::core::convert::Into::into(search_option),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-directory")]
+impl<__T: IDirectory_SearchData> IDirectory_SearchDataMethods for __T {}
+
+#[cfg(feature = "system-io-directory")]
+impl Directory_SearchData {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` — overload selector"]
+    pub fn new(
+        full_path: ::unity2::Il2CppString,
+        user_path: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Directory_SearchData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDirectory_SearchDataMethods>::ctor(this, full_path, user_path, search_option);
+        this
+    }
+}
 
 #[cfg(feature = "system-io-directory")]
 #[doc(hidden)]
@@ -1235,123 +1352,6 @@ impl Directory {
                 ::core::option::Option::None,
             )
         }
-    }
-}
-
-#[cfg(feature = "system-io-directory")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Directory_SearchData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory_SearchData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory_SearchData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Directory_SearchData,
-        full_path: ::unity2::Il2CppString,
-        user_path: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Directory_SearchData,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::system::io::searchoption::SearchOption,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            full_path,
-            user_path,
-            search_option,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "system-io-directory")]
-pub trait IDirectory_SearchDataMethods: IDirectory_SearchData {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
-    fn ctor(
-        self,
-        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        user_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Directory_SearchData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Directory_SearchData_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(full_path),
-                ::core::convert::Into::into(user_path),
-                ::core::convert::Into::into(search_option),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-directory")]
-impl<__T: IDirectory_SearchData> IDirectory_SearchDataMethods for __T {}
-
-#[cfg(feature = "system-io-directory")]
-impl Directory_SearchData {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` — overload selector"]
-    pub fn new(
-        full_path: ::unity2::Il2CppString,
-        user_path: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Directory_SearchData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDirectory_SearchDataMethods>::ctor(this, full_path, user_path, search_option);
-        this
     }
 }
 

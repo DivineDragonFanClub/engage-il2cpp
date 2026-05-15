@@ -10,6 +10,35 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIOrder_UnitPriority {
+        pub number: i32,
+        pub priority: u32,
+    }
+
+    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AIOrder.UnitPriority";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIOrder_UnitPriority {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder_Func.md"))]
     #[::unity2::class(namespace = "App", name = "AIOrder.Func")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -61,39 +90,151 @@ mod __types {
         #[rename(name = "m_IsAllowIdle")]
         pub m_is_allow_idle: bool,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIOrder_UnitPriority {
-        pub number: i32,
-        pub priority: u32,
-    }
-
-    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AIOrder.UnitPriority";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIOrder_UnitPriority {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "app-aiorder-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-aiorder")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIOrder_UnitPriority_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_less_than_or_equal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
+                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder_UnitPriority as ::unity2::ClassIdentity>::class(),
+                "op_LessThanOrEqual",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
+                    "op_LessThanOrEqual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_less_than_or_equal(
+        a: crate::app::aiorder::AIOrder_UnitPriority,
+        b: crate::app::aiorder::AIOrder_UnitPriority,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::aiorder::AIOrder_UnitPriority,
+            crate::app::aiorder::AIOrder_UnitPriority,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_less_than_or_equal::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_greater_than_or_equal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
+                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder_UnitPriority as ::unity2::ClassIdentity>::class(),
+                "op_GreaterThanOrEqual",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
+                    "op_GreaterThanOrEqual",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_greater_than_or_equal(
+        a: crate::app::aiorder::AIOrder_UnitPriority,
+        b: crate::app::aiorder::AIOrder_UnitPriority,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::aiorder::AIOrder_UnitPriority,
+            crate::app::aiorder::AIOrder_UnitPriority,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_greater_than_or_equal::get_offset() as isize),
+        );
+        inner(a, b, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+impl AIOrder_UnitPriority {
+    #[doc = "`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
+    pub fn op_less_than_or_equal(
+        a: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
+        b: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
+    ) -> bool {
+        unsafe {
+            __AIOrder_UnitPriority_unity2_raw::op_less_than_or_equal(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
+    pub fn op_greater_than_or_equal(
+        a: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
+        b: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
+    ) -> bool {
+        unsafe {
+            __AIOrder_UnitPriority_unity2_raw::op_greater_than_or_equal(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "app-aiorder")]
 #[doc(hidden)]
@@ -4498,147 +4639,6 @@ impl AIOrder {
         });
         <Self as IAIOrderMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIOrder_UnitPriority_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_less_than_or_equal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
-                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder_UnitPriority as ::unity2::ClassIdentity>::class(),
-                "op_LessThanOrEqual",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
-                    "op_LessThanOrEqual",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_less_than_or_equal(
-        a: crate::app::aiorder::AIOrder_UnitPriority,
-        b: crate::app::aiorder::AIOrder_UnitPriority,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::aiorder::AIOrder_UnitPriority,
-            crate::app::aiorder::AIOrder_UnitPriority,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_less_than_or_equal::get_offset() as isize),
-        );
-        inner(a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_greater_than_or_equal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
-                <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder_UnitPriority as ::unity2::ClassIdentity>::class(),
-                "op_GreaterThanOrEqual",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
-                    "op_GreaterThanOrEqual",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_greater_than_or_equal(
-        a: crate::app::aiorder::AIOrder_UnitPriority,
-        b: crate::app::aiorder::AIOrder_UnitPriority,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::aiorder::AIOrder_UnitPriority,
-            crate::app::aiorder::AIOrder_UnitPriority,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_greater_than_or_equal::get_offset() as isize),
-        );
-        inner(a, b, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_UnitPriority {
-    #[doc = "`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
-    pub fn op_less_than_or_equal(
-        a: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
-        b: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
-    ) -> bool {
-        unsafe {
-            __AIOrder_UnitPriority_unity2_raw::op_less_than_or_equal(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
-    pub fn op_greater_than_or_equal(
-        a: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
-        b: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
-    ) -> bool {
-        unsafe {
-            __AIOrder_UnitPriority_unity2_raw::op_greater_than_or_equal(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

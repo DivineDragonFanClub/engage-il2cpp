@@ -11,28 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitHasItemMaxSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unithasitemmaxsequence :: UnitHasItemMaxSequence >)]
-    pub struct UnitHasItemMaxSequence {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_GainUnitItem")]
-        pub m_gain_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_Label")]
-        pub m_label: ::unity2::Il2CppString,
-        #[rename(name = "m_IsSendingUnitItem")]
-        pub m_is_sending_unit_item: bool,
-        #[rename(name = "m_SendingUnitItemIndex")]
-        pub m_sending_unit_item_index: i32,
-        #[rename(name = "m_IsDiscarding")]
-        pub m_is_discarding: bool,
-        #[rename(name = "m_IsDiscardingTransporterItem")]
-        pub m_is_discarding_transporter_item: bool,
-        #[rename(name = "m_DiscardingTransporterItemIndex")]
-        pub m_discarding_transporter_item_index: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -79,6 +57,28 @@ mod __types {
         pub fn execute() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitHasItemMaxSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unithasitemmaxsequence :: UnitHasItemMaxSequence >)]
+    pub struct UnitHasItemMaxSequence {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_GainUnitItem")]
+        pub m_gain_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_Label")]
+        pub m_label: ::unity2::Il2CppString,
+        #[rename(name = "m_IsSendingUnitItem")]
+        pub m_is_sending_unit_item: bool,
+        #[rename(name = "m_SendingUnitItemIndex")]
+        pub m_sending_unit_item_index: i32,
+        #[rename(name = "m_IsDiscarding")]
+        pub m_is_discarding: bool,
+        #[rename(name = "m_IsDiscardingTransporterItem")]
+        pub m_is_discarding_transporter_item: bool,
+        #[rename(name = "m_DiscardingTransporterItemIndex")]
+        pub m_discarding_transporter_item_index: i32,
     }
 }
 

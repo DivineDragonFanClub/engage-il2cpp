@@ -8,6 +8,49 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
+        name = "ContentCatalogData"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ContentCatalogData {
+# [rename (name = "localHash")] pub local_hash : :: unity2 :: Il2CppString ,
+# [rename (name = "location")] pub location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ,
+# [rename (name = "m_LocatorId")] pub m_locator_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_InstanceProviderData")] pub m_instance_provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData ,
+# [rename (name = "m_SceneProviderData")] pub m_scene_provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData ,
+# [rename (name = "m_ResourceProviderData")] pub m_resource_provider_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > ,
+# [rename (name = "m_ProviderIds")] pub m_provider_ids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [rename (name = "m_InternalIds")] pub m_internal_ids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [rename (name = "m_KeyDataString")] pub m_key_data_string : :: unity2 :: Il2CppString ,
+# [rename (name = "m_BucketDataString")] pub m_bucket_data_string : :: unity2 :: Il2CppString ,
+# [rename (name = "m_EntryDataString")] pub m_entry_data_string : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kBytesPerInt32")] pub k_bytes_per_int32 : i32 ,
+# [static_field] # [rename (name = "k_EntryDataItemPerEntry")] pub k_entry_data_item_per_entry : i32 ,
+# [rename (name = "m_ExtraDataString")] pub m_extra_data_string : :: unity2 :: Il2CppString ,
+# [rename (name = "m_resourceTypes")] pub m_resource_types : :: unity2 :: Array < crate :: unity_engine :: resource_management :: util :: serializedtype :: SerializedType > ,
+# [rename (name = "m_InternalIdPrefixes")] pub m_internal_id_prefixes : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
+        name = "ContentCatalogData.CompactLocation"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ContentCatalogData_CompactLocation {
+# [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap ,
+# [rename (name = "m_InternalId")] pub m_internal_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_Dependency")] pub m_dependency : :: unity2 :: IlInstance ,
+# [rename (name = "m_Data")] pub m_data : :: unity2 :: IlInstance ,
+# [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
+# [rename (name = "m_DependencyHashCode")] pub m_dependency_hash_code : i32 ,
+# [rename (name = "m_PrimaryKey")] pub m_primary_key : :: unity2 :: Il2CppString ,
+# [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_Bucket.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,848 +79,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
-        name = "ContentCatalogData.CompactLocation"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogData_CompactLocation {
-# [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap ,
-# [rename (name = "m_InternalId")] pub m_internal_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_Dependency")] pub m_dependency : :: unity2 :: IlInstance ,
-# [rename (name = "m_Data")] pub m_data : :: unity2 :: IlInstance ,
-# [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [rename (name = "m_DependencyHashCode")] pub m_dependency_hash_code : i32 ,
-# [rename (name = "m_PrimaryKey")] pub m_primary_key : :: unity2 :: Il2CppString ,
-# [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
-        name = "ContentCatalogData"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogData {
-# [rename (name = "localHash")] pub local_hash : :: unity2 :: Il2CppString ,
-# [rename (name = "location")] pub location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ,
-# [rename (name = "m_LocatorId")] pub m_locator_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_InstanceProviderData")] pub m_instance_provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData ,
-# [rename (name = "m_SceneProviderData")] pub m_scene_provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData ,
-# [rename (name = "m_ResourceProviderData")] pub m_resource_provider_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > ,
-# [rename (name = "m_ProviderIds")] pub m_provider_ids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [rename (name = "m_InternalIds")] pub m_internal_ids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [rename (name = "m_KeyDataString")] pub m_key_data_string : :: unity2 :: Il2CppString ,
-# [rename (name = "m_BucketDataString")] pub m_bucket_data_string : :: unity2 :: Il2CppString ,
-# [rename (name = "m_EntryDataString")] pub m_entry_data_string : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kBytesPerInt32")] pub k_bytes_per_int32 : i32 ,
-# [static_field] # [rename (name = "k_EntryDataItemPerEntry")] pub k_entry_data_item_per_entry : i32 ,
-# [rename (name = "m_ExtraDataString")] pub m_extra_data_string : :: unity2 :: Il2CppString ,
-# [rename (name = "m_resourceTypes")] pub m_resource_types : :: unity2 :: Array < crate :: unity_engine :: resource_management :: util :: serializedtype :: SerializedType > ,
-# [rename (name = "m_InternalIdPrefixes")] pub m_internal_id_prefixes : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ContentCatalogData_CompactLocation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_internal_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_InternalId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_InternalId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_internal_id(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_internal_id::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_provider_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_ProviderId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_ProviderId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_provider_id(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_provider_id::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dependencies {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_Dependencies",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_Dependencies",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_dependencies (this : ContentCatalogData_CompactLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >{
-        let inner : extern "C" fn (ContentCatalogData_CompactLocation , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dependencies :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_has_dependencies {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_HasDependencies",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_HasDependencies",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_has_dependencies(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_has_dependencies::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dependency_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_DependencyHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_DependencyHashCode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_dependency_hash_code(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dependency_hash_code::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_primary_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_PrimaryKey",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_PrimaryKey",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_primary_key(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_primary_key::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_primary_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "set_PrimaryKey",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "set_PrimaryKey",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_primary_key(
-        this: ContentCatalogData_CompactLocation,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_primary_key::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_resource_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "get_ResourceType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "get_ResourceType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_resource_type(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_resource_type::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: ContentCatalogData_CompactLocation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                "Hash",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    "Hash",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hash(
-        this: ContentCatalogData_CompactLocation,
-        t: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ContentCatalogData_CompactLocation,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hash::get_offset() as isize),
-        );
-        inner(this, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                8,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ContentCatalogData_CompactLocation,
-        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
-        internal_id: ::unity2::Il2CppString,
-        provider_id: ::unity2::Il2CppString,
-        dependency_key: crate::system::object::Object,
-        data: crate::system::object::Object,
-        dep_hash: i32,
-        primary_key: ::unity2::Il2CppString,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ContentCatalogData_CompactLocation , crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: object :: Object , crate :: system :: object :: Object , i32 , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            locator,
-            internal_id,
-            provider_id,
-            dependency_key,
-            data,
-            dep_hash,
-            primary_key,
-            r#type,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
-pub trait IContentCatalogData_CompactLocationMethods: IContentCatalogData_CompactLocation {
-    #[doc = "`get_InternalId()` overload"]
-    fn get_internal_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_internal_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_ProviderId()` overload"]
-    fn get_provider_id(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_provider_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Dependencies()` overload"]    fn get_dependencies (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >{
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_dependencies(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_HasDependencies()` overload"]
-    fn get_has_dependencies(self) -> bool {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_has_dependencies(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DependencyHashCode()` overload"]
-    fn get_dependency_hash_code(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_dependency_hash_code(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_PrimaryKey()` overload"]
-    fn get_primary_key(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_primary_key(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_PrimaryKey(::unity2::Il2CppString)` overload"]
-    fn set_primary_key(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::set_primary_key(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_ResourceType()` overload"]
-    fn get_resource_type(self) -> ::unity2::SystemType {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::get_resource_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Hash(::unity2::SystemType)` overload"]
-    fn hash(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> i32 {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::hash(
-                __receiver,
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]
-    fn ctor(
-        self,
-        locator : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap >,
-        internal_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        provider_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        dependency_key: impl ::core::convert::Into<crate::system::object::Object>,
-        data: impl ::core::convert::Into<crate::system::object::Object>,
-        dep_hash: impl ::core::convert::Into<i32>,
-        primary_key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogData_CompactLocation_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(locator),
-                ::core::convert::Into::into(internal_id),
-                ::core::convert::Into::into(provider_id),
-                ::core::convert::Into::into(dependency_key),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(dep_hash),
-                ::core::convert::Into::into(primary_key),
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
-impl<__T: IContentCatalogData_CompactLocation> IContentCatalogData_CompactLocationMethods for __T {}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
-impl ContentCatalogData_CompactLocation {
-    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` — overload selector"]
-    pub fn new(
-        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
-        internal_id: ::unity2::Il2CppString,
-        provider_id: ::unity2::Il2CppString,
-        dependency_key: crate::system::object::Object,
-        data: crate::system::object::Object,
-        dep_hash: i32,
-        primary_key: ::unity2::Il2CppString,
-        r#type: ::unity2::SystemType,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogData_CompactLocation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IContentCatalogData_CompactLocationMethods>::ctor(
-            this,
-            locator,
-            internal_id,
-            provider_id,
-            dependency_key,
-            data,
-            dep_hash,
-            primary_key,
-            r#type,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
 #[doc(hidden)]
@@ -1735,6 +940,801 @@ impl ContentCatalogData {
             )
         });
         <Self as IContentCatalogDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ContentCatalogData_CompactLocation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_internal_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_InternalId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_InternalId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_internal_id(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_internal_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_provider_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_ProviderId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_ProviderId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_provider_id(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_provider_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dependencies {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_Dependencies",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_Dependencies",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_dependencies (this : ContentCatalogData_CompactLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >{
+        let inner : extern "C" fn (ContentCatalogData_CompactLocation , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dependencies :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_has_dependencies {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_HasDependencies",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_HasDependencies",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_has_dependencies(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_has_dependencies::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dependency_hash_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_DependencyHashCode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_DependencyHashCode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dependency_hash_code(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dependency_hash_code::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_primary_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_PrimaryKey",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_PrimaryKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_primary_key(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_primary_key::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_primary_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "set_PrimaryKey",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "set_PrimaryKey",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_primary_key(
+        this: ContentCatalogData_CompactLocation,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_primary_key::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_resource_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "get_ResourceType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "get_ResourceType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_resource_type(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::SystemType {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_resource_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: ContentCatalogData_CompactLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hash {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                "Hash",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    "Hash",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hash(
+        this: ContentCatalogData_CompactLocation,
+        t: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ContentCatalogData_CompactLocation,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_hash::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                8,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ContentCatalogData_CompactLocation as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ContentCatalogData_CompactLocation,
+        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
+        internal_id: ::unity2::Il2CppString,
+        provider_id: ::unity2::Il2CppString,
+        dependency_key: crate::system::object::Object,
+        data: crate::system::object::Object,
+        dep_hash: i32,
+        primary_key: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ContentCatalogData_CompactLocation , crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: object :: Object , crate :: system :: object :: Object , i32 , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(
+            this,
+            locator,
+            internal_id,
+            provider_id,
+            dependency_key,
+            data,
+            dep_hash,
+            primary_key,
+            r#type,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
+pub trait IContentCatalogData_CompactLocationMethods: IContentCatalogData_CompactLocation {
+    #[doc = "`get_InternalId()` overload"]
+    fn get_internal_id(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_internal_id(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ProviderId()` overload"]
+    fn get_provider_id(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_provider_id(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Dependencies()` overload"]    fn get_dependencies (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >{
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_dependencies(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_HasDependencies()` overload"]
+    fn get_has_dependencies(self) -> bool {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_has_dependencies(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DependencyHashCode()` overload"]
+    fn get_dependency_hash_code(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_dependency_hash_code(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_PrimaryKey()` overload"]
+    fn get_primary_key(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_primary_key(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_PrimaryKey(::unity2::Il2CppString)` overload"]
+    fn set_primary_key(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::set_primary_key(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_ResourceType()` overload"]
+    fn get_resource_type(self) -> ::unity2::SystemType {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::get_resource_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::to_string(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hash(::unity2::SystemType)` overload"]
+    fn hash(self, t: impl ::core::convert::Into<::unity2::SystemType>) -> i32 {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::hash(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]
+    fn ctor(
+        self,
+        locator : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap >,
+        internal_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        provider_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        dependency_key: impl ::core::convert::Into<crate::system::object::Object>,
+        data: impl ::core::convert::Into<crate::system::object::Object>,
+        dep_hash: impl ::core::convert::Into<i32>,
+        primary_key: impl ::core::convert::Into<::unity2::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ContentCatalogData_CompactLocation as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ContentCatalogData_CompactLocation_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(locator),
+                ::core::convert::Into::into(internal_id),
+                ::core::convert::Into::into(provider_id),
+                ::core::convert::Into::into(dependency_key),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(dep_hash),
+                ::core::convert::Into::into(primary_key),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
+impl<__T: IContentCatalogData_CompactLocation> IContentCatalogData_CompactLocationMethods for __T {}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
+impl ContentCatalogData_CompactLocation {
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` — overload selector"]
+    pub fn new(
+        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
+        internal_id: ::unity2::Il2CppString,
+        provider_id: ::unity2::Il2CppString,
+        dependency_key: crate::system::object::Object,
+        data: crate::system::object::Object,
+        dep_hash: i32,
+        primary_key: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogData_CompactLocation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogData_CompactLocationMethods>::ctor(
+            this,
+            locator,
+            internal_id,
+            provider_id,
+            dependency_key,
+            data,
+            dep_hash,
+            primary_key,
+            r#type,
+        );
         this
     }
 }

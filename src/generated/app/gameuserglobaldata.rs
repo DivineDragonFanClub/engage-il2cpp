@@ -13,6 +13,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
+    pub struct GameUserGlobalData_FlagsField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -100,11 +105,6 @@ mod __types {
             Self { value: 512 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
-    pub struct GameUserGlobalData_FlagsField {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]

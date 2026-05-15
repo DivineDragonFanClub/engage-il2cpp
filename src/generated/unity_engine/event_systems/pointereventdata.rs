@@ -13,54 +13,6 @@ mod __types {
     use crate::unity_engine::event_systems::baseeventdata::{BaseEventData, IBaseEventData};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PointerEventData_InputButton {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PointerEventData_InputButton {
-        const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
-        const NAME: &'static str = "PointerEventData.InputButton";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PointerEventData_InputButton {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PointerEventData_InputButton {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn middle() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]
     #[repr(C)]
     #[derive(
@@ -110,6 +62,54 @@ mod __types {
 
         pub fn not_changed() -> Self {
             Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PointerEventData_InputButton {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PointerEventData_InputButton {
+        const NAMESPACE: &'static str = "UnityEngine.EventSystems";
+
+        const NAME: &'static str = "PointerEventData.InputButton";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PointerEventData_InputButton {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PointerEventData_InputButton {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn middle() -> Self {
+            Self { value: 2 }
         }
     }
 

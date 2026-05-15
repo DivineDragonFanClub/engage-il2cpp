@@ -308,7 +308,11 @@ impl PlayableOutput {
     ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
         unsafe { __PlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None) }
     }
-    pub fn is_playable_output_of_type<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> bool {
+    pub fn is_playable_output_of_type<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
+        self,
+    ) -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

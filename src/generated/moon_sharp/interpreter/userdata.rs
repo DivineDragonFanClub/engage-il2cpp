@@ -1330,7 +1330,7 @@ impl UserData {
     pub fn cctor() -> () {
         unsafe { __UserData_unity2_raw::cctor(::core::option::Option::None) }
     }
-    pub fn register_type<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn register_type<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         access_mode: impl ::core::convert::Into<
             crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         >,
@@ -1419,9 +1419,9 @@ impl UserData {
             )
         }
     }
-    pub fn register_proxy_type_2<
-        M0: ::unity2::IlType + ::core::marker::Copy,
-        M1: ::unity2::IlType + ::core::marker::Copy,
+    fn register_proxy_type_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+        M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         wrap_delegate: impl ::core::convert::Into<crate::system::func_2::Func_2<M1, M0>>,
         access_mode: impl ::core::convert::Into<
@@ -1481,7 +1481,7 @@ impl UserData {
             )
         }
     }
-    pub fn register_type_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn register_type_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         custom_descriptor: impl ::core::convert::Into<
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         >,
@@ -1569,7 +1569,9 @@ impl UserData {
             )
         }
     }
-    pub fn is_type_registered_2<M0: ::unity2::IlType + ::core::marker::Copy>() -> bool {
+    fn is_type_registered_2<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >() -> bool {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -1614,7 +1616,8 @@ impl UserData {
             __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn unregister_type<M0: ::unity2::IlType + ::core::marker::Copy>() -> () {
+    fn unregister_type<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> ()
+    {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -1718,7 +1721,7 @@ impl UserData {
             )
         }
     }
-    pub fn create_static_3<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn create_static_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -1831,7 +1834,9 @@ impl UserData {
             )
         }
     }
-    pub fn get_descriptor_for_type<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_descriptor_for_type<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         search_interfaces: impl ::core::convert::Into<bool>,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         static OPEN: ::std::sync::LazyLock<

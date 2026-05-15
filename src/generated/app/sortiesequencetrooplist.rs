@@ -11,26 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrooplist/SortieSequenceTroopList.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceTroopList")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList >)]
-    pub struct SortieSequenceTroopList {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "m_mode")]
-        pub m_mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::trooplistroot::TroopListRoot,
-        #[rename(name = "m_troopListMenu")]
-        pub m_troop_list_menu: crate::app::trooplistmenu::TroopListMenu,
-        #[rename(name = "m_sortMenu")]
-        pub m_sort_menu: crate::app::trooplistsortmenu::TroopListSortMenu,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -77,6 +57,26 @@ mod __types {
         pub fn to_unit_select() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrooplist/SortieSequenceTroopList.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceTroopList")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList >)]
+    pub struct SortieSequenceTroopList {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "m_mode")]
+        pub m_mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::trooplistroot::TroopListRoot,
+        #[rename(name = "m_troopListMenu")]
+        pub m_troop_list_menu: crate::app::trooplistmenu::TroopListMenu,
+        #[rename(name = "m_sortMenu")]
+        pub m_sort_menu: crate::app::trooplistsortmenu::TroopListSortMenu,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Mode.md"))]

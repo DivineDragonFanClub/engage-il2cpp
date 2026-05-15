@@ -63,6 +63,22 @@ mod __types {
             crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager.EffectReserver")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideEffectManager_EffectReserver {
+        #[rename(name = "m_Reserve")]
+        pub m_reserve: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_TypeName")]
+        pub m_type_name: ::unity2::Il2CppString,
+        #[rename(name = "m_CountMax")]
+        pub m_count_max: i32,
+        #[rename(name = "m_UseCount")]
+        pub m_use_count: i32,
+        #[rename(name = "m_ReturnCount")]
+        pub m_return_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
     #[repr(C)]
     #[derive(
@@ -109,22 +125,6 @@ mod __types {
         pub fn type_special() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager.EffectReserver")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideEffectManager_EffectReserver {
-        #[rename(name = "m_Reserve")]
-        pub m_reserve: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_TypeName")]
-        pub m_type_name: ::unity2::Il2CppString,
-        #[rename(name = "m_CountMax")]
-        pub m_count_max: i32,
-        #[rename(name = "m_UseCount")]
-        pub m_use_count: i32,
-        #[rename(name = "m_ReturnCount")]
-        pub m_return_count: i32,
     }
 }
 

@@ -9,22 +9,16 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_TextureResources.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessData.TextureResources"
+        name = "PostProcessData"
     )]
-    #[parent(crate::system::object::Object)]
-    pub struct PostProcessData_TextureResources {
-        #[rename(name = "blueNoise16LTex")]
-        pub blue_noise16_l_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
-        #[rename(name = "filmGrainTex")]
-        pub film_grain_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
-        #[rename(name = "smaaAreaTex")]
-        pub smaa_area_tex: crate::unity_engine::texture2d::Texture2D,
-        #[rename(name = "smaaSearchTex")]
-        pub smaa_search_tex: crate::unity_engine::texture2d::Texture2D,
-    }
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct PostProcessData {
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
+# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
+}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_ShaderResources.md"))]
     #[::unity2::class(
@@ -63,16 +57,22 @@ mod __types {
         pub custom_uber_post_ps: crate::unity_engine::shader::Shader,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_TextureResources.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessData"
+        name = "PostProcessData.TextureResources"
     )]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct PostProcessData {
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
-# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
-}
+    #[parent(crate::system::object::Object)]
+    pub struct PostProcessData_TextureResources {
+        #[rename(name = "blueNoise16LTex")]
+        pub blue_noise16_l_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[rename(name = "filmGrainTex")]
+        pub film_grain_tex: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[rename(name = "smaaAreaTex")]
+        pub smaa_area_tex: crate::unity_engine::texture2d::Texture2D,
+        #[rename(name = "smaaSearchTex")]
+        pub smaa_search_tex: crate::unity_engine::texture2d::Texture2D,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata-types")]
@@ -81,7 +81,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PostProcessData_TextureResources_unity2_raw {
+mod __PostProcessData_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -92,7 +92,7 @@ mod __PostProcessData_TextureResources_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessData_TextureResources as ::unity2::ClassIdentity>::class(),
+                <PostProcessData as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -104,7 +104,7 @@ mod __PostProcessData_TextureResources_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PostProcessData_TextureResources as ::unity2::ClassIdentity>::NAME,
+                    <PostProcessData as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -117,10 +117,10 @@ mod __PostProcessData_TextureResources_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PostProcessData_TextureResources,
+        this: PostProcessData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(PostProcessData_TextureResources, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(PostProcessData, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -131,37 +131,33 @@ mod __PostProcessData_TextureResources_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-pub trait IPostProcessData_TextureResourcesMethods: IPostProcessData_TextureResources {
+pub trait IPostProcessDataMethods: IPostProcessData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <PostProcessData_TextureResources as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PostProcessData_TextureResources_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PostProcessData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PostProcessData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl<__T: IPostProcessData_TextureResources> IPostProcessData_TextureResourcesMethods for __T {}
+impl<__T: IPostProcessData> IPostProcessDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl PostProcessData_TextureResources {
+impl PostProcessData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessData_TextureResources),
+                ::core::stringify!(PostProcessData),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPostProcessData_TextureResourcesMethods>::ctor(this);
+        <Self as IPostProcessDataMethods>::ctor(this);
         this
     }
 }
@@ -257,7 +253,7 @@ impl PostProcessData_ShaderResources {
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PostProcessData_unity2_raw {
+mod __PostProcessData_TextureResources_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -268,7 +264,7 @@ mod __PostProcessData_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessData as ::unity2::ClassIdentity>::class(),
+                <PostProcessData_TextureResources as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -280,7 +276,7 @@ mod __PostProcessData_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PostProcessData as ::unity2::ClassIdentity>::NAME,
+                    <PostProcessData_TextureResources as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -293,10 +289,10 @@ mod __PostProcessData_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PostProcessData,
+        this: PostProcessData_TextureResources,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(PostProcessData, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(PostProcessData_TextureResources, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -307,33 +303,37 @@ mod __PostProcessData_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-pub trait IPostProcessDataMethods: IPostProcessData {
+pub trait IPostProcessData_TextureResourcesMethods: IPostProcessData_TextureResources {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PostProcessData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PostProcessData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <PostProcessData_TextureResources as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PostProcessData_TextureResources_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl<__T: IPostProcessData> IPostProcessDataMethods for __T {}
+impl<__T: IPostProcessData_TextureResources> IPostProcessData_TextureResourcesMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl PostProcessData {
+impl PostProcessData_TextureResources {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessData),
+                ::core::stringify!(PostProcessData_TextureResources),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPostProcessDataMethods>::ctor(this);
+        <Self as IPostProcessData_TextureResourcesMethods>::ctor(this);
         this
     }
 }

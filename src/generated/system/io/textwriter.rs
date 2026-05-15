@@ -7,13 +7,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textwriter/TextWriter_SyncTextWriter.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "TextWriter.SyncTextWriter")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textwriter/TextWriter_NullTextWriter.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "TextWriter.NullTextWriter")]
     #[parent(crate::system::io::textwriter::TextWriter)]
-    pub struct TextWriter_SyncTextWriter {
-        #[rename(name = "_out")]
-        pub out: crate::system::io::textwriter::TextWriter,
-    }
+    pub struct TextWriter_NullTextWriter {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textwriter/TextWriter.md"))]
     #[::unity2::class(namespace = "System.IO", name = "TextWriter")]
@@ -50,10 +47,13 @@ mod __types {
         pub core_new_line: ::unity2::Array<u16>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textwriter/TextWriter_NullTextWriter.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "TextWriter.NullTextWriter")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textwriter/TextWriter_SyncTextWriter.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "TextWriter.SyncTextWriter")]
     #[parent(crate::system::io::textwriter::TextWriter)]
-    pub struct TextWriter_NullTextWriter {}
+    pub struct TextWriter_SyncTextWriter {
+        #[rename(name = "_out")]
+        pub out: crate::system::io::textwriter::TextWriter,
+    }
 }
 
 #[cfg(feature = "system-io-textwriter-types")]
@@ -62,7 +62,7 @@ pub use __types::*;
 #[cfg(feature = "system-io-textwriter")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextWriter_SyncTextWriter_unity2_raw {
+mod __TextWriter_NullTextWriter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -71,12 +71,11 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::textwriter::TextWriter as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                0,
                 param_types,
                 false,
             )
@@ -86,7 +85,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -99,155 +98,14 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TextWriter_SyncTextWriter,
-        t: crate::system::io::textwriter::TextWriter,
+        this: TextWriter_NullTextWriter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            crate::system::io::textwriter::TextWriter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close(
-        this: TextWriter_SyncTextWriter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: TextWriter_SyncTextWriter,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, disposing, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_flush {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "Flush",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "Flush",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn flush(
-        this: TextWriter_SyncTextWriter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_flush::get_offset() as isize),
+                    .offset(__lookup_ctor::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -258,12 +116,15 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
                 "Write",
-                1,
+                3,
                 param_types,
                 false,
             )
@@ -273,7 +134,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
                     "Write",
                     e
                 ),
@@ -286,17 +147,24 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write(
-        this: TextWriter_SyncTextWriter,
-        value: u16,
+        this: TextWriter_NullTextWriter,
+        buffer: ::unity2::Array<u16>,
+        index: i32,
+        count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_write::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
+        let inner: extern "C" fn(
+            TextWriter_NullTextWriter,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write::get_offset() as isize),
+        );
+        inner(this, buffer, index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -306,9 +174,9 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
                 "Write",
                 1,
                 param_types,
@@ -320,7 +188,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
                     "Write",
                     e
                 ),
@@ -333,125 +201,18 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_2(
-        this: TextWriter_SyncTextWriter,
-        buffer: ::unity2::Array<u16>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            ::unity2::Array<u16>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_2::get_offset() as isize),
-        );
-        inner(this, buffer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "Write",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_3(
-        this: TextWriter_SyncTextWriter,
-        buffer: ::unity2::Array<u16>,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_3::get_offset() as isize),
-        );
-        inner(this, buffer, index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "Write",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_4(
-        this: TextWriter_SyncTextWriter,
+        this: TextWriter_NullTextWriter,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
+            TextWriter_NullTextWriter,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_write_4::get_offset() as isize),
+                .offset(__lookup_write_2::get_offset() as isize),
         );
         inner(this, value, __unity2_method_info)
     }
@@ -464,7 +225,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
                 "WriteLine",
                 0,
                 param_types,
@@ -476,7 +237,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
                     "WriteLine",
                     e
                 ),
@@ -489,10 +250,10 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_line(
-        this: TextWriter_SyncTextWriter,
+        this: TextWriter_NullTextWriter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -508,9 +269,9 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
                 "WriteLine",
                 1,
                 param_types,
@@ -522,7 +283,7 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
                     "WriteLine",
                     e
                 ),
@@ -535,318 +296,37 @@ mod __TextWriter_SyncTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_line_2(
-        this: TextWriter_SyncTextWriter,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TextWriter_SyncTextWriter, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_write_line_2::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_line_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "WriteLine",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "WriteLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_line_3(
-        this: TextWriter_SyncTextWriter,
-        buffer: ::unity2::Array<u16>,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_line_3::get_offset() as isize),
-        );
-        inner(this, buffer, index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_line_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "WriteLine",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "WriteLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_line_4(
-        this: TextWriter_SyncTextWriter,
+        this: TextWriter_NullTextWriter,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
+            TextWriter_NullTextWriter,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_write_line_4::get_offset() as isize),
+                .offset(__lookup_write_line_2::get_offset() as isize),
         );
         inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_line_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "WriteLine",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "WriteLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_line_5(
-        this: TextWriter_SyncTextWriter,
-        format: ::unity2::Il2CppString,
-        arg0: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_line_5::get_offset() as isize),
-        );
-        inner(this, format, arg0, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_line_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
-                "WriteLine",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
-                    "WriteLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_line_6(
-        this: TextWriter_SyncTextWriter,
-        format: ::unity2::Il2CppString,
-        arg0: crate::system::object::Object,
-        arg1: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_SyncTextWriter,
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_line_6::get_offset() as isize),
-        );
-        inner(this, format, arg0, arg1, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-io-textwriter")]
-pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
-    #[doc = "`.ctor(crate::system::io::textwriter::TextWriter)` overload"]
-    fn ctor(self, t: impl ::core::convert::Into<crate::system::io::textwriter::TextWriter>) -> () {
+pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_SyncTextWriter_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose(bool)` overload"]
-    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::dispose(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Flush()` overload"]
-    fn flush(self) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write(u16)` overload"]
-    fn write(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Write(::unity2::Array<u16>)` overload"]
-    fn write_2(self, buffer: impl ::core::convert::Into<::unity2::Array<u16>>) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write_2(
-                __receiver,
-                ::core::convert::Into::into(buffer),
-                ::core::option::Option::None,
-            )
+            __TextWriter_NullTextWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"]
-    fn write_3(
+    fn write(
         self,
         buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
         index: impl ::core::convert::Into<i32>,
@@ -854,10 +334,10 @@ pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
     ) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_SyncTextWriter_unity2_raw::write_3(
+            __TextWriter_NullTextWriter_unity2_raw::write(
                 __receiver,
                 ::core::convert::Into::into(buffer),
                 ::core::convert::Into::into(index),
@@ -867,13 +347,13 @@ pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
         }
     }
     #[doc = "`Write(::unity2::Il2CppString)` overload"]
-    fn write_4(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    fn write_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_SyncTextWriter_unity2_raw::write_4(
+            __TextWriter_NullTextWriter_unity2_raw::write_2(
                 __receiver,
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,
@@ -884,100 +364,25 @@ pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
     fn write_line(self) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line(
+            __TextWriter_NullTextWriter_unity2_raw::write_line(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WriteLine(u16)` overload"]
-    fn write_line_2(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line_2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WriteLine(::unity2::Array<u16>, i32, i32)` overload"]
-    fn write_line_3(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
-        index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line_3(
-                __receiver,
-                ::core::convert::Into::into(buffer),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(count),
                 ::core::option::Option::None,
             )
         }
     }
     #[doc = "`WriteLine(::unity2::Il2CppString)` overload"]
-    fn write_line_4(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    fn write_line_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line_4(
+            __TextWriter_NullTextWriter_unity2_raw::write_line_2(
                 __receiver,
                 ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WriteLine(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    fn write_line_5(
-        self,
-        format: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg0: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line_5(
-                __receiver,
-                ::core::convert::Into::into(format),
-                ::core::convert::Into::into(arg0),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WriteLine(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
-    fn write_line_6(
-        self,
-        format: impl ::core::convert::Into<::unity2::Il2CppString>,
-        arg0: impl ::core::convert::Into<crate::system::object::Object>,
-        arg1: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextWriter_SyncTextWriter_unity2_raw::write_line_6(
-                __receiver,
-                ::core::convert::Into::into(format),
-                ::core::convert::Into::into(arg0),
-                ::core::convert::Into::into(arg1),
                 ::core::option::Option::None,
             )
         }
@@ -985,20 +390,20 @@ pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
 }
 
 #[cfg(feature = "system-io-textwriter")]
-impl<__T: ITextWriter_SyncTextWriter> ITextWriter_SyncTextWriterMethods for __T {}
+impl<__T: ITextWriter_NullTextWriter> ITextWriter_NullTextWriterMethods for __T {}
 
 #[cfg(feature = "system-io-textwriter")]
-impl TextWriter_SyncTextWriter {
-    #[doc = "`.ctor(crate::system::io::textwriter::TextWriter)` — overload selector"]
-    pub fn new(t: crate::system::io::textwriter::TextWriter) -> Self {
+impl TextWriter_NullTextWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TextWriter_SyncTextWriter),
+                ::core::stringify!(TextWriter_NullTextWriter),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITextWriter_SyncTextWriterMethods>::ctor(this, t);
+        <Self as ITextWriter_NullTextWriterMethods>::ctor(this);
         this
     }
 }
@@ -2122,7 +1527,7 @@ impl TextWriter {
 #[cfg(feature = "system-io-textwriter")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextWriter_NullTextWriter_unity2_raw {
+mod __TextWriter_SyncTextWriter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2131,11 +1536,12 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::textwriter::TextWriter as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -2145,7 +1551,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2158,14 +1564,155 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TextWriter_NullTextWriter,
+        this: TextWriter_SyncTextWriter,
+        t: crate::system::io::textwriter::TextWriter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            crate::system::io::textwriter::TextWriter,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, t, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "Close",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close(
+        this: TextWriter_SyncTextWriter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: TextWriter_SyncTextWriter,
+        disposing: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, disposing, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_flush {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "Flush",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "Flush",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn flush(
+        this: TextWriter_SyncTextWriter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_flush::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -2176,15 +1723,12 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
                 "Write",
-                3,
+                1,
                 param_types,
                 false,
             )
@@ -2194,7 +1738,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
                     "Write",
                     e
                 ),
@@ -2207,24 +1751,17 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write(
-        this: TextWriter_NullTextWriter,
-        buffer: ::unity2::Array<u16>,
-        index: i32,
-        count: i32,
+        this: TextWriter_SyncTextWriter,
+        value: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextWriter_NullTextWriter,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write::get_offset() as isize),
-        );
-        inner(this, buffer, index, count, __unity2_method_info)
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_write::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2234,9 +1771,9 @@ mod __TextWriter_NullTextWriter_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
                 "Write",
                 1,
                 param_types,
@@ -2248,7 +1785,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
                     "Write",
                     e
                 ),
@@ -2261,18 +1798,125 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_2(
-        this: TextWriter_NullTextWriter,
-        value: ::unity2::Il2CppString,
+        this: TextWriter_SyncTextWriter,
+        buffer: ::unity2::Array<u16>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TextWriter_NullTextWriter,
-            ::unity2::Il2CppString,
+            TextWriter_SyncTextWriter,
+            ::unity2::Array<u16>,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_write_2::get_offset() as isize),
+        );
+        inner(this, buffer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "Write",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "Write",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_3(
+        this: TextWriter_SyncTextWriter,
+        buffer: ::unity2::Array<u16>,
+        index: i32,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_3::get_offset() as isize),
+        );
+        inner(this, buffer, index, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "Write",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "Write",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_4(
+        this: TextWriter_SyncTextWriter,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_4::get_offset() as isize),
         );
         inner(this, value, __unity2_method_info)
     }
@@ -2285,7 +1929,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
                 "WriteLine",
                 0,
                 param_types,
@@ -2297,7 +1941,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
                     "WriteLine",
                     e
                 ),
@@ -2310,10 +1954,10 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_line(
-        this: TextWriter_NullTextWriter,
+        this: TextWriter_SyncTextWriter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2329,9 +1973,9 @@ mod __TextWriter_NullTextWriter_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+                &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::class(),
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
                 "WriteLine",
                 1,
                 param_types,
@@ -2343,7 +1987,7 @@ mod __TextWriter_NullTextWriter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TextWriter_NullTextWriter as ::unity2::ClassIdentity>::NAME,
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
                     "WriteLine",
                     e
                 ),
@@ -2356,37 +2000,318 @@ mod __TextWriter_NullTextWriter_unity2_raw {
         }
     }
     pub unsafe fn write_line_2(
-        this: TextWriter_NullTextWriter,
+        this: TextWriter_SyncTextWriter,
+        value: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TextWriter_SyncTextWriter, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_write_line_2::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_line_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "WriteLine",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "WriteLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_line_3(
+        this: TextWriter_SyncTextWriter,
+        buffer: ::unity2::Array<u16>,
+        index: i32,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            ::unity2::Array<u16>,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_line_3::get_offset() as isize),
+        );
+        inner(this, buffer, index, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_line_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "WriteLine",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "WriteLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_line_4(
+        this: TextWriter_SyncTextWriter,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TextWriter_NullTextWriter,
+            TextWriter_SyncTextWriter,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_write_line_2::get_offset() as isize),
+                .offset(__lookup_write_line_4::get_offset() as isize),
         );
         inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_line_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "WriteLine",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "WriteLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_line_5(
+        this: TextWriter_SyncTextWriter,
+        format: ::unity2::Il2CppString,
+        arg0: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_line_5::get_offset() as isize),
+        );
+        inner(this, format, arg0, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_line_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::class(),
+                "WriteLine",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextWriter_SyncTextWriter as ::unity2::ClassIdentity>::NAME,
+                    "WriteLine",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_line_6(
+        this: TextWriter_SyncTextWriter,
+        format: ::unity2::Il2CppString,
+        arg0: crate::system::object::Object,
+        arg1: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextWriter_SyncTextWriter,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_write_line_6::get_offset() as isize),
+        );
+        inner(this, format, arg0, arg1, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-io-textwriter")]
-pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait ITextWriter_SyncTextWriterMethods: ITextWriter_SyncTextWriter {
+    #[doc = "`.ctor(crate::system::io::textwriter::TextWriter)` overload"]
+    fn ctor(self, t: impl ::core::convert::Into<crate::system::io::textwriter::TextWriter>) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_NullTextWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __TextWriter_SyncTextWriter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose(bool)` overload"]
+    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::dispose(
+                __receiver,
+                ::core::convert::Into::into(disposing),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Flush()` overload"]
+    fn flush(self) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Write(u16)` overload"]
+    fn write(self, value: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Write(::unity2::Array<u16>)` overload"]
+    fn write_2(self, buffer: impl ::core::convert::Into<::unity2::Array<u16>>) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write_2(
+                __receiver,
+                ::core::convert::Into::into(buffer),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"]
-    fn write(
+    fn write_3(
         self,
         buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
         index: impl ::core::convert::Into<i32>,
@@ -2394,10 +2319,10 @@ pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
     ) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_NullTextWriter_unity2_raw::write(
+            __TextWriter_SyncTextWriter_unity2_raw::write_3(
                 __receiver,
                 ::core::convert::Into::into(buffer),
                 ::core::convert::Into::into(index),
@@ -2407,13 +2332,13 @@ pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
         }
     }
     #[doc = "`Write(::unity2::Il2CppString)` overload"]
-    fn write_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    fn write_4(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_NullTextWriter_unity2_raw::write_2(
+            __TextWriter_SyncTextWriter_unity2_raw::write_4(
                 __receiver,
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,
@@ -2424,25 +2349,100 @@ pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
     fn write_line(self) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_NullTextWriter_unity2_raw::write_line(
+            __TextWriter_SyncTextWriter_unity2_raw::write_line(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`WriteLine(::unity2::Il2CppString)` overload"]
-    fn write_line_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    #[doc = "`WriteLine(u16)` overload"]
+    fn write_line_2(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
             let __receiver =
-                <TextWriter_NullTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __TextWriter_NullTextWriter_unity2_raw::write_line_2(
+            __TextWriter_SyncTextWriter_unity2_raw::write_line_2(
                 __receiver,
                 ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteLine(::unity2::Array<u16>, i32, i32)` overload"]
+    fn write_line_3(
+        self,
+        buffer: impl ::core::convert::Into<::unity2::Array<u16>>,
+        index: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write_line_3(
+                __receiver,
+                ::core::convert::Into::into(buffer),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteLine(::unity2::Il2CppString)` overload"]
+    fn write_line_4(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write_line_4(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteLine(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn write_line_5(
+        self,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write_line_5(
+                __receiver,
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(arg0),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteLine(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
+    fn write_line_6(
+        self,
+        format: impl ::core::convert::Into<::unity2::Il2CppString>,
+        arg0: impl ::core::convert::Into<crate::system::object::Object>,
+        arg1: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextWriter_SyncTextWriter as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextWriter_SyncTextWriter_unity2_raw::write_line_6(
+                __receiver,
+                ::core::convert::Into::into(format),
+                ::core::convert::Into::into(arg0),
+                ::core::convert::Into::into(arg1),
                 ::core::option::Option::None,
             )
         }
@@ -2450,20 +2450,20 @@ pub trait ITextWriter_NullTextWriterMethods: ITextWriter_NullTextWriter {
 }
 
 #[cfg(feature = "system-io-textwriter")]
-impl<__T: ITextWriter_NullTextWriter> ITextWriter_NullTextWriterMethods for __T {}
+impl<__T: ITextWriter_SyncTextWriter> ITextWriter_SyncTextWriterMethods for __T {}
 
 #[cfg(feature = "system-io-textwriter")]
-impl TextWriter_NullTextWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl TextWriter_SyncTextWriter {
+    #[doc = "`.ctor(crate::system::io::textwriter::TextWriter)` — overload selector"]
+    pub fn new(t: crate::system::io::textwriter::TextWriter) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TextWriter_NullTextWriter),
+                ::core::stringify!(TextWriter_SyncTextWriter),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITextWriter_NullTextWriterMethods>::ctor(this);
+        <Self as ITextWriter_SyncTextWriterMethods>::ctor(this, t);
         this
     }
 }

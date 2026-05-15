@@ -9,26 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]
-    #[::unity2::class(namespace = "Combat", name = "UnitDetailCameraPosition")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitDetailCameraPosition {
-        #[rename(name = "Target")]
-        pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
-        #[rename(name = "Distance")]
-        pub distance: f32,
-        #[rename(name = "LookatHeightFix")]
-        pub lookat_height_fix: f32,
-        #[rename(name = "FollowHeightFix")]
-        pub follow_height_fix: f32,
-        #[rename(name = "CameraFov")]
-        pub camera_fov: f32,
-        #[rename(name = "SideSlipSize")]
-        pub side_slip_size: f32,
-        #[rename(name = "Center")]
-        pub center: crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md"))]
     #[repr(C)]
     #[derive(
@@ -83,6 +63,26 @@ mod __types {
         pub fn master_target() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]
+    #[::unity2::class(namespace = "Combat", name = "UnitDetailCameraPosition")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitDetailCameraPosition {
+        #[rename(name = "Target")]
+        pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        #[rename(name = "Distance")]
+        pub distance: f32,
+        #[rename(name = "LookatHeightFix")]
+        pub lookat_height_fix: f32,
+        #[rename(name = "FollowHeightFix")]
+        pub follow_height_fix: f32,
+        #[rename(name = "CameraFov")]
+        pub camera_fov: f32,
+        #[rename(name = "SideSlipSize")]
+        pub side_slip_size: f32,
+        #[rename(name = "Center")]
+        pub center: crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,
     }
 }
 

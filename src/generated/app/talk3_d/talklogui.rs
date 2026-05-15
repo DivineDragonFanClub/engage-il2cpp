@@ -7,24 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkLogUI_Cursor {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_PosFrom")]
-        pub m_pos_from: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_PosTo")]
-        pub m_pos_to: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Duration")]
-        pub m_duration: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
     #[parent(crate::system::object::Object)]
@@ -43,6 +25,24 @@ mod __types {
         pub m_slide_handle_pos_from: f32,
         #[rename(name = "m_SlideHandlePosTo")]
         pub m_slide_handle_pos_to: f32,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_Duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkLogUI_Cursor {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_PosFrom")]
+        pub m_pos_from: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_PosTo")]
+        pub m_pos_to: crate::unity_engine::vector3::Vector3,
         #[rename(name = "m_Time")]
         pub m_time: f32,
         #[rename(name = "m_Duration")]
@@ -88,228 +88,6 @@ mod __types {
 
 #[cfg(feature = "app-talk3_d-talklogui-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkLogUI_Cursor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkLogUI_Cursor,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Cursor,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: TalkLogUI_Cursor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                "MovePosition",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "MovePosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_position(
-        this: TalkLogUI_Cursor,
-        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
-        msec: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Cursor,
-            crate::app::talk3_d::talklogui::TalkLogUI_Window,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_position::get_offset() as isize),
-        );
-        inner(this, win, msec, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
-    fn move_position(
-        self,
-        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
-        msec: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::move_position(
-                __receiver,
-                ::core::convert::Into::into(win),
-                ::core::convert::Into::into(msec),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_Cursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
-        this
-    }
-}
 
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
@@ -708,6 +486,228 @@ impl TalkLogUI_ScrollBar {
             )
         });
         <Self as ITalkLogUI_ScrollBarMethods>::ctor(this, root_object, item_max);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkLogUI_Cursor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkLogUI_Cursor,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkLogUI_Cursor,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: TalkLogUI_Cursor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                "MovePosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "MovePosition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_position(
+        this: TalkLogUI_Cursor,
+        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkLogUI_Cursor,
+            crate::app::talk3_d::talklogui::TalkLogUI_Window,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_position::get_offset() as isize),
+        );
+        inner(this, win, msec, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(
+        self,
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_Cursor_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
+    fn move_position(
+        self,
+        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_Cursor_unity2_raw::move_position(
+                __receiver,
+                ::core::convert::Into::into(win),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkLogUI_Cursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
         this
     }
 }

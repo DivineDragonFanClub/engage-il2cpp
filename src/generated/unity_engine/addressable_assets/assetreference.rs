@@ -1100,7 +1100,7 @@ mod __AssetReference_unity2_raw {
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
 impl AssetReference {
-    pub fn create_failed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    fn create_failed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -1271,7 +1271,7 @@ pub trait IAssetReferenceMethods: IAssetReference {
             );
             __AssetReference_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
-    }    pub fn load_asset < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn load_asset < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -1352,7 +1352,7 @@ pub trait IAssetReferenceMethods: IAssetReference {
                 ::core::option::Option::None,
             )
         }
-    }    pub fn load_asset_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
+    }    fn load_asset_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {

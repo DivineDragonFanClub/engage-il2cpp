@@ -13735,7 +13735,9 @@ mod __Animator_unity2_raw {
 
 #[cfg(feature = "unity_engine-animator")]
 impl Animator {
-    pub fn convert_state_machine_behaviour<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn convert_state_machine_behaviour<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         raw_objects: impl ::core::convert::Into<
             ::unity2::Array<crate::unity_engine::scriptableobject::ScriptableObject>,
         >,
@@ -15118,7 +15120,9 @@ pub trait IAnimatorMethods: IAnimator {
             )
         }
     }
-    pub fn get_behaviour_2<M0: ::unity2::IlType + ::core::marker::Copy>(self) -> M0 {
+    fn get_behaviour_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> M0 {
         static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
@@ -15166,7 +15170,7 @@ pub trait IAnimatorMethods: IAnimator {
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn get_behaviours<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn get_behaviours<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
     ) -> ::unity2::Array<M0> {
         static OPEN: ::std::sync::LazyLock<

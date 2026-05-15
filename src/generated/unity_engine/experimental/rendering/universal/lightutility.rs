@@ -8,6 +8,40 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct LightUtility_ParametricLightMeshVertex {}
+
+    impl ::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex {
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+        const NAME: &'static str = "LightUtility.ParametricLightMeshVertex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "LightUtility"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct LightUtility {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -37,40 +71,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "LightUtility"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct LightUtility {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct LightUtility_ParametricLightMeshVertex {}
-
-    impl ::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-        const NAME: &'static str = "LightUtility.ParametricLightMeshVertex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility-types")]
@@ -79,7 +79,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LightUtility_SpriteLightMeshVertex_unity2_raw {
+mod __LightUtility_ParametricLightMeshVertex_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -90,7 +90,7 @@ mod __LightUtility_SpriteLightMeshVertex_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <LightUtility_SpriteLightMeshVertex as ::unity2::ClassIdentity>::class(),
+                <LightUtility_ParametricLightMeshVertex as ::unity2::ClassIdentity>::class(),
                 ".cctor",
                 0,
                 param_types,
@@ -102,7 +102,7 @@ mod __LightUtility_SpriteLightMeshVertex_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <LightUtility_SpriteLightMeshVertex as ::unity2::ClassIdentity>::NAME,
+                    <LightUtility_ParametricLightMeshVertex as ::unity2::ClassIdentity>::NAME,
                     ".cctor",
                     e
                 ),
@@ -125,11 +125,11 @@ mod __LightUtility_SpriteLightMeshVertex_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_SpriteLightMeshVertex {
+impl LightUtility_ParametricLightMeshVertex {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe {
-            __LightUtility_SpriteLightMeshVertex_unity2_raw::cctor(::core::option::Option::None)
+            __LightUtility_ParametricLightMeshVertex_unity2_raw::cctor(::core::option::Option::None)
         }
     }
 }
@@ -620,7 +620,7 @@ impl LightUtility {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LightUtility_ParametricLightMeshVertex_unity2_raw {
+mod __LightUtility_SpriteLightMeshVertex_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -631,7 +631,7 @@ mod __LightUtility_ParametricLightMeshVertex_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <LightUtility_ParametricLightMeshVertex as ::unity2::ClassIdentity>::class(),
+                <LightUtility_SpriteLightMeshVertex as ::unity2::ClassIdentity>::class(),
                 ".cctor",
                 0,
                 param_types,
@@ -643,7 +643,7 @@ mod __LightUtility_ParametricLightMeshVertex_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <LightUtility_ParametricLightMeshVertex as ::unity2::ClassIdentity>::NAME,
+                    <LightUtility_SpriteLightMeshVertex as ::unity2::ClassIdentity>::NAME,
                     ".cctor",
                     e
                 ),
@@ -666,11 +666,11 @@ mod __LightUtility_ParametricLightMeshVertex_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_ParametricLightMeshVertex {
+impl LightUtility_SpriteLightMeshVertex {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe {
-            __LightUtility_ParametricLightMeshVertex_unity2_raw::cctor(::core::option::Option::None)
+            __LightUtility_SpriteLightMeshVertex_unity2_raw::cctor(::core::option::Option::None)
         }
     }
 }

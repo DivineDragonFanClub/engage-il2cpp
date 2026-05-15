@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktag/TalkTag.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTag")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkTag {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktag/TalkTag_Result.md"))]
     #[repr(C)]
     #[derive(
@@ -81,6 +76,11 @@ mod __types {
             Self { value: 7 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktag/TalkTag.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTag")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkTag {}
 }
 
 #[cfg(feature = "app-talk3_d-talktag-types")]

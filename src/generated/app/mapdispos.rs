@@ -13,10 +13,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_PosList.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDispos.PosList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_Pos >)]
-    pub struct MapDispos_PosList {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualDataList.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDispos.ActualDataList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_ActualData >)]
+    pub struct MapDispos_ActualDataList {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ProcDispos.md"))]
     #[::unity2::class(namespace = "App", name = "MapDispos.ProcDispos")]
@@ -30,6 +30,92 @@ mod __types {
         #[rename(name = "m_DisposFlag")]
         pub m_dispos_flag: crate::app::mapdispos::MapDispos_FlagField,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdispos/MapDispos_ActualData_CalcResults.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapDispos_ActualData_CalcResults {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapDispos_ActualData_CalcResults {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapDispos.ActualData.CalcResults";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapDispos_ActualData_CalcResults {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapDispos_ActualData_CalcResults {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn success() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn failure() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn disable() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_Pos.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDispos.Pos")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDispos_Pos {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualData.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDispos.ActualData")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDispos_ActualData {
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::disposdata::DisposData,
+        #[rename(name = "m_PositionData")]
+        pub m_position_data: crate::app::disposdata::DisposData,
+        #[rename(name = "m_CalcResult")]
+        pub m_calc_result: crate::app::mapdispos::MapDispos_ActualData_CalcResults,
+        #[rename(name = "m_UnitIndex")]
+        pub m_unit_index: i32,
+        #[rename(name = "m_CalcAppearX")]
+        pub m_calc_appear_x: i32,
+        #[rename(name = "m_CalcAppearZ")]
+        pub m_calc_appear_z: i32,
+        #[rename(name = "m_CalcDisposX")]
+        pub m_calc_dispos_x: i32,
+        #[rename(name = "m_CalcDisposZ")]
+        pub m_calc_dispos_z: i32,
+        #[rename(name = "m_Direction")]
+        pub m_direction: crate::app::disposdata::DisposData_Directions,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_PosList.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDispos.PosList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_Pos >)]
+    pub struct MapDispos_PosList {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdispos/MapDispos_Flag.md"))]
     #[repr(C)]
@@ -124,92 +210,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapDispos")]
     #[parent(crate::system::object::Object)]
     pub struct MapDispos {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualData.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDispos.ActualData")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDispos_ActualData {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::disposdata::DisposData,
-        #[rename(name = "m_PositionData")]
-        pub m_position_data: crate::app::disposdata::DisposData,
-        #[rename(name = "m_CalcResult")]
-        pub m_calc_result: crate::app::mapdispos::MapDispos_ActualData_CalcResults,
-        #[rename(name = "m_UnitIndex")]
-        pub m_unit_index: i32,
-        #[rename(name = "m_CalcAppearX")]
-        pub m_calc_appear_x: i32,
-        #[rename(name = "m_CalcAppearZ")]
-        pub m_calc_appear_z: i32,
-        #[rename(name = "m_CalcDisposX")]
-        pub m_calc_dispos_x: i32,
-        #[rename(name = "m_CalcDisposZ")]
-        pub m_calc_dispos_z: i32,
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::app::disposdata::DisposData_Directions,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdispos/MapDispos_ActualData_CalcResults.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapDispos_ActualData_CalcResults {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapDispos_ActualData_CalcResults {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapDispos.ActualData.CalcResults";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapDispos_ActualData_CalcResults {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapDispos_ActualData_CalcResults {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn success() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn failure() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn disable() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualDataList.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDispos.ActualDataList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_ActualData >)]
-    pub struct MapDispos_ActualDataList {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_Pos.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDispos.Pos")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDispos_Pos {}
 }
 
 #[cfg(feature = "app-mapdispos-types")]
@@ -218,7 +218,7 @@ pub use __types::*;
 #[cfg(feature = "app-mapdispos")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDispos_PosList_unity2_raw {
+mod __MapDispos_ActualDataList_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -227,11 +227,14 @@ mod __MapDispos_PosList_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::disposdata::DisposData,
+                > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
+                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -241,7 +244,7 @@ mod __MapDispos_PosList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
+                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -254,20 +257,26 @@ mod __MapDispos_PosList_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapDispos_PosList,
+        this: MapDispos_ActualDataList,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapDispos_PosList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            MapDispos_ActualDataList,
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_register {
+    pub mod __lookup_ctor_2 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -276,11 +285,13 @@ mod __MapDispos_PosList_unity2_raw {
                 <crate::system::collections::generic::list_1::List_1<
                     crate::app::disposdata::DisposData,
                 > as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::disposdata::DisposData,
+                > as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
-                "Register",
+                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 2,
                 param_types,
                 false,
@@ -291,8 +302,8 @@ mod __MapDispos_PosList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
-                    "Register",
+                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -303,85 +314,40 @@ mod __MapDispos_PosList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn register(
-        this: MapDispos_PosList,
+    pub unsafe fn ctor_2(
+        this: MapDispos_ActualDataList,
         data_list: crate::system::collections::generic::list_1::List_1<
             crate::app::disposdata::DisposData,
         >,
-        limit: i32,
+        position_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            MapDispos_PosList,
+            MapDispos_ActualDataList,
             crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-            i32,
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_register::get_offset() as isize),
+                .offset(__lookup_ctor_2::get_offset() as isize),
         );
-        inner(this, data_list, limit, __unity2_method_info)
+        inner(this, data_list, position_data_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_pop_front {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
-                "PopFront",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
-                    "PopFront",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn pop_front(
-        this: MapDispos_PosList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapdispos::MapDispos_Pos {
-        let inner: extern "C" fn(
-            MapDispos_PosList,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapdispos::MapDispos_Pos = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pop_front::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_remove {
+    pub mod __lookup_calc {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::disposdata::DisposData as ::unity2::IlType>::il_type()];
+                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
-                "TryRemove",
+                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
+                "Calc",
                 1,
                 param_types,
                 false,
@@ -392,8 +358,8 @@ mod __MapDispos_PosList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
-                    "TryRemove",
+                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
+                    "Calc",
                     e
                 ),
             }
@@ -404,76 +370,158 @@ mod __MapDispos_PosList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn try_remove(
-        this: MapDispos_PosList,
-        data: crate::app::disposdata::DisposData,
+    pub unsafe fn calc(
+        this: MapDispos_ActualDataList,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            MapDispos_PosList,
-            crate::app::disposdata::DisposData,
+            MapDispos_ActualDataList,
+            crate::app::mapdispos::MapDispos_Flag,
             ::unity2::OptionalMethod,
         ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_try_remove::get_offset() as isize),
+                .offset(__lookup_calc::get_offset() as isize),
         );
-        inner(this, data, __unity2_method_info)
+        inner(this, dispos_flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_filter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::disposdata::DisposData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
+                "Filter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
+                    "Filter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn filter(
+        this: MapDispos_ActualDataList,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
+    {
+        let inner: extern "C" fn(
+            MapDispos_ActualDataList,
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_filter::get_offset() as isize),
+        );
+        inner(this, data_list, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapdispos")]
-pub trait IMapDispos_PosListMethods: IMapDispos_PosList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_PosList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]
-    fn register(
+pub trait IMapDispos_ActualDataListMethods: IMapDispos_ActualDataList {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    fn ctor(
         self,
         data_list: impl ::core::convert::Into<
             crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
         >,
-        limit: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_PosList_unity2_raw::register(
+            let __receiver =
+                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapDispos_ActualDataList_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(data_list),
-                ::core::convert::Into::into(limit),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`PopFront()` overload"]
-    fn pop_front(self) -> crate::app::mapdispos::MapDispos_Pos {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    fn ctor_2(
+        self,
+        data_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+        >,
+        position_data_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+        >,
+    ) -> () {
         unsafe {
-            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_PosList_unity2_raw::pop_front(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapDispos_ActualDataList_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(data_list),
+                ::core::convert::Into::into(position_data_list),
+                ::core::option::Option::None,
+            )
         }
     }
-    #[doc = "`TryRemove(crate::app::disposdata::DisposData)` overload"]
-    fn try_remove(
+    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    fn calc(
         self,
-        data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
+        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_PosList_unity2_raw::try_remove(
+            let __receiver =
+                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapDispos_ActualDataList_unity2_raw::calc(
                 __receiver,
-                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(dispos_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    fn filter(
+        self,
+        data_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
+    {
+        unsafe {
+            let __receiver =
+                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapDispos_ActualDataList_unity2_raw::filter(
+                __receiver,
+                ::core::convert::Into::into(data_list),
                 ::core::option::Option::None,
             )
         }
@@ -481,20 +529,44 @@ pub trait IMapDispos_PosListMethods: IMapDispos_PosList {
 }
 
 #[cfg(feature = "app-mapdispos")]
-impl<__T: IMapDispos_PosList> IMapDispos_PosListMethods for __T {}
+impl<__T: IMapDispos_ActualDataList> IMapDispos_ActualDataListMethods for __T {}
 
 #[cfg(feature = "app-mapdispos")]
-impl MapDispos_PosList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl MapDispos_ActualDataList {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
+    pub fn new(
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_PosList),
+                ::core::stringify!(MapDispos_ActualDataList),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDispos_PosListMethods>::ctor(this);
+        <Self as IMapDispos_ActualDataListMethods>::ctor(this, data_list);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
+    pub fn new_2(
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        position_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_ActualDataList),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMapDispos_ActualDataListMethods>::ctor_2(this, data_list, position_data_list);
         this
     }
 }
@@ -1286,6 +1358,2673 @@ impl MapDispos_ProcDispos {
             )
         });
         <Self as IMapDispos_ProcDisposMethods>::ctor(this, list, dispos_flag);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapDispos_Pos_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "get_X",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "get_X",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_x(
+        this: MapDispos_Pos,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_x::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "set_X",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "set_X",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_x(
+        this: MapDispos_Pos,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapDispos_Pos, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_x::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "get_Z",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "get_Z",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_z(
+        this: MapDispos_Pos,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_z::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "set_Z",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "set_Z",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_z(
+        this: MapDispos_Pos,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapDispos_Pos, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_z::get_offset() as isize),
+            );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "get_Dir",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "get_Dir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dir(
+        this: MapDispos_Pos,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::disposdata::DisposData_Directions {
+        let inner: extern "C" fn(
+            MapDispos_Pos,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::disposdata::DisposData_Directions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dir::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::disposdata::DisposData_Directions as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                "set_Dir",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    "set_Dir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_dir(
+        this: MapDispos_Pos,
+        value: crate::app::disposdata::DisposData_Directions,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDispos_Pos,
+            crate::app::disposdata::DisposData_Directions,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_dir::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: MapDispos_Pos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+pub trait IMapDispos_PosMethods: IMapDispos_Pos {
+    #[doc = "`get_X()` overload"]
+    fn get_x(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::get_x(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_X(i32)` overload"]
+    fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::set_x(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Z()` overload"]
+    fn get_z(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::get_z(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Z(i32)` overload"]
+    fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::set_z(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Dir()` overload"]
+    fn get_dir(self) -> crate::app::disposdata::DisposData_Directions {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::get_dir(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]
+    fn set_dir(
+        self,
+        value: impl ::core::convert::Into<crate::app::disposdata::DisposData_Directions>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::set_dir(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_Pos_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl<__T: IMapDispos_Pos> IMapDispos_PosMethods for __T {}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_Pos {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_Pos),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_PosMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapDispos_ActualData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::disposdata::DisposData as ::unity2::IlType>::il_type(),
+                <crate::app::disposdata::DisposData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapDispos_ActualData,
+        data: crate::app::disposdata::DisposData,
+        position_data: crate::app::disposdata::DisposData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::disposdata::DisposData,
+            crate::app::disposdata::DisposData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, position_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "Calc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "Calc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc(
+        this: MapDispos_ActualData,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::mapdispos::MapDispos_Flag,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc::get_offset() as isize),
+        );
+        inner(this, dispos_flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unit_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                    crate::app::mapdeploy::MapDeploy,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "UnitMove",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "UnitMove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unit_move(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        move_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                crate::app::mapdeploy::MapDeploy,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unit_move::get_offset() as isize),
+        );
+        inner(this, unit, x, z, move_flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_Data",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::disposdata::DisposData {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::disposdata::DisposData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_dispos_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataDisposX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataDisposX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_dispos_x(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_dispos_x::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_dispos_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataDisposZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataDisposZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_dispos_z(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_dispos_z::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_calc_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_CalcResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_CalcResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_calc_result(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapdispos::MapDispos_ActualData_CalcResults {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::mapdispos::MapDispos_ActualData_CalcResults = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_calc_result::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_UnitIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_UnitIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit_index(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_unit_index::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_calc_appear_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_CalcAppearX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_CalcAppearX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_calc_appear_x(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_calc_appear_x::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_calc_appear_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_CalcAppearZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_CalcAppearZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_calc_appear_z(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_calc_appear_z::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_calc_dispos_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_CalcDisposX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_CalcDisposX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_calc_dispos_x(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_calc_dispos_x::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_calc_dispos_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_CalcDisposZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_CalcDisposZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_calc_dispos_z(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_calc_dispos_z::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dispos_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DisposDir",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DisposDir",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dispos_dir(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::disposdata::DisposData_Directions {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::disposdata::DisposData_Directions = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dispos_dir::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_dispos_xz {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "CalcDisposXZ",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "CalcDisposXZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_dispos_xz(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        dispos_x: *mut i32,
+        dispos_z: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            *mut i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_dispos_xz::get_offset() as isize),
+        );
+        inner(this, unit, dispos_x, dispos_z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_apper_xz {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+                <*mut i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "CalcApperXZ",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "CalcApperXZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_apper_xz(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        dispos_x: i32,
+        dispos_z: i32,
+        appear_x: *mut i32,
+        appear_z: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            *mut i32,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_apper_xz::get_offset() as isize),
+        );
+        inner(
+            this,
+            unit,
+            dispos_x,
+            dispos_z,
+            appear_x,
+            appear_z,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_forced {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsForced",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsForced",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_forced(
+        this: MapDispos_ActualData,
+        flag: crate::app::mapdispos::MapDispos_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::mapdispos::MapDispos_Flag,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_forced::get_offset() as isize),
+        );
+        inner(this, flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsEnable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: MapDispos_ActualData,
+        flag: crate::app::mapdispos::MapDispos_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::mapdispos::MapDispos_Flag,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsCreate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_create(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_create::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "GetUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "GetUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_unit(
+        this: MapDispos_ActualData,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::mapdispos::MapDispos_Flag,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_unit::get_offset() as isize),
+        );
+        inner(this, dispos_flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_terrain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "GetTerrain",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "GetTerrain",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_terrain(
+        this: MapDispos_ActualData,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::terraindata_2::TerrainData_2 {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::terraindata_2::TerrainData_2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_terrain::get_offset() as isize),
+        );
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_out_of_play_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsOutOfPlayArea",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsOutOfPlayArea",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_out_of_play_area(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_out_of_play_area::get_offset() as isize),
+        );
+        inner(this, unit, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_unit_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsUnitExist",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsUnitExist",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_unit_exist(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_unit_exist::get_offset() as isize),
+        );
+        inner(this, unit, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_terrain_immobile {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsTerrainImmobile",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsTerrainImmobile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_terrain_immobile(
+        this: MapDispos_ActualData,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapDispos_ActualData, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_terrain_immobile::get_offset() as isize),
+            );
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_terrain_immobile_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "IsTerrainImmobile",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "IsTerrainImmobile",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_terrain_immobile_2(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_terrain_immobile_2::get_offset() as isize),
+        );
+        inner(this, unit, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unit_ai_move_limit_for_big_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                    crate::app::mapdeploy::MapDeploy,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "UnitAIMoveLimitForBigUnit",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "UnitAIMoveLimitForBigUnit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unit_ai_move_limit_for_big_unit(
+        this: MapDispos_ActualData,
+        unit: crate::app::unit::Unit,
+        move_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            crate::app::unit::Unit,
+            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                crate::app::mapdeploy::MapDeploy,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unit_ai_move_limit_for_big_unit::get_offset() as isize),
+        );
+        inner(this, unit, move_flag, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataPerson",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataPerson",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_person(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data_person::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_force_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataForceType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataForceType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_force_type(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::force::Force_Type {
+        let inner: extern "C" fn(
+            MapDispos_ActualData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::force::Force_Type = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data_force_type::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_appear_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataAppearX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataAppearX",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_appear_x(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_appear_x::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_appear_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
+                "get_DataAppearZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
+                    "get_DataAppearZ",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_appear_z(
+        this: MapDispos_ActualData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_appear_z::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+pub trait IMapDispos_ActualDataMethods: IMapDispos_ActualData {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData, crate::app::disposdata::DisposData)` overload"]
+    fn ctor(
+        self,
+        data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
+        position_data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(position_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    fn calc(
+        self,
+        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::calc(
+                __receiver,
+                ::core::convert::Into::into(dispos_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnitMove(crate::app::unit::Unit, i32, i32, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
+    fn unit_move(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        move_flag: impl ::core::convert::Into<
+            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                crate::app::mapdeploy::MapDeploy,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::unit_move(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(move_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::disposdata::DisposData {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataDisposX()` overload"]
+    fn get_data_dispos_x(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_dispos_x(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataDisposZ()` overload"]
+    fn get_data_dispos_z(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_dispos_z(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CalcResult()` overload"]
+    fn get_calc_result(self) -> crate::app::mapdispos::MapDispos_ActualData_CalcResults {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_calc_result(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_UnitIndex()` overload"]
+    fn get_unit_index(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_unit_index(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CalcAppearX()` overload"]
+    fn get_calc_appear_x(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_calc_appear_x(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CalcAppearZ()` overload"]
+    fn get_calc_appear_z(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_calc_appear_z(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CalcDisposX()` overload"]
+    fn get_calc_dispos_x(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_calc_dispos_x(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CalcDisposZ()` overload"]
+    fn get_calc_dispos_z(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_calc_dispos_z(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DisposDir()` overload"]
+    fn get_dispos_dir(self) -> crate::app::disposdata::DisposData_Directions {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_dispos_dir(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcDisposXZ(crate::app::unit::Unit, *muti32, *muti32)` overload"]
+    fn calc_dispos_xz(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> (bool, i32, i32) {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __MapDispos_ActualData_unity2_raw::calc_dispos_xz(
+                    __receiver,
+                    ::core::convert::Into::into(unit),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`CalcApperXZ(crate::app::unit::Unit, i32, i32, *muti32, *muti32)` overload"]
+    fn calc_apper_xz(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        dispos_x: impl ::core::convert::Into<i32>,
+        dispos_z: impl ::core::convert::Into<i32>,
+    ) -> (bool, i32, i32) {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __MapDispos_ActualData_unity2_raw::calc_apper_xz(
+                    __receiver,
+                    ::core::convert::Into::into(unit),
+                    ::core::convert::Into::into(dispos_x),
+                    ::core::convert::Into::into(dispos_z),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`IsForced(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    fn is_forced(
+        self,
+        flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_forced(
+                __receiver,
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    fn is_enable(
+        self,
+        flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_enable(
+                __receiver,
+                ::core::convert::Into::into(flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsCreate()` overload"]
+    fn is_create(self) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    fn get_unit(
+        self,
+        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
+    ) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_unit(
+                __receiver,
+                ::core::convert::Into::into(dispos_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTerrain(i32, i32)` overload"]
+    fn get_terrain(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> crate::app::terraindata_2::TerrainData_2 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_terrain(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsOutOfPlayArea(crate::app::unit::Unit, i32, i32)` overload"]
+    fn is_out_of_play_area(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_out_of_play_area(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsUnitExist(crate::app::unit::Unit, i32, i32)` overload"]
+    fn is_unit_exist(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_unit_exist(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsTerrainImmobile(i32, i32)` overload"]
+    fn is_terrain_immobile(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_terrain_immobile(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsTerrainImmobile(crate::app::unit::Unit, i32, i32)` overload"]
+    fn is_terrain_immobile_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::is_terrain_immobile_2(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UnitAIMoveLimitForBigUnit(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
+    fn unit_ai_move_limit_for_big_unit(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        move_flag: impl ::core::convert::Into<
+            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+                crate::app::mapdeploy::MapDeploy,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::unit_ai_move_limit_for_big_unit(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(move_flag),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataPerson()` overload"]
+    fn get_data_person(self) -> crate::app::persondata::PersonData {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_person(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataForceType()` overload"]
+    fn get_data_force_type(self) -> crate::app::force::Force_Type {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_force_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataAppearX()` overload"]
+    fn get_data_appear_x(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_appear_x(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataAppearZ()` overload"]
+    fn get_data_appear_z(self) -> i32 {
+        unsafe {
+            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_ActualData_unity2_raw::get_data_appear_z(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl<__T: IMapDispos_ActualData> IMapDispos_ActualDataMethods for __T {}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_ActualData {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData, crate::app::disposdata::DisposData)` — overload selector"]
+    pub fn new(
+        data: crate::app::disposdata::DisposData,
+        position_data: crate::app::disposdata::DisposData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_ActualData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_ActualDataMethods>::ctor(this, data, position_data);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapDispos_PosList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapDispos_PosList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapDispos_PosList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_register {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::disposdata::DisposData,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
+                "Register",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
+                    "Register",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn register(
+        this: MapDispos_PosList,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        limit: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDispos_PosList,
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_register::get_offset() as isize),
+        );
+        inner(this, data_list, limit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pop_front {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
+                "PopFront",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
+                    "PopFront",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn pop_front(
+        this: MapDispos_PosList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapdispos::MapDispos_Pos {
+        let inner: extern "C" fn(
+            MapDispos_PosList,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::mapdispos::MapDispos_Pos = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_pop_front::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::disposdata::DisposData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDispos_PosList as ::unity2::ClassIdentity>::class(),
+                "TryRemove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapDispos_PosList as ::unity2::ClassIdentity>::NAME,
+                    "TryRemove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_remove(
+        this: MapDispos_PosList,
+        data: crate::app::disposdata::DisposData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapDispos_PosList,
+            crate::app::disposdata::DisposData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_try_remove::get_offset() as isize),
+        );
+        inner(this, data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+pub trait IMapDispos_PosListMethods: IMapDispos_PosList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_PosList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]
+    fn register(
+        self,
+        data_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
+        >,
+        limit: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_PosList_unity2_raw::register(
+                __receiver,
+                ::core::convert::Into::into(data_list),
+                ::core::convert::Into::into(limit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PopFront()` overload"]
+    fn pop_front(self) -> crate::app::mapdispos::MapDispos_Pos {
+        unsafe {
+            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_PosList_unity2_raw::pop_front(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryRemove(crate::app::disposdata::DisposData)` overload"]
+    fn try_remove(
+        self,
+        data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapDispos_PosList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDispos_PosList_unity2_raw::try_remove(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl<__T: IMapDispos_PosList> IMapDispos_PosListMethods for __T {}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_PosList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_PosList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_PosListMethods>::ctor(this);
         this
     }
 }
@@ -3782,2745 +6521,6 @@ impl MapDispos {
             )
         });
         <Self as IMapDisposMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDispos_ActualData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::disposdata::DisposData as ::unity2::IlType>::il_type(),
-                <crate::app::disposdata::DisposData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapDispos_ActualData,
-        data: crate::app::disposdata::DisposData,
-        position_data: crate::app::disposdata::DisposData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::disposdata::DisposData,
-            crate::app::disposdata::DisposData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data, position_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "Calc",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc(
-        this: MapDispos_ActualData,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::mapdispos::MapDispos_Flag,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
-        inner(this, dispos_flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unit_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                    crate::app::mapdeploy::MapDeploy,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "UnitMove",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "UnitMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unit_move(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        move_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                crate::app::mapdeploy::MapDeploy,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unit_move::get_offset() as isize),
-        );
-        inner(this, unit, x, z, move_flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::disposdata::DisposData {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::disposdata::DisposData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_dispos_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataDisposX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataDisposX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_dispos_x(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_dispos_x::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_dispos_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataDisposZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataDisposZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_dispos_z(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_dispos_z::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_calc_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_CalcResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_CalcResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_calc_result(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapdispos::MapDispos_ActualData_CalcResults {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::mapdispos::MapDispos_ActualData_CalcResults = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_calc_result::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_UnitIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_UnitIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit_index(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_unit_index::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_calc_appear_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_CalcAppearX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_CalcAppearX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_calc_appear_x(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_calc_appear_x::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_calc_appear_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_CalcAppearZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_CalcAppearZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_calc_appear_z(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_calc_appear_z::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_calc_dispos_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_CalcDisposX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_CalcDisposX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_calc_dispos_x(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_calc_dispos_x::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_calc_dispos_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_CalcDisposZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_CalcDisposZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_calc_dispos_z(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_calc_dispos_z::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dispos_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DisposDir",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DisposDir",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_dispos_dir(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::disposdata::DisposData_Directions {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::disposdata::DisposData_Directions = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dispos_dir::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_dispos_xz {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "CalcDisposXZ",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "CalcDisposXZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_dispos_xz(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        dispos_x: *mut i32,
-        dispos_z: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_dispos_xz::get_offset() as isize),
-        );
-        inner(this, unit, dispos_x, dispos_z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_apper_xz {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "CalcApperXZ",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "CalcApperXZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_apper_xz(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        dispos_x: i32,
-        dispos_z: i32,
-        appear_x: *mut i32,
-        appear_z: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_apper_xz::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            dispos_x,
-            dispos_z,
-            appear_x,
-            appear_z,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_forced {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsForced",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsForced",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_forced(
-        this: MapDispos_ActualData,
-        flag: crate::app::mapdispos::MapDispos_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::mapdispos::MapDispos_Flag,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_forced::get_offset() as isize),
-        );
-        inner(this, flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsEnable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsEnable",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: MapDispos_ActualData,
-        flag: crate::app::mapdispos::MapDispos_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::mapdispos::MapDispos_Flag,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_create(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit(
-        this: MapDispos_ActualData,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::mapdispos::MapDispos_Flag,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit::get_offset() as isize),
-        );
-        inner(this, dispos_flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "GetTerrain",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "GetTerrain",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_terrain(
-        this: MapDispos_ActualData,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::terraindata_2::TerrainData_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_terrain::get_offset() as isize),
-        );
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_out_of_play_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsOutOfPlayArea",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsOutOfPlayArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_out_of_play_area(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_out_of_play_area::get_offset() as isize),
-        );
-        inner(this, unit, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_unit_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsUnitExist",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsUnitExist",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_unit_exist(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unit_exist::get_offset() as isize),
-        );
-        inner(this, unit, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_terrain_immobile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsTerrainImmobile",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsTerrainImmobile",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_terrain_immobile(
-        this: MapDispos_ActualData,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapDispos_ActualData, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_terrain_immobile::get_offset() as isize),
-            );
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_terrain_immobile_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "IsTerrainImmobile",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "IsTerrainImmobile",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_terrain_immobile_2(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_terrain_immobile_2::get_offset() as isize),
-        );
-        inner(this, unit, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unit_ai_move_limit_for_big_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                    crate::app::mapdeploy::MapDeploy,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "UnitAIMoveLimitForBigUnit",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "UnitAIMoveLimitForBigUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unit_ai_move_limit_for_big_unit(
-        this: MapDispos_ActualData,
-        unit: crate::app::unit::Unit,
-        move_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            crate::app::unit::Unit,
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                crate::app::mapdeploy::MapDeploy,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unit_ai_move_limit_for_big_unit::get_offset() as isize),
-        );
-        inner(this, unit, move_flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataPerson",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataPerson",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_person(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::persondata::PersonData {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_person::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_force_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataForceType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataForceType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_force_type(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::force::Force_Type {
-        let inner: extern "C" fn(
-            MapDispos_ActualData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::force::Force_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_force_type::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_appear_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataAppearX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataAppearX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_appear_x(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_appear_x::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_appear_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualData as ::unity2::ClassIdentity>::class(),
-                "get_DataAppearZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataAppearZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_appear_z(
-        this: MapDispos_ActualData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_ActualData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_appear_z::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-pub trait IMapDispos_ActualDataMethods: IMapDispos_ActualData {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData, crate::app::disposdata::DisposData)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
-        position_data: impl ::core::convert::Into<crate::app::disposdata::DisposData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(position_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    fn calc(
-        self,
-        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::calc(
-                __receiver,
-                ::core::convert::Into::into(dispos_flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnitMove(crate::app::unit::Unit, i32, i32, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
-    fn unit_move(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        move_flag: impl ::core::convert::Into<
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                crate::app::mapdeploy::MapDeploy,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::unit_move(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(move_flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::disposdata::DisposData {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DataDisposX()` overload"]
-    fn get_data_dispos_x(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_dispos_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataDisposZ()` overload"]
-    fn get_data_dispos_z(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_dispos_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CalcResult()` overload"]
-    fn get_calc_result(self) -> crate::app::mapdispos::MapDispos_ActualData_CalcResults {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_calc_result(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_UnitIndex()` overload"]
-    fn get_unit_index(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_unit_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CalcAppearX()` overload"]
-    fn get_calc_appear_x(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_calc_appear_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CalcAppearZ()` overload"]
-    fn get_calc_appear_z(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_calc_appear_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CalcDisposX()` overload"]
-    fn get_calc_dispos_x(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_calc_dispos_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CalcDisposZ()` overload"]
-    fn get_calc_dispos_z(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_calc_dispos_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DisposDir()` overload"]
-    fn get_dispos_dir(self) -> crate::app::disposdata::DisposData_Directions {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_dispos_dir(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDisposXZ(crate::app::unit::Unit, *muti32, *muti32)` overload"]
-    fn calc_dispos_xz(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> (bool, i32, i32) {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __MapDispos_ActualData_unity2_raw::calc_dispos_xz(
-                    __receiver,
-                    ::core::convert::Into::into(unit),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`CalcApperXZ(crate::app::unit::Unit, i32, i32, *muti32, *muti32)` overload"]
-    fn calc_apper_xz(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        dispos_x: impl ::core::convert::Into<i32>,
-        dispos_z: impl ::core::convert::Into<i32>,
-    ) -> (bool, i32, i32) {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __MapDispos_ActualData_unity2_raw::calc_apper_xz(
-                    __receiver,
-                    ::core::convert::Into::into(unit),
-                    ::core::convert::Into::into(dispos_x),
-                    ::core::convert::Into::into(dispos_z),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`IsForced(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    fn is_forced(
-        self,
-        flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_forced(
-                __receiver,
-                ::core::convert::Into::into(flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    fn is_enable(
-        self,
-        flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_enable(
-                __receiver,
-                ::core::convert::Into::into(flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsCreate()` overload"]
-    fn is_create(self) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    fn get_unit(
-        self,
-        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
-    ) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_unit(
-                __receiver,
-                ::core::convert::Into::into(dispos_flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetTerrain(i32, i32)` overload"]
-    fn get_terrain(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_terrain(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsOutOfPlayArea(crate::app::unit::Unit, i32, i32)` overload"]
-    fn is_out_of_play_area(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_out_of_play_area(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsUnitExist(crate::app::unit::Unit, i32, i32)` overload"]
-    fn is_unit_exist(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_unit_exist(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsTerrainImmobile(i32, i32)` overload"]
-    fn is_terrain_immobile(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_terrain_immobile(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsTerrainImmobile(crate::app::unit::Unit, i32, i32)` overload"]
-    fn is_terrain_immobile_2(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::is_terrain_immobile_2(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnitAIMoveLimitForBigUnit(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
-    fn unit_ai_move_limit_for_big_unit(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        move_flag: impl ::core::convert::Into<
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-                crate::app::mapdeploy::MapDeploy,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::unit_ai_move_limit_for_big_unit(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(move_flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataPerson()` overload"]
-    fn get_data_person(self) -> crate::app::persondata::PersonData {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_person(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataForceType()` overload"]
-    fn get_data_force_type(self) -> crate::app::force::Force_Type {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_force_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataAppearX()` overload"]
-    fn get_data_appear_x(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_appear_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataAppearZ()` overload"]
-    fn get_data_appear_z(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_ActualData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_ActualData_unity2_raw::get_data_appear_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl<__T: IMapDispos_ActualData> IMapDispos_ActualDataMethods for __T {}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_ActualData {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData, crate::app::disposdata::DisposData)` — overload selector"]
-    pub fn new(
-        data: crate::app::disposdata::DisposData,
-        position_data: crate::app::disposdata::DisposData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ActualData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_ActualDataMethods>::ctor(this, data, position_data);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDispos_ActualDataList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::disposdata::DisposData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapDispos_ActualDataList,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_ActualDataList,
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::disposdata::DisposData,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::disposdata::DisposData,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: MapDispos_ActualDataList,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        position_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_ActualDataList,
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, data_list, position_data_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapdispos::MapDispos_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
-                "Calc",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc(
-        this: MapDispos_ActualDataList,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapDispos_ActualDataList,
-            crate::app::mapdispos::MapDispos_Flag,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
-        inner(this, dispos_flag, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_filter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::disposdata::DisposData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_ActualDataList as ::unity2::ClassIdentity>::class(),
-                "Filter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_ActualDataList as ::unity2::ClassIdentity>::NAME,
-                    "Filter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn filter(
-        this: MapDispos_ActualDataList,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
-    {
-        let inner: extern "C" fn(
-            MapDispos_ActualDataList,
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_filter::get_offset() as isize),
-        );
-        inner(this, data_list, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-pub trait IMapDispos_ActualDataListMethods: IMapDispos_ActualDataList {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    fn ctor(
-        self,
-        data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDispos_ActualDataList_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    fn ctor_2(
-        self,
-        data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-        >,
-        position_data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDispos_ActualDataList_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(data_list),
-                ::core::convert::Into::into(position_data_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    fn calc(
-        self,
-        dispos_flag: impl ::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDispos_ActualDataList_unity2_raw::calc(
-                __receiver,
-                ::core::convert::Into::into(dispos_flag),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    fn filter(
-        self,
-        data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
-    {
-        unsafe {
-            let __receiver =
-                <MapDispos_ActualDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDispos_ActualDataList_unity2_raw::filter(
-                __receiver,
-                ::core::convert::Into::into(data_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl<__T: IMapDispos_ActualDataList> IMapDispos_ActualDataListMethods for __T {}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_ActualDataList {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
-    pub fn new(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ActualDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_ActualDataListMethods>::ctor(this, data_list);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
-    pub fn new_2(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        position_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ActualDataList),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMapDispos_ActualDataListMethods>::ctor_2(this, data_list, position_data_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDispos_Pos_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "get_X",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "get_X",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_x(
-        this: MapDispos_Pos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_x::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "set_X",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "set_X",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_x(
-        this: MapDispos_Pos,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapDispos_Pos, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_x::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "get_Z",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "get_Z",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_z(
-        this: MapDispos_Pos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_z::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "set_Z",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "set_Z",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_z(
-        this: MapDispos_Pos,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapDispos_Pos, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_z::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "get_Dir",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "get_Dir",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_dir(
-        this: MapDispos_Pos,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::disposdata::DisposData_Directions {
-        let inner: extern "C" fn(
-            MapDispos_Pos,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::disposdata::DisposData_Directions = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dir::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::disposdata::DisposData_Directions as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                "set_Dir",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    "set_Dir",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_dir(
-        this: MapDispos_Pos,
-        value: crate::app::disposdata::DisposData_Directions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDispos_Pos,
-            crate::app::disposdata::DisposData_Directions,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_dir::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDispos_Pos as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDispos_Pos as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: MapDispos_Pos, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapDispos_Pos, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-pub trait IMapDispos_PosMethods: IMapDispos_Pos {
-    #[doc = "`get_X()` overload"]
-    fn get_x(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::get_x(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_X(i32)` overload"]
-    fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::set_x(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Z()` overload"]
-    fn get_z(self) -> i32 {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::get_z(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Z(i32)` overload"]
-    fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::set_z(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Dir()` overload"]
-    fn get_dir(self) -> crate::app::disposdata::DisposData_Directions {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::get_dir(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]
-    fn set_dir(
-        self,
-        value: impl ::core::convert::Into<crate::app::disposdata::DisposData_Directions>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::set_dir(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapDispos_Pos as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDispos_Pos_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl<__T: IMapDispos_Pos> IMapDispos_PosMethods for __T {}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_Pos {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_Pos),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_PosMethods>::ctor(this);
         this
     }
 }

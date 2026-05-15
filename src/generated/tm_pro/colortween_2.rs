@@ -16,39 +16,6 @@ mod __types {
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
     pub struct ColorTween_ColorTweenCallback_2 {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ColorTween_2 {
-        pub m_target: crate::tm_pro::colortween_2::ColorTween_ColorTweenCallback_2,
-        pub m_start_color: crate::unity_engine::color::Color,
-        pub m_target_color: crate::unity_engine::color::Color,
-        pub m_tween_mode: crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2,
-        pub m_duration: f32,
-        pub m_ignore_time_scale: bool,
-    }
-
-    impl ::unity2::ClassIdentity for ColorTween_2 {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "ColorTween";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ColorTween_2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md"))]
     #[repr(C)]
     #[derive(
@@ -94,6 +61,39 @@ mod __types {
 
         pub fn alpha() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ColorTween_2 {
+        pub m_target: crate::tm_pro::colortween_2::ColorTween_ColorTweenCallback_2,
+        pub m_start_color: crate::unity_engine::color::Color,
+        pub m_target_color: crate::unity_engine::color::Color,
+        pub m_tween_mode: crate::tm_pro::colortween_2::ColorTween_ColorTweenMode_2,
+        pub m_duration: f32,
+        pub m_ignore_time_scale: bool,
+    }
+
+    impl ::unity2::ClassIdentity for ColorTween_2 {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "ColorTween";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ColorTween_2 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
         }
     }
 }

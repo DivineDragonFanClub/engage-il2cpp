@@ -90,14 +90,6 @@ mod __types {
         pub m_display_name: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "TimelineClip.TimelineClipUpgrade"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineClip_TimelineClipUpgrade {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]
     #[repr(C)]
     #[derive(
@@ -197,6 +189,14 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Timeline",
+        name = "TimelineClip.TimelineClipUpgrade"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct TimelineClip_TimelineClipUpgrade {}
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]

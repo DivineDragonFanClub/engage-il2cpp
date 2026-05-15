@@ -10,11 +10,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TextAsset.EncodingUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextAsset_EncodingUtility {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]
     #[repr(C)]
     #[derive(
@@ -58,6 +53,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "TextAsset.EncodingUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct TextAsset_EncodingUtility {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "TextAsset")]

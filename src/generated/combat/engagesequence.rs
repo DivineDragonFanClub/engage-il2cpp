@@ -10,6 +10,36 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))]
+    #[::unity2::class(namespace = "Combat", name = "EngageSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct EngageSequence {
+        #[rename(name = "m_Master")]
+        pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
+        #[rename(name = "m_Grandew")]
+        pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
+        #[rename(name = "m_CamGO")]
+        pub m_cam_go: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_bSetupDone")]
+        pub m_b_setup_done: bool,
+        #[rename(name = "m_bSkipped")]
+        pub m_b_skipped: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence_Cast.md"))]
+    #[::unity2::class(namespace = "Combat", name = "EngageSequence.Cast")]
+    #[parent(crate::system::object::Object)]
+    pub struct EngageSequence_Cast {
+        #[rename(name = "Unit")]
+        pub unit: crate::app::unit::Unit,
+        #[rename(name = "God")]
+        pub god: crate::app::godunit::GodUnit,
+        #[rename(name = "GameStatus")]
+        pub game_status: crate::combat::charactergamestatus::CharacterGameStatus,
+        #[rename(name = "Character")]
+        pub character: crate::combat::character::Character,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -56,36 +86,6 @@ mod __types {
         pub fn engage_plus() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))]
-    #[::unity2::class(namespace = "Combat", name = "EngageSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct EngageSequence {
-        #[rename(name = "m_Master")]
-        pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
-        #[rename(name = "m_Grandew")]
-        pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
-        #[rename(name = "m_CamGO")]
-        pub m_cam_go: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_bSetupDone")]
-        pub m_b_setup_done: bool,
-        #[rename(name = "m_bSkipped")]
-        pub m_b_skipped: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence_Cast.md"))]
-    #[::unity2::class(namespace = "Combat", name = "EngageSequence.Cast")]
-    #[parent(crate::system::object::Object)]
-    pub struct EngageSequence_Cast {
-        #[rename(name = "Unit")]
-        pub unit: crate::app::unit::Unit,
-        #[rename(name = "God")]
-        pub god: crate::app::godunit::GodUnit,
-        #[rename(name = "GameStatus")]
-        pub game_status: crate::combat::charactergamestatus::CharacterGameStatus,
-        #[rename(name = "Character")]
-        pub character: crate::combat::character::Character,
     }
 }
 

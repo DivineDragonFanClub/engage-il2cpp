@@ -77,7 +77,9 @@ mod __AnimationPlayableExtensions_unity2_raw {
 
 #[cfg(feature = "unity_engine-animations-animationplayableextensions")]
 impl AnimationPlayableExtensions {
-    pub fn set_animated_properties<M0: ::unity2::IlType + ::core::marker::Copy>(
+    fn set_animated_properties<
+        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
+    >(
         playable: impl ::core::convert::Into<M0>,
         clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
     ) -> () {

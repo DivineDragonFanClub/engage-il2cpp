@@ -12,62 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Kinds.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TipsData_Kinds {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TipsData_Kinds {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TipsData.Kinds";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TipsData_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TipsData_Kinds {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn item() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tipsdata/TipsData.md"))]
-    #[::unity2::class(namespace = "App", name = "TipsData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tipsdata :: TipsData >)]
-    pub struct TipsData {
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::tipsdata::TipsData_Kinds,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Allows.md"))]
     #[repr(C)]
     #[derive(
@@ -113,6 +57,62 @@ mod __types {
 
         pub fn gmap() -> Self {
             Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tipsdata/TipsData.md"))]
+    #[::unity2::class(namespace = "App", name = "TipsData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tipsdata :: TipsData >)]
+    pub struct TipsData {
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::tipsdata::TipsData_Kinds,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Kinds.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TipsData_Kinds {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TipsData_Kinds {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TipsData.Kinds";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TipsData_Kinds {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TipsData_Kinds {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn item() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn skill() -> Self {
+            Self { value: 2 }
         }
     }
 }
